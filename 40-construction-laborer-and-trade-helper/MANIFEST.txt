@@ -1,0 +1,10 @@
+31 - plumber-pipefitter-and-plumbing-technician
+32 - welder-and-fabrication-technician
+33 - machinist-and-cnc-machine-operator
+34 - quality-control-inspector-and-manufacturing-technician
+35 - production-planning-and-expediting-clerk
+36 - warehouse-and-inventory-control-specialist
+37 - shipping-receiving-and-traffic-clerk
+38 - dispatcher-and-transportation-coordinator
+39 - heavy-equipment-operator
+40 - construction-laborer-and-trade-helper
