@@ -1,0 +1,8 @@
+guide: 78
+title: Web and Digital Interface Designer
+pages: 7
+toc_entries_updated: 43
+searchable_chars: 24360
+broken_bookmark: False
+toc_self_entries: 0
+action_plan_ok: False

@@ -1,0 +1,8 @@
+guide: 75
+title: Marketing Coordinator and Digital Marketing Assistant
+pages: 7
+toc_entries_updated: 46
+searchable_chars: 24392
+broken_bookmark: False
+toc_self_entries: 0
+action_plan_ok: False

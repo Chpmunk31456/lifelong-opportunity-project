@@ -1,0 +1,8 @@
+guide: 71
+title: Event Coordinator and Meeting Assistant
+pages: 7
+toc_entries_updated: 43
+searchable_chars: 24368
+broken_bookmark: False
+toc_self_entries: 0
+action_plan_ok: False
