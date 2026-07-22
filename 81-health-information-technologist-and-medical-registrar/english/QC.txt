@@ -1,0 +1,8 @@
+guide: 81
+title: Health Information Technologist and Medical Registrar
+pages: 7
+searchable_chars: 21121
+broken_bookmark: False
+toc_self_entries: 0
+numbered_action_plan_1_to_6: True
+visual_review: completed from final rendered page contact sheets
