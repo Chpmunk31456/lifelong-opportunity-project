@@ -1,4 +1,4 @@
-# Asistente de Recursos Humanos
+# Especialista en Servicio al Cliente
 
 Edición en español neutro de la serie **Guías de Oportunidad para Toda la Vida**.
 

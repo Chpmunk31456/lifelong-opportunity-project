@@ -1,4 +1,4 @@
-# Asistente de Recursos Humanos
+# Especialista en Facturación y Codificación Médica
 
 Edición en español neutro de la serie **Guías de Oportunidad para Toda la Vida**.
 
