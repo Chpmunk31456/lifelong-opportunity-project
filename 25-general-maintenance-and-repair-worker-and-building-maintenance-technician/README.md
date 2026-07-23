@@ -11,8 +11,8 @@ A free Lifelong Opportunity career guide created and directed by **Alberto (Al) 
 
 ## Downloads
 
-- [English DOCX](english/docx/Lifelong_Opportunity_General_Maintenance_and_Repair_Worker_and_Building_Maintenance_Technician_Guide_English_v1.0.docx)
-- [English PDF](english/pdf/Lifelong_Opportunity_General_Maintenance_and_Repair_Worker_and_Building_Maintenance_Technician_Guide_English_v1.0.pdf)
+- [English DOCX](english/docx/General_Maintenance_and_Repair_Worker_and_Building_Maintenance_Technician_Guide_English_v1.0.docx)
+- [English PDF](english/pdf/General_Maintenance_and_Repair_Worker_and_Building_Maintenance_Technician_Guide_English_v1.0.pdf)
 
 ## Ethical commitments
 

@@ -11,8 +11,8 @@ A free Lifelong Opportunity career guide created and directed by **Alberto (Al) 
 
 ## Downloads
 
-- [English DOCX](english/docx/Lifelong_Opportunity_Shipping_Receiving_and_Traffic_Clerk_Guide_English_v1.0.docx)
-- Searchable PDF is in `english/pdf/`.
+- [English DOCX](docx/Lifelong_Opportunity_Shipping_Receiving_and_Traffic_Clerk_Guide_English_v1.0.docx)
+- [English PDF](pdf/Lifelong_Opportunity_Shipping_Receiving_and_Traffic_Clerk_Guide_English_v1.0.pdf)
 
 ## Ethical commitments
 

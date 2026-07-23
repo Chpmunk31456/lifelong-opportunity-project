@@ -12,7 +12,7 @@ A free Lifelong Opportunity career guide created and directed by **Alberto (Al) 
 ## Downloads
 
 - [English DOCX](english/docx/Lifelong_Opportunity_Title_Examiner_and_Property_Records_Specialist_Guide_English_v1.0.docx)
-- [English PDF](english/pdf/Lifelong_Opportunity_Title_Examiner_and_Property_Records_Specialist_Guide_English_v1.0.pdf)
+- [English PDF](english/pdf/pdf/Lifelong_Opportunity_Title_Examiner_and_Property_Records_Specialist_Guide_English_v1.0.pdf)
 
 ## Ethical commitments
 
