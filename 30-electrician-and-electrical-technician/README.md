@@ -11,8 +11,8 @@ A free Lifelong Opportunity career guide created and directed by **Alberto (Al) 
 
 ## Downloads
 
-- [English DOCX](english/docx/Lifelong_Opportunity_Electrician_and_Electrical_Technician_Guide_English_v1.0.docx)
-- [English PDF](english/pdf/Lifelong_Opportunity_Electrician_and_Electrical_Technician_Guide_English_v1.0.pdf)
+- [English DOCX](english/docx/Lifelong_Opportunity_Electrician_Guide_English_v1.0.docx)
+- [English PDF](english/pdf/Lifelong_Opportunity_Electrician_Guide_English_v1.0.pdf)
 
 ## Ethical commitments
 

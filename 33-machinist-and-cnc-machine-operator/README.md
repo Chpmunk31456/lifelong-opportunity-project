@@ -11,8 +11,8 @@ A free Lifelong Opportunity career guide created and directed by **Alberto (Al) 
 
 ## Downloads
 
-- [English DOCX](english/docx/Lifelong_Opportunity_Machinist_and_CNC_Machine_Operator_Guide_English_v1.0.docx)
-- Searchable PDF is in `english/pdf/`.
+- [English DOCX](english/docx/machinist-and-cnc-machine-operator.docx)
+- [English PDF](english/pdf/machinist-and-cnc-machine-operator.pdf)
 
 ## Ethical commitments
 

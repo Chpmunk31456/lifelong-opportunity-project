@@ -14,8 +14,8 @@ A free guide to career fit, affordable education, accessibility, ethical decisio
 
 ## Downloads
 
-- [English DOCX](english/docx/Lifelong_Opportunity_Foundation_Guide_English_v1.0.docx)
-- [English PDF](english/pdf/Lifelong_Opportunity_Foundation_Guide_English_v1.0.pdf)
+- [English DOCX](english/English/Docx/Lifelong_Opportunity_Foundation_Guide_English_v1.0.docx)
+- [English PDF](english/English/PDF/Lifelong_Opportunity_Foundation_Guide_English_v1.0.pdf)
 
 ## What this guide covers
 
