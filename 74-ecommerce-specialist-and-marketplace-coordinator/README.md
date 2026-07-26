@@ -1,21 +1,21 @@
-﻿# Lifelong Opportunity Guide 49
+# Lifelong Opportunity Guide 74
 
-## Manual title to be added
+## Ecommerce Specialist and Marketplace Coordinator
 
-This folder is reserved for a future Lifelong Opportunity Guide.
+A practical career and education guide for exploring ecommerce-specialist and marketplace-coordinator work, training pathways, accessibility considerations, ethical AI use, and realistic next steps.
 
-Author: Alberto (Al) Leiva
+**Author:** Alberto (Al) Leiva
 
-## Planned editions
+## Available editions
 
-- English
-- Spanish
-- Brazilian Portuguese
+- English: PDF available; editable DOCX currently missing
+- Spanish (Latin America): DOCX and PDF available
+- Brazilian Portuguese: DOCX and PDF available
 
-## Files
+## Important notice
 
-Published DOCX and PDF editions will be added when the guide is completed.
+This guide provides general educational and career-planning information. Requirements, credentials, working conditions, compensation, platforms, technology, and employer expectations vary by location and can change. Verify important decisions through current official, platform, and employer sources.
 
 ## Status
 
-Planned
+Published, with the English DOCX identified as an outstanding file gap. See the repository [catalog](../CATALOG.md) and [project status](../PROJECT_STATUS.md) for the current availability record.
