@@ -17,7 +17,7 @@
 - Expected edition records: 303
 - Broken local README links: 0
 - Structural file-availability errors: 0
-- Legacy duplicate files recorded: 5
+- Legacy duplicate files remaining: 0
 
 ## Standard applied
 
