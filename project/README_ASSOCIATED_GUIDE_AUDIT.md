@@ -1,6 +1,6 @@
 # README and Associated-Guide Audit
 
-**Overall result:** PASS
+**Overall result:** PASS WITH STRUCTURE NOTE
 
 ## Summary
 
@@ -15,9 +15,16 @@
 
 ## Language Inventory
 
-- English/en: 0 files (Markdown 0, PDF 0, DOCX 0)
-- Spanish/es-419: 0 files (Markdown 0, PDF 0, DOCX 0)
-- Portuguese/pt-BR: 0 files (Markdown 0, PDF 0, DOCX 0)
+- English/english: 383 files (Markdown 148, PDF 102, DOCX 102)
+- Spanish/spanish: 393 files (Markdown 191, PDF 101, DOCX 101)
+- Portuguese/portuguese: 397 files (Markdown 195, PDF 101, DOCX 101)
+
+## Nested Language Directories Detected
+
+- `08-human-resources-assistant/spanish/spanish/DOCX/Guia_08_Asistente_Recursos_Humanos.docx`
+- `08-human-resources-assistant/spanish/spanish/PDF/Guia_08_Asistente_Recursos_Humanos.pdf`
+- `08-human-resources-assistant/spanish/spanish/QC.md`
+- `08-human-resources-assistant/spanish/spanish/README.md`
 
 ## README Files Audited
 
