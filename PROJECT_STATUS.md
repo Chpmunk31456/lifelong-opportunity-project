@@ -1,4 +1,4 @@
-# Repository Status
+﻿# Repository Status
 
 This page records what is actually present in the repository. It should be updated whenever guides or language editions are added.
 
@@ -6,21 +6,18 @@ This page records what is actually present in the repository. It should be updat
 
 - Intended sequence: Guides 00–100
 - Guide folders present: 101
-- English editions with both DOCX and PDF: 99
-- English editions with PDF but no DOCX: Guides 70 and 74
-- Spanish editions with both DOCX and PDF: 87
-- Portuguese editions with both DOCX and PDF: 95 after adding Guide 20 and correcting Guide 27’s folder placement
+- English editions with both DOCX and PDF: 101
+- English editions with PDF but no DOCX: None
+- Spanish editions with both DOCX and PDF: 101
+- Portuguese editions with both DOCX and PDF: 101
 
 The presence of a language directory alone does not establish that an edition is complete or human-reviewed. See [CATALOG.md](./CATALOG.md) for file availability.
 
 ## Known Content Gaps
 
-- Spanish DOCX/PDF editions are not present for Guides 06, 11–19, 25, 34, 43, and 64.
-- Portuguese DOCX/PDF editions are not present for Guides 07–09, 19, 34, and 56.
-- English DOCX files are not present for Guides 70 and 74.
+No known DOCX/PDF availability gaps remain for Guides 00–100 in English, Latin American Spanish, or Brazilian Portuguese.
 
-These are availability statements, not quality judgments. Missing editions should not be represented as published until their files are added and reviewed.
-
+These are availability statements, not declarations of exact translation equivalence or human linguistic review. Newly authored editions should be reviewed against their source editions before being described as exact translations.
 ## Status Labels
 
 - **DOCX + PDF:** Both formats are present in the language folder.
@@ -30,3 +27,4 @@ These are availability statements, not quality judgments. Missing editions shoul
 ## Next Review
 
 Review all guides by July 2027 or sooner after material changes to wages, outlook, licensing, accreditation, apprenticeships, education benefits, worker protections, technology, accessibility, or official links.
+
