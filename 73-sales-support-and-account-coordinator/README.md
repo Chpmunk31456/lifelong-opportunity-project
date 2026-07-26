@@ -1,21 +1,25 @@
-﻿# Lifelong Opportunity Guide 49
+# Lifelong Opportunity Guide 73
 
-## Manual title to be added
+## Sales Support and Account Coordinator
 
-This folder is reserved for a future Lifelong Opportunity Guide.
+Free, practical career and education guidance for people exploring sales support, account coordination, customer communication, order and document management, CRM administration, scheduling, reporting, and related advancement pathways.
 
-Author: Alberto (Al) Leiva
+**Author:** Alberto (Al) Leiva
 
-## Planned editions
+## Available editions
 
-- English
-- Spanish
-- Brazilian Portuguese
+- English: DOCX and PDF
+- Spanish (Latin America): DOCX and PDF
+- Brazilian Portuguese: DOCX and PDF
 
-## Files
+## Using this guide
 
-Published DOCX and PDF editions will be added when the guide is completed.
+Open the language folder that best fits your needs and select the editable DOCX or searchable PDF edition. Verify changing wages, employer expectations, product or industry requirements, accessibility practices, and training options through current official sources.
+
+## Important notice
+
+This guide provides general education and career-planning information. It does not guarantee employment, income, admission, certification, promotion, funding, or any other outcome.
 
 ## Status
 
-Planned
+Published in English, Spanish, and Brazilian Portuguese. Future revisions may update sources, accessibility, labour-market information, training options, and language quality.
