@@ -1,55 +1,43 @@
-# Court Clerk and Judicial Services Assistant
+﻿# Lifelong Opportunity Guide 20
 
-A free Lifelong Opportunity career guide created and directed by **Alberto “Al” Leiva**.
+## Court Clerk and Judicial Services Assistant
 
-## Current Edition
+A free, practical, multilingual career and education guide created and directed by **Alberto “Al” Leiva**.
 
-- **Version:** 1.0
-- **Publication month:** July 2026
-- **Jurisdictional scope:** U.S.-focused reference data with local-verification requirements
+## Available editions
 
-## Available Files
+| Language | Editable DOCX | Searchable PDF |
+|---|---|---|
+| English | [DOCX](english/docx/Lifelong_Opportunity_Court_Clerk_and_Judicial_Services_Assistant_Guide_English_v1.0.docx) | [PDF](english/pdf/Lifelong_Opportunity_Court_Clerk_and_Judicial_Services_Assistant_Guide_English_v1.0.pdf) |
+| Spanish (Latin America) | [DOCX](spanish/docx/Guia_20_Auxiliar_Judicial_y_Asistente_de_Servicios_Judiciales_ES_LatAm_v1.0.docx) | [PDF](spanish/pdf/Guia_20_Auxiliar_Judicial_y_Asistente_de_Servicios_Judiciales_ES_LatAm_v1.0.pdf) |
+| Brazilian Portuguese | [DOCX](portuguese/docx/Guia_20_Escriv_o_Judicial_e_Assistente_de_Servi_os_Judici_rios_PTBR.docx) | [PDF](portuguese/pdf/Guia_20_Escriv_o_Judicial_e_Assistente_de_Servi_os_Judici_rios_PTBR.pdf) |
 
-### English
+All three language editions are available in both DOCX and PDF formats.
 
-- [English DOCX](./english/docx/Lifelong_Opportunity_Court_Clerk_and_Judicial_Services_Assistant_Guide_English_v1.0.docx)
-- [English PDF](./english/pdf/Lifelong_Opportunity_Court_Clerk_and_Judicial_Services_Assistant_Guide_English_v1.0.pdf)
+## What this guide supports
 
-### Brazilian Portuguese
+- Career fit and realistic work investigation
+- Free-first and affordable education pathways
+- Accessibility and disability-support planning
+- Ethical, private, and responsible use of artificial intelligence
+- Safety, privacy, and professional-boundary awareness
+- Portfolio, résumé, interview, and advancement preparation
+- Verification through current official and employer sources
 
-- [Portuguese DOCX](./portuguese/docx/Guia_20_Escriv_o_Judicial_e_Assistente_de_Servi_os_Judici_rios_PTBR.docx)
-- [Portuguese PDF](./portuguese/pdf/Guia_20_Escriv_o_Judicial_e_Assistente_de_Servi_os_Judici_rios_PTBR.pdf)
-- [Portuguese edition notes](./portuguese/README.md)
+## Important notice
 
-### Neutral Latin American Spanish
+This guide provides general educational and career-planning information. It does not guarantee employment, income, admission, funding, licensing, certification, promotion, or any other result. Requirements, compensation, credentials, working conditions, and opportunities vary by jurisdiction, employer, and time.
 
-- [Spanish DOCX](./spanish/docx/Guia_20_Auxiliar_Judicial_y_Asistente_de_Servicios_Judiciales_ES_LatAm_v1.0.docx)
-- [Spanish PDF](./spanish/pdf/Guia_20_Auxiliar_Judicial_y_Asistente_de_Servicios_Judiciales_ES_LatAm_v1.0.pdf)
-- [Spanish edition notes](./spanish/README.md)
+Language availability does not by itself establish exact translation equivalence or human linguistic review. Consult edition metadata and project quality records where that distinction matters.
 
-The Spanish edition is machine-assisted and pending linguistic review by a proficient human reviewer.
+## Corrections and accessibility
 
-## Purpose
+Report factual errors, broken links, accessibility barriers, or translation concerns through [GitHub Issues](https://github.com/Chpmunk31456/lifelong-opportunity-project/issues). See the repository's [Accessibility policy](../ACCESSIBILITY.md), [Contribution guidelines](../CONTRIBUTING.md), and [Governance](../GOVERNANCE.md).
 
-This guide helps readers understand the work, test career fit, verify education and employer requirements, compare funding pathways, avoid unnecessary debt and exploitative agreements, build ethical evidence, and plan advancement or exit.
+## Author and AI assistance
 
-## Quality Records
-
-- [English source-review summary](./references/source-review-summary.md)
-- [English quality-control report](./references/quality-control-report.md)
-- [English accessibility audit](./references/a11y-report.json)
-- [Portuguese quality-control notes](./portuguese/QC.md)
-- [Spanish accessibility audit](./references/a11y-report-es.json)
-- [Spanish quality-control notes](./spanish/QC.md)
-
-## Ethical Commitments
-
-Employment, funding, licensing, recognition, promotion, and income are never guaranteed. Readers must verify current local rules and obtain qualified advice when a decision involves legal, tax, medical, immigration, licensing, or financial consequences.
-
-## Author and AI Assistance
-
-Created and directed by **Alberto “Al” Leiva**. ChatGPT by OpenAI assisted with research organization, editing, and document preparation under the author’s direction and review.
+Created and directed by **Alberto “Al” Leiva**. ChatGPT supported research, organization, editing, translation support, and document preparation under the author's direction. The author remains responsible for editorial and publication decisions.
 
 ## License
 
-CC BY-NC-SA 4.0. See the repository [license](../LICENSE.md).
+Unless a file states otherwise, these materials are licensed under [CC BY-NC-SA 4.0](../LICENSE.md).

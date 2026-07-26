@@ -1,0 +1,3032 @@
+﻿[
+    {
+        "Guide":  "00",
+        "Title":  "Lifelong Opportunity Foundation Guide",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/English/Docx/Lifelong_Opportunity_Foundation_Guide_English_v1.0.docx",
+        "Pdf":  "english/English/PDF/Lifelong_Opportunity_Foundation_Guide_English_v1.0.pdf",
+        "DocxBytes":  43533,
+        "PdfBytes":  328528
+    },
+    {
+        "Guide":  "00",
+        "Title":  "Lifelong Opportunity Foundation Guide",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/Docx/Guia_00_Fundamentos_Oportunidad_para_Toda_la_Vida_ES_v1.0.docx",
+        "Pdf":  "spanish/PDF/Guia_00_Fundamentos_Oportunidad_para_Toda_la_Vida_ES_v1.0.pdf",
+        "DocxBytes":  47362,
+        "PdfBytes":  191706
+    },
+    {
+        "Guide":  "00",
+        "Title":  "Lifelong Opportunity Foundation Guide",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/DOCX/Guia_00_Guia_Fundamental_de_Oportunidades_ao_Longo_da_Vida_PTBR.docx",
+        "Pdf":  "portuguese/PDF/Guia_00_Guia_Fundamental_de_Oportunidades_ao_Longo_da_Vida_PTBR.pdf",
+        "DocxBytes":  45111,
+        "PdfBytes":  169886
+    },
+    {
+        "Guide":  "01",
+        "Title":  "Community Health Worker",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Community_Health_Worker_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Community_Health_Worker_Guide_English_v1.0.pdf",
+        "DocxBytes":  47119,
+        "PdfBytes":  362740
+    },
+    {
+        "Guide":  "01",
+        "Title":  "Community Health Worker",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/DOCX/Guia_01_Promotor_Salud_Comunitaria.docx",
+        "Pdf":  "spanish/PDF/Guia_01_Promotor_Salud_Comunitaria.pdf",
+        "DocxBytes":  45186,
+        "PdfBytes":  167766
+    },
+    {
+        "Guide":  "01",
+        "Title":  "Community Health Worker",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/DOCX/Guia_01_Agente_Comunit_rio_de_Sa_de_PTBR.docx",
+        "Pdf":  "portuguese/PDF/Guia_01_Agente_Comunit_rio_de_Sa_de_PTBR.pdf",
+        "DocxBytes":  45139,
+        "PdfBytes":  167874
+    },
+    {
+        "Guide":  "02",
+        "Title":  "Peer Support Specialist",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Peer_Support_Specialist_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Peer_Support_Specialist_Guide_English_v1.0.pdf",
+        "DocxBytes":  47103,
+        "PdfBytes":  361526
+    },
+    {
+        "Guide":  "02",
+        "Title":  "Peer Support Specialist",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/DOCX/Guia_02_Especialista_Apoyo_entre_Pares.docx",
+        "Pdf":  "spanish/PDF/Guia_02_Especialista_Apoyo_entre_Pares.pdf",
+        "DocxBytes":  45118,
+        "PdfBytes":  167485
+    },
+    {
+        "Guide":  "02",
+        "Title":  "Peer Support Specialist",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/DOCX/Guia_02_Especialista_em_Apoio_entre_Pares_PTBR.docx",
+        "Pdf":  "portuguese/PDF/Guia_02_Especialista_em_Apoio_entre_Pares_PTBR.pdf",
+        "DocxBytes":  45163,
+        "PdfBytes":  167539
+    },
+    {
+        "Guide":  "03",
+        "Title":  "Medical Billing and Coding Specialist",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Medical_Billing_and_Coding_Specialist_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Medical_Billing_and_Coding_Specialist_Guide_English_v1.0.pdf",
+        "DocxBytes":  47114,
+        "PdfBytes":  362603
+    },
+    {
+        "Guide":  "03",
+        "Title":  "Medical Billing and Coding Specialist",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/DOCX/Guia_03_Facturacion_Codificacion_Medica.docx",
+        "Pdf":  "spanish/PDF/Guia_03_Facturacion_Codificacion_Medica.pdf",
+        "DocxBytes":  45191,
+        "PdfBytes":  167705
+    },
+    {
+        "Guide":  "03",
+        "Title":  "Medical Billing and Coding Specialist",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/DOCX/Guia_03_Especialista_em_Faturamento_e_Codifica_o_M_dica_PTBR.docx",
+        "Pdf":  "portuguese/PDF/Guia_03_Especialista_em_Faturamento_e_Codifica_o_M_dica_PTBR.pdf",
+        "DocxBytes":  45194,
+        "PdfBytes":  168204
+    },
+    {
+        "Guide":  "04",
+        "Title":  "Project Coordinator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Project_Coordinator_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Project_Coordinator_Guide_English_v1.0.pdf",
+        "DocxBytes":  47473,
+        "PdfBytes":  362133
+    },
+    {
+        "Guide":  "04",
+        "Title":  "Project Coordinator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/DOCX/Guia_04_Coordinador_Proyectos.docx",
+        "Pdf":  "spanish/PDF/Guia_04_Coordinador_Proyectos.pdf",
+        "DocxBytes":  45151,
+        "PdfBytes":  167505
+    },
+    {
+        "Guide":  "04",
+        "Title":  "Project Coordinator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/DOCX/Guia_04_Coordenador_de_Projetos_PTBR.docx",
+        "Pdf":  "portuguese/PDF/Guia_04_Coordenador_de_Projetos_PTBR.pdf",
+        "DocxBytes":  44993,
+        "PdfBytes":  166514
+    },
+    {
+        "Guide":  "05",
+        "Title":  "Bookkeeping and Payroll Specialist",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Bookkeeping_and_Payroll_Specialist_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Bookkeeping_and_Payroll_Specialist_Guide_English_v1.0.pdf",
+        "DocxBytes":  47491,
+        "PdfBytes":  362963
+    },
+    {
+        "Guide":  "05",
+        "Title":  "Bookkeeping and Payroll Specialist",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/DOCX/Guia_05_Contabilidad_Nomina.docx",
+        "Pdf":  "spanish/PDF/Guia_05_Contabilidad_Nomina.pdf",
+        "DocxBytes":  45164,
+        "PdfBytes":  168034
+    },
+    {
+        "Guide":  "05",
+        "Title":  "Bookkeeping and Payroll Specialist",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/DOCX/Guia_05_Especialista_em_Contabilidade_e_Folha_de_Pagamento_PTBR.docx",
+        "Pdf":  "portuguese/PDF/Guia_05_Especialista_em_Contabilidade_e_Folha_de_Pagamento_PTBR.pdf",
+        "DocxBytes":  45148,
+        "PdfBytes":  166876
+    },
+    {
+        "Guide":  "06",
+        "Title":  "Administrative Assistant and Office Coordinator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Administrative_Assistant_and_Office_Coordinator_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Administrative_Assistant_and_Office_Coordinator_Guide_English_v1.0.pdf",
+        "DocxBytes":  47475,
+        "PdfBytes":  362359
+    },
+    {
+        "Guide":  "06",
+        "Title":  "Administrative Assistant and Office Coordinator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Lifelong_Opportunity_Administrative_Assistant_and_Office_Coordinator_Guide_Spanish_v1.0.docx",
+        "Pdf":  "spanish/pdf/Lifelong_Opportunity_Administrative_Assistant_and_Office_Coordinator_Guide_Spanish_v1.0.pdf",
+        "DocxBytes":  42521,
+        "PdfBytes":  142331
+    },
+    {
+        "Guide":  "06",
+        "Title":  "Administrative Assistant and Office Coordinator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_06_Assistente_Administrativo_e_Coordenador_de_Escrit_rio_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_06_Assistente_Administrativo_e_Coordenador_de_Escrit_rio_PTBR.pdf",
+        "DocxBytes":  45067,
+        "PdfBytes":  166349
+    },
+    {
+        "Guide":  "07",
+        "Title":  "Customer Service Specialist",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Customer_Service_Specialist_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Customer_Service_Specialist_Guide_English_v1.0.pdf",
+        "DocxBytes":  47062,
+        "PdfBytes":  362404
+    },
+    {
+        "Guide":  "07",
+        "Title":  "Customer Service Specialist",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_07_Especialista_Servicio_Cliente.docx",
+        "Pdf":  "spanish/pdf/Guia_07_Especialista_Servicio_Cliente.pdf",
+        "DocxBytes":  45207,
+        "PdfBytes":  167602
+    },
+    {
+        "Guide":  "07",
+        "Title":  "Customer Service Specialist",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Lifelong_Opportunity_Customer_Service_Specialist_Guide_Portuguese_Brazil_v1.0.docx",
+        "Pdf":  "portuguese/pdf/Lifelong_Opportunity_Customer_Service_Specialist_Guide_Portuguese_Brazil_v1.0.pdf",
+        "DocxBytes":  41105,
+        "PdfBytes":  131940
+    },
+    {
+        "Guide":  "08",
+        "Title":  "Human Resources Assistant",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Human_Resources_Assistant_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Human_Resources_Assistant_Guide_English_v1.0.pdf",
+        "DocxBytes":  47365,
+        "PdfBytes":  361925
+    },
+    {
+        "Guide":  "08",
+        "Title":  "Human Resources Assistant",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/spanish/DOCX/Guia_08_Asistente_Recursos_Humanos.docx",
+        "Pdf":  "spanish/spanish/PDF/Guia_08_Asistente_Recursos_Humanos.pdf",
+        "DocxBytes":  45210,
+        "PdfBytes":  167826
+    },
+    {
+        "Guide":  "08",
+        "Title":  "Human Resources Assistant",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Lifelong_Opportunity_Human_Resources_Assistant_Guide_Portuguese_Brazil_v1.0.docx",
+        "Pdf":  "portuguese/pdf/Lifelong_Opportunity_Human_Resources_Assistant_Guide_Portuguese_Brazil_v1.0.pdf",
+        "DocxBytes":  41543,
+        "PdfBytes":  139821
+    },
+    {
+        "Guide":  "09",
+        "Title":  "Logistics and Supply Chain Coordinator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Logistics_and_Supply_Chain_Coordinator_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Logistics_and_Supply_Chain_Coordinator_Guide_English_v1.0.pdf",
+        "DocxBytes":  47469,
+        "PdfBytes":  362332
+    },
+    {
+        "Guide":  "09",
+        "Title":  "Logistics and Supply Chain Coordinator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_09_Logistica_Cadena_Suministro.docx",
+        "Pdf":  "spanish/pdf/Guia_09_Logistica_Cadena_Suministro.pdf",
+        "DocxBytes":  45220,
+        "PdfBytes":  167886
+    },
+    {
+        "Guide":  "09",
+        "Title":  "Logistics and Supply Chain Coordinator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Lifelong_Opportunity_Logistics_and_Supply_Chain_Coordinator_Guide_Portuguese_Brazil_v1.0.docx",
+        "Pdf":  "portuguese/pdf/Lifelong_Opportunity_Logistics_and_Supply_Chain_Coordinator_Guide_Portuguese_Brazil_v1.0.pdf",
+        "DocxBytes":  41632,
+        "PdfBytes":  140108
+    },
+    {
+        "Guide":  "10",
+        "Title":  "Training and Development Coordinator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Training_and_Development_Coordinator_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Training_and_Development_Coordinator_Guide_English_v1.0.pdf",
+        "DocxBytes":  47234,
+        "PdfBytes":  362337
+    },
+    {
+        "Guide":  "10",
+        "Title":  "Training and Development Coordinator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_10_Capacitacion_Desarrollo.docx",
+        "Pdf":  "spanish/pdf/Guia_10_Capacitacion_Desarrollo.pdf",
+        "DocxBytes":  45185,
+        "PdfBytes":  167715
+    },
+    {
+        "Guide":  "10",
+        "Title":  "Training and Development Coordinator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_10_Coordenador_de_Treinamento_e_Desenvolvimento_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_10_Coordenador_de_Treinamento_e_Desenvolvimento_PTBR.pdf",
+        "DocxBytes":  44991,
+        "PdfBytes":  166778
+    },
+    {
+        "Guide":  "11",
+        "Title":  "Procurement and Purchasing Coordinator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Procurement_and_Purchasing_Coordinator_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Procurement_and_Purchasing_Coordinator_Guide_English_v1.0.pdf",
+        "DocxBytes":  47179,
+        "PdfBytes":  368710
+    },
+    {
+        "Guide":  "11",
+        "Title":  "Procurement and Purchasing Coordinator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Lifelong_Opportunity_Procurement_and_Purchasing_Coordinator_Guide_Spanish_v1.0.docx",
+        "Pdf":  "spanish/pdf/Lifelong_Opportunity_Procurement_and_Purchasing_Coordinator_Guide_Spanish_v1.0.pdf",
+        "DocxBytes":  41562,
+        "PdfBytes":  138381
+    },
+    {
+        "Guide":  "11",
+        "Title":  "Procurement and Purchasing Coordinator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_11_Coordenador_de_Compras_e_Suprimentos_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_11_Coordenador_de_Compras_e_Suprimentos_PTBR.pdf",
+        "DocxBytes":  45309,
+        "PdfBytes":  167795
+    },
+    {
+        "Guide":  "12",
+        "Title":  "Compliance Coordinator and Compliance Assistant",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Compliance_Coordinator_and_Compliance_Assistant_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Compliance_Coordinator_and_Compliance_Assistant_Guide_English_v1.0.pdf",
+        "DocxBytes":  47296,
+        "PdfBytes":  368542
+    },
+    {
+        "Guide":  "12",
+        "Title":  "Compliance Coordinator and Compliance Assistant",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Lifelong_Opportunity_Compliance_Coordinator_and_Compliance_Assistant_Guide_Spanish_v1.0.docx",
+        "Pdf":  "spanish/pdf/Lifelong_Opportunity_Compliance_Coordinator_and_Compliance_Assistant_Guide_Spanish_v1.0.pdf",
+        "DocxBytes":  41608,
+        "PdfBytes":  139406
+    },
+    {
+        "Guide":  "12",
+        "Title":  "Compliance Coordinator and Compliance Assistant",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_12_Coordenador_e_Assistente_de_Compliance_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_12_Coordenador_e_Assistente_de_Compliance_PTBR.pdf",
+        "DocxBytes":  45187,
+        "PdfBytes":  167911
+    },
+    {
+        "Guide":  "13",
+        "Title":  "Quality Assurance and Process Improvement Coordinator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Quality_Assurance_and_Process_Improvement_Coordinator_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Quality_Assurance_and_Process_Improvement_Coordinator_Guide_English_v1.0.pdf",
+        "DocxBytes":  47394,
+        "PdfBytes":  369250
+    },
+    {
+        "Guide":  "13",
+        "Title":  "Quality Assurance and Process Improvement Coordinator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Lifelong_Opportunity_Quality_Assurance_and_Process_Improvement_Coordinator_Guide_Spanish_v1.0.docx",
+        "Pdf":  "spanish/pdf/Lifelong_Opportunity_Quality_Assurance_and_Process_Improvement_Coordinator_Guide_Spanish_v1.0.pdf",
+        "DocxBytes":  41540,
+        "PdfBytes":  140663
+    },
+    {
+        "Guide":  "13",
+        "Title":  "Quality Assurance and Process Improvement Coordinator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_13_Coordenador_de_Garantia_da_Qualidade_e_Melhoria_de_Processos_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_13_Coordenador_de_Garantia_da_Qualidade_e_Melhoria_de_Processos_PTBR.pdf",
+        "DocxBytes":  45304,
+        "PdfBytes":  168506
+    },
+    {
+        "Guide":  "14",
+        "Title":  "Patient Services Representative and Medical Office Coordinator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Patient_Services_Representative_and_Medical_Office_Coordinator_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Patient_Services_Representative_and_Medical_Office_Coordinator_Guide_English_v1.0.pdf",
+        "DocxBytes":  47209,
+        "PdfBytes":  369775
+    },
+    {
+        "Guide":  "14",
+        "Title":  "Patient Services Representative and Medical Office Coordinator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Lifelong_Opportunity_Patient_Services_Representative_and_Medical_Office_Coordinator_Guide_Spanish_v1.0.docx",
+        "Pdf":  "spanish/pdf/Lifelong_Opportunity_Patient_Services_Representative_and_Medical_Office_Coordinator_Guide_Spanish_v1.0.pdf",
+        "DocxBytes":  41755,
+        "PdfBytes":  141053
+    },
+    {
+        "Guide":  "14",
+        "Title":  "Patient Services Representative and Medical Office Coordinator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_14_Representante_de_Servi_os_ao_Paciente_e_Coordenador_de_Consult_rio_M_dico_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_14_Representante_de_Servi_os_ao_Paciente_e_Coordenador_de_Consult_rio_M_dico_PTBR.pdf",
+        "DocxBytes":  45335,
+        "PdfBytes":  168487
+    },
+    {
+        "Guide":  "15",
+        "Title":  "Insurance Claims and Policy Processing Specialist",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Insurance_Claims_and_Policy_Processing_Specialist_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Insurance_Claims_and_Policy_Processing_Specialist_Guide_English_v1.0.pdf",
+        "DocxBytes":  47223,
+        "PdfBytes":  369053
+    },
+    {
+        "Guide":  "15",
+        "Title":  "Insurance Claims and Policy Processing Specialist",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Lifelong_Opportunity_Insurance_Claims_and_Policy_Processing_Specialist_Guide_Spanish_v1.0.docx",
+        "Pdf":  "spanish/pdf/Lifelong_Opportunity_Insurance_Claims_and_Policy_Processing_Specialist_Guide_Spanish_v1.0.pdf",
+        "DocxBytes":  41726,
+        "PdfBytes":  140512
+    },
+    {
+        "Guide":  "15",
+        "Title":  "Insurance Claims and Policy Processing Specialist",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_15_Especialista_em_Sinistros_e_Processamento_de_Ap_lices_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_15_Especialista_em_Sinistros_e_Processamento_de_Ap_lices_PTBR.pdf",
+        "DocxBytes":  45201,
+        "PdfBytes":  168007
+    },
+    {
+        "Guide":  "16",
+        "Title":  "Loan Processing Specialist and Loan Clerk",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Loan_Processing_Specialist_and_Loan_Clerk_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Loan_Processing_Specialist_and_Loan_Clerk_Guide_English_v1.0.pdf",
+        "DocxBytes":  47073,
+        "PdfBytes":  368604
+    },
+    {
+        "Guide":  "16",
+        "Title":  "Loan Processing Specialist and Loan Clerk",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Lifelong_Opportunity_Loan_Processing_Specialist_and_Loan_Clerk_Guide_Spanish_v1.0.docx",
+        "Pdf":  "spanish/pdf/Lifelong_Opportunity_Loan_Processing_Specialist_and_Loan_Clerk_Guide_Spanish_v1.0.pdf",
+        "DocxBytes":  41514,
+        "PdfBytes":  140004
+    },
+    {
+        "Guide":  "16",
+        "Title":  "Loan Processing Specialist and Loan Clerk",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_16_Especialista_em_Processamento_de_Empr_stimos_e_Auxiliar_de_Cr_dito_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_16_Especialista_em_Processamento_de_Empr_stimos_e_Auxiliar_de_Cr_dito_PTBR.pdf",
+        "DocxBytes":  45317,
+        "PdfBytes":  168957
+    },
+    {
+        "Guide":  "17",
+        "Title":  "Bank Teller and Member Services Representative",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Bank_Teller_and_Member_Services_Representative_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Bank_Teller_and_Member_Services_Representative_Guide_English_v1.0.pdf",
+        "DocxBytes":  47428,
+        "PdfBytes":  367389
+    },
+    {
+        "Guide":  "17",
+        "Title":  "Bank Teller and Member Services Representative",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Lifelong_Opportunity_Bank_Teller_and_Member_Services_Representative_Guide_Spanish_v1.0.docx",
+        "Pdf":  "spanish/pdf/Lifelong_Opportunity_Bank_Teller_and_Member_Services_Representative_Guide_Spanish_v1.0.pdf",
+        "DocxBytes":  41458,
+        "PdfBytes":  138995
+    },
+    {
+        "Guide":  "17",
+        "Title":  "Bank Teller and Member Services Representative",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_17_Caixa_Banc_rio_e_Representante_de_Servi_os_aos_Associados_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_17_Caixa_Banc_rio_e_Representante_de_Servi_os_aos_Associados_PTBR.pdf",
+        "DocxBytes":  45287,
+        "PdfBytes":  168552
+    },
+    {
+        "Guide":  "18",
+        "Title":  "Legal Administrative Assistant and Legal Office Coordinator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Legal_Administrative_Assistant_and_Legal_Office_Coordinator_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Legal_Administrative_Assistant_and_Legal_Office_Coordinator_Guide_English_v1.0.pdf",
+        "DocxBytes":  47114,
+        "PdfBytes":  368326
+    },
+    {
+        "Guide":  "18",
+        "Title":  "Legal Administrative Assistant and Legal Office Coordinator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Lifelong_Opportunity_Legal_Administrative_Assistant_and_Legal_Office_Coordinator_Guide_Spanish_v1.0.docx",
+        "Pdf":  "spanish/pdf/Lifelong_Opportunity_Legal_Administrative_Assistant_and_Legal_Office_Coordinator_Guide_Spanish_v1.0.pdf",
+        "DocxBytes":  41546,
+        "PdfBytes":  140041
+    },
+    {
+        "Guide":  "18",
+        "Title":  "Legal Administrative Assistant and Legal Office Coordinator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_18_Assistente_Administrativo_Jur_dico_e_Coordenador_de_Escrit_rio_Jur_dico_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_18_Assistente_Administrativo_Jur_dico_e_Coordenador_de_Escrit_rio_Jur_dico_PTBR.pdf",
+        "DocxBytes":  45277,
+        "PdfBytes":  168451
+    },
+    {
+        "Guide":  "19",
+        "Title":  "Paralegal and Legal Assistant",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Paralegal_and_Legal_Assistant_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Paralegal_and_Legal_Assistant_Guide_English_v1.0.pdf",
+        "DocxBytes":  47061,
+        "PdfBytes":  367369
+    },
+    {
+        "Guide":  "19",
+        "Title":  "Paralegal and Legal Assistant",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Lifelong_Opportunity_Paralegal_and_Legal_Assistant_Guide_Spanish_v1.0.docx",
+        "Pdf":  "spanish/pdf/Lifelong_Opportunity_Paralegal_and_Legal_Assistant_Guide_Spanish_v1.0.pdf",
+        "DocxBytes":  41144,
+        "PdfBytes":  137680
+    },
+    {
+        "Guide":  "19",
+        "Title":  "Paralegal and Legal Assistant",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Lifelong_Opportunity_Paralegal_and_Legal_Assistant_Guide_Portuguese_Brazil_v1.0.docx",
+        "Pdf":  "portuguese/pdf/Lifelong_Opportunity_Paralegal_and_Legal_Assistant_Guide_Portuguese_Brazil_v1.0.pdf",
+        "DocxBytes":  41105,
+        "PdfBytes":  138964
+    },
+    {
+        "Guide":  "20",
+        "Title":  "Court Clerk and Judicial Services Assistant",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Court_Clerk_and_Judicial_Services_Assistant_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Court_Clerk_and_Judicial_Services_Assistant_Guide_English_v1.0.pdf",
+        "DocxBytes":  47026,
+        "PdfBytes":  367904
+    },
+    {
+        "Guide":  "20",
+        "Title":  "Court Clerk and Judicial Services Assistant",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_20_Auxiliar_Judicial_y_Asistente_de_Servicios_Judiciales_ES_LatAm_v1.0.docx",
+        "Pdf":  "spanish/pdf/Guia_20_Auxiliar_Judicial_y_Asistente_de_Servicios_Judiciales_ES_LatAm_v1.0.pdf",
+        "DocxBytes":  46851,
+        "PdfBytes":  208862
+    },
+    {
+        "Guide":  "20",
+        "Title":  "Court Clerk and Judicial Services Assistant",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_20_Escriv_o_Judicial_e_Assistente_de_Servi_os_Judici_rios_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_20_Escriv_o_Judicial_e_Assistente_de_Servi_os_Judici_rios_PTBR.pdf",
+        "DocxBytes":  45286,
+        "PdfBytes":  168417
+    },
+    {
+        "Guide":  "21",
+        "Title":  "Title Examiner and Property Records Specialist",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Title_Examiner_and_Property_Records_Specialist_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/pdf/Lifelong_Opportunity_Title_Examiner_and_Property_Records_Specialist_Guide_English_v1.0.pdf",
+        "DocxBytes":  46448,
+        "PdfBytes":  334211
+    },
+    {
+        "Guide":  "21",
+        "Title":  "Title Examiner and Property Records Specialist",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_21_Examinador_de_T_tulos_y_Especialista_en_Registros_de_Propiedad.docx",
+        "Pdf":  "spanish/pdf/Guia_21_Examinador_de_T_tulos_y_Especialista_en_Registros_de_Propiedad.pdf",
+        "DocxBytes":  46521,
+        "PdfBytes":  183999
+    },
+    {
+        "Guide":  "21",
+        "Title":  "Title Examiner and Property Records Specialist",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_21_Examinador_de_T_tulos_e_Especialista_em_Registros_de_Propriedade_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_21_Examinador_de_T_tulos_e_Especialista_em_Registros_de_Propriedade_PTBR.pdf",
+        "DocxBytes":  45188,
+        "PdfBytes":  167726
+    },
+    {
+        "Guide":  "22",
+        "Title":  "Real Estate Sales Agent and Leasing Consultant",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Real_Estate_Sales_Agent_and_Leasing_Consultant_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Real_Estate_Sales_Agent_and_Leasing_Consultant_Guide_English_v1.0.pdf",
+        "DocxBytes":  46523,
+        "PdfBytes":  333478
+    },
+    {
+        "Guide":  "22",
+        "Title":  "Real Estate Sales Agent and Leasing Consultant",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_22_Agente_de_Ventas_Inmobiliarias_y_Consultor_de_Arrendamiento.docx",
+        "Pdf":  "spanish/pdf/Guia_22_Agente_de_Ventas_Inmobiliarias_y_Consultor_de_Arrendamiento.pdf",
+        "DocxBytes":  46516,
+        "PdfBytes":  183799
+    },
+    {
+        "Guide":  "22",
+        "Title":  "Real Estate Sales Agent and Leasing Consultant",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_22_Corretor_de_Im_veis_e_Consultor_de_Loca_o_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_22_Corretor_de_Im_veis_e_Consultor_de_Loca_o_PTBR.pdf",
+        "DocxBytes":  45200,
+        "PdfBytes":  167339
+    },
+    {
+        "Guide":  "23",
+        "Title":  "Property Manager and Community Association Manager",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Property_Manager_and_Community_Association_Manager_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Property_Manager_and_Community_Association_Manager_Guide_English_v1.0.pdf",
+        "DocxBytes":  46537,
+        "PdfBytes":  334116
+    },
+    {
+        "Guide":  "23",
+        "Title":  "Property Manager and Community Association Manager",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_23_Administrador_de_Propiedades_y_Asociaciones_Comunitarias.docx",
+        "Pdf":  "spanish/pdf/Guia_23_Administrador_de_Propiedades_y_Asociaciones_Comunitarias.pdf",
+        "DocxBytes":  46400,
+        "PdfBytes":  183215
+    },
+    {
+        "Guide":  "23",
+        "Title":  "Property Manager and Community Association Manager",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_23_Administrador_de_Im_veis_e_Condom_nios_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_23_Administrador_de_Im_veis_e_Condom_nios_PTBR.pdf",
+        "DocxBytes":  45070,
+        "PdfBytes":  166902
+    },
+    {
+        "Guide":  "24",
+        "Title":  "Facilities Coordinator and Building Operations Assistant",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Facilities_Coordinator_and_Building_Operations_Assistant_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Facilities_Coordinator_and_Building_Operations_Assistant_Guide_English_v1.0.pdf",
+        "DocxBytes":  45875,
+        "PdfBytes":  333851
+    },
+    {
+        "Guide":  "24",
+        "Title":  "Facilities Coordinator and Building Operations Assistant",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_24_Coordinador_de_Instalaciones_y_Asistente_de_Operaciones_de_Edificios.docx",
+        "Pdf":  "spanish/pdf/Guia_24_Coordinador_de_Instalaciones_y_Asistente_de_Operaciones_de_Edificios.pdf",
+        "DocxBytes":  46469,
+        "PdfBytes":  184174
+    },
+    {
+        "Guide":  "24",
+        "Title":  "Facilities Coordinator and Building Operations Assistant",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_24_Coordenador_de_Instala_es_e_Assistente_de_Opera_es_Prediais_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_24_Coordenador_de_Instala_es_e_Assistente_de_Opera_es_Prediais_PTBR.pdf",
+        "DocxBytes":  45058,
+        "PdfBytes":  167219
+    },
+    {
+        "Guide":  "25",
+        "Title":  "General Maintenance and Repair Worker and Building Maintenance Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/General_Maintenance_and_Repair_Worker_and_Building_Maintenance_Technician_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/General_Maintenance_and_Repair_Worker_and_Building_Maintenance_Technician_Guide_English_v1.0.pdf",
+        "DocxBytes":  45993,
+        "PdfBytes":  334887
+    },
+    {
+        "Guide":  "25",
+        "Title":  "General Maintenance and Repair Worker and Building Maintenance Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Lifelong_Opportunity_General_Maintenance_and_Repair_Worker_and_Building_Maintenance_Technician_Guide_Spanish_v1.0.docx",
+        "Pdf":  "spanish/pdf/Lifelong_Opportunity_General_Maintenance_and_Repair_Worker_and_Building_Maintenance_Technician_Guide_Spanish_v1.0.pdf",
+        "DocxBytes":  41492,
+        "PdfBytes":  140296
+    },
+    {
+        "Guide":  "25",
+        "Title":  "General Maintenance and Repair Worker and Building Maintenance Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_25_Trabalhador_de_Manuten_o_Geral_e_T_cnico_de_Manuten_o_Predial_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_25_Trabalhador_de_Manuten_o_Geral_e_T_cnico_de_Manuten_o_Predial_PTBR.pdf",
+        "DocxBytes":  45101,
+        "PdfBytes":  167185
+    },
+    {
+        "Guide":  "26",
+        "Title":  "Automotive Service Technician and Mechanic",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Automotive_Service_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Automotive_Service_Guide_English_v1.0.pdf",
+        "DocxBytes":  46533,
+        "PdfBytes":  333982
+    },
+    {
+        "Guide":  "26",
+        "Title":  "Automotive Service Technician and Mechanic",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_26_T_cnico_y_Mec_nico_de_Servicio_Automotriz.docx",
+        "Pdf":  "spanish/pdf/Guia_26_T_cnico_y_Mec_nico_de_Servicio_Automotriz.pdf",
+        "DocxBytes":  46426,
+        "PdfBytes":  183433
+    },
+    {
+        "Guide":  "26",
+        "Title":  "Automotive Service Technician and Mechanic",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_26_T_cnico_e_Mec_nico_de_Servi_os_Automotivos_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_26_T_cnico_e_Mec_nico_de_Servi_os_Automotivos_PTBR.pdf",
+        "DocxBytes":  45145,
+        "PdfBytes":  167197
+    },
+    {
+        "Guide":  "27",
+        "Title":  "Diesel Service Technician and Mechanic",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Diesel_Service_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Diesel_Service_Guide_English_v1.0.pdf",
+        "DocxBytes":  46450,
+        "PdfBytes":  333835
+    },
+    {
+        "Guide":  "27",
+        "Title":  "Diesel Service Technician and Mechanic",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_27_T_cnico_y_Mec_nico_de_Servicio_Di_sel.docx",
+        "Pdf":  "spanish/pdf/Guia_27_T_cnico_y_Mec_nico_de_Servicio_Di_sel.pdf",
+        "DocxBytes":  46420,
+        "PdfBytes":  183228
+    },
+    {
+        "Guide":  "27",
+        "Title":  "Diesel Service Technician and Mechanic",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/DOCX/Guia_27_T_cnico_e_Mec_nico_de_Servi_os_a_Diesel_PTBR.docx",
+        "Pdf":  "portuguese/PDF/Guia_27_T_cnico_e_Mec_nico_de_Servi_os_a_Diesel_PTBR.pdf",
+        "DocxBytes":  45093,
+        "PdfBytes":  166203
+    },
+    {
+        "Guide":  "28",
+        "Title":  "Industrial Machinery Mechanic and Maintenance Worker",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Industrial_Machinery_Mechanic_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Industrial_Machinery_Mechanic_Guide_English_v1.0.pdf",
+        "DocxBytes":  46441,
+        "PdfBytes":  334161
+    },
+    {
+        "Guide":  "28",
+        "Title":  "Industrial Machinery Mechanic and Maintenance Worker",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_28_Mec_nico_de_Maquinaria_Industrial_y_Trabajador_de_Mantenimiento.docx",
+        "Pdf":  "spanish/pdf/Guia_28_Mec_nico_de_Maquinaria_Industrial_y_Trabajador_de_Mantenimiento.pdf",
+        "DocxBytes":  46501,
+        "PdfBytes":  183758
+    },
+    {
+        "Guide":  "28",
+        "Title":  "Industrial Machinery Mechanic and Maintenance Worker",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_28_Mec_nico_de_M_quinas_Industriais_e_Trabalhador_de_Manuten_o_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_28_Mec_nico_de_M_quinas_Industriais_e_Trabalhador_de_Manuten_o_PTBR.pdf",
+        "DocxBytes":  45150,
+        "PdfBytes":  167885
+    },
+    {
+        "Guide":  "29",
+        "Title":  "HVAC Technician and Refrigeration Mechanic",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_HVAC_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_HVAC_Guide_English_v1.0.pdf",
+        "DocxBytes":  46354,
+        "PdfBytes":  333734
+    },
+    {
+        "Guide":  "29",
+        "Title":  "HVAC Technician and Refrigeration Mechanic",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_29_T_cnico_de_HVAC_y_Mec_nico_de_Refrigeraci_n.docx",
+        "Pdf":  "spanish/pdf/Guia_29_T_cnico_de_HVAC_y_Mec_nico_de_Refrigeraci_n.pdf",
+        "DocxBytes":  46442,
+        "PdfBytes":  184705
+    },
+    {
+        "Guide":  "29",
+        "Title":  "HVAC Technician and Refrigeration Mechanic",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_29_T_cnico_de_HVAC_e_Mec_nico_de_Refrigera_o_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_29_T_cnico_de_HVAC_e_Mec_nico_de_Refrigera_o_PTBR.pdf",
+        "DocxBytes":  45134,
+        "PdfBytes":  168111
+    },
+    {
+        "Guide":  "30",
+        "Title":  "Electrician and Electrical Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Electrician_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Electrician_Guide_English_v1.0.pdf",
+        "DocxBytes":  46527,
+        "PdfBytes":  333331
+    },
+    {
+        "Guide":  "30",
+        "Title":  "Electrician and Electrical Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_30_Electricista_y_T_cnico_El_ctrico.docx",
+        "Pdf":  "spanish/pdf/Guia_30_Electricista_y_T_cnico_El_ctrico.pdf",
+        "DocxBytes":  46447,
+        "PdfBytes":  183581
+    },
+    {
+        "Guide":  "30",
+        "Title":  "Electrician and Electrical Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_30_Eletricista_e_T_cnico_El_trico_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_30_Eletricista_e_T_cnico_El_trico_PTBR.pdf",
+        "DocxBytes":  45052,
+        "PdfBytes":  167013
+    },
+    {
+        "Guide":  "31",
+        "Title":  "Plumber, Pipefitter, and Plumbing Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Plumber_Pipefitter_and_Plumbing_Technician_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Plumber_Pipefitter_and_Plumbing_Technician_Guide_English_v1.0.pdf",
+        "DocxBytes":  49857,
+        "PdfBytes":  369830
+    },
+    {
+        "Guide":  "31",
+        "Title":  "Plumber, Pipefitter, and Plumbing Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_31_Plomero_Instalador_de_Tuber_as_y_T_cnico_de_Plomer_a.docx",
+        "Pdf":  "spanish/pdf/Guia_31_Plomero_Instalador_de_Tuber_as_y_T_cnico_de_Plomer_a.pdf",
+        "DocxBytes":  46504,
+        "PdfBytes":  183730
+    },
+    {
+        "Guide":  "31",
+        "Title":  "Plumber, Pipefitter, and Plumbing Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_31_Encanador_Montador_de_Tubula_es_e_T_cnico_de_Encanamento_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_31_Encanador_Montador_de_Tubula_es_e_T_cnico_de_Encanamento_PTBR.pdf",
+        "DocxBytes":  43582,
+        "PdfBytes":  151202
+    },
+    {
+        "Guide":  "32",
+        "Title":  "Welder And Fabrication Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Welder_and_Fabrication_Technician_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Welder_and_Fabrication_Technician_Guide_English_v1.0.pdf",
+        "DocxBytes":  50048,
+        "PdfBytes":  366684
+    },
+    {
+        "Guide":  "32",
+        "Title":  "Welder And Fabrication Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_32_Soldador_y_T_cnico_de_Fabricaci_n.docx",
+        "Pdf":  "spanish/pdf/Guia_32_Soldador_y_T_cnico_de_Fabricaci_n.pdf",
+        "DocxBytes":  46469,
+        "PdfBytes":  183605
+    },
+    {
+        "Guide":  "32",
+        "Title":  "Welder And Fabrication Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_32_Soldador_e_T_cnico_de_Fabrica_o_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_32_Soldador_e_T_cnico_de_Fabrica_o_PTBR.pdf",
+        "DocxBytes":  43475,
+        "PdfBytes":  150754
+    },
+    {
+        "Guide":  "33",
+        "Title":  "Machinist and CNC Machine Operator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/machinist-and-cnc-machine-operator.docx",
+        "Pdf":  "english/pdf/machinist-and-cnc-machine-operator.pdf",
+        "DocxBytes":  50036,
+        "PdfBytes":  367015
+    },
+    {
+        "Guide":  "33",
+        "Title":  "Machinist and CNC Machine Operator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_33_Maquinista_y_Operador_de_M_quinas_CNC.docx",
+        "Pdf":  "spanish/pdf/Guia_33_Maquinista_y_Operador_de_M_quinas_CNC.pdf",
+        "DocxBytes":  46542,
+        "PdfBytes":  183491
+    },
+    {
+        "Guide":  "33",
+        "Title":  "Machinist and CNC Machine Operator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_33_Mec_nico_de_Usinagem_e_Operador_de_M_quinas_CNC_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_33_Mec_nico_de_Usinagem_e_Operador_de_M_quinas_CNC_PTBR.pdf",
+        "DocxBytes":  43510,
+        "PdfBytes":  150938
+    },
+    {
+        "Guide":  "34",
+        "Title":  "Quality Control Inspector and Manufacturing Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Quality_Control_Inspector_and_Manufacturing_Technician_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Quality_Control_Inspector_and_Manufacturing_Technician_Guide_English_v1.0.pdf",
+        "DocxBytes":  50083,
+        "PdfBytes":  370613
+    },
+    {
+        "Guide":  "34",
+        "Title":  "Quality Control Inspector and Manufacturing Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Lifelong_Opportunity_Quality_Control_Inspector_and_Manufacturing_Technician_Guide_Spanish_v1.0.docx",
+        "Pdf":  "spanish/pdf/Lifelong_Opportunity_Quality_Control_Inspector_and_Manufacturing_Technician_Guide_Spanish_v1.0.pdf",
+        "DocxBytes":  41108,
+        "PdfBytes":  139086
+    },
+    {
+        "Guide":  "34",
+        "Title":  "Quality Control Inspector and Manufacturing Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Lifelong_Opportunity_Quality_Control_Inspector_and_Manufacturing_Technician_Guide_Portuguese_Brazil_v1.0.docx",
+        "Pdf":  "portuguese/pdf/Lifelong_Opportunity_Quality_Control_Inspector_and_Manufacturing_Technician_Guide_Portuguese_Brazil_v1.0.pdf",
+        "DocxBytes":  41106,
+        "PdfBytes":  140311
+    },
+    {
+        "Guide":  "35",
+        "Title":  "Production Planning and Expediting Clerk",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Production_Planning_and_Expediting_Clerk_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Production_Planning_and_Expediting_Clerk_Guide_English_v1.0.pdf",
+        "DocxBytes":  49857,
+        "PdfBytes":  366008
+    },
+    {
+        "Guide":  "35",
+        "Title":  "Production Planning and Expediting Clerk",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_35_Auxiliar_de_Planificaci_n_y_Agilizaci_n_de_Producci_n.docx",
+        "Pdf":  "spanish/pdf/Guia_35_Auxiliar_de_Planificaci_n_y_Agilizaci_n_de_Producci_n.pdf",
+        "DocxBytes":  46433,
+        "PdfBytes":  183233
+    },
+    {
+        "Guide":  "35",
+        "Title":  "Production Planning and Expediting Clerk",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_35_Auxiliar_de_Planejamento_e_Expedi_o_da_Produ_o_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_35_Auxiliar_de_Planejamento_e_Expedi_o_da_Produ_o_PTBR.pdf",
+        "DocxBytes":  43401,
+        "PdfBytes":  150939
+    },
+    {
+        "Guide":  "36",
+        "Title":  "Warehouse and Inventory Control Specialist",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Warehouse_and_Inventory_Control_Specialist_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Warehouse_and_Inventory_Control_Specialist_Guide_English_v1.0.pdf",
+        "DocxBytes":  49975,
+        "PdfBytes":  366704
+    },
+    {
+        "Guide":  "36",
+        "Title":  "Warehouse and Inventory Control Specialist",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_36_Especialista_en_Almac_n_y_Control_de_Inventario.docx",
+        "Pdf":  "spanish/pdf/Guia_36_Especialista_en_Almac_n_y_Control_de_Inventario.pdf",
+        "DocxBytes":  46492,
+        "PdfBytes":  183106
+    },
+    {
+        "Guide":  "36",
+        "Title":  "Warehouse and Inventory Control Specialist",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_36_Especialista_em_Armaz_m_e_Controle_de_Estoque_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_36_Especialista_em_Armaz_m_e_Controle_de_Estoque_PTBR.pdf",
+        "DocxBytes":  43451,
+        "PdfBytes":  150631
+    },
+    {
+        "Guide":  "37",
+        "Title":  "Shipping Receiving And Traffic Clerk",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Shipping_Receiving_and_Traffic_Clerk_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Shipping_Receiving_and_Traffic_Clerk_Guide_English_v1.0.pdf",
+        "DocxBytes":  49934,
+        "PdfBytes":  369872
+    },
+    {
+        "Guide":  "37",
+        "Title":  "Shipping Receiving And Traffic Clerk",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_37_Auxiliar_de_Env_os_Recepci_n_y_Tr_fico.docx",
+        "Pdf":  "spanish/pdf/Guia_37_Auxiliar_de_Env_os_Recepci_n_y_Tr_fico.pdf",
+        "DocxBytes":  46480,
+        "PdfBytes":  183429
+    },
+    {
+        "Guide":  "37",
+        "Title":  "Shipping Receiving And Traffic Clerk",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_37_Auxiliar_de_Expedi_o_Recebimento_e_Tr_fego_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_37_Auxiliar_de_Expedi_o_Recebimento_e_Tr_fego_PTBR.pdf",
+        "DocxBytes":  43437,
+        "PdfBytes":  151070
+    },
+    {
+        "Guide":  "38",
+        "Title":  "Dispatcher And Transportation Coordinator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Dispatcher_and_Transportation_Coordinator_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Dispatcher_and_Transportation_Coordinator_Guide_English_v1.0.pdf",
+        "DocxBytes":  49839,
+        "PdfBytes":  366984
+    },
+    {
+        "Guide":  "38",
+        "Title":  "Dispatcher And Transportation Coordinator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_38_Despachador_y_Coordinador_de_Transporte.docx",
+        "Pdf":  "spanish/pdf/Guia_38_Despachador_y_Coordinador_de_Transporte.pdf",
+        "DocxBytes":  46399,
+        "PdfBytes":  182913
+    },
+    {
+        "Guide":  "38",
+        "Title":  "Dispatcher And Transportation Coordinator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_38_Despachante_e_Coordenador_de_Transporte_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_38_Despachante_e_Coordenador_de_Transporte_PTBR.pdf",
+        "DocxBytes":  43453,
+        "PdfBytes":  150316
+    },
+    {
+        "Guide":  "39",
+        "Title":  "Heavy Equipment Operator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Heavy_Equipment_Operator_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Heavy_Equipment_Operator_Guide_English_v1.0.pdf",
+        "DocxBytes":  49844,
+        "PdfBytes":  366992
+    },
+    {
+        "Guide":  "39",
+        "Title":  "Heavy Equipment Operator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_39_Operador_de_Maquinaria_Pesada.docx",
+        "Pdf":  "spanish/pdf/Guia_39_Operador_de_Maquinaria_Pesada.pdf",
+        "DocxBytes":  46455,
+        "PdfBytes":  182788
+    },
+    {
+        "Guide":  "39",
+        "Title":  "Heavy Equipment Operator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_39_Operador_de_M_quinas_Pesadas_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_39_Operador_de_M_quinas_Pesadas_PTBR.pdf",
+        "DocxBytes":  43452,
+        "PdfBytes":  150558
+    },
+    {
+        "Guide":  "40",
+        "Title":  "Construction Laborer And Trade Helper",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Construction_Laborer_and_Trade_Helper_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Lifelong_Opportunity_Construction_Laborer_and_Trade_Helper_Guide_English_v1.0.pdf",
+        "DocxBytes":  50124,
+        "PdfBytes":  366893
+    },
+    {
+        "Guide":  "40",
+        "Title":  "Construction Laborer And Trade Helper",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_40_Trabajador_de_Construcci_n_y_Ayudante_de_Oficios.docx",
+        "Pdf":  "spanish/pdf/Guia_40_Trabajador_de_Construcci_n_y_Ayudante_de_Oficios.pdf",
+        "DocxBytes":  46506,
+        "PdfBytes":  183492
+    },
+    {
+        "Guide":  "40",
+        "Title":  "Construction Laborer And Trade Helper",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_40_Trabalhador_da_Constru_o_Civil_e_Ajudante_de_Of_cios_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_40_Trabalhador_da_Constru_o_Civil_e_Ajudante_de_Of_cios_PTBR.pdf",
+        "DocxBytes":  43469,
+        "PdfBytes":  151098
+    },
+    {
+        "Guide":  "41",
+        "Title":  "Carpenter And Cabinetmaking Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/carpenter-and-cabinetmaking-technician.docx",
+        "Pdf":  "english/pdf/carpenter-and-cabinetmaking-technician.pdf",
+        "DocxBytes":  44890,
+        "PdfBytes":  311015
+    },
+    {
+        "Guide":  "41",
+        "Title":  "Carpenter And Cabinetmaking Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_41_Carpintero_y_T_cnico_en_Ebanister_a.docx",
+        "Pdf":  "spanish/pdf/Guia_41_Carpintero_y_T_cnico_en_Ebanister_a.pdf",
+        "DocxBytes":  46512,
+        "PdfBytes":  187978
+    },
+    {
+        "Guide":  "41",
+        "Title":  "Carpenter And Cabinetmaking Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_41_Carpinteiro_e_T_cnico_em_Marcenaria_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_41_Carpinteiro_e_T_cnico_em_Marcenaria_PTBR.pdf",
+        "DocxBytes":  43548,
+        "PdfBytes":  150518
+    },
+    {
+        "Guide":  "42",
+        "Title":  "Painter And Coating Worker",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Painter and Coating Worker.docx",
+        "Pdf":  "english/pdf/Painter and Coating Worker.pdf",
+        "DocxBytes":  42146,
+        "PdfBytes":  290975
+    },
+    {
+        "Guide":  "42",
+        "Title":  "Painter And Coating Worker",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_42_Pintor_y_Trabajador_de_Recubrimientos.docx",
+        "Pdf":  "spanish/pdf/Guia_42_Pintor_y_Trabajador_de_Recubrimientos.pdf",
+        "DocxBytes":  46452,
+        "PdfBytes":  187693
+    },
+    {
+        "Guide":  "42",
+        "Title":  "Painter And Coating Worker",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_42_Pintor_e_Trabalhador_de_Revestimentos_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_42_Pintor_e_Trabalhador_de_Revestimentos_PTBR.pdf",
+        "DocxBytes":  43480,
+        "PdfBytes":  150579
+    },
+    {
+        "Guide":  "43",
+        "Title":  "Solar Photovoltaic Installer",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Solar Photovoltaic Installer.docx",
+        "Pdf":  "english/pdf/Solar Photovoltaic Installer.pdf",
+        "DocxBytes":  42159,
+        "PdfBytes":  291039
+    },
+    {
+        "Guide":  "43",
+        "Title":  "Solar Photovoltaic Installer",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Lifelong_Opportunity_Solar_Photovoltaic_Installer_Guide_Spanish_v1.0.docx",
+        "Pdf":  "spanish/pdf/Lifelong_Opportunity_Solar_Photovoltaic_Installer_Guide_Spanish_v1.0.pdf",
+        "DocxBytes":  41523,
+        "PdfBytes":  139880
+    },
+    {
+        "Guide":  "43",
+        "Title":  "Solar Photovoltaic Installer",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_43_Instalador_de_Sistemas_Solares_Fotovoltaicos_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_43_Instalador_de_Sistemas_Solares_Fotovoltaicos_PTBR.pdf",
+        "DocxBytes":  43495,
+        "PdfBytes":  150422
+    },
+    {
+        "Guide":  "44",
+        "Title":  "Wind Turbine Service Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Wind Turbine Service Technician.docx",
+        "Pdf":  "english/pdf/Wind Turbine Service Technician.pdf",
+        "DocxBytes":  42291,
+        "PdfBytes":  290903
+    },
+    {
+        "Guide":  "44",
+        "Title":  "Wind Turbine Service Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_44_T_cnico_de_Servicio_de_Turbinas_E_licas.docx",
+        "Pdf":  "spanish/pdf/Guia_44_T_cnico_de_Servicio_de_Turbinas_E_licas.pdf",
+        "DocxBytes":  46498,
+        "PdfBytes":  187176
+    },
+    {
+        "Guide":  "44",
+        "Title":  "Wind Turbine Service Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_44_T_cnico_de_Manuten_o_de_Turbinas_E_licas_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_44_T_cnico_de_Manuten_o_de_Turbinas_E_licas_PTBR.pdf",
+        "DocxBytes":  43524,
+        "PdfBytes":  151049
+    },
+    {
+        "Guide":  "45",
+        "Title":  "Water And Wastewater Treatment Plant Operator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Water and Wastewater Treatment Plant Operator.docx",
+        "Pdf":  "english/pdf/Water and Wastewater Treatment Plant Operator.pdf",
+        "DocxBytes":  42180,
+        "PdfBytes":  291130
+    },
+    {
+        "Guide":  "45",
+        "Title":  "Water And Wastewater Treatment Plant Operator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_45_Operador_de_Planta_de_Tratamiento_de_Agua_y_Aguas_Residuales.docx",
+        "Pdf":  "spanish/pdf/Guia_45_Operador_de_Planta_de_Tratamiento_de_Agua_y_Aguas_Residuales.pdf",
+        "DocxBytes":  46454,
+        "PdfBytes":  187234
+    },
+    {
+        "Guide":  "45",
+        "Title":  "Water And Wastewater Treatment Plant Operator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_45_Operador_de_Esta_o_de_Tratamento_de_gua_e_Esgoto_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_45_Operador_de_Esta_o_de_Tratamento_de_gua_e_Esgoto_PTBR.pdf",
+        "DocxBytes":  43529,
+        "PdfBytes":  151084
+    },
+    {
+        "Guide":  "46",
+        "Title":  "Environmental Field Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Environmental Field Technician.docx",
+        "Pdf":  "english/pdf/Environmental Field Technician.pdf",
+        "DocxBytes":  42285,
+        "PdfBytes":  289714
+    },
+    {
+        "Guide":  "46",
+        "Title":  "Environmental Field Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_46_T_cnico_de_Campo_Ambiental.docx",
+        "Pdf":  "spanish/pdf/Guia_46_T_cnico_de_Campo_Ambiental.pdf",
+        "DocxBytes":  46403,
+        "PdfBytes":  186189
+    },
+    {
+        "Guide":  "46",
+        "Title":  "Environmental Field Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_46_T_cnico_de_Campo_Ambiental_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_46_T_cnico_de_Campo_Ambiental_PTBR.pdf",
+        "DocxBytes":  43503,
+        "PdfBytes":  150610
+    },
+    {
+        "Guide":  "47",
+        "Title":  "Pharmacy Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Pharmacy Technician.docx",
+        "Pdf":  "english/pdf/Pharmacy Technician.pdf",
+        "DocxBytes":  42232,
+        "PdfBytes":  289885
+    },
+    {
+        "Guide":  "47",
+        "Title":  "Pharmacy Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_47_T_cnico_de_Farmacia.docx",
+        "Pdf":  "spanish/pdf/Guia_47_T_cnico_de_Farmacia.pdf",
+        "DocxBytes":  46410,
+        "PdfBytes":  186061
+    },
+    {
+        "Guide":  "47",
+        "Title":  "Pharmacy Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_47_T_cnico_de_Farm_cia_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_47_T_cnico_de_Farm_cia_PTBR.pdf",
+        "DocxBytes":  43502,
+        "PdfBytes":  150526
+    },
+    {
+        "Guide":  "48",
+        "Title":  "Medical Assistant",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Medical Assistant.docx",
+        "Pdf":  "english/pdf/Medical Assistant.pdf",
+        "DocxBytes":  42187,
+        "PdfBytes":  289908
+    },
+    {
+        "Guide":  "48",
+        "Title":  "Medical Assistant",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_48_Asistente_M_dico.docx",
+        "Pdf":  "spanish/pdf/Guia_48_Asistente_M_dico.pdf",
+        "DocxBytes":  46371,
+        "PdfBytes":  186114
+    },
+    {
+        "Guide":  "48",
+        "Title":  "Medical Assistant",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_48_Assistente_M_dico_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_48_Assistente_M_dico_PTBR.pdf",
+        "DocxBytes":  43428,
+        "PdfBytes":  150413
+    },
+    {
+        "Guide":  "49",
+        "Title":  "Dental Assistant",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Dental Assistant.docx",
+        "Pdf":  "english/pdf/Dental Assistant.pdf",
+        "DocxBytes":  42158,
+        "PdfBytes":  288420
+    },
+    {
+        "Guide":  "49",
+        "Title":  "Dental Assistant",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_49_Asistente_Dental.docx",
+        "Pdf":  "spanish/pdf/Guia_49_Asistente_Dental.pdf",
+        "DocxBytes":  46323,
+        "PdfBytes":  185460
+    },
+    {
+        "Guide":  "49",
+        "Title":  "Dental Assistant",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_49_Assistente_Odontol_gico_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_49_Assistente_Odontol_gico_PTBR.pdf",
+        "DocxBytes":  43446,
+        "PdfBytes":  150506
+    },
+    {
+        "Guide":  "50",
+        "Title":  "Phlebotomy Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Phlebotomy Technician.docx",
+        "Pdf":  "english/pdf/Phlebotomy Technician.pdf",
+        "DocxBytes":  42368,
+        "PdfBytes":  288772
+    },
+    {
+        "Guide":  "50",
+        "Title":  "Phlebotomy Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_50_T_cnico_de_Flebotom_a.docx",
+        "Pdf":  "spanish/pdf/Guia_50_T_cnico_de_Flebotom_a.pdf",
+        "DocxBytes":  46439,
+        "PdfBytes":  186975
+    },
+    {
+        "Guide":  "50",
+        "Title":  "Phlebotomy Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_50_T_cnico_de_Flebotomia_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_50_T_cnico_de_Flebotomia_PTBR.pdf",
+        "DocxBytes":  43469,
+        "PdfBytes":  150608
+    },
+    {
+        "Guide":  "51",
+        "Title":  "Sterile Processing Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Sterile Processing Technician.docx",
+        "Pdf":  "english/pdf/Sterile Processing Technician.pdf",
+        "DocxBytes":  46975,
+        "PdfBytes":  218872
+    },
+    {
+        "Guide":  "51",
+        "Title":  "Sterile Processing Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_51_T_cnico_en_Procesamiento_Est_ril.docx",
+        "Pdf":  "spanish/pdf/Guia_51_T_cnico_en_Procesamiento_Est_ril.pdf",
+        "DocxBytes":  46507,
+        "PdfBytes":  187075
+    },
+    {
+        "Guide":  "51",
+        "Title":  "Sterile Processing Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_51_T_cnico_em_Processamento_de_Materiais_Est_reis_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_51_T_cnico_em_Processamento_de_Materiais_Est_reis_PTBR.pdf",
+        "DocxBytes":  42579,
+        "PdfBytes":  125449
+    },
+    {
+        "Guide":  "52",
+        "Title":  "Surgical Technologist",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Surgical Technologist.docx",
+        "Pdf":  "english/pdf/Surgical Technologist.pdf",
+        "DocxBytes":  46882,
+        "PdfBytes":  217351
+    },
+    {
+        "Guide":  "52",
+        "Title":  "Surgical Technologist",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_52_Tecn_logo_Quir_rgico.docx",
+        "Pdf":  "spanish/pdf/Guia_52_Tecn_logo_Quir_rgico.pdf",
+        "DocxBytes":  46405,
+        "PdfBytes":  186249
+    },
+    {
+        "Guide":  "52",
+        "Title":  "Surgical Technologist",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_52_Tecn_logo_Cir_rgico_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_52_Tecn_logo_Cir_rgico_PTBR.pdf",
+        "DocxBytes":  42499,
+        "PdfBytes":  125003
+    },
+    {
+        "Guide":  "53",
+        "Title":  "Physical Therapist Assistant",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Physical Therapist Assistant.docx",
+        "Pdf":  "english/pdf/Physical Therapist Assistant.pdf",
+        "DocxBytes":  46795,
+        "PdfBytes":  218446
+    },
+    {
+        "Guide":  "53",
+        "Title":  "Physical Therapist Assistant",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_53_Asistente_de_Fisioterapia.docx",
+        "Pdf":  "spanish/pdf/Guia_53_Asistente_de_Fisioterapia.pdf",
+        "DocxBytes":  46394,
+        "PdfBytes":  185487
+    },
+    {
+        "Guide":  "53",
+        "Title":  "Physical Therapist Assistant",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_53_Assistente_de_Fisioterapia_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_53_Assistente_de_Fisioterapia_PTBR.pdf",
+        "DocxBytes":  42517,
+        "PdfBytes":  124809
+    },
+    {
+        "Guide":  "54",
+        "Title":  "Occupational Therapy Assistant",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Physical Therapist Assistant.docx",
+        "Pdf":  "english/pdf/Physical Therapist Assistant.pdf",
+        "DocxBytes":  46795,
+        "PdfBytes":  218446
+    },
+    {
+        "Guide":  "54",
+        "Title":  "Occupational Therapy Assistant",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_54_Asistente_de_Terapia_Ocupacional.docx",
+        "Pdf":  "spanish/pdf/Guia_54_Asistente_de_Terapia_Ocupacional.pdf",
+        "DocxBytes":  46350,
+        "PdfBytes":  185732
+    },
+    {
+        "Guide":  "54",
+        "Title":  "Occupational Therapy Assistant",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_54_Assistente_de_Terapia_Ocupacional_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_54_Assistente_de_Terapia_Ocupacional_PTBR.pdf",
+        "DocxBytes":  42469,
+        "PdfBytes":  124892
+    },
+    {
+        "Guide":  "55",
+        "Title":  "Home Health And Personal Care Aide",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Home Health and Personal Care Aide.docx",
+        "Pdf":  "english/pdf/Home Health and Personal Care Aide.pdf",
+        "DocxBytes":  46826,
+        "PdfBytes":  217275
+    },
+    {
+        "Guide":  "55",
+        "Title":  "Home Health And Personal Care Aide",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_55_Auxiliar_de_Salud_en_el_Hogar_y_Cuidado_Personal.docx",
+        "Pdf":  "spanish/pdf/Guia_55_Auxiliar_de_Salud_en_el_Hogar_y_Cuidado_Personal.pdf",
+        "DocxBytes":  46448,
+        "PdfBytes":  186991
+    },
+    {
+        "Guide":  "55",
+        "Title":  "Home Health And Personal Care Aide",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_55_Auxiliar_de_Sa_de_Domiciliar_e_Cuidador_Pessoal_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_55_Auxiliar_de_Sa_de_Domiciliar_e_Cuidador_Pessoal_PTBR.pdf",
+        "DocxBytes":  42533,
+        "PdfBytes":  125255
+    },
+    {
+        "Guide":  "56",
+        "Title":  "Nursing Assistant And Patient Care Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Nursing Assistant and Patient Care Technician.docx",
+        "Pdf":  "english/pdf/Nursing Assistant and Patient Care Technician.pdf",
+        "DocxBytes":  46859,
+        "PdfBytes":  216958
+    },
+    {
+        "Guide":  "56",
+        "Title":  "Nursing Assistant And Patient Care Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_56_Auxiliar_de_Enfermer_a_y_T_cnico_de_Atenci_n_al_Paciente.docx",
+        "Pdf":  "spanish/pdf/Guia_56_Auxiliar_de_Enfermer_a_y_T_cnico_de_Atenci_n_al_Paciente.pdf",
+        "DocxBytes":  46444,
+        "PdfBytes":  187268
+    },
+    {
+        "Guide":  "56",
+        "Title":  "Nursing Assistant And Patient Care Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Lifelong_Opportunity_Nursing_Assistant_and_Patient_Care_Technician_Guide_Portuguese_Brazil_v1.0.docx",
+        "Pdf":  "portuguese/pdf/Lifelong_Opportunity_Nursing_Assistant_and_Patient_Care_Technician_Guide_Portuguese_Brazil_v1.0.pdf",
+        "DocxBytes":  41611,
+        "PdfBytes":  143813
+    },
+    {
+        "Guide":  "57",
+        "Title":  "Medical Equipment Repairer",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Medical Equipment Repairer.docx",
+        "Pdf":  "english/pdf/Medical Equipment Repairer.pdf",
+        "DocxBytes":  46849,
+        "PdfBytes":  216751
+    },
+    {
+        "Guide":  "57",
+        "Title":  "Medical Equipment Repairer",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_57_Reparador_de_Equipos_M_dicos.docx",
+        "Pdf":  "spanish/pdf/Guia_57_Reparador_de_Equipos_M_dicos.pdf",
+        "DocxBytes":  46380,
+        "PdfBytes":  186561
+    },
+    {
+        "Guide":  "57",
+        "Title":  "Medical Equipment Repairer",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_57_Reparador_de_Equipamentos_M_dicos_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_57_Reparador_de_Equipamentos_M_dicos_PTBR.pdf",
+        "DocxBytes":  42534,
+        "PdfBytes":  125257
+    },
+    {
+        "Guide":  "58",
+        "Title":  "Veterinary Assistant And Animal Caretaker",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Veterinary Assistant and Animal Caretaker.docx",
+        "Pdf":  "english/pdf/Veterinary Assistant and Animal Caretaker.pdf",
+        "DocxBytes":  46878,
+        "PdfBytes":  217228
+    },
+    {
+        "Guide":  "58",
+        "Title":  "Veterinary Assistant And Animal Caretaker",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_58_Asistente_Veterinario_y_Cuidador_de_Animales.docx",
+        "Pdf":  "spanish/pdf/Guia_58_Asistente_Veterinario_y_Cuidador_de_Animales.pdf",
+        "DocxBytes":  46492,
+        "PdfBytes":  186940
+    },
+    {
+        "Guide":  "58",
+        "Title":  "Veterinary Assistant And Animal Caretaker",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_58_Assistente_Veterin_rio_e_Cuidador_de_Animais_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_58_Assistente_Veterin_rio_e_Cuidador_de_Animais_PTBR.pdf",
+        "DocxBytes":  42532,
+        "PdfBytes":  125090
+    },
+    {
+        "Guide":  "59",
+        "Title":  "Social And Human Service Assistant",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Social and Human Service Assistant.docx",
+        "Pdf":  "english/pdf/Social and Human Service Assistant.pdf",
+        "DocxBytes":  46811,
+        "PdfBytes":  217160
+    },
+    {
+        "Guide":  "59",
+        "Title":  "Social And Human Service Assistant",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_59_Asistente_de_Servicios_Sociales_y_Humanos.docx",
+        "Pdf":  "spanish/pdf/Guia_59_Asistente_de_Servicios_Sociales_y_Humanos.pdf",
+        "DocxBytes":  46353,
+        "PdfBytes":  186797
+    },
+    {
+        "Guide":  "59",
+        "Title":  "Social And Human Service Assistant",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_59_Assistente_de_Servi_os_Sociais_e_Humanos_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_59_Assistente_de_Servi_os_Sociais_e_Humanos_PTBR.pdf",
+        "DocxBytes":  42490,
+        "PdfBytes":  125421
+    },
+    {
+        "Guide":  "60",
+        "Title":  "Case Management Assistant And Resource Navigator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Case Management Assistant and Resource Navigator.docx",
+        "Pdf":  "english/pdf/Case Management Assistant and Resource Navigator.pdf",
+        "DocxBytes":  43735,
+        "PdfBytes":  217220
+    },
+    {
+        "Guide":  "60",
+        "Title":  "Case Management Assistant And Resource Navigator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_60_Asistente_de_Gesti_n_de_Casos_y_Navegador_de_Recursos.docx",
+        "Pdf":  "spanish/pdf/Guia_60_Asistente_de_Gesti_n_de_Casos_y_Navegador_de_Recursos.pdf",
+        "DocxBytes":  46417,
+        "PdfBytes":  186890
+    },
+    {
+        "Guide":  "60",
+        "Title":  "Case Management Assistant And Resource Navigator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_60_Assistente_de_Gest_o_de_Casos_e_Navegador_de_Recursos_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_60_Assistente_de_Gest_o_de_Casos_e_Navegador_de_Recursos_PTBR.pdf",
+        "DocxBytes":  42509,
+        "PdfBytes":  125555
+    },
+    {
+        "Guide":  "61",
+        "Title":  "Preschool Assistant And Childcare Worker",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Preschool Assistant and Childcare Worker.docx",
+        "Pdf":  "english/pdf/Preschool Assistant and Childcare Worker.pdf",
+        "DocxBytes":  44345,
+        "PdfBytes":  223770
+    },
+    {
+        "Guide":  "61",
+        "Title":  "Preschool Assistant And Childcare Worker",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_61_Asistente_de_preescolar_y_trabajador_de_cuidado_infantil.docx",
+        "Pdf":  "spanish/pdf/Guia_61_Asistente_de_preescolar_y_trabajador_de_cuidado_infantil.pdf",
+        "DocxBytes":  45726,
+        "PdfBytes":  168533
+    },
+    {
+        "Guide":  "61",
+        "Title":  "Preschool Assistant And Childcare Worker",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_61_Assistente_de_Pr_escola_e_Trabalhador_de_Cuidados_Infantis_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_61_Assistente_de_Pr_escola_e_Trabalhador_de_Cuidados_Infantis_PTBR.pdf",
+        "DocxBytes":  42688,
+        "PdfBytes":  127429
+    },
+    {
+        "Guide":  "62",
+        "Title":  "Teacher Assistant And Instructional Aide",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Teacher Assistant and Instructional Aide.docx",
+        "Pdf":  "english/pdf/Teacher Assistant and Instructional Aide.pdf",
+        "DocxBytes":  47532,
+        "PdfBytes":  222058
+    },
+    {
+        "Guide":  "62",
+        "Title":  "Teacher Assistant And Instructional Aide",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_62_Asistente_docente_y_auxiliar_de_instrucci_n.docx",
+        "Pdf":  "spanish/pdf/Guia_62_Asistente_docente_y_auxiliar_de_instrucci_n.pdf",
+        "DocxBytes":  45529,
+        "PdfBytes":  167245
+    },
+    {
+        "Guide":  "62",
+        "Title":  "Teacher Assistant And Instructional Aide",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_62_Assistente_de_Professor_e_Auxiliar_de_Instru_o_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_62_Assistente_de_Professor_e_Auxiliar_de_Instru_o_PTBR.pdf",
+        "DocxBytes":  42650,
+        "PdfBytes":  127203
+    },
+    {
+        "Guide":  "63",
+        "Title":  "Library Assistant And Library Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Library Assistant and Library Technician.docx",
+        "Pdf":  "english/pdf/Library Assistant and Library Technician.pdf",
+        "DocxBytes":  44135,
+        "PdfBytes":  222101
+    },
+    {
+        "Guide":  "63",
+        "Title":  "Library Assistant And Library Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_63_Asistente_de_biblioteca_y_t_cnico_de_biblioteca.docx",
+        "Pdf":  "spanish/pdf/Guia_63_Asistente_de_biblioteca_y_t_cnico_de_biblioteca.pdf",
+        "DocxBytes":  45614,
+        "PdfBytes":  167206
+    },
+    {
+        "Guide":  "63",
+        "Title":  "Library Assistant And Library Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_63_Assistente_de_Biblioteca_e_T_cnico_de_Biblioteca_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_63_Assistente_de_Biblioteca_e_T_cnico_de_Biblioteca_PTBR.pdf",
+        "DocxBytes":  42615,
+        "PdfBytes":  127028
+    },
+    {
+        "Guide":  "64",
+        "Title":  "Community Service Program Coordinator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Community Service Program Coordinator.docx",
+        "Pdf":  "english/pdf/Community Service Program Coordinator.pdf",
+        "DocxBytes":  47575,
+        "PdfBytes":  222278
+    },
+    {
+        "Guide":  "64",
+        "Title":  "Community Service Program Coordinator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Lifelong_Opportunity_Community_Service_Program_Coordinator_Guide_Spanish_v1.0.docx",
+        "Pdf":  "spanish/pdf/Lifelong_Opportunity_Community_Service_Program_Coordinator_Guide_Spanish_v1.0.pdf",
+        "DocxBytes":  41688,
+        "PdfBytes":  140668
+    },
+    {
+        "Guide":  "64",
+        "Title":  "Community Service Program Coordinator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_64_Coordenador_de_Programas_de_Servi_o_Comunit_rio_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_64_Coordenador_de_Programas_de_Servi_o_Comunit_rio_PTBR.pdf",
+        "DocxBytes":  42603,
+        "PdfBytes":  127293
+    },
+    {
+        "Guide":  "65",
+        "Title":  "Recreation Worker And Activities Coordinator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Recreation Worker and Activities Coordinator.docx",
+        "Pdf":  "english/pdf/Recreation Worker and Activities Coordinator.pdf",
+        "DocxBytes":  47516,
+        "PdfBytes":  222521
+    },
+    {
+        "Guide":  "65",
+        "Title":  "Recreation Worker And Activities Coordinator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_65_Trabajador_de_recreaci_n_y_coordinador_de_actividades.docx",
+        "Pdf":  "spanish/pdf/Guia_65_Trabajador_de_recreaci_n_y_coordinador_de_actividades.pdf",
+        "DocxBytes":  45460,
+        "PdfBytes":  167076
+    },
+    {
+        "Guide":  "65",
+        "Title":  "Recreation Worker And Activities Coordinator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_65_Trabalhador_de_Recrea_o_e_Coordenador_de_Atividades_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_65_Trabalhador_de_Recrea_o_e_Coordenador_de_Atividades_PTBR.pdf",
+        "DocxBytes":  42626,
+        "PdfBytes":  127608
+    },
+    {
+        "Guide":  "66",
+        "Title":  "Food Service Manager Trainee And Restaurant Supervisor",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Food Service Manager Trainee and Restaurant Supervisor.docx",
+        "Pdf":  "english/pdf/Food Service Manager Trainee and Restaurant Supervisor.pdf",
+        "DocxBytes":  47634,
+        "PdfBytes":  223012
+    },
+    {
+        "Guide":  "66",
+        "Title":  "Food Service Manager Trainee And Restaurant Supervisor",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_66_Aprendiz_de_gerente_de_servicios_de_alimentos_y_supervisor_de_restaurante.docx",
+        "Pdf":  "spanish/pdf/Guia_66_Aprendiz_de_gerente_de_servicios_de_alimentos_y_supervisor_de_restaurante.pdf",
+        "DocxBytes":  45578,
+        "PdfBytes":  167429
+    },
+    {
+        "Guide":  "66",
+        "Title":  "Food Service Manager Trainee And Restaurant Supervisor",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_66_Trainee_de_Gerente_de_Servi_os_de_Alimenta_o_e_Supervisor_de_Restaurante_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_66_Trainee_de_Gerente_de_Servi_os_de_Alimenta_o_e_Supervisor_de_Restaurante_PTBR.pdf",
+        "DocxBytes":  42700,
+        "PdfBytes":  127746
+    },
+    {
+        "Guide":  "67",
+        "Title":  "Cook And Culinary Specialist",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Cook and Culinary Specialist.docx",
+        "Pdf":  "english/pdf/Cook and Culinary Specialist.pdf",
+        "DocxBytes":  47612,
+        "PdfBytes":  222266
+    },
+    {
+        "Guide":  "67",
+        "Title":  "Cook And Culinary Specialist",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_67_Cocinero_y_especialista_culinario.docx",
+        "Pdf":  "spanish/pdf/Guia_67_Cocinero_y_especialista_culinario.pdf",
+        "DocxBytes":  45546,
+        "PdfBytes":  166491
+    },
+    {
+        "Guide":  "67",
+        "Title":  "Cook And Culinary Specialist",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_67_Cozinheiro_e_Especialista_Culin_rio_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_67_Cozinheiro_e_Especialista_Culin_rio_PTBR.pdf",
+        "DocxBytes":  42654,
+        "PdfBytes":  126517
+    },
+    {
+        "Guide":  "68",
+        "Title":  "Baker And Pastry Production Worker",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Baker and Pastry Production Worker.docx",
+        "Pdf":  "english/pdf/Baker and Pastry Production Worker.pdf",
+        "DocxBytes":  47592,
+        "PdfBytes":  221277
+    },
+    {
+        "Guide":  "68",
+        "Title":  "Baker And Pastry Production Worker",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_66_Aprendiz_de_gerente_de_servicios_de_alimentos_y_supervisor_de_restaurante.docx",
+        "Pdf":  "spanish/pdf/Guia_66_Aprendiz_de_gerente_de_servicios_de_alimentos_y_supervisor_de_restaurante.pdf",
+        "DocxBytes":  45578,
+        "PdfBytes":  167429
+    },
+    {
+        "Guide":  "68",
+        "Title":  "Baker And Pastry Production Worker",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_68_Padeiro_e_Trabalhador_de_Produ_o_de_Confeitaria_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_68_Padeiro_e_Trabalhador_de_Produ_o_de_Confeitaria_PTBR.pdf",
+        "DocxBytes":  42673,
+        "PdfBytes":  126758
+    },
+    {
+        "Guide":  "69",
+        "Title":  "Hotel Front Desk And Guest Services",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Hotel Front Desk and Guest Services.docx",
+        "Pdf":  "english/pdf/Hotel Front Desk and Guest Services.pdf",
+        "DocxBytes":  47666,
+        "PdfBytes":  222563
+    },
+    {
+        "Guide":  "69",
+        "Title":  "Hotel Front Desk And Guest Services",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_69_Recepcion_de_hotel_y_servicios_al_huesped.docx",
+        "Pdf":  "spanish/pdf/Guia_69_Recepcion_de_hotel_y_servicios_al_huesped.pdf",
+        "DocxBytes":  45577,
+        "PdfBytes":  166890
+    },
+    {
+        "Guide":  "69",
+        "Title":  "Hotel Front Desk And Guest Services",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_69_Recep_o_de_Hotel_e_Servi_os_ao_H_spede_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_69_Recep_o_de_Hotel_e_Servi_os_ao_H_spede_PTBR.pdf",
+        "DocxBytes":  42636,
+        "PdfBytes":  126677
+    },
+    {
+        "Guide":  "70",
+        "Title":  "Travel Agent And Travel Coordinator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Travel_Agent_and_Travel_Coordinator_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Travel Agent and Travel Coordinator.pdf",
+        "DocxBytes":  41676,
+        "PdfBytes":  222257
+    },
+    {
+        "Guide":  "70",
+        "Title":  "Travel Agent And Travel Coordinator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_70_Agente_de_viajes_y_coordinador_de_viajes.docx",
+        "Pdf":  "spanish/pdf/Guia_70_Agente_de_viajes_y_coordinador_de_viajes.pdf",
+        "DocxBytes":  45631,
+        "PdfBytes":  167319
+    },
+    {
+        "Guide":  "70",
+        "Title":  "Travel Agent And Travel Coordinator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_70_Agente_de_Viagens_e_Coordenador_de_Viagens_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_70_Agente_de_Viagens_e_Coordenador_de_Viagens_PTBR.pdf",
+        "DocxBytes":  42627,
+        "PdfBytes":  126845
+    },
+    {
+        "Guide":  "71",
+        "Title":  "Event Coordinator And Meeting Assistant",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Event Coordinator and Meeting Assistant.docx",
+        "Pdf":  "english/pdf/Event Coordinator and Meeting Assistant.pdf",
+        "DocxBytes":  46661,
+        "PdfBytes":  209223
+    },
+    {
+        "Guide":  "71",
+        "Title":  "Event Coordinator And Meeting Assistant",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/DOCX/Guia_71_Coordinador_de_eventos_y_asistente_de_reuniones.docx",
+        "Pdf":  "spanish/PDF/Guia_71_Coordinador_de_eventos_y_asistente_de_reuniones.pdf",
+        "DocxBytes":  45320,
+        "PdfBytes":  164809
+    },
+    {
+        "Guide":  "71",
+        "Title":  "Event Coordinator And Meeting Assistant",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_71_Coordenador_de_Eventos_e_Assistente_de_Reuni_es_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_71_Coordenador_de_Eventos_e_Assistente_de_Reuni_es_PTBR.pdf",
+        "DocxBytes":  42855,
+        "PdfBytes":  128478
+    },
+    {
+        "Guide":  "72",
+        "Title":  "Retail Supervisor And Merchandising Coordinator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Retail Supervisor and Merchandising Coordinator.docx",
+        "Pdf":  "english/pdf/Retail Supervisor and Merchandising Coordinator.pdf",
+        "DocxBytes":  46700,
+        "PdfBytes":  210161
+    },
+    {
+        "Guide":  "72",
+        "Title":  "Retail Supervisor And Merchandising Coordinator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_72_Supervisor_de_comercio_minorista_y_coordinador_de_merchandising.docx",
+        "Pdf":  "spanish/pdf/Guia_72_Supervisor_de_comercio_minorista_y_coordinador_de_merchandising.pdf",
+        "DocxBytes":  45289,
+        "PdfBytes":  165580
+    },
+    {
+        "Guide":  "72",
+        "Title":  "Retail Supervisor And Merchandising Coordinator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_72_Supervisor_de_Varejo_e_Coordenador_de_Merchandising_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_72_Supervisor_de_Varejo_e_Coordenador_de_Merchandising_PTBR.pdf",
+        "DocxBytes":  42851,
+        "PdfBytes":  128811
+    },
+    {
+        "Guide":  "73",
+        "Title":  "Sales Support And Account Coordinator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Sales Support and Account Coordinator.docx",
+        "Pdf":  "english/pdf/Sales Support and Account Coordinator.pdf",
+        "DocxBytes":  46746,
+        "PdfBytes":  210227
+    },
+    {
+        "Guide":  "73",
+        "Title":  "Sales Support And Account Coordinator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_73_Soporte_de_ventas_y_coordinador_de_cuentas.docx",
+        "Pdf":  "spanish/pdf/Guia_73_Soporte_de_ventas_y_coordinador_de_cuentas.pdf",
+        "DocxBytes":  45240,
+        "PdfBytes":  165363
+    },
+    {
+        "Guide":  "73",
+        "Title":  "Sales Support And Account Coordinator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_73_Coordenador_de_Suporte_a_Vendas_e_Contas_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_73_Coordenador_de_Suporte_a_Vendas_e_Contas_PTBR.pdf",
+        "DocxBytes":  42805,
+        "PdfBytes":  128207
+    },
+    {
+        "Guide":  "74",
+        "Title":  "Ecommerce Specialist And Marketplace Coordinator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Lifelong_Opportunity_Ecommerce_Specialist_and_Marketplace_Coordinator_Guide_English_v1.0.docx",
+        "Pdf":  "english/pdf/Ecommerce Specialist and Marketplace Coordinator.pdf",
+        "DocxBytes":  41705,
+        "PdfBytes":  210607
+    },
+    {
+        "Guide":  "74",
+        "Title":  "Ecommerce Specialist And Marketplace Coordinator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_74_Especialista_en_comercio_electr_nico_y_coordinador_de_marketplaces.docx",
+        "Pdf":  "spanish/pdf/Guia_74_Especialista_en_comercio_electr_nico_y_coordinador_de_marketplaces.pdf",
+        "DocxBytes":  45332,
+        "PdfBytes":  165909
+    },
+    {
+        "Guide":  "74",
+        "Title":  "Ecommerce Specialist And Marketplace Coordinator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_74_Especialista_em_Com_rcio_Eletr_nico_e_Coordenador_de_Marketplace_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_74_Especialista_em_Com_rcio_Eletr_nico_e_Coordenador_de_Marketplace_PTBR.pdf",
+        "DocxBytes":  42904,
+        "PdfBytes":  128961
+    },
+    {
+        "Guide":  "75",
+        "Title":  "Marketing Coordinator And Digital Marketing Assistant",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Marketing Coordinator and Digital Marketing Assistant.docx",
+        "Pdf":  "english/pdf/Marketing Coordinator and Digital Marketing Assistant.pdf",
+        "DocxBytes":  46647,
+        "PdfBytes":  210570
+    },
+    {
+        "Guide":  "75",
+        "Title":  "Marketing Coordinator And Digital Marketing Assistant",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_75_Coordinador_de_marketing_y_asistente_de_marketing_digital.docx",
+        "Pdf":  "spanish/pdf/Guia_75_Coordinador_de_marketing_y_asistente_de_marketing_digital.pdf",
+        "DocxBytes":  45255,
+        "PdfBytes":  165689
+    },
+    {
+        "Guide":  "75",
+        "Title":  "Marketing Coordinator And Digital Marketing Assistant",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_75_Coordenador_de_Marketing_e_Assistente_de_Marketing_Digital_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_75_Coordenador_de_Marketing_e_Assistente_de_Marketing_Digital_PTBR.pdf",
+        "DocxBytes":  42854,
+        "PdfBytes":  128858
+    },
+    {
+        "Guide":  "76",
+        "Title":  "Public Relations Assistant And Communications Coordinator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Public Relations Assistant and Communications Coordinator.docx",
+        "Pdf":  "english/pdf/Public Relations Assistant and Communications Coordinator.pdf",
+        "DocxBytes":  46623,
+        "PdfBytes":  209553
+    },
+    {
+        "Guide":  "76",
+        "Title":  "Public Relations Assistant And Communications Coordinator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_76_Asistente_de_relaciones_p_blicas_y_coordinador_de_comunicaciones.docx",
+        "Pdf":  "spanish/pdf/Guia_76_Asistente_de_relaciones_p_blicas_y_coordinador_de_comunicaciones.pdf",
+        "DocxBytes":  45223,
+        "PdfBytes":  165953
+    },
+    {
+        "Guide":  "76",
+        "Title":  "Public Relations Assistant And Communications Coordinator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_76_Assistente_de_Rela_es_P_blicas_e_Coordenador_de_Comunica_o_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_76_Assistente_de_Rela_es_P_blicas_e_Coordenador_de_Comunica_o_PTBR.pdf",
+        "DocxBytes":  42871,
+        "PdfBytes":  129268
+    },
+    {
+        "Guide":  "77",
+        "Title":  "Graphic Designer And Production Artist",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Graphic Designer and Production Artist.docx",
+        "Pdf":  "english/pdf/Graphic Designer and Production Artist.pdf",
+        "DocxBytes":  46683,
+        "PdfBytes":  210054
+    },
+    {
+        "Guide":  "77",
+        "Title":  "Graphic Designer And Production Artist",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_77_Dise_ador_gr_fico_y_artista_de_producci_n.docx",
+        "Pdf":  "spanish/pdf/Guia_77_Dise_ador_gr_fico_y_artista_de_producci_n.pdf",
+        "DocxBytes":  45318,
+        "PdfBytes":  165909
+    },
+    {
+        "Guide":  "77",
+        "Title":  "Graphic Designer And Production Artist",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_77_Designer_Gr_fico_e_Artista_de_Produ_o_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_77_Designer_Gr_fico_e_Artista_de_Produ_o_PTBR.pdf",
+        "DocxBytes":  42876,
+        "PdfBytes":  128743
+    },
+    {
+        "Guide":  "78",
+        "Title":  "Web And Digital Interface Designer",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Web and Digital Interface Designer.docx",
+        "Pdf":  "english/pdf/Web and Digital Interface Designer.pdf",
+        "DocxBytes":  46667,
+        "PdfBytes":  209698
+    },
+    {
+        "Guide":  "78",
+        "Title":  "Web And Digital Interface Designer",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_78_Dise_ador_de_interfaces_web_y_digitales.docx",
+        "Pdf":  "spanish/pdf/Guia_78_Dise_ador_de_interfaces_web_y_digitales.pdf",
+        "DocxBytes":  45211,
+        "PdfBytes":  165876
+    },
+    {
+        "Guide":  "78",
+        "Title":  "Web And Digital Interface Designer",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_78_Designer_de_Web_e_Interfaces_Digitais_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_78_Designer_de_Web_e_Interfaces_Digitais_PTBR.pdf",
+        "DocxBytes":  42816,
+        "PdfBytes":  128898
+    },
+    {
+        "Guide":  "79",
+        "Title":  "Technical Writer And Documentation Specialist",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Technical Writer and Documentation Specialist.docx",
+        "Pdf":  "english/pdf/Technical Writer and Documentation Specialist.pdf",
+        "DocxBytes":  46624,
+        "PdfBytes":  208976
+    },
+    {
+        "Guide":  "79",
+        "Title":  "Technical Writer And Documentation Specialist",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_79_Redactor_t_cnico_y_especialista_en_documentaci_n.docx",
+        "Pdf":  "spanish/pdf/Guia_79_Redactor_t_cnico_y_especialista_en_documentaci_n.pdf",
+        "DocxBytes":  45203,
+        "PdfBytes":  165058
+    },
+    {
+        "Guide":  "79",
+        "Title":  "Technical Writer And Documentation Specialist",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_79_Redator_T_cnico_e_Especialista_em_Documenta_o_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_79_Redator_T_cnico_e_Especialista_em_Documenta_o_PTBR.pdf",
+        "DocxBytes":  42826,
+        "PdfBytes":  128659
+    },
+    {
+        "Guide":  "80",
+        "Title":  "Data Entry And Records Specialist",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Data Entry and Records Specialist.docx",
+        "Pdf":  "english/pdf/Data Entry and Records Specialist.pdf",
+        "DocxBytes":  46715,
+        "PdfBytes":  210234
+    },
+    {
+        "Guide":  "80",
+        "Title":  "Data Entry And Records Specialist",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_80_Especialista_en_ingreso_de_datos_y_registros.docx",
+        "Pdf":  "spanish/pdf/Guia_80_Especialista_en_ingreso_de_datos_y_registros.pdf",
+        "DocxBytes":  45216,
+        "PdfBytes":  165425
+    },
+    {
+        "Guide":  "80",
+        "Title":  "Data Entry And Records Specialist",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_80_Especialista_em_Entrada_de_Dados_e_Registros_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_80_Especialista_em_Entrada_de_Dados_e_Registros_PTBR.pdf",
+        "DocxBytes":  42826,
+        "PdfBytes":  128614
+    },
+    {
+        "Guide":  "81",
+        "Title":  "Health Information Technologist And Medical Registrar",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Health Information Technologist and Medical Registrar.docx",
+        "Pdf":  "english/pdf/Health Information Technologist and Medical Registrar.pdf",
+        "DocxBytes":  45197,
+        "PdfBytes":  185997
+    },
+    {
+        "Guide":  "81",
+        "Title":  "Health Information Technologist And Medical Registrar",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_81_Tecnologo_en_informacion_de_salud_y_registrador_medico.docx",
+        "Pdf":  "spanish/pdf/Guia_81_Tecnologo_en_informacion_de_salud_y_registrador_medico.pdf",
+        "DocxBytes":  44142,
+        "PdfBytes":  152245
+    },
+    {
+        "Guide":  "81",
+        "Title":  "Health Information Technologist And Medical Registrar",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_81_Tecn_logo_em_Informa_o_em_Sa_de_e_Registrador_M_dico_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_81_Tecn_logo_em_Informa_o_em_Sa_de_e_Registrador_M_dico_PTBR.pdf",
+        "DocxBytes":  42893,
+        "PdfBytes":  129352
+    },
+    {
+        "Guide":  "82",
+        "Title":  "Computer Support And Help Desk Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Computer Support and Help Desk Technician.docx",
+        "Pdf":  "english/pdf/Computer Support and Help Desk Technician.pdf",
+        "DocxBytes":  45150,
+        "PdfBytes":  185137
+    },
+    {
+        "Guide":  "82",
+        "Title":  "Computer Support And Help Desk Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_82_Tecnico_de_soporte_informatico_y_mesa_de_ayuda.docx",
+        "Pdf":  "spanish/pdf/Guia_82_Tecnico_de_soporte_informatico_y_mesa_de_ayuda.pdf",
+        "DocxBytes":  44091,
+        "PdfBytes":  151703
+    },
+    {
+        "Guide":  "82",
+        "Title":  "Computer Support And Help Desk Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_82_T_cnico_de_Suporte_de_Computadores_e_Help_Desk_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_82_T_cnico_de_Suporte_de_Computadores_e_Help_Desk_PTBR.pdf",
+        "DocxBytes":  42849,
+        "PdfBytes":  128726
+    },
+    {
+        "Guide":  "83",
+        "Title":  "Network Support Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Network Support Technician.docx",
+        "Pdf":  "english/pdf/Network Support Technician.pdf",
+        "DocxBytes":  45203,
+        "PdfBytes":  184701
+    },
+    {
+        "Guide":  "83",
+        "Title":  "Network Support Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_83_Tecnico_de_soporte_de_redes.docx",
+        "Pdf":  "spanish/pdf/Guia_83_Tecnico_de_soporte_de_redes.pdf",
+        "DocxBytes":  44037,
+        "PdfBytes":  151142
+    },
+    {
+        "Guide":  "83",
+        "Title":  "Network Support Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_83_T_cnico_de_Suporte_de_Redes_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_83_T_cnico_de_Suporte_de_Redes_PTBR.pdf",
+        "DocxBytes":  42822,
+        "PdfBytes":  128113
+    },
+    {
+        "Guide":  "84",
+        "Title":  "Business Intelligence Analyst",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Business Intelligence Analyst.docx",
+        "Pdf":  "english/pdf/Business Intelligence Analyst.pdf",
+        "DocxBytes":  45256,
+        "PdfBytes":  184708
+    },
+    {
+        "Guide":  "84",
+        "Title":  "Business Intelligence Analyst",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_84_Analista_de_inteligencia_de_negocios.docx",
+        "Pdf":  "spanish/pdf/Guia_84_Analista_de_inteligencia_de_negocios.pdf",
+        "DocxBytes":  44053,
+        "PdfBytes":  151393
+    },
+    {
+        "Guide":  "84",
+        "Title":  "Business Intelligence Analyst",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_84_Analista_de_Business_Intelligence_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_84_Analista_de_Business_Intelligence_PTBR.pdf",
+        "DocxBytes":  42822,
+        "PdfBytes":  128676
+    },
+    {
+        "Guide":  "85",
+        "Title":  "Data Analyst",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Data Analyst.docx",
+        "Pdf":  "english/pdf/Data Analyst.pdf",
+        "DocxBytes":  45190,
+        "PdfBytes":  184364
+    },
+    {
+        "Guide":  "85",
+        "Title":  "Data Analyst",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_85_Analista_de_datos.docx",
+        "Pdf":  "spanish/pdf/Guia_85_Analista_de_datos.pdf",
+        "DocxBytes":  44013,
+        "PdfBytes":  150962
+    },
+    {
+        "Guide":  "85",
+        "Title":  "Data Analyst",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_85_Analista_de_Dados_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_85_Analista_de_Dados_PTBR.pdf",
+        "DocxBytes":  42769,
+        "PdfBytes":  128263
+    },
+    {
+        "Guide":  "86",
+        "Title":  "Database Administrator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Database Administrator.docx",
+        "Pdf":  "english/pdf/Database Administrator.pdf",
+        "DocxBytes":  45208,
+        "PdfBytes":  184465
+    },
+    {
+        "Guide":  "86",
+        "Title":  "Database Administrator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_86_Administrador_de_bases_de_datos.docx",
+        "Pdf":  "spanish/pdf/Guia_86_Administrador_de_bases_de_datos.pdf",
+        "DocxBytes":  44065,
+        "PdfBytes":  151650
+    },
+    {
+        "Guide":  "86",
+        "Title":  "Database Administrator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_86_Administrador_de_Banco_de_Dados_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_86_Administrador_de_Banco_de_Dados_PTBR.pdf",
+        "DocxBytes":  42788,
+        "PdfBytes":  128526
+    },
+    {
+        "Guide":  "87",
+        "Title":  "Software Quality Assurance Analyst And Tester",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Software Quality Assurance Analyst and Tester.docx",
+        "Pdf":  "english/pdf/Software Quality Assurance Analyst and Tester.pdf",
+        "DocxBytes":  45209,
+        "PdfBytes":  185432
+    },
+    {
+        "Guide":  "87",
+        "Title":  "Software Quality Assurance Analyst And Tester",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_87_Analista_y_probador_de_aseguramiento_de_calidad_de_software.docx",
+        "Pdf":  "spanish/pdf/Guia_87_Analista_y_probador_de_aseguramiento_de_calidad_de_software.pdf",
+        "DocxBytes":  44047,
+        "PdfBytes":  152232
+    },
+    {
+        "Guide":  "87",
+        "Title":  "Software Quality Assurance Analyst And Tester",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_87_Analista_e_Testador_de_Qualidade_de_Software_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_87_Analista_e_Testador_de_Qualidade_de_Software_PTBR.pdf",
+        "DocxBytes":  42785,
+        "PdfBytes":  128484
+    },
+    {
+        "Guide":  "88",
+        "Title":  "Web Developer",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Web Developer.docx",
+        "Pdf":  "english/pdf/Web Developer.pdf",
+        "DocxBytes":  45149,
+        "PdfBytes":  184928
+    },
+    {
+        "Guide":  "88",
+        "Title":  "Web Developer",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_88_Desarrollador_web.docx",
+        "Pdf":  "spanish/pdf/Guia_88_Desarrollador_web.pdf",
+        "DocxBytes":  44004,
+        "PdfBytes":  151232
+    },
+    {
+        "Guide":  "88",
+        "Title":  "Web Developer",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_88_Desenvolvedor_Web_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_88_Desenvolvedor_Web_PTBR.pdf",
+        "DocxBytes":  42786,
+        "PdfBytes":  128458
+    },
+    {
+        "Guide":  "89",
+        "Title":  "Software Developer",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Software Developer.docx",
+        "Pdf":  "english/pdf/Software Developer.pdf",
+        "DocxBytes":  45180,
+        "PdfBytes":  185042
+    },
+    {
+        "Guide":  "89",
+        "Title":  "Software Developer",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_89_Desarrollador_de_software.docx",
+        "Pdf":  "spanish/pdf/Guia_89_Desarrollador_de_software.pdf",
+        "DocxBytes":  43993,
+        "PdfBytes":  151146
+    },
+    {
+        "Guide":  "89",
+        "Title":  "Software Developer",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_89_Desenvolvedor_de_Software_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_89_Desenvolvedor_de_Software_PTBR.pdf",
+        "DocxBytes":  42790,
+        "PdfBytes":  128155
+    },
+    {
+        "Guide":  "90",
+        "Title":  "Information Technology Project Coordinator",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Information Technology Project Coordinator.docx",
+        "Pdf":  "english/pdf/Information Technology Project Coordinator.pdf",
+        "DocxBytes":  45294,
+        "PdfBytes":  184650
+    },
+    {
+        "Guide":  "90",
+        "Title":  "Information Technology Project Coordinator",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_90_Coordinador_de_proyectos_de_tecnologia_de_la_informacion.docx",
+        "Pdf":  "spanish/pdf/Guia_90_Coordinador_de_proyectos_de_tecnologia_de_la_informacion.pdf",
+        "DocxBytes":  44083,
+        "PdfBytes":  152131
+    },
+    {
+        "Guide":  "90",
+        "Title":  "Information Technology Project Coordinator",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_90_Coordenador_de_Projetos_de_Tecnologia_da_Informa_o_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_90_Coordenador_de_Projetos_de_Tecnologia_da_Informa_o_PTBR.pdf",
+        "DocxBytes":  42835,
+        "PdfBytes":  129036
+    },
+    {
+        "Guide":  "91",
+        "Title":  "Cloud Support Specialist",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Cloud Support Specialist.docx",
+        "Pdf":  "english/pdf/Cloud Support Specialist.pdf",
+        "DocxBytes":  46184,
+        "PdfBytes":  193401
+    },
+    {
+        "Guide":  "91",
+        "Title":  "Cloud Support Specialist",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_91_Especialista_de_soporte_en_la_nube.docx",
+        "Pdf":  "spanish/pdf/Guia_91_Especialista_de_soporte_en_la_nube.pdf",
+        "DocxBytes":  43216,
+        "PdfBytes":  122461
+    },
+    {
+        "Guide":  "91",
+        "Title":  "Cloud Support Specialist",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_91_Especialista_em_Suporte_de_Nuvem_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_91_Especialista_em_Suporte_de_Nuvem_PTBR.pdf",
+        "DocxBytes":  42847,
+        "PdfBytes":  128411
+    },
+    {
+        "Guide":  "92",
+        "Title":  "Geographic Information Systems Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Geographic Information Systems Technician.docx",
+        "Pdf":  "english/pdf/Geographic Information Systems Technician.pdf",
+        "DocxBytes":  46199,
+        "PdfBytes":  193459
+    },
+    {
+        "Guide":  "92",
+        "Title":  "Geographic Information Systems Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_92_T_cnico_en_sistemas_de_informaci_n_geogr_fica.docx",
+        "Pdf":  "spanish/pdf/Guia_92_T_cnico_en_sistemas_de_informaci_n_geogr_fica.pdf",
+        "DocxBytes":  43221,
+        "PdfBytes":  122966
+    },
+    {
+        "Guide":  "92",
+        "Title":  "Geographic Information Systems Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_92_T_cnico_em_Sistemas_de_Informa_o_Geogr_fica_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_92_T_cnico_em_Sistemas_de_Informa_o_Geogr_fica_PTBR.pdf",
+        "DocxBytes":  42863,
+        "PdfBytes":  129052
+    },
+    {
+        "Guide":  "93",
+        "Title":  "Surveying And Mapping Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/pdf/Surveying and Mapping Technician.docx",
+        "Pdf":  "english/docx/Surveying and Mapping Technician.pdf",
+        "DocxBytes":  46008,
+        "PdfBytes":  192429
+    },
+    {
+        "Guide":  "93",
+        "Title":  "Surveying And Mapping Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_93_T_cnico_en_topograf_a_y_cartograf_a.docx",
+        "Pdf":  "spanish/pdf/Guia_93_T_cnico_en_topograf_a_y_cartograf_a.pdf",
+        "DocxBytes":  43134,
+        "PdfBytes":  122701
+    },
+    {
+        "Guide":  "93",
+        "Title":  "Surveying And Mapping Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_93_T_cnico_em_Agrimensura_e_Mapeamento_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_93_T_cnico_em_Agrimensura_e_Mapeamento_PTBR.pdf",
+        "DocxBytes":  42845,
+        "PdfBytes":  128659
+    },
+    {
+        "Guide":  "94",
+        "Title":  "Civil Engineering Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Civil Engineering Technician.docx",
+        "Pdf":  "english/pdf/Civil Engineering Technician.pdf",
+        "DocxBytes":  45957,
+        "PdfBytes":  192405
+    },
+    {
+        "Guide":  "94",
+        "Title":  "Civil Engineering Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_94_T_cnico_en_ingenier_a_civil.docx",
+        "Pdf":  "spanish/pdf/Guia_94_T_cnico_en_ingenier_a_civil.pdf",
+        "DocxBytes":  43114,
+        "PdfBytes":  122394
+    },
+    {
+        "Guide":  "94",
+        "Title":  "Civil Engineering Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_94_T_cnico_em_Engenharia_Civil_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_94_T_cnico_em_Engenharia_Civil_PTBR.pdf",
+        "DocxBytes":  42864,
+        "PdfBytes":  128464
+    },
+    {
+        "Guide":  "95",
+        "Title":  "Architectural And Civil Drafter",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Architectural and Civil Drafter.docx",
+        "Pdf":  "english/pdf/Architectural and Civil Drafter.pdf",
+        "DocxBytes":  46090,
+        "PdfBytes":  192498
+    },
+    {
+        "Guide":  "95",
+        "Title":  "Architectural And Civil Drafter",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_95_Dibujante_arquitect_nico_y_civil.docx",
+        "Pdf":  "spanish/pdf/Guia_95_Dibujante_arquitect_nico_y_civil.pdf",
+        "DocxBytes":  43151,
+        "PdfBytes":  122827
+    },
+    {
+        "Guide":  "95",
+        "Title":  "Architectural And Civil Drafter",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_95_Desenhista_Arquitet_nico_e_Civil_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_95_Desenhista_Arquitet_nico_e_Civil_PTBR.pdf",
+        "DocxBytes":  42855,
+        "PdfBytes":  128655
+    },
+    {
+        "Guide":  "96",
+        "Title":  "Electrical And Electronic Engineering Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Electrical and Electronic Engineering Technician.docx",
+        "Pdf":  "english/pdf/Electrical and Electronic Engineering Technician.pdf",
+        "DocxBytes":  46131,
+        "PdfBytes":  193345
+    },
+    {
+        "Guide":  "96",
+        "Title":  "Electrical And Electronic Engineering Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_96_T_cnico_en_ingenier_a_el_ctrica_y_electr_nica.docx",
+        "Pdf":  "spanish/pdf/Guia_96_T_cnico_en_ingenier_a_el_ctrica_y_electr_nica.pdf",
+        "DocxBytes":  43147,
+        "PdfBytes":  122639
+    },
+    {
+        "Guide":  "96",
+        "Title":  "Electrical And Electronic Engineering Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_96_T_cnico_em_Engenharia_El_trica_e_Eletr_nica_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_96_T_cnico_em_Engenharia_El_trica_e_Eletr_nica_PTBR.pdf",
+        "DocxBytes":  42914,
+        "PdfBytes":  128739
+    },
+    {
+        "Guide":  "97",
+        "Title":  "Mechanical Engineering Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Mechanical Engineering Technician.docx",
+        "Pdf":  "english/pdf/Mechanical Engineering Technician.pdf",
+        "DocxBytes":  46015,
+        "PdfBytes":  193108
+    },
+    {
+        "Guide":  "97",
+        "Title":  "Mechanical Engineering Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_97_T_cnico_en_ingenier_a_mec_nica.docx",
+        "Pdf":  "spanish/pdf/Guia_97_T_cnico_en_ingenier_a_mec_nica.pdf",
+        "DocxBytes":  43113,
+        "PdfBytes":  122667
+    },
+    {
+        "Guide":  "97",
+        "Title":  "Mechanical Engineering Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_97_T_cnico_em_Engenharia_Mec_nica_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_97_T_cnico_em_Engenharia_Mec_nica_PTBR.pdf",
+        "DocxBytes":  42854,
+        "PdfBytes":  128589
+    },
+    {
+        "Guide":  "98",
+        "Title":  "Agricultural Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Agricultural Technician.docx",
+        "Pdf":  "english/pdf/Agricultural Technician.pdf",
+        "DocxBytes":  46116,
+        "PdfBytes":  193134
+    },
+    {
+        "Guide":  "98",
+        "Title":  "Agricultural Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_98_T_cnico_agr_cola.docx",
+        "Pdf":  "spanish/pdf/Guia_98_T_cnico_agr_cola.pdf",
+        "DocxBytes":  43095,
+        "PdfBytes":  122202
+    },
+    {
+        "Guide":  "98",
+        "Title":  "Agricultural Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_98_T_cnico_Agr_cola_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_98_T_cnico_Agr_cola_PTBR.pdf",
+        "DocxBytes":  42829,
+        "PdfBytes":  128210
+    },
+    {
+        "Guide":  "99",
+        "Title":  "Food Science Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Food Science Technician.docx",
+        "Pdf":  "english/pdf/Food Science Technician.pdf",
+        "DocxBytes":  46161,
+        "PdfBytes":  193377
+    },
+    {
+        "Guide":  "99",
+        "Title":  "Food Science Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_99_T_cnico_en_ciencia_de_los_alimentos.docx",
+        "Pdf":  "spanish/pdf/Guia_99_T_cnico_en_ciencia_de_los_alimentos.pdf",
+        "DocxBytes":  43145,
+        "PdfBytes":  122402
+    },
+    {
+        "Guide":  "99",
+        "Title":  "Food Science Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_99_T_cnico_em_Ci_ncia_de_Alimentos_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_99_T_cnico_em_Ci_ncia_de_Alimentos_PTBR.pdf",
+        "DocxBytes":  42890,
+        "PdfBytes":  128550
+    },
+    {
+        "Guide":  "100",
+        "Title":  "Clinical Laboratory Technician",
+        "Language":  "English",
+        "LanguageFolder":  "english",
+        "Docx":  "english/docx/Clinical Laboratory Technician.docx",
+        "Pdf":  "english/pdf/Clinical Laboratory Technician.pdf",
+        "DocxBytes":  46078,
+        "PdfBytes":  193136
+    },
+    {
+        "Guide":  "100",
+        "Title":  "Clinical Laboratory Technician",
+        "Language":  "Spanish (Latin America)",
+        "LanguageFolder":  "spanish",
+        "Docx":  "spanish/docx/Guia_100_T_cnico_de_laboratorio_cl_nico.docx",
+        "Pdf":  "spanish/pdf/Guia_100_T_cnico_de_laboratorio_cl_nico.pdf",
+        "DocxBytes":  43148,
+        "PdfBytes":  122688
+    },
+    {
+        "Guide":  "100",
+        "Title":  "Clinical Laboratory Technician",
+        "Language":  "Brazilian Portuguese",
+        "LanguageFolder":  "portuguese",
+        "Docx":  "portuguese/docx/Guia_100_T_cnico_de_Laborat_rio_Cl_nico_PTBR.docx",
+        "Pdf":  "portuguese/pdf/Guia_100_T_cnico_de_Laborat_rio_Cl_nico_PTBR.pdf",
+        "DocxBytes":  42856,
+        "PdfBytes":  128363
+    }
+]

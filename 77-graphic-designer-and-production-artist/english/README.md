@@ -1,21 +1,40 @@
-# Graphic Designer and Production Artist
+﻿# Lifelong Opportunity Guide 77
 
-Corrected English v1.0 release candidate for Guide 77.
+## Graphic Designer And Production Artist — English Edition
 
-## Included files
+A free, accessible career and education guide created and directed by **Alberto “Al” Leiva**.
 
-- `Graphic Designer and Production Artist.docx`
-- `Graphic Designer and Production Artist.pdf`
+## Downloads
 
-## Quality-control standard
+- [Editable DOCX](docx/Graphic Designer and Production Artist.docx)
+- [Searchable PDF](pdf/Graphic Designer and Production Artist.pdf)
 
-- Compact, two-level Table of Contents
-- No TOC bullets or self-entry
-- Continuous section flow without unnecessary forced page breaks
-- Reduced paragraph, list, heading, table, and TOC spacing
-- Grammar, punctuation, capitalization, and terminology consistency review
-- Searchable PDF verification
+## Edition details
 
-Created and directed by **Alberto (Al) Leiva**.
+- **Guide:** 77
+- **Career:** Graphic Designer And Production Artist
+- **Language:** English
+- **Version:** 1.0
+- **Publication month:** July 2026
+- **Availability:** DOCX and PDF present
+- **Review status:** Technically reviewed publication edition; exact source equivalence and human linguistic review should not be assumed unless separately documented
 
-License: **CC BY-NC-SA 4.0**.
+## Scope
+
+This guide supports practical career exploration, accessible learning, ethical use of artificial intelligence, privacy and safety, realistic education pathways, portfolio development, job-search preparation, and verification through current official sources.
+
+## Important notice
+
+This material provides general educational and career-planning information. It does not guarantee employment, income, admission, funding, licensing, certification, promotion, or any other result. Requirements and opportunities vary by jurisdiction, employer, and time. Verify important decisions through current official sources and qualified professionals.
+
+## Corrections and accessibility
+
+Report factual errors, broken links, accessibility barriers, or translation concerns through the repository's [GitHub Issues](https://github.com/Chpmunk31456/lifelong-opportunity-project/issues) or the [main contribution process](../../CONTRIBUTING.md).
+
+## Author and AI assistance
+
+Created and directed by **Alberto “Al” Leiva**. ChatGPT supported research, organization, editing, translation support, and document preparation under the author's direction. The author remains responsible for editorial and publication decisions.
+
+## License
+
+Unless the file states otherwise, this edition is licensed under [CC BY-NC-SA 4.0](../../LICENSE.md).

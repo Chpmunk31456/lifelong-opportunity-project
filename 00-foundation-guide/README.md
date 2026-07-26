@@ -1,47 +1,43 @@
-# Lifelong Opportunity Foundation Guide
+﻿# Lifelong Opportunity Guide 00
 
-## Choosing Work You Can Enjoy
+## Lifelong Opportunity Foundation Guide
 
-A free guide to career fit, affordable education, accessibility, ethical decision-making, and lifelong reinvention.
+A free, practical, multilingual career and education guide created and directed by **Alberto “Al” Leiva**.
 
-## Current edition
+## Available editions
 
-- **Language:** English
-- **Version:** 1.0
-- **Status:** Release candidate pending final owner review
-- **Publication month:** July 2026
-- **Jurisdictional scope:** U.S.-focused examples with explicit local-verification requirements
+| Language | Editable DOCX | Searchable PDF |
+|---|---|---|
+| English | [DOCX](english/English/Docx/Lifelong_Opportunity_Foundation_Guide_English_v1.0.docx) | [PDF](english/English/PDF/Lifelong_Opportunity_Foundation_Guide_English_v1.0.pdf) |
+| Spanish (Latin America) | [DOCX](spanish/Docx/Guia_00_Fundamentos_Oportunidad_para_Toda_la_Vida_ES_v1.0.docx) | [PDF](spanish/PDF/Guia_00_Fundamentos_Oportunidad_para_Toda_la_Vida_ES_v1.0.pdf) |
+| Brazilian Portuguese | [DOCX](portuguese/DOCX/Guia_00_Guia_Fundamental_de_Oportunidades_ao_Longo_da_Vida_PTBR.docx) | [PDF](portuguese/PDF/Guia_00_Guia_Fundamental_de_Oportunidades_ao_Longo_da_Vida_PTBR.pdf) |
 
-## Downloads
+All three language editions are available in both DOCX and PDF formats.
 
-- [English DOCX](english/English/Docx/Lifelong_Opportunity_Foundation_Guide_English_v1.0.docx)
-- [English PDF](english/English/PDF/Lifelong_Opportunity_Foundation_Guide_English_v1.0.pdf)
-
-## What this guide covers
+## What this guide supports
 
 - Career fit and realistic work investigation
-- Free-first and employer-supported education
-- Apprenticeships, internships, clinical placements, and career ladders
-- Tuition assistance, service commitments, repayment, and layoff provisions
-- School accreditation, licensing, credential portability, and total cost
-- Federal education tax benefits and restrictions against double benefits
-- Accessibility, worker rights, privacy, cybersecurity, ethical AI, and fraud prevention
-- Advancement, exit planning, a 12-week action plan, and practical worksheets
+- Free-first and affordable education pathways
+- Accessibility and disability-support planning
+- Ethical, private, and responsible use of artificial intelligence
+- Safety, privacy, and professional-boundary awareness
+- Portfolio, résumé, interview, and advancement preparation
+- Verification through current official and employer sources
 
-## Ethical commitments
+## Important notice
 
-This guide does not guarantee employment, funding, licensing, promotion, or income. Important education, tax, labor, licensing, immigration, and accessibility information must be verified with current official sources and qualified professionals when necessary.
+This guide provides general educational and career-planning information. It does not guarantee employment, income, admission, funding, licensing, certification, promotion, or any other result. Requirements, compensation, credentials, working conditions, and opportunities vary by jurisdiction, employer, and time.
+
+Language availability does not by itself establish exact translation equivalence or human linguistic review. Consult edition metadata and project quality records where that distinction matters.
+
+## Corrections and accessibility
+
+Report factual errors, broken links, accessibility barriers, or translation concerns through [GitHub Issues](https://github.com/Chpmunk31456/lifelong-opportunity-project/issues). See the repository's [Accessibility policy](../ACCESSIBILITY.md), [Contribution guidelines](../CONTRIBUTING.md), and [Governance](../GOVERNANCE.md).
 
 ## Author and AI assistance
 
-Created and directed by **Alberto (Al) Leiva**.
-
-ChatGPT by OpenAI was used as a collaborative research, organization, editing, and document-preparation tool under the author's direction and review.
+Created and directed by **Alberto “Al” Leiva**. ChatGPT supported research, organization, editing, translation support, and document preparation under the author's direction. The author remains responsible for editorial and publication decisions.
 
 ## License
 
-CC BY-NC-SA 4.0.
-
-## Corrections
-
-Please use the main repository's issue process to report factual errors, broken links, accessibility barriers, or outdated information.
+Unless a file states otherwise, these materials are licensed under [CC BY-NC-SA 4.0](../LICENSE.md).
