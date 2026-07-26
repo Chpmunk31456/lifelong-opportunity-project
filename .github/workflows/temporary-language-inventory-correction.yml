@@ -1,0 +1,50 @@
+name: Temporary language inventory correction
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  correct:
+    if: github.head_ref == 'audit-lifelong-opportunity-project'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      - name: Correct audit inventory
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          report = Path('project/README_ASSOCIATED_GUIDE_AUDIT.md')
+          text = report.read_text(encoding='utf-8')
+          excluded = {'.github/workflows/temporary-language-inventory-correction.yml'}
+          files = [p for p in Path('.').rglob('*') if p.is_file() and '.git' not in p.parts and p.as_posix() not in excluded]
+
+          labels = [('English/english','english'),('Spanish/spanish','spanish'),('Portuguese/portuguese','portuguese')]
+          rows = []
+          for label, folder in labels:
+              matches = [p for p in files if folder in p.parts]
+              rows.append(f"- {label}: {len(matches)} files (Markdown {sum(p.suffix.lower()=='.md' for p in matches)}, PDF {sum(p.suffix.lower()=='.pdf' for p in matches)}, DOCX {sum(p.suffix.lower()=='.docx' for p in matches)})")
+
+          nested = sorted(p.as_posix() for p in files if any(p.parts[i] == p.parts[i+1] and p.parts[i] in {'english','spanish','portuguese'} for i in range(len(p.parts)-1)))
+          block = '## Language Inventory\n\n' + '\n'.join(rows)
+          if nested:
+              block += '\n\n## Nested Language Directories Detected\n\n' + '\n'.join(f'- `{p}`' for p in nested)
+          text = re.sub(r'## Language Inventory\n\n.*?\n\n## README Files Audited', block + '\n\n## README Files Audited', text, flags=re.S)
+          text = text.replace('**Overall result:** PASS', '**Overall result:** PASS WITH STRUCTURE NOTE' if nested else '**Overall result:** PASS')
+          report.write_text(text, encoding='utf-8')
+      - name: Replace temporary workflow with corrected report
+        run: |
+          rm .github/workflows/temporary-language-inventory-correction.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Correct language inventory in audit report"
+          git push origin HEAD:${{ github.head_ref }}
