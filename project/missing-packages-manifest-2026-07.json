@@ -1,0 +1,548 @@
+{
+  "status": "reviewed-local-package-not-uploaded",
+  "created_file_count": 42,
+  "expected_file_count": 42,
+  "missing": [],
+  "accessibility_reports": [
+    {
+      "path": "/mnt/data/guide06_es/a11y.json",
+      "high": 0,
+      "medium": 2,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide07_pt/a11y.json",
+      "high": 0,
+      "medium": 2,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide08_pt/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide09_pt/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide11_es/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide12_es/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide13_es/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide14_es/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide15_es/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide16_es/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide17_es/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide18_es/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide19_bilingual/es/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide19_bilingual/pt/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide25_es/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide34_bilingual/es/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide34_bilingual/pt/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide43_es/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide56_pt/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide64_es/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide70_en/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    {
+      "path": "/mnt/data/guide74_en/a11y.json",
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    }
+  ],
+  "files": [
+    {
+      "filename": "Lifelong_Opportunity_Administrative_Assistant_and_Office_Coordinator_Guide_Spanish_v1.0.docx",
+      "path": "/mnt/data/guide06_es/Lifelong_Opportunity_Administrative_Assistant_and_Office_Coordinator_Guide_Spanish_v1.0.docx",
+      "format": "docx",
+      "bytes": 42521,
+      "sha256": "16beeff18e0304243f8dff46ef2d5878d45dd6fd8cc14e08f63ef98138da431d",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Administrative_Assistant_and_Office_Coordinator_Guide_Spanish_v1.0.pdf",
+      "path": "/mnt/data/guide06_es/Lifelong_Opportunity_Administrative_Assistant_and_Office_Coordinator_Guide_Spanish_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 142331,
+      "sha256": "d2092d87ed4198aa7b98b355d5a2f550bb22673d40c1a02414b5019140ffa6cb",
+      "pages": 6,
+      "searchable_text_chars": 12023
+    },
+    {
+      "filename": "Lifelong_Opportunity_Customer_Service_Specialist_Guide_Portuguese_Brazil_v1.0.docx",
+      "path": "/mnt/data/guide07_pt/Lifelong_Opportunity_Customer_Service_Specialist_Guide_Portuguese_Brazil_v1.0.docx",
+      "format": "docx",
+      "bytes": 41105,
+      "sha256": "144b130d94a023579a24db402d49a99576746ed645a50e36825a9fbf15b7c290",
+      "heading_count": 17,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Customer_Service_Specialist_Guide_Portuguese_Brazil_v1.0.pdf",
+      "path": "/mnt/data/guide07_pt/Lifelong_Opportunity_Customer_Service_Specialist_Guide_Portuguese_Brazil_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 131940,
+      "sha256": "aeaffd7b08b183714283922cf31bd68f5eea82f8e182e3927bc2af4688e31a44",
+      "pages": 5,
+      "searchable_text_chars": 8816
+    },
+    {
+      "filename": "Lifelong_Opportunity_Human_Resources_Assistant_Guide_Portuguese_Brazil_v1.0.docx",
+      "path": "/mnt/data/guide08_pt/Lifelong_Opportunity_Human_Resources_Assistant_Guide_Portuguese_Brazil_v1.0.docx",
+      "format": "docx",
+      "bytes": 41543,
+      "sha256": "19d22048340058d8f6a4833ea317d9a03662b89a0e0843517c05612a98af01a3",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Human_Resources_Assistant_Guide_Portuguese_Brazil_v1.0.pdf",
+      "path": "/mnt/data/guide08_pt/Lifelong_Opportunity_Human_Resources_Assistant_Guide_Portuguese_Brazil_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 139821,
+      "sha256": "0071c06c5f734774bc03b07a3eaddcd20a3a6f0267a41a1ccf49d6053e871ae7",
+      "pages": 6,
+      "searchable_text_chars": 9842
+    },
+    {
+      "filename": "Lifelong_Opportunity_Logistics_and_Supply_Chain_Coordinator_Guide_Portuguese_Brazil_v1.0.docx",
+      "path": "/mnt/data/guide09_pt/Lifelong_Opportunity_Logistics_and_Supply_Chain_Coordinator_Guide_Portuguese_Brazil_v1.0.docx",
+      "format": "docx",
+      "bytes": 41632,
+      "sha256": "f6a3e44c381553379cde4c1ac6a669caa07090825069560b3dd4dda9999a0fd0",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Logistics_and_Supply_Chain_Coordinator_Guide_Portuguese_Brazil_v1.0.pdf",
+      "path": "/mnt/data/guide09_pt/Lifelong_Opportunity_Logistics_and_Supply_Chain_Coordinator_Guide_Portuguese_Brazil_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 140108,
+      "sha256": "d4973ad2ac90bc53d9f023e5eaa38cb591ec5e8b8600666834966aa5f420c144",
+      "pages": 6,
+      "searchable_text_chars": 10036
+    },
+    {
+      "filename": "Lifelong_Opportunity_Procurement_and_Purchasing_Coordinator_Guide_Spanish_v1.0.docx",
+      "path": "/mnt/data/guide11_es/Lifelong_Opportunity_Procurement_and_Purchasing_Coordinator_Guide_Spanish_v1.0.docx",
+      "format": "docx",
+      "bytes": 41562,
+      "sha256": "1d635d9ef5f2692f5675f1c782e29c00b28bbb0828f48e87858973ac56b5a639",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Procurement_and_Purchasing_Coordinator_Guide_Spanish_v1.0.pdf",
+      "path": "/mnt/data/guide11_es/Lifelong_Opportunity_Procurement_and_Purchasing_Coordinator_Guide_Spanish_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 138381,
+      "sha256": "0f857eb1e56d1bc58fbbb7e3e4258bbee17019f42902e7d5c851cefd68c29f5d",
+      "pages": 6,
+      "searchable_text_chars": 9987
+    },
+    {
+      "filename": "Lifelong_Opportunity_Compliance_Coordinator_and_Compliance_Assistant_Guide_Spanish_v1.0.docx",
+      "path": "/mnt/data/guide12_es/Lifelong_Opportunity_Compliance_Coordinator_and_Compliance_Assistant_Guide_Spanish_v1.0.docx",
+      "format": "docx",
+      "bytes": 41608,
+      "sha256": "ea2319e4c58a94db4ecf62a78d4c55d6700773c50ab2b02fc6b5bdc3d9b998aa",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Compliance_Coordinator_and_Compliance_Assistant_Guide_Spanish_v1.0.pdf",
+      "path": "/mnt/data/guide12_es/Lifelong_Opportunity_Compliance_Coordinator_and_Compliance_Assistant_Guide_Spanish_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 139406,
+      "sha256": "1ef52de6d32fb48b8e9d862c7aa4d13d9ff65382454c31bbaca7d42c32d6c913",
+      "pages": 6,
+      "searchable_text_chars": 10371
+    },
+    {
+      "filename": "Lifelong_Opportunity_Quality_Assurance_and_Process_Improvement_Coordinator_Guide_Spanish_v1.0.docx",
+      "path": "/mnt/data/guide13_es/Lifelong_Opportunity_Quality_Assurance_and_Process_Improvement_Coordinator_Guide_Spanish_v1.0.docx",
+      "format": "docx",
+      "bytes": 41540,
+      "sha256": "69c0adc82ec8f904f4e1e4140e3dd737490acdbac9d7ab95372e6ac0e005cbec",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Quality_Assurance_and_Process_Improvement_Coordinator_Guide_Spanish_v1.0.pdf",
+      "path": "/mnt/data/guide13_es/Lifelong_Opportunity_Quality_Assurance_and_Process_Improvement_Coordinator_Guide_Spanish_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 140663,
+      "sha256": "bc0e0c45b51fc8f84579584af705d7946eaa976eeebf491b141b1efca7b15b12",
+      "pages": 6,
+      "searchable_text_chars": 9998
+    },
+    {
+      "filename": "Lifelong_Opportunity_Patient_Services_Representative_and_Medical_Office_Coordinator_Guide_Spanish_v1.0.docx",
+      "path": "/mnt/data/guide14_es/Lifelong_Opportunity_Patient_Services_Representative_and_Medical_Office_Coordinator_Guide_Spanish_v1.0.docx",
+      "format": "docx",
+      "bytes": 41755,
+      "sha256": "607ea530f94e2ce0b1802466ffdb91043850a6f725a6048df864031af75d31c9",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Patient_Services_Representative_and_Medical_Office_Coordinator_Guide_Spanish_v1.0.pdf",
+      "path": "/mnt/data/guide14_es/Lifelong_Opportunity_Patient_Services_Representative_and_Medical_Office_Coordinator_Guide_Spanish_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 141053,
+      "sha256": "6b91683f7446c59aac8533d4742a397c45eac15aaa6fec853444c84d136a0785",
+      "pages": 6,
+      "searchable_text_chars": 10704
+    },
+    {
+      "filename": "Lifelong_Opportunity_Insurance_Claims_and_Policy_Processing_Specialist_Guide_Spanish_v1.0.docx",
+      "path": "/mnt/data/guide15_es/Lifelong_Opportunity_Insurance_Claims_and_Policy_Processing_Specialist_Guide_Spanish_v1.0.docx",
+      "format": "docx",
+      "bytes": 41726,
+      "sha256": "7883ed81e6a2a88eb0f8f239301ddee5de7c37f48e71250bb669a65df18c2ed2",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Insurance_Claims_and_Policy_Processing_Specialist_Guide_Spanish_v1.0.pdf",
+      "path": "/mnt/data/guide15_es/Lifelong_Opportunity_Insurance_Claims_and_Policy_Processing_Specialist_Guide_Spanish_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 140512,
+      "sha256": "88a665330308eed398568506f1d22f8142e7f564a13bd5283c39a2b245a0da90",
+      "pages": 6,
+      "searchable_text_chars": 10427
+    },
+    {
+      "filename": "Lifelong_Opportunity_Loan_Processing_Specialist_and_Loan_Clerk_Guide_Spanish_v1.0.docx",
+      "path": "/mnt/data/guide16_es/Lifelong_Opportunity_Loan_Processing_Specialist_and_Loan_Clerk_Guide_Spanish_v1.0.docx",
+      "format": "docx",
+      "bytes": 41514,
+      "sha256": "61f2fd69adee50354e75bd5d937002e407dc92081ed64a9927ba1d6d7cf8fb85",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Loan_Processing_Specialist_and_Loan_Clerk_Guide_Spanish_v1.0.pdf",
+      "path": "/mnt/data/guide16_es/Lifelong_Opportunity_Loan_Processing_Specialist_and_Loan_Clerk_Guide_Spanish_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 140004,
+      "sha256": "31437bf9f8ba16752594071a969b594b8bf313b52dd1757b0bfa8197c4797030",
+      "pages": 6,
+      "searchable_text_chars": 10106
+    },
+    {
+      "filename": "Lifelong_Opportunity_Bank_Teller_and_Member_Services_Representative_Guide_Spanish_v1.0.docx",
+      "path": "/mnt/data/guide17_es/Lifelong_Opportunity_Bank_Teller_and_Member_Services_Representative_Guide_Spanish_v1.0.docx",
+      "format": "docx",
+      "bytes": 41458,
+      "sha256": "282ea9a2cb033d2bd88bb5547685c39d9473b6f4f0e07b957aabfe3f68bd13ed",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Bank_Teller_and_Member_Services_Representative_Guide_Spanish_v1.0.pdf",
+      "path": "/mnt/data/guide17_es/Lifelong_Opportunity_Bank_Teller_and_Member_Services_Representative_Guide_Spanish_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 138995,
+      "sha256": "c372fa2dcda95e7d83a7b6b35843d1041d74f357652797e30e8ae7e1c109554e",
+      "pages": 6,
+      "searchable_text_chars": 9809
+    },
+    {
+      "filename": "Lifelong_Opportunity_Legal_Administrative_Assistant_and_Legal_Office_Coordinator_Guide_Spanish_v1.0.docx",
+      "path": "/mnt/data/guide18_es/Lifelong_Opportunity_Legal_Administrative_Assistant_and_Legal_Office_Coordinator_Guide_Spanish_v1.0.docx",
+      "format": "docx",
+      "bytes": 41546,
+      "sha256": "ca57e460f273aa04f6125e8dd3efa253602b3800678dea6756dfeb18709f74b2",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Legal_Administrative_Assistant_and_Legal_Office_Coordinator_Guide_Spanish_v1.0.pdf",
+      "path": "/mnt/data/guide18_es/Lifelong_Opportunity_Legal_Administrative_Assistant_and_Legal_Office_Coordinator_Guide_Spanish_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 140041,
+      "sha256": "e91694e00867d7e2ec3ca30d7f092cae4170b6b1812f2491275bff338c6c4c49",
+      "pages": 6,
+      "searchable_text_chars": 10198
+    },
+    {
+      "filename": "Lifelong_Opportunity_Paralegal_and_Legal_Assistant_Guide_Spanish_v1.0.docx",
+      "path": "/mnt/data/guide19_bilingual/es/Lifelong_Opportunity_Paralegal_and_Legal_Assistant_Guide_Spanish_v1.0.docx",
+      "format": "docx",
+      "bytes": 41144,
+      "sha256": "8e0481ee18468a17d794848c85ac2e32b62fceeaf21a6544d0ea3ef9a0ad1632",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Paralegal_and_Legal_Assistant_Guide_Spanish_v1.0.pdf",
+      "path": "/mnt/data/guide19_bilingual/es/Lifelong_Opportunity_Paralegal_and_Legal_Assistant_Guide_Spanish_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 137680,
+      "sha256": "965c1632de4aa5fa49aa251c21e04f79b0301d97092d2e964846a0290dfb6192",
+      "pages": 6,
+      "searchable_text_chars": 9082
+    },
+    {
+      "filename": "Lifelong_Opportunity_Paralegal_and_Legal_Assistant_Guide_Portuguese_Brazil_v1.0.docx",
+      "path": "/mnt/data/guide19_bilingual/pt/Lifelong_Opportunity_Paralegal_and_Legal_Assistant_Guide_Portuguese_Brazil_v1.0.docx",
+      "format": "docx",
+      "bytes": 41105,
+      "sha256": "7a2dd17b0db64f6ba7001a7242c0be46ddb7f6c8d17bba804fdafa0c0fb9fb59",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Paralegal_and_Legal_Assistant_Guide_Portuguese_Brazil_v1.0.pdf",
+      "path": "/mnt/data/guide19_bilingual/pt/Lifelong_Opportunity_Paralegal_and_Legal_Assistant_Guide_Portuguese_Brazil_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 138964,
+      "sha256": "31d1bafc1b9a3c373db05dc252d9d230bbc11f78c945b32b443ef0d56ed29a67",
+      "pages": 6,
+      "searchable_text_chars": 8953
+    },
+    {
+      "filename": "Lifelong_Opportunity_General_Maintenance_and_Repair_Worker_and_Building_Maintenance_Technician_Guide_Spanish_v1.0.docx",
+      "path": "/mnt/data/guide25_es/Lifelong_Opportunity_General_Maintenance_and_Repair_Worker_and_Building_Maintenance_Technician_Guide_Spanish_v1.0.docx",
+      "format": "docx",
+      "bytes": 41492,
+      "sha256": "42634462f29b3fb104ce4d1ec1f652e6b45b0ab63beb97b46c00f61c65c7ba12",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_General_Maintenance_and_Repair_Worker_and_Building_Maintenance_Technician_Guide_Spanish_v1.0.pdf",
+      "path": "/mnt/data/guide25_es/Lifelong_Opportunity_General_Maintenance_and_Repair_Worker_and_Building_Maintenance_Technician_Guide_Spanish_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 140296,
+      "sha256": "a5008768c2ccb0b2abb99604f8d8ee4f04ac8ca1dd0383a5f281385bbc989aff",
+      "pages": 6,
+      "searchable_text_chars": 9794
+    },
+    {
+      "filename": "Lifelong_Opportunity_Quality_Control_Inspector_and_Manufacturing_Technician_Guide_Spanish_v1.0.docx",
+      "path": "/mnt/data/guide34_bilingual/es/Lifelong_Opportunity_Quality_Control_Inspector_and_Manufacturing_Technician_Guide_Spanish_v1.0.docx",
+      "format": "docx",
+      "bytes": 41108,
+      "sha256": "d3f85a70d78d6280302176fca40911e6ac9fe00a448ca1c5d5e8665014dc6e7b",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Quality_Control_Inspector_and_Manufacturing_Technician_Guide_Spanish_v1.0.pdf",
+      "path": "/mnt/data/guide34_bilingual/es/Lifelong_Opportunity_Quality_Control_Inspector_and_Manufacturing_Technician_Guide_Spanish_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 139086,
+      "sha256": "30f609650655570817d6420ff1fe1930abcad14c76eab82cb3a7fed1a5f265b2",
+      "pages": 6,
+      "searchable_text_chars": 8711
+    },
+    {
+      "filename": "Lifelong_Opportunity_Quality_Control_Inspector_and_Manufacturing_Technician_Guide_Portuguese_Brazil_v1.0.docx",
+      "path": "/mnt/data/guide34_bilingual/pt/Lifelong_Opportunity_Quality_Control_Inspector_and_Manufacturing_Technician_Guide_Portuguese_Brazil_v1.0.docx",
+      "format": "docx",
+      "bytes": 41106,
+      "sha256": "139a27a7de540a6f2e778db68e4767defea24fffa4f1c67b6f0ae6e7e534b210",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Quality_Control_Inspector_and_Manufacturing_Technician_Guide_Portuguese_Brazil_v1.0.pdf",
+      "path": "/mnt/data/guide34_bilingual/pt/Lifelong_Opportunity_Quality_Control_Inspector_and_Manufacturing_Technician_Guide_Portuguese_Brazil_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 140311,
+      "sha256": "51f9e3b2ea6660d657902b5fd25661753a0fd7c89dc7f6a338aeeaee80c6be9e",
+      "pages": 6,
+      "searchable_text_chars": 8643
+    },
+    {
+      "filename": "Lifelong_Opportunity_Solar_Photovoltaic_Installer_Guide_Spanish_v1.0.docx",
+      "path": "/mnt/data/guide43_es/Lifelong_Opportunity_Solar_Photovoltaic_Installer_Guide_Spanish_v1.0.docx",
+      "format": "docx",
+      "bytes": 41523,
+      "sha256": "c7c007e1a2331a6e622e99b0f31328ad48dd9da2895be336ccd973ee0e77f489",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Solar_Photovoltaic_Installer_Guide_Spanish_v1.0.pdf",
+      "path": "/mnt/data/guide43_es/Lifelong_Opportunity_Solar_Photovoltaic_Installer_Guide_Spanish_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 139880,
+      "sha256": "2ede21c106cb676bba38545764fda3fa80ad3abec26608ec3d92edef39b5cdf7",
+      "pages": 6,
+      "searchable_text_chars": 10039
+    },
+    {
+      "filename": "Lifelong_Opportunity_Nursing_Assistant_and_Patient_Care_Technician_Guide_Portuguese_Brazil_v1.0.docx",
+      "path": "/mnt/data/guide56_pt/Lifelong_Opportunity_Nursing_Assistant_and_Patient_Care_Technician_Guide_Portuguese_Brazil_v1.0.docx",
+      "format": "docx",
+      "bytes": 41611,
+      "sha256": "abc14beb8823e62cf069275794683d1c33ddca6637006d00a83f1278fa8491cf",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Nursing_Assistant_and_Patient_Care_Technician_Guide_Portuguese_Brazil_v1.0.pdf",
+      "path": "/mnt/data/guide56_pt/Lifelong_Opportunity_Nursing_Assistant_and_Patient_Care_Technician_Guide_Portuguese_Brazil_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 143813,
+      "sha256": "3bc8d8c2da7ae40e2ea3e4b44e6d2a668129439371222acaca2e9245ef92b2eb",
+      "pages": 6,
+      "searchable_text_chars": 10216
+    },
+    {
+      "filename": "Lifelong_Opportunity_Community_Service_Program_Coordinator_Guide_Spanish_v1.0.docx",
+      "path": "/mnt/data/guide64_es/Lifelong_Opportunity_Community_Service_Program_Coordinator_Guide_Spanish_v1.0.docx",
+      "format": "docx",
+      "bytes": 41688,
+      "sha256": "cdf9f8fd6a6b96f252eae4f710631f434de86ca0e833450e5515b7eb799bf749",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Community_Service_Program_Coordinator_Guide_Spanish_v1.0.pdf",
+      "path": "/mnt/data/guide64_es/Lifelong_Opportunity_Community_Service_Program_Coordinator_Guide_Spanish_v1.0.pdf",
+      "format": "pdf",
+      "bytes": 140668,
+      "sha256": "250b4979d82fe68972d90e58dfcf86b901711154a3761e9ea6363e10a24a0fd5",
+      "pages": 6,
+      "searchable_text_chars": 10625
+    },
+    {
+      "filename": "Lifelong_Opportunity_Travel_Agent_and_Travel_Coordinator_Guide_English_v1.0.docx",
+      "path": "/mnt/data/guide70_en/Lifelong_Opportunity_Travel_Agent_and_Travel_Coordinator_Guide_English_v1.0.docx",
+      "format": "docx",
+      "bytes": 41676,
+      "sha256": "b83a4813e8c3b1c18c17c602207c7945459e8cfea3b81fef536913f58ecddd9f",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    },
+    {
+      "filename": "Lifelong_Opportunity_Ecommerce_Specialist_and_Marketplace_Coordinator_Guide_English_v1.0.docx",
+      "path": "/mnt/data/guide74_en/Lifelong_Opportunity_Ecommerce_Specialist_and_Marketplace_Coordinator_Guide_English_v1.0.docx",
+      "format": "docx",
+      "bytes": 41705,
+      "sha256": "5e773cdd01662b403619620b029f1872a92ed2bf9d42973765183c37c07aea9c",
+      "heading_count": 18,
+      "has_acknowledgment": true,
+      "has_license": true
+    }
+  ],
+  "integrity_flags": [
+    "Guide 70 English DOCX is newly authored and not verified as text-equivalent to the pre-existing repository PDF.",
+    "Guide 74 English DOCX is newly authored and not verified as text-equivalent to the pre-existing repository PDF.",
+    "New Spanish and Portuguese editions were authored from career-title scope and common project structure; they were not produced by direct line-by-line translation of each repository English master.",
+    "Therefore, the files are publication-ready drafts with technical QA completed, but they should not be labeled exact translations or exact editable counterparts without source comparison."
+  ]
+}
