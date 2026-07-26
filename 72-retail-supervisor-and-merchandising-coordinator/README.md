@@ -1,25 +1,43 @@
-# Lifelong Opportunity Guide 72
+﻿# Lifelong Opportunity Guide 72
 
-## Retail Supervisor and Merchandising Coordinator
+## Retail Supervisor And Merchandising Coordinator
 
-Free, practical career and education guidance for people exploring retail supervision, merchandising support, inventory coordination, customer service, sales-floor operations, scheduling, and related advancement pathways.
-
-**Author:** Alberto (Al) Leiva
+A free, practical, multilingual career and education guide created and directed by **Alberto “Al” Leiva**.
 
 ## Available editions
 
-- English: DOCX and PDF
-- Spanish (Latin America): DOCX and PDF
-- Brazilian Portuguese: DOCX and PDF
+| Language | Editable DOCX | Searchable PDF |
+|---|---|---|
+| English | [DOCX](english/docx/Retail Supervisor and Merchandising Coordinator.docx) | [PDF](english/pdf/Retail Supervisor and Merchandising Coordinator.pdf) |
+| Spanish (Latin America) | [DOCX](spanish/docx/Guia_72_Supervisor_de_comercio_minorista_y_coordinador_de_merchandising.docx) | [PDF](spanish/pdf/Guia_72_Supervisor_de_comercio_minorista_y_coordinador_de_merchandising.pdf) |
+| Brazilian Portuguese | [DOCX](portuguese/docx/Guia_72_Supervisor_de_Varejo_e_Coordenador_de_Merchandising_PTBR.docx) | [PDF](portuguese/pdf/Guia_72_Supervisor_de_Varejo_e_Coordenador_de_Merchandising_PTBR.pdf) |
 
-## Using this guide
+All three language editions are available in both DOCX and PDF formats.
 
-Open the language folder that best fits your needs and select the editable DOCX or searchable PDF edition. Verify changing wages, employer expectations, local labour requirements, accessibility practices, and training options through current official sources.
+## What this guide supports
+
+- Career fit and realistic work investigation
+- Free-first and affordable education pathways
+- Accessibility and disability-support planning
+- Ethical, private, and responsible use of artificial intelligence
+- Safety, privacy, and professional-boundary awareness
+- Portfolio, résumé, interview, and advancement preparation
+- Verification through current official and employer sources
 
 ## Important notice
 
-This guide provides general education and career-planning information. It does not guarantee employment, income, admission, certification, promotion, funding, or any other outcome.
+This guide provides general educational and career-planning information. It does not guarantee employment, income, admission, funding, licensing, certification, promotion, or any other result. Requirements, compensation, credentials, working conditions, and opportunities vary by jurisdiction, employer, and time.
 
-## Status
+Language availability does not by itself establish exact translation equivalence or human linguistic review. Consult edition metadata and project quality records where that distinction matters.
 
-Published in English, Spanish, and Brazilian Portuguese. Future revisions may update sources, accessibility, labour-market information, training options, and language quality.
+## Corrections and accessibility
+
+Report factual errors, broken links, accessibility barriers, or translation concerns through [GitHub Issues](https://github.com/Chpmunk31456/lifelong-opportunity-project/issues). See the repository's [Accessibility policy](../ACCESSIBILITY.md), [Contribution guidelines](../CONTRIBUTING.md), and [Governance](../GOVERNANCE.md).
+
+## Author and AI assistance
+
+Created and directed by **Alberto “Al” Leiva**. ChatGPT supported research, organization, editing, translation support, and document preparation under the author's direction. The author remains responsible for editorial and publication decisions.
+
+## License
+
+Unless a file states otherwise, these materials are licensed under [CC BY-NC-SA 4.0](../LICENSE.md).

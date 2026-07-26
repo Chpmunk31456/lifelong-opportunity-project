@@ -1,18 +1,40 @@
-# Guía 00 - Fundamentos
+﻿# Lifelong Opportunity Guide 00
 
-## Oportunidad para Toda la Vida: Elegir un trabajo que pueda disfrutar
+## Lifelong Opportunity Foundation Guide — Spanish (Latin America) Edition
 
-Esta carpeta contiene la edición en español neutro de la Guía 00.
+A free, accessible career and education guide created and directed by **Alberto “Al” Leiva**.
 
-Archivos incluidos:
+## Downloads
 
-- `Guia_00_Fundamentos_Oportunidad_para_Toda_la_Vida_ES_v1.0.docx`
-- `Guia_00_Fundamentos_Oportunidad_para_Toda_la_Vida_ES_v1.0.pdf`
+- [Editable DOCX](Docx/Guia_00_Fundamentos_Oportunidad_para_Toda_la_Vida_ES_v1.0.docx)
+- [Searchable PDF](PDF/Guia_00_Fundamentos_Oportunidad_para_Toda_la_Vida_ES_v1.0.pdf)
 
-La traducción conserva la estructura, los encabezados, las tablas, las listas, los enlaces y el formato del documento maestro en inglés. Se realizó una revisión de gramática, ortografía, puntuación, terminología y representación visual.
+## Edition details
 
-Estado: candidato de publicación pendiente de revisión final del propietario.
+- **Guide:** 00
+- **Career:** Lifelong Opportunity Foundation Guide
+- **Language:** Spanish (Latin America)
+- **Version:** 1.0
+- **Publication month:** July 2026
+- **Availability:** DOCX and PDF present
+- **Review status:** Technically reviewed publication edition; exact source equivalence and human linguistic review should not be assumed unless separately documented
 
-Creada y dirigida por Alberto (Al) Leiva. Preparación y traducción asistidas por ChatGPT, de OpenAI.
+## Scope
 
-Licencia: CC BY-NC-SA 4.0.
+This guide supports practical career exploration, accessible learning, ethical use of artificial intelligence, privacy and safety, realistic education pathways, portfolio development, job-search preparation, and verification through current official sources.
+
+## Important notice
+
+This material provides general educational and career-planning information. It does not guarantee employment, income, admission, funding, licensing, certification, promotion, or any other result. Requirements and opportunities vary by jurisdiction, employer, and time. Verify important decisions through current official sources and qualified professionals.
+
+## Corrections and accessibility
+
+Report factual errors, broken links, accessibility barriers, or translation concerns through the repository's [GitHub Issues](https://github.com/Chpmunk31456/lifelong-opportunity-project/issues) or the [main contribution process](../../CONTRIBUTING.md).
+
+## Author and AI assistance
+
+Created and directed by **Alberto “Al” Leiva**. ChatGPT supported research, organization, editing, translation support, and document preparation under the author's direction. The author remains responsible for editorial and publication decisions.
+
+## License
+
+Unless the file states otherwise, this edition is licensed under [CC BY-NC-SA 4.0](../../LICENSE.md).

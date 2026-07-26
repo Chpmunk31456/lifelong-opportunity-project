@@ -1,27 +1,43 @@
-# Diesel Service Technician and Mechanic
+﻿# Lifelong Opportunity Guide 27
 
-A free Lifelong Opportunity career guide created and directed by **Alberto (Al) Leiva**.
+## Diesel Service Technician and Mechanic
 
-## Current edition
+A free, practical, multilingual career and education guide created and directed by **Alberto “Al” Leiva**.
 
-- **Language:** English
-- **Version:** 1.0
-- **Status:** Release candidate pending owner review
-- **Publication month:** July 2026
+## Available editions
 
-## Downloads
+| Language | Editable DOCX | Searchable PDF |
+|---|---|---|
+| English | [DOCX](english/docx/Lifelong_Opportunity_Diesel_Service_Guide_English_v1.0.docx) | [PDF](english/pdf/Lifelong_Opportunity_Diesel_Service_Guide_English_v1.0.pdf) |
+| Spanish (Latin America) | [DOCX](spanish/docx/Guia_27_T_cnico_y_Mec_nico_de_Servicio_Di_sel.docx) | [PDF](spanish/pdf/Guia_27_T_cnico_y_Mec_nico_de_Servicio_Di_sel.pdf) |
+| Brazilian Portuguese | [DOCX](portuguese/DOCX/Guia_27_T_cnico_e_Mec_nico_de_Servi_os_a_Diesel_PTBR.docx) | [PDF](portuguese/PDF/Guia_27_T_cnico_e_Mec_nico_de_Servi_os_a_Diesel_PTBR.pdf) |
 
-- [English DOCX](english/docx/Lifelong_Opportunity_Diesel_Service_Guide_English_v1.0.docx)
-- [English PDF](english/pdf/Lifelong_Opportunity_Diesel_Service_Guide_English_v1.0.pdf)
+All three language editions are available in both DOCX and PDF formats.
 
-## Ethical commitments
+## What this guide supports
 
-This guide does not guarantee employment, funding, licensing, promotion, or income. Readers should verify current local requirements, costs, worker protections, and employer agreements before making a commitment.
+- Career fit and realistic work investigation
+- Free-first and affordable education pathways
+- Accessibility and disability-support planning
+- Ethical, private, and responsible use of artificial intelligence
+- Safety, privacy, and professional-boundary awareness
+- Portfolio, résumé, interview, and advancement preparation
+- Verification through current official and employer sources
+
+## Important notice
+
+This guide provides general educational and career-planning information. It does not guarantee employment, income, admission, funding, licensing, certification, promotion, or any other result. Requirements, compensation, credentials, working conditions, and opportunities vary by jurisdiction, employer, and time.
+
+Language availability does not by itself establish exact translation equivalence or human linguistic review. Consult edition metadata and project quality records where that distinction matters.
+
+## Corrections and accessibility
+
+Report factual errors, broken links, accessibility barriers, or translation concerns through [GitHub Issues](https://github.com/Chpmunk31456/lifelong-opportunity-project/issues). See the repository's [Accessibility policy](../ACCESSIBILITY.md), [Contribution guidelines](../CONTRIBUTING.md), and [Governance](../GOVERNANCE.md).
 
 ## Author and AI assistance
 
-Created and directed by **Alberto (Al) Leiva**. ChatGPT by OpenAI assisted with research support, organization, editing, and document preparation under the author's direction and review.
+Created and directed by **Alberto “Al” Leiva**. ChatGPT supported research, organization, editing, translation support, and document preparation under the author's direction. The author remains responsible for editorial and publication decisions.
 
 ## License
 
-CC BY-NC-SA 4.0.
+Unless a file states otherwise, these materials are licensed under [CC BY-NC-SA 4.0](../LICENSE.md).

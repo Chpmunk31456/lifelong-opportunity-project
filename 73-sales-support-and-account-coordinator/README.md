@@ -1,25 +1,43 @@
-# Lifelong Opportunity Guide 73
+﻿# Lifelong Opportunity Guide 73
 
-## Sales Support and Account Coordinator
+## Sales Support And Account Coordinator
 
-Free, practical career and education guidance for people exploring sales support, account coordination, customer communication, order and document management, CRM administration, scheduling, reporting, and related advancement pathways.
-
-**Author:** Alberto (Al) Leiva
+A free, practical, multilingual career and education guide created and directed by **Alberto “Al” Leiva**.
 
 ## Available editions
 
-- English: DOCX and PDF
-- Spanish (Latin America): DOCX and PDF
-- Brazilian Portuguese: DOCX and PDF
+| Language | Editable DOCX | Searchable PDF |
+|---|---|---|
+| English | [DOCX](english/docx/Sales Support and Account Coordinator.docx) | [PDF](english/pdf/Sales Support and Account Coordinator.pdf) |
+| Spanish (Latin America) | [DOCX](spanish/docx/Guia_73_Soporte_de_ventas_y_coordinador_de_cuentas.docx) | [PDF](spanish/pdf/Guia_73_Soporte_de_ventas_y_coordinador_de_cuentas.pdf) |
+| Brazilian Portuguese | [DOCX](portuguese/docx/Guia_73_Coordenador_de_Suporte_a_Vendas_e_Contas_PTBR.docx) | [PDF](portuguese/pdf/Guia_73_Coordenador_de_Suporte_a_Vendas_e_Contas_PTBR.pdf) |
 
-## Using this guide
+All three language editions are available in both DOCX and PDF formats.
 
-Open the language folder that best fits your needs and select the editable DOCX or searchable PDF edition. Verify changing wages, employer expectations, product or industry requirements, accessibility practices, and training options through current official sources.
+## What this guide supports
+
+- Career fit and realistic work investigation
+- Free-first and affordable education pathways
+- Accessibility and disability-support planning
+- Ethical, private, and responsible use of artificial intelligence
+- Safety, privacy, and professional-boundary awareness
+- Portfolio, résumé, interview, and advancement preparation
+- Verification through current official and employer sources
 
 ## Important notice
 
-This guide provides general education and career-planning information. It does not guarantee employment, income, admission, certification, promotion, funding, or any other outcome.
+This guide provides general educational and career-planning information. It does not guarantee employment, income, admission, funding, licensing, certification, promotion, or any other result. Requirements, compensation, credentials, working conditions, and opportunities vary by jurisdiction, employer, and time.
 
-## Status
+Language availability does not by itself establish exact translation equivalence or human linguistic review. Consult edition metadata and project quality records where that distinction matters.
 
-Published in English, Spanish, and Brazilian Portuguese. Future revisions may update sources, accessibility, labour-market information, training options, and language quality.
+## Corrections and accessibility
+
+Report factual errors, broken links, accessibility barriers, or translation concerns through [GitHub Issues](https://github.com/Chpmunk31456/lifelong-opportunity-project/issues). See the repository's [Accessibility policy](../ACCESSIBILITY.md), [Contribution guidelines](../CONTRIBUTING.md), and [Governance](../GOVERNANCE.md).
+
+## Author and AI assistance
+
+Created and directed by **Alberto “Al” Leiva**. ChatGPT supported research, organization, editing, translation support, and document preparation under the author's direction. The author remains responsible for editorial and publication decisions.
+
+## License
+
+Unless a file states otherwise, these materials are licensed under [CC BY-NC-SA 4.0](../LICENSE.md).

@@ -1,23 +1,43 @@
-# Plumber, Pipefitter, and Plumbing Technician
+﻿# Lifelong Opportunity Guide 31
 
-A free Lifelong Opportunity career guide created and directed by **Alberto (Al) Leiva**.
+## Plumber, Pipefitter, and Plumbing Technician
 
-## Current edition
+A free, practical, multilingual career and education guide created and directed by **Alberto “Al” Leiva**.
 
-- **Language:** English
-- **Version:** 1.0
-- **Status:** Release candidate pending owner review
-- **Factual review:** July 2026
+## Available editions
 
-## Downloads
+| Language | Editable DOCX | Searchable PDF |
+|---|---|---|
+| English | [DOCX](english/docx/Lifelong_Opportunity_Plumber_Pipefitter_and_Plumbing_Technician_Guide_English_v1.0.docx) | [PDF](english/pdf/Lifelong_Opportunity_Plumber_Pipefitter_and_Plumbing_Technician_Guide_English_v1.0.pdf) |
+| Spanish (Latin America) | [DOCX](spanish/docx/Guia_31_Plomero_Instalador_de_Tuber_as_y_T_cnico_de_Plomer_a.docx) | [PDF](spanish/pdf/Guia_31_Plomero_Instalador_de_Tuber_as_y_T_cnico_de_Plomer_a.pdf) |
+| Brazilian Portuguese | [DOCX](portuguese/docx/Guia_31_Encanador_Montador_de_Tubula_es_e_T_cnico_de_Encanamento_PTBR.docx) | [PDF](portuguese/pdf/Guia_31_Encanador_Montador_de_Tubula_es_e_T_cnico_de_Encanamento_PTBR.pdf) |
 
-- [English DOCX](english/docx/Lifelong_Opportunity_Plumber_Pipefitter_and_Plumbing_Technician_Guide_English_v1.0.docx)
-- Searchable PDF is in `english/pdf/`.
+All three language editions are available in both DOCX and PDF formats.
 
-## Ethical commitments
+## What this guide supports
 
-The guide does not guarantee employment, licensing, funding, promotion, or income. It prioritizes verified pathways, employer-supported education, written repayment terms, accessibility, worker rights, safety, privacy, ethical AI, credential portability, and exit planning.
+- Career fit and realistic work investigation
+- Free-first and affordable education pathways
+- Accessibility and disability-support planning
+- Ethical, private, and responsible use of artificial intelligence
+- Safety, privacy, and professional-boundary awareness
+- Portfolio, résumé, interview, and advancement preparation
+- Verification through current official and employer sources
+
+## Important notice
+
+This guide provides general educational and career-planning information. It does not guarantee employment, income, admission, funding, licensing, certification, promotion, or any other result. Requirements, compensation, credentials, working conditions, and opportunities vary by jurisdiction, employer, and time.
+
+Language availability does not by itself establish exact translation equivalence or human linguistic review. Consult edition metadata and project quality records where that distinction matters.
+
+## Corrections and accessibility
+
+Report factual errors, broken links, accessibility barriers, or translation concerns through [GitHub Issues](https://github.com/Chpmunk31456/lifelong-opportunity-project/issues). See the repository's [Accessibility policy](../ACCESSIBILITY.md), [Contribution guidelines](../CONTRIBUTING.md), and [Governance](../GOVERNANCE.md).
+
+## Author and AI assistance
+
+Created and directed by **Alberto “Al” Leiva**. ChatGPT supported research, organization, editing, translation support, and document preparation under the author's direction. The author remains responsible for editorial and publication decisions.
 
 ## License
 
-CC BY-NC-SA 4.0.
+Unless a file states otherwise, these materials are licensed under [CC BY-NC-SA 4.0](../LICENSE.md).

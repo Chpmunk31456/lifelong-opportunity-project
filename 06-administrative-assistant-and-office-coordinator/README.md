@@ -1,27 +1,43 @@
-# Administrative Assistant and Office Coordinator
+﻿# Lifelong Opportunity Guide 06
 
-A free Lifelong Opportunity career guide created and directed by **Alberto (Al) Leiva**.
+## Administrative Assistant and Office Coordinator
 
-## Current edition
+A free, practical, multilingual career and education guide created and directed by **Alberto “Al” Leiva**.
 
-- **Language:** English
-- **Version:** 1.0
-- **Status:** Release candidate pending owner review
-- **Review month:** July 2026
+## Available editions
 
-## Downloads
+| Language | Editable DOCX | Searchable PDF |
+|---|---|---|
+| English | [DOCX](english/docx/Lifelong_Opportunity_Administrative_Assistant_and_Office_Coordinator_Guide_English_v1.0.docx) | [PDF](english/pdf/Lifelong_Opportunity_Administrative_Assistant_and_Office_Coordinator_Guide_English_v1.0.pdf) |
+| Spanish (Latin America) | [DOCX](spanish/docx/Lifelong_Opportunity_Administrative_Assistant_and_Office_Coordinator_Guide_Spanish_v1.0.docx) | [PDF](spanish/pdf/Lifelong_Opportunity_Administrative_Assistant_and_Office_Coordinator_Guide_Spanish_v1.0.pdf) |
+| Brazilian Portuguese | [DOCX](portuguese/docx/Guia_06_Assistente_Administrativo_e_Coordenador_de_Escrit_rio_PTBR.docx) | [PDF](portuguese/pdf/Guia_06_Assistente_Administrativo_e_Coordenador_de_Escrit_rio_PTBR.pdf) |
 
-- [English DOCX](english/docx/Lifelong_Opportunity_Administrative_Assistant_and_Office_Coordinator_Guide_English_v1.0.docx)
-- [English PDF](english/pdf/Lifelong_Opportunity_Administrative_Assistant_and_Office_Coordinator_Guide_English_v1.0.pdf)
+All three language editions are available in both DOCX and PDF formats.
 
-## Scope
+## What this guide supports
 
-This guide covers real work, fit, pay context, education, employer-paid learning, repayment agreements, apprenticeships, accessibility, privacy, ethical AI, portfolio evidence, interview preparation, advancement, and exit planning.
+- Career fit and realistic work investigation
+- Free-first and affordable education pathways
+- Accessibility and disability-support planning
+- Ethical, private, and responsible use of artificial intelligence
+- Safety, privacy, and professional-boundary awareness
+- Portfolio, résumé, interview, and advancement preparation
+- Verification through current official and employer sources
 
-## Important limit
+## Important notice
 
-The guide provides general educational information. Requirements and opportunities vary by jurisdiction and employer. Verify current official sources before committing money or signing an agreement.
+This guide provides general educational and career-planning information. It does not guarantee employment, income, admission, funding, licensing, certification, promotion, or any other result. Requirements, compensation, credentials, working conditions, and opportunities vary by jurisdiction, employer, and time.
+
+Language availability does not by itself establish exact translation equivalence or human linguistic review. Consult edition metadata and project quality records where that distinction matters.
+
+## Corrections and accessibility
+
+Report factual errors, broken links, accessibility barriers, or translation concerns through [GitHub Issues](https://github.com/Chpmunk31456/lifelong-opportunity-project/issues). See the repository's [Accessibility policy](../ACCESSIBILITY.md), [Contribution guidelines](../CONTRIBUTING.md), and [Governance](../GOVERNANCE.md).
+
+## Author and AI assistance
+
+Created and directed by **Alberto “Al” Leiva**. ChatGPT supported research, organization, editing, translation support, and document preparation under the author's direction. The author remains responsible for editorial and publication decisions.
 
 ## License
 
-CC BY-NC-SA 4.0.
+Unless a file states otherwise, these materials are licensed under [CC BY-NC-SA 4.0](../LICENSE.md).

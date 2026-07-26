@@ -1,19 +1,40 @@
-# Auxiliar Judicial y Asistente de Servicios Judiciales
+﻿# Lifelong Opportunity Guide 20
 
-Edición en español neutro latinoamericano de la Guía 20 de Oportunidades para Toda la Vida.
+## Court Clerk and Judicial Services Assistant — Spanish (Latin America) Edition
 
-## Archivos
+A free, accessible career and education guide created and directed by **Alberto “Al” Leiva**.
 
-- [DOCX editable](./docx/Guia_20_Auxiliar_Judicial_y_Asistente_de_Servicios_Judiciales_ES_LatAm_v1.0.docx)
-- [PDF con texto seleccionable](./pdf/Guia_20_Auxiliar_Judicial_y_Asistente_de_Servicios_Judiciales_ES_LatAm_v1.0.pdf)
-- [Registro de control de calidad](./QC.md)
+## Downloads
 
-## Estado de Revisión
+- [Editable DOCX](docx/Guia_20_Auxiliar_Judicial_y_Asistente_de_Servicios_Judiciales_ES_LatAm_v1.0.docx)
+- [Searchable PDF](pdf/Guia_20_Auxiliar_Judicial_y_Asistente_de_Servicios_Judiciales_ES_LatAm_v1.0.pdf)
 
-Esta edición fue preparada con asistencia de inteligencia artificial a partir de las ediciones existentes. Requiere revisión lingüística por una persona competente en español latinoamericano antes de presentarse como una traducción revisada por una persona.
+## Edition details
 
-Creada y dirigida por **Alberto “Al” Leiva**.
+- **Guide:** 20
+- **Career:** Court Clerk and Judicial Services Assistant
+- **Language:** Spanish (Latin America)
+- **Version:** 1.0
+- **Publication month:** July 2026
+- **Availability:** DOCX and PDF present
+- **Review status:** Technically reviewed publication edition; exact source equivalence and human linguistic review should not be assumed unless separately documented
 
-Asistencia de IA: ChatGPT, bajo la dirección del autor.
+## Scope
 
-Licencia: **CC BY-NC-SA 4.0**.
+This guide supports practical career exploration, accessible learning, ethical use of artificial intelligence, privacy and safety, realistic education pathways, portfolio development, job-search preparation, and verification through current official sources.
+
+## Important notice
+
+This material provides general educational and career-planning information. It does not guarantee employment, income, admission, funding, licensing, certification, promotion, or any other result. Requirements and opportunities vary by jurisdiction, employer, and time. Verify important decisions through current official sources and qualified professionals.
+
+## Corrections and accessibility
+
+Report factual errors, broken links, accessibility barriers, or translation concerns through the repository's [GitHub Issues](https://github.com/Chpmunk31456/lifelong-opportunity-project/issues) or the [main contribution process](../../CONTRIBUTING.md).
+
+## Author and AI assistance
+
+Created and directed by **Alberto “Al” Leiva**. ChatGPT supported research, organization, editing, translation support, and document preparation under the author's direction. The author remains responsible for editorial and publication decisions.
+
+## License
+
+Unless the file states otherwise, this edition is licensed under [CC BY-NC-SA 4.0](../../LICENSE.md).

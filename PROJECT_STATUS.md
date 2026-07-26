@@ -28,3 +28,12 @@ These are availability statements, not declarations of exact translation equival
 
 Review all guides by July 2027 or sooner after material changes to wages, outlook, licensing, accreditation, apprenticeships, education benefits, worker protections, technology, accessibility, or official links.
 
+
+## README normalization — July 2026
+
+- Main README updated to reflect complete six-file availability for all 101 guides
+- 101 guide-level READMEs normalized
+- 303 language-level READMEs normalized
+- All generated local download links validated
+- Audit records stored under project/
+- Exact source equivalence and human linguistic review remain separate quality questions

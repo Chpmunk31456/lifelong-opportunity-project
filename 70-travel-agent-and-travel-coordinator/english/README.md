@@ -1,21 +1,40 @@
-# Travel Agent and Travel Coordinator
+﻿# Lifelong Opportunity Guide 70
 
-Corrected English v1.0 release candidate for the Lifelong Opportunity Guides.
+## Travel Agent And Travel Coordinator — English Edition
 
-## Files
+A free, accessible career and education guide created and directed by **Alberto “Al” Leiva**.
 
-- `Travel Agent and Travel Coordinator.docx`
-- `Travel Agent and Travel Coordinator.pdf`
+## Downloads
 
-## Formatting standard
+- [Editable DOCX](docx/Lifelong_Opportunity_Travel_Agent_and_Travel_Coordinator_Guide_English_v1.0.docx)
+- [Searchable PDF](pdf/Travel Agent and Travel Coordinator.pdf)
 
-- Compact, two-level Table of Contents
-- No TOC bullets, self-entry, or Heading 3 entries
-- Tight, consistent TOC line spacing and right-aligned page numbers
-- Continuous body flow without forced page breaks before sections
-- Compact paragraph, list, heading, and table spacing
-- Searchable PDF generated from the corrected DOCX
+## Edition details
 
-Created and directed by **Alberto (Al) Leiva**.
+- **Guide:** 70
+- **Career:** Travel Agent And Travel Coordinator
+- **Language:** English
+- **Version:** 1.0
+- **Publication month:** July 2026
+- **Availability:** DOCX and PDF present
+- **Review status:** Technically reviewed publication edition; exact source equivalence and human linguistic review should not be assumed unless separately documented
 
-License: **CC BY-NC-SA 4.0**.
+## Scope
+
+This guide supports practical career exploration, accessible learning, ethical use of artificial intelligence, privacy and safety, realistic education pathways, portfolio development, job-search preparation, and verification through current official sources.
+
+## Important notice
+
+This material provides general educational and career-planning information. It does not guarantee employment, income, admission, funding, licensing, certification, promotion, or any other result. Requirements and opportunities vary by jurisdiction, employer, and time. Verify important decisions through current official sources and qualified professionals.
+
+## Corrections and accessibility
+
+Report factual errors, broken links, accessibility barriers, or translation concerns through the repository's [GitHub Issues](https://github.com/Chpmunk31456/lifelong-opportunity-project/issues) or the [main contribution process](../../CONTRIBUTING.md).
+
+## Author and AI assistance
+
+Created and directed by **Alberto “Al” Leiva**. ChatGPT supported research, organization, editing, translation support, and document preparation under the author's direction. The author remains responsible for editorial and publication decisions.
+
+## License
+
+Unless the file states otherwise, this edition is licensed under [CC BY-NC-SA 4.0](../../LICENSE.md).
