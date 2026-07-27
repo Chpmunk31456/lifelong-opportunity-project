@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 08
+# Lifelong Opportunity Guide 08
 
 ## Human Resources Assistant
 
@@ -9,7 +9,7 @@ A free, practical, multilingual career and education guide created and directed 
 | Language | Editable DOCX | Searchable PDF |
 |---|---|---|
 | English | [DOCX](english/docx/Lifelong_Opportunity_Human_Resources_Assistant_Guide_English_v1.0.docx) | [PDF](english/pdf/Lifelong_Opportunity_Human_Resources_Assistant_Guide_English_v1.0.pdf) |
-| Spanish (Latin America) | [DOCX](spanish/spanish/DOCX/Guia_08_Asistente_Recursos_Humanos.docx) | [PDF](spanish/spanish/PDF/Guia_08_Asistente_Recursos_Humanos.pdf) |
+| Spanish (Latin America) | [DOCX](spanish/DOCX/Guia_08_Asistente_Recursos_Humanos.docx) | [PDF](spanish/PDF/Guia_08_Asistente_Recursos_Humanos.pdf) |
 | Brazilian Portuguese | [DOCX](portuguese/docx/Lifelong_Opportunity_Human_Resources_Assistant_Guide_Portuguese_Brazil_v1.0.docx) | [PDF](portuguese/pdf/Lifelong_Opportunity_Human_Resources_Assistant_Guide_Portuguese_Brazil_v1.0.pdf) |
 
 All three language editions are available in both DOCX and PDF formats.
