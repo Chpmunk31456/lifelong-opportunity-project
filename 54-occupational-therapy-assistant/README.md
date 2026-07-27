@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 54
+# Lifelong Opportunity Guide 54
 
 ## Occupational Therapy Assistant
 
@@ -8,7 +8,7 @@ A free, practical, multilingual career and education guide created and directed 
 
 | Language | Editable DOCX | Searchable PDF |
 |---|---|---|
-| English | [DOCX](english/docx/Physical Therapist Assistant.docx) | [PDF](english/pdf/Physical Therapist Assistant.pdf) |
+| English | [DOCX](english/docx/Lifelong_Opportunity_Occupational_Therapy_Assistant_Guide_English_v1.0.docx) | [PDF](english/pdf/Lifelong_Opportunity_Occupational_Therapy_Assistant_Guide_English_v1.0.pdf) |
 | Spanish (Latin America) | [DOCX](spanish/docx/Guia_54_Asistente_de_Terapia_Ocupacional.docx) | [PDF](spanish/pdf/Guia_54_Asistente_de_Terapia_Ocupacional.pdf) |
 | Brazilian Portuguese | [DOCX](portuguese/docx/Guia_54_Assistente_de_Terapia_Ocupacional_PTBR.docx) | [PDF](portuguese/pdf/Guia_54_Assistente_de_Terapia_Ocupacional_PTBR.pdf) |
 

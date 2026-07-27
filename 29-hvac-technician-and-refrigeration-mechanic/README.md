@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 29
+# Lifelong Opportunity Guide 29
 
 ## HVAC Technician and Refrigeration Mechanic
 
@@ -8,7 +8,7 @@ A free, practical, multilingual career and education guide created and directed 
 
 | Language | Editable DOCX | Searchable PDF |
 |---|---|---|
-| English | [DOCX](english/docx/Lifelong_Opportunity_HVAC_Guide_English_v1.0.docx) | [PDF](english/pdf/Lifelong_Opportunity_HVAC_Guide_English_v1.0.pdf) |
+| English | [DOCX](english/docx/Lifelong_Opportunity_HVAC_Technician_and_Refrigeration_Mechanic_Guide_English_v1.0.docx) | [PDF](english/pdf/Lifelong_Opportunity_HVAC_Technician_and_Refrigeration_Mechanic_Guide_English_v1.0.pdf) |
 | Spanish (Latin America) | [DOCX](spanish/docx/Guia_29_T_cnico_de_HVAC_y_Mec_nico_de_Refrigeraci_n.docx) | [PDF](spanish/pdf/Guia_29_T_cnico_de_HVAC_y_Mec_nico_de_Refrigeraci_n.pdf) |
 | Brazilian Portuguese | [DOCX](portuguese/docx/Guia_29_T_cnico_de_HVAC_e_Mec_nico_de_Refrigera_o_PTBR.docx) | [PDF](portuguese/pdf/Guia_29_T_cnico_de_HVAC_e_Mec_nico_de_Refrigera_o_PTBR.pdf) |
 
