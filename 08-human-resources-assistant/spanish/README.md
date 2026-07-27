@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 08
+# Lifelong Opportunity Guide 08
 
 ## Human Resources Assistant — Spanish (Latin America) Edition
 
@@ -6,8 +6,8 @@ A free, accessible career and education guide created and directed by **Alberto 
 
 ## Downloads
 
-- [Editable DOCX](spanish/DOCX/Guia_08_Asistente_Recursos_Humanos.docx)
-- [Searchable PDF](spanish/PDF/Guia_08_Asistente_Recursos_Humanos.pdf)
+- [Editable DOCX](DOCX/Guia_08_Asistente_Recursos_Humanos.docx)
+- [Searchable PDF](PDF/Guia_08_Asistente_Recursos_Humanos.pdf)
 
 ## Edition details
 

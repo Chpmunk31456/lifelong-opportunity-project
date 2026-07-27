@@ -1,30 +1,23 @@
 # README and Associated-Guide Audit
 
-**Overall result:** PASS WITH STRUCTURE NOTE
+**Overall result:** FAIL
 
 ## Summary
 
-- README files audited: 407
+- README files audited: 406
 - Repository-local links checked: 2235
-- Broken repository-local targets: 0
+- Broken repository-local targets: 2
 - README files with malformed `] (` links: 0
 - External links identified but not network-tested: 402
 - Internal anchors identified: 0
 - Email links identified: 0
-- Repository files inventoried: 1367
+- Repository files inventoried: 1366
 
 ## Language Inventory
 
 - English/english: 383 files (Markdown 148, PDF 102, DOCX 102)
-- Spanish/spanish: 393 files (Markdown 191, PDF 101, DOCX 101)
+- Spanish/spanish: 391 files (Markdown 189, PDF 101, DOCX 101)
 - Portuguese/portuguese: 397 files (Markdown 195, PDF 101, DOCX 101)
-
-## Nested Language Directories Detected
-
-- `08-human-resources-assistant/spanish/spanish/DOCX/Guia_08_Asistente_Recursos_Humanos.docx`
-- `08-human-resources-assistant/spanish/spanish/PDF/Guia_08_Asistente_Recursos_Humanos.pdf`
-- `08-human-resources-assistant/spanish/spanish/QC.md`
-- `08-human-resources-assistant/spanish/spanish/README.md`
 
 ## README Files Audited
 
@@ -64,7 +57,6 @@
 - `08-human-resources-assistant/english/README.md`
 - `08-human-resources-assistant/portuguese/README.md`
 - `08-human-resources-assistant/spanish/README.md`
-- `08-human-resources-assistant/spanish/spanish/README.md`
 - `09-logistics-and-supply-chain-coordinator/README.md`
 - `09-logistics-and-supply-chain-coordinator/english/README.md`
 - `09-logistics-and-supply-chain-coordinator/portuguese/README.md`
@@ -438,11 +430,16 @@
 
 ## Broken Repository-Local Targets
 
-No broken repository-local targets were found.
+- `08-human-resources-assistant/README.md` → `spanish/spanish/DOCX/Guia_08_Asistente_Recursos_Humanos.docx` (missing)
+- `08-human-resources-assistant/README.md` → `spanish/spanish/PDF/Guia_08_Asistente_Recursos_Humanos.pdf` (missing)
 
 ## Malformed Markdown Links
 
 No malformed `] (` link patterns were found.
+
+## Nested Language Directories
+
+No duplicated language-directory nesting was found.
 
 ## Limits
 
