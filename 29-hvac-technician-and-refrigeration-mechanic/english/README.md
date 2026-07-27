@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 29
+# Lifelong Opportunity Guide 29
 
 ## HVAC Technician and Refrigeration Mechanic — English Edition
 
@@ -6,8 +6,8 @@ A free, accessible career and education guide created and directed by **Alberto 
 
 ## Downloads
 
-- [Editable DOCX](docx/Lifelong_Opportunity_HVAC_Guide_English_v1.0.docx)
-- [Searchable PDF](pdf/Lifelong_Opportunity_HVAC_Guide_English_v1.0.pdf)
+- [Editable DOCX](docx/Lifelong_Opportunity_HVAC_Technician_and_Refrigeration_Mechanic_Guide_English_v1.0.docx)
+- [Searchable PDF](pdf/Lifelong_Opportunity_HVAC_Technician_and_Refrigeration_Mechanic_Guide_English_v1.0.pdf)
 
 ## Edition details
 
