@@ -12,8 +12,10 @@ A free Lifelong Opportunity career guide created and directed by **Alberto (Al) 
 
 ## Downloads
 
-- [English DOCX](english/docx/Lifelong_Opportunity_Legal_Administrative_Assistant_and_Legal_Office_Coordinator_Guide_English_v1.0.docx)
-- [English PDF](english/pdf/Lifelong_Opportunity_Legal_Administrative_Assistant_and_Legal_Office_Coordinator_Guide_English_v1.0.pdf)
+The primary English guide package is maintained in the guide's English edition folder:
+
+- [English DOCX](../english/docx/Lifelong_Opportunity_Legal_Administrative_Assistant_and_Legal_Office_Coordinator_Guide_English_v1.0.docx)
+- [English PDF](../english/pdf/Lifelong_Opportunity_Legal_Administrative_Assistant_and_Legal_Office_Coordinator_Guide_English_v1.0.pdf)
 
 ## Purpose
 

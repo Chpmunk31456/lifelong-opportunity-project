@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 30
+# Lifelong Opportunity Guide 30
 
 ## Electrician and Electrical Technician
 
@@ -8,7 +8,7 @@ A free, practical, multilingual career and education guide created and directed 
 
 | Language | Editable DOCX | Searchable PDF |
 |---|---|---|
-| English | [DOCX](english/docx/Lifelong_Opportunity_Electrician_Guide_English_v1.0.docx) | [PDF](english/pdf/Lifelong_Opportunity_Electrician_Guide_English_v1.0.pdf) |
+| English | [DOCX](english/docx/Lifelong_Opportunity_Electrician_and_Electrical_Technician_Guide_English_v1.0.docx) | [PDF](english/pdf/Lifelong_Opportunity_Electrician_and_Electrical_Technician_Guide_English_v1.0.pdf) |
 | Spanish (Latin America) | [DOCX](spanish/docx/Guia_30_Electricista_y_T_cnico_El_ctrico.docx) | [PDF](spanish/pdf/Guia_30_Electricista_y_T_cnico_El_ctrico.pdf) |
 | Brazilian Portuguese | [DOCX](portuguese/docx/Guia_30_Eletricista_e_T_cnico_El_trico_PTBR.docx) | [PDF](portuguese/pdf/Guia_30_Eletricista_e_T_cnico_El_trico_PTBR.pdf) |
 

@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 54
+# Lifelong Opportunity Guide 54
 
 ## Occupational Therapy Assistant — English Edition
 
@@ -6,8 +6,8 @@ A free, accessible career and education guide created and directed by **Alberto 
 
 ## Downloads
 
-- [Editable DOCX](docx/Physical Therapist Assistant.docx)
-- [Searchable PDF](pdf/Physical Therapist Assistant.pdf)
+- [Editable DOCX](docx/Lifelong_Opportunity_Occupational_Therapy_Assistant_Guide_English_v1.0.docx)
+- [Searchable PDF](pdf/Lifelong_Opportunity_Occupational_Therapy_Assistant_Guide_English_v1.0.pdf)
 
 ## Edition details
 

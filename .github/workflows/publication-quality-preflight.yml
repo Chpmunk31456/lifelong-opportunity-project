@@ -1,0 +1,43 @@
+name: Publication package preflight
+
+on:
+  pull_request:
+    paths:
+      - '**/*.docx'
+      - '**/*.pdf'
+      - '**/README.md'
+      - 'scripts/audit_publication_packages.py'
+      - '.github/workflows/publication-quality-preflight.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install PDF inspection tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+
+      - name: Run publication package preflight
+        run: python scripts/audit_publication_packages.py
+
+      - name: Upload preflight reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: publication-quality-preflight
+          path: |
+            QA_PUBLICATION_PREFLIGHT.md
+            QA_PUBLICATION_PREFLIGHT.json
