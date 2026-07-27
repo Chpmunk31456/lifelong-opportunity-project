@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 30
+# Lifelong Opportunity Guide 30
 
 ## Electrician and Electrical Technician — English Edition
 
@@ -6,8 +6,8 @@ A free, accessible career and education guide created and directed by **Alberto 
 
 ## Downloads
 
-- [Editable DOCX](docx/Lifelong_Opportunity_Electrician_Guide_English_v1.0.docx)
-- [Searchable PDF](pdf/Lifelong_Opportunity_Electrician_Guide_English_v1.0.pdf)
+- [Editable DOCX](docx/Lifelong_Opportunity_Electrician_and_Electrical_Technician_Guide_English_v1.0.docx)
+- [Searchable PDF](pdf/Lifelong_Opportunity_Electrician_and_Electrical_Technician_Guide_English_v1.0.pdf)
 
 ## Edition details
 
