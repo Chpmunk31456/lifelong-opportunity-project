@@ -23,8 +23,7 @@ jobs:
           mkdir -p "$base/DOCX" "$base/PDF"
           git mv "$base/spanish/DOCX/Guia_08_Asistente_Recursos_Humanos.docx" "$base/DOCX/"
           git mv "$base/spanish/PDF/Guia_08_Asistente_Recursos_Humanos.pdf" "$base/PDF/"
-          git mv "$base/spanish/QC.md" "$base/QC.md"
-          git rm "$base/spanish/README.md"
+          git rm "$base/spanish/QC.md" "$base/spanish/README.md"
           rmdir "$base/spanish/DOCX" "$base/spanish/PDF" "$base/spanish"
           python - <<'PY'
           from pathlib import Path
@@ -39,7 +38,6 @@ jobs:
           from pathlib import Path
           from urllib.parse import unquote
           import re
-
           root = Path('.')
           readmes = sorted(p for p in root.rglob('README.md') if '.git' not in p.parts)
           excluded = {'.github/workflows/temporary-fix-guide-08-spanish-layout.yml'}
