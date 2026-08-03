@@ -7,6 +7,11 @@ on:
       - revision/guide-00-100-2026
     paths:
       - .github/workflows/guide00-publication-build.yml
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/guide00-publication-build.yml
 
 permissions:
   contents: write
@@ -75,7 +80,6 @@ jobs:
         run: |
           from pathlib import Path
           from zipfile import ZipFile
-          from lxml import etree
           import hashlib
           import json
           import re
