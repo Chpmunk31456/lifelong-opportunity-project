@@ -73,3 +73,5 @@ jobs:
           git diff --cached --check
           git commit -m "fix(guide-00): use canonical Red Seal program URL"
           git push origin HEAD:revision/guide-00-100-2026
+
+# Touch marker: re-trigger after workflow became present on branch.
