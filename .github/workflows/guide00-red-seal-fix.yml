@@ -31,34 +31,46 @@ jobs:
           ref: revision/guide-00-100-2026
           fetch-depth: 0
 
-      - name: Replace obsolete Red Seal URL in all Guide 00 masters
+      - name: Correct and verify Guide 00 Red Seal URLs
         shell: python
         run: |
           from pathlib import Path
 
           old = "https://www.red-seal.ca/eng/contact/c.4nt.1ct.shtml"
           new = "https://red-seal.ca/eng/about/program.shtml"
-          files = [
-              Path("00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_English_v1.1_INTEGRATED_MASTER.md"),
+          english = Path("00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_English_v1.1_INTEGRATED_MASTER.md")
+          translated = [
               Path("00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1_INTEGRATED_MASTER.md"),
               Path("00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1_INTEGRATED_MASTER.md"),
           ]
 
+          text = english.read_text(encoding="utf-8")
+          old_count = text.count(old)
+          new_count = text.count(new)
           changed = []
-          for path in files:
-              text = path.read_text(encoding="utf-8")
-              old_count = text.count(old)
-              new_count = text.count(new)
-              if old_count == 1 and new_count == 0:
-                  path.write_text(text.replace(old, new), encoding="utf-8", newline="\n")
-                  changed.append(path)
-                  print(f"Updated and verified {path}")
-              elif old_count == 0 and new_count == 1:
-                  print(f"Already corrected: {path}")
-              else:
-                  raise SystemExit(
-                      f"Unexpected URL state in {path}: old={old_count}, canonical={new_count}"
-                  )
+
+          if old_count == 1 and new_count == 0:
+              english.write_text(text.replace(old, new), encoding="utf-8", newline="\n")
+              changed.append(english)
+              print(f"Updated and verified {english}")
+          elif old_count == 0 and new_count == 1:
+              print(f"Already corrected: {english}")
+          else:
+              raise SystemExit(
+                  f"Unexpected English URL state: old={old_count}, canonical={new_count}"
+              )
+
+          for path in translated:
+              translated_text = path.read_text(encoding="utf-8")
+              if old in translated_text:
+                  raise SystemExit(f"Obsolete Red Seal URL remains in {path}")
+              if translated_text.count(new) > 1:
+                  raise SystemExit(f"Duplicate canonical Red Seal URL in {path}")
+              print(f"Verified no obsolete Red Seal URL in {path}")
+
+          final = english.read_text(encoding="utf-8")
+          if final.count(old) != 0 or final.count(new) != 1:
+              raise SystemExit("English post-correction verification failed")
 
           Path("/tmp/guide00_changed.txt").write_text(
               "\n".join(str(path) for path in changed), encoding="utf-8"
@@ -67,14 +79,12 @@ jobs:
       - name: Commit completed correction when needed
         run: |
           if [ ! -s /tmp/guide00_changed.txt ]; then
-            echo "All three masters already use the canonical Red Seal URL."
+            echo "Guide 00 English master already uses the canonical Red Seal URL."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add 00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_English_v1.1_INTEGRATED_MASTER.md
-          git add 00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1_INTEGRATED_MASTER.md
-          git add 00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1_INTEGRATED_MASTER.md
           git diff --cached --check
           git commit -m "fix(guide-00): use canonical Red Seal program URL"
           git push origin HEAD:revision/guide-00-100-2026
