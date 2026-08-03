@@ -1,0 +1,162 @@
+name: Guide 01 English extraction and baseline inventory
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - .github/workflows/guide01-english-extraction.yml
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/guide01-english-extraction.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide01-english-extraction
+  cancel-in-progress: false
+
+jobs:
+  extract-and-inventory:
+    if: github.repository == 'Chpmunk31456/lifelong-opportunity-project'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out controlled revision branch
+        uses: actions/checkout@v4
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Install extraction tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends pandoc python3-lxml
+
+      - name: Extract English DOCX to UTF-8 Markdown
+        shell: python
+        run: |
+          from pathlib import Path
+          import subprocess
+
+          source = Path('01-community-health-worker/english/docx/Lifelong_Opportunity_Community_Health_Worker_Guide_English_v1.0.docx')
+          output_dir = Path('01-community-health-worker/source')
+          output_dir.mkdir(parents=True, exist_ok=True)
+          target = output_dir / 'Lifelong_Opportunity_Community_Health_Worker_Guide_English_v1.1_EXTRACTED_BASELINE.md'
+
+          if not source.is_file():
+              raise SystemExit(f'Missing English source DOCX: {source}')
+
+          subprocess.run([
+              'pandoc', str(source), '--from=docx', '--to=gfm',
+              '--wrap=none', '--output', str(target)
+          ], check=True)
+
+          text = target.read_text(encoding='utf-8')
+          if len(text.strip()) < 5000:
+              raise SystemExit(f'Extracted baseline unexpectedly short: {len(text.strip())} characters')
+          if '\ufffd' in text:
+              raise SystemExit('Replacement-character encoding defect found in extracted baseline')
+          if text.startswith('\ufeff'):
+              target.write_text(text.lstrip('\ufeff'), encoding='utf-8', newline='\n')
+          print(f'Extracted {target} ({len(text)} characters)')
+
+      - name: Build auditable baseline inventory
+        shell: python
+        run: |
+          from pathlib import Path
+          import json
+          import re
+
+          source = Path('01-community-health-worker/source/Lifelong_Opportunity_Community_Health_Worker_Guide_English_v1.1_EXTRACTED_BASELINE.md')
+          text = source.read_text(encoding='utf-8')
+          headings = [line.strip() for line in text.splitlines() if re.match(r'^#{1,6}\s+', line)]
+          urls = sorted(set(re.findall(r'https?://[^\s)>\]]+', text)))
+
+          required_topics = {
+              'role_scope': ['community health worker', 'scope', 'duties'],
+              'training': ['training', 'education'],
+              'credentials': ['certification', 'credential', 'license'],
+              'income': ['wage', 'salary', 'income', 'pay'],
+              'funding': ['scholarship', 'grant', 'funding', 'tuition'],
+              'apprenticeship': ['apprenticeship', 'work-based learning'],
+              'united_states': ['United States', 'U.S.'],
+              'canada': ['Canada'],
+              'latin_america': ['Latin America', 'Latin American'],
+              'colombia': ['Colombia'],
+              'accessibility': ['accessibility', 'disability', 'accommodation'],
+              'privacy': ['privacy', 'confidentiality', 'HIPAA'],
+          }
+
+          coverage = {}
+          lowered = text.lower()
+          for key, terms in required_topics.items():
+              coverage[key] = any(term.lower() in lowered for term in terms)
+
+          report = {
+              'guide': '01',
+              'occupation': 'Community Health Worker',
+              'source_status': 'English DOCX extracted to UTF-8 Markdown; substantive revision pending',
+              'characters': len(text),
+              'words': len(re.findall(r"\b\w+[\w'-]*\b", text, flags=re.UNICODE)),
+              'headings': headings,
+              'external_urls': urls,
+              'topic_presence': coverage,
+              'independent_human_certification': False,
+          }
+
+          qa_dir = Path('project/revision-2026/guide-01')
+          qa_dir.mkdir(parents=True, exist_ok=True)
+          (qa_dir / 'ENGLISH_BASELINE_INVENTORY_01.json').write_text(
+              json.dumps(report, indent=2, ensure_ascii=False) + '\n', encoding='utf-8'
+          )
+
+          lines = [
+              '# Guide 01 — English Baseline Inventory',
+              '',
+              '## Status',
+              '',
+              '- English DOCX extraction completed into reviewable UTF-8 Markdown.',
+              '- This is a baseline inventory, not a substantive fact-check or publication approval.',
+              '- No independent human certification, professional translation certification, accessibility certification, legal review, medical review, or accreditation review is claimed.',
+              '',
+              '## Baseline measures',
+              '',
+              f"- Characters: {report['characters']}",
+              f"- Words: {report['words']}",
+              f"- Headings detected: {len(headings)}",
+              f"- Unique external URLs detected: {len(urls)}",
+              '',
+              '## Required-topic presence scan',
+              '',
+          ]
+          for key, present in coverage.items():
+              lines.append(f"- {key.replace('_', ' ').title()}: {'present' if present else 'not detected; revision required'}")
+          lines.extend([
+              '',
+              '## Next controlled gate',
+              '',
+              'Perform the English editorial and factual revision using current authoritative sources, then create the integrated English master before translation work begins.',
+              '',
+          ])
+          (qa_dir / 'ENGLISH_BASELINE_INVENTORY_01.md').write_text('\n'.join(lines), encoding='utf-8')
+
+      - name: Commit completed extraction and inventory
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 01-community-health-worker/source/Lifelong_Opportunity_Community_Health_Worker_Guide_English_v1.1_EXTRACTED_BASELINE.md
+          git add project/revision-2026/guide-01/ENGLISH_BASELINE_INVENTORY_01.json
+          git add project/revision-2026/guide-01/ENGLISH_BASELINE_INVENTORY_01.md
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'Guide 01 extraction outputs already match the current source.'
+            exit 0
+          fi
+          git commit -m "docs(guide-01): extract English baseline and add content inventory"
+          git push origin HEAD:revision/guide-00-100-2026
