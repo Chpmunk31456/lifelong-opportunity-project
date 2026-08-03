@@ -7,6 +7,7 @@ on:
       - revision/guide-00-100-2026
     paths:
       - .github/workflows/guide01-english-extraction.yml
+      - 01-community-health-worker/english/docx/Lifelong_Opportunity_Community_Health_Worker_Guide_English_v1.0.docx
   pull_request:
     branches:
       - main
@@ -42,6 +43,7 @@ jobs:
         shell: python
         run: |
           from pathlib import Path
+          import hashlib
           import subprocess
 
           source = Path('01-community-health-worker/english/docx/Lifelong_Opportunity_Community_Health_Worker_Guide_English_v1.0.docx')
@@ -52,6 +54,7 @@ jobs:
           if not source.is_file():
               raise SystemExit(f'Missing English source DOCX: {source}')
 
+          source_sha256 = hashlib.sha256(source.read_bytes()).hexdigest()
           subprocess.run([
               'pandoc', str(source), '--from=docx', '--to=gfm',
               '--wrap=none', '--output', str(target)
@@ -63,16 +66,20 @@ jobs:
           if '\ufffd' in text:
               raise SystemExit('Replacement-character encoding defect found in extracted baseline')
           if text.startswith('\ufeff'):
-              target.write_text(text.lstrip('\ufeff'), encoding='utf-8', newline='\n')
+              text = text.lstrip('\ufeff')
+              target.write_text(text, encoding='utf-8', newline='\n')
+          print(f'Source SHA-256: {source_sha256}')
           print(f'Extracted {target} ({len(text)} characters)')
 
       - name: Build auditable baseline inventory
         shell: python
         run: |
           from pathlib import Path
+          import hashlib
           import json
           import re
 
+          docx = Path('01-community-health-worker/english/docx/Lifelong_Opportunity_Community_Health_Worker_Guide_English_v1.0.docx')
           source = Path('01-community-health-worker/source/Lifelong_Opportunity_Community_Health_Worker_Guide_English_v1.1_EXTRACTED_BASELINE.md')
           text = source.read_text(encoding='utf-8')
           headings = [line.strip() for line in text.splitlines() if re.match(r'^#{1,6}\s+', line)]
@@ -102,6 +109,8 @@ jobs:
               'guide': '01',
               'occupation': 'Community Health Worker',
               'source_status': 'English DOCX extracted to UTF-8 Markdown; substantive revision pending',
+              'source_docx_sha256': hashlib.sha256(docx.read_bytes()).hexdigest(),
+              'extracted_markdown_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
               'characters': len(text),
               'words': len(re.findall(r"\b\w+[\w'-]*\b", text, flags=re.UNICODE)),
               'headings': headings,
@@ -124,6 +133,11 @@ jobs:
               '- English DOCX extraction completed into reviewable UTF-8 Markdown.',
               '- This is a baseline inventory, not a substantive fact-check or publication approval.',
               '- No independent human certification, professional translation certification, accessibility certification, legal review, medical review, or accreditation review is claimed.',
+              '',
+              '## Source integrity',
+              '',
+              f"- Source DOCX SHA-256: `{report['source_docx_sha256']}`",
+              f"- Extracted Markdown SHA-256: `{report['extracted_markdown_sha256']}`",
               '',
               '## Baseline measures',
               '',
