@@ -97,7 +97,7 @@ jobs:
 
           expected = {
               'English': 'Lifelong Opportunity Foundation Guide',
-              'es-419': 'Guía Fundamental de Oportunidades para Toda la Vida',
+              'es-419': 'Guía Fundacional de Oportunidades para Toda la Vida',
               'pt-BR': 'Guia Fundamental de Oportunidades ao Longo da Vida',
           }
           canonical = 'https://red-seal.ca/eng/about/program.shtml'
