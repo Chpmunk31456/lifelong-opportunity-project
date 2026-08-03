@@ -187,7 +187,7 @@ Official starting points:
 - https://www.canada.ca/en/services/jobs/training/support-skilled-trades-apprentices/loan.html
 - https://www.canada.ca/en/services/jobs/training/support-skilled-trades-apprentices/ei-apprentices.html
 - https://www.canada.ca/en/services/benefits/education/student-aid.html
-- https://www.red-seal.ca/eng/contact/c.4nt.1ct.shtml
+- https://red-seal.ca/eng/about/program.shtml
 
 ## Colombia
 
