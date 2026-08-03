@@ -1,0 +1,50 @@
+{
+  "guide": "00",
+  "version": "1.1",
+  "status": "publication candidate; automated QA only",
+  "independent_certification": false,
+  "files": [
+    {
+      "locale": "English",
+      "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_English_v1.1.docx",
+      "bytes": 23712,
+      "sha256": "743608daca2fe1b0f6a7fa20dc2b3e4145dc493be79721ef731340d9dcc7e2fb",
+      "pages": null
+    },
+    {
+      "locale": "English",
+      "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_English_v1.1.pdf",
+      "bytes": 200594,
+      "sha256": "be725ac1e67e6578cd2b7d5eb2c629537b47b80922a2d77e35b8de1c7993073c",
+      "pages": 14
+    },
+    {
+      "locale": "es-419",
+      "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.docx",
+      "bytes": 20783,
+      "sha256": "742f85b9afcd419db5c73b08dbdea643cfa819e792372694c1e01cf2b7912e0a",
+      "pages": null
+    },
+    {
+      "locale": "es-419",
+      "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.pdf",
+      "bytes": 158498,
+      "sha256": "252ddee23161f932802841d4889a682fc11537b4580e327842f374b5a6c32c9d",
+      "pages": 12
+    },
+    {
+      "locale": "pt-BR",
+      "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.docx",
+      "bytes": 22200,
+      "sha256": "5a078c32b115234b949a66b46706086ea1a256f437c47cfd3b8646cca7d1e359",
+      "pages": null
+    },
+    {
+      "locale": "pt-BR",
+      "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.pdf",
+      "bytes": 195490,
+      "sha256": "23fdc066ee7eb1186faeed0754d6a1ed8088779786e4530ea9c604b4e028b199",
+      "pages": 14
+    }
+  ]
+}
