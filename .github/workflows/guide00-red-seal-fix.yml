@@ -1,0 +1,56 @@
+name: Guide 00 Red Seal URL correction
+
+on:
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - .github/workflows/guide00-red-seal-fix.yml
+
+permissions:
+  contents: write
+
+jobs:
+  correct-red-seal-url:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out revision branch
+        uses: actions/checkout@v4
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Replace obsolete Red Seal URL in all Guide 00 masters
+        shell: python
+        run: |
+          from pathlib import Path
+
+          old = "https://www.red-seal.ca/eng/contact/c.4nt.1ct.shtml"
+          new = "https://red-seal.ca/eng/about/program.shtml"
+          files = [
+              Path("00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_English_v1.1_INTEGRATED_MASTER.md"),
+              Path("00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1_INTEGRATED_MASTER.md"),
+              Path("00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1_INTEGRATED_MASTER.md"),
+          ]
+
+          for path in files:
+              text = path.read_text(encoding="utf-8")
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f"Expected exactly one obsolete Red Seal URL in {path}; found {count}")
+              updated = text.replace(old, new)
+              if old in updated or updated.count(new) != 1:
+                  raise SystemExit(f"Replacement verification failed for {path}")
+              path.write_text(updated, encoding="utf-8", newline="\n")
+              print(f"Updated and verified {path}")
+
+      - name: Commit completed correction
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_English_v1.1_INTEGRATED_MASTER.md
+          git add 00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1_INTEGRATED_MASTER.md
+          git add 00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1_INTEGRATED_MASTER.md
+          git diff --cached --check
+          git commit -m "fix(guide-00): use canonical Red Seal program URL"
+          git push origin HEAD:revision/guide-00-100-2026
