@@ -7,6 +7,11 @@ on:
       - revision/guide-00-100-2026
     paths:
       - .github/workflows/guide00-red-seal-fix.yml
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/guide00-red-seal-fix.yml
 
 permissions:
   contents: write
@@ -17,6 +22,7 @@ concurrency:
 
 jobs:
   correct-red-seal-url:
+    if: github.repository == 'Chpmunk31456/lifelong-opportunity-project'
     runs-on: ubuntu-latest
     steps:
       - name: Check out revision branch
@@ -44,8 +50,7 @@ jobs:
               old_count = text.count(old)
               new_count = text.count(new)
               if old_count == 1 and new_count == 0:
-                  updated = text.replace(old, new)
-                  path.write_text(updated, encoding="utf-8", newline="\n")
+                  path.write_text(text.replace(old, new), encoding="utf-8", newline="\n")
                   changed.append(path)
                   print(f"Updated and verified {path}")
               elif old_count == 0 and new_count == 1:
@@ -73,5 +78,3 @@ jobs:
           git diff --cached --check
           git commit -m "fix(guide-00): use canonical Red Seal program URL"
           git push origin HEAD:revision/guide-00-100-2026
-
-# Touch marker: re-trigger after workflow became present on branch.
