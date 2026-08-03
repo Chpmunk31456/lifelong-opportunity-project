@@ -1,6 +1,7 @@
 name: Guide 00 Red Seal URL correction
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - revision/guide-00-100-2026
@@ -9,6 +10,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: guide00-red-seal-fix
+  cancel-in-progress: false
 
 jobs:
   correct-red-seal-url:
@@ -33,19 +38,33 @@ jobs:
               Path("00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1_INTEGRATED_MASTER.md"),
           ]
 
+          changed = []
           for path in files:
               text = path.read_text(encoding="utf-8")
-              count = text.count(old)
-              if count != 1:
-                  raise SystemExit(f"Expected exactly one obsolete Red Seal URL in {path}; found {count}")
-              updated = text.replace(old, new)
-              if old in updated or updated.count(new) != 1:
-                  raise SystemExit(f"Replacement verification failed for {path}")
-              path.write_text(updated, encoding="utf-8", newline="\n")
-              print(f"Updated and verified {path}")
+              old_count = text.count(old)
+              new_count = text.count(new)
+              if old_count == 1 and new_count == 0:
+                  updated = text.replace(old, new)
+                  path.write_text(updated, encoding="utf-8", newline="\n")
+                  changed.append(path)
+                  print(f"Updated and verified {path}")
+              elif old_count == 0 and new_count == 1:
+                  print(f"Already corrected: {path}")
+              else:
+                  raise SystemExit(
+                      f"Unexpected URL state in {path}: old={old_count}, canonical={new_count}"
+                  )
 
-      - name: Commit completed correction
+          Path("/tmp/guide00_changed.txt").write_text(
+              "\n".join(str(path) for path in changed), encoding="utf-8"
+          )
+
+      - name: Commit completed correction when needed
         run: |
+          if [ ! -s /tmp/guide00_changed.txt ]; then
+            echo "All three masters already use the canonical Red Seal URL."
+            exit 0
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add 00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_English_v1.1_INTEGRATED_MASTER.md
