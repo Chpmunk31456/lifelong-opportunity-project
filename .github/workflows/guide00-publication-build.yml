@@ -84,6 +84,7 @@ jobs:
           import json
           import re
           import subprocess
+          import unicodedata
 
           root = Path('00-foundation-guide/publication-candidate')
           pdf_dir = root / 'pdf'
@@ -102,6 +103,11 @@ jobs:
           }
           canonical = 'https://red-seal.ca/eng/about/program.shtml'
           obsolete = 'https://www.red-seal.ca/eng/contact/c.4nt.1ct.shtml'
+
+          def normalized_text(value):
+              value = unicodedata.normalize('NFKD', value)
+              value = ''.join(ch for ch in value if not unicodedata.combining(ch))
+              return ' '.join(value.casefold().split())
 
           for locale, expected_title in expected.items():
               docx = root / f'Lifelong_Opportunity_Foundation_Guide_{locale}_v1.1.docx'
@@ -134,8 +140,8 @@ jobs:
               text = text_file.read_text(encoding='utf-8', errors='replace')
               if len(text.strip()) < 5000:
                   raise SystemExit(f'{pdf}: insufficient extractable text')
-              if expected_title.lower() not in text.lower():
-                  raise SystemExit(f'{pdf}: expected title not found in extracted text')
+              if normalized_text(expected_title) not in normalized_text(text):
+                  raise SystemExit(f'{pdf}: expected title not found in normalized extracted text')
               if '\ufffd' in text:
                   raise SystemExit(f'{pdf}: replacement-character encoding defect detected')
 
