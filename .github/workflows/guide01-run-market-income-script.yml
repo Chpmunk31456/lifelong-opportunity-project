@@ -25,7 +25,7 @@ jobs:
           ref: revision/guide-00-100-2026
           fetch-depth: 0
 
-      - name: Align integration anchors with controlled Spanish master
+      - name: Align integration anchors with controlled localized masters
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -37,11 +37,15 @@ jobs:
               "- U.S. Bureau of Labor Statistics, *Occupational Outlook Handbook, Community Health Workers*, modificado el 28 de agosto de 2025: https://www.bls.gov/ooh/community-and-social-service/community-health-workers.htm\\n",
               "- añadir una estimación actual del mercado no gubernamental, claramente identificada y defendible, solo si supera los controles de evidencia;":
               "- añadir una estimación de mercado no gubernamental actual, claramente identificada, únicamente si supera los controles de evidencia;",
+              "- Bureau of Labor Statistics dos Estados Unidos, *Occupational Outlook Handbook*, Community Health Workers, modificado em 28 de agosto de 2025: https://www.bls.gov/ooh/community-and-social-service/community-health-workers.htm\\n":
+              "- U.S. Bureau of Labor Statistics, Occupational Outlook Handbook, Community Health Workers, modificado em 28 de agosto de 2025: https://www.bls.gov/ooh/community-and-social-service/community-health-workers.htm\\n",
+              "- adicionar uma estimativa atual de mercado não governamental, claramente identificada e defensável, somente se ela passar pelos controles de evidência;":
+              "- adicionar uma estimativa atual não governamental, claramente identificada, somente se ela atender aos controles de evidência;",
           }
           for old, new in replacements.items():
               count = text.count(old)
               if count != 1:
-                  raise SystemExit(f"expected one stale Spanish integration anchor; found {count}: {old}")
+                  raise SystemExit(f"expected one stale localized integration anchor; found {count}: {old}")
               text = text.replace(old, new, 1)
           path.write_text(text, encoding="utf-8", newline="\n")
           PY
@@ -62,4 +66,4 @@ jobs:
           git commit -m "Guide 01: integrate verified trilingual market income estimates"
           git push origin HEAD:revision/guide-00-100-2026
 
-# Controlled retrigger: 2026-08-04T18:01:07-05:00
+# Controlled retrigger: 2026-08-04T18:05:00-05:00
