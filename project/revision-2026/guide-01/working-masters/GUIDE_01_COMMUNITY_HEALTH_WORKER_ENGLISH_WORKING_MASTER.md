@@ -308,7 +308,7 @@ Before applying:
 - U.S. Bureau of Labor Statistics, Occupational Outlook Handbook, Community Health Workers, modified August 28, 2025: https://www.bls.gov/ooh/community-and-social-service/community-health-workers.htm
 - Government of Canada Job Bank, Community Health Worker summary and requirements, modified June 2, 2026: https://www.jobbank.gc.ca/marketreport/summary-occupation/296075/ca and https://www.jobbank.gc.ca/marketreport/requirements/296075/ca
 - Government of Canada Job Bank wage report, modified June 2, 2026: https://www.jobbank.gc.ca/marketreport/wages-occupation/296075/ca
-- Ministerio de Salud y Protección Social, Rutas Integrales de Atención en Salud: https://www2.minsalud.gov.co/salud/publica/ssr/Paginas/Rutas-integrales-de-atencion-en-salud-RIAS.aspx
+- Ministerio de Salud y Protección Social, Rutas Integrales de Atención en Salud: https://www.minsalud.gov.co/salud/publica/ssr/Paginas/Rutas-integrales-de-atencion-en-salud-RIAS.aspx
 - Ministerio de Salud y Protección Social, Política de Participación Social en Salud, policy foundation Resolution 2063 of 2017: https://minsalud.gov.co/Participa/Paginas/Consulta-ciudadana-derecho-a-la-informacion-publica.aspx
 
 ## 13. QA and review status
