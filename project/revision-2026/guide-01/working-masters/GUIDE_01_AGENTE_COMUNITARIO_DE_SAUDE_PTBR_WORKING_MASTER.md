@@ -169,7 +169,7 @@ Mantenha as categorias separadas:
 - **bolsa de estudos ou subsídio:** financiamento educacional que pode ter condições;
 - **empréstimo:** dinheiro que normalmente deve ser devolvido;
 - **reembolso:** pagamento posterior de uma despesa aprovada;
-- **aprendizagem formal:** trabalho remunerado estruturado e instrução relacionada quando há programa formalmente estabelecido;
+- **aprendizagem profissional formal remunerada:** trabalho remunerado estruturado e instrução relacionada quando há programa formalmente estabelecido;
 - **certificado de conclusão:** evidência de conclusão de um curso, não equivalendo automaticamente a licença profissional ou diploma acadêmico.
 
 Nunca pague a um recrutador por uma oferta de emprego. Desconfie de programas que garantem emprego, certificação, resultado migratório ou renda incomumente alta.

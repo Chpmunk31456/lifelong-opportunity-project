@@ -169,7 +169,7 @@ Mantenga separadas las categorías:
 - **beca o subvención:** financiación educativa que puede tener condiciones;
 - **préstamo:** dinero que normalmente debe devolverse;
 - **reembolso:** pago posterior de un gasto aprobado;
-- **aprendizaje formal:** trabajo remunerado estructurado y formación relacionada cuando existe un programa formalmente establecido;
+- **aprendizaje formal remunerado:** trabajo remunerado estructurado y formación relacionada cuando existe un programa formalmente establecido;
 - **certificado de finalización:** evidencia de haber completado un curso; no equivale automáticamente a una licencia profesional ni a un título académico.
 
 Nunca pague a un reclutador por una oferta de trabajo. Desconfíe de los programas que garantizan empleo, certificación, resultados migratorios o ingresos inusualmente altos.
