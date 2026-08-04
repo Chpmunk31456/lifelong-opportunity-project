@@ -209,6 +209,12 @@ Fonte: https://www.bls.gov/ooh/community-and-social-service/community-health-wor
 
 A remuneração varia por estado, região metropolitana, empregador, jornada, cobertura sindical, funções, idiomas, experiência e requisitos de certificação. A mediana não é um salário inicial.
 
+### Estimativas complementares do mercado dos Estados Unidos
+
+As estimativas não governamentais atuais oferecem contexto adicional, mas não são estatísticas oficiais e não devem substituir os dados do Bureau of Labor Statistics apresentados acima. A Glassdoor informou remuneração média anual estimada de **USD 52.306** para agentes comunitários de saúde nos Estados Unidos, com base em **1.936 relatos salariais anônimos**, em junho de 2026. A ZipRecruiter informou remuneração média anual estimada de **USD 44.925** em 27 de julho de 2026, utilizando anúncios de vagas de empregadores e dados de terceiros.
+
+Essas estimativas usam métodos, amostras e ciclos de atualização diferentes. Não faça uma média entre elas, não as trate como ofertas garantidas e não presuma que se apliquem a um estado, empregador, nível de experiência ou modalidade de trabalho específicos.
+
 ### Dados oficiais do Canadá
 
 A tabela salarial nacional do Job Bank do Governo do Canadá para o NOC 42201, atualizada em 19 de novembro de 2025 e exibida em uma página modificada em 2 de junho de 2026, informa:
@@ -306,6 +312,8 @@ Antes de se candidatar:
 - Centers for Disease Control and Prevention, Resources for Community Health Workers, página datada de 3 de dezembro de 2024: https://www.cdc.gov/chronic-disease/php/community-health-worker-resources/index.html
 - Recurso arquivado dos CDC para treinamento cardiovascular de agentes comunitários de saúde, revisado em 27 de abril de 2022: https://archive.cdc.gov/www_cdc_gov/dhdsp/programs/spha/chw_training/index.htm
 - U.S. Bureau of Labor Statistics, Occupational Outlook Handbook, Community Health Workers, modificado em 28 de agosto de 2025: https://www.bls.gov/ooh/community-and-social-service/community-health-workers.htm
+- Glassdoor, estimativa salarial para agentes comunitários de saúde nos Estados Unidos, consultada em agosto de 2026; média estimada de USD 52.306 baseada em 1.936 relatos salariais anônimos: https://www.glassdoor.com/Salaries/community-health-worker-salary-SRCH_KO0,23.htm
+- ZipRecruiter, estimativa salarial para agentes comunitários de saúde nos Estados Unidos, datada de 27 de julho de 2026; média estimada de USD 44.925 com base em anúncios de empregadores e dados de terceiros: https://www.ziprecruiter.com/Salaries/Community-Health-Worker-Salary
 - Government of Canada Job Bank, resumo e requisitos para Community Health Worker, modificado em 2 de junho de 2026: https://www.jobbank.gc.ca/marketreport/summary-occupation/296075/ca e https://www.jobbank.gc.ca/marketreport/requirements/296075/ca
 - Government of Canada Job Bank, relatório salarial, modificado em 2 de junho de 2026: https://www.jobbank.gc.ca/marketreport/wages-occupation/296075/ca
 - Ministerio de Salud y Protección Social, Rutas Integrales de Atención en Salud: https://www.minsalud.gov.co/salud/publica/ssr/Paginas/Rutas-integrales-de-atencion-en-salud-RIAS.aspx
@@ -330,7 +338,7 @@ Ainda necessário antes da publicação:
 
 - comparar o mestre de trabalho com o DOCX legado em inglês e documentar alegações mantidas, corrigidas e removidas;
 - validar todos os links externos no ambiente final do candidato;
-- adicionar uma estimativa atual não governamental, claramente identificada, somente se ela atender aos controles de evidência;
+- revalidar as estimativas complementares não governamentais imediatamente antes da publicação e manter suas limitações metodológicas;
 - concluir o QA editorial após a comparação com o legado;
 - executar QA de terminologia e paridade estrutural entre inglês, es-419 e pt-BR;
 - gerar candidatos DOCX e PDF pesquisáveis;

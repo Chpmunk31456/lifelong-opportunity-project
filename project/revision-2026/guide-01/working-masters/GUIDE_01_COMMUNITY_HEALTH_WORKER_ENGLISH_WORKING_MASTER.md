@@ -209,6 +209,12 @@ Source: https://www.bls.gov/ooh/community-and-social-service/community-health-wo
 
 Pay varies by state, metropolitan area, employer, schedule, union coverage, duties, language skills, experience, and certification requirements. The median is not an entry wage.
 
+### United States supplementary market estimates
+
+Current non-government estimates provide additional context but are not official statistics and must not replace the BLS figures above. Glassdoor reported an estimated average annual pay of **USD 52,306** for Community Health Workers in the United States, based on **1,936 anonymous salary submissions**, as of June 2026. ZipRecruiter reported an estimated average annual pay of **USD 44,925** as of July 27, 2026, using employer job postings and third-party data.
+
+These estimates use different methods, samples, and update cycles. Do not average them together, treat them as guaranteed offers, or assume that they apply to a particular state, employer, experience level, or employment arrangement.
+
 ### Canada official data
 
 The Government of Canada Job Bank national wage table for NOC 42201, updated November 19, 2025 and displayed on a page modified June 2, 2026, reports:
@@ -306,6 +312,8 @@ Before applying:
 - Centers for Disease Control and Prevention, Resources for Community Health Workers, page dated December 3, 2024: https://www.cdc.gov/chronic-disease/php/community-health-worker-resources/index.html
 - CDC archived cardiovascular CHW training resource, reviewed April 27, 2022: https://archive.cdc.gov/www_cdc_gov/dhdsp/programs/spha/chw_training/index.htm
 - U.S. Bureau of Labor Statistics, Occupational Outlook Handbook, Community Health Workers, modified August 28, 2025: https://www.bls.gov/ooh/community-and-social-service/community-health-workers.htm
+- Glassdoor, Community Health Worker salary estimate for the United States, accessed August 2026; estimated average USD 52,306 based on 1,936 anonymous salary submissions: https://www.glassdoor.com/Salaries/community-health-worker-salary-SRCH_KO0,23.htm
+- ZipRecruiter, Community Health Worker salary estimate for the United States, dated July 27, 2026; estimated average USD 44,925 using employer postings and third-party data: https://www.ziprecruiter.com/Salaries/Community-Health-Worker-Salary
 - Government of Canada Job Bank, Community Health Worker summary and requirements, modified June 2, 2026: https://www.jobbank.gc.ca/marketreport/summary-occupation/296075/ca and https://www.jobbank.gc.ca/marketreport/requirements/296075/ca
 - Government of Canada Job Bank wage report, modified June 2, 2026: https://www.jobbank.gc.ca/marketreport/wages-occupation/296075/ca
 - Ministerio de Salud y Protección Social, Rutas Integrales de Atención en Salud: https://www.minsalud.gov.co/salud/publica/ssr/Paginas/Rutas-integrales-de-atencion-en-salud-RIAS.aspx
@@ -329,7 +337,7 @@ Still required before publication:
 
 - compare the working master against the legacy English DOCX and document retained, corrected, and removed claims;
 - validate every external link from the final candidate environment;
-- add a defensible, clearly labeled current non-government market estimate only if one passes the evidence controls;
+- revalidate the supplementary non-government market estimates immediately before publication and retain their methodology limitations;
 - complete editorial QA after legacy comparison;
 - create aligned neutral Latin American Spanish and Brazilian Portuguese masters;
 - run terminology and structural-parity QA;
