@@ -40,3 +40,5 @@ jobs:
           fi
           git commit -m "Guide 01: integrate verified trilingual market income estimates"
           git push origin HEAD:revision/guide-00-100-2026
+
+# Controlled retrigger: 2026-08-04T17:01:25-05:00
