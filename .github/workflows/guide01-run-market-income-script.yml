@@ -25,6 +25,27 @@ jobs:
           ref: revision/guide-00-100-2026
           fetch-depth: 0
 
+      - name: Align integration anchors with controlled Spanish master
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("scripts/guide01_integrate_market_income.py")
+          text = path.read_text(encoding="utf-8")
+          replacements = {
+              "- Oficina de Estadísticas Laborales de Estados Unidos, *Occupational Outlook Handbook*, trabajadores comunitarios de salud, modificado el 28 de agosto de 2025: https://www.bls.gov/ooh/community-and-social-service/community-health-workers.htm\\n":
+              "- U.S. Bureau of Labor Statistics, *Occupational Outlook Handbook, Community Health Workers*, modificado el 28 de agosto de 2025: https://www.bls.gov/ooh/community-and-social-service/community-health-workers.htm\\n",
+              "- añadir una estimación actual del mercado no gubernamental, claramente identificada y defendible, solo si supera los controles de evidencia;":
+              "- añadir una estimación de mercado no gubernamental actual, claramente identificada, únicamente si supera los controles de evidencia;",
+          }
+          for old, new in replacements.items():
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f"expected one stale Spanish integration anchor; found {count}: {old}")
+              text = text.replace(old, new, 1)
+          path.write_text(text, encoding="utf-8", newline="\n")
+          PY
+
       - name: Run fail-closed trilingual integration
         run: python scripts/guide01_integrate_market_income.py
 
@@ -32,7 +53,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add project/revision-2026/guide-01/working-masters/
+          git add scripts/guide01_integrate_market_income.py project/revision-2026/guide-01/working-masters/
           git diff --cached --check
           if git diff --cached --quiet; then
             echo "Guide 01 market-income content was already integrated."
@@ -41,4 +62,4 @@ jobs:
           git commit -m "Guide 01: integrate verified trilingual market income estimates"
           git push origin HEAD:revision/guide-00-100-2026
 
-# Controlled retrigger: 2026-08-04T17:01:25-05:00
+# Controlled retrigger: 2026-08-04T18:01:07-05:00
