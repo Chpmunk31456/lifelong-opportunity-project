@@ -61,13 +61,20 @@ jobs:
           ], check=True)
 
           text = target.read_text(encoding='utf-8')
+          if text.startswith('\ufeff'):
+              text = text.lstrip('\ufeff')
+
+          # Pandoc can preserve hard-break spaces from the legacy DOCX. Normalize
+          # generated Markdown before git diff --check while retaining content.
+          text = '\n'.join(line.rstrip() for line in text.splitlines()).rstrip() + '\n'
+          target.write_text(text, encoding='utf-8', newline='\n')
+
           if len(text.strip()) < 5000:
               raise SystemExit(f'Extracted baseline unexpectedly short: {len(text.strip())} characters')
           if '\ufffd' in text:
               raise SystemExit('Replacement-character encoding defect found in extracted baseline')
-          if text.startswith('\ufeff'):
-              text = text.lstrip('\ufeff')
-              target.write_text(text, encoding='utf-8', newline='\n')
+          if any(line.endswith((' ', '\t')) for line in text.splitlines()):
+              raise SystemExit('Trailing whitespace remains after Markdown normalization')
           print(f'Source SHA-256: {source_sha256}')
           print(f'Extracted {target} ({len(text)} characters)')
 
