@@ -3,9 +3,9 @@
 ## Status
 
 - Guide: 01 — Community Health Worker
-- Review date: 2026-08-03
+- Review date: 2026-08-04
 - Purpose: controlled evidence register for income, employment outlook, and non-wage-benefit statements used in the English revision
-- Status: official-source figures verified; integration into the English master remains pending
+- Status: official-source figures and two current supplementary U.S. market estimates verified; controlled integration into the trilingual masters remains pending
 - This record does not claim independent human, medical, legal, accreditation, accessibility, translation, or professional certification review.
 
 ## United States — primary official source
@@ -68,23 +68,59 @@ No single national Colombian occupation series has been verified in this batch a
 - use current official Colombian sources or disclosed employer postings when adding a local salary example;
 - label any non-government salary estimate by source, access date, geography, sample limitations, and whether it reflects base pay or total compensation.
 
-## Non-government market estimates
+## United States — supplementary non-government market estimates
 
-No non-government estimate is approved for integration in this register yet. Any later Glassdoor, Indeed, salary-survey, or disclosed-employer figure must be supplementary to official evidence and must pass all of the following controls:
+These estimates are supplementary market references only. They must remain separate from BLS data and must not be averaged with official figures.
 
-- current and accessible on the review date;
-- clearly tied to the correct occupation and geography;
-- labeled as an estimate or disclosed posting, not official labor statistics;
-- sample size or methodological limitation disclosed when available;
-- not averaged together with BLS or Job Bank figures;
-- not represented as guaranteed compensation.
+### Glassdoor estimate
+
+**Glassdoor — Community Health Worker, United States**  
+URL: https://www.glassdoor.com/Salaries/community-health-worker-salary-SRCH_KO0,23.htm  
+Access date: August 4, 2026  
+Estimate date shown by source: June 2026
+
+- Estimated average annual pay: **USD 52,306**
+- Typical annual range shown: **USD 43,743 to USD 62,860**
+- Estimated hourly average: **USD 25**
+- Reported sample: **1,936 anonymously submitted salaries**
+
+Controls and limitations:
+
+- label all values as Glassdoor estimates based on anonymous user submissions;
+- do not describe the range as an employer offer range or guaranteed compensation;
+- do not use the page’s automated seniority trajectory because it appears inconsistent with the occupation-level figures;
+- preserve the United States geography and June 2026 estimate date.
+
+### ZipRecruiter estimate
+
+**ZipRecruiter — Community Health Worker Salary, United States**  
+URL: https://www.ziprecruiter.com/Salaries/Community-Health-Worker-Salary  
+Access date: August 4, 2026  
+Estimate date shown by source: July 27, 2026
+
+- Estimated average annual pay: **USD 44,925**
+- Estimated hourly average: **USD 21.60**
+- Middle 50% annual range shown: **USD 38,000 to USD 50,000**
+- Source methodology statement: estimates are derived from employer job postings and third-party data sources
+
+Controls and limitations:
+
+- label the figure as a ZipRecruiter market estimate, not an official wage statistic;
+- do not interpret the nationwide posting-derived estimate as an entry wage or a local offer;
+- do not combine it mathematically with BLS or Glassdoor values;
+- preserve the July 27, 2026 source date and nationwide geography.
+
+## Controlled comparison for editorial integration
+
+A concise supplementary paragraph may state that current non-government estimates differ by methodology: Glassdoor showed an estimated U.S. average of USD 52,306 based on 1,936 anonymous salary submissions as of June 2026, while ZipRecruiter showed USD 44,925 based on job-posting and third-party data as of July 27, 2026. The paragraph must immediately explain that these are market estimates, not official statistics or guaranteed offers, and that the BLS national median remains the primary official reference.
 
 ## QA findings
 
 - The current BLS page contains a discrepancy between a machine-readable quick-facts value of 7,400 openings and narrative text stating about 7,800 openings per year. The controlled revision will use the narrative figure and document the source date.
 - The Canadian Job Bank title maps to NOC 42201 and must not be treated as perfectly equivalent to the U.S. occupation.
-- Currency, geography, data period, and source type must remain visible wherever figures are used.
+- Glassdoor and ZipRecruiter produce materially different U.S. estimates because their datasets and methodologies differ; neither replaces BLS.
+- Currency, geography, data period, source type, and methodological limitation must remain visible wherever figures are used.
 
 ## Next gate
 
-Integrate the controlled U.S. and Canadian figures into the English master, verify all existing income claims and links in the legacy guide, and add a separately labeled current market estimate only if a defensible occupation-and-location match is found.
+Integrate the controlled supplementary market-estimate paragraph into the English master, translate it faithfully into neutral Latin American Spanish and Brazilian Portuguese, run numerical and terminology parity checks, and then complete the remaining publication-format QA.
