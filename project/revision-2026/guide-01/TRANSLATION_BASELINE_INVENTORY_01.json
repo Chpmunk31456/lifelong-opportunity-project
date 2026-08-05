@@ -1,0 +1,45 @@
+{
+  "guide": "01",
+  "status": "legacy translation baselines extracted; revision and translation parity work pending",
+  "english_master_sha256": "fe62c4189b1557554453d4f707b553bd768a342e62b531bad84d7fc00dab2202",
+  "english_heading_count": 55,
+  "independent_human_certification": false,
+  "editions": {
+    "es-419": {
+      "source_docx": "01-community-health-worker/spanish/DOCX/Guia_01_Promotor_Salud_Comunitaria.docx",
+      "source_docx_sha256": "8c5960ba4f3c608c44be1b6d622b28c93d62f1f4c8d4105e37ad17db1e755be8",
+      "baseline_markdown": "01-community-health-worker/source/Lifelong_Opportunity_Community_Health_Worker_Guide_es-419_v1.0_EXTRACTED_BASELINE.md",
+      "baseline_sha256": "4361ffb79671c27b569d25bf27518ae862be653c5435314f2609ad3dc667cbbc",
+      "characters": 18105,
+      "words": 2151,
+      "heading_count": 46,
+      "external_url_count": 4,
+      "required_term_presence": {
+        "salud comunitaria": true,
+        "comunidad": false,
+        "formación": true,
+        "empleo": true
+      },
+      "heading_delta_vs_english": -9,
+      "translation_status": "legacy baseline only; must not be represented as v1.1 parity-approved"
+    },
+    "pt-BR": {
+      "source_docx": "01-community-health-worker/portuguese/DOCX/Guia_01_Agente_Comunit_rio_de_Sa_de_PTBR.docx",
+      "source_docx_sha256": "ca0865ba588c21f5e9f15162a87fc292946ed6a3c7373924aa48dd6a2123c0a5",
+      "baseline_markdown": "01-community-health-worker/source/Lifelong_Opportunity_Community_Health_Worker_Guide_pt-BR_v1.0_EXTRACTED_BASELINE.md",
+      "baseline_sha256": "6678d88dc006d09d2d29a4a4d54c70bd38d1dc5083581d3ddfa559bed7e8f0af",
+      "characters": 17991,
+      "words": 2143,
+      "heading_count": 47,
+      "external_url_count": 7,
+      "required_term_presence": {
+        "saúde comunitária": false,
+        "comunidade": true,
+        "formação": true,
+        "emprego": true
+      },
+      "heading_delta_vs_english": -8,
+      "translation_status": "legacy baseline only; must not be represented as v1.1 parity-approved"
+    }
+  }
+}
