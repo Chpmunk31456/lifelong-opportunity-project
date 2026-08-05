@@ -1,0 +1,57 @@
+name: Guide 01 English integrated master and QA
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - scripts/build_guide01_english_master.py
+      - 01-community-health-worker/source/Lifelong_Opportunity_Community_Health_Worker_Guide_English_v1.1_EXTRACTED_BASELINE.md
+      - project/revision-2026/guide-01/ENGLISH_FACT_CHECK_EVIDENCE_01.md
+  pull_request:
+    branches:
+      - main
+    paths:
+      - scripts/build_guide01_english_master.py
+      - .github/workflows/guide01-english-integration.yml
+      - 01-community-health-worker/source/**
+      - project/revision-2026/guide-01/**
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide01-english-integration
+  cancel-in-progress: false
+
+jobs:
+  integrate-and-qa:
+    if: github.repository == 'Chpmunk31456/lifelong-opportunity-project'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out controlled revision branch
+        uses: actions/checkout@v4
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Build and QA English integrated master
+        run: python scripts/build_guide01_english_master.py
+
+      - name: Commit completed integrated master and QA evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 01-community-health-worker/source/Lifelong_Opportunity_Community_Health_Worker_Guide_English_v1.1_INTEGRATED_MASTER.md
+          git add project/revision-2026/guide-01/ENGLISH_INTEGRATED_MASTER_QA_01.md
+          git add project/revision-2026/guide-01/ENGLISH_INTEGRATED_MASTER_QA_01.json
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'Guide 01 English integrated master already matches controlled inputs.'
+            exit 0
+          fi
+          git commit -m "docs(guide-01): add English v1.1 integrated master and QA"
+          git push origin HEAD:revision/guide-00-100-2026
