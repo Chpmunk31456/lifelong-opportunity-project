@@ -17,7 +17,7 @@ replacements = {
     ROOT / "GUIDE_01_COMMUNITY_HEALTH_WORKER_ENGLISH_WORKING_MASTER.md": [
         (
             "**Review date:** August 3, 2026  ",
-            "**Review date:** August 5, 2026  ",
+            "**Review date:** August 5, 2026",
         ),
         (
             "**Status:** Substantive English working master completed from the controlled official-source baseline. Legacy-file comparison, final link validation, translation, DOCX/PDF generation, and publication QA remain pending.",
@@ -31,7 +31,7 @@ replacements = {
     ROOT / "GUIDE_01_TRABAJADOR_COMUNITARIO_DE_SALUD_ES419_WORKING_MASTER.md": [
         (
             "**Fecha de revisión:** 4 de agosto de 2026  ",
-            "**Fecha de revisión:** 5 de agosto de 2026  ",
+            "**Fecha de revisión:** 5 de agosto de 2026",
         ),
         (
             "**Estado:** Maestro sustantivo en español es-419 completado a partir del maestro controlado en inglés y del registro terminológico trilingüe. Aún están pendientes la comparación con el archivo heredado, la validación final de enlaces, la revisión de paridad, la generación de DOCX/PDF y el control de calidad de publicación.",
@@ -41,7 +41,7 @@ replacements = {
     ROOT / "GUIDE_01_AGENTE_COMUNITARIO_DE_SAUDE_PTBR_WORKING_MASTER.md": [
         (
             "**Data de revisão:** 4 de agosto de 2026  ",
-            "**Data de revisão:** 5 de agosto de 2026  ",
+            "**Data de revisão:** 5 de agosto de 2026",
         ),
         (
             "**Status:** Mestre substantivo em pt-BR concluído a partir do mestre controlado em inglês e do registro terminológico trilíngue. Ainda estão pendentes a comparação com o arquivo legado, a validação final de links, a revisão de paridade, a geração de DOCX/PDF e o controle de qualidade de publicação.",
