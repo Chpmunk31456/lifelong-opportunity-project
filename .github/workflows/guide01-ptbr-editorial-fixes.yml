@@ -1,0 +1,98 @@
+name: Guide 01 pt-BR editorial corrections
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - .github/workflows/guide01-ptbr-editorial-fixes.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide01-ptbr-editorial-corrections
+  cancel-in-progress: false
+
+jobs:
+  apply-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out revision branch
+        uses: actions/checkout@v4
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Apply four approved replacements and verify acceptance gate
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path("project/revision-2026/guide-01/working-masters/GUIDE_01_AGENTE_COMUNITARIO_DE_SAUDE_PTBR_WORKING_MASTER.md")
+          data = path.read_bytes()
+          if data.startswith(b"\xef\xbb\xbf"):
+              raise SystemExit("UTF-8 BOM detected; refusing controlled edit")
+          text = data.decode("utf-8")
+
+          replacements = [
+              (
+                  "desescalada de conflitos;",
+                  "capacidade de reduzir tensões e lidar com conflitos com segurança;",
+              ),
+              (
+                  "Os empregadores devem oferecer supervisão, procedimentos de segurança, rotas de escalonamento e apoio para casos difíceis.",
+                  "Os empregadores devem oferecer supervisão, procedimentos de segurança, procedimentos claros para encaminhar situações que excedam as atribuições do trabalhador e apoio para casos difíceis.",
+              ),
+              (
+                  "o treinamento de curto prazo no trabalho como preparação usual.",
+                  "o treinamento de curta duração oferecido no local de trabalho como preparação usual.",
+              ),
+              (
+                  "realizar ações de alcance em residências, escolas, clínicas, comunidades religiosas, abrigos, locais de trabalho ou eventos comunitários;",
+                  "realizar ações de aproximação e atendimento comunitário em residências, escolas, clínicas, comunidades religiosas, abrigos, locais de trabalho ou eventos comunitários;",
+              ),
+          ]
+
+          for old, new in replacements:
+              old_count = text.count(old)
+              new_count = text.count(new)
+              if old_count == 1 and new_count == 0:
+                  text = text.replace(old, new, 1)
+              elif old_count == 0 and new_count == 1:
+                  pass
+              else:
+                  raise SystemExit(
+                      f"Fail-closed replacement state for {old!r}: old={old_count}, new={new_count}"
+                  )
+
+          path.write_text(text, encoding="utf-8", newline="\n")
+          verified = path.read_bytes()
+          if verified.startswith(b"\xef\xbb\xbf"):
+              raise SystemExit("BOM introduced")
+          checked = verified.decode("utf-8")
+          for old, new in replacements:
+              if checked.count(old) != 0 or checked.count(new) != 1:
+                  raise SystemExit(
+                      f"Acceptance count failed for {new!r}: old={checked.count(old)}, new={checked.count(new)}"
+                  )
+          print("All four pt-BR editorial replacements verified; UTF-8 without BOM.")
+
+      - name: Verify controlled scope and Markdown hygiene
+        run: |
+          git diff --check
+          git diff -- project/revision-2026/guide-01/working-masters/GUIDE_01_AGENTE_COMUNITARIO_DE_SAUDE_PTBR_WORKING_MASTER.md
+          test "$(git diff --name-only | wc -l)" -eq 1
+
+      - name: Commit completed correction set
+        run: |
+          if git diff --quiet; then
+            echo "Approved corrections already present; no commit required."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add project/revision-2026/guide-01/working-masters/GUIDE_01_AGENTE_COMUNITARIO_DE_SAUDE_PTBR_WORKING_MASTER.md
+          git commit -m "docs(guide01): apply pt-BR editorial corrections"
+          git push origin HEAD:revision/guide-00-100-2026
