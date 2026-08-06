@@ -1,0 +1,76 @@
+name: Guide 01 Glassdoor revalidation correction v3
+
+on:
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - .github/workflows/guide01-glassdoor-revalidation-fix-v3.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  correct-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+      - name: Apply correction and QA
+        shell: python
+        run: |
+          from pathlib import Path
+          root = Path('project/revision-2026/guide-01')
+          files = {
+            'English': root/'working-masters/GUIDE_01_COMMUNITY_HEALTH_WORKER_ENGLISH_WORKING_MASTER.md',
+            'es-419': root/'working-masters/GUIDE_01_TRABAJADOR_COMUNITARIO_DE_SALUD_ES419_WORKING_MASTER.md',
+            'pt-BR': root/'working-masters/GUIDE_01_AGENTE_COMUNITARIO_DE_SAUDE_PTBR_WORKING_MASTER.md',
+          }
+          repl = {
+            'English': ('Glassdoor reported an estimated average annual pay of **USD 52,306** for Community Health Workers in the United States, based on **1,936 anonymous salary submissions**, as of June 2026.', 'Glassdoor displayed an estimated **USD 52,000 median total pay** for Community Health Workers in the United States, with a typical total-pay range of approximately **USD 44,000 to USD 63,000**, when revalidated on August 6, 2026.'),
+            'es-419': ('Glassdoor informó una remuneración anual promedio estimada de **USD 52.306** para trabajadores comunitarios de salud en Estados Unidos, basada en **1.936 reportes salariales anónimos**, a junio de 2026.', 'Glassdoor mostró una **remuneración total mediana estimada de USD 52.000** para trabajadores comunitarios de salud en Estados Unidos, con un rango típico de remuneración total de aproximadamente **USD 44.000 a USD 63.000**, al revalidarse el 6 de agosto de 2026.'),
+            'pt-BR': ('A Glassdoor informou remuneração média anual estimada de **USD 52.306** para agentes comunitários de saúde nos Estados Unidos, com base em **1.936 relatos salariais anônimos**, em junho de 2026.', 'A Glassdoor exibiu **remuneração total mediana estimada de USD 52.000** para agentes comunitários de saúde nos Estados Unidos, com faixa típica de remuneração total de aproximadamente **USD 44.000 a USD 63.000**, na revalidação de 6 de agosto de 2026.'),
+          }
+          src = {
+            'English': '- Glassdoor, Community Health Worker salary estimate for the United States, accessed August 6, 2026; estimated median total pay USD 52,000 with a typical total-pay range of approximately USD 44,000–63,000: https://www.glassdoor.com/Salaries/community-health-worker-salary-SRCH_KO0,23.htm',
+            'es-419': '- Glassdoor, estimación salarial para trabajadores comunitarios de salud en Estados Unidos, consultada el 6 de agosto de 2026; remuneración total mediana estimada de USD 52.000 y rango típico aproximado de USD 44.000–63.000: https://www.glassdoor.com/Salaries/community-health-worker-salary-SRCH_KO0,23.htm',
+            'pt-BR': '- Glassdoor, estimativa salarial para agentes comunitários de saúde nos Estados Unidos, consultada em 6 de agosto de 2026; remuneração total mediana estimada de USD 52.000 e faixa típica aproximada de USD 44.000–63.000: https://www.glassdoor.com/Salaries/community-health-worker-salary-SRCH_KO0,23.htm',
+          }
+          for locale,path in files.items():
+            raw=path.read_bytes()
+            if raw.startswith(b'\xef\xbb\xbf'): raise SystemExit(f'BOM: {path}')
+            text=raw.decode('utf-8')
+            old,new=repl[locale]
+            if text.count(old)!=1: raise SystemExit(f'{locale}: old claim count {text.count(old)}')
+            text=text.replace(old,new)
+            lines=text.splitlines()
+            idx=[i for i,x in enumerate(lines) if x.startswith('- Glassdoor,') and 'glassdoor.com/Salaries/community-health-worker' in x]
+            if len(idx)!=1: raise SystemExit(f'{locale}: source count {len(idx)}')
+            lines[idx[0]]=src[locale]
+            text='\n'.join(lines)+'\n'
+            for stale in ('52,306','52.306','1,936','1.936'):
+              if stale in text: raise SystemExit(f'{locale}: stale {stale}')
+            path.write_text(text,encoding='utf-8',newline='\n')
+          (root/'GLASSDOOR_REVALIDATION_CORRECTION_EXECUTION_QA_04.md').write_text(
+            '# Guide 01 Glassdoor Revalidation Correction — Execution QA 04\n\n'
+            '**Execution date:** August 6, 2026\n'
+            '**Scope:** English, neutral Latin American Spanish (es-419), and Brazilian Portuguese (pt-BR) controlled working masters.\n\n'
+            '## Completed correction\n\n'
+            '- Replaced the stale Glassdoor average-pay claim and anonymous-submission count in all three working masters.\n'
+            '- Recorded approximately USD 52,000 median total pay and a typical total-pay range of approximately USD 44,000–63,000.\n'
+            '- Preserved the non-government-estimate label and no-guarantee warning.\n'
+            '- Updated the three source-register entries with the August 6, 2026 access date.\n\n'
+            '## Assurance boundary\n\n'
+            'This record documents controlled automated and editorial QA. It is not independent human certification, professional translation certification, accreditation review, accessibility certification, legal review, or financial advice.\n', encoding='utf-8', newline='\n')
+      - name: Commit completed correction
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add project/revision-2026/guide-01/working-masters/*.md project/revision-2026/guide-01/GLASSDOOR_REVALIDATION_CORRECTION_EXECUTION_QA_04.md
+          git diff --cached --check
+          test "$(git diff --cached --name-only | wc -l)" -eq 4
+          git commit -m "fix(guide-01): update trilingual Glassdoor estimate"
+          git push origin HEAD:revision/guide-00-100-2026
