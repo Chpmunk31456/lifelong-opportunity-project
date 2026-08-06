@@ -28,7 +28,7 @@ jobs:
   extract-and-compare:
     if: github.repository == 'Chpmunk31456/lifelong-opportunity-project'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 10
     steps:
       - name: Check out controlled revision branch
         uses: actions/checkout@v4
@@ -36,10 +36,8 @@ jobs:
           ref: revision/guide-00-100-2026
           fetch-depth: 0
 
-      - name: Install PDF inspection tools
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends poppler-utils qpdf
+      - name: Install deterministic Python PDF parser
+        run: python3 -m pip install --disable-pip-version-check --no-cache-dir 'pypdf==6.1.1'
 
       - name: Run fail-closed Guide 02 artifact extraction
         run: python3 scripts/guide02_extract_english_artifacts.py
@@ -50,6 +48,7 @@ jobs:
           test -s project/revision-2026/guide-02/source/GUIDE_02_ENGLISH_DOCX_EXTRACTED_BASELINE.md
           test -s project/revision-2026/guide-02/source/GUIDE_02_ENGLISH_PDF_EXTRACTED_BASELINE.txt
           test -s project/revision-2026/guide-02/qa/GUIDE_02_ENGLISH_ARTIFACT_EXTRACTION_QA_01.md
+          test -s project/revision-2026/guide-02/qa/pdf-technical-results.json
           grep -q 'PASS for technical source-equivalence intake' project/revision-2026/guide-02/qa/GUIDE_02_ENGLISH_ARTIFACT_EXTRACTION_QA_01.md
           git diff --check
 
