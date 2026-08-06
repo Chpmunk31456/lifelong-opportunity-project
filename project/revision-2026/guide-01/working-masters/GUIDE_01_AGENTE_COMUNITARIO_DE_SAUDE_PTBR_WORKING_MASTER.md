@@ -31,7 +31,7 @@ As responsabilidades típicas podem incluir:
 - ajudar pessoas a marcar consultas e compreender encaminhamentos;
 - conectar indivíduos e famílias a transporte, alimentação, moradia, benefícios ou apoio linguístico;
 - apoiar prevenção, triagem, educação sobre doenças crônicas e acompanhamento dentro de um programa autorizado;
-- realizar ações de alcance em residências, escolas, clínicas, comunidades religiosas, abrigos, locais de trabalho ou eventos comunitários;
+- realizar ações de aproximação e atendimento comunitário em residências, escolas, clínicas, comunidades religiosas, abrigos, locais de trabalho ou eventos comunitários;
 - documentar serviços e resultados;
 - identificar barreiras relacionadas aos determinantes sociais da saúde;
 - fortalecer a confiança entre comunidades e organizações de saúde ou assistência social;
@@ -49,14 +49,14 @@ Qualidades úteis incluem:
 - comunicação oral e escrita clara;
 - respeito à privacidade e à escolha informada;
 - confiabilidade e registros precisos;
-- desescalada de conflitos;
+- capacidade de reduzir tensões e lidar com conflitos com segurança;
 - humildade cultural;
 - habilidades digitais básicas;
 - disposição para trabalhar com equipes multidisciplinares;
 - capacidade de manter limites profissionais;
 - disponibilidade para deslocamentos locais ou trabalho fora de um escritório tradicional.
 
-O trabalho pode ser emocionalmente exigente. Os empregadores devem oferecer supervisão, procedimentos de segurança, rotas de escalonamento e apoio para casos difíceis.
+O trabalho pode ser emocionalmente exigente. Os empregadores devem oferecer supervisão, procedimentos de segurança, procedimentos claros para encaminhar situações que excedam as atribuições do trabalhador e apoio para casos difíceis.
 
 ## 3. Educação, formação e credenciais
 
@@ -64,7 +64,7 @@ Não existe uma única qualificação mundial para essa ocupação. Os requisito
 
 ### Estados Unidos
 
-O Bureau of Labor Statistics dos Estados Unidos identifica o ensino médio completo ou equivalente como a escolaridade típica de entrada e o treinamento de curto prazo no trabalho como preparação usual. Esse perfil nacional não substitui regras estaduais de certificação nem requisitos específicos dos empregadores.
+O Bureau of Labor Statistics dos Estados Unidos identifica o ensino médio completo ou equivalente como a escolaridade típica de entrada e o treinamento de curta duração oferecido no local de trabalho como preparação usual. Esse perfil nacional não substitui regras estaduais de certificação nem requisitos específicos dos empregadores.
 
 Alguns estados possuem certificação formal, programas de treinamento aprovados, padrões de competência, registros ou exigências ligadas ao Medicaid. Outros dependem mais do treinamento do empregador ou de credenciais voluntárias. Antes de se matricular, verifique:
 
