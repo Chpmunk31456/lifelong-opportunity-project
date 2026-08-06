@@ -1,0 +1,98 @@
+name: Guide 01 es-419 editorial corrections
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - .github/workflows/guide01-es419-editorial-fixes.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide01-es419-editorial-corrections
+  cancel-in-progress: false
+
+jobs:
+  apply-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out revision branch
+        uses: actions/checkout@v4
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Apply four approved replacements and verify acceptance gate
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path("project/revision-2026/guide-01/working-masters/GUIDE_01_TRABAJADOR_COMUNITARIO_DE_SALUD_ES419_WORKING_MASTER.md")
+          data = path.read_bytes()
+          if data.startswith(b"\xef\xbb\xbf"):
+              raise SystemExit("UTF-8 BOM detected; refusing controlled edit")
+          text = data.decode("utf-8")
+
+          replacements = [
+              (
+                  "escalar inquietudes urgentes, clínicas, de protección o privacidad al personal calificado.",
+                  "remitir de inmediato al personal calificado las inquietudes urgentes o relacionadas con asuntos clínicos, de protección o de privacidad.",
+              ),
+              (
+                  "desescalamiento de conflictos;",
+                  "capacidad para reducir la tensión y manejar conflictos de forma segura;",
+              ),
+              (
+                  "Los empleadores deben proporcionar supervisión, procedimientos de seguridad, rutas de escalamiento y apoyo para casos difíciles.",
+                  "Los empleadores deben proporcionar supervisión, procedimientos de seguridad, vías claras para remitir situaciones que excedan las funciones del trabajador y apoyo para casos difíciles.",
+              ),
+              (
+                  "la formación de corto plazo en el puesto de trabajo como la preparación habitual.",
+                  "la capacitación de corta duración en el puesto de trabajo como preparación habitual.",
+              ),
+          ]
+
+          for old, new in replacements:
+              old_count = text.count(old)
+              new_count = text.count(new)
+              if old_count == 1 and new_count == 0:
+                  text = text.replace(old, new, 1)
+              elif old_count == 0 and new_count == 1:
+                  pass
+              else:
+                  raise SystemExit(
+                      f"Fail-closed replacement state for {old!r}: old={old_count}, new={new_count}"
+                  )
+
+          path.write_text(text, encoding="utf-8", newline="\n")
+          verified = path.read_bytes()
+          if verified.startswith(b"\xef\xbb\xbf"):
+              raise SystemExit("BOM introduced")
+          checked = verified.decode("utf-8")
+          for old, new in replacements:
+              if checked.count(old) != 0 or checked.count(new) != 1:
+                  raise SystemExit(
+                      f"Acceptance count failed for {new!r}: old={checked.count(old)}, new={checked.count(new)}"
+                  )
+          print("All four es-419 editorial replacements verified; UTF-8 without BOM.")
+
+      - name: Verify controlled scope and Markdown hygiene
+        run: |
+          git diff --check
+          git diff -- project/revision-2026/guide-01/working-masters/GUIDE_01_TRABAJADOR_COMUNITARIO_DE_SALUD_ES419_WORKING_MASTER.md
+          test "$(git diff --name-only | wc -l)" -eq 1
+
+      - name: Commit completed correction set
+        run: |
+          if git diff --quiet; then
+            echo "Approved corrections already present; no commit required."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add project/revision-2026/guide-01/working-masters/GUIDE_01_TRABAJADOR_COMUNITARIO_DE_SALUD_ES419_WORKING_MASTER.md
+          git commit -m "docs(guide01): apply es-419 editorial corrections"
+          git push origin HEAD:revision/guide-00-100-2026
