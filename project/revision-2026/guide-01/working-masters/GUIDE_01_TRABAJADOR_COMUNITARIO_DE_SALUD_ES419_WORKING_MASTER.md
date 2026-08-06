@@ -35,7 +35,7 @@ Las responsabilidades habituales pueden incluir:
 - documentar servicios y resultados;
 - identificar barreras relacionadas con los determinantes sociales de la salud;
 - generar confianza entre las comunidades y las organizaciones sanitarias o de servicios sociales;
-- escalar inquietudes urgentes, clínicas, de protección o privacidad al personal calificado.
+- remitir de inmediato al personal calificado las inquietudes urgentes o relacionadas con asuntos clínicos, de protección o de privacidad.
 
 Un trabajador comunitario de salud no es automáticamente enfermero, médico, psicólogo, trabajador social, terapeuta ni otro profesional clínico con licencia. Debe mantenerse dentro de las funciones autorizadas por su empleador, programa, formación, supervisión y legislación local.
 
@@ -49,14 +49,14 @@ Entre las cualidades útiles se encuentran:
 - comunicación oral y escrita clara;
 - respeto por la privacidad y la elección informada;
 - confiabilidad y registro preciso de la información;
-- desescalamiento de conflictos;
+- capacidad para reducir la tensión y manejar conflictos de forma segura;
 - humildad cultural;
 - habilidades digitales básicas;
 - disposición para trabajar con equipos multidisciplinarios;
 - capacidad para mantener límites profesionales;
 - disponibilidad para desplazarse localmente o trabajar fuera de una oficina tradicional.
 
-El trabajo puede ser emocionalmente exigente. Los empleadores deben proporcionar supervisión, procedimientos de seguridad, rutas de escalamiento y apoyo para casos difíciles.
+El trabajo puede ser emocionalmente exigente. Los empleadores deben proporcionar supervisión, procedimientos de seguridad, vías claras para remitir situaciones que excedan las funciones del trabajador y apoyo para casos difíciles.
 
 ## 3. Educación, formación y credenciales
 
@@ -64,7 +64,7 @@ No existe una única cualificación mundial para este trabajo. Los requisitos va
 
 ### Estados Unidos
 
-La Oficina de Estadísticas Laborales de Estados Unidos identifica el diploma de escuela secundaria o equivalente como la educación típica de entrada y la formación de corto plazo en el puesto de trabajo como la preparación habitual. Este perfil nacional no reemplaza las reglas estatales de certificación ni los requisitos del empleador.
+La Oficina de Estadísticas Laborales de Estados Unidos identifica el diploma de escuela secundaria o equivalente como la educación típica de entrada y la capacitación de corta duración en el puesto de trabajo como preparación habitual. Este perfil nacional no reemplaza las reglas estatales de certificación ni los requisitos del empleador.
 
 Algunos estados cuentan con certificación formal, programas de formación aprobados, normas de competencia, registros o requisitos vinculados con Medicaid. Otros dependen más de la formación del empleador o de credenciales voluntarias. Antes de inscribirse, verifique:
 
