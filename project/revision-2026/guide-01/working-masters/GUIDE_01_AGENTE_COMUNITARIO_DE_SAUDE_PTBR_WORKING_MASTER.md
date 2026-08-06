@@ -3,7 +3,7 @@
 **Mestre de trabalho controlado em português brasileiro — versão 1.1-rascunho**  
 **Data de revisão:** 5 de agosto de 2026
 **Público:** Pessoas adultas que exploram caminhos de entrada, transição ou progressão no trabalho comunitário em saúde  
-**Status:** Mestre substantivo em pt-BR concluído a partir do mestre controlado em inglês e do registro terminológico trilíngue. A integração trilíngue, a revisão de paridade estrutural, a normalização terminológica, a reconciliação das estimativas de renda e a revisão controlada de links estão registradas. Ainda estão pendentes o congelamento editorial e da tradução, a validação final de links ativos, a geração de DOCX/PDF, os metadados, as somas de verificação e o controle de qualidade de publicação.
+**Status:** Mestre substantivo em português brasileiro concluído a partir do mestre controlado em inglês e do registro terminológico trilíngue. A integração trilíngue, a revisão editorial frase por frase, a revisão de paridade estrutural e segurança, a normalização terminológica, a reconciliação das estimativas de renda e a revisão controlada de links estão registradas. O congelamento editorial e terminológico trilíngue está concluído. Ainda estão pendentes a validação final de links ativos e estimativas de mercado datadas, a geração de DOCX/PDF, metadados, checksums, renderização e QA de publicação.
 
 > Este guia oferece informações gerais sobre carreira e educação. Os requisitos variam conforme o país, estado, província, território, empregador, programa de financiamento e título do cargo. Ele não oferece aconselhamento médico, jurídico, migratório, de licenciamento, acreditação ou financeiro. A conclusão de curso, certificado, estágio, aprendizagem formal ou serviço voluntário não garante emprego, certificação, registro, licença, promoção ou renda.
 
@@ -336,11 +336,8 @@ Concluído para este mestre de trabalho:
 
 Ainda necessário antes da publicação:
 
-- comparar o mestre de trabalho com o DOCX legado em inglês e documentar alegações mantidas, corrigidas e removidas;
 - validar todos os links externos no ambiente final do candidato;
 - revalidar as estimativas complementares não governamentais imediatamente antes da publicação e manter suas limitações metodológicas;
-- concluir o QA editorial após a comparação com o legado;
-- executar QA de terminologia e paridade estrutural entre inglês, es-419 e pt-BR;
 - gerar candidatos DOCX e PDF pesquisáveis;
 - verificar OOXML, hiperlinks, texto dos PDFs, metadados, renderização de páginas, nomes de arquivos, checksums e manifestos de publicação;
 - não descrever revisão automatizada como certificação humana independente, certificação profissional de tradução, revisão de acreditação, certificação de acessibilidade ou revisão jurídica.

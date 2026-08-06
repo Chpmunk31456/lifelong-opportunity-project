@@ -3,7 +3,7 @@
 **Maestro de trabajo controlado en español latinoamericano neutro — versión 1.1-borrador**  
 **Fecha de revisión:** 5 de agosto de 2026
 **Audiencia:** Personas adultas que exploran vías de ingreso, transición o avance en el trabajo comunitario de salud  
-**Estado:** Maestro sustantivo en español es-419 completado a partir del maestro controlado en inglés y del registro terminológico trilingüe. La integración trilingüe, la revisión de paridad estructural, la normalización terminológica, la conciliación de estimaciones de ingresos y la revisión controlada de enlaces están registradas. Aún están pendientes la congelación editorial y de traducción, la validación final de enlaces en vivo, la generación de DOCX/PDF, los metadatos, las sumas de comprobación y el control de calidad de publicación.
+**Estado:** Maestro sustantivo en español es-419 completado a partir del maestro controlado en inglés y del registro terminológico trilingüe. La integración trilingüe, la revisión editorial oración por oración, la revisión de paridad estructural y seguridad, la normalización terminológica, la conciliación de estimaciones de ingresos y la revisión controlada de enlaces están registradas. La congelación editorial y terminológica trilingüe está completa. Aún están pendientes la validación final de enlaces en vivo y estimaciones de mercado fechadas, la generación de DOCX/PDF, los metadatos, las sumas de comprobación, la representación de páginas y el control de calidad de publicación.
 
 > Esta guía ofrece información general sobre carreras y educación. Los requisitos varían según el país, estado, provincia, territorio, empleador, programa de financiación y nombre del puesto. No proporciona asesoría médica, jurídica, migratoria, de licenciamiento, acreditación o financiera. Completar un curso, certificado, pasantía, aprendizaje formal o servicio voluntario no garantiza empleo, certificación, registro, licencia, ascenso ni ingresos.
 
@@ -336,11 +336,8 @@ Completado para este maestro de trabajo:
 
 Aún se requiere antes de la publicación:
 
-- comparar el maestro en inglés con el DOCX heredado y documentar las afirmaciones conservadas, corregidas y eliminadas;
 - validar todos los enlaces externos desde el entorno final candidato;
 - revalidar las estimaciones complementarias no gubernamentales inmediatamente antes de la publicación y conservar sus limitaciones metodológicas;
-- completar la revisión de paridad terminológica y estructural con el maestro en inglés;
-- crear el maestro alineado en portugués de Brasil;
 - generar candidatos DOCX y PDF con texto buscable;
 - verificar OOXML, hipervínculos, texto PDF, metadatos, representación de páginas, nombres de archivo, sumas de verificación y manifiestos de publicación;
 - no describir la revisión automatizada como certificación humana independiente, certificación profesional de traducción, revisión de acreditación, certificación de accesibilidad, revisión médica o revisión jurídica.
