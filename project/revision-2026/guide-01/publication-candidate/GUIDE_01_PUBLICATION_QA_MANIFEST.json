@@ -1,0 +1,52 @@
+{
+  "guide": "01",
+  "version": "1.1-draft",
+  "status": "publication candidate; automated QA only",
+  "independent_human_certification": false,
+  "professional_translation_certification": false,
+  "accessibility_certification": false,
+  "files": [
+    {
+      "locale": "English",
+      "path": "project/revision-2026/guide-01/publication-candidate/Guide_01_Community_Health_Worker_English_v1.1.docx",
+      "bytes": 20959,
+      "pages": null,
+      "sha256": "bc5979779f29499ea351e8c5af7eaf5ae4a2eb87c42caacfe06523f958e5e0e0"
+    },
+    {
+      "locale": "English",
+      "path": "project/revision-2026/guide-01/publication-candidate/pdf/Guide_01_Community_Health_Worker_English_v1.1.pdf",
+      "bytes": 204744,
+      "pages": 11,
+      "sha256": "3890562670e125cffdac8da25f80938c301981ee7669effd52c5729389bb8cce"
+    },
+    {
+      "locale": "es-419",
+      "path": "project/revision-2026/guide-01/publication-candidate/Guide_01_Trabajador_Comunitario_de_Salud_es-419_v1.1.docx",
+      "bytes": 21948,
+      "pages": null,
+      "sha256": "b22cb912a02ac67250c7e96ce7ab8262abd590716f9d4832626f4e332f7f5f25"
+    },
+    {
+      "locale": "es-419",
+      "path": "project/revision-2026/guide-01/publication-candidate/pdf/Guide_01_Trabajador_Comunitario_de_Salud_es-419_v1.1.pdf",
+      "bytes": 210263,
+      "pages": 12,
+      "sha256": "5d89589f9611417c29988b5b995d10dcc147e3d1b4873a43968e4bca54442444"
+    },
+    {
+      "locale": "pt-BR",
+      "path": "project/revision-2026/guide-01/publication-candidate/Guide_01_Agente_Comunitario_de_Saude_pt-BR_v1.1.docx",
+      "bytes": 21866,
+      "pages": null,
+      "sha256": "4d89b73f98ca342c60bc80bff48bc705a449410f61d3b9b6280fa9d1223fe7bd"
+    },
+    {
+      "locale": "pt-BR",
+      "path": "project/revision-2026/guide-01/publication-candidate/pdf/Guide_01_Agente_Comunitario_de_Saude_pt-BR_v1.1.pdf",
+      "bytes": 210173,
+      "pages": 12,
+      "sha256": "67a7db6c7bc26b637bb2a85575330df21732a1a43d8ad6010d9da80a6661ca4e"
+    }
+  ]
+}
