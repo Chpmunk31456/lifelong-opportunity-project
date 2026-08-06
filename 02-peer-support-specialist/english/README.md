@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 02
+# Lifelong Opportunity Guide 02
 
 ## Peer Support Specialist — English Edition
 
@@ -17,7 +17,7 @@ A free, accessible career and education guide created and directed by **Alberto 
 - **Version:** 1.0
 - **Publication month:** July 2026
 - **Availability:** DOCX and PDF present
-- **Review status:** Technically reviewed publication edition; exact source equivalence and human linguistic review should not be assumed unless separately documented
+- **Controlled revision status:** Source, factual, link, accessibility, metadata, DOCX, PDF, and publication QA are in progress on branch `revision/guide-00-100-2026`. Existing files must not be treated as independently human-certified, professionally translated, accredited, or newly publication-ready until the controlled Guide 02 batch passes its documented QA gates.
 
 ## Scope
 
