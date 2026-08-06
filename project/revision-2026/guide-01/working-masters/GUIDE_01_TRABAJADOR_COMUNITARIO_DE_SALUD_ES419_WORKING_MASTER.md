@@ -211,7 +211,7 @@ La remuneración varía según el estado, área metropolitana, empleador, horari
 
 ### Estimaciones complementarias del mercado de Estados Unidos
 
-Las estimaciones no gubernamentales actuales aportan contexto adicional, pero no son estadísticas oficiales ni deben reemplazar las cifras de la Oficina de Estadísticas Laborales indicadas anteriormente. Glassdoor informó una remuneración anual promedio estimada de **USD 52.306** para trabajadores comunitarios de salud en Estados Unidos, basada en **1.936 reportes salariales anónimos**, a junio de 2026. ZipRecruiter informó una remuneración anual promedio estimada de **USD 44.925** al 27 de julio de 2026, utilizando anuncios de empleo de empleadores y datos de terceros.
+Las estimaciones no gubernamentales actuales aportan contexto adicional, pero no son estadísticas oficiales ni deben reemplazar las cifras de la Oficina de Estadísticas Laborales indicadas anteriormente. Glassdoor mostró una **remuneración total mediana estimada de USD 52.000** para trabajadores comunitarios de salud en Estados Unidos, con un rango típico de remuneración total de aproximadamente **USD 44.000 a USD 63.000**, al revalidarse el 6 de agosto de 2026. ZipRecruiter informó una remuneración anual promedio estimada de **USD 44.925** al 27 de julio de 2026, utilizando anuncios de empleo de empleadores y datos de terceros.
 
 Estas estimaciones usan métodos, muestras y ciclos de actualización distintos. No las promedie entre sí, no las interprete como ofertas garantizadas ni suponga que se aplican a un estado, empleador, nivel de experiencia o modalidad de empleo específicos.
 
@@ -312,7 +312,7 @@ Antes de postularse:
 - Centers for Disease Control and Prevention, *Resources for Community Health Workers*, página con fecha 3 de diciembre de 2024: https://www.cdc.gov/chronic-disease/php/community-health-worker-resources/index.html
 - Recurso archivado de formación cardiovascular para trabajadores comunitarios de los CDC, revisado el 27 de abril de 2022: https://archive.cdc.gov/www_cdc_gov/dhdsp/programs/spha/chw_training/index.htm
 - U.S. Bureau of Labor Statistics, *Occupational Outlook Handbook, Community Health Workers*, modificado el 28 de agosto de 2025: https://www.bls.gov/ooh/community-and-social-service/community-health-workers.htm
-- Glassdoor, estimación salarial para trabajadores comunitarios de salud en Estados Unidos, consultada en agosto de 2026; promedio estimado de USD 52.306 basado en 1.936 reportes salariales anónimos: https://www.glassdoor.com/Salaries/community-health-worker-salary-SRCH_KO0,23.htm
+- Glassdoor, estimación salarial para trabajadores comunitarios de salud en Estados Unidos, consultada el 6 de agosto de 2026; remuneración total mediana estimada de USD 52.000 y rango típico aproximado de USD 44.000–63.000: https://www.glassdoor.com/Salaries/community-health-worker-salary-SRCH_KO0,23.htm
 - ZipRecruiter, estimación salarial para trabajadores comunitarios de salud en Estados Unidos, fechada el 27 de julio de 2026; promedio estimado de USD 44.925 basado en anuncios de empleadores y datos de terceros: https://www.ziprecruiter.com/Salaries/Community-Health-Worker-Salary
 - Government of Canada Job Bank, resumen y requisitos de *Community Health Worker*, modificados el 2 de junio de 2026: https://www.jobbank.gc.ca/marketreport/summary-occupation/296075/ca y https://www.jobbank.gc.ca/marketreport/requirements/296075/ca
 - Government of Canada Job Bank, informe salarial, modificado el 2 de junio de 2026: https://www.jobbank.gc.ca/marketreport/wages-occupation/296075/ca
