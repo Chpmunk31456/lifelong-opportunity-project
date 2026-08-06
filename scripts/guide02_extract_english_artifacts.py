@@ -9,11 +9,12 @@ from __future__ import annotations
 import hashlib
 import json
 import re
-import subprocess
 import zipfile
 from difflib import SequenceMatcher
 from pathlib import Path
 from xml.etree import ElementTree as ET
+
+from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCX = ROOT / "02-peer-support-specialist/english/docx/Lifelong_Opportunity_Peer_Support_Specialist_Guide_English_v1.0.docx"
@@ -21,13 +22,6 @@ PDF = ROOT / "02-peer-support-specialist/english/pdf/Lifelong_Opportunity_Peer_S
 OUT = ROOT / "project/revision-2026/guide-02"
 SOURCE = OUT / "source"
 QA = OUT / "qa"
-
-
-def run(*args: str) -> str:
-    result = subprocess.run(args, text=True, capture_output=True, check=False)
-    if result.returncode != 0:
-        raise SystemExit(f"Command failed ({result.returncode}): {' '.join(args)}\n{result.stderr}")
-    return result.stdout
 
 
 def digest(path: Path) -> str:
@@ -44,14 +38,6 @@ def main() -> int:
 
     SOURCE.mkdir(parents=True, exist_ok=True)
     QA.mkdir(parents=True, exist_ok=True)
-
-    qpdf_output = run("qpdf", "--check", str(PDF))
-    (QA / "pdf-qpdf-check.txt").write_text(qpdf_output, encoding="utf-8", newline="\n")
-    pdfinfo_output = run("pdfinfo", str(PDF))
-    (QA / "pdfinfo.txt").write_text(pdfinfo_output, encoding="utf-8", newline="\n")
-
-    pdf_text_path = SOURCE / "GUIDE_02_ENGLISH_PDF_EXTRACTED_BASELINE.txt"
-    run("pdftotext", "-layout", str(PDF), str(pdf_text_path))
 
     ns = {
         "w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main",
@@ -109,20 +95,34 @@ def main() -> int:
         newline="\n",
     )
 
-    pdf_text = pdf_text_path.read_text(encoding="utf-8", errors="replace")
+    reader = PdfReader(str(PDF), strict=True)
+    if reader.is_encrypted:
+        raise SystemExit("Guide 02 PDF is encrypted")
+    pdf_pages = [(page.extract_text() or "").strip() for page in reader.pages]
+    pdf_text = "\n\n".join(text for text in pdf_pages if text) + "\n"
     if "\ufffd" in pdf_text:
         raise SystemExit("Replacement-character encoding defect in PDF extraction")
+    pdf_text_path = SOURCE / "GUIDE_02_ENGLISH_PDF_EXTRACTED_BASELINE.txt"
+    pdf_text_path.write_text(pdf_text, encoding="utf-8", newline="\n")
+
+    pdf_metadata = {str(key): str(value) for key, value in (reader.metadata or {}).items()}
+    pdf_technical = {
+        "pages": len(reader.pages),
+        "encrypted": reader.is_encrypted,
+        "metadata": pdf_metadata,
+        "extracted_characters": len(pdf_text),
+        "parser": "pypdf strict mode",
+    }
+    (QA / "pdf-technical-results.json").write_text(
+        json.dumps(pdf_technical, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
 
     normalized_docx = normalize(docx_text)
     normalized_pdf = normalize(pdf_text)
     ratio = SequenceMatcher(None, normalized_docx, normalized_pdf).ratio()
     containment = normalized_docx in normalized_pdf or normalized_pdf in normalized_docx
-
-    info: dict[str, str] = {}
-    for line in pdfinfo_output.splitlines():
-        if ":" in line:
-            key, val = line.split(":", 1)
-            info[key.strip()] = val.strip()
 
     decision = (
         "**PASS for technical source-equivalence intake:** the artifacts are structurally readable and their normalized text is highly consistent."
@@ -153,12 +153,11 @@ def main() -> int:
         "",
         "## PDF technical results",
         "",
-        f"- Pages: {info.get('Pages', 'not reported')}",
-        f"- Tagged: {info.get('Tagged', 'not reported')}",
-        f"- Encrypted: {info.get('Encrypted', 'not reported')}",
-        f"- PDF version: {info.get('PDF version', 'not reported')}",
+        f"- Pages: {len(reader.pages)}",
+        f"- Encrypted: {reader.is_encrypted}",
         f"- Extracted characters: {len(pdf_text)}",
-        "- qpdf structural check: passed",
+        "- Structural parser: pypdf strict mode passed",
+        f"- Metadata: `{json.dumps(pdf_metadata, ensure_ascii=False)}`",
         "",
         "## DOCX-to-PDF text comparison",
         "",
