@@ -1,9 +1,9 @@
 # Guía 01 — Trabajador comunitario de salud
 
 **Maestro de trabajo controlado en español latinoamericano neutro — versión 1.1-borrador**  
-**Fecha de revisión:** 4 de agosto de 2026  
+**Fecha de revisión:** 5 de agosto de 2026
 **Audiencia:** Personas adultas que exploran vías de ingreso, transición o avance en el trabajo comunitario de salud  
-**Estado:** Maestro sustantivo en español es-419 completado a partir del maestro controlado en inglés y del registro terminológico trilingüe. Aún están pendientes la comparación con el archivo heredado, la validación final de enlaces, la revisión de paridad, la generación de DOCX/PDF y el control de calidad de publicación.
+**Estado:** Maestro sustantivo en español es-419 completado a partir del maestro controlado en inglés y del registro terminológico trilingüe. La integración trilingüe, la revisión de paridad estructural, la normalización terminológica, la conciliación de estimaciones de ingresos y la revisión controlada de enlaces están registradas. Aún están pendientes la congelación editorial y de traducción, la validación final de enlaces en vivo, la generación de DOCX/PDF, los metadatos, las sumas de comprobación y el control de calidad de publicación.
 
 > Esta guía ofrece información general sobre carreras y educación. Los requisitos varían según el país, estado, provincia, territorio, empleador, programa de financiación y nombre del puesto. No proporciona asesoría médica, jurídica, migratoria, de licenciamiento, acreditación o financiera. Completar un curso, certificado, pasantía, aprendizaje formal o servicio voluntario no garantiza empleo, certificación, registro, licencia, ascenso ni ingresos.
 

@@ -1,9 +1,9 @@
 # Guide 01 — Community Health Worker
 
 **Controlled English working master — version 1.1-draft**  
-**Review date:** August 3, 2026  
+**Review date:** August 5, 2026
 **Audience:** Adults exploring entry, transition, or advancement pathways in community health work  
-**Status:** Substantive English working master completed from the controlled official-source baseline. Legacy-file comparison, final link validation, translation, DOCX/PDF generation, and publication QA remain pending.
+**Status:** Substantive English working master completed from the controlled official-source baseline. Legacy comparison, trilingual integration, structural-parity review, terminology normalization, market-income reconciliation, and controlled link review are recorded. Final editorial and translation freeze, final live-link validation, DOCX/PDF generation, metadata, checksums, and publication QA remain pending.
 
 > This guide provides general career and education information. Requirements differ by country, state, province, territory, employer, funding program, and job title. It does not provide medical, legal, immigration, licensing, accreditation, or financial advice. Completion of a course, certificate, internship, apprenticeship, or volunteer placement does not guarantee employment, certification, registration, licensure, promotion, or income.
 
@@ -339,8 +339,8 @@ Still required before publication:
 - validate every external link from the final candidate environment;
 - revalidate the supplementary non-government market estimates immediately before publication and retain their methodology limitations;
 - complete editorial QA after legacy comparison;
-- create aligned neutral Latin American Spanish and Brazilian Portuguese masters;
-- run terminology and structural-parity QA;
+- complete final sentence-level review of the aligned neutral Latin American Spanish and Brazilian Portuguese masters;
+- reconcile any intentional localization exceptions and freeze terminology and structural parity;
 - generate DOCX and searchable PDF candidates;
 - verify OOXML, hyperlinks, PDF text, metadata, page rendering, filenames, checksums, and publication manifests;
 - do not describe automated review as independent human certification, professional translation certification, accreditation review, accessibility certification, medical review, or legal review.

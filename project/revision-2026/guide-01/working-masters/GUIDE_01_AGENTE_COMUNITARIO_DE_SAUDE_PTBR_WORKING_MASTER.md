@@ -1,9 +1,9 @@
 # Guia 01 — Agente comunitário de saúde
 
 **Mestre de trabalho controlado em português brasileiro — versão 1.1-rascunho**  
-**Data de revisão:** 4 de agosto de 2026  
+**Data de revisão:** 5 de agosto de 2026
 **Público:** Pessoas adultas que exploram caminhos de entrada, transição ou progressão no trabalho comunitário em saúde  
-**Status:** Mestre substantivo em pt-BR concluído a partir do mestre controlado em inglês e do registro terminológico trilíngue. Ainda estão pendentes a comparação com o arquivo legado, a validação final de links, a revisão de paridade, a geração de DOCX/PDF e o controle de qualidade de publicação.
+**Status:** Mestre substantivo em pt-BR concluído a partir do mestre controlado em inglês e do registro terminológico trilíngue. A integração trilíngue, a revisão de paridade estrutural, a normalização terminológica, a reconciliação das estimativas de renda e a revisão controlada de links estão registradas. Ainda estão pendentes o congelamento editorial e da tradução, a validação final de links ativos, a geração de DOCX/PDF, os metadados, as somas de verificação e o controle de qualidade de publicação.
 
 > Este guia oferece informações gerais sobre carreira e educação. Os requisitos variam conforme o país, estado, província, território, empregador, programa de financiamento e título do cargo. Ele não oferece aconselhamento médico, jurídico, migratório, de licenciamento, acreditação ou financeiro. A conclusão de curso, certificado, estágio, aprendizagem formal ou serviço voluntário não garante emprego, certificação, registro, licença, promoção ou renda.
 
