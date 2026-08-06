@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 """Reconcile Guide 01 trilingual working-master status blocks.
 
-This script performs exact, fail-closed replacements so repository status text
+The script performs exact, fail-closed replacements so repository status text
 matches completed Guide 01 controls without prematurely declaring publication
-approval.
+approval. Use ``--check`` to verify whether every controlled replacement is
+already applied without changing repository files.
 """
+from __future__ import annotations
+
+import argparse
 from pathlib import Path
 
 ROOT = Path("project/revision-2026/guide-01/working-masters")
@@ -46,19 +50,74 @@ replacements = {
     ],
 }
 
-for path, pairs in replacements.items():
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="verify that every replacement is already present; do not write files",
+    )
+    return parser.parse_args()
+
+
+def load_utf8(path: Path) -> str:
     raw = path.read_bytes()
     if raw.startswith(b"\xef\xbb\xbf"):
         raise SystemExit(f"Unexpected UTF-8 BOM: {path}")
-    text = raw.decode("utf-8")
-    for old, new in pairs:
-        count = text.count(old)
-        if count == 0 and text.count(new) == 1:
-            continue
-        if count != 1:
-            raise SystemExit(f"Expected exactly one controlled match in {path}: {old[:80]!r}; found {count}")
-        text = text.replace(old, new, 1)
+    try:
+        text = raw.decode("utf-8")
+    except UnicodeDecodeError as exc:
+        raise SystemExit(f"Invalid UTF-8 in {path}: {exc}") from exc
     if "\ufffd" in text:
         raise SystemExit(f"Replacement-character encoding defect: {path}")
-    path.write_text(text, encoding="utf-8", newline="\n")
-    print(f"Reconciled {path}")
+    return text
+
+
+def reconcile(path: Path, pairs: list[tuple[str, str]], check_only: bool) -> tuple[int, int]:
+    text = load_utf8(path)
+    applied = 0
+    already_current = 0
+
+    for old, new in pairs:
+        old_count = text.count(old)
+        new_count = text.count(new)
+
+        if old_count == 0 and new_count == 1:
+            already_current += 1
+            continue
+        if old_count != 1 or new_count != 0:
+            raise SystemExit(
+                f"Controlled match failure in {path}: old={old_count}, new={new_count}, "
+                f"token={old[:80]!r}"
+            )
+        if check_only:
+            raise SystemExit(f"Pending controlled replacement in {path}: {old[:80]!r}")
+        text = text.replace(old, new, 1)
+        applied += 1
+
+    if not check_only and applied:
+        path.write_text(text, encoding="utf-8", newline="\n")
+    return applied, already_current
+
+
+def main() -> None:
+    args = parse_args()
+    total_applied = 0
+    total_current = 0
+
+    for path, pairs in replacements.items():
+        applied, current = reconcile(path, pairs, args.check)
+        total_applied += applied
+        total_current += current
+        mode = "verified" if args.check else "reconciled"
+        print(f"{mode}: {path} (applied={applied}, already_current={current})")
+
+    print(
+        f"Guide 01 status reconciliation complete: applied={total_applied}, "
+        f"already_current={total_current}, check_only={args.check}"
+    )
+
+
+if __name__ == "__main__":
+    main()
