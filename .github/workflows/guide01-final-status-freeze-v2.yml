@@ -1,0 +1,117 @@
+name: Guide 01 final status freeze v2
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths: [.github/workflows/guide01-final-status-freeze-v2.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  reconcile-status:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Reconcile completed trilingual gates
+        shell: python
+        run: |
+          from pathlib import Path
+
+          base = Path('project/revision-2026/guide-01/working-masters')
+          specs = {
+            base / 'GUIDE_01_COMMUNITY_HEALTH_WORKER_ENGLISH_WORKING_MASTER.md': {
+              'prefix': '**Status:**',
+              'status': '**Status:** Substantive English working master completed from the controlled official-source baseline. Legacy comparison, trilingual integration, sentence-level editorial review, structural-parity and safety review, terminology normalization, market-income reconciliation, and controlled link review are recorded. The trilingual editorial and terminology freeze is complete. Final live-link and dated market-estimate validation, DOCX/PDF generation, metadata, checksums, rendering, and publication QA remain pending.',
+              'remove': [
+                '- compare the working master against the legacy English DOCX and document retained, corrected, and removed claims;',
+                '- complete editorial QA after legacy comparison;',
+                '- complete final sentence-level review of the aligned neutral Latin American Spanish and Brazilian Portuguese masters;',
+                '- reconcile any intentional localization exceptions and freeze terminology and structural parity;',
+              ],
+            },
+            base / 'GUIDE_01_TRABAJADOR_COMUNITARIO_DE_SALUD_ES419_WORKING_MASTER.md': {
+              'prefix': '**Estado:**',
+              'status': '**Estado:** Maestro sustantivo en español es-419 completado a partir del maestro controlado en inglés y del registro terminológico trilingüe. La integración trilingüe, la revisión editorial oración por oración, la revisión de paridad estructural y seguridad, la normalización terminológica, la conciliación de estimaciones de ingresos y la revisión controlada de enlaces están registradas. La congelación editorial y terminológica trilingüe está completa. Aún están pendientes la validación final de enlaces en vivo y estimaciones de mercado fechadas, la generación de DOCX/PDF, los metadatos, las sumas de comprobación, la representación de páginas y el control de calidad de publicación.',
+              'remove': [
+                '- comparar el maestro en inglés con el DOCX heredado y documentar las afirmaciones conservadas, corregidas y eliminadas;',
+                '- completar la revisión de paridad terminológica y estructural con el maestro en inglés;',
+                '- crear el maestro alineado en portugués de Brasil;',
+              ],
+            },
+            base / 'GUIDE_01_AGENTE_COMUNITARIO_DE_SAUDE_PTBR_WORKING_MASTER.md': {
+              'prefix': '**Status:**',
+              'status': '**Status:** Mestre substantivo em português brasileiro concluído a partir do mestre controlado em inglês e do registro terminológico trilíngue. A integração trilíngue, a revisão editorial frase por frase, a revisão de paridade estrutural e segurança, a normalização terminológica, a reconciliação das estimativas de renda e a revisão controlada de links estão registradas. O congelamento editorial e terminológico trilíngue está concluído. Ainda estão pendentes a validação final de links ativos e estimativas de mercado datadas, a geração de DOCX/PDF, metadados, checksums, renderização e QA de publicação.',
+              'remove': [
+                '- comparar o mestre de trabalho com o DOCX legado em inglês e documentar alegações mantidas, corrigidas e removidas;',
+                '- concluir o QA editorial após a comparação com o legado;',
+                '- executar QA de terminologia e paridade estrutural entre inglês, es-419 e pt-BR;',
+              ],
+            },
+          }
+
+          changed = []
+          for path, spec in specs.items():
+            raw = path.read_bytes()
+            if raw.startswith(b'\xef\xbb\xbf'):
+              raise SystemExit(f'BOM detected: {path}')
+            lines = raw.decode('utf-8').splitlines()
+            status_indexes = [i for i, line in enumerate(lines) if line.startswith(spec['prefix'])]
+            if len(status_indexes) != 1:
+              raise SystemExit(f'Expected one status line in {path}; found {len(status_indexes)}')
+            lines[status_indexes[0]] = spec['status']
+            for stale in spec['remove']:
+              count = lines.count(stale)
+              if count != 1:
+                raise SystemExit(f'Expected one stale gate in {path}; found {count}: {stale}')
+              lines.remove(stale)
+            text = '\n'.join(lines) + '\n'
+            path.write_text(text, encoding='utf-8', newline='\n')
+            changed.append(path)
+
+          evidence = Path('project/revision-2026/guide-01/TRILINGUAL_EDITORIAL_FREEZE_EXECUTION_QA_02.md')
+          evidence.write_text('''# Guide 01 — Trilingual Editorial Freeze Execution QA 02
+
+**Execution date:** 2026-08-06  
+**Scope:** English, neutral Latin American Spanish (es-419), and Brazilian Portuguese (pt-BR) controlled working masters.
+
+## Result
+
+PASS — The three status blocks now record the completed sentence-level editorial review, terminology normalization, structural-parity review, safety-meaning review, and trilingual editorial/terminology freeze. Stale pending items for legacy comparison, cross-language master creation, editorial review, and terminology/parity review were removed.
+
+## Remaining publication hold
+
+Guide 01 remains **not publication-ready** until final live-link validation, dated revalidation of non-government market estimates, DOCX and searchable PDF generation, OOXML/PDF/hyperlink checks, metadata, rendering, filenames, checksums, and publication-manifest QA pass.
+
+## Assurance boundary
+
+This automated control does not constitute independent human certification, professional translation certification, accreditation review, accessibility certification, medical review, or legal review.
+''', encoding='utf-8', newline='\n')
+
+      - name: Validate controlled diff
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --check
+          mapfile -t changed < <(git diff --name-only)
+          printf '%s\n' "${changed[@]}"
+          test "${#changed[@]}" -eq 4
+          test "$(git diff --numstat | wc -l)" -eq 4
+          grep -q 'trilingual editorial and terminology freeze is complete' project/revision-2026/guide-01/working-masters/GUIDE_01_COMMUNITY_HEALTH_WORKER_ENGLISH_WORKING_MASTER.md
+          grep -q 'congelación editorial y terminológica trilingüe está completa' project/revision-2026/guide-01/working-masters/GUIDE_01_TRABAJADOR_COMUNITARIO_DE_SALUD_ES419_WORKING_MASTER.md
+          grep -q 'congelamento editorial e terminológico trilíngue está concluído' project/revision-2026/guide-01/working-masters/GUIDE_01_AGENTE_COMUNITARIO_DE_SAUDE_PTBR_WORKING_MASTER.md
+
+      - name: Commit completed reconciliation
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-01/working-masters project/revision-2026/guide-01/TRILINGUAL_EDITORIAL_FREEZE_EXECUTION_QA_02.md
+          git commit -m 'Guide 01: reconcile trilingual editorial freeze status'
+          git push origin HEAD:revision/guide-00-100-2026
