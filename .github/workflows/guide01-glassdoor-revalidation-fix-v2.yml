@@ -85,7 +85,7 @@ jobs:
           evidence = root / 'GLASSDOOR_REVALIDATION_CORRECTION_EXECUTION_QA_04.md'
           evidence.write_text(
               '# Guide 01 Glassdoor Revalidation Correction — Execution QA 04\n\n'
-              '**Execution date:** August 6, 2026  \n'
+              '**Execution date:** August 6, 2026\n'
               '**Scope:** English, neutral Latin American Spanish (es-419), and Brazilian Portuguese (pt-BR) controlled working masters.\n\n'
               '## Completed correction\n\n'
               '- Replaced the stale Glassdoor average-pay claim and anonymous-submission count in all three working masters.\n'
