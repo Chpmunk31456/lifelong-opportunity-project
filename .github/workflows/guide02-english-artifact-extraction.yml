@@ -1,0 +1,140 @@
+name: Guide 02 English artifact extraction QA
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - .github/workflows/guide02-english-artifact-extraction.yml
+      - 02-peer-support-specialist/english/**
+
+permissions:
+  contents: write
+
+jobs:
+  extract-and-compare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+      - name: Install PDF tools
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils qpdf
+      - name: Extract and audit English artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          DOCX='02-peer-support-specialist/english/docx/Lifelong_Opportunity_Peer_Support_Specialist_Guide_English_v1.0.docx'
+          PDF='02-peer-support-specialist/english/pdf/Lifelong_Opportunity_Peer_Support_Specialist_Guide_English_v1.0.pdf'
+          OUT='project/revision-2026/guide-02'
+          mkdir -p "$OUT/source" "$OUT/qa"
+          qpdf --check "$PDF" > "$OUT/qa/pdf-qpdf-check.txt" 2>&1
+          pdfinfo "$PDF" > "$OUT/qa/pdfinfo.txt"
+          pdftotext -layout "$PDF" "$OUT/source/GUIDE_02_ENGLISH_PDF_EXTRACTED_BASELINE.txt"
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, zipfile, hashlib, json
+          from xml.etree import ElementTree as ET
+          from difflib import SequenceMatcher
+
+          docx=Path('02-peer-support-specialist/english/docx/Lifelong_Opportunity_Peer_Support_Specialist_Guide_English_v1.0.docx')
+          pdf=Path('02-peer-support-specialist/english/pdf/Lifelong_Opportunity_Peer_Support_Specialist_Guide_English_v1.0.pdf')
+          out=Path('project/revision-2026/guide-02')
+          ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main','r':'http://schemas.openxmlformats.org/officeDocument/2006/relationships','cp':'http://schemas.openxmlformats.org/package/2006/metadata/core-properties','dc':'http://purl.org/dc/elements/1.1/','dcterms':'http://purl.org/dc/terms/'}
+          with zipfile.ZipFile(docx) as z:
+              names=set(z.namelist())
+              required={'[Content_Types].xml','word/document.xml','word/_rels/document.xml.rels','docProps/core.xml'}
+              missing=sorted(required-names)
+              root=ET.fromstring(z.read('word/document.xml'))
+              paras=[]
+              for p in root.findall('.//w:p',ns):
+                  t=''.join(x.text or '' for x in p.findall('.//w:t',ns)).strip()
+                  if t: paras.append(t)
+              docx_text='\n\n'.join(paras)+'\n'
+              relroot=ET.fromstring(z.read('word/_rels/document.xml.rels'))
+              links=[]
+              for rel in relroot:
+                  if rel.attrib.get('TargetMode')=='External': links.append(rel.attrib.get('Target',''))
+              core=ET.fromstring(z.read('docProps/core.xml'))
+              def val(tag):
+                  e=core.find(tag,ns); return (e.text or '').strip() if e is not None else ''
+              metadata={'title':val('dc:title'),'subject':val('dc:subject'),'creator':val('dc:creator'),'description':val('dc:description'),'created':val('dcterms:created'),'modified':val('dcterms:modified')}
+          (out/'source/GUIDE_02_ENGLISH_DOCX_EXTRACTED_BASELINE.md').write_text('# Guide 02 English DOCX extracted baseline\n\n'+docx_text,encoding='utf-8')
+          pdf_text=(out/'source/GUIDE_02_ENGLISH_PDF_EXTRACTED_BASELINE.txt').read_text(encoding='utf-8',errors='replace')
+          def norm(s): return re.sub(r'\s+',' ',s).strip().casefold()
+          a,b=norm(docx_text),norm(pdf_text)
+          ratio=SequenceMatcher(None,a,b).ratio()
+          containment=(a in b or b in a)
+          info={}
+          for line in (out/'qa/pdfinfo.txt').read_text(errors='replace').splitlines():
+              if ':' in line:
+                  k,v=line.split(':',1); info[k.strip()]=v.strip()
+          sha=lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+          report=f'''# Guide 02 English artifact extraction and equivalence QA 01
+
+- **Guide:** 02 — Peer Support Specialist
+- **Scope:** Existing English v1.0 DOCX and PDF only
+- **Control:** Automated technical extraction; not independent human certification, accreditation, professional translation certification, accessibility certification, legal review, or factual validation
+
+## Inventory
+
+| Artifact | Bytes | SHA-256 |
+|---|---:|---|
+| `{docx.as_posix()}` | {docx.stat().st_size} | `{sha(docx)}` |
+| `{pdf.as_posix()}` | {pdf.stat().st_size} | `{sha(pdf)}` |
+
+## DOCX package and metadata
+
+- Missing required OOXML parts: {missing if missing else 'None'}
+- Extracted non-empty paragraphs: {len(paras)}
+- External relationships: {len(links)}
+- Core metadata: `{json.dumps(metadata,ensure_ascii=False)}`
+
+## PDF technical results
+
+- Pages: {info.get('Pages','not reported')}
+- Tagged: {info.get('Tagged','not reported')}
+- Encrypted: {info.get('Encrypted','not reported')}
+- PDF version: {info.get('PDF version','not reported')}
+- Extracted characters: {len(pdf_text)}
+- qpdf structural check: passed
+
+## DOCX-to-PDF text comparison
+
+- Normalized similarity ratio: **{ratio:.6f}**
+- Full normalized containment: **{containment}**
+- DOCX normalized characters: {len(a)}
+- PDF normalized characters: {len(b)}
+
+## Gate decision
+
+{'**PASS for technical source-equivalence intake:** the artifacts are structurally readable and their normalized text is highly consistent.' if ratio >= 0.97 else '**HOLD:** normalized text similarity is below 0.97; inspect extraction differences before using either artifact as the revision baseline.'}
+
+This result does not validate factual currency, link destinations, accessibility conformance, editorial quality, or publication readiness. Those remain separate controlled gates.
+'''
+          (out/'qa/GUIDE_02_ENGLISH_ARTIFACT_EXTRACTION_QA_01.md').write_text(report,encoding='utf-8')
+          (out/'qa/GUIDE_02_ENGLISH_EXTERNAL_LINKS_01.txt').write_text('\n'.join(sorted(set(links)))+'\n',encoding='utf-8')
+          if missing or ratio < 0.97 or len(pdf_text.strip()) < 1000:
+              raise SystemExit('Fail-closed Guide 02 artifact QA gate')
+          PY
+      - name: Validate generated evidence
+        run: |
+          set -euo pipefail
+          test -s project/revision-2026/guide-02/source/GUIDE_02_ENGLISH_DOCX_EXTRACTED_BASELINE.md
+          test -s project/revision-2026/guide-02/source/GUIDE_02_ENGLISH_PDF_EXTRACTED_BASELINE.txt
+          test -s project/revision-2026/guide-02/qa/GUIDE_02_ENGLISH_ARTIFACT_EXTRACTION_QA_01.md
+          grep -q 'PASS for technical source-equivalence intake' project/revision-2026/guide-02/qa/GUIDE_02_ENGLISH_ARTIFACT_EXTRACTION_QA_01.md
+      - name: Commit auditable extraction evidence
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-02/source project/revision-2026/guide-02/qa
+          if git diff --cached --quiet; then
+            echo 'No evidence change to commit.'
+            exit 0
+          fi
+          git commit -m 'Add Guide 02 English artifact extraction QA'
+          git push origin HEAD:revision/guide-00-100-2026
