@@ -198,7 +198,7 @@ O BLS observa que alguns trabalhadores comunitários de saúde participam de apr
 
 Nos Estados Unidos, pesquise no Apprenticeship.gov e em órgãos estaduais de aprendizagem profissional utilizando termos relacionados como peer support, behavioral health, community health worker, recovery support e human services. Verifique se qualquer programa que alegue ser Registered Apprenticeship está realmente registrado e identifique o patrocinador, salários, instrução relacionada, supervisão, progressão e credencial obtida.
 
-No Canadá e na América Latina, a palavra "apprenticeship" pode se referir a sistemas que não correspondem diretamente ao apoio entre pares. Trate estágios, práticas supervisionadas, service-learning, funções de trainee e programas de transição oferecidos por empregadores de acordo com seu verdadeiro status jurídico e educacional.
+No Canadá e na América Latina, a palavra "apprenticeship" pode se referir a sistemas que não correspondem diretamente ao apoio entre pares. Trate estágios, práticas supervisionadas, aprendizagem-serviço, funções de treinamento inicial e programas de transição oferecidos por empregadores de acordo com seu verdadeiro status jurídico e educacional.
 
 Para qualquer programa baseado no trabalho, verifique:
 
