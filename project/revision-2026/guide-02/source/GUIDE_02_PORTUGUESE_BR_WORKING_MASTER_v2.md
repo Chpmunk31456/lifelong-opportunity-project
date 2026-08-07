@@ -133,7 +133,7 @@ Para cada país ou cidade, registre:
 
 ### Estados Unidos
 
-Não existe uma única certificação nacional de apoio entre pares que substitua automaticamente os requisitos estaduais, Tribais, de pagadores ou de empregadores. Dependendo da jurisdição e da função, os requisitos podem incluir experiência vivida, critérios relacionados ao tempo de recuperação, treinamento aprovado, exame, horas supervisionadas ou de trabalho, verificação de antecedentes, educação continuada, requisitos éticos e recertificação.
+Não existe uma única certificação nacional de apoio entre pares que substitua automaticamente os requisitos estaduais, tribais, de pagadores ou de empregadores. Dependendo da jurisdição e da função, os requisitos podem incluir experiência vivida, critérios relacionados ao tempo de recuperação, treinamento aprovado, exame, horas supervisionadas ou de trabalho, verificação de antecedentes, educação continuada, requisitos éticos e recertificação.
 
 Antes de pagar:
 
