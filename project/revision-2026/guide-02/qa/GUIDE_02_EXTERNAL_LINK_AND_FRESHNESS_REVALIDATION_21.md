@@ -11,7 +11,7 @@ This is internal project QA. It is not independent certification, accreditation,
 
 ## Result
 
-**HOLD — links are substantively revalidated, but one freshness correction is required before publication-artifact generation.**
+**PASS — external links and freshness have been revalidated, and the required ZipRecruiter date refresh has been applied.**
 
 The current ZipRecruiter Peer Support Specialist page still reports the same national market estimate used by the guide — **US$41,023/year and US$19.72/hour** — but its displayed freshness date has advanced from **July 16, 2026** to **August 7, 2026**. The three controlled language masters therefore need the market-source `as of` date refreshed before DOCX/PDF generation.
 
