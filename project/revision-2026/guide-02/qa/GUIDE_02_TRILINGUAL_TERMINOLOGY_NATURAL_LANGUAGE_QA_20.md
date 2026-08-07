@@ -14,7 +14,7 @@ This record documents the detailed trilingual terminology and natural-language r
 
 **PASS — trilingual terminology, claims framing, and natural-language gate completed.**
 
-The English, neutral Latin American Spanish, and Brazilian Portuguese masters are sufficiently aligned to advance to final external-link revalidation and artifact production. Guide 02 remains **HOLD for publication** until link, DOCX, PDF, metadata, checksum, manifest, and final publication-candidate gates pass.
+The English, neutral Latin American Spanish, and Brazilian Portuguese masters were sufficiently aligned to advance to final external-link revalidation and artifact production. Those downstream gates have since completed successfully, including the final synchronized publication rebuild recorded in Gate 24.
 
 ## Review controls
 
@@ -132,16 +132,10 @@ This gate supplements, and does not replace:
 - Brazilian Portuguese translation intake QA; and
 - automated trilingual parity workflow PASS recorded in `GUIDE_02_TRILINGUAL_AUTOMATED_PARITY_QA_19.md`.
 
-## Remaining Guide 02 gates
+## Downstream Guide 02 gates — completed
 
-1. Revalidate all external links in the three controlled masters.
-2. Generate controlled DOCX artifacts for English, Spanish, and Brazilian Portuguese.
-3. Inspect DOCX structure, styles, headings, lists, tables/worksheets, links, metadata, language codes, and accessibility-related document properties.
-4. Generate controlled PDF artifacts.
-5. Render-inspect PDF pagination, clipping, missing text, broken links, heading/list behavior, and basic accessibility properties available to the build process.
-6. Validate filenames, versions, language codes, metadata, checksums, and publication manifest.
-7. Record the final Guide 02 publication-candidate gate without claiming independent certification.
+The external-link revalidation, market-date refresh, synchronized DOCX/PDF generation, document/link/encoding/metadata QA, PDF extraction and page/title checks, checksums, publication manifest, render evidence, repository landing, and final publication-candidate decision have all completed. The post-editorial synchronized publication build is workflow run `31228466140`, with refreshed artifacts landed in commit `3ea5bed76c1b22bab1b2fb95b4ffab039c5efb3d`.
 
 ## Controlled decision
 
-Guide 02 advances from **trilingual terminology/natural-language review** to **external-link and artifact-production QA**. Publication remains on HOLD until those downstream gates pass.
+Guide 02 passed the trilingual terminology/natural-language review and subsequently passed all downstream controlled publication-candidate gates. Final Guide 02 status is recorded in `GUIDE_02_FINAL_PUBLICATION_CANDIDATE_GATE_24.md`.
