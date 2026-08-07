@@ -1,0 +1,39 @@
+name: Guide 02 translation parity QA
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - scripts/guide02_translation_parity.py
+      - project/revision-2026/guide-02/source/GUIDE_02_ENGLISH_WORKING_MASTER_v2.md
+      - project/revision-2026/guide-02/source/GUIDE_02_SPANISH_LATAM_WORKING_MASTER_v2.md
+      - .github/workflows/guide02-translation-parity.yml
+  pull_request:
+    branches:
+      - main
+    paths:
+      - scripts/guide02_translation_parity.py
+      - project/revision-2026/guide-02/source/GUIDE_02_ENGLISH_WORKING_MASTER_v2.md
+      - project/revision-2026/guide-02/source/GUIDE_02_SPANISH_LATAM_WORKING_MASTER_v2.md
+      - .github/workflows/guide02-translation-parity.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: guide02-translation-parity-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out revision content
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Run deterministic Guide 02 parity checks
+        run: python3 scripts/guide02_translation_parity.py
