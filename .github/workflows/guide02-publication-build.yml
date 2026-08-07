@@ -83,7 +83,6 @@ jobs:
           import re
           import subprocess
           import unicodedata
-          import xml.etree.ElementTree as ET
 
           source_dir = Path('project/revision-2026/guide-02/source')
           root = Path('project/revision-2026/guide-02/publication-candidate')
@@ -201,4 +200,7 @@ jobs:
             exit 0
           fi
           git commit -m "build(guide-02): add trilingual publication candidates and QA manifest"
+          git fetch origin revision/guide-00-100-2026
+          git rebase origin/revision/guide-00-100-2026
+          python scripts/guide02_translation_parity.py
           git push origin HEAD:revision/guide-00-100-2026
