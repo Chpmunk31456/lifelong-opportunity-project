@@ -83,7 +83,7 @@ Pergunte a si mesmo:
 - Quais adaptações ou tecnologias assistivas tornariam o treinamento e o trabalho sustentáveis?
 - Posso ingressar nessa área sem assumir uma dívida insustentável ou um compromisso injusto vinculado ao emprego?
 
-Considere interromper ou adiar o processo quando sua própria recuperação ou bem-estar não estiver suficientemente estável para as exigências da função, quando um empregador esperar atividades clínicas além de sua autoridade, quando os requisitos locais de credenciamento não estiverem claros ou quando os custos e as condições de reembolso do treinamento não tiverem sido verificados por escrito.
+Considere interromper ou adiar o processo quando sua própria recuperação ou bem-estar não estiver suficientemente estável para as exigências da função, quando um empregador esperar atividades clínicas além dos limites de sua atuação, quando os requisitos locais de credenciamento não estiverem claros ou quando os custos e as condições de reembolso do treinamento não tiverem sido verificados por escrito.
 
 ## 5. Ética, limites, privacidade e escalonamento
 
@@ -289,7 +289,7 @@ Assuma um conjunto mais amplo de atividades rotineiras dentro dos limites de sua
 
 ## 16. Progressão, portabilidade e planejamento de saída
 
-Possíveis caminhos incluem funções seniores de apoio entre pares, apoio familiar entre pares, orientação de recuperação, trabalho comunitário de saúde, ações de extensão comunitária, coordenação de programas, supervisão quando permitida, treinamento, melhoria da qualidade ou educação adicional em saúde comportamental e serviços humanos.
+atividades clínicas além dos limites de sua atuação
 
 Não presuma que experiência como trabalhador de apoio entre pares qualifique automaticamente alguém para uma profissão regulamentada de aconselhamento, psicologia, serviço social, enfermagem ou outra área. Essas profissões possuem requisitos próprios de educação e licenciamento.
 
