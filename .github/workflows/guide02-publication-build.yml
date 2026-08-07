@@ -1,4 +1,5 @@
 name: Guide 02 publication build and QA
+# Rebuild trigger: synchronize publication candidates with post-gate source editorial corrections on 2026-08-07.
 
 on:
   workflow_dispatch:
