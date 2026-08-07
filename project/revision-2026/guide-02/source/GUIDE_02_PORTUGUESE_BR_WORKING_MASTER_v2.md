@@ -147,7 +147,7 @@ As competências essenciais da SAMHSA constituem uma estrutura prática de refer
 
 ### Canadá
 
-As funções de apoio entre pares e os requisitos dos empregadores variam em todo o Canadá. O Job Bank inclui esse título no NOC 42201 e indica que a ocupação mais ampla geralmente envolve formação em nível de college/aprendizagem profissional ou experiência relevante. Não conclua a partir desse perfil que todos os empregos de apoio entre pares exigem o mesmo diploma, aprendizagem profissional ou credencial. Verifique os requisitos específicos do empregador, da província, da organização e do programa.
+As funções de apoio entre pares e os requisitos dos empregadores variam em todo o Canadá. O Job Bank inclui esse título no NOC 42201 e indica que a ocupação mais ampla geralmente envolve formação pós-secundária em college, aprendizagem profissional ou experiência relevante. Não conclua a partir desse perfil que todos os empregos de apoio entre pares exigem o mesmo diploma, aprendizagem profissional ou credencial. Verifique os requisitos específicos do empregador, da província, da organização e do programa.
 
 ### Colômbia
 
