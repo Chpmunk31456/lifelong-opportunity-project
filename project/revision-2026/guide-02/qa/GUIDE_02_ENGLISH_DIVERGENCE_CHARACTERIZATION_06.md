@@ -1,5 +1,6 @@
 # Guide 02 English DOCX/PDF divergence characterization 06
 
+- **Control note:** block comparison is diagnostic only because DOCX extraction is paragraph-oriented while PDF extraction is page-oriented.
 - DOCX blocks: **296**
 - PDF blocks: **13**
 - Exactly aligned blocks: **1**
@@ -75,4 +76,4 @@
 
 ## Control decision
 
-The artifacts are materially different text sources, not simple formatting variants. Baseline selection must therefore use content completeness and provenance, not file format preference. This automated diagnostic does not designate either artifact authoritative or certify publication quality.
+The block-level result alone is not sufficient to designate either artifact authoritative. The companion semantic-equivalence result removes known extraction noise and tests token, n-gram, and heading coverage before baseline selection.
