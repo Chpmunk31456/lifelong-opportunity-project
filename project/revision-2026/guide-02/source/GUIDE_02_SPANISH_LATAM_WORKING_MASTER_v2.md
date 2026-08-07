@@ -105,7 +105,7 @@ BLS reporta una **mediana salarial anual de US$51,030 en mayo de 2024 (US$24.54 
 
 ### Estados Unidos — estimación actual de mercado no gubernamental
 
-Como indicador separado de mercado, ZipRecruiter reportó una **estimación promedio de pago en Estados Unidos para Peer Support Specialist de US$41,023 al año (US$19.72 por hora) al 16 de julio de 2026**, con la mayoría de los salarios reportados entre aproximadamente US$35,000 y US$45,000. Se trata de una estimación no gubernamental derivada de publicaciones de empleo y datos de terceros y no debe tratarse como estadística salarial oficial ni como garantía.
+Como indicador separado de mercado, ZipRecruiter reportó una **estimación promedio de pago en Estados Unidos para Peer Support Specialist de US$41,023 al año (US$19.72 por hora) al 7 de agosto de 2026**, con la mayoría de los salarios reportados entre aproximadamente US$35,000 y US$45,000. Se trata de una estimación no gubernamental derivada de publicaciones de empleo y datos de terceros y no debe tratarse como estadística salarial oficial ni como garantía.
 
 ### Canadá — agrupación ocupacional oficial
 
@@ -384,7 +384,7 @@ Las siguientes fuentes respaldan el maestro de trabajo 2026. El QA de publicaci�
 ## Fuente no gubernamental de mercado de Estados Unidos
 
 - ZipRecruiter — Peer Support Specialist Salary: https://www.ziprecruiter.com/Salaries/Peer-Support-Specialist-Salary  
-  Estimación no gubernamental de mercado. Al 16 de julio de 2026: promedio de US$41,023/año (US$19.72/hora). Debe mantenerse etiquetada como estimación de mercado, no como estadística salarial oficial.
+  Estimación no gubernamental de mercado. Al 7 de agosto de 2026: promedio de US$41,023/año (US$19.72/hora). Debe mantenerse etiquetada como estimación de mercado, no como estadística salarial oficial.
 
 ## Fuentes oficiales de Canadá
 
