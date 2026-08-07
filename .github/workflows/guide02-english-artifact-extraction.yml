@@ -8,6 +8,7 @@ on:
     paths:
       - .github/workflows/guide02-english-artifact-extraction.yml
       - scripts/guide02_extract_english_artifacts.py
+      - scripts/guide02_divergence_report.py
       - 02-peer-support-specialist/english/**
   pull_request:
     branches:
@@ -15,6 +16,7 @@ on:
     paths:
       - .github/workflows/guide02-english-artifact-extraction.yml
       - scripts/guide02_extract_english_artifacts.py
+      - scripts/guide02_divergence_report.py
       - 02-peer-support-specialist/english/**
 
 permissions:
@@ -40,38 +42,31 @@ jobs:
         run: python3 -m pip install --disable-pip-version-check --no-cache-dir 'pypdf==6.1.1'
 
       - name: Run fail-closed Guide 02 artifact extraction
+        id: extraction
+        continue-on-error: true
         run: python3 scripts/guide02_extract_english_artifacts.py
+
+      - name: Characterize DOCX/PDF divergence
+        if: always()
+        run: |
+          set -euo pipefail
+          test -s project/revision-2026/guide-02/source/GUIDE_02_ENGLISH_DOCX_EXTRACTED_BASELINE.md
+          test -s project/revision-2026/guide-02/source/GUIDE_02_ENGLISH_PDF_EXTRACTED_BASELINE.txt
+          python3 scripts/guide02_divergence_report.py
 
       - name: Report generated diagnostics
         if: always()
         run: |
           set -euo pipefail
-          REPORT='project/revision-2026/guide-02/qa/GUIDE_02_ENGLISH_ARTIFACT_EXTRACTION_QA_01.md'
-          TECH='project/revision-2026/guide-02/qa/pdf-technical-results.json'
-          if [ -f "$REPORT" ]; then
-            echo '--- Guide 02 artifact QA report ---'
-            cat "$REPORT"
-          else
-            echo 'Guide 02 artifact QA report was not generated.'
-          fi
-          if [ -f "$TECH" ]; then
-            echo '--- Guide 02 PDF technical results ---'
-            cat "$TECH"
-          else
-            echo 'Guide 02 PDF technical results were not generated.'
-          fi
+          for f in \
+            project/revision-2026/guide-02/qa/GUIDE_02_ENGLISH_ARTIFACT_EXTRACTION_QA_01.md \
+            project/revision-2026/guide-02/qa/GUIDE_02_ENGLISH_DIVERGENCE_CHARACTERIZATION_06.md \
+            project/revision-2026/guide-02/qa/pdf-technical-results.json; do
+            if [ -f "$f" ]; then echo "--- $f ---"; cat "$f"; fi
+          done
 
-      - name: Validate generated evidence
-        run: |
-          set -euo pipefail
-          test -s project/revision-2026/guide-02/source/GUIDE_02_ENGLISH_DOCX_EXTRACTED_BASELINE.md
-          test -s project/revision-2026/guide-02/source/GUIDE_02_ENGLISH_PDF_EXTRACTED_BASELINE.txt
-          test -s project/revision-2026/guide-02/qa/GUIDE_02_ENGLISH_ARTIFACT_EXTRACTION_QA_01.md
-          test -s project/revision-2026/guide-02/qa/pdf-technical-results.json
-          grep -q 'PASS for technical source-equivalence intake' project/revision-2026/guide-02/qa/GUIDE_02_ENGLISH_ARTIFACT_EXTRACTION_QA_01.md
-          git diff --check
-
-      - name: Commit completed extraction evidence
+      - name: Commit auditable extraction and divergence evidence
+        if: always()
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
@@ -79,8 +74,17 @@ jobs:
           git add project/revision-2026/guide-02/source project/revision-2026/guide-02/qa
           git diff --cached --check
           if git diff --cached --quiet; then
-            echo 'Guide 02 extraction evidence already matches the current artifacts.'
-            exit 0
+            echo 'Guide 02 diagnostic evidence already matches the current artifacts.'
+          else
+            git commit -m 'Add Guide 02 English divergence diagnostics'
+            git push origin HEAD:revision/guide-00-100-2026
           fi
-          git commit -m 'Add Guide 02 English artifact extraction QA'
-          git push origin HEAD:revision/guide-00-100-2026
+
+      - name: Enforce controlled equivalence gate
+        if: always()
+        run: |
+          set -euo pipefail
+          REPORT='project/revision-2026/guide-02/qa/GUIDE_02_ENGLISH_ARTIFACT_EXTRACTION_QA_01.md'
+          test -s "$REPORT"
+          grep -q 'PASS for technical source-equivalence intake' "$REPORT"
+          test '${{ steps.extraction.outcome }}' = 'success'
