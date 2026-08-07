@@ -67,7 +67,7 @@ def main() -> int:
         ("2024 to 2034", "2024 y 2034", "2024 e 2034", "BLS outlook period"),
         ("$41,023", "US$41,023", "US$ 41.023", "market annual estimate"),
         ("$19.72", "US$19.72", "US$ 19,72", "market hourly estimate"),
-        ("July 16, 2026", "16 de julio de 2026", "16 de julho de 2026", "market as-of date"),
+        ("August 7, 2026", "7 de agosto de 2026", "7 de agosto de 2026", "market as-of date"),
         ("NOC 42201", "NOC 42201", "NOC 42201", "Canada occupational group"),
         ("C$19.00", "C$19.00", "C$ 19,00", "Canada low wage"),
         ("C$26.00", "C$26.00", "C$ 26,00", "Canada median wage"),
