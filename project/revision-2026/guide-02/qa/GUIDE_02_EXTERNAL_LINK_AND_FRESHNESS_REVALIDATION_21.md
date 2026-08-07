@@ -13,7 +13,7 @@ This is internal project QA. It is not independent certification, accreditation,
 
 **PASS — external links and freshness have been revalidated, and the required ZipRecruiter date refresh has been applied.**
 
-The current ZipRecruiter Peer Support Specialist page still reports the same national market estimate used by the guide — **US$41,023/year and US$19.72/hour** — but its displayed freshness date has advanced from **July 16, 2026** to **August 7, 2026**. The three controlled language masters have been refreshed to the current market-source \ `as of` date refreshed before DOCX/PDF generation.
+The current ZipRecruiter Peer Support Specialist page still reports the same national market estimate used by the guide — **US$41,023/year and US$19.72/hour** — but its displayed freshness date has advanced from **July 16, 2026** to **August 7, 2026**. The three controlled language masters have been refreshed to the current market-source \as of` date before DOCX/PDF generation.`
 
 No value change was identified for that market estimate.
 
