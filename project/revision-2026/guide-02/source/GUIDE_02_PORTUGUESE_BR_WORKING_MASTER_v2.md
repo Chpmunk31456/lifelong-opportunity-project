@@ -143,7 +143,7 @@ Antes de pagar:
 - confirme todas as taxas, regras de exame, requisitos de horas supervisionadas e custos de renovação; e
 - pergunte se a credencial será transferível caso você se mude.
 
-As competências essenciais da SAMHSA constituem uma um referencial prático, mas não substituem a verificação de credenciais estaduais ou locais.
+As competências essenciais da SAMHSA constituem um referencial prático, mas não substituem a verificação de credenciais estaduais ou locais.
 
 ### Canadá
 
