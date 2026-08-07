@@ -8,42 +8,42 @@
       "locale": "English",
       "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_English_v1.1.docx",
       "bytes": 23712,
-      "sha256": "9437613f32c35357e24ddfd884ce1f38fd4bb22c614c160ecdeffbf3fce4108b",
+      "sha256": "8dc41df3bfd3073880be9916342338882cf196d8a7ec7933f0dd782faa5aff0c",
       "pages": null
     },
     {
       "locale": "English",
       "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_English_v1.1.pdf",
       "bytes": 200594,
-      "sha256": "cced7bad910c0d36dfc0905948f58b4a10e2dd987fefbabb4042977841db5435",
+      "sha256": "79e635d06e9bb0f7804ad97f447884bca010de8c799daebc5a8444a41833eec1",
       "pages": 14
     },
     {
       "locale": "es-419",
       "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.docx",
       "bytes": 20783,
-      "sha256": "7dad1448cf2f9447dd80084325ba5dcf76a997ecf8e49ede6d785502c642c26f",
+      "sha256": "ea15cc227a7ac76dcf3dd71a15c284686bef4a9211c00b98386b7a1fb80d7698",
       "pages": null
     },
     {
       "locale": "es-419",
       "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.pdf",
       "bytes": 158498,
-      "sha256": "733ea2483854a161a769770bfd6f671f004e720b7747ae667b9c1fffa852e6d7",
+      "sha256": "1a8f68e2d08c4230042ca4ae15498a2c2974c6e7b2760c8210dbf0e3eb6b8143",
       "pages": 12
     },
     {
       "locale": "pt-BR",
       "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.docx",
       "bytes": 22200,
-      "sha256": "a66738b94240d64a1e7187ae05328cf388612a3bf0d9372596c7cd904a29a895",
+      "sha256": "557292a51aa2f00f5c1c17a7ef67f5957b4598b339d77ede99a9251db0b7f122",
       "pages": null
     },
     {
       "locale": "pt-BR",
       "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.pdf",
       "bytes": 195490,
-      "sha256": "9e135b1c46bb66b267e3941a6d5810822772ada42b2c7f14a55fd097adbb3054",
+      "sha256": "562c3f8ea1df2c289779851789901753706a1930706218c2b4e117eed93681b3",
       "pages": 14
     }
   ]
