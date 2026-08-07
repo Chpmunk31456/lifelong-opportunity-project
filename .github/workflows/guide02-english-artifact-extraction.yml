@@ -42,6 +42,25 @@ jobs:
       - name: Run fail-closed Guide 02 artifact extraction
         run: python3 scripts/guide02_extract_english_artifacts.py
 
+      - name: Report generated diagnostics
+        if: always()
+        run: |
+          set -euo pipefail
+          REPORT='project/revision-2026/guide-02/qa/GUIDE_02_ENGLISH_ARTIFACT_EXTRACTION_QA_01.md'
+          TECH='project/revision-2026/guide-02/qa/pdf-technical-results.json'
+          if [ -f "$REPORT" ]; then
+            echo '--- Guide 02 artifact QA report ---'
+            cat "$REPORT"
+          else
+            echo 'Guide 02 artifact QA report was not generated.'
+          fi
+          if [ -f "$TECH" ]; then
+            echo '--- Guide 02 PDF technical results ---'
+            cat "$TECH"
+          else
+            echo 'Guide 02 PDF technical results were not generated.'
+          fi
+
       - name: Validate generated evidence
         run: |
           set -euo pipefail
