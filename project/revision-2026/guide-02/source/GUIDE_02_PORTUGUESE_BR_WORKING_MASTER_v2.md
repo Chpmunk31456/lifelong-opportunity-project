@@ -38,7 +38,7 @@ Comece pelo trabalho, não por uma escola ou vendedor de credenciais.
 
 ## 2. O que é esse trabalho
 
-Profissionais de apoio entre pares utilizam experiência vivida ou atual, práticas orientadas à recuperação, treinamento formal ou fornecido pelo empregador e habilidades intencionais de relacionamento para apoiar pessoas na busca de suas próprias metas de recuperação e de vida. A função se baseia em mutualidade, esperança, respeito, escolha e autodeterminação, e não em autoridade clínica.
+Profissionais de apoio entre pares utilizam experiência vivida ou em curso, práticas orientadas à recuperação, treinamento formal ou fornecido pelo empregador e habilidades intencionais de relacionamento para apoiar pessoas na busca de suas próprias metas de recuperação e de vida. A função se baseia em mutualidade, esperança, respeito, escolha e autodeterminação, e não em autoridade clínica.
 
 A SAMHSA descreve a prática dos trabalhadores pares como orientada à recuperação, centrada na pessoa, voluntária, focada em relacionamentos e informada por trauma. Suas competências essenciais destinam-se a orientar treinamento, descrições de cargos, supervisão e desenvolvimento profissional; elas não constituem uma licença nacional universal. Nos Estados Unidos, os leitores devem verificar os requisitos específicos do estado, da jurisdição Tribal, do pagador, do programa e do empregador aplicáveis ao trabalho desejado.
 
