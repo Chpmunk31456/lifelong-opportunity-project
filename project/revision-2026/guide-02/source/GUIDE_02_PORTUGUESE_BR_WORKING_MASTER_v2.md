@@ -40,7 +40,7 @@ Comece pelo trabalho, não por uma escola ou vendedor de credenciais.
 
 Profissionais de apoio entre pares utilizam experiência vivida ou em curso, práticas orientadas à recuperação, treinamento formal ou fornecido pelo empregador e habilidades intencionais de relacionamento para apoiar pessoas na busca de suas próprias metas de recuperação e de vida. A função se baseia em mutualidade, esperança, respeito, escolha e autodeterminação, e não em autoridade clínica.
 
-A SAMHSA descreve a prática dos trabalhadores pares como orientada à recuperação, centrada na pessoa, voluntária, focada em relacionamentos e informada pelo trauma. Suas competências essenciais destinam-se a orientar treinamento, descrições de cargos, supervisão e desenvolvimento profissional; elas não constituem uma licença nacional universal. Nos Estados Unidos, os leitores devem verificar os requisitos específicos do estado, da jurisdição Tribal, do pagador, do programa e do empregador aplicáveis ao trabalho desejado.
+A SAMHSA descreve a prática dos trabalhadores pares como orientada à recuperação, centrada na pessoa, voluntária, focada em relacionamentos e informada pelo trauma. Suas competências essenciais destinam-se a orientar treinamento, descrições de cargos, supervisão e desenvolvimento profissional; elas não constituem uma licença nacional universal. Nos Estados Unidos, os leitores devem verificar os requisitos específicos do estado, da jurisdição tribal, do pagador, do programa e do empregador aplicáveis ao trabalho desejado.
 
 Títulos comuns incluem:
 
@@ -137,7 +137,7 @@ Não existe uma única certificação nacional de apoio entre pares que substitu
 
 Antes de pagar:
 
-- identifique a autoridade oficial responsável pela certificação ou programa em seu estado ou jurisdição Tribal;
+- identifique a autoridade oficial responsável pela certificação ou programa em seu estado ou jurisdição tribal;
 - confirme se a credencial é exigida para o empregador ou pagador específico;
 - verifique a aprovação do provedor de treinamento diretamente com essa autoridade;
 - confirme todas as taxas, regras de exame, requisitos de horas supervisionadas e custos de renovação; e
