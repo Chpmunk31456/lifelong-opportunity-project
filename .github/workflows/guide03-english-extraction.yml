@@ -1,0 +1,170 @@
+name: Guide 03 English extraction and reconciliation
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide03-english-extraction.yml'
+      - '03-medical-billing-and-coding-specialist/english/docx/**'
+      - '03-medical-billing-and-coding-specialist/english/pdf/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide03-english-extraction-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  extract-and-reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deterministic parsers
+        run: python -m pip install --disable-pip-version-check python-docx==1.1.2 pypdf==5.9.0
+
+      - name: Extract and compare legacy artifacts
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from docx import Document
+          from pypdf import PdfReader
+          import hashlib, re, difflib, json
+
+          root = Path('.')
+          docx_path = root/'03-medical-billing-and-coding-specialist/english/docx/Lifelong_Opportunity_Medical_Billing_and_Coding_Specialist_Guide_English_v1.0.docx'
+          pdf_path = root/'03-medical-billing-and-coding-specialist/english/pdf/Lifelong_Opportunity_Medical_Billing_and_Coding_Specialist_Guide_English_v1.0.pdf'
+          out = root/'project/revision-2026/guide-03/qa/evidence'
+          out.mkdir(parents=True, exist_ok=True)
+
+          def sha256(p):
+              h=hashlib.sha256()
+              with p.open('rb') as f:
+                  for b in iter(lambda:f.read(1024*1024), b''): h.update(b)
+              return h.hexdigest()
+
+          d = Document(docx_path)
+          doc_parts=[]
+          for p in d.paragraphs:
+              t=' '.join(p.text.split())
+              if t: doc_parts.append(t)
+          for table in d.tables:
+              for row in table.rows:
+                  vals=[' '.join(c.text.split()) for c in row.cells]
+                  vals=[v for v in vals if v]
+                  if vals: doc_parts.append(' | '.join(vals))
+          doc_text='\n'.join(doc_parts)
+
+          r=PdfReader(str(pdf_path))
+          pages=[]
+          for i,p in enumerate(r.pages,1):
+              txt=(p.extract_text() or '').replace('\x00','')
+              pages.append(f'--- PAGE {i} ---\n{txt.strip()}')
+          pdf_text='\n'.join(pages)
+
+          (out/'guide03_legacy_docx_extract.txt').write_text(doc_text+'\n',encoding='utf-8')
+          (out/'guide03_legacy_pdf_extract.txt').write_text(pdf_text+'\n',encoding='utf-8')
+
+          def norm(s):
+              s=s.lower().replace('–','-').replace('—','-').replace('’',"'")
+              s=re.sub(r'--- page \d+ ---',' ',s)
+              s=re.sub(r'\s+',' ',s)
+              s=re.sub(r'[^a-z0-9$%+./# -]','',s)
+              return s.strip()
+          nd, np = norm(doc_text), norm(pdf_text)
+          seq=difflib.SequenceMatcher(None, nd, np).ratio()
+          td=set(re.findall(r"[a-z0-9][a-z0-9$%+./#'-]*",nd))
+          tp=set(re.findall(r"[a-z0-9][a-z0-9$%+./#'-]*",np))
+          jac=len(td&tp)/len(td|tp) if td|tp else 1.0
+
+          facts_re=re.compile(r'(?<![A-Za-z])(?:\$?\d[\d,.]*%?|\d{4}(?:-\d{2})?|CPT|ICD-10-CM|HCPCS|HIPAA|AAPC|AHIMA)',re.I)
+          fd=set(x.lower() for x in facts_re.findall(doc_text))
+          fp=set(x.lower() for x in facts_re.findall(pdf_text))
+
+          headings=[]
+          for p in d.paragraphs:
+              style=(p.style.name or '').lower()
+              t=' '.join(p.text.split())
+              if t and ('heading' in style or (len(t)<100 and (t[:2].isdigit() or t.isupper()))):
+                  headings.append(t)
+
+          status='RECONCILE'
+          if seq >= 0.90 and jac >= 0.90 and fd == fp:
+              status='HIGH_EQUIVALENCE'
+          elif seq >= 0.80 and jac >= 0.85 and len(fd^fp) <= 4:
+              status='PROBABLE_EQUIVALENCE_REVIEW_REQUIRED'
+
+          report=f'''# Guide 03 — Legacy English Extraction and Reconciliation 02
+
+Date: 2026-08-07  
+Branch: `revision/guide-00-100-2026`  
+Guide: 03 — Medical Billing and Coding Specialist
+
+## Gate purpose
+
+Deterministically extract the legacy English DOCX and searchable PDF, preserve both text extractions as audit evidence, and measure whether one artifact can safely be treated as the sole source for the 2026 reconstruction. This is a source-reconciliation control, not factual revalidation, publication approval, independent human review, certification, accreditation, or accessibility certification.
+
+## Artifact fingerprints
+
+- DOCX SHA-256: `{sha256(docx_path)}`
+- PDF SHA-256: `{sha256(pdf_path)}`
+- DOCX extracted non-empty blocks: {len(doc_parts)}
+- PDF pages: {len(r.pages)}
+- DOCX extracted characters: {len(doc_text):,}
+- PDF extracted characters: {len(pdf_text):,}
+
+## Deterministic comparison
+
+- Normalized character-sequence similarity: **{seq:.4f}**
+- Normalized unique-token Jaccard similarity: **{jac:.4f}**
+- Material token/fact set only in DOCX: `{', '.join(sorted(fd-fp)) or 'none detected'}`
+- Material token/fact set only in PDF: `{', '.join(sorted(fp-fd)) or 'none detected'}`
+- Automated classification: **{status}**
+
+The character score is deliberately sensitive to pagination, line wrapping and repeated PDF headers. The token score is more tolerant of layout noise. Neither score by itself proves substantive equivalence.
+
+## DOCX heading inventory
+
+''' + '\n'.join(f'- {h}' for h in headings[:80]) + f'''
+
+## Evidence files
+
+- `project/revision-2026/guide-03/qa/evidence/guide03_legacy_docx_extract.txt`
+- `project/revision-2026/guide-03/qa/evidence/guide03_legacy_pdf_extract.txt`
+
+## Controlled decision
+
+**HOLD for substantive reconciliation.** The extracted evidence is now deterministic and auditable, but the 2026 English working master must not be frozen from an automated similarity score alone. Review the extracted substantive sections, identify any PDF-only or DOCX-only material, and record the composite-source decision before drafting the revised master.
+'''
+          qa=root/'project/revision-2026/guide-03/qa/GUIDE_03_LEGACY_ENGLISH_EXTRACTION_RECONCILIATION_02.md'
+          qa.parent.mkdir(parents=True,exist_ok=True)
+          qa.write_text(report,encoding='utf-8')
+          print(json.dumps({'sequence_similarity':seq,'token_jaccard':jac,'classification':status,'docx_blocks':len(doc_parts),'pdf_pages':len(r.pages)},indent=2))
+          PY
+
+      - name: Commit auditable extraction evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-03/qa/GUIDE_03_LEGACY_ENGLISH_EXTRACTION_RECONCILIATION_02.md \
+                  project/revision-2026/guide-03/qa/evidence/guide03_legacy_docx_extract.txt \
+                  project/revision-2026/guide-03/qa/evidence/guide03_legacy_pdf_extract.txt
+          if git diff --cached --quiet; then
+            echo 'No extraction changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Guide 03: extract and reconcile legacy English artifacts'
+          git fetch origin revision/guide-00-100-2026
+          git rebase origin/revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026
