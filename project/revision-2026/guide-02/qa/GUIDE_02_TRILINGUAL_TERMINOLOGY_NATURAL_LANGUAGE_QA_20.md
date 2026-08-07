@@ -62,7 +62,7 @@ The three editions preserve the controlled distinctions and values already accep
 - BLS Community Health Workers remains a clearly labeled **official occupational proxy**, not a dedicated peer-support wage series;
 - May 2024 BLS median remains **US$51,030 / US$24.54 per hour** in English, with locale-appropriate numeric punctuation in Spanish/Portuguese;
 - projected BLS growth remains **11% for 2024–2034**;
-- ZipRecruiter remains explicitly **non-government market data** at **US$41,023/year / US$19.72/hour as of July 16, 2026**;
+- ZipRecruiter remains explicitly **non-government market data** at **US$41,023/year / US$19.72/hour as of August 7, 2026**;
 - Canada Job Bank remains the broader **NOC 42201** grouping with **C$19.00/C$26.00/C$36.06** national low/median/high values, table update **November 19, 2025**, and **2023–2024** reference period; and
 - Colombia/Latin America text continues to prohibit inventing a directly comparable national peer-support wage where none has been verified.
 
