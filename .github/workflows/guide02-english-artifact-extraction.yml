@@ -61,6 +61,7 @@ jobs:
           for f in \
             project/revision-2026/guide-02/qa/GUIDE_02_ENGLISH_ARTIFACT_EXTRACTION_QA_01.md \
             project/revision-2026/guide-02/qa/GUIDE_02_ENGLISH_DIVERGENCE_CHARACTERIZATION_06.md \
+            project/revision-2026/guide-02/qa/GUIDE_02_ENGLISH_SEMANTIC_EQUIVALENCE_RESULT_08.md \
             project/revision-2026/guide-02/qa/pdf-technical-results.json; do
             if [ -f "$f" ]; then echo "--- $f ---"; cat "$f"; fi
           done
@@ -78,7 +79,7 @@ jobs:
           if git diff --cached --quiet; then
             echo 'Guide 02 diagnostic evidence already matches the current artifacts.'
           else
-            git commit -m 'Add Guide 02 English divergence diagnostics'
+            git commit -m 'Add Guide 02 English semantic equivalence diagnostics'
             git push origin HEAD:revision/guide-00-100-2026
           fi
 
@@ -87,6 +88,11 @@ jobs:
         run: |
           set -euo pipefail
           REPORT='project/revision-2026/guide-02/qa/GUIDE_02_ENGLISH_ARTIFACT_EXTRACTION_QA_01.md'
+          SEMANTIC='project/revision-2026/guide-02/qa/GUIDE_02_ENGLISH_SEMANTIC_EQUIVALENCE_RESULT_08.md'
           test -s "$REPORT"
+          test -s "$SEMANTIC"
+          # Preserve the original strict artifact-equivalence control. The semantic
+          # diagnostic informs baseline selection but does not silently convert a HOLD
+          # into a PASS.
           grep -q 'PASS for technical source-equivalence intake' "$REPORT"
           test '${{ steps.extraction.outcome }}' = 'success'
