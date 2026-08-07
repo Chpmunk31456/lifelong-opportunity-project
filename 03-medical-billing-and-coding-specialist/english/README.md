@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 03
+# Lifelong Opportunity Guide 03
 
 ## Medical Billing and Coding Specialist — English Edition
 
@@ -17,7 +17,7 @@ A free, accessible career and education guide created and directed by **Alberto 
 - **Version:** 1.0
 - **Publication month:** July 2026
 - **Availability:** DOCX and PDF present
-- **Review status:** Technically reviewed publication edition; exact source equivalence and human linguistic review should not be assumed unless separately documented
+- **Review status:** Existing v1.0 publication artifact; controlled 2026 revision and source-equivalence review are in progress. Independent human linguistic review, certification, or accreditation should not be assumed unless separately documented.
 
 ## Scope
 
