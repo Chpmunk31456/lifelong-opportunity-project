@@ -72,7 +72,9 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add project/revision-2026/guide-02/source project/revision-2026/guide-02/qa
-          git diff --cached --check
+          # The raw PDF text extraction intentionally preserves page-layout whitespace.
+          # Apply whitespace-error checks only to authored QA evidence, not raw extracts.
+          git diff --cached --check -- project/revision-2026/guide-02/qa
           if git diff --cached --quiet; then
             echo 'Guide 02 diagnostic evidence already matches the current artifacts.'
           else
