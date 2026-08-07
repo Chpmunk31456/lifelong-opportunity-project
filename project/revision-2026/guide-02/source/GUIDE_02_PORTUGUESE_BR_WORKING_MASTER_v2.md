@@ -49,7 +49,7 @@ Títulos comuns incluem:
 - especialista em recuperação entre pares;
 - especialista em apoio à recuperação;
 - especialista de apoio familiar entre pares;
-- coach de recuperação entre pares; e
+- orientador de recuperação entre pares; e
 - trabalhador de apoio entre pares.
 
 Ambientes de trabalho comuns incluem programas de saúde comportamental, organizações comunitárias, hospitais, programas de crise e estabilização, serviços de recuperação relacionados ao uso de substâncias, programas de moradia e alcance comunitário, programas relacionados ao sistema de justiça, serviços para veteranos, escolas e outros ambientes de apoio comunitário.
