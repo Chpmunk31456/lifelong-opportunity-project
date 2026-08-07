@@ -105,7 +105,7 @@ BLS reports a **May 2024 median annual wage of $51,030 ($24.54 per hour)** for c
 
 ### United States — current non-government market estimate
 
-As a separate market indicator, ZipRecruiter reported an **average U.S. Peer Support Specialist pay estimate of $41,023 per year ($19.72 per hour) as of July 30, 2026**, with most reported salaries between about $35,000 and $45,000. This is a non-government estimate derived from job-posting and third-party data and should not be treated as an official wage statistic or a guarantee.
+As a separate market indicator, ZipRecruiter reported an **average U.S. Peer Support Specialist pay estimate of $41,023 per year ($19.72 per hour) as of July 16, 2026**, with most reported salaries between about $35,000 and $45,000. This is a non-government estimate derived from job-posting and third-party data and should not be treated as an official wage statistic or a guarantee.
 
 ### Canada — official occupational grouping
 
@@ -384,7 +384,7 @@ The following sources support the 2026 working master. Publication QA must reche
 ## United States non-government market source
 
 - ZipRecruiter — Peer Support Specialist Salary: https://www.ziprecruiter.com/Salaries/Peer-Support-Specialist-Salary  
-  Non-government market estimate. As of July 30, 2026: average $41,023/year ($19.72/hour). Must remain labeled as a market estimate, not an official wage statistic.
+  Non-government market estimate. As of July 16, 2026: average $41,023/year ($19.72/hour). Must remain labeled as a market estimate, not an official wage statistic.
 
 ## Canada official sources
 
@@ -418,8 +418,3 @@ The following sources support the 2026 working master. Publication QA must reche
 
 - **Working master:** Version 2.0, August 2026.
 - This file supersedes neither the v1.0 DOCX nor v1.0 PDF as a publication artifact until QA is complete.
-- The v1.0 DOCX extraction remains the structural spine; the v1.0 PDF extraction remains a mandatory completeness cross-check under the recorded baseline-selection decision.
-- Income figures must be date-stamped and source-labeled. Official proxy data and non-government market estimates must remain visibly distinct.
-- Jurisdiction-specific credentials, funding, and apprenticeships must be revalidated before each major release.
-- Links, heading structure, accessibility, encoding, terminology, metadata, DOCX rendering, PDF rendering, and translation parity require separate QA evidence before publication.
-- No release may claim independent human certification, accreditation, professional translation certification, legal review, medical review, or accessibility certification unless separately obtained and documented.
