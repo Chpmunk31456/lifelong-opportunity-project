@@ -289,7 +289,7 @@ Assuma uma carga mais ampla de trabalho rotineiro dentro de sua autoridade, iden
 
 ## 16. Progressão, portabilidade e planejamento de saída
 
-Possíveis caminhos incluem funções seniores de apoio entre pares, apoio familiar entre pares, coaching de recuperação, trabalho comunitário de saúde, alcance comunitário, coordenação de programas, supervisão quando permitida, treinamento, melhoria de qualidade ou educação adicional em saúde comportamental e serviços humanos.
+Possíveis caminhos incluem funções seniores de apoio entre pares, apoio familiar entre pares, orientação de recuperação, trabalho comunitário de saúde, alcance comunitário, coordenação de programas, supervisão quando permitida, treinamento, melhoria de qualidade ou educação adicional em saúde comportamental e serviços humanos.
 
 Não presuma que experiência como trabalhador de apoio entre pares qualifique automaticamente alguém para uma profissão regulamentada de aconselhamento, psicologia, serviço social, enfermagem ou outra área. Essas profissões possuem requisitos próprios de educação e licenciamento.
 
