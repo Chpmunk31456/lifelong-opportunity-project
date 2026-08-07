@@ -8,11 +8,11 @@ Guide: 02 — Peer Support Specialist
 
 **PASS — Guide 02 controlled publication candidates are complete and may be treated as the finished Guide 02 revision batch within draft PR #17.**
 
-This decision applies to the repository-level publication candidates generated from the frozen and reviewed English, neutral Latin American Spanish (`es-419`), and Brazilian Portuguese (`pt-BR`) working masters. It does not claim independent human certification, professional translation certification, accessibility certification, accreditation, legal review, or medical review.
+This decision applies to the repository-level publication candidates generated from the current reviewed English, neutral Latin American Spanish (`es-419`), and Brazilian Portuguese (`pt-BR`) working masters. It does not claim independent human certification, professional translation certification, accessibility certification, accreditation, legal review, or medical review.
 
-## Build and repository landing
+## Final synchronized build and repository landing
 
-Corrected publication-build workflow run `31222186939` completed successfully. Its `build-and-qa` job passed all recorded steps, including:
+Post-editorial publication-build workflow run `31228466140` completed successfully after the final controlled source-language corrections. Its `build-and-qa` job passed all recorded steps, including:
 
 - controlled-branch checkout;
 - document/PDF tooling installation;
@@ -20,10 +20,12 @@ Corrected publication-build workflow run `31222186939` completed successfully. I
 - trilingual DOCX generation;
 - trilingual PDF conversion;
 - DOCX/PDF metadata, link, encoding, extractability and publication QA;
-- first-page render-evidence generation;
+- first-page render-evidence generation; and
 - completed publication-candidate commit and controlled branch landing.
 
-The generated artifacts landed in commit `e8fb72f0d7d445b45221d182e7b6a35558a7e76e` with commit message `build(guide-02): add trilingual publication candidates and QA manifest`.
+The refreshed artifacts landed in commit `3ea5bed76c1b22bab1b2fb95b4ffab039c5efb3d` with commit message `build(guide-02): add trilingual publication candidates and QA manifest`.
+
+This synchronized rebuild supersedes the earlier Guide 02 publication package committed at `e8fb72f0d7d445b45221d182e7b6a35558a7e76e`, because the Brazilian Portuguese working master received additional controlled editorial corrections after that earlier artifact build.
 
 ## Publication-candidate inventory
 
@@ -38,17 +40,17 @@ The committed publication package contains:
 
 The manifest explicitly records `publication candidate; automated QA only` and sets independent human certification, professional translation certification, and accessibility certification to `false`.
 
-## Page counts recorded in the manifest
+## Page counts recorded in the current manifest
 
 - English PDF: 15 pages.
 - `es-419` PDF: 17 pages.
 - `pt-BR` PDF: 17 pages.
 
-DOCX and PDF SHA-256 values are recorded in both the publication QA manifest and `SHA256SUMS.txt`.
+DOCX and PDF SHA-256 values are recorded in both the current publication QA manifest and `SHA256SUMS.txt`.
 
 ## Controls closed before this gate
 
-The final package follows completion of:
+The final synchronized package follows completion of:
 
 1. legacy English DOCX/PDF inventory and reconciliation;
 2. English factual-source, editorial, accessibility-source, encoding and terminology review;
@@ -57,12 +59,13 @@ The final package follows completion of:
 5. carefully labeled official wage proxies and current non-government market estimates;
 6. English source freeze;
 7. neutral Latin American Spanish translation and detailed parity review;
-8. Brazilian Portuguese translation and intake review;
+8. Brazilian Portuguese translation, intake review, terminology review, and controlled natural-language editorial reconciliation;
 9. deterministic trilingual parity QA;
 10. detailed trilingual terminology and natural-language QA;
 11. fresh external-source/link revalidation;
-12. August 7, 2026 market-source freshness correction across all three masters; and
-13. successful DOCX/PDF generation, metadata/checksum QA and render evidence.
+12. August 7, 2026 market-source freshness correction across all three masters;
+13. closure of the market-date refresh and publication-build race gates; and
+14. successful synchronized DOCX/PDF regeneration, metadata/checksum QA and render evidence from the current source set.
 
 ## Controlled status
 
