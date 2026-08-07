@@ -14,6 +14,7 @@ This is internal project QA. It is not independent certification, accreditation,
 **PASS — external links and freshness have been revalidated, and the required ZipRecruiter date refresh has been applied.**
 
 The current ZipRecruiter Peer Support Specialist page still reports the same national market estimate used by the guide — **US$41,023/year and US$19.72/hour** — but its displayed freshness date has advanced from **July 16, 2026** to **August 7, 2026**. The three controlled language masters have been refreshed to the current market-source as-of date before DOCX/PDF generation.
+
 No value change was identified for that market estimate.
 
 ## Revalidation findings
@@ -61,7 +62,7 @@ URL: `https://studentaid.gov/`
 
 Direct retrieval succeeded. The guide appropriately treats this as an aid-information source and expressly warns that not every peer-support training program is aid-eligible.
 
-### ZipRecruiter — PASS values / CORRECTION REQUIRED date
+### ZipRecruiter — PASS
 
 URL: `https://www.ziprecruiter.com/Salaries/Peer-Support-Specialist-Salary`
 
@@ -72,7 +73,7 @@ Direct retrieval succeeded on 2026-08-07. Current displayed figures are:
 - displayed current date: **As of Aug 7, 2026**;
 - majority range remains approximately **US$35,000 to US$45,000**.
 
-The guide correctly labels this as a **non-government market estimate**, not an official wage statistic or guarantee. Only the source-freshness date requires updating in the three masters.
+The guide correctly labels this as a **non-government market estimate**, not an official wage statistic or guarantee. The source-freshness date has been updated in the three controlled masters.
 
 ### Government of Canada Job Bank — PASS
 
@@ -125,16 +126,16 @@ Direct retrieval succeeded. The page remains the WHO publication **Peer support 
 
 The guide correctly treats WHO material as an international conceptual framework rather than a portable national occupational credential.
 
-## Required correction before artifact generation
+## Applied correction before artifact generation
 
-Update the ZipRecruiter source date in all three controlled masters:
+The ZipRecruiter source date was updated in all three controlled masters:
 
 - English: `as of July 16, 2026` → `as of August 7, 2026`
 - Spanish: `al 16 de julio de 2026` → `al 7 de agosto de 2026`
 - Brazilian Portuguese: `em 16 de julho de 2026` → `em 7 de agosto de 2026`
 
-Apply the same date refresh in each language's controlled source-ledger entry. Preserve **US$41,023/year** and **US$19.72/hour** and preserve the explicit non-government/market-estimate qualification.
+The same date refresh has been applied while preserving **US$41,023/year** and **US$19.72/hour** and the explicit non-government/market-estimate qualification.
 
 ## Controlled decision
 
-External-source revalidation is substantively complete, but Guide 02 remains **HOLD before DOCX/PDF generation** until the three source-date corrections are applied and a focused post-correction parity check passes.
+External-source revalidation is complete and the required source-date corrections have been applied. Guide 02 may proceed to the focused post-correction parity check and downstream DOCX/PDF artifact QA.
