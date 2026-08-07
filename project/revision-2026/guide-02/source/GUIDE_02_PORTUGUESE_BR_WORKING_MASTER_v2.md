@@ -13,7 +13,7 @@ Este guia não promete que o trabalho de apoio entre pares seja adequado para to
 
 ## Por que este guia existe
 
-Os Guias de Oportunidades ao Longo da Vida têm como objetivo tornar a exploração educacional e profissional mais acessível para pessoas que possam enfrentar barreiras relacionadas à idade, deficiência, renda, localização geográfica, idioma ou histórico profissional não tradicional. O apoio entre pares pode ser um trabalho significativo, mas também envolve trabalho emocional, deveres de privacidade, limites de função e requisitos específicos de cada jurisdição. O leitor deve compreender essas realidades antes de pagar por treinamento ou aceitar uma obrigação vinculada ao emprego.
+Os Guias de Oportunidades ao Longo da Vida têm como objetivo tornar a exploração educacional e profissional mais acessível para pessoas que possam enfrentar barreiras relacionadas à idade, deficiência, renda, localização geográfica, idioma ou histórico profissional não tradicional. O apoio entre pares pode ser um trabalho significativo, mas também envolve trabalho emocional, deveres de privacidade, limites de função e requisitos específicos de cada jurisdição. O leitor deve compreender essas realidades antes de pagar por treinamento ou assumir um compromisso vinculado ao emprego.
 
 ## Reconhecimento da assistência de IA
 
@@ -62,12 +62,12 @@ Responsabilidades típicas podem incluir:
 - apoiar metas de recuperação e de vida definidas pela própria pessoa;
 - utilizar autorrevelação de forma intencional e somente quando beneficiar a pessoa atendida;
 - ajudar pessoas a identificar recursos comunitários, de moradia, benefícios, saúde, recuperação, emprego ou educação;
-- apoiar a navegação de serviços sem substituir profissionais clínicos, jurídicos ou de benefícios devidamente licenciados;
+- apoiar a navegação pelos serviços sem substituir profissionais clínicos, jurídicos ou de benefícios devidamente licenciados;
 - documentar os serviços exigidos de maneira objetiva e mínima;
 - reconhecer situações que exijam escalonamento; e
 - participar de supervisão, treinamento, atividades de qualidade e planejamento de bem-estar pessoal.
 
-Um contato realista pode envolver revisar as metas declaradas pelo participante, esclarecer consentimento e propósito, ouvir e explorar opções, identificar uma próxima ação prática, documentar apenas as informações exigidas, escalar preocupações imediatas de segurança de acordo com a política e discutir posteriormente a situação com a supervisão apropriada.
+Um contato realista pode envolver revisar as metas declaradas pelo participante, esclarecer consentimento e propósito, ouvir e explorar opções, identificar uma próxima ação prática, documentar apenas as informações exigidas, escalar preocupações imediatas de segurança de acordo com a política e discutir posteriormente a situação com o supervisor apropriado.
 
 Os procedimentos efetivos devem seguir a política do empregador, a legislação aplicável, as regras do pagador, a supervisão e os protocolos de emergência.
 
