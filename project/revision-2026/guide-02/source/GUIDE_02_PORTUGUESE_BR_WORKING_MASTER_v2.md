@@ -62,14 +62,14 @@ Responsabilidades típicas podem incluir:
 - apoiar metas de recuperação e de vida definidas pela própria pessoa;
 - utilizar autorrevelação de forma intencional e somente quando beneficiar a pessoa atendida;
 - ajudar pessoas a identificar recursos comunitários, de moradia, benefícios, saúde, recuperação, emprego ou educação;
-- apoiar a navegação pelos serviços sem substituir profissionais clínicos, jurídicos ou de benefícios devidamente licenciados;
+- apoiar a navegação pelos serviços sem substituir profissionais clínicos, jurídicos ou de benefícios devidamente habilitados;
 - documentar os serviços exigidos de maneira objetiva e mínima;
 - reconhecer situações que exijam escalonamento; e
-- participar de supervisão, treinamento, atividades de qualidade e planejamento de bem-estar pessoal.
+- participar de supervisão, treinamento, atividades de melhoria da qualidade e planejamento de bem-estar pessoal.
 
-Um contato realista pode envolver revisar as metas declaradas pelo participante, esclarecer consentimento e propósito, ouvir e explorar opções, identificar uma próxima ação prática, documentar apenas as informações exigidas, escalar preocupações imediatas de segurança de acordo com a política e discutir posteriormente a situação com o supervisor apropriado.
+Um contato realista pode envolver revisar as metas declaradas pelo participante, esclarecer consentimento e propósito, ouvir e explorar opções, identificar um próximo passo prático, documentar apenas as informações exigidas, encaminhar imediatamente preocupações de segurança de acordo com a política e discutir posteriormente a situação com o supervisor apropriado.
 
-Os procedimentos efetivos devem seguir a política do empregador, a legislação aplicável, as regras do pagador, a supervisão e os protocolos de emergência.
+Os procedimentos adotados devem seguir a política do empregador, a legislação aplicável, as regras do pagador, a supervisão e os protocolos de emergência.
 
 ## 4. Adequação profissional, condições de trabalho e segurança
 
@@ -81,7 +81,7 @@ Pergunte a si mesmo:
 - Consigo seguir requisitos de documentação, privacidade, supervisão e escalonamento mesmo quando parecem burocráticos?
 - O horário, transporte, deslocamentos, trabalho em turnos e responsabilidades de cuidado são compatíveis com minha vida familiar?
 - Quais adaptações ou tecnologias assistivas tornariam o treinamento e o trabalho sustentáveis?
-- Posso ingressar nessa área sem assumir uma dívida insustentável ou uma obrigação de emprego injusta?
+- Posso ingressar nessa área sem assumir uma dívida insustentável ou um compromisso injusto vinculado ao emprego?
 
 Considere interromper ou adiar o processo quando sua própria recuperação ou bem-estar não estiver suficientemente estável para as exigências da função, quando um empregador esperar atividades clínicas além de sua autoridade, quando os requisitos locais de credenciamento não estiverem claros ou quando os custos e as condições de reembolso do treinamento não tiverem sido verificados por escrito.
 
@@ -89,11 +89,11 @@ Considere interromper ou adiar o processo quando sua própria recuperação ou b
 
 O apoio entre pares não é psicoterapia, diagnóstico, manejo de medicamentos, aconselhamento jurídico, resposta de emergência nem gestão de casos que exija habilitação profissional, a menos que o profissional possua separadamente a qualificação exigida e esteja atuando dentro dessa função autorizada.
 
-Não estabeleça relações secretas, dependentes, românticas, financeiras, exploratórias ou coercitivas com as pessoas atendidas. Não pressione um participante a revelar mais informações do que o necessário para o serviço. Não prometa confidencialidade além dos limites estabelecidos por lei, política, procedimentos de segurança e obrigações de notificação.
+Não estabeleça relações ocultas, dependentes, românticas, financeiras, exploratórias ou coercitivas com as pessoas atendidas. Não pressione um participante a revelar mais informações do que o necessário para o serviço. Não prometa confidencialidade além dos limites estabelecidos por lei, política, procedimentos de segurança e obrigações de notificação.
 
 Quando alguém puder estar em perigo imediato, manifestar intenção iminente de causar dano a si mesmo ou a outras pessoas, relatar abuso que gere obrigação de notificação ou apresentar um problema médico urgente, siga os procedimentos de emergência e escalonamento do empregador. Um trabalhador de apoio entre pares não deve improvisar uma resposta clínica além de seu treinamento e autoridade.
 
-Utilize supervisão e um plano pessoal de bem-estar. Proteger sua própria recuperação e capacidade faz parte de uma prática sustentável e não representa falta de compromisso.
+Utilize supervisão e um plano pessoal de bem-estar. Proteger sua própria recuperação e capacidade de atuar faz parte de uma prática sustentável e não representa falta de compromisso.
 
 ## 6. Pesquisa de renda, benefícios e perspectivas
 
@@ -133,7 +133,7 @@ Para cada país ou cidade, registre:
 
 ### Estados Unidos
 
-Não existe uma única certificação nacional de apoio entre pares que substitua automaticamente os requisitos estaduais, Tribais, de pagadores ou de empregadores. Dependendo da jurisdição e da função, os requisitos podem incluir experiência vivida, critérios relacionados ao período de recuperação, treinamento aprovado, exame, horas supervisionadas ou de trabalho, verificação de antecedentes, educação continuada, requisitos éticos e recertificação.
+Não existe uma única certificação nacional de apoio entre pares que substitua automaticamente os requisitos estaduais, Tribais, de pagadores ou de empregadores. Dependendo da jurisdição e da função, os requisitos podem incluir experiência vivida, critérios relacionados ao tempo de recuperação, treinamento aprovado, exame, horas supervisionadas ou de trabalho, verificação de antecedentes, educação continuada, requisitos éticos e recertificação.
 
 Antes de pagar:
 
@@ -143,7 +143,7 @@ Antes de pagar:
 - confirme todas as taxas, regras de exame, requisitos de horas supervisionadas e custos de renovação; e
 - pergunte se a credencial será transferível caso você se mude.
 
-As competências essenciais da SAMHSA constituem uma estrutura prática de referência, mas não substituem a verificação de credenciais estaduais ou locais.
+As competências essenciais da SAMHSA constituem uma um referencial prático, mas não substituem a verificação de credenciais estaduais ou locais.
 
 ### Canadá
 
@@ -223,11 +223,11 @@ Antes de aceitar assistência, obtenha termos escritos que cubram:
 - pagamento direto versus reembolso;
 - requisitos de nota, exame, frequência ou desempenho;
 - período obrigatório de permanência no emprego;
-- quando começa o período de serviço;
+- quando começa esse período de permanência;
 - regras de reembolso proporcional ou integral;
-- tratamento de demissão por redução de quadro, eliminação do cargo, fechamento, deficiência, convocação militar, aposentadoria, falecimento e transferência determinada pelo empregador;
-- se deduções em folha ou no salário final são autorizadas e legais; e
-- quem é proprietário de históricos acadêmicos, registros de treinamento, certificados e documentação de credenciais.
+- tratamento de demissão decorrente de redução de quadro, eliminação do cargo, fechamento, deficiência, convocação militar, aposentadoria, falecimento e transferência determinada pelo empregador;
+- se descontos em folha ou no salário final são autorizados e legais; e
+- quem detém a titularidade dos históricos acadêmicos, registros de treinamento, certificados e documentação de credenciais.
 
 Não presuma que o reembolso será automaticamente dispensado após uma demissão ou reestruturação. Obtenha a política ou acordo aplicável por escrito e procure orientação qualificada quando as consequências forem relevantes.
 
@@ -285,15 +285,15 @@ Execute atividades rotineiras com revisão apropriada, melhore a qualidade da do
 
 ### Dias 61–90
 
-Assuma uma carga mais ampla de trabalho rotineiro dentro de sua autoridade, identifique uma melhoria baseada em evidências, documente metas de desenvolvimento profissional e verifique a próxima etapa de treinamento ou credencial antes de pagar por ela.
+Assuma um conjunto mais amplo de atividades rotineiras dentro dos limites de sua atuação, identifique uma melhoria baseada em evidências, documente metas de desenvolvimento profissional e verifique a próxima etapa de treinamento ou obtenção de credencial antes de pagar por ela.
 
 ## 16. Progressão, portabilidade e planejamento de saída
 
-Possíveis caminhos incluem funções seniores de apoio entre pares, apoio familiar entre pares, orientação de recuperação, trabalho comunitário de saúde, ações de extensão comunitária, coordenação de programas, supervisão quando permitida, treinamento, melhoria de qualidade ou educação adicional em saúde comportamental e serviços humanos.
+Possíveis caminhos incluem funções seniores de apoio entre pares, apoio familiar entre pares, orientação de recuperação, trabalho comunitário de saúde, ações de extensão comunitária, coordenação de programas, supervisão quando permitida, treinamento, melhoria da qualidade ou educação adicional em saúde comportamental e serviços humanos.
 
 Não presuma que experiência como trabalhador de apoio entre pares qualifique automaticamente alguém para uma profissão regulamentada de aconselhamento, psicologia, serviço social, enfermagem ou outra área. Essas profissões possuem requisitos próprios de educação e licenciamento.
 
-Mantenha cópias de registros de treinamento, certificações, registros de educação continuada, avaliações, registros de horas supervisionadas quando aplicável, acordos de reembolso, decisões relacionadas a adaptações e registros de emprego. Antes de mudar de localidade, verifique a portabilidade da credencial em vez de presumir reciprocidade.
+Mantenha cópias de registros de treinamento, certificações, registros de educação continuada, avaliações, registros de horas supervisionadas quando aplicável, acordos de reembolso, decisões sobre adaptações e registros de emprego. Antes de mudar de localidade, verifique a portabilidade da credencial em vez de presumir reciprocidade.
 
 ## 17. Antes de se matricular, pagar ou assinar
 
@@ -320,7 +320,7 @@ Confirme por escrito:
 
 **Semanas 7–8:** Compare treinamentos aprovados, opções públicas/gratuitas primeiro, caminhos baseados no trabalho, custos totais e portabilidade.
 
-**Semanas 9–10:** Verifique financiamento, bolsas, apoio do empregador, questões tributárias, acordos de reembolso, adaptações e consequências de saída.
+**Semanas 9–10:** Verifique financiamento, bolsas, apoio do empregador, questões tributárias, acordos de reembolso, adaptações e consequências da saída do programa ou do emprego.
 
 **Semanas 11–12:** Conclua amostras de trabalho fictícias ou baseadas em dados públicos, prepare evidências para currículo e histórias para entrevistas e decida se deve avançar, pausar ou escolher um caminho relacionado.
 
