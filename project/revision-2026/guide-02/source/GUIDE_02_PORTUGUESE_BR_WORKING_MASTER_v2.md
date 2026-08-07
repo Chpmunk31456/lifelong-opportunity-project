@@ -87,7 +87,7 @@ Considere interromper ou adiar o processo quando sua própria recuperação ou b
 
 ## 5. Ética, limites, privacidade e escalonamento
 
-O apoio entre pares não é psicoterapia, diagnóstico, manejo de medicamentos, aconselhamento jurídico, resposta de emergência nem trabalho de caso licenciado, a menos que o profissional possua separadamente a qualificação exigida e esteja atuando dentro dessa função autorizada.
+O apoio entre pares não é psicoterapia, diagnóstico, manejo de medicamentos, aconselhamento jurídico, resposta de emergência nem gestão de casos que exija habilitação profissional, a menos que o profissional possua separadamente a qualificação exigida e esteja atuando dentro dessa função autorizada.
 
 Não estabeleça relações secretas, dependentes, românticas, financeiras, exploratórias ou coercitivas com as pessoas atendidas. Não pressione um participante a revelar mais informações do que o necessário para o serviço. Não prometa confidencialidade além dos limites estabelecidos por lei, política, procedimentos de segurança e obrigações de notificação.
 
