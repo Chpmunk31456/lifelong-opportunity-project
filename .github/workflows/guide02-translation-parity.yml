@@ -9,6 +9,7 @@ on:
       - scripts/guide02_translation_parity.py
       - project/revision-2026/guide-02/source/GUIDE_02_ENGLISH_WORKING_MASTER_v2.md
       - project/revision-2026/guide-02/source/GUIDE_02_SPANISH_LATAM_WORKING_MASTER_v2.md
+      - project/revision-2026/guide-02/source/GUIDE_02_PORTUGUESE_BR_WORKING_MASTER_v2.md
       - .github/workflows/guide02-translation-parity.yml
   pull_request:
     branches:
@@ -17,6 +18,7 @@ on:
       - scripts/guide02_translation_parity.py
       - project/revision-2026/guide-02/source/GUIDE_02_ENGLISH_WORKING_MASTER_v2.md
       - project/revision-2026/guide-02/source/GUIDE_02_SPANISH_LATAM_WORKING_MASTER_v2.md
+      - project/revision-2026/guide-02/source/GUIDE_02_PORTUGUESE_BR_WORKING_MASTER_v2.md
       - .github/workflows/guide02-translation-parity.yml
 
 permissions:
