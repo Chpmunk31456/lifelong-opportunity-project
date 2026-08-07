@@ -45,8 +45,16 @@ The publication workflow was updated in commit `a9b16faf8a0eadf291505fc76791be85
 
 This preserves fail-closed publication QA while reducing false stoppages caused by unrelated workflow commits landing on the same revision branch.
 
-## Controlled decision
+## Gate-opening decision
 
-Guide 02 publication-candidate artifact QA is **technically PASS through render generation**, but repository publication-candidate completion remains **HOLD** until the corrected workflow successfully lands the generated files on the controlled branch and the committed manifest/checksums are verified at the resulting branch head.
+At the time of this diagnostic, Guide 02 publication-candidate artifact QA was **technically PASS through render generation**, while repository publication-candidate completion remained **HOLD** until a corrected workflow could land the generated files and verify the committed manifest/checksums at branch head.
+
+## Resolution
+
+**RESOLVED — the synchronization fix worked, and later controlled publication builds completed successfully.**
+
+The corrected workflow first landed the Guide 02 publication-candidate package successfully in run `31222186939`. After subsequent controlled Brazilian Portuguese editorial corrections, the publication package was rebuilt again from the current source set in workflow run `31228466140`. That rebuild passed every recorded job step, including trilingual parity, DOCX/PDF generation, metadata/link/encoding/publication QA, first-page rendering, and repository landing.
+
+The current refreshed publication-candidate package landed in commit `3ea5bed76c1b22bab1b2fb95b4ffab039c5efb3d`. This resolves the historical repository-write HOLD while preserving the original race diagnostic as an audit record.
 
 This record does not claim independent human review, professional translation certification, accessibility certification, accreditation, legal review, or publication approval.
