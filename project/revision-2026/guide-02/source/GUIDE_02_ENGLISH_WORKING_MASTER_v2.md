@@ -105,11 +105,11 @@ BLS reports a **May 2024 median annual wage of $51,030 ($24.54 per hour)** for c
 
 ### United States — current non-government market estimate
 
-As a separate market indicator, ZipRecruiter reported an **average U.S. Peer Support Specialist pay estimate of $41,023 per year ($19.72 per hour) as of July 16, 2026**, with most reported salaries between about $35,000 and $45,000. This is a non-government estimate derived from job-posting and third-party data and should not be treated as an official wage statistic or a guarantee.
+As a separate market indicator, ZipRecruiter reported an **average U.S. Peer Support Specialist pay estimate of $41,023 per year ($19.72 per hour) as of July 30, 2026**, with most reported salaries between about $35,000 and $45,000. This is a non-government estimate derived from job-posting and third-party data and should not be treated as an official wage statistic or a guarantee.
 
 ### Canada — official occupational grouping
 
-Canada's Job Bank maps "peer support worker" to **Social and community service workers, NOC 42201**. As of its June 2, 2026 update, Job Bank reports a **national median wage of C$26.00 per hour**, with national low/high values of **C$19.00/C$36.06**. Job Bank also notes that prospects vary by province and territory. These data describe the broader NOC 42201 group, so readers should still compare current postings for the exact peer-support title.
+Canada's Job Bank maps "peer support worker" to **Social and community service workers, NOC 42201**. The Job Bank summary page was modified **June 2, 2026**. Its wage table reports a **national median wage of C$26.00 per hour**, with national low/high values of **C$19.00/C$36.06**; Job Bank states that these wage values were updated **November 19, 2025**, use a **2023–2024 reference period**, and are sourced from the Statistics Canada Labour Force Survey. Job Bank also notes that prospects vary by province and territory. These data describe the broader NOC 42201 group, so readers should still compare current postings for the exact peer-support title.
 
 ### Colombia and the rest of Latin America
 
@@ -384,15 +384,15 @@ The following sources support the 2026 working master. Publication QA must reche
 ## United States non-government market source
 
 - ZipRecruiter — Peer Support Specialist Salary: https://www.ziprecruiter.com/Salaries/Peer-Support-Specialist-Salary  
-  Non-government market estimate. As of July 16, 2026: average $41,023/year ($19.72/hour). Must remain labeled as a market estimate, not an official wage statistic.
+  Non-government market estimate. As of July 30, 2026: average $41,023/year ($19.72/hour). Must remain labeled as a market estimate, not an official wage statistic.
 
 ## Canada official sources
 
 - Government of Canada Job Bank — Peer Support Worker summary: https://www.jobbank.gc.ca/marketreport/summary-occupation/24973/ca  
-  Title mapped to NOC 42201. Page modified June 2, 2026.
+  Title mapped to NOC 42201. Summary page modified June 2, 2026.
 
 - Government of Canada Job Bank — Peer Support Worker wages: https://www.jobbank.gc.ca/marketreport/wages-occupation/24973/ca  
-  National low/median/high: C$19.00/C$26.00/C$36.06 per hour; source period and methodology shown by Job Bank. Use as broader NOC 42201 occupational data, not a guarantee for every peer-support position.
+  National low/median/high: C$19.00/C$26.00/C$36.06 per hour. Wage table updated November 19, 2025; reference period 2023–2024; source: Statistics Canada Labour Force Survey. Use as broader NOC 42201 occupational data, not a guarantee for every peer-support position.
 
 ## Colombia official sources
 
@@ -409,8 +409,8 @@ The following sources support the 2026 working master. Publication QA must reche
 
 ## International / Latin America framework source
 
-- World Health Organization — community mental-health and person-centred services resources: https://www.who.int/teams/mental-health-and-substance-use/policy-law-rights/omhc-knowledge-platform  
-  Used as an international conceptual resource. WHO guidance does not create a portable national occupational credential.
+- World Health Organization — Peer support mental health services: Promoting person-centred and rights-based approaches: https://www.who.int/publications/i/item/9789240025783  
+  Used as an international conceptual resource for peer support, person-centred services, recovery orientation, and rights-based community mental-health approaches. WHO guidance does not create a portable national occupational credential.
 
 ---
 
