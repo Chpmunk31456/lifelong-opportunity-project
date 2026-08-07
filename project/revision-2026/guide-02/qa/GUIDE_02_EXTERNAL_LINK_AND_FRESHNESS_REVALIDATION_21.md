@@ -73,7 +73,7 @@ Direct retrieval succeeded on 2026-08-07. Current displayed figures are:
 - displayed current date: **As of Aug 7, 2026**;
 - majority range remains approximately **US$35,000 to US$45,000**.
 
-The guide correctly labels this as a **non-government market estimate**, not an official wage statistic or guarantee. The source-freshness date has been updated in the three controlled masters.
+The guide correctly labels this as a **non-government market estimate**, not an official wage statistic or guarantee. The source-freshness date has been updated across all three controlled masters.
 
 ### Government of Canada Job Bank — PASS
 
@@ -134,8 +134,8 @@ The ZipRecruiter source date was updated in all three controlled masters:
 - Spanish: `al 16 de julio de 2026` → `al 7 de agosto de 2026`
 - Brazilian Portuguese: `em 16 de julho de 2026` → `em 7 de agosto de 2026`
 
-The same date refresh has been applied while preserving **US$41,023/year** and **US$19.72/hour** and the explicit non-government/market-estimate qualification.
+The same date refresh was applied in each language's controlled source-ledger entry. **US$41,023/year** and **US$19.72/hour** were preserved, along with the explicit non-government/market-estimate qualification.
 
 ## Controlled decision
 
-External-source revalidation is complete and the required source-date corrections have been applied. Guide 02 may proceed to the focused post-correction parity check and downstream DOCX/PDF artifact QA.
+External-source revalidation and the required freshness correction are complete. Guide 02 advanced through focused post-correction parity, synchronized DOCX/PDF regeneration, publication QA, checksums, render evidence, and final publication-candidate Gate 24.
