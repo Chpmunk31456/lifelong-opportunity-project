@@ -52,7 +52,7 @@ Títulos comuns incluem:
 - orientador de recuperação entre pares; e
 - trabalhador de apoio entre pares.
 
-Ambientes de trabalho comuns incluem programas de saúde comportamental, organizações comunitárias, hospitais, programas de crise e estabilização, serviços de recuperação relacionados ao uso de substâncias, programas de moradia e alcance comunitário, programas relacionados ao sistema de justiça, serviços para veteranos, escolas e outros ambientes de apoio comunitário.
+Ambientes de trabalho comuns incluem programas de saúde comportamental, organizações comunitárias, hospitais, programas de crise e estabilização, serviços de recuperação relacionados ao uso de substâncias, programas de moradia e ações de extensão comunitária, programas relacionados ao sistema de justiça, serviços para veteranos, escolas e outros ambientes de apoio comunitário.
 
 ## 3. Responsabilidades, ferramentas e ciclos de trabalho realistas
 
