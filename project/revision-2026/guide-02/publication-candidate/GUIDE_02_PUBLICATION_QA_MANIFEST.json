@@ -1,0 +1,59 @@
+{
+  "guide": "02",
+  "occupation": "Peer Support Specialist",
+  "version": "2.0",
+  "status": "publication candidate; automated QA only",
+  "independent_human_certification": false,
+  "professional_translation_certification": false,
+  "accessibility_certification": false,
+  "files": [
+    {
+      "locale": "English",
+      "language_code": "en-US",
+      "path": "project/revision-2026/guide-02/publication-candidate/Lifelong_Opportunity_Guide_02_Peer_Support_Specialist_English_v2.0.docx",
+      "bytes": 25218,
+      "sha256": "bc545a1f5c3afbadf480687422d0d6308be04da935c11c03e0bcde7b5d612457",
+      "pages": null
+    },
+    {
+      "locale": "English",
+      "language_code": "en-US",
+      "path": "project/revision-2026/guide-02/publication-candidate/pdf/Lifelong_Opportunity_Guide_02_Peer_Support_Specialist_English_v2.0.pdf",
+      "bytes": 206911,
+      "sha256": "92c6dd3ba92ac5cb83a32cf21a3305d306d443dc584d88d667b149a06025f717",
+      "pages": 15
+    },
+    {
+      "locale": "es-419",
+      "language_code": "es-419",
+      "path": "project/revision-2026/guide-02/publication-candidate/Lifelong_Opportunity_Guide_02_Peer_Support_Specialist_es-419_v2.0.docx",
+      "bytes": 26732,
+      "sha256": "68c9ceec504b4b202a7e41dac309297153626755b926ce5b0f358980d1eb9a3b",
+      "pages": null
+    },
+    {
+      "locale": "es-419",
+      "language_code": "es-419",
+      "path": "project/revision-2026/guide-02/publication-candidate/pdf/Lifelong_Opportunity_Guide_02_Peer_Support_Specialist_es-419_v2.0.pdf",
+      "bytes": 211911,
+      "sha256": "d1d187fe1b90e2dab07b7056823519e8c8be7547b239a43edc941b41240f9db6",
+      "pages": 17
+    },
+    {
+      "locale": "pt-BR",
+      "language_code": "pt-BR",
+      "path": "project/revision-2026/guide-02/publication-candidate/Lifelong_Opportunity_Guide_02_Peer_Support_Specialist_pt-BR_v2.0.docx",
+      "bytes": 26643,
+      "sha256": "f76f8ada2cfc9e316dd40232f1ad751cfc78e4859403952d7b6c58c50fa0d098",
+      "pages": null
+    },
+    {
+      "locale": "pt-BR",
+      "language_code": "pt-BR",
+      "path": "project/revision-2026/guide-02/publication-candidate/pdf/Lifelong_Opportunity_Guide_02_Peer_Support_Specialist_pt-BR_v2.0.pdf",
+      "bytes": 214467,
+      "sha256": "d61280ccfc3c944caf6d57dfd8abbe1b8d6769cd996a31cd08e986a8a371110b",
+      "pages": 17
+    }
+  ]
+}
