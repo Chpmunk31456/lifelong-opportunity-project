@@ -1,0 +1,455 @@
+{
+  "guide": "07",
+  "occupation": "Customer Service Specialist / Customer Service Representative",
+  "version": "2.0",
+  "status": "publication candidate; automated QA plus rendered-page evidence pending visual review",
+  "independent_human_certification": false,
+  "professional_translation_certification": false,
+  "accessibility_certification": false,
+  "legal_financial_or_hr_review_certification": false,
+  "verified_shared_source_url_count": 13,
+  "files": [
+    {
+      "locale": "English",
+      "language_code": "en-US",
+      "path": "project/revision-2026/guide-07/publication-candidate/Lifelong_Opportunity_Guide_07_Customer_Service_Specialist_English_v2.0.docx",
+      "bytes": 27499,
+      "sha256": "7658b188d2fac1589c70ad3166cf01d42d02b8cb2c0dfe26ea99030ef0001d24",
+      "pages": null
+    },
+    {
+      "locale": "English",
+      "language_code": "en-US",
+      "path": "project/revision-2026/guide-07/publication-candidate/pdf/Lifelong_Opportunity_Guide_07_Customer_Service_Specialist_English_v2.0.pdf",
+      "bytes": 288727,
+      "sha256": "3664df0dd6e3122e7560481176aa94e59566698113109d27985d03ff0d3a9746",
+      "pages": 18
+    },
+    {
+      "locale": "es-419",
+      "language_code": "es-419",
+      "path": "project/revision-2026/guide-07/publication-candidate/Lifelong_Opportunity_Guide_07_Customer_Service_Specialist_es-419_v2.0.docx",
+      "bytes": 28981,
+      "sha256": "b9b4c3d56d280ef6309b883403618fb6562d68bbf48a9ed490f3993a4fa59360",
+      "pages": null
+    },
+    {
+      "locale": "es-419",
+      "language_code": "es-419",
+      "path": "project/revision-2026/guide-07/publication-candidate/pdf/Lifelong_Opportunity_Guide_07_Customer_Service_Specialist_es-419_v2.0.pdf",
+      "bytes": 292463,
+      "sha256": "547045c3f0272b89dd4ab2edaf03a29d0f118783f56d4e23080a78ae7f8f87e0",
+      "pages": 19
+    },
+    {
+      "locale": "pt-BR",
+      "language_code": "pt-BR",
+      "path": "project/revision-2026/guide-07/publication-candidate/Lifelong_Opportunity_Guide_07_Customer_Service_Specialist_pt-BR_v2.0.docx",
+      "bytes": 28844,
+      "sha256": "769b85627ea7b9136f97785b426b40b594ecaaeab7f4e437d37c67171375c283",
+      "pages": null
+    },
+    {
+      "locale": "pt-BR",
+      "language_code": "pt-BR",
+      "path": "project/revision-2026/guide-07/publication-candidate/pdf/Lifelong_Opportunity_Guide_07_Customer_Service_Specialist_pt-BR_v2.0.pdf",
+      "bytes": 293659,
+      "sha256": "352c0357fcc72b135aa61aafcca330b3f2c0242bcf1f406855331e2a7c55cd91",
+      "pages": 19
+    }
+  ],
+  "renders": [
+    {
+      "locale": "English",
+      "page": 1,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/English/page-01.png",
+      "bytes": 353863,
+      "sha256": "185d2aa578b18cbe2d9f6d8a2dd1dd0b95142eec93b547e59ab6b5cf456ad21a"
+    },
+    {
+      "locale": "English",
+      "page": 2,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/English/page-02.png",
+      "bytes": 328690,
+      "sha256": "e4d79ae9e2717993839c4cd30444e83b15fd91766fe6bf8e509439cbe6102550"
+    },
+    {
+      "locale": "English",
+      "page": 3,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/English/page-03.png",
+      "bytes": 298877,
+      "sha256": "704a82b40796d7dc4ea45a1fbde4cbc76ac9398254f7eb9f2eec201a19c2d4ea"
+    },
+    {
+      "locale": "English",
+      "page": 4,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/English/page-04.png",
+      "bytes": 325011,
+      "sha256": "9234ace6c6a654388fd04c8f9f747f87492a89ba68a135d467586809e43ea7d7"
+    },
+    {
+      "locale": "English",
+      "page": 5,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/English/page-05.png",
+      "bytes": 290541,
+      "sha256": "46f3f815ae83b52edc99c9169ffd71d2d0362e115b6ef66dbb42cbce7bee57b1"
+    },
+    {
+      "locale": "English",
+      "page": 6,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/English/page-06.png",
+      "bytes": 361663,
+      "sha256": "b5d2dba2c7ab4fa3c1bf84f824b00101c32b62c8918c57e8e77f8c4cf6862c15"
+    },
+    {
+      "locale": "English",
+      "page": 7,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/English/page-07.png",
+      "bytes": 314554,
+      "sha256": "2ffe6c92508624ac517fbe9cb452ec43a2d287a75319e6beded851e3816d0edd"
+    },
+    {
+      "locale": "English",
+      "page": 8,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/English/page-08.png",
+      "bytes": 341732,
+      "sha256": "8dd1139bf956db6c1fbdf59e4f3692e1a8f45c9fd0639611bc077ded75878c8c"
+    },
+    {
+      "locale": "English",
+      "page": 9,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/English/page-09.png",
+      "bytes": 352356,
+      "sha256": "5c47049fb7ffaa6e7fa8edf449cbeaa5e2861305d70bd0d6220048650c9437af"
+    },
+    {
+      "locale": "English",
+      "page": 10,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/English/page-10.png",
+      "bytes": 317578,
+      "sha256": "239783f04d831b87612a0a33478b3f23e0b0331c5f026c87b3cd8d9250a0814a"
+    },
+    {
+      "locale": "English",
+      "page": 11,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/English/page-11.png",
+      "bytes": 328386,
+      "sha256": "027e77a245ece38973d53aa3a8a8fea43def3be3626f61a524f96f40073aee61"
+    },
+    {
+      "locale": "English",
+      "page": 12,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/English/page-12.png",
+      "bytes": 273656,
+      "sha256": "f06d75f2b5d6e6fcc37152d8229dea4f0bd69615fc1fefd178402f7bcf7f6672"
+    },
+    {
+      "locale": "English",
+      "page": 13,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/English/page-13.png",
+      "bytes": 270541,
+      "sha256": "080572484d4ff370c59b847784aacfc073a90a6aff747070d1d8479ac3184d5c"
+    },
+    {
+      "locale": "English",
+      "page": 14,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/English/page-14.png",
+      "bytes": 240417,
+      "sha256": "d1bd9cc7c37ea92a6574fd3c56fd58b044fb5f641e7811d5117fb523beb87718"
+    },
+    {
+      "locale": "English",
+      "page": 15,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/English/page-15.png",
+      "bytes": 253574,
+      "sha256": "0586f51109a8cdd0b1594f4f4c96944ce4ff4c981e59a1ad6185dc0522761b42"
+    },
+    {
+      "locale": "English",
+      "page": 16,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/English/page-16.png",
+      "bytes": 179349,
+      "sha256": "20c4c279eefb7f7dfa527ccad53c20b582bda02d38c25032c64ffa80250533d5"
+    },
+    {
+      "locale": "English",
+      "page": 17,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/English/page-17.png",
+      "bytes": 293573,
+      "sha256": "ae4ebe6e74260159c83a4c5af5d64b7bb7c9709e23b8778121ffe85e389611ef"
+    },
+    {
+      "locale": "English",
+      "page": 18,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/English/page-18.png",
+      "bytes": 178804,
+      "sha256": "0e72a50f7c6889b874a92330a6d26910151a7fa7357ae9084eb239b3d6fb779c"
+    },
+    {
+      "locale": "es-419",
+      "page": 1,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-01.png",
+      "bytes": 324836,
+      "sha256": "04ea39a53f227f9eba9f6b813e999300cd74a15267b1fb26302facd84a8e4090"
+    },
+    {
+      "locale": "es-419",
+      "page": 2,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-02.png",
+      "bytes": 326098,
+      "sha256": "f9264410a744020170eae14d3d276fdc0489ee19caf6f13c2e741c364603cedf"
+    },
+    {
+      "locale": "es-419",
+      "page": 3,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-03.png",
+      "bytes": 304074,
+      "sha256": "0104791abe9eff87ee7a5ef228614e42d32f645110a29849e5f5d294fe5a7ab9"
+    },
+    {
+      "locale": "es-419",
+      "page": 4,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-04.png",
+      "bytes": 313028,
+      "sha256": "07e54c7c721d9070559ef010356dde4f148d91459d959688553b180d4b1fa739"
+    },
+    {
+      "locale": "es-419",
+      "page": 5,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-05.png",
+      "bytes": 333810,
+      "sha256": "64921166a363d51597a6aa19da55a0ec01ecf723e2e17a0a5ad326fcb8b29595"
+    },
+    {
+      "locale": "es-419",
+      "page": 6,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-06.png",
+      "bytes": 349959,
+      "sha256": "bcca767a05a08f9b5560f5c66df9e0eec90b7625f73866b7c16b1a1a58c680f5"
+    },
+    {
+      "locale": "es-419",
+      "page": 7,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-07.png",
+      "bytes": 347221,
+      "sha256": "80ea6339a315f881f25c4bae4635464d8d19b132d5808f3d6d6d484ca82c4d03"
+    },
+    {
+      "locale": "es-419",
+      "page": 8,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-08.png",
+      "bytes": 321580,
+      "sha256": "c09b5c9aeeb2d898d01e6eb7c489f497d16e5a4d543829d69b6b5b64e6d4af59"
+    },
+    {
+      "locale": "es-419",
+      "page": 9,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-09.png",
+      "bytes": 378078,
+      "sha256": "1ccbeccb9d3e0d2509dc16a85a3776d53213d9fc84b226a077174b2157ae3d3d"
+    },
+    {
+      "locale": "es-419",
+      "page": 10,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-10.png",
+      "bytes": 327238,
+      "sha256": "a29b6bac1b8616ee91de8c6b6483bbd383a19e7991d13d85f5341b664360ecc8"
+    },
+    {
+      "locale": "es-419",
+      "page": 11,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-11.png",
+      "bytes": 299471,
+      "sha256": "7d99f82f422511d7d0a09c3f2d8a35f28e215b33aa018f6762a5d4a46edc4775"
+    },
+    {
+      "locale": "es-419",
+      "page": 12,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-12.png",
+      "bytes": 317575,
+      "sha256": "805a243d5baacee3bd146549078411a91c8ac9026f5f26d6c3b50035db6e1637"
+    },
+    {
+      "locale": "es-419",
+      "page": 13,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-13.png",
+      "bytes": 297705,
+      "sha256": "ba226f01f556d16a9479e89fe92bb451bd6b0f7263ec2af87a80f2dc3b31e272"
+    },
+    {
+      "locale": "es-419",
+      "page": 14,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-14.png",
+      "bytes": 287480,
+      "sha256": "660eb1ec5d8d9a7fef5509f511596bf7cc6fb5e4a2cf63ddbbc0e182f3c60ac3"
+    },
+    {
+      "locale": "es-419",
+      "page": 15,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-15.png",
+      "bytes": 263594,
+      "sha256": "474f26af7b2aeb9f7adf7f3b627c20bd5a0c28cff299b39b34f45fda9df51927"
+    },
+    {
+      "locale": "es-419",
+      "page": 16,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-16.png",
+      "bytes": 288948,
+      "sha256": "b2963fd4c0a722dec5b2defcdf7d568a91f9a6115338c76027b4079322765a2f"
+    },
+    {
+      "locale": "es-419",
+      "page": 17,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-17.png",
+      "bytes": 189408,
+      "sha256": "e2271b6ba0dc757ffc68108e91d6c37d5e4b340ba674655f696586bc9d9c1d2a"
+    },
+    {
+      "locale": "es-419",
+      "page": 18,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-18.png",
+      "bytes": 302938,
+      "sha256": "2349dffd644cef265b9d8cbc586e1e04e7d47031fdceab861cd8cd40d240d7e4"
+    },
+    {
+      "locale": "es-419",
+      "page": 19,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/es-419/page-19.png",
+      "bytes": 259673,
+      "sha256": "1f174bea0a99db6f7089d048e0d5163660a10f823202d7dc73653e3332e205bb"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 1,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-01.png",
+      "bytes": 366596,
+      "sha256": "5322b178d4a02d977439a11ae08f399372792534d326456d916277f6e2cd8115"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 2,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-02.png",
+      "bytes": 332284,
+      "sha256": "e5e73e286d36bae4d973c2553eeaa823f32cfd04155f32c4cd16d177ff77335f"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 3,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-03.png",
+      "bytes": 310738,
+      "sha256": "e08278b3e5e9fc2f440d77d5c119c478ed91bbe523bc91f24b323f12fd1ace75"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 4,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-04.png",
+      "bytes": 312771,
+      "sha256": "2395913732ead67645e46ab13b9566e4dbb82e31cb523b413983946f60eac15b"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 5,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-05.png",
+      "bytes": 329891,
+      "sha256": "f8732239b438b5d1d70948cb7255713f9e969d187d3ef2b41bcc401cc6f253dd"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 6,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-06.png",
+      "bytes": 341383,
+      "sha256": "161bfddb179b815554bececfc67a73080e49adb5342a104c5fce34de94883a77"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 7,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-07.png",
+      "bytes": 344388,
+      "sha256": "f1b93ddb3cca4f185924f0bbdcd3e1f23fadf04e57d3bc2f57c30323690020d6"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 8,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-08.png",
+      "bytes": 320701,
+      "sha256": "d740e3e0769c7ac988c21650da812ec62a8b74e75b9c160b9a8d4fc0762e60cd"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 9,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-09.png",
+      "bytes": 364951,
+      "sha256": "58fff3e91d0624bf7b109e184af9424732c2923d9bd09e801230e424c5c311bf"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 10,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-10.png",
+      "bytes": 322027,
+      "sha256": "e96330f38d79eceaa8abe1f5c7978c003185b514a1c32946f6507fedafb0c394"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 11,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-11.png",
+      "bytes": 299781,
+      "sha256": "820e04c41cabccc9efc038ad410e6eae91489493c13e0a08ca88bb096e737b73"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 12,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-12.png",
+      "bytes": 329482,
+      "sha256": "138cae7de4ea83fe8d6c46adfeabd0aaefec5e58e48832b54dc60b5b7cbe5ab8"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 13,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-13.png",
+      "bytes": 306032,
+      "sha256": "aea86dbcebcc2f063247512b476c5ce1275c6d261003b1d160170093c7291f51"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 14,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-14.png",
+      "bytes": 286037,
+      "sha256": "336f75b2d3c45aa8ca7538bd335d2d6ca5f15a526d42cce617c466038c7d8f21"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 15,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-15.png",
+      "bytes": 273472,
+      "sha256": "58f789290ce1cfbf245a042e4d08006edd52b18379243de3f87c3bcc3806abad"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 16,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-16.png",
+      "bytes": 275943,
+      "sha256": "d4ca13c1ab99d6c3def10b20911514a35cfc7118b120c06ab66d6ecba5449bc4"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 17,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-17.png",
+      "bytes": 184928,
+      "sha256": "dda070124ac96a45cb5df4ee51c25cab53f807c895b7ba30b363ed5ddb811fdf"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 18,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-18.png",
+      "bytes": 287471,
+      "sha256": "45e2f2689b4d4b4a23336c84d1efeab2b3cb4a6d8b47caf5bf69dcd9214170a6"
+    },
+    {
+      "locale": "pt-BR",
+      "page": 19,
+      "path": "project/revision-2026/guide-07/publication-candidate/rendered/pt-BR/page-19.png",
+      "bytes": 299052,
+      "sha256": "71681bced775c825e7af74d9c5e5b46ebaa5ad0d806e51c8dc36e5152d0c898f"
+    }
+  ]
+}
