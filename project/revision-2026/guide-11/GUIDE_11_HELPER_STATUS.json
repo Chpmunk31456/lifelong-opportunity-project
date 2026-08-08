@@ -8,9 +8,9 @@
     "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-11/qa/GUIDE_11_ENGLISH_EDITORIAL_QA_03.md"]},
     "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-11/qa/GUIDE_11_CLAIM_TRACEABILITY_QA_04.md"]},
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-11/qa/GUIDE_11_ENGLISH_SOURCE_FREEZE_05.md"]},
-    "spanish_localization": {"status": "PENDING", "evidence": []},
-    "portuguese_localization": {"status": "PENDING", "evidence": []},
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-11/qa/GUIDE_11_SPANISH_LOCALIZATION_QA_06.md", "project/revision-2026/guide-11/source/GUIDE_11_SPANISH_LATAM_WORKING_MASTER_v2.md"]},
+    "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-11/qa/GUIDE_11_PORTUGUESE_LOCALIZATION_QA_07.md", "project/revision-2026/guide-11/source/GUIDE_11_PORTUGUESE_BR_WORKING_MASTER_v2.md"]},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-11/qa/GUIDE_11_TRILINGUAL_PARITY_QA.md"]},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
