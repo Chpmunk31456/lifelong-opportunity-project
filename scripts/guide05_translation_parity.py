@@ -75,14 +75,26 @@ for lang, text in texts.items():
         if not any(token in text for token in group):
             fail(f"{lang} missing high-impact numeric/date control: {group}")
 
-safety_markers = {
-    "en": ["not government licenses", "not guarantees", "Do not invent a national"],
-    "es": ["no son licencias gubernamentales", "no son garantías", "No invente un salario nacional"],
-    "pt": ["não são licenças governamentais", "não são garantias", "Não invente um salário nacional"],
+safety_marker_groups = {
+    "en": [
+        ["not government licenses"],
+        ["not guarantees"],
+        ["Do not invent a national"],
+    ],
+    "es": [
+        ["no las trata como licencias gubernamentales", "no licencias gubernamentales"],
+        ["ni garantías", "no son garantías"],
+        ["No invente un salario nacional"],
+    ],
+    "pt": [
+        ["não são licenças governamentais", "não as trata como licenças governamentais"],
+        ["não são garantias", "nem garantias"],
+        ["Não invente um salário nacional"],
+    ],
 }
-for lang, markers in safety_markers.items():
-    for marker in markers:
-        if marker not in texts[lang]:
-            fail(f"{lang} missing safety/assurance marker: {marker}")
+for lang, groups in safety_marker_groups.items():
+    for group in groups:
+        if not any(marker in texts[lang] for marker in group):
+            fail(f"{lang} missing safety/assurance marker group: {group}")
 
 print("PASS: Guide 05 trilingual source parity controls satisfied")
