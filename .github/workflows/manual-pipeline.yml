@@ -19,12 +19,23 @@ on:
           - build
           - release-audit
           - status
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - .github/workflows/manual-pipeline.yml
+      - scripts/manual_pipeline.py
+      - project/pipeline/**
 
 permissions:
   contents: write
 
+env:
+  PIPELINE_GUIDE: ${{ inputs.guide_number || '08' }}
+  PIPELINE_STAGE: ${{ inputs.stage || 'validate-config' }}
+
 concurrency:
-  group: manual-pipeline-${{ inputs.guide_number }}-${{ inputs.stage }}
+  group: manual-pipeline-${{ inputs.guide_number || '08' }}-${{ inputs.stage || 'validate-config' }}
   cancel-in-progress: false
 
 jobs:
@@ -42,7 +53,7 @@ jobs:
       - name: Validate guide range
         shell: bash
         run: |
-          GUIDE='${{ inputs.guide_number }}'
+          GUIDE="$PIPELINE_GUIDE"
           if ! [[ "$GUIDE" =~ ^[0-9]{2,3}$ ]]; then
             echo "Guide number must be numeric (08-100)."
             exit 1
@@ -54,26 +65,26 @@ jobs:
           fi
 
       - name: Install publication dependencies
-        if: inputs.stage == 'build' || inputs.stage == 'release-audit'
+        if: env.PIPELINE_STAGE == 'build' || env.PIPELINE_STAGE == 'release-audit'
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends pandoc libreoffice-writer poppler-utils
 
       - name: Run generalized controller
-        run: python scripts/manual_pipeline.py '${{ inputs.stage }}' --guide '${{ inputs.guide_number }}'
+        run: python scripts/manual_pipeline.py "$PIPELINE_STAGE" --guide "$PIPELINE_GUIDE"
 
       - name: Upload publication evidence
-        if: inputs.stage == 'build'
+        if: env.PIPELINE_STAGE == 'build'
         uses: actions/upload-artifact@v4
         with:
-          name: guide-${{ inputs.guide_number }}-publication-evidence
-          path: project/revision-2026/guide-${{ inputs.guide_number }}/publication-candidate
+          name: guide-${{ env.PIPELINE_GUIDE }}-publication-evidence
+          path: project/revision-2026/guide-${{ env.PIPELINE_GUIDE }}/publication-candidate
           if-no-files-found: error
 
       - name: Commit deterministic build outputs
-        if: inputs.stage == 'build'
+        if: env.PIPELINE_STAGE == 'build'
         run: |
-          GUIDE='${{ inputs.guide_number }}'
+          GUIDE="$PIPELINE_GUIDE"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "project/revision-2026/guide-${GUIDE}/publication-candidate"
