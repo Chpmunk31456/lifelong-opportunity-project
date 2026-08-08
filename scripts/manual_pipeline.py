@@ -14,7 +14,6 @@ import json
 import re
 import shutil
 import subprocess
-import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -87,6 +86,11 @@ def validate_config(cfg: dict, require_localizations: bool = False) -> None:
     for lang in ("en", "es-419", "pt-BR"):
         if lang not in cfg["source"]:
             die(f"Config source missing language: {lang}")
+    for pattern in cfg.get("critical_patterns", []):
+        try:
+            re.compile(pattern)
+        except re.error as exc:
+            die(f"Invalid critical pattern {pattern!r}: {exc}")
     en = source_paths(cfg)["en"]
     require_path(en, "English source")
     read_utf8(en)
@@ -150,16 +154,16 @@ def parity(cfg: dict) -> dict:
         if lang_urls != en_urls:
             die(f"{lang}: URL-set mismatch: missing={sorted(en_urls-lang_urls)}, extra={sorted(lang_urls-en_urls)}")
 
-    for token in cfg.get("critical_tokens", []):
-        missing = [lang for lang, text in texts.items() if token not in text]
+    for pattern in cfg.get("critical_patterns", []):
+        missing = [lang for lang, text in texts.items() if not re.search(pattern, text, flags=re.IGNORECASE)]
         if missing:
-            die(f"Critical token {token!r} missing from: {', '.join(missing)}")
+            die(f"Critical pattern {pattern!r} missing from: {', '.join(missing)}")
 
     result = {
         "guide": cfg["guide"],
         "sections": len(expected),
         "urls": len(en_urls),
-        "critical_tokens": len(cfg.get("critical_tokens", [])),
+        "critical_patterns": len(cfg.get("critical_patterns", [])),
         "status": "PASS",
     }
     print(json.dumps(result, indent=2, ensure_ascii=False))
