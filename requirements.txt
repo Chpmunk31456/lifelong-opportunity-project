@@ -1,0 +1,9 @@
+# Direct Python dependencies imported by repository-local scripts.
+#
+# Exact versions have not yet been verified on the maintainer workstation.
+# This file declares dependencies but is not yet a reproducible lockfile.
+# Do not substitute Codex audit-runtime versions for the release-toolchain
+# versions without explicit validation.
+
+lxml
+pdf2image
