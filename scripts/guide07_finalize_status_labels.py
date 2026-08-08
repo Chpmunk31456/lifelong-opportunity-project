@@ -7,7 +7,7 @@ BASE = ROOT / "project/revision-2026/guide-07/source"
 REPLACEMENTS = {
     BASE / "GUIDE_07_ENGLISH_WORKING_MASTER_v2.md": [
         (
-            "**Controlled 2026 English working master**  \nVersion 2.0, working master • August 2026  ",
+            "**Controlled 2026 English working master**  \nVersion 2.0, working master • August 2026",
             "**Controlled 2026 English publication candidate**\nVersion 2.0 • August 2026",
         ),
         (
@@ -18,10 +18,18 @@ REPLACEMENTS = {
             "- English source status: working master, not yet frozen\n- Publication status: not yet a publication candidate",
             "- English source status: frozen for the controlled 2026 publication candidate\n- Publication status: controlled publication candidate; release remains governed by repository QA records",
         ),
+        (
+            "- Working-master version: 2.0",
+            "- Publication-candidate version: 2.0",
+        ),
+        (
+            "### Final verification before source freeze",
+            "### Final verification checklist",
+        ),
     ],
     BASE / "GUIDE_07_SPANISH_LATAM_WORKING_MASTER_v2.md": [
         (
-            "**Maestro de trabajo controlado 2026 en español latinoamericano (es-419)**  \nVersión 2.0, maestro de trabajo • agosto de 2026  ",
+            "**Maestro de trabajo controlado 2026 en español latinoamericano (es-419)**  \nVersión 2.0, maestro de trabajo • agosto de 2026",
             "**Candidata de publicación controlada 2026 en español latinoamericano (es-419)**\nVersión 2.0 • agosto de 2026",
         ),
         (
@@ -32,10 +40,18 @@ REPLACEMENTS = {
             "- Estado de esta traducción: maestro de trabajo es-419, traducción asistida por máquina y revisada editorialmente; no certificada profesionalmente\n- Estado de publicación: todavía no es candidata de publicación",
             "- Estado de esta traducción: fuente es-419 controlada, traducción asistida por IA y revisada editorialmente dentro del proceso del proyecto; no certificada profesionalmente\n- Estado de publicación: candidata de publicación controlada; el lanzamiento sigue sujeto a los registros de QA del repositorio",
         ),
+        (
+            "- Versión del maestro de trabajo: 2.0",
+            "- Versión de la candidata de publicación: 2.0",
+        ),
+        (
+            "### Verificación final antes de aprobar la localización",
+            "### Lista final de verificación",
+        ),
     ],
     BASE / "GUIDE_07_PORTUGUESE_BR_WORKING_MASTER_v2.md": [
         (
-            "**Mestre de trabalho controlado 2026 em português do Brasil (pt-BR)**  \nVersão 2.0, mestre de trabalho • agosto de 2026  ",
+            "**Mestre de trabalho controlado 2026 em português do Brasil (pt-BR)**  \nVersão 2.0, mestre de trabalho • agosto de 2026",
             "**Candidata de publicação controlada 2026 em português do Brasil (pt-BR)**\nVersão 2.0 • agosto de 2026",
         ),
         (
@@ -46,14 +62,28 @@ REPLACEMENTS = {
             "- Status desta tradução: mestre de trabalho pt-BR, tradução assistida por máquina e revisada editorialmente; não certificada profissionalmente\n- Status de publicação: ainda não é candidata à publicação",
             "- Status desta tradução: fonte pt-BR controlada, tradução assistida por IA e revisada editorialmente no processo do projeto; não certificada profissionalmente\n- Status de publicação: candidata de publicação controlada; o lançamento continua sujeito aos registros de QA do repositório",
         ),
+        (
+            "- Versão do mestre de trabalho: 2.0",
+            "- Versão da candidata de publicação: 2.0",
+        ),
+        (
+            "### Verificação final antes de aprovar a localização",
+            "### Lista final de verificação",
+        ),
     ],
 }
 
 for path, replacements in REPLACEMENTS.items():
     text = path.read_text(encoding="utf-8")
+    changed = False
     for old, new in replacements:
-        if old not in text:
+        if old in text:
+            text = text.replace(old, new, 1)
+            changed = True
+        elif new not in text:
             raise SystemExit(f"Expected status text not found in {path}: {old[:80]!r}")
-        text = text.replace(old, new, 1)
-    path.write_text(text, encoding="utf-8")
-    print(f"updated {path.relative_to(ROOT)}")
+    if changed:
+        path.write_text(text, encoding="utf-8")
+        print(f"updated {path.relative_to(ROOT)}")
+    else:
+        print(f"already current {path.relative_to(ROOT)}")
