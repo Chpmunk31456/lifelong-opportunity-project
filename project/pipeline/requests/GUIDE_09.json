@@ -1,0 +1,6 @@
+{
+  "guide": "09",
+  "stage": "build",
+  "requested": "2026-08-08T15:34-05:00",
+  "purpose": "Run generalized trilingual publication build after upstream helper and technical QA PASS."
+}
