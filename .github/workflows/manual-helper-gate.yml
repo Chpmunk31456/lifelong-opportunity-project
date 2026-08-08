@@ -1,0 +1,79 @@
+name: Manual helper gate
+
+on:
+  workflow_dispatch:
+    inputs:
+      guide_number:
+        description: Two-digit guide number, for example 07
+        required: true
+        default: '07'
+        type: string
+      target_stage:
+        description: Optional stage that must already be PASS
+        required: false
+        default: ''
+        type: choice
+        options:
+          - ''
+          - research
+          - english_editorial
+          - evidence_traceability
+          - english_source_freeze
+          - spanish_localization
+          - portuguese_localization
+          - technical_qa
+          - publication
+          - release_audit
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/manual-helper-gate.yml
+      - scripts/manual_helper_gate.py
+      - project/helpers/**
+      - project/revision-2026/guide-*/GUIDE_*_HELPER_STATUS.json
+
+permissions:
+  contents: read
+
+concurrency:
+  group: manual-helper-gate-${{ github.event.inputs.guide_number || 'changed-manifest' }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out controlled revision content
+        uses: actions/checkout@v4
+
+      - name: Validate manually selected guide
+        if: github.event_name == 'workflow_dispatch'
+        shell: bash
+        run: |
+          set -euo pipefail
+          guide="${{ inputs.guide_number }}"
+          target="${{ inputs.target_stage }}"
+          if [[ -n "$target" ]]; then
+            python scripts/manual_helper_gate.py --guide "$guide" --target "$target"
+          else
+            python scripts/manual_helper_gate.py --guide "$guide"
+          fi
+
+      - name: Validate changed helper manifests in pull request
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin "${{ github.base_ref }}" --depth=1
+          mapfile -t files < <(git diff --name-only "origin/${{ github.base_ref }}...HEAD" -- 'project/revision-2026/guide-*/GUIDE_*_HELPER_STATUS.json')
+          if [[ ${#files[@]} -eq 0 ]]; then
+            echo 'No helper status manifests changed.'
+            exit 0
+          fi
+          for file in "${files[@]}"; do
+            guide="$(basename "$file" | sed -E 's/^GUIDE_([0-9]+)_HELPER_STATUS\.json$/\1/')"
+            echo "Validating Guide $guide from $file"
+            python scripts/manual_helper_gate.py --guide "$guide"
+          done
