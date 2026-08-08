@@ -7,7 +7,7 @@ BASE = ROOT / "project/revision-2026/guide-07/source"
 REPLACEMENTS = {
     BASE / "GUIDE_07_ENGLISH_WORKING_MASTER_v2.md": [
         (
-            "**Controlled 2026 English working master**  \nVersion 2.0, working master • August 2026",
+            "**Controlled 2026 English working master**  \nVersion 2.0, working master • August 2026  ",
             "**Controlled 2026 English publication candidate**\nVersion 2.0 • August 2026",
         ),
         (
@@ -21,7 +21,7 @@ REPLACEMENTS = {
     ],
     BASE / "GUIDE_07_SPANISH_LATAM_WORKING_MASTER_v2.md": [
         (
-            "**Maestro de trabajo controlado 2026 en español latinoamericano (es-419)**  \nVersión 2.0, maestro de trabajo • agosto de 2026",
+            "**Maestro de trabajo controlado 2026 en español latinoamericano (es-419)**  \nVersión 2.0, maestro de trabajo • agosto de 2026  ",
             "**Candidata de publicación controlada 2026 en español latinoamericano (es-419)**\nVersión 2.0 • agosto de 2026",
         ),
         (
@@ -35,7 +35,7 @@ REPLACEMENTS = {
     ],
     BASE / "GUIDE_07_PORTUGUESE_BR_WORKING_MASTER_v2.md": [
         (
-            "**Mestre de trabalho controlado 2026 em português do Brasil (pt-BR)**  \nVersão 2.0, mestre de trabalho • agosto de 2026",
+            "**Mestre de trabalho controlado 2026 em português do Brasil (pt-BR)**  \nVersão 2.0, mestre de trabalho • agosto de 2026  ",
             "**Candidata de publicação controlada 2026 em português do Brasil (pt-BR)**\nVersão 2.0 • agosto de 2026",
         ),
         (
