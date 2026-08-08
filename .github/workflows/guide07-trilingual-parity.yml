@@ -19,7 +19,7 @@ concurrency:
   group: guide07-trilingual-parity
   cancel-in-progress: false
 
-# Explicitly retriggered after controlled publication-status finalization.
+# Final explicit rerun after version-control metadata cleanup.
 jobs:
   parity:
     if: github.repository == 'Chpmunk31456/lifelong-opportunity-project'
