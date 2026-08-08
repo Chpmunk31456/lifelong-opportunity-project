@@ -33,10 +33,9 @@ The lower character score is substantially affected by PDF pagination, repeated 
 
 The DOCX contains the complete controlled narrative structure from introductory limits through sections 1–19, including work definition, duties, fit, ethics, pay/outlook, education/credentials, employer-supported learning, accessibility, privacy/cybersecurity/AI, portfolio evidence, interviews, 30/60/90-day planning, advancement, enrollment verification, decision scorecard, twelve-week plan, worksheets, and sources/versioning.
 
-## Evidence files
+## Preserved extraction evidence
 
-- `project/revision-2026/guide-07/qa/evidence/guide07_legacy_docx_extract.txt`
-- `project/revision-2026/guide-07/qa/evidence/guide07_legacy_pdf_extract.txt`
+GitHub Actions workflow run `31256539953` completed successfully and uploaded artifact `guide07-legacy-extraction-evidence` (artifact ID `9021537977`, SHA-256 digest `39d0ff980a5168e62892741352af2fd18faf03889245d9407cdbbb4747913636`). The artifact contains the deterministic DOCX extraction, PDF extraction, and generated reconciliation report used for this decision.
 
 ## Controlled decision
 
