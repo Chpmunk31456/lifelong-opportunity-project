@@ -1,0 +1,33 @@
+name: Guide 05 translation parity QA
+
+on:
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - 'project/revision-2026/guide-05/source/GUIDE_05_ENGLISH_WORKING_MASTER_v2.md'
+      - 'project/revision-2026/guide-05/source/GUIDE_05_SPANISH_LATAM_WORKING_MASTER_v2.md'
+      - 'project/revision-2026/guide-05/source/GUIDE_05_PORTUGUESE_BR_WORKING_MASTER_v2.md'
+      - 'scripts/guide05_translation_parity.py'
+      - '.github/workflows/guide05-translation-parity.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'project/revision-2026/guide-05/source/GUIDE_05_ENGLISH_WORKING_MASTER_v2.md'
+      - 'project/revision-2026/guide-05/source/GUIDE_05_SPANISH_LATAM_WORKING_MASTER_v2.md'
+      - 'project/revision-2026/guide-05/source/GUIDE_05_PORTUGUESE_BR_WORKING_MASTER_v2.md'
+      - 'scripts/guide05_translation_parity.py'
+      - '.github/workflows/guide05-translation-parity.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Guide 05 trilingual parity checker
+        run: python scripts/guide05_translation_parity.py
