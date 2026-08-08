@@ -1,11 +1,11 @@
 # Lifelong Opportunity Guide 07 — Customer Service Specialist
 
-**Controlled 2026 English working master**  
-Version 2.0, working master • August 2026  
+**Controlled 2026 English publication candidate**
+Version 2.0 • August 2026
 Created and directed by Alberto (Al) Leiva  
 Research, organization, editing, and document preparation assisted by ChatGPT, OpenAI
 
-> **Controlled status:** This is the revised English working master for the 2026 review. It is not yet a publication candidate. It must pass editorial, claim-traceability, link, accessibility, encoding, translation, DOCX, PDF, metadata, and publication QA before release.
+> **Controlled status:** This is the revised English source for the 2026 controlled publication candidate. It has passed the project’s editorial, claim-traceability, link, encoding, localization, DOCX, PDF, metadata, rendering, and publication QA gates documented in the repository. This does not constitute independent human certification, professional translation certification, accessibility certification, accreditation, legal review, or a guarantee of outcomes.
 
 ## The promise of this guide
 
@@ -541,8 +541,8 @@ https://www.serviciodeempleo.gov.co/
 - Occupation: Customer Service Specialist
 - Working-master version: 2.0
 - Review cycle: 2026
-- English source status: working master, not yet frozen
-- Publication status: not yet a publication candidate
+- English source status: frozen for the controlled 2026 publication candidate
+- Publication status: controlled publication candidate; release remains governed by repository QA records
 
 ### Final verification before source freeze
 

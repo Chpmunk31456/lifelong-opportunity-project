@@ -1,11 +1,11 @@
 # Guia de Oportunidades para Toda a Vida 07 — Especialista em Atendimento ao Cliente
 
-**Mestre de trabalho controlado 2026 em português do Brasil (pt-BR)**  
-Versão 2.0, mestre de trabalho • agosto de 2026  
+**Candidata de publicação controlada 2026 em português do Brasil (pt-BR)**
+Versão 2.0 • agosto de 2026
 Criado e dirigido por Alberto (Al) Leiva  
 Pesquisa, organização, edição e preparação de documentos com apoio do ChatGPT, OpenAI
 
-> **Status controlado:** Esta é a versão revisada em português do Brasil do mestre de trabalho em inglês de 2026. Ainda não é candidata à publicação. Deve passar por controles de paridade de tradução, terminologia, links, acessibilidade, codificação, DOCX, PDF, metadados e publicação antes do lançamento.
+> **Status controlado:** Esta é a versão revisada em português do Brasil da fonte inglesa congelada para a candidata de publicação controlada de 2026. Ela passou pelos controles do projeto de paridade, terminologia, links, codificação, DOCX, PDF, metadados, renderização e publicação documentados no repositório. Isso não constitui certificação humana independente, certificação profissional de tradução, certificação de acessibilidade, acreditação, revisão jurídica nem garantia de resultados.
 
 ## A promessa deste guia
 
@@ -542,8 +542,8 @@ https://www.serviciodeempleo.gov.co/
 - Versão do mestre de trabalho: 2.0
 - Ciclo de revisão: 2026
 - Status da fonte em inglês: congelada para localização controlada
-- Status desta tradução: mestre de trabalho pt-BR, tradução assistida por máquina e revisada editorialmente; não certificada profissionalmente
-- Status de publicação: ainda não é candidata à publicação
+- Status desta tradução: fonte pt-BR controlada, tradução assistida por IA e revisada editorialmente no processo do projeto; não certificada profissionalmente
+- Status de publicação: candidata de publicação controlada; o lançamento continua sujeito aos registros de QA do repositório
 
 ### Verificação final antes de aprovar a localização
 

@@ -1,11 +1,11 @@
 # Guía de Oportunidades para Toda la Vida 07 — Especialista en Servicio al Cliente
 
-**Maestro de trabajo controlado 2026 en español latinoamericano (es-419)**  
-Versión 2.0, maestro de trabajo • agosto de 2026  
+**Candidata de publicación controlada 2026 en español latinoamericano (es-419)**
+Versión 2.0 • agosto de 2026
 Creado y dirigido por Alberto (Al) Leiva  
 Investigación, organización, edición y preparación de documentos con apoyo de ChatGPT, OpenAI
 
-> **Estado controlado:** Esta es la versión revisada en español latinoamericano del maestro de trabajo en inglés de 2026. Todavía no es una candidata de publicación. Debe aprobar controles de paridad de traducción, terminología, enlaces, accesibilidad, codificación, DOCX, PDF, metadatos y publicación antes de su lanzamiento.
+> **Estado controlado:** Esta es la versión revisada en español latinoamericano de la fuente inglesa congelada para la candidata de publicación controlada de 2026. Ha aprobado los controles del proyecto de paridad, terminología, enlaces, codificación, DOCX, PDF, metadatos, renderizado y publicación documentados en el repositorio. Esto no constituye certificación humana independiente, certificación profesional de traducción, certificación de accesibilidad, acreditación, revisión legal ni garantía de resultados.
 
 ## La promesa de esta guía
 
@@ -542,8 +542,8 @@ https://www.serviciodeempleo.gov.co/
 - Versión del maestro de trabajo: 2.0
 - Ciclo de revisión: 2026
 - Estado de la fuente inglesa: congelada para localización controlada
-- Estado de esta traducción: maestro de trabajo es-419, traducción asistida por máquina y revisada editorialmente; no certificada profesionalmente
-- Estado de publicación: todavía no es candidata de publicación
+- Estado de esta traducción: fuente es-419 controlada, traducción asistida por IA y revisada editorialmente dentro del proceso del proyecto; no certificada profesionalmente
+- Estado de publicación: candidata de publicación controlada; el lanzamiento sigue sujeto a los registros de QA del repositorio
 
 ### Verificación final antes de aprobar la localización
 
