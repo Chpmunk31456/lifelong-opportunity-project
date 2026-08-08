@@ -1,6 +1,7 @@
 guide: 63
 title: Library Assistant and Library Technician
 pages: 8
+guide_identifier_visible: True
 toc_entries_updated: 43
 searchable: True
 broken_fields: False
