@@ -1,6 +1,6 @@
 {
   "guide": "08",
   "stage": "parity",
-  "requested": "2026-08-08",
-  "purpose": "Run generalized trilingual parity after controlled es-419 and pt-BR localization creation."
+  "requested": "2026-08-08T11:59-05:00",
+  "purpose": "Rerun generalized trilingual parity after locale-aware numeric-pattern correction."
 }
