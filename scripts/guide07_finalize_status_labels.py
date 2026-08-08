@@ -8,7 +8,7 @@ REPLACEMENTS = {
     BASE / "GUIDE_07_ENGLISH_WORKING_MASTER_v2.md": [
         (
             "**Controlled 2026 English working master**  \nVersion 2.0, working master • August 2026",
-            "**Controlled 2026 English publication candidate**  \nVersion 2.0 • August 2026",
+            "**Controlled 2026 English publication candidate**\nVersion 2.0 • August 2026",
         ),
         (
             "> **Controlled status:** This is the revised English working master for the 2026 review. It is not yet a publication candidate. It must pass editorial, claim-traceability, link, accessibility, encoding, translation, DOCX, PDF, metadata, and publication QA before release.",
@@ -22,7 +22,7 @@ REPLACEMENTS = {
     BASE / "GUIDE_07_SPANISH_LATAM_WORKING_MASTER_v2.md": [
         (
             "**Maestro de trabajo controlado 2026 en español latinoamericano (es-419)**  \nVersión 2.0, maestro de trabajo • agosto de 2026",
-            "**Candidata de publicación controlada 2026 en español latinoamericano (es-419)**  \nVersión 2.0 • agosto de 2026",
+            "**Candidata de publicación controlada 2026 en español latinoamericano (es-419)**\nVersión 2.0 • agosto de 2026",
         ),
         (
             "> **Estado controlado:** Esta es la versión revisada en español latinoamericano del maestro de trabajo en inglés de 2026. Todavía no es una candidata de publicación. Debe aprobar controles de paridad de traducción, terminología, enlaces, accesibilidad, codificación, DOCX, PDF, metadatos y publicación antes de su lanzamiento.",
@@ -36,7 +36,7 @@ REPLACEMENTS = {
     BASE / "GUIDE_07_PORTUGUESE_BR_WORKING_MASTER_v2.md": [
         (
             "**Mestre de trabalho controlado 2026 em português do Brasil (pt-BR)**  \nVersão 2.0, mestre de trabalho • agosto de 2026",
-            "**Candidata de publicação controlada 2026 em português do Brasil (pt-BR)**  \nVersão 2.0 • agosto de 2026",
+            "**Candidata de publicação controlada 2026 em português do Brasil (pt-BR)**\nVersão 2.0 • agosto de 2026",
         ),
         (
             "> **Status controlado:** Esta é a versão revisada em português do Brasil do mestre de trabalho em inglês de 2026. Ainda não é candidata à publicação. Deve passar por controles de paridade de tradução, terminologia, links, acessibilidade, codificação, DOCX, PDF, metadados e publicação antes do lançamento.",
