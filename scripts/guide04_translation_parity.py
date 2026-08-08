@@ -61,7 +61,7 @@ def main() -> int:
 
     controls = [
         ("US$100,750", "US$100.750", "US$100.750", "BLS median annual wage"),
-        ("6%", "6%", "6%", "BLS projected growth"),
+        ("6%", "6 %", "6%", "BLS projected growth"),
         ("78,200", "78.200", "78.200", "BLS annual openings"),
         ("US$59,915", "US$59.915", "US$59.915", "market annual estimate"),
         ("US$28.81", "US$28,81", "US$28,81", "market hourly estimate"),
