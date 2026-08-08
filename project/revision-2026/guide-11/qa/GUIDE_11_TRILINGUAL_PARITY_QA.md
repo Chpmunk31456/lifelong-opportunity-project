@@ -1,7 +1,7 @@
 # Guide 11 — Generalized Trilingual Parity QA
 
-Generated: 2026-08-08T21:11:51Z
-Source commit: 3d0a66d021b2589ef01f751a08ac0b7e3507a7de
+Generated: 2026-08-08T21:14:48Z
+Source commit: 1d2443ea58f0ed232dc88e804919a212d0c50975
 
 ```text
 PASS config Guide 11 — Procurement and Purchasing Coordinator
