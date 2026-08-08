@@ -1,0 +1,20 @@
+{
+  "guide": "XX",
+  "occupation": "REPLACE_WITH_OCCUPATION",
+  "branch": "revision/guide-00-100-2026",
+  "source": {
+    "en": "project/revision-2026/guide-XX/source/GUIDE_XX_ENGLISH_WORKING_MASTER_v2.md",
+    "es-419": "project/revision-2026/guide-XX/source/GUIDE_XX_SPANISH_LATAM_WORKING_MASTER_v2.md",
+    "pt-BR": "project/revision-2026/guide-XX/source/GUIDE_XX_PORTUGUESE_BR_WORKING_MASTER_v2.md"
+  },
+  "status_manifest": "project/revision-2026/guide-XX/GUIDE_XX_HELPER_STATUS.json",
+  "publication_dir": "project/revision-2026/guide-XX/publication-candidate",
+  "visual_review_evidence": "project/revision-2026/guide-XX/qa/GUIDE_XX_FULL_PAGE_VISUAL_REVIEW.md",
+  "expected_sections": {
+    "first": 1,
+    "last": 19
+  },
+  "output_stem": "Lifelong_Opportunity_Guide_XX_REPLACE_WITH_SAFE_TITLE",
+  "critical_patterns": [],
+  "required_urls": []
+}
