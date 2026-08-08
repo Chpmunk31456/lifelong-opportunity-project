@@ -87,8 +87,8 @@ safety_marker_groups = {
         ["No invente un salario nacional"],
     ],
     "pt": [
-        ["não são licenças governamentais", "não as trata como licenças governamentais"],
-        ["não são garantias", "nem garantias"],
+        ["não trata credencial privada como licença governamental", "não licenças governamentais"],
+        ["nem garantias", "não são garantias"],
         ["Não invente um salário nacional"],
     ],
 }
