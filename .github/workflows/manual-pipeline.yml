@@ -1,0 +1,97 @@
+name: Generalized manual pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      guide_number:
+        description: 'Guide number (08-100)'
+        required: true
+        default: '08'
+        type: string
+      stage:
+        description: 'Deterministic stage to run'
+        required: true
+        default: 'validate-config'
+        type: choice
+        options:
+          - validate-config
+          - parity
+          - build
+          - release-audit
+          - status
+
+permissions:
+  contents: write
+
+concurrency:
+  group: manual-pipeline-${{ inputs.guide_number }}-${{ inputs.stage }}
+  cancel-in-progress: false
+
+jobs:
+  run:
+    if: github.repository == 'Chpmunk31456/lifelong-opportunity-project'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Check out controlled revision branch
+        uses: actions/checkout@v4
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Validate guide range
+        shell: bash
+        run: |
+          GUIDE='${{ inputs.guide_number }}'
+          if ! [[ "$GUIDE" =~ ^[0-9]{2,3}$ ]]; then
+            echo "Guide number must be numeric (08-100)."
+            exit 1
+          fi
+          N=$((10#$GUIDE))
+          if (( N < 8 || N > 100 )); then
+            echo "Generalized pipeline is authorized for Guides 08-100."
+            exit 1
+          fi
+
+      - name: Install publication dependencies
+        if: inputs.stage == 'build' || inputs.stage == 'release-audit'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends pandoc libreoffice-writer poppler-utils
+
+      - name: Run generalized controller
+        run: python scripts/manual_pipeline.py '${{ inputs.stage }}' --guide '${{ inputs.guide_number }}'
+
+      - name: Upload publication evidence
+        if: inputs.stage == 'build'
+        uses: actions/upload-artifact@v4
+        with:
+          name: guide-${{ inputs.guide_number }}-publication-evidence
+          path: project/revision-2026/guide-${{ inputs.guide_number }}/publication-candidate
+          if-no-files-found: error
+
+      - name: Commit deterministic build outputs
+        if: inputs.stage == 'build'
+        run: |
+          GUIDE='${{ inputs.guide_number }}'
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "project/revision-2026/guide-${GUIDE}/publication-candidate"
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'Publication outputs already current.'
+            exit 0
+          fi
+          git commit -m "build(guide-${GUIDE}): generalized publication candidates"
+          git fetch origin revision/guide-00-100-2026
+          git rebase origin/revision/guide-00-100-2026
+          python scripts/manual_pipeline.py parity --guide "$GUIDE"
+          python scripts/manual_pipeline.py build --guide "$GUIDE"
+          git add "project/revision-2026/guide-${GUIDE}/publication-candidate"
+          git commit --amend --no-edit || true
+          git push origin HEAD:revision/guide-00-100-2026
+
+      - name: Safety note
+        run: |
+          echo 'This workflow never merges PR #17 and never publishes externally.'
+          echo 'Subjective research/editorial/localization PASS states must be supplied by explicit evidence.'
