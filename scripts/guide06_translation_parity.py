@@ -39,7 +39,7 @@ NUMERIC_GROUPS = [
     ["26.44", "26,44"],
     ["36.88", "36,88"],
     ["5,250", "5.250"],
-    ["2024 to 2034", "2024 a 2034", "2024–2034", "2024-2034"],
+    ["2024 to 2034", "entre 2024 y 2034", "de 2024 a 2034", "2024 a 2034", "2024–2034", "2024-2034"],
     ["2023–2024", "2023-2024", "2023 a 2024"],
 ]
 
@@ -75,7 +75,7 @@ for lang, text in texts.items():
             fail(f"{lang} missing high-impact numeric/date control: {group}")
 
 for lang, text in texts.items():
-    if "independent human" not in text.casefold() and lang == "en":
+    if lang == "en" and "independent human" not in text.casefold():
         fail("English missing independent-human-certification disclaimer")
     if lang == "es" and "certificación humana independiente" not in text.casefold():
         fail("Spanish missing independent-human-certification disclaimer")
