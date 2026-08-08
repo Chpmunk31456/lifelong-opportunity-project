@@ -97,8 +97,8 @@ def main() -> int:
     QA.parent.mkdir(parents=True, exist_ok=True)
     QA.write_text(
         "# Guide 07 — Trilingual source parity QA 09\n\n"
-        "**Status:** PASS — automated structural/content-token parity only  \n"
-        "**Branch:** `revision/guide-00-100-2026`  \n"
+        "**Status:** PASS — automated structural/content-token parity only\n"
+        "**Branch:** `revision/guide-00-100-2026`\n"
         "**Guide:** 07 — Customer Service Specialist / Customer Service Representative\n\n"
         "## Automated checks\n\n"
         + "\n".join(results)
