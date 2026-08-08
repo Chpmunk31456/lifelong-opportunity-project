@@ -7,43 +7,43 @@
     {
       "locale": "English",
       "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_English_v1.1.docx",
-      "bytes": 23712,
-      "sha256": "1d050c429dcc7ad876b1788fa6ae6bbff8f2fa7c5ef2b2937edb6ee86dcbc076",
+      "bytes": 23713,
+      "sha256": "352802538fae72d584cbfcfdfdbcafb08fbc19e4d567ea1f0dc3a4b56f1d5247",
       "pages": null
     },
     {
       "locale": "English",
       "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_English_v1.1.pdf",
       "bytes": 200594,
-      "sha256": "4c2ac07b908c55e5f6dd37885d15254276263265852c6222300a8cf245ebb3da",
+      "sha256": "b73ec9c954cf0e17c6b23dabd0d0346a86f2fd59690d0eab1da3f91a63adfd1c",
       "pages": 14
     },
     {
       "locale": "es-419",
       "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.docx",
-      "bytes": 20783,
-      "sha256": "e1019eef14170373419bdcc01e6d78358885197401ad0d9da7d3ac19f09541fa",
+      "bytes": 20784,
+      "sha256": "86113a9c7fdb40995670db63f33a5f29df782ab2039bae5cb6c91f42a3e6336c",
       "pages": null
     },
     {
       "locale": "es-419",
       "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.pdf",
       "bytes": 158498,
-      "sha256": "3e5676a1a774cdb162a197a0ae6ccdb1a14fe0c6a23f9c805a24c9a2f74b3ad5",
+      "sha256": "738e2aeadd194b164ba390230d3532f2a73b2c86993e7829331a6714052717b5",
       "pages": 12
     },
     {
       "locale": "pt-BR",
       "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.docx",
       "bytes": 22200,
-      "sha256": "56c3c17f9e522cae2d39fb089bcd9e886c7e3ccfe85130d6106cc7a340ccadbe",
+      "sha256": "3a9bf88fe094c44f8f4108a74b2d02628f5c00ba7280709f3c236a7baf937889",
       "pages": null
     },
     {
       "locale": "pt-BR",
       "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.pdf",
       "bytes": 195490,
-      "sha256": "0afe615bfde17d75694c5f7f4151f02581f6d4e89563abb565df34691881457b",
+      "sha256": "7039096f2c92ff464b0f1c0bfc7cc56fc5cf01921c10a3f3ab78ef5fc37725e6",
       "pages": 14
     }
   ]
