@@ -1,0 +1,48 @@
+{
+  "guide": "09",
+  "occupation": "Logistics and Supply Chain Coordinator",
+  "branch": "revision/guide-00-100-2026",
+  "source": {
+    "en": "project/revision-2026/guide-09/source/GUIDE_09_ENGLISH_WORKING_MASTER_v2.md",
+    "es-419": "project/revision-2026/guide-09/source/GUIDE_09_SPANISH_LATAM_WORKING_MASTER_v2.md",
+    "pt-BR": "project/revision-2026/guide-09/source/GUIDE_09_PORTUGUESE_BR_WORKING_MASTER_v2.md"
+  },
+  "status_manifest": "project/revision-2026/guide-09/GUIDE_09_HELPER_STATUS.json",
+  "publication_dir": "project/revision-2026/guide-09/publication-candidate",
+  "visual_review_evidence": "project/revision-2026/guide-09/qa/GUIDE_09_FULL_PAGE_VISUAL_REVIEW.md",
+  "expected_sections": {"first": 1, "last": 19},
+  "output_stem": "Lifelong_Opportunity_Guide_09_Logistics_and_Supply_Chain_Coordinator",
+  "critical_patterns": [
+    "13-1081",
+    "13201",
+    "80[.,\\s]880",
+    "38[.,]89",
+    "49[.,\\s]260",
+    "132[.,\\s]110",
+    "241[.,\\s]000",
+    "17\\s?%",
+    "26[.,\\s]400",
+    "46[.,\\s]899",
+    "22[.,]55",
+    "39[.,\\s]000",
+    "52[.,\\s]000",
+    "C\\$\\s?21[.,]63",
+    "C\\$\\s?29[.,]49",
+    "C\\$\\s?44[.,]79",
+    "(?:US\\$|\\$)\\s?5[.,\\s]250",
+    "2025",
+    "2026"
+  ],
+  "required_urls": [
+    "https://www.bls.gov/ooh/business-and-financial/logisticians.htm",
+    "https://www.careeronestop.org/LocalHelp/EmploymentAndTraining/find-WIOA-training-programs.aspx",
+    "https://studentaid.gov/",
+    "https://www.apprenticeship.gov/apprenticeship-industries/transportation",
+    "https://www.irs.gov/newsroom/irs-updates-frequently-asked-questions-about-section-127-educational-assistance-programs",
+    "https://www.jobbank.gc.ca/marketreport/summary-occupation/296538/ca",
+    "https://www.jobbank.gc.ca/wagereport/occupation/296538",
+    "https://www.serviciodeempleo.gov.co/",
+    "https://www.sena.edu.co/",
+    "https://www.ziprecruiter.com/Salaries/Logistics-Coordinator-Salary"
+  ]
+}
