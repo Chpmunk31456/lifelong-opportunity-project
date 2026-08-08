@@ -99,14 +99,14 @@ def main() -> int:
             "non-government market source",
             "Funding is not automatic",
             "no universal Project Coordinator license",
-            "does not establish a general rule",
+            "no general rule in this guide",
         ],
         "Spanish": [
             "no promete",
             "fuente de mercado no gubernamental",
             "El financiamiento no es automático",
             "No existe una licencia universal",
-            "no establece una regla general",
+            "no existe una regla general",
         ],
         "Portuguese": [
             "não promete",
