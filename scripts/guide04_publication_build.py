@@ -21,6 +21,7 @@ SOURCE_DIR = ROOT / "project/revision-2026/guide-04/working"
 OUT = ROOT / "project/revision-2026/guide-04/publication-candidate"
 PDF_DIR = OUT / "pdf"
 RENDER_DIR = OUT / "rendered"
+EXPECTED_SHARED_URLS = 12
 
 EDITIONS = {
     "English": (
@@ -72,12 +73,19 @@ def main() -> int:
         if sections != list(range(1, 23)):
             raise SystemExit(f"{locale}: expected sections 1-22, got {sections}")
         source_urls = urls(text)
-        if len(source_urls) < 15:
-            raise SystemExit(f"{locale}: unexpectedly low source URL count {len(source_urls)}")
+        if len(source_urls) != EXPECTED_SHARED_URLS:
+            raise SystemExit(
+                f"{locale}: expected {EXPECTED_SHARED_URLS} verified source URLs, got {len(source_urls)}"
+            )
         for anchor in ("BLS", "WIOA", "Registered Apprenticeship", "NOC", "SENA", "Servicio Público de Empleo"):
             if anchor not in text:
                 raise SystemExit(f"{locale}: missing control anchor {anchor}")
         sources[locale] = (source, title, lang_code, text, source_urls)
+
+    canonical_urls = sources["English"][4]
+    for locale in ("es-419", "pt-BR"):
+        if sources[locale][4] != canonical_urls:
+            raise SystemExit(f"{locale}: source URL set differs from English")
 
     for locale, (source, _title, _lang_code, _text, _urls) in sources.items():
         docx = OUT / f"Lifelong_Opportunity_Guide_04_Project_Coordinator_{locale}_v2.0.docx"
@@ -104,6 +112,7 @@ def main() -> int:
         "independent_human_certification": False,
         "professional_translation_certification": False,
         "accessibility_certification": False,
+        "verified_shared_source_url_count": EXPECTED_SHARED_URLS,
         "files": [],
     }
 
@@ -168,9 +177,10 @@ def main() -> int:
     manifest = OUT / "GUIDE_04_PUBLICATION_QA_MANIFEST.json"
     manifest.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     checksums = OUT / "SHA256SUMS.txt"
+    candidate_base = Path("project/revision-2026/guide-04/publication-candidate")
     checksums.write_text(
         "\n".join(
-            f"{item['sha256']}  {Path(item['path']).relative_to('project/revision-2026/guide-04/publication-candidate')}"
+            f"{item['sha256']}  {Path(item['path']).relative_to(candidate_base)}"
             for item in report["files"]
         ) + "\n",
         encoding="utf-8",
