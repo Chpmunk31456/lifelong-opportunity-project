@@ -1,6 +1,6 @@
 {
   "guide": "11",
-  "stage": "build",
-  "requested": "2026-08-08T16:20-05:00",
-  "purpose": "Run generalized trilingual publication build after localization and technical QA PASS."
+  "stage": "release-audit",
+  "requested": "2026-08-08T16:23-05:00",
+  "purpose": "Run final generalized release audit after publication and full-page visual review PASS."
 }
