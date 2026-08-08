@@ -23,8 +23,10 @@
       ]
     },
     "english_source_freeze": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-07/qa/GUIDE_07_ENGLISH_SOURCE_FREEZE_07.md"
+      ]
     },
     "spanish_localization": {
       "status": "PENDING",
