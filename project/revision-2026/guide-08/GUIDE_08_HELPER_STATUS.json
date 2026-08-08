@@ -49,8 +49,12 @@
       ]
     },
     "publication": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-08/publication-candidate/GUIDE_08_PUBLICATION_QA_MANIFEST.json",
+        "project/revision-2026/guide-08/publication-candidate/SHA256SUMS.txt",
+        "project/revision-2026/guide-08/qa/GUIDE_08_FULL_PAGE_VISUAL_REVIEW.md"
+      ]
     },
     "release_audit": {
       "status": "PENDING",
