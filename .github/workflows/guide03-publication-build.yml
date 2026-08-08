@@ -78,6 +78,7 @@ jobs:
         run: |
           from pathlib import Path
           from zipfile import ZipFile
+          from html import unescape
           import hashlib
           import json
           import re
@@ -141,7 +142,8 @@ jobs:
                   core_xml = zf.read('docProps/core.xml').decode('utf-8', errors='strict')
                   if '\ufffd' in document_xml + relationships + core_xml:
                       raise SystemExit(f'{docx}: encoding replacement character detected')
-                  missing_links = sorted(url for url in urls if url not in relationships)
+                  relationship_targets = unescape(relationships)
+                  missing_links = sorted(url for url in urls if url not in relationship_targets)
                   if missing_links:
                       raise SystemExit(f'{docx}: source hyperlinks missing from relationships: {missing_links}')
 
