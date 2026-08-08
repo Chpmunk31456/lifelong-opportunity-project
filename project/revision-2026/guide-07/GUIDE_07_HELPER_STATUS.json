@@ -11,12 +11,16 @@
       ]
     },
     "english_editorial": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-07/qa/GUIDE_07_ENGLISH_EDITORIAL_QA_05.md"
+      ]
     },
     "evidence_traceability": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-07/qa/GUIDE_07_CLAIM_TRACEABILITY_QA_06.md"
+      ]
     },
     "english_source_freeze": {
       "status": "PENDING",
