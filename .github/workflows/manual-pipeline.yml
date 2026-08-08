@@ -73,6 +73,36 @@ jobs:
       - name: Run generalized controller
         run: python scripts/manual_pipeline.py "$PIPELINE_STAGE" --guide "$PIPELINE_GUIDE"
 
+      - name: Verify fail-closed readiness behavior
+        if: github.event_name == 'push'
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+
+          status_path = Path('project/revision-2026/guide-08/GUIDE_08_HELPER_STATUS.json')
+          status = json.loads(status_path.read_text(encoding='utf-8'))
+          required = ('research', 'english_editorial', 'evidence_traceability', 'english_source_freeze')
+          localization_paths = (
+              Path('project/revision-2026/guide-08/source/GUIDE_08_SPANISH_LATAM_WORKING_MASTER_v2.md'),
+              Path('project/revision-2026/guide-08/source/GUIDE_08_PORTUGUESE_BR_WORKING_MASTER_v2.md'),
+          )
+          ready = all(status['stages'][name]['status'] == 'PASS' for name in required) and all(p.exists() for p in localization_paths)
+          if ready:
+              print('Guide 08 prerequisites now permit parity; negative fail-closed smoke test no longer applies.')
+          else:
+              proc = subprocess.run(
+                  ['python', 'scripts/manual_pipeline.py', 'parity', '--guide', '08'],
+                  text=True, capture_output=True
+              )
+              print(proc.stdout)
+              print(proc.stderr)
+              if proc.returncode == 0:
+                  raise SystemExit('FAIL: parity unexpectedly passed before Guide 08 prerequisites were complete')
+              print('PASS: generalized pipeline failed closed before parity prerequisites were complete.')
+          PY
+
       - name: Upload publication evidence
         if: env.PIPELINE_STAGE == 'build'
         uses: actions/upload-artifact@v4
