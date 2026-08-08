@@ -51,7 +51,8 @@ Según el empleador, las funciones pueden incluir:
 - monitorear bandejas de entrada, colas de casos, quejas, registros de líneas éticas o canales de escalamiento;
 - preparar tableros e informes de estado;
 - apoyar debida diligencia o incorporación de terceros;
-- documentar reuniones y acciones; y
+- documentar reuniones y acciones;
+- mantener expedientes confidenciales de investigaciones o revisiones cuando exista autorización; y
 - escalar posibles incumplimientos o fallas de control sin resolver.
 
 El referente amplio más cercano del BLS de Estados Unidos es **Compliance Officers**. No es una equivalencia uno a uno para cada puesto de asistente o coordinador.
@@ -84,7 +85,7 @@ Pregúntese:
 - ¿Puedo mantener independencia si un gerente me presiona para marcar algo como completo?
 - ¿Puedo usar hojas de cálculo, sistemas de flujo, repositorios documentales y herramientas de reporte con precisión?
 
-El trabajo suele ser de oficina, híbrido o remoto, pero algunos puestos requieren visitas, auditorías, entrevistas, inspecciones, viajes o trabajo en instalaciones reguladas. Verifique funciones esenciales y opciones razonables de adaptación en la jurisdicción correspondiente.
+El trabajo suele ser de oficina, híbrido o remoto, pero algunos puestos requieren visitas, auditorías, entrevistas, inspecciones, viajes o trabajo en instalaciones reguladas. Las necesidades de accesibilidad pueden relacionarse con el tiempo frente a pantallas, la carga de lectura, las reuniones, las exigencias de audición o habla, los viajes, el acceso físico, las condiciones sensoriales o la rigidez del horario. Verifique funciones esenciales y opciones razonables de adaptación en la jurisdicción correspondiente.
 
 ## 5. Ética, privacidad, integridad de evidencia y escalamiento
 
@@ -97,7 +98,7 @@ Nunca:
 - tome represalias o exponga a un denunciante en contra de política o ley;
 - dé conclusiones jurídicas más allá de su autoridad;
 - use un servicio de IA no aprobado para casos confidenciales, datos regulados o evidencia;
-- permita que la IA tome decisiones finales disciplinarias, jurídicas, regulatorias, de sanciones o seguridad; ni
+- permita que la IA tome decisiones finales disciplinarias, jurídicas, regulatorias, de fraude, sanciones o seguridad; ni
 - afirme certificaciones, licencias, autorizaciones o aprobaciones que no posee.
 
 Escale sospechas de fraude, soborno, represalias, riesgo de seguridad, violaciones de privacidad, asuntos de sanciones, conducta criminal, fallas materiales de control, manipulación de evidencia o asuntos sensibles para reguladores mediante el canal autorizado.
@@ -293,7 +294,7 @@ Deténgase o reconsidere cuando:
 - el puesto espere asesoría jurídica o regulatoria independiente más allá de sus cualificaciones;
 - el empleador espere manipulación de evidencia, excepciones ocultas, represalias o certificación falsa;
 - un proveedor prometa empleo o salario garantizado;
-- costos, renovaciones, devoluciones o términos de reembolso del empleador no estén claros;
+- costos totales, renovaciones, reglas de devolución o condiciones para reembolsar al empleador la formación financiada por este no estén claros;
 - los requisitos de viaje, horario, entorno sensorial, seguridad o acceso al sitio no sean viables y no haya una adaptación razonable; o
 - el dominio requiera licencia, autorización, experiencia técnica o autoridad regulada que aún no posee.
 
