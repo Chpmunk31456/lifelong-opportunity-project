@@ -71,7 +71,7 @@ def main() -> int:
         ("4,656 hours", "4.656 horas", "4.656 horas", "SENA technologist duration"),
         ("48 hours", "48 horas", "48 horas", "SENA short-course duration"),
         ("41,000", "41.000", "41.000", "SENA free-place statement"),
-        ("2024 to 2034", "2024 a 2034", "2024 a 2034", "BLS projection period"),
+        ("2024 to 2034", "entre 2024 y 2034", "entre 2024 e 2034", "BLS projection period"),
     ]
     for en, es, pt, label in controls:
         require(clean["English"], en, f"English {label}")
