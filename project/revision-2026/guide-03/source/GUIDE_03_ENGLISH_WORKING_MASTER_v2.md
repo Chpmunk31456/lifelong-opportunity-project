@@ -12,7 +12,7 @@ A free, accessible career and education guide created and directed by **Alberto 
 
 ## The promise of this guide
 
-This guide does not promise that medical billing and coding work is right for everyone, that education will be free, that a particular credential will be accepted everywhere, or that training will lead to a job. It helps you understand related but distinct billing, coding, health-information, records, claims, denial and revenue-cycle functions; compare realistic pathways; verify requirements; and avoid expensive or misleading commitments.
+This guide does not promise that medical billing and coding work is right for everyone, that education will be free, that a particular credential will be accepted everywhere, or that training will lead to a job. It helps you understand related but distinct billing, coding, health information, records, claims, denial and revenue-cycle functions; compare realistic pathways; verify requirements; and avoid expensive or misleading commitments.
 
 ## Why I Created This Guide
 
@@ -29,7 +29,7 @@ I conceived, directed, and take responsibility for this guide. I used ChatGPT by
 - No career assessment can guarantee enjoyment, employment, promotion, funding, certification, licensing, or income.
 - Requirements differ by employer, payer, jurisdiction, work setting, contract and client.
 - Medical coding, medical billing, health-information management, records work and revenue-cycle functions overlap but are not identical occupations.
-- This guide provides general education and navigation, not individualized legal, tax, medical, coding-compliance, privacy, immigration, financial, or licensed vocational advice.
+- This guide provides general education and navigation, not individualized legal, tax, medical, coding and compliance, privacy, immigration, financial, or licensed vocational advice.
 - Do not pay a large nonrefundable fee, borrow money, or sign a repayment agreement because someone pressures you to act immediately.
 - Verify high-impact facts with current official sources before making a financial, educational, employment, coding, privacy, or legal commitment.
 
@@ -145,7 +145,7 @@ Consider pausing or changing direction when:
 
 # 5. Ethics, Boundaries, and Escalation
 
-- Do not diagnose a patient unless you are separately qualified and authorized to do so.
+- Do not diagnose patients unless you are separately qualified and authorized to do so.
 - Do not alter clinical documentation merely to support reimbursement.
 - Do not select a code solely because it pays more when documentation or coding rules do not support it.
 - Do not conceal denials, audit findings, duplicate billing, suspected fraud or material coding errors.
@@ -305,7 +305,7 @@ Sources:
 ## Practical security controls
 
 - Use only approved systems, accounts, devices, storage and communication channels.
-- Follow role-based access and least-necessary-access rules established by the organization.
+- Follow role-based access and minimum-necessary access rules established by the organization.
 - Protect passwords and multifactor authentication.
 - Do not copy patient data to personal devices or unapproved cloud services.
 - Verify recipients before sending records, claim attachments or account information.
