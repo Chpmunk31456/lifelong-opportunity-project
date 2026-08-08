@@ -8,42 +8,42 @@
       "locale": "English",
       "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_English_v1.1.docx",
       "bytes": 23712,
-      "sha256": "e1f770edbb67b906ce4ce3825163015bd988aa99fb711a59821f32658feb83a1",
+      "sha256": "664920d5521980996c3e46511d9fc7f71f3d8a380777de0bf59a09a5016f93da",
       "pages": null
     },
     {
       "locale": "English",
       "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_English_v1.1.pdf",
       "bytes": 200594,
-      "sha256": "07b5cb7108cf2fee933a72699a6a9c946a49285141a83817e5ccc3c4eb178c45",
+      "sha256": "b96c38e253c0eba1f4bb5b9517a1e382d526086b0ab47f8b5c2ca9709884ab22",
       "pages": 14
     },
     {
       "locale": "es-419",
       "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.docx",
-      "bytes": 20783,
-      "sha256": "636b947df2c1ae257c373212b36067718be425a5d96638871fd0d7175fb2ca6f",
+      "bytes": 20784,
+      "sha256": "673bdd15aa675a3fe5e82e1a0919608a53d9e4955ff2300d84f520a774c12224",
       "pages": null
     },
     {
       "locale": "es-419",
       "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.pdf",
       "bytes": 158498,
-      "sha256": "0a28700e604a3391588afb1d718a3e2b9a4d3a704df6faec6ecaf6e2b2c1ed62",
+      "sha256": "87c9185b98b3e3bb699e205a9a2956cb020e3b52b4002c7652ea278f54f9661c",
       "pages": 12
     },
     {
       "locale": "pt-BR",
       "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.docx",
-      "bytes": 22200,
-      "sha256": "cb097798797a35515094d8549f7ada2a70b66b071e08b21b17e85a6aec90e3a8",
+      "bytes": 22201,
+      "sha256": "45e05bfc275a81b80624843bfa898d67c22e164c56ffbbc43c54aa8f6c1050d2",
       "pages": null
     },
     {
       "locale": "pt-BR",
       "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.pdf",
       "bytes": 195490,
-      "sha256": "4dd03369d5e3cecd4bd37204b0be4e4fc7601bf14141d1609380bac1358a3ad5",
+      "sha256": "2e823742cf950519e978f29a8470ae084f1fbfb4618267a59af51194c930a09f",
       "pages": 14
     }
   ]
