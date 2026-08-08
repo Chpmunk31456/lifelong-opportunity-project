@@ -147,8 +147,8 @@ Official source: https://www.bls.gov/ooh/office-and-administrative-support/custo
 
 As separate market indicators verified in August 2026:
 
-- ZipRecruiter reported an average U.S. estimate for **Customer Service Specialist** of **US$40,910 per year (US$19.67/hour)** as of **July 16, 2026**.
-- ZipRecruiter reported an average U.S. estimate for **Customer Service Representative** of **US$39,098 per year (US$18.80/hour)** as of **July 17, 2026**.
+- ZipRecruiter reported an average U.S. estimate for **Customer Service Specialist** of **US$40,910 per year (US$19.67/hour)** as of **August 8, 2026**.
+- ZipRecruiter reported an average U.S. estimate for **Customer Service Representative** of **US$39,098 per year (US$18.80/hour)** as of **August 8, 2026**.
 
 Sources:
 
@@ -232,7 +232,7 @@ Use Job Bank, provincial or territorial employment services, public colleges, ad
 
 ### Colombia
 
-SENA's Betowa catalogue currently lists **Servicio al cliente** as a **48-hour complementary program**, with both in-person and virtual offerings appearing in the current catalogue depending on cohort and filter. Availability and enrollment can change, so verify the live offering before planning around it.
+SENA's Betowa catalogue currently lists **Servicio al cliente** as a **48-hour complementary, in-person special course** on the cited page. Availability, cohort, location, modality, and enrollment can change, so verify the live offering before planning around it.
 
 SENA source: https://betowa.sena.edu.co/oferta/servicio-al-cliente?modality=P&offertype=open&programId=116454
 
