@@ -7,6 +7,7 @@ on:
       - revision/guide-00-100-2026
     paths:
       - .github/workflows/guide06-publication-build.yml
+      - scripts/guide06_translation_parity.py
       - scripts/guide06_publication_build.py
       - project/revision-2026/guide-06/source/**
 
@@ -35,6 +36,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends pandoc libreoffice-writer poppler-utils python3-lxml
 
+      - name: Re-run trilingual source parity gate
+        run: python scripts/guide06_translation_parity.py
+
       - name: Build and QA trilingual publication candidates
         run: python scripts/guide06_publication_build.py
 
@@ -51,5 +55,6 @@ jobs:
           git commit -m "build(guide-06): add trilingual publication candidates and QA manifest"
           git fetch origin revision/guide-00-100-2026
           git rebase origin/revision/guide-00-100-2026
+          python scripts/guide06_translation_parity.py
           python scripts/guide06_publication_build.py
           git push origin HEAD:revision/guide-00-100-2026
