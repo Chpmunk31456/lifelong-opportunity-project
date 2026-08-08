@@ -1,6 +1,6 @@
 {
   "guide": "08",
   "stage": "parity",
-  "requested": "2026-08-08T11:59-05:00",
-  "purpose": "Rerun generalized trilingual parity after locale-aware numeric-pattern correction."
+  "requested": "2026-08-08T12:01-05:00",
+  "purpose": "Persist generalized trilingual parity evidence after parity PASS."
 }
