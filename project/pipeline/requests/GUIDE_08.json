@@ -1,6 +1,6 @@
 {
   "guide": "08",
-  "stage": "build",
-  "requested": "2026-08-08T12:06-05:00",
-  "purpose": "Run generalized trilingual publication build from the current hardened pipeline head after localization and technical QA PASS."
+  "stage": "release-audit",
+  "requested": "2026-08-08T12:08-05:00",
+  "purpose": "Run generalized final release audit after publication and full-page visual review PASS."
 }
