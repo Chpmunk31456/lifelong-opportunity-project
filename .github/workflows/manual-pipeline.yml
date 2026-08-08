@@ -154,9 +154,19 @@ jobs:
             exit 0
           fi
           git commit -m "qa(guide-${GUIDE}): record generalized ${STAGE} PASS"
-          git fetch origin revision/guide-00-100-2026
-          git rebase origin/revision/guide-00-100-2026
-          git push origin HEAD:revision/guide-00-100-2026
+          for attempt in 1 2 3 4 5; do
+            echo "Gate evidence push attempt ${attempt}/5"
+            git fetch origin revision/guide-00-100-2026
+            git rebase origin/revision/guide-00-100-2026
+            if git push origin HEAD:revision/guide-00-100-2026; then
+              echo "Gate evidence committed successfully."
+              exit 0
+            fi
+            echo "Branch advanced during push; retrying without force."
+            sleep 2
+          done
+          echo "FAIL: gate evidence could not be pushed after 5 non-force retries."
+          exit 1
 
       - name: Verify fail-closed readiness behavior
         if: github.event_name == 'push' && env.PIPELINE_STAGE == 'validate-config' && env.PIPELINE_GUIDE == '08'
@@ -202,13 +212,23 @@ jobs:
             exit 0
           fi
           git commit -m "build(guide-${GUIDE}): generalized publication candidates"
-          git fetch origin revision/guide-00-100-2026
-          git rebase origin/revision/guide-00-100-2026
-          python scripts/manual_pipeline.py parity --guide "$GUIDE"
-          python scripts/manual_pipeline.py build --guide "$GUIDE"
-          git add "project/revision-2026/guide-${GUIDE}/publication-candidate"
-          git commit --amend --no-edit || true
-          git push origin HEAD:revision/guide-00-100-2026
+          for attempt in 1 2 3 4 5; do
+            echo "Publication push attempt ${attempt}/5"
+            git fetch origin revision/guide-00-100-2026
+            git rebase origin/revision/guide-00-100-2026
+            python scripts/manual_pipeline.py parity --guide "$GUIDE"
+            python scripts/manual_pipeline.py build --guide "$GUIDE"
+            git add "project/revision-2026/guide-${GUIDE}/publication-candidate"
+            git commit --amend --no-edit || true
+            if git push origin HEAD:revision/guide-00-100-2026; then
+              echo "Publication outputs committed successfully."
+              exit 0
+            fi
+            echo "Branch advanced during push; retrying without force."
+            sleep 2
+          done
+          echo "FAIL: publication outputs could not be pushed after 5 non-force retries."
+          exit 1
 
       - name: Safety note
         run: |
