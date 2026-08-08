@@ -8,9 +8,9 @@
     "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-09/qa/GUIDE_09_ENGLISH_EDITORIAL_QA_03.md"]},
     "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-09/qa/GUIDE_09_CLAIM_TRACEABILITY_QA_04.md"]},
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-09/qa/GUIDE_09_ENGLISH_SOURCE_FREEZE_05.md"]},
-    "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-09/qa/GUIDE_09_SPANISH_LOCALIZATION_QA_06.md"]},
-    "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-09/qa/GUIDE_09_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-09/qa/GUIDE_09_SPANISH_LOCALIZATION_QA_06.md", "project/revision-2026/guide-09/source/GUIDE_09_SPANISH_LATAM_WORKING_MASTER_v2.md"]},
+    "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-09/qa/GUIDE_09_PORTUGUESE_LOCALIZATION_QA_07.md", "project/revision-2026/guide-09/source/GUIDE_09_PORTUGUESE_BR_WORKING_MASTER_v2.md"]},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-09/qa/GUIDE_09_TRILINGUAL_PARITY_QA_08.md"]},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
