@@ -18,6 +18,7 @@ concurrency:
   group: guide07-publication-build
   cancel-in-progress: false
 
+# Explicitly retriggered after final publication-status labels and parity PASS.
 jobs:
   build-and-qa:
     if: github.repository == 'Chpmunk31456/lifelong-opportunity-project'
