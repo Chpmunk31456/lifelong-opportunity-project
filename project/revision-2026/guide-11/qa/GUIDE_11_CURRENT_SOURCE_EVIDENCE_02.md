@@ -8,80 +8,98 @@
 
 ## Occupation mapping and official U.S. evidence
 
-The guide title is a practical job-market title and does not map one-to-one to a single federal occupation. The closest broad U.S. Bureau of Labor Statistics family is **Purchasing Managers, Buyers, and Purchasing Agents**. BLS describes buyers and purchasing agents as workers who buy products and services for organizations and reports a **$79,830 annual median pay** figure and **5% projected employment growth** for the occupation family in the current Occupational Outlook Handbook. These figures must be labeled as official occupation-family evidence, not as a guaranteed or exact Procurement Coordinator wage.
+The guide title is a practical job-market title and does not map one-to-one to one federal occupation. The strongest related U.S. mapping is **O*NET-SOC 13-1023.00 — Purchasing Agents, Except Wholesale, Retail, and Farm Products**. O*NET's 2026 occupation page includes `Purchasing and Contracts Coordinator` among reported titles and describes purchasing machinery, equipment, supplies or services, preparing purchase orders, reviewing requisitions, evaluating suppliers, analyzing prices, and negotiating contracts.
 
-Source: U.S. Bureau of Labor Statistics, Occupational Outlook Handbook  
+O*NET's national wage page uses **BLS 2025 wage data for Buyers and Purchasing Agents** and reports:
+
+- annual median: **$77,710**;
+- hourly median: **$37.36**;
+- 10th percentile annual: **$48,380**;
+- 90th percentile annual: **$128,870**.
+
+Sources:  
+https://www.onetonline.org/link/summary/13-1023.00  
+https://www.onetonline.org/link/localwages/13-1023.00
+
+The BLS Occupational Outlook Handbook provides a separate **May 2024** series for buyers and purchasing agents: median **$75,650/year**, lowest 10 percent below **$46,460**, highest 10 percent above **$127,520**. BLS projects buyers and purchasing agents to grow **6% from 2024 to 2034**. The combined purchasing managers/buyers/purchasing-agents family is projected to have about **58,700 openings per year** over the decade. These are occupation-family benchmarks, not guaranteed Procurement/Purchasing Coordinator wages.
+
+Source:  
 https://www.bls.gov/ooh/business-and-financial/purchasing-managers-buyers-and-purchasing-agents.htm
 
-## Current non-government U.S. market estimates — keep separate from BLS
+## Current non-government U.S. market estimates — keep separate from official statistics
 
-Current private-market estimates vary materially by title and methodology, so the English revision should present them as examples of market estimates rather than official statistics:
+ZipRecruiter's **Purchasing Coordinator** page, updated July 25, 2026, reports an average **$50,324/year** (**$24.19/hour**), with a displayed 25th percentile around **$42,000** and 75th percentile around **$56,500**. This is a title-based private estimate derived from employer postings and third-party data, not a government statistic or promise.
 
-- ZipRecruiter, **Procurement Coordinator**, updated July 27, 2026: average **$65,020/year** (**$31.26/hour**).
-  https://www.ziprecruiter.com/Salaries/Procurement-Coordinator-Salary
-- ZipRecruiter, **Purchasing Coordinator**, updated July 25, 2026: average **$50,324/year** (**$24.19/hour**).
-  https://www.ziprecruiter.com/Salaries/Purchasing-Coordinator-Salary
-- Indeed, **Purchasing Coordinator**, updated July 19, 2026: average base salary **$24.01/hour**, based on approximately 1,200 reported/posting-derived salaries in its displayed dataset.
-  https://www.indeed.com/career/purchasing-coordinator/salaries
+Source:  
+https://www.ziprecruiter.com/Salaries/Purchasing-Coordinator-Salary
 
-The divergence between these estimates is itself relevant evidence that title, location, employer, industry, experience, and methodology materially affect reported pay.
+Private estimates can differ materially by title, geography and methodology; the English source should make that distinction explicit.
 
 ## Canada
 
-Canada Job Bank maps procurement/purchasing work to **NOC 12102 — Procurement and purchasing agents and officers**. National wage data displayed by Job Bank were updated November 19, 2025, with a 2023–2024 Labour Force Survey reference period. Canada-wide hourly wages shown are **C$24.68 low, C$36.06 median, and C$57.69 high**. The guide must state the reference period and avoid presenting these values as 2026 earnings observations.
+Canada Job Bank maps purchasing-agent work to **NOC 12102 — Procurement and purchasing agents and officers**. Its national wage data were updated November 19, 2025, with a **2023–2024 Labour Force Survey** reference period. Canada-wide hourly wages shown are **C$24.68 low, C$36.06 median, and C$57.69 high**. Job Bank's summary says the occupation usually requires a college diploma, an apprenticeship of two or more years, or experience in a supervisory occupation. Requirements vary by employer and role.
 
-Source: Government of Canada Job Bank  
+Sources:  
+https://www.jobbank.gc.ca/marketreport/summary-occupation/553/ca  
 https://www.jobbank.gc.ca/wagereport/occupation/556
 
 ## Colombia pathway
 
-SENA currently lists **Coordinación de Procesos Logísticos**, a technologist-level program whose published competencies include **elaborating a purchasing plan according to programming methods and budget**, projecting requirements using purchasing/forecast methods, inventory control, import/export processes, and supply-chain integration. This is a relevant Colombia public-training pathway for procurement/purchasing-adjacent work; availability and cohorts change and must be checked before enrollment.
+SENA currently lists **Coordinación de Procesos Logísticos**, a technologist-level program of **3,984 hours** whose published competencies include preparing a purchasing plan according to programming methods and budget, projecting requirements using purchasing/forecast methods, inventory control, import/export processes, and supply-chain integration. This is procurement-adjacent public training; availability and cohorts change and must be checked before enrollment.
 
-Source: SENA Betowa — Coordinación de Procesos Logísticos  
+Source:  
 https://betowa.sena.edu.co/oferta/coordinacion-de-procesos-logisticos?modality=V&offertype=com&programId=150738
 
-SENA also lists short complementary logistics training, including **Establecer Estrategias Logísticas** (40 hours, virtual), which can support low-cost/free-first skill development but should not be represented as equivalent to a professional procurement credential.
+SENA also lists **Establecer Estrategias Logísticas**, a **40-hour virtual** complementary program addressing logistics strategy, supply/demand information, logistics-chain links and supporting technologies. It can support free-first skill development but is not equivalent to a professional procurement credential.
 
-Source: SENA Betowa — Establecer Estrategias Logísticas  
+Source:  
 https://betowa.sena.edu.co/oferta/establecer-estrategias-logisticas?modality=V&programId=98647
 
 ## United States funding and employer support
 
-For eligible postsecondary/career-school programs, the 2026–27 FAFSA remains the gateway to federal student aid such as Pell Grants, work-study, and federal student loans. Eligibility depends on the student and program; the guide must not imply that every procurement course or certificate qualifies.
+Federal Student Aid states that the **2026–27 FAFSA** provides access to federal grants, work-study and federal student loans for eligible study at participating colleges, career schools and trade schools. Eligibility depends on the student and program.
 
-Source: Federal Student Aid  
+Source:  
 https://studentaid.gov/articles/fafsa-student-steps/
 
-U.S. Department of Labor adult/dislocated-worker services are delivered through state/local workforce systems and American Job Centers; services and eligibility vary by location. WIOA can support several forms of training when applicable, including occupational skills training, on-the-job training, incumbent-worker training, and programs combining workplace training with related instruction.
+U.S. Department of Labor adult/dislocated-worker services are delivered through state/local workforce systems and American Job Centers. WIOA-supported training depends on eligibility, local policy, program approval and available funding.
 
-Sources: U.S. Department of Labor  
+Sources:  
 https://www.dol.gov/general/topic/training/adulttraining  
 https://www.dol.gov/node/160492
 
-For employer educational assistance, IRS Section 127 guidance states that for calendar years **2025 and 2026**, up to **$5,250** of qualifying educational-assistance benefits may be excluded from an employee's gross income under a compliant employer program. The guide must describe this as a U.S. tax-rule ceiling/benefit provision, not as an entitlement or guaranteed employer reimbursement.
+IRS Section 127 guidance dated April 20, 2026 states that for calendar years **2025 and 2026**, up to **$5,250** of qualifying educational-assistance benefits may be excluded from an employee's gross income under a compliant employer program; the amount is subject to cost-of-living adjustment for taxable years after 2026. This is a tax-rule ceiling, not an entitlement or guaranteed employer reimbursement.
 
-Source: Internal Revenue Service, IR-2026-55 / FS-2026-10  
+Source:  
 https://www.irs.gov/newsroom/irs-updates-frequently-asked-questions-about-section-127-educational-assistance-programs
 
 ## Apprenticeship and work-based learning
 
-Registered Apprenticeship is a U.S. employer-driven pathway combining paid employment, mentorship, progressive wage increases, related instruction, and a portable nationally recognized completion credential. The guide should direct readers to search actual openings rather than imply that a procurement-specific apprenticeship is available in every region.
+Registered Apprenticeship is an employer-driven pathway combining paid employment, mentorship, progressive wage increases, related instruction and a portable nationally recognized credential. O*NET identifies apprenticeship-recognized titles related to this occupation, including Purchasing Agent and Subcontract Administrator. Actual openings are local and employer-driven; the guide must direct readers to search rather than imply availability.
 
-Source: Apprenticeship.gov — Career Seekers  
+Source:  
 https://www.apprenticeship.gov/career-seekers
 
-## Latin America coverage rule for the English revision
+## Accessibility
 
-Outside Colombia, the guide should avoid inventing a single region-wide procurement credential. It should explain that relevant titles commonly sit within purchasing, procurement, abastecimiento, compras, supply chain, logística, and sourcing functions, and direct readers to verify current public technical-education, workforce, apprenticeship, and employer-sponsored options in their own country. Colombia may be treated as a concrete regional example because current SENA evidence is available.
+For U.S. readers, EEOC materials explain disability discrimination and reasonable accommodation. The guide should use these resources for general navigation only, not individualized legal advice.
+
+Source:  
+https://www.eeoc.gov/disability-discrimination
+
+## Latin America coverage rule
+
+Outside Colombia, avoid inventing a single region-wide procurement credential. Relevant titles commonly sit within purchasing, procurement, abastecimiento, compras, supply chain, logística and sourcing functions. Readers should verify current public technical-education, workforce, apprenticeship and employer-sponsored options in their own country.
 
 ## Research controls
 
-- Official government wage/income evidence and private market estimates are separate evidence classes.
+- Official government wage evidence and private market estimates are separate evidence classes.
+- BLS/O*NET occupation data are benchmarks, not one-to-one coordinator salary claims.
 - No wage figure is a promise, guaranteed salary, or individualized forecast.
-- No course, employer program, scholarship, aid program, apprenticeship, credential, certification, or license should be described as available to a reader without current eligibility verification.
-- No claim of independent human review, certified translation, accessibility certification, accreditation, legal review, tax advice, or financial advice is authorized by this ledger.
-- Links and dated figures must be revalidated at English source freeze and again before final publication.
+- No course, employer program, scholarship, aid program, apprenticeship, credential, certification or license is described as available without current eligibility verification.
+- No claim of independent human review, certified translation, accessibility certification, accreditation, legal review, tax advice or financial advice is authorized by this ledger.
+- Links and dated figures must be revalidated at English source freeze and before final publication.
 
 ## Research intake result
 
-**PASS — sufficient current-source evidence exists to begin the controlled English v2 reconstruction.**
+**PASS — sufficient current-source evidence exists for the controlled English v2 reconstruction.**
