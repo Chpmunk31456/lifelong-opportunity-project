@@ -1,0 +1,49 @@
+{
+  "guide": "08",
+  "occupation": "Human Resources Assistant",
+  "branch": "revision/guide-00-100-2026",
+  "updated": "2026-08-08",
+  "stages": {
+    "research": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-08/qa/GUIDE_08_CURRENT_SOURCE_EVIDENCE_04.md"
+      ]
+    },
+    "english_editorial": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-08/qa/GUIDE_08_ENGLISH_WORKING_MASTER_INTAKE_05.md"
+      ]
+    },
+    "evidence_traceability": {
+      "status": "PENDING",
+      "evidence": []
+    },
+    "english_source_freeze": {
+      "status": "PENDING",
+      "evidence": []
+    },
+    "spanish_localization": {
+      "status": "PENDING",
+      "evidence": []
+    },
+    "portuguese_localization": {
+      "status": "PENDING",
+      "evidence": []
+    },
+    "technical_qa": {
+      "status": "PENDING",
+      "evidence": []
+    },
+    "publication": {
+      "status": "PENDING",
+      "evidence": []
+    },
+    "release_audit": {
+      "status": "PENDING",
+      "evidence": []
+    }
+  },
+  "blockers": []
+}
