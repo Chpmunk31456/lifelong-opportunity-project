@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 05
+# Lifelong Opportunity Guide 05
 
 ## Bookkeeping and Payroll Specialist — English Edition
 
@@ -17,7 +17,7 @@ A free, accessible career and education guide created and directed by **Alberto 
 - **Version:** 1.0
 - **Publication month:** July 2026
 - **Availability:** DOCX and PDF present
-- **Review status:** Technically reviewed publication edition; exact source equivalence and human linguistic review should not be assumed unless separately documented
+- **Review status:** Legacy publication edition entering the controlled 2026 revision process; exact source equivalence, current factual validation, independent human review, professional certification, and accessibility certification should not be assumed unless separately documented
 
 ## Scope
 
