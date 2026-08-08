@@ -93,7 +93,70 @@ jobs:
           sudo apt-get install -y --no-install-recommends pandoc libreoffice-writer poppler-utils
 
       - name: Run generalized controller
-        run: python scripts/manual_pipeline.py "$PIPELINE_STAGE" --guide "$PIPELINE_GUIDE"
+        shell: bash
+        run: |
+          GUIDE="$PIPELINE_GUIDE"
+          STAGE="$PIPELINE_STAGE"
+          QA_DIR="project/revision-2026/guide-${GUIDE}/qa"
+          mkdir -p "$QA_DIR"
+
+          if [[ "$STAGE" == 'parity' ]]; then
+            {
+              echo "# Guide ${GUIDE} — Generalized Trilingual Parity QA"
+              echo
+              echo "Generated: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+              echo "Source commit: $GITHUB_SHA"
+              echo
+              echo '```text'
+              python scripts/manual_pipeline.py parity --guide "$GUIDE"
+              echo '```'
+              echo
+              echo '**Gate result: PASS — deterministic trilingual parity.**'
+              echo
+              echo 'This automated PASS verifies configured structure, URL parity, UTF-8 integrity and critical fact patterns. It does not claim independent human or professional translation certification.'
+            } | tee "$QA_DIR/GUIDE_${GUIDE}_TRILINGUAL_PARITY_QA.md"
+          elif [[ "$STAGE" == 'release-audit' ]]; then
+            {
+              echo "# Guide ${GUIDE} — Generalized Release Audit"
+              echo
+              echo "Generated: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+              echo "Source commit: $GITHUB_SHA"
+              echo
+              echo '```text'
+              python scripts/manual_pipeline.py release-audit --guide "$GUIDE"
+              echo '```'
+              echo
+              echo '**Gate result: PASS — generalized deterministic release audit.**'
+              echo
+              echo 'This gate reconciles configured upstream evidence, publication artifacts, checksums and visual-review evidence. It does not claim independent human, legal, accessibility or professional translation certification.'
+            } | tee "$QA_DIR/GUIDE_${GUIDE}_RELEASE_AUDIT.md"
+          else
+            python scripts/manual_pipeline.py "$STAGE" --guide "$GUIDE"
+          fi
+
+      - name: Commit deterministic gate evidence
+        if: env.PIPELINE_STAGE == 'parity' || env.PIPELINE_STAGE == 'release-audit'
+        shell: bash
+        run: |
+          GUIDE="$PIPELINE_GUIDE"
+          STAGE="$PIPELINE_STAGE"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [[ "$STAGE" == 'parity' ]]; then
+            FILE="project/revision-2026/guide-${GUIDE}/qa/GUIDE_${GUIDE}_TRILINGUAL_PARITY_QA.md"
+          else
+            FILE="project/revision-2026/guide-${GUIDE}/qa/GUIDE_${GUIDE}_RELEASE_AUDIT.md"
+          fi
+          git add "$FILE"
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'Deterministic gate evidence already current.'
+            exit 0
+          fi
+          git commit -m "qa(guide-${GUIDE}): record generalized ${STAGE} PASS"
+          git fetch origin revision/guide-00-100-2026
+          git rebase origin/revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026
 
       - name: Verify fail-closed readiness behavior
         if: github.event_name == 'push' && env.PIPELINE_STAGE == 'validate-config' && env.PIPELINE_GUIDE == '08'
