@@ -25,6 +25,9 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Install validator dependencies
+        run: python -m pip install -r requirements.txt
+
       - name: Run release validator
         shell: powershell
         run: powershell -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\scripts\validate-release.ps1
