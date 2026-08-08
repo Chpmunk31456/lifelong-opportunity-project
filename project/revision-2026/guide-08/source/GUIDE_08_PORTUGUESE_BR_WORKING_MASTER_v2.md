@@ -106,7 +106,7 @@ Não faça o seguinte:
 - divulgar informações médicas, de deficiência, identidade, remuneração, reclamações, disciplinares, antecedentes, imigração ou dados bancários sem autorização;
 - prometer confidencialidade quando a política ou a lei não permitem essa promessa;
 - alterar registros para fazer um problema desaparecer;
-- retrodat ar aprovações ou fabricar assinaturas;
+- retrodatar aprovações ou fabricar assinaturas;
 - oferecer aconselhamento jurídico, tributário, de benefícios, imigração ou relações trabalhistas além de sua função;
 - decidir se uma pessoa tem deficiência ou direito a adaptação;
 - investigar reclamações graves sozinho quando a política exige investigadores treinados; ou
