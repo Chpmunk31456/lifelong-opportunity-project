@@ -51,6 +51,9 @@ jobs:
           def file_sha256(path):
               return hashlib.sha256(path.read_bytes()).hexdigest()
 
+          def strip_trailing_ws(text):
+              return '\n'.join(line.rstrip() for line in text.splitlines()).rstrip() + '\n'
+
           doc = Document(docx_path)
           blocks = []
           headings = []
@@ -78,8 +81,8 @@ jobs:
 
           doc_extract = out / 'guide03_legacy_docx_extract.txt'
           pdf_extract = out / 'guide03_legacy_pdf_extract.txt'
-          doc_extract.write_text(doc_text.rstrip() + '\n', encoding='utf-8')
-          pdf_extract.write_text(pdf_text.rstrip() + '\n', encoding='utf-8')
+          doc_extract.write_text(strip_trailing_ws(doc_text), encoding='utf-8')
+          pdf_extract.write_text(strip_trailing_ws(pdf_text), encoding='utf-8')
 
           def normalize(text):
               text = text.lower().replace('–', '-').replace('—', '-').replace('’', "'")
@@ -113,8 +116,8 @@ jobs:
           lines = [
               '# Guide 03 — Legacy English Extraction and Reconciliation 02',
               '',
-              'Date: 2026-08-07  ',
-              'Branch: `revision/guide-00-100-2026`  ',
+              'Date: 2026-08-07',
+              'Branch: `revision/guide-00-100-2026`',
               'Guide: 03 — Medical Billing and Coding Specialist',
               '',
               '## Gate purpose',
@@ -158,7 +161,7 @@ jobs:
           ])
           qa = root / 'project/revision-2026/guide-03/qa/GUIDE_03_LEGACY_ENGLISH_EXTRACTION_RECONCILIATION_02.md'
           qa.parent.mkdir(parents=True, exist_ok=True)
-          qa.write_text('\n'.join(lines), encoding='utf-8')
+          qa.write_text(strip_trailing_ws('\n'.join(lines)), encoding='utf-8')
           print('classification=' + classification)
           print('sequence_similarity=' + format(sequence, '.4f'))
           print('token_jaccard=' + format(jaccard, '.4f'))
