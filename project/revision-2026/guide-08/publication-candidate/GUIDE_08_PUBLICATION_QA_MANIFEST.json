@@ -1,0 +1,54 @@
+{
+  "guide": "08",
+  "occupation": "Human Resources Assistant",
+  "status": "PASS",
+  "parity": {
+    "guide": "08",
+    "sections": 19,
+    "urls": 13,
+    "critical_patterns": 19,
+    "status": "PASS"
+  },
+  "publication_source_transform": true,
+  "languages": {
+    "en": {
+      "source": "project/revision-2026/guide-08/source/GUIDE_08_ENGLISH_WORKING_MASTER_v2.md",
+      "docx": "Lifelong_Opportunity_Guide_08_Human_Resources_Assistant_English_v2.0.docx",
+      "pdf": "Lifelong_Opportunity_Guide_08_Human_Resources_Assistant_English_v2.0.pdf",
+      "pdf_pages": 14,
+      "rendered_pages": 14,
+      "pdf_text_chars": 24975,
+      "docx_qa": {
+        "zip_entries": 16,
+        "relationship_parts": 3,
+        "unsafe_parts": 0
+      }
+    },
+    "es-419": {
+      "source": "project/revision-2026/guide-08/source/GUIDE_08_SPANISH_LATAM_WORKING_MASTER_v2.md",
+      "docx": "Lifelong_Opportunity_Guide_08_Human_Resources_Assistant_es-419_v2.0.docx",
+      "pdf": "Lifelong_Opportunity_Guide_08_Human_Resources_Assistant_es-419_v2.0.pdf",
+      "pdf_pages": 16,
+      "rendered_pages": 16,
+      "pdf_text_chars": 28242,
+      "docx_qa": {
+        "zip_entries": 16,
+        "relationship_parts": 3,
+        "unsafe_parts": 0
+      }
+    },
+    "pt-BR": {
+      "source": "project/revision-2026/guide-08/source/GUIDE_08_PORTUGUESE_BR_WORKING_MASTER_v2.md",
+      "docx": "Lifelong_Opportunity_Guide_08_Human_Resources_Assistant_pt-BR_v2.0.docx",
+      "pdf": "Lifelong_Opportunity_Guide_08_Human_Resources_Assistant_pt-BR_v2.0.pdf",
+      "pdf_pages": 16,
+      "rendered_pages": 16,
+      "pdf_text_chars": 27924,
+      "docx_qa": {
+        "zip_entries": 16,
+        "relationship_parts": 3,
+        "unsafe_parts": 0
+      }
+    }
+  }
+}

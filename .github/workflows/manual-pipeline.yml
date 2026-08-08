@@ -1,0 +1,216 @@
+name: Generalized manual pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      guide_number:
+        description: 'Guide number (08-100)'
+        required: true
+        default: '08'
+        type: string
+      stage:
+        description: 'Deterministic stage to run'
+        required: true
+        default: 'validate-config'
+        type: choice
+        options:
+          - validate-config
+          - parity
+          - build
+          - release-audit
+          - status
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - .github/workflows/manual-pipeline.yml
+      - scripts/manual_pipeline.py
+      - project/pipeline/**
+
+permissions:
+  contents: write
+
+concurrency:
+  group: manual-pipeline-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  run:
+    if: github.repository == 'Chpmunk31456/lifelong-opportunity-project'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Check out controlled revision branch
+        uses: actions/checkout@v4
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 2
+
+      - name: Resolve guide and stage
+        shell: bash
+        run: |
+          GUIDE='${{ inputs.guide_number }}'
+          STAGE='${{ inputs.stage }}'
+
+          if [[ '${{ github.event_name }}' == 'push' ]]; then
+            REQUEST=$(git diff --name-only HEAD^ HEAD -- 'project/pipeline/requests/GUIDE_*.json' | tail -n 1 || true)
+            if [[ -n "$REQUEST" ]]; then
+              GUIDE=$(python -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8"))["guide"])' "$REQUEST")
+              STAGE=$(python -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8"))["stage"])' "$REQUEST")
+              echo "Resolved pipeline request from $REQUEST"
+            else
+              GUIDE='08'
+              STAGE='validate-config'
+            fi
+          fi
+
+          echo "PIPELINE_GUIDE=$GUIDE" >> "$GITHUB_ENV"
+          echo "PIPELINE_STAGE=$STAGE" >> "$GITHUB_ENV"
+
+      - name: Validate guide range and stage
+        shell: bash
+        run: |
+          GUIDE="$PIPELINE_GUIDE"
+          STAGE="$PIPELINE_STAGE"
+          if ! [[ "$GUIDE" =~ ^[0-9]{2,3}$ ]]; then
+            echo "Guide number must be numeric (08-100)."
+            exit 1
+          fi
+          N=$((10#$GUIDE))
+          if (( N < 8 || N > 100 )); then
+            echo "Generalized pipeline is authorized for Guides 08-100."
+            exit 1
+          fi
+          case "$STAGE" in
+            validate-config|parity|build|release-audit|status) ;;
+            *) echo "Unsupported pipeline stage: $STAGE"; exit 1 ;;
+          esac
+
+      - name: Install publication dependencies
+        if: env.PIPELINE_STAGE == 'build' || env.PIPELINE_STAGE == 'release-audit'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends pandoc libreoffice-writer poppler-utils
+
+      - name: Run generalized controller
+        shell: bash
+        run: |
+          GUIDE="$PIPELINE_GUIDE"
+          STAGE="$PIPELINE_STAGE"
+          QA_DIR="project/revision-2026/guide-${GUIDE}/qa"
+          mkdir -p "$QA_DIR"
+
+          if [[ "$STAGE" == 'parity' ]]; then
+            {
+              echo "# Guide ${GUIDE} — Generalized Trilingual Parity QA"
+              echo
+              echo "Generated: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+              echo "Source commit: $GITHUB_SHA"
+              echo
+              echo '```text'
+              python scripts/manual_pipeline.py parity --guide "$GUIDE"
+              echo '```'
+              echo
+              echo '**Gate result: PASS — deterministic trilingual parity.**'
+              echo
+              echo 'This automated PASS verifies configured structure, URL parity, UTF-8 integrity and critical fact patterns. It does not claim independent human or professional translation certification.'
+            } | tee "$QA_DIR/GUIDE_${GUIDE}_TRILINGUAL_PARITY_QA.md"
+          elif [[ "$STAGE" == 'release-audit' ]]; then
+            {
+              echo "# Guide ${GUIDE} — Generalized Release Audit"
+              echo
+              echo "Generated: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+              echo "Source commit: $GITHUB_SHA"
+              echo
+              echo '```text'
+              python scripts/manual_pipeline.py release-audit --guide "$GUIDE"
+              echo '```'
+              echo
+              echo '**Gate result: PASS — generalized deterministic release audit.**'
+              echo
+              echo 'This gate reconciles configured upstream evidence, publication artifacts, checksums and visual-review evidence. It does not claim independent human, legal, accessibility or professional translation certification.'
+            } | tee "$QA_DIR/GUIDE_${GUIDE}_RELEASE_AUDIT.md"
+          else
+            python scripts/manual_pipeline.py "$STAGE" --guide "$GUIDE"
+          fi
+
+      - name: Commit deterministic gate evidence
+        if: env.PIPELINE_STAGE == 'parity' || env.PIPELINE_STAGE == 'release-audit'
+        shell: bash
+        run: |
+          GUIDE="$PIPELINE_GUIDE"
+          STAGE="$PIPELINE_STAGE"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [[ "$STAGE" == 'parity' ]]; then
+            FILE="project/revision-2026/guide-${GUIDE}/qa/GUIDE_${GUIDE}_TRILINGUAL_PARITY_QA.md"
+          else
+            FILE="project/revision-2026/guide-${GUIDE}/qa/GUIDE_${GUIDE}_RELEASE_AUDIT.md"
+          fi
+          git add "$FILE"
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'Deterministic gate evidence already current.'
+            exit 0
+          fi
+          git commit -m "qa(guide-${GUIDE}): record generalized ${STAGE} PASS"
+          git fetch origin revision/guide-00-100-2026
+          git rebase origin/revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026
+
+      - name: Verify fail-closed readiness behavior
+        if: github.event_name == 'push' && env.PIPELINE_STAGE == 'validate-config' && env.PIPELINE_GUIDE == '08'
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, subprocess, sys
+          from pathlib import Path
+          status = json.loads(Path('project/revision-2026/guide-08/GUIDE_08_HELPER_STATUS.json').read_text(encoding='utf-8'))
+          prerequisite_names = ['research', 'english_editorial', 'evidence_traceability', 'english_source_freeze']
+          prereqs_pass = all(status['stages'].get(name, {}).get('status') == 'PASS' for name in prerequisite_names)
+          localization_files = [
+              Path('project/revision-2026/guide-08/source/GUIDE_08_SPANISH_LATAM_WORKING_MASTER_v2.md'),
+              Path('project/revision-2026/guide-08/source/GUIDE_08_PORTUGUESE_BR_WORKING_MASTER_v2.md'),
+          ]
+          if prereqs_pass and all(path.exists() for path in localization_files):
+              print('Guide 08 is ready for parity; negative smoke test no longer applies.')
+              raise SystemExit(0)
+          proc = subprocess.run([sys.executable, 'scripts/manual_pipeline.py', 'parity', '--guide', '08'])
+          if proc.returncode == 0:
+              raise SystemExit('FAIL: parity unexpectedly succeeded before Guide 08 prerequisites/localizations were ready')
+          print('PASS: pipeline failed closed before premature parity, as expected.')
+          PY
+
+      - name: Upload publication evidence
+        if: env.PIPELINE_STAGE == 'build'
+        uses: actions/upload-artifact@v4
+        with:
+          name: guide-${{ env.PIPELINE_GUIDE }}-publication-evidence
+          path: project/revision-2026/guide-${{ env.PIPELINE_GUIDE }}/publication-candidate
+          if-no-files-found: error
+
+      - name: Commit deterministic build outputs
+        if: env.PIPELINE_STAGE == 'build'
+        run: |
+          GUIDE="$PIPELINE_GUIDE"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "project/revision-2026/guide-${GUIDE}/publication-candidate"
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'Publication outputs already current.'
+            exit 0
+          fi
+          git commit -m "build(guide-${GUIDE}): generalized publication candidates"
+          git fetch origin revision/guide-00-100-2026
+          git rebase origin/revision/guide-00-100-2026
+          python scripts/manual_pipeline.py parity --guide "$GUIDE"
+          python scripts/manual_pipeline.py build --guide "$GUIDE"
+          git add "project/revision-2026/guide-${GUIDE}/publication-candidate"
+          git commit --amend --no-edit || true
+          git push origin HEAD:revision/guide-00-100-2026
+
+      - name: Safety note
+        run: |
+          echo 'This workflow never merges PR #17 and never publishes externally.'
+          echo 'Subjective research/editorial/localization PASS states must be supplied by explicit evidence.'

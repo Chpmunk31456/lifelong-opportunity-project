@@ -30,6 +30,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y poppler-utils
 
+      - name: Exclude controlled publication candidates from published-package inventory
+        run: |
+          # The repository-wide preflight audits the 303 published DOCX/PDF pairs.
+          # Controlled revision candidates have their own guide-specific QA and must
+          # not be double-counted as published editions in this check.
+          find . -type d -name publication-candidate -prune -exec rm -rf {} +
+
       - name: Run publication package preflight
         run: python scripts/audit_publication_packages.py
 

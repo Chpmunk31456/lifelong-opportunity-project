@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 04
+# Lifelong Opportunity Guide 04
 
 ## Project Coordinator — English Edition
 
@@ -17,7 +17,7 @@ A free, accessible career and education guide created and directed by **Alberto 
 - **Version:** 1.0
 - **Publication month:** July 2026
 - **Availability:** DOCX and PDF present
-- **Review status:** Technically reviewed publication edition; exact source equivalence and human linguistic review should not be assumed unless separately documented
+- **Review status:** Legacy publication edition under controlled 2026 revision; exact source equivalence, current factual validity, accessibility conformance, and independent human linguistic review must not be assumed unless separately documented
 
 ## Scope
 

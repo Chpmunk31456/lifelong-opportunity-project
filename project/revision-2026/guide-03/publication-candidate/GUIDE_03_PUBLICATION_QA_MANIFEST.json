@@ -1,0 +1,59 @@
+{
+  "guide": "03",
+  "occupation": "Medical Billing and Coding Specialist",
+  "version": "2.0",
+  "status": "publication candidate; automated QA only",
+  "independent_human_certification": false,
+  "professional_translation_certification": false,
+  "accessibility_certification": false,
+  "files": [
+    {
+      "locale": "English",
+      "language_code": "en-US",
+      "path": "project/revision-2026/guide-03/publication-candidate/Lifelong_Opportunity_Guide_03_Medical_Billing_and_Coding_Specialist_English_v2.0.docx",
+      "bytes": 27210,
+      "sha256": "53d20b7853125f4c8d2b5ab8668a1b11d6dc1dae1edab311ce6963138c2d6ea1",
+      "pages": null
+    },
+    {
+      "locale": "English",
+      "language_code": "en-US",
+      "path": "project/revision-2026/guide-03/publication-candidate/pdf/Lifelong_Opportunity_Guide_03_Medical_Billing_and_Coding_Specialist_English_v2.0.pdf",
+      "bytes": 320954,
+      "sha256": "fb339010f9d3d9197701b8e0c647ac6c36246c4f4b8bff93fe8554b98c070c1d",
+      "pages": 19
+    },
+    {
+      "locale": "es-419",
+      "language_code": "es-419",
+      "path": "project/revision-2026/guide-03/publication-candidate/Lifelong_Opportunity_Guide_03_Medical_Billing_and_Coding_Specialist_es-419_v2.0.docx",
+      "bytes": 28805,
+      "sha256": "0947fa1444b1f82e76d9a5910089ab1b46355e5181d253435300b09de81a07f9",
+      "pages": null
+    },
+    {
+      "locale": "es-419",
+      "language_code": "es-419",
+      "path": "project/revision-2026/guide-03/publication-candidate/pdf/Lifelong_Opportunity_Guide_03_Medical_Billing_and_Coding_Specialist_es-419_v2.0.pdf",
+      "bytes": 326795,
+      "sha256": "ee7344648be544dbb24fd469f63b5cdf63818df98ecc21f9bf2cdd2baba81aa3",
+      "pages": 21
+    },
+    {
+      "locale": "pt-BR",
+      "language_code": "pt-BR",
+      "path": "project/revision-2026/guide-03/publication-candidate/Lifelong_Opportunity_Guide_03_Medical_Billing_and_Coding_Specialist_pt-BR_v2.0.docx",
+      "bytes": 28844,
+      "sha256": "0b4287f3fb29beb10cb8ef27155cb38c92133f8fb6a460a3dbef1415df4d24b6",
+      "pages": null
+    },
+    {
+      "locale": "pt-BR",
+      "language_code": "pt-BR",
+      "path": "project/revision-2026/guide-03/publication-candidate/pdf/Lifelong_Opportunity_Guide_03_Medical_Billing_and_Coding_Specialist_pt-BR_v2.0.pdf",
+      "bytes": 328127,
+      "sha256": "116a9b42f3c54aee671e1d28c6f2dd3109f2232ed7fc69fd405cdfa530af69a0",
+      "pages": 21
+    }
+  ]
+}

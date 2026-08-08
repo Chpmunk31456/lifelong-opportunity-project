@@ -1,0 +1,174 @@
+name: Guide 01 publication build and QA
+
+on:
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - .github/workflows/guide01-publication-build.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide01-publication-build
+  cancel-in-progress: false
+
+jobs:
+  build-and-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out controlled revision branch
+        uses: actions/checkout@v4
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Install document and PDF tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends pandoc libreoffice-writer poppler-utils python3-lxml
+
+      - name: Build trilingual DOCX and PDF candidates
+        shell: python
+        run: |
+          from pathlib import Path
+          import subprocess
+
+          root = Path('project/revision-2026/guide-01')
+          source = root / 'working-masters'
+          out = root / 'publication-candidate'
+          pdf_dir = out / 'pdf'
+          out.mkdir(parents=True, exist_ok=True)
+          pdf_dir.mkdir(parents=True, exist_ok=True)
+
+          editions = {
+              'English': source / 'GUIDE_01_COMMUNITY_HEALTH_WORKER_ENGLISH_WORKING_MASTER.md',
+              'es-419': source / 'GUIDE_01_TRABAJADOR_COMUNITARIO_DE_SALUD_ES419_WORKING_MASTER.md',
+              'pt-BR': source / 'GUIDE_01_AGENTE_COMUNITARIO_DE_SAUDE_PTBR_WORKING_MASTER.md',
+          }
+          stems = {
+              'English': 'Guide_01_Community_Health_Worker_English_v1.1',
+              'es-419': 'Guide_01_Trabajador_Comunitario_de_Salud_es-419_v1.1',
+              'pt-BR': 'Guide_01_Agente_Comunitario_de_Saude_pt-BR_v1.1',
+          }
+
+          for locale, md in editions.items():
+              if not md.is_file():
+                  raise SystemExit(f'Missing source master: {md}')
+              raw = md.read_bytes()
+              if raw.startswith(b'\xef\xbb\xbf'):
+                  raise SystemExit(f'Unexpected UTF-8 BOM: {md}')
+              text = raw.decode('utf-8')
+              if '\ufffd' in text:
+                  raise SystemExit(f'Replacement character in source: {md}')
+              if 'version 1.1-draft' not in text and 'versión 1.1-borrador' not in text and 'versão 1.1-rascunho' not in text:
+                  raise SystemExit(f'Expected controlled version marker missing: {md}')
+              docx = out / f'{stems[locale]}.docx'
+              subprocess.run(['pandoc', str(md), '--from=gfm', '--to=docx', '--standalone', '--output', str(docx)], check=True)
+              if docx.stat().st_size < 12000:
+                  raise SystemExit(f'DOCX unexpectedly small: {docx}')
+
+          subprocess.run(['libreoffice', '--headless', '--convert-to', 'pdf', '--outdir', str(pdf_dir), *[str(out / f'{stems[x]}.docx') for x in editions]], check=True)
+          if len(list(pdf_dir.glob('*.pdf'))) != 3:
+              raise SystemExit('Expected exactly three PDFs')
+
+      - name: Run structural, hyperlink, searchable-PDF, metadata, and checksum QA
+        shell: python
+        run: |
+          from pathlib import Path
+          from zipfile import ZipFile
+          import hashlib, json, re, subprocess
+          from lxml import etree
+
+          root = Path('project/revision-2026/guide-01/publication-candidate')
+          pdf_dir = root / 'pdf'
+          expected = {
+              'English': ('Guide_01_Community_Health_Worker_English_v1.1', 'Community Health Worker'),
+              'es-419': ('Guide_01_Trabajador_Comunitario_de_Salud_es-419_v1.1', 'Trabajador comunitario de salud'),
+              'pt-BR': ('Guide_01_Agente_Comunitario_de_Saude_pt-BR_v1.1', 'Agente comunitário de saúde'),
+          }
+          report = {
+              'guide': '01',
+              'version': '1.1-draft',
+              'status': 'publication candidate; automated QA only',
+              'independent_human_certification': False,
+              'professional_translation_certification': False,
+              'accessibility_certification': False,
+              'files': [],
+          }
+
+          for locale, (stem, title) in expected.items():
+              docx = root / f'{stem}.docx'
+              pdf = pdf_dir / f'{stem}.pdf'
+              for p in (docx, pdf):
+                  if not p.is_file() or p.stat().st_size < 10000:
+                      raise SystemExit(f'Missing or undersized artifact: {p}')
+
+              with ZipFile(docx) as zf:
+                  names = set(zf.namelist())
+                  required = {'[Content_Types].xml', 'word/document.xml', 'word/_rels/document.xml.rels', 'docProps/core.xml'}
+                  missing = required - names
+                  if missing:
+                      raise SystemExit(f'{docx}: missing OOXML parts {sorted(missing)}')
+                  etree.fromstring(zf.read('word/document.xml'))
+                  etree.fromstring(zf.read('word/_rels/document.xml.rels'))
+                  rels = zf.read('word/_rels/document.xml.rels').decode('utf-8')
+                  if 'http' not in rels:
+                      raise SystemExit(f'{docx}: no embedded hyperlinks detected')
+
+              info = subprocess.run(['pdfinfo', str(pdf)], check=True, text=True, capture_output=True).stdout
+              m = re.search(r'^Pages:\s+(\d+)$', info, re.MULTILINE)
+              pages = int(m.group(1)) if m else 0
+              if pages < 5:
+                  raise SystemExit(f'{pdf}: unexpectedly low page count {pages}')
+              txt = pdf.with_suffix('.txt')
+              subprocess.run(['pdftotext', '-layout', str(pdf), str(txt)], check=True)
+              extracted = txt.read_text(encoding='utf-8', errors='replace')
+              txt.unlink()
+              if len(extracted.strip()) < 7000:
+                  raise SystemExit(f'{pdf}: insufficient searchable text')
+              if '\ufffd' in extracted:
+                  raise SystemExit(f'{pdf}: encoding replacement character detected')
+              title_tokens = [t.casefold() for t in re.findall(r'\w+', title, flags=re.UNICODE) if len(t) > 3]
+              folded = extracted.casefold()
+              if sum(t in folded for t in title_tokens) < max(2, len(title_tokens)-1):
+                  raise SystemExit(f'{pdf}: localized title not detected')
+
+              for artifact in (docx, pdf):
+                  report['files'].append({
+                      'locale': locale,
+                      'path': str(artifact),
+                      'bytes': artifact.stat().st_size,
+                      'pages': pages if artifact.suffix == '.pdf' else None,
+                      'sha256': hashlib.sha256(artifact.read_bytes()).hexdigest(),
+                  })
+
+          (root / 'GUIDE_01_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          (root / 'SHA256SUMS.txt').write_text('\n'.join(f"{x['sha256']}  {Path(x['path']).relative_to(root)}" for x in report['files']) + '\n', encoding='utf-8')
+
+      - name: Render first pages for inspection
+        run: |
+          rm -rf project/revision-2026/guide-01/publication-candidate/rendered
+          mkdir -p project/revision-2026/guide-01/publication-candidate/rendered
+          for pdf in project/revision-2026/guide-01/publication-candidate/pdf/*.pdf; do
+            base="$(basename "$pdf" .pdf)"
+            pdftoppm -f 1 -singlefile -png -r 130 "$pdf" "project/revision-2026/guide-01/publication-candidate/rendered/${base}_page_001"
+          done
+          test "$(find project/revision-2026/guide-01/publication-candidate/rendered -name '*.png' | wc -l)" -eq 3
+
+      - name: Commit completed publication candidate batch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add project/revision-2026/guide-01/publication-candidate
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'Guide 01 publication candidates already match generated outputs.'
+            exit 0
+          fi
+          git commit -m "build(guide-01): add trilingual publication candidates and QA manifest"
+          git pull --rebase origin revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026
