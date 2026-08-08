@@ -539,12 +539,12 @@ https://www.serviciodeempleo.gov.co/
 
 - Guide: 07
 - Occupation: Customer Service Specialist
-- Working-master version: 2.0
+- Publication-candidate version: 2.0
 - Review cycle: 2026
 - English source status: frozen for the controlled 2026 publication candidate
 - Publication status: controlled publication candidate; release remains governed by repository QA records
 
-### Final verification before source freeze
+### Final verification checklist
 
 Confirm:
 

@@ -539,13 +539,13 @@ https://www.serviciodeempleo.gov.co/
 
 - Guia: 07
 - Ocupação: Especialista em Atendimento ao Cliente
-- Versão do mestre de trabalho: 2.0
+- Versão da candidata de publicação: 2.0
 - Ciclo de revisão: 2026
 - Status da fonte em inglês: congelada para localização controlada
 - Status desta tradução: fonte pt-BR controlada, tradução assistida por IA e revisada editorialmente no processo do projeto; não certificada profissionalmente
 - Status de publicação: candidata de publicação controlada; o lançamento continua sujeito aos registros de QA do repositório
 
-### Verificação final antes de aprovar a localização
+### Lista final de verificação
 
 Confirme:
 
