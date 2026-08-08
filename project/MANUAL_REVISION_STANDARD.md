@@ -5,6 +5,10 @@
 
 This standard applies before writing, revising, translating, or publishing any guide in the collection.
 
+## Helper framework
+
+The controlled helper role contracts in `project/helpers/` operationalize this standard. They do not replace the requirements below. When a helper is used, its execution must leave guide-specific auditable evidence and may not convert an unresolved blocker into PASS.
+
 ## 1. Required workflow for every guide
 
 1. Review the current English source, guide README, metadata, and existing PDF.
