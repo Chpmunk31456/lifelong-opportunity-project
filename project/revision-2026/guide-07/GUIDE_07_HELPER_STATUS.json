@@ -29,16 +29,24 @@
       ]
     },
     "spanish_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-07/source/GUIDE_07_SPANISH_LATAM_WORKING_MASTER_v2.md",
+        "project/revision-2026/guide-07/qa/GUIDE_07_TRILINGUAL_PARITY_QA_09.md"
+      ]
     },
     "portuguese_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-07/source/GUIDE_07_PORTUGUESE_BR_WORKING_MASTER_v2.md",
+        "project/revision-2026/guide-07/qa/GUIDE_07_TRILINGUAL_PARITY_QA_09.md"
+      ]
     },
     "technical_qa": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-07/qa/GUIDE_07_TRILINGUAL_PARITY_QA_09.md"
+      ]
     },
     "publication": {
       "status": "PENDING",
