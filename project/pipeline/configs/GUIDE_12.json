@@ -1,0 +1,57 @@
+{
+  "guide": "12",
+  "occupation": "Compliance Coordinator and Compliance Assistant",
+  "branch": "revision/guide-00-100-2026",
+  "source": {
+    "en": "project/revision-2026/guide-12/source/GUIDE_12_ENGLISH_WORKING_MASTER_v2.md",
+    "es-419": "project/revision-2026/guide-12/source/GUIDE_12_SPANISH_LATAM_WORKING_MASTER_v2.md",
+    "pt-BR": "project/revision-2026/guide-12/source/GUIDE_12_PORTUGUESE_BR_WORKING_MASTER_v2.md"
+  },
+  "status_manifest": "project/revision-2026/guide-12/GUIDE_12_HELPER_STATUS.json",
+  "publication_dir": "project/revision-2026/guide-12/publication-candidate",
+  "visual_review_evidence": "project/revision-2026/guide-12/qa/GUIDE_12_FULL_PAGE_VISUAL_REVIEW.md",
+  "expected_sections": {"first": 1, "last": 19},
+  "output_stem": "Lifelong_Opportunity_Guide_12_Compliance_Coordinator_and_Compliance_Assistant",
+  "critical_patterns": [
+    "78[.,\\s]420",
+    "3\\s?%",
+    "33[.,\\s]300",
+    "11201",
+    "C\\$\\s?27[.,]00",
+    "C\\$\\s?44[.,]10",
+    "C\\$\\s?69[.,]71",
+    "11109",
+    "C\\$\\s?24[.,]04",
+    "C\\$\\s?38[.,]46",
+    "C\\$\\s?66[.,]67",
+    "(?:US\\$|\\$)\\s?5[.,\\s]250",
+    "2025",
+    "2026"
+  ],
+  "required_urls": [
+    "https://www.bls.gov/ooh/business-and-financial/compliance-officers.htm",
+    "https://www.jobbank.gc.ca/marketreport/wages-occupation/27323/ca",
+    "https://www.jobbank.gc.ca/marketreport/wages-occupation/296408/ca",
+    "https://studentaid.gov/articles/fafsa-student-steps/",
+    "https://www.dol.gov/general/topic/training/adulttraining",
+    "https://www.irs.gov/newsroom/irs-updates-frequently-asked-questions-about-section-127-educational-assistance-programs",
+    "https://www.apprenticeship.gov/career-seekers",
+    "https://www.ed.gov/accreditation",
+    "https://www.eeoc.gov/disability-discrimination"
+  ],
+  "publication_replacements": {
+    "en": [
+      {"old": "**Controlled 2026 English working master**", "new": "**Controlled 2026 English publication candidate**", "count": 1},
+      {"old": "Version 2.0 working master • August 2026", "new": "Version 2.0 • August 2026", "count": 1},
+      {"old": "> **Controlled status:** This is the English working master for the 2026 revision. It is not yet a publication candidate. It must pass editorial, terminology, claim-to-source traceability, link, accessibility-oriented readability, encoding, translation-parity, DOCX, PDF, metadata, rendering, and publication QA before release.", "new": "> **Controlled status:** This is the controlled English publication candidate for the 2026 revision. It has passed the documented editorial, terminology, claim-to-source traceability, localization-parity, document, rendering, and publication QA gates recorded for this candidate. Release remains subject to the final controlled release audit.", "count": 1}
+    ],
+    "es-419": [
+      {"old": "**Maestro de trabajo controlado en español latinoamericano 2026**", "new": "**Candidato de publicación controlado en español latinoamericano 2026**", "count": 1},
+      {"old": "Versión 2.0, maestro de trabajo • agosto de 2026", "new": "Versión 2.0 • agosto de 2026", "count": 1}
+    ],
+    "pt-BR": [
+      {"old": "**Mestre de trabalho controlado em português brasileiro 2026**", "new": "**Candidato de publicação controlado em português brasileiro 2026**", "count": 1},
+      {"old": "Versão 2.0, mestre de trabalho • agosto de 2026", "new": "Versão 2.0 • agosto de 2026", "count": 1}
+    ]
+  }
+}
