@@ -30,12 +30,8 @@ on:
 permissions:
   contents: write
 
-env:
-  PIPELINE_GUIDE: ${{ inputs.guide_number || '08' }}
-  PIPELINE_STAGE: ${{ inputs.stage || 'validate-config' }}
-
 concurrency:
-  group: manual-pipeline-${{ inputs.guide_number || '08' }}-${{ inputs.stage || 'validate-config' }}
+  group: manual-pipeline-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -48,12 +44,34 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: revision/guide-00-100-2026
-          fetch-depth: 0
+          fetch-depth: 2
 
-      - name: Validate guide range
+      - name: Resolve guide and stage
+        shell: bash
+        run: |
+          GUIDE='${{ inputs.guide_number }}'
+          STAGE='${{ inputs.stage }}'
+
+          if [[ '${{ github.event_name }}' == 'push' ]]; then
+            REQUEST=$(git diff --name-only HEAD^ HEAD -- 'project/pipeline/requests/GUIDE_*.json' | tail -n 1 || true)
+            if [[ -n "$REQUEST" ]]; then
+              GUIDE=$(python -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8"))["guide"])' "$REQUEST")
+              STAGE=$(python -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8"))["stage"])' "$REQUEST")
+              echo "Resolved pipeline request from $REQUEST"
+            else
+              GUIDE='08'
+              STAGE='validate-config'
+            fi
+          fi
+
+          echo "PIPELINE_GUIDE=$GUIDE" >> "$GITHUB_ENV"
+          echo "PIPELINE_STAGE=$STAGE" >> "$GITHUB_ENV"
+
+      - name: Validate guide range and stage
         shell: bash
         run: |
           GUIDE="$PIPELINE_GUIDE"
+          STAGE="$PIPELINE_STAGE"
           if ! [[ "$GUIDE" =~ ^[0-9]{2,3}$ ]]; then
             echo "Guide number must be numeric (08-100)."
             exit 1
@@ -63,6 +81,10 @@ jobs:
             echo "Generalized pipeline is authorized for Guides 08-100."
             exit 1
           fi
+          case "$STAGE" in
+            validate-config|parity|build|release-audit|status) ;;
+            *) echo "Unsupported pipeline stage: $STAGE"; exit 1 ;;
+          esac
 
       - name: Install publication dependencies
         if: env.PIPELINE_STAGE == 'build' || env.PIPELINE_STAGE == 'release-audit'
@@ -74,33 +96,26 @@ jobs:
         run: python scripts/manual_pipeline.py "$PIPELINE_STAGE" --guide "$PIPELINE_GUIDE"
 
       - name: Verify fail-closed readiness behavior
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' && env.PIPELINE_STAGE == 'validate-config' && env.PIPELINE_GUIDE == '08'
+        shell: bash
         run: |
           python - <<'PY'
-          import json
-          import subprocess
+          import json, subprocess, sys
           from pathlib import Path
-
-          status_path = Path('project/revision-2026/guide-08/GUIDE_08_HELPER_STATUS.json')
-          status = json.loads(status_path.read_text(encoding='utf-8'))
-          required = ('research', 'english_editorial', 'evidence_traceability', 'english_source_freeze')
-          localization_paths = (
+          status = json.loads(Path('project/revision-2026/guide-08/GUIDE_08_HELPER_STATUS.json').read_text(encoding='utf-8'))
+          prerequisite_names = ['research', 'english_editorial', 'evidence_traceability', 'english_source_freeze']
+          prereqs_pass = all(status['stages'].get(name, {}).get('status') == 'PASS' for name in prerequisite_names)
+          localization_files = [
               Path('project/revision-2026/guide-08/source/GUIDE_08_SPANISH_LATAM_WORKING_MASTER_v2.md'),
               Path('project/revision-2026/guide-08/source/GUIDE_08_PORTUGUESE_BR_WORKING_MASTER_v2.md'),
-          )
-          ready = all(status['stages'][name]['status'] == 'PASS' for name in required) and all(p.exists() for p in localization_paths)
-          if ready:
-              print('Guide 08 prerequisites now permit parity; negative fail-closed smoke test no longer applies.')
-          else:
-              proc = subprocess.run(
-                  ['python', 'scripts/manual_pipeline.py', 'parity', '--guide', '08'],
-                  text=True, capture_output=True
-              )
-              print(proc.stdout)
-              print(proc.stderr)
-              if proc.returncode == 0:
-                  raise SystemExit('FAIL: parity unexpectedly passed before Guide 08 prerequisites were complete')
-              print('PASS: generalized pipeline failed closed before parity prerequisites were complete.')
+          ]
+          if prereqs_pass and all(path.exists() for path in localization_files):
+              print('Guide 08 is ready for parity; negative smoke test no longer applies.')
+              raise SystemExit(0)
+          proc = subprocess.run([sys.executable, 'scripts/manual_pipeline.py', 'parity', '--guide', '08'])
+          if proc.returncode == 0:
+              raise SystemExit('FAIL: parity unexpectedly succeeded before Guide 08 prerequisites/localizations were ready')
+          print('PASS: pipeline failed closed before premature parity, as expected.')
           PY
 
       - name: Upload publication evidence
