@@ -1,6 +1,6 @@
 {
   "guide": "09",
-  "stage": "build",
-  "requested": "2026-08-08T15:39-05:00",
-  "purpose": "Rerun generalized publication build after lifecycle-status publication transform fix."
+  "stage": "release-audit",
+  "requested": "2026-08-08T15:42-05:00",
+  "purpose": "Run final generalized release audit after publication and full-page visual-review PASS."
 }
