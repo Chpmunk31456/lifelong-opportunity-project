@@ -51,7 +51,8 @@ Dependendo do empregador, as funções podem incluir:
 - monitorar caixas de entrada, filas de casos, reclamações, registros de canais de ética ou canais de escalonamento;
 - preparar painéis e relatórios de status;
 - apoiar due diligence ou integração de terceiros;
-- documentar reuniões e ações; e
+- documentar reuniões e ações;
+- manter arquivos confidenciais de investigação ou revisão quando autorizado; e
 - escalar possíveis violações ou falhas de controle não resolvidas.
 
 O benchmark amplo mais próximo do BLS dos Estados Unidos é **Compliance Officers**. Não é um mapeamento um-para-um para cada cargo de assistente ou coordenador.
@@ -84,7 +85,7 @@ Pergunte a si mesmo:
 - Consigo manter independência quando um gestor me pressiona para marcar algo como concluído?
 - Consigo usar planilhas, sistemas de workflow, repositórios documentais e ferramentas de relatório com precisão?
 
-O trabalho costuma ser em escritório, híbrido ou remoto, mas algumas funções exigem visitas, auditorias, entrevistas, inspeções, viagens ou atuação em instalações reguladas. Verifique funções essenciais e opções razoáveis de acomodação na jurisdição aplicável.
+O trabalho costuma ser em escritório, híbrido ou remoto, mas algumas funções exigem visitas, auditorias, entrevistas, inspeções, viagens ou atuação em instalações reguladas. As necessidades de acessibilidade podem envolver tempo de tela, carga de leitura, reuniões, exigências de audição ou fala, viagens, acesso físico, condições sensoriais ou rigidez de horário. Verifique funções essenciais e opções razoáveis de acomodação na jurisdição aplicável.
 
 ## 5. Ética, privacidade, integridade da evidência e escalonamento
 
@@ -97,7 +98,7 @@ Nunca:
 - retalie ou exponha um denunciante contra política ou lei;
 - forneça conclusões jurídicas além da sua autoridade;
 - use serviço de IA não aprovado para casos confidenciais, dados regulados ou evidências;
-- permita que a IA tome decisões finais disciplinares, jurídicas, regulatórias, de sanções ou segurança; ou
+- permita que a IA tome decisões finais disciplinares, jurídicas, regulatórias, de fraude, sanções ou segurança; ou
 - alegue possuir certificação, licença, autorização ou aprovação que não possui.
 
 Escale suspeitas de fraude, suborno, retaliação, risco de segurança, violação de privacidade, sanções, conduta criminosa, falha material de controle, adulteração de evidências ou assunto sensível a regulador pelo canal autorizado.
@@ -293,7 +294,7 @@ Pause ou reconsidere quando:
 - a função esperar aconselhamento jurídico ou regulatório independente além das suas qualificações;
 - o empregador esperar manipulação de evidências, exceções ocultas, retaliação ou certificação falsa;
 - um fornecedor prometer emprego ou salário garantido;
-- custos, renovações, reembolsos ou termos de devolução do empregador não estiverem claros;
+- custos totais, renovações, regras de reembolso ou condições para devolver ao empregador o valor da formação financiada por ele não estiverem claros;
 - requisitos de viagem, jornada, ambiente sensorial, segurança ou acesso ao local não forem viáveis e não houver acomodação razoável; ou
 - o domínio exigir licença, autorização, experiência técnica ou autoridade regulada que você ainda não possui.
 
