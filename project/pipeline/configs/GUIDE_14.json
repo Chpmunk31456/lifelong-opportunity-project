@@ -1,0 +1,74 @@
+{
+  "guide": "14",
+  "occupation": "Patient Services Representative and Medical Office Coordinator",
+  "branch": "revision/guide-00-100-2026",
+  "source": {
+    "en": "project/revision-2026/guide-14/source/GUIDE_14_ENGLISH_WORKING_MASTER_v2.md",
+    "es-419": "project/revision-2026/guide-14/source/GUIDE_14_SPANISH_LATAM_WORKING_MASTER_v2.md",
+    "pt-BR": "project/revision-2026/guide-14/source/GUIDE_14_PORTUGUESE_BR_WORKING_MASTER_v2.md"
+  },
+  "status_manifest": "project/revision-2026/guide-14/GUIDE_14_HELPER_STATUS.json",
+  "publication_dir": "project/revision-2026/guide-14/publication-candidate",
+  "visual_review_evidence": "project/revision-2026/guide-14/qa/GUIDE_14_FULL_PAGE_VISUAL_REVIEW.md",
+  "expected_sections": {"first": 1, "last": 19},
+  "output_stem": "Lifelong_Opportunity_Guide_14_Patient_Services_Representative_and_Medical_Office_Coordinator",
+  "critical_patterns": [
+    "43-6013",
+    "961[.,\\s]610",
+    "22[.,]50",
+    "46[.,\\s]800",
+    "22[.,]08",
+    "850[.,\\s]000",
+    "885[.,\\s]300",
+    "4\\s?%",
+    "35[.,\\s]300",
+    "44[.,\\s]640",
+    "41[.,\\s]073",
+    "19[.,]75",
+    "35[.,\\s]000",
+    "44[.,\\s]500",
+    "50[.,\\s]000",
+    "13112",
+    "C\\$\\s?18[.,]92",
+    "C\\$\\s?25[.,]00",
+    "C\\$\\s?32[.,]00",
+    "2[.,\\s]640",
+    "16\\+",
+    "(?:US\\$|\\$)\\s?5[.,\\s]250",
+    "2025",
+    "2026"
+  ],
+  "required_urls": [
+    "https://www.bls.gov/news.release/ocwage.t01.htm",
+    "https://www.bls.gov/ooh/office-and-administrative-support/secretaries-and-administrative-assistants.htm",
+    "https://www.ziprecruiter.com/Salaries/Patient-Services-Representative-Salary",
+    "https://www.jobbank.gc.ca/wagereport/occupation/12598",
+    "https://betowa.sena.edu.co/oferta/apoyo-administrativo-en-salud?location=57011001&modality=P&offertype=open&programId=212936",
+    "https://betowa.sena.edu.co/oferta/apoyo-administrativo-en-salud?level=2&location=57025307&modality=P&offertype=company&programId=212936",
+    "https://www.hhs.gov/hipaa/for-professionals/security/index.html",
+    "https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/minimum-necessary-requirement/index.html",
+    "https://studentaid.gov/articles/fafsa-student-steps/",
+    "https://www.dol.gov/general/topic/training/adulttraining",
+    "https://www.apprenticeship.gov/career-seekers",
+    "https://www.irs.gov/newsroom/irs-updates-frequently-asked-questions-about-section-127-educational-assistance-programs",
+    "https://www.ed.gov/accreditation",
+    "https://www.eeoc.gov/disability-discrimination"
+  ],
+  "publication_replacements": {
+    "en": [
+      {"old": "**Controlled 2026 English working master**", "new": "**Controlled 2026 English publication candidate**", "count": 1},
+      {"old": "Version 2.0 working master • August 2026", "new": "Version 2.0 • August 2026", "count": 1},
+      {"old": "> **Controlled status:** This is the English working master for the 2026 revision. It is not yet a publication candidate. It must pass editorial, terminology, claim-to-source traceability, link, accessibility-oriented readability, encoding, translation-parity, DOCX, PDF, metadata, rendering, and publication QA before release.", "new": "> **Controlled status:** This is the controlled English publication candidate for the 2026 revision. It has passed the documented editorial, terminology, claim-to-source traceability, localization-parity, document, rendering, and publication QA gates recorded for this candidate. Release remains subject to the final controlled release audit.", "count": 1}
+    ],
+    "es-419": [
+      {"old": "**Maestro de trabajo controlado en español latinoamericano 2026**", "new": "**Candidato de publicación controlado en español latinoamericano 2026**", "count": 1},
+      {"old": "Versión 2.0, maestro de trabajo • agosto de 2026", "new": "Versión 2.0 • agosto de 2026", "count": 1},
+      {"old": "> **Estado controlado:** Este es el maestro de trabajo en español latinoamericano para la revisión de 2026, localizado a partir de la fuente inglesa v2 congelada. Todavía no es un candidato de publicación. Debe superar las verificaciones de terminología, paridad de contenido, enlaces, legibilidad orientada a la accesibilidad, codificación, DOCX, PDF, metadatos, renderizado y publicación antes de su liberación.", "new": "> **Estado controlado:** Este es el candidato de publicación controlado en español latinoamericano para la revisión de 2026, localizado a partir de la fuente inglesa v2 congelada. Ha superado las verificaciones documentadas de terminología, paridad, documentos, renderizado y publicación. La liberación sigue sujeta a la auditoría final controlada.", "count": 1}
+    ],
+    "pt-BR": [
+      {"old": "**Mestre de trabalho controlado em português brasileiro 2026**", "new": "**Candidato de publicação controlado em português brasileiro 2026**", "count": 1},
+      {"old": "Versão 2.0, mestre de trabalho • agosto de 2026", "new": "Versão 2.0 • agosto de 2026", "count": 1},
+      {"old": "> **Status controlado:** Este é o mestre de trabalho em português brasileiro para a revisão de 2026, localizado a partir da fonte inglesa v2 congelada. Ainda não é um candidato de publicação. Deve passar pelas verificações de terminologia, paridade de conteúdo, links, legibilidade orientada à acessibilidade, codificação, DOCX, PDF, metadados, renderização e publicação antes da liberação.", "new": "> **Status controlado:** Este é o candidato de publicação controlado em português brasileiro para a revisão de 2026, localizado a partir da fonte inglesa v2 congelada. Passou pelas verificações documentadas de terminologia, paridade, documentos, renderização e publicação. A liberação continua sujeita à auditoria final controlada.", "count": 1}
+    ]
+  }
+}
