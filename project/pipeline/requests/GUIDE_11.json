@@ -1,6 +1,6 @@
 {
   "guide": "11",
-  "stage": "parity",
-  "requested": "2026-08-08T16:18-05:00",
-  "purpose": "Rerun generalized trilingual parity after Portuguese source correction."
+  "stage": "build",
+  "requested": "2026-08-08T16:20-05:00",
+  "purpose": "Run generalized trilingual publication build after localization and technical QA PASS."
 }
