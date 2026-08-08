@@ -157,7 +157,7 @@ def main() -> int:
 
         render = RENDER_DIR / f"{pdf.stem}_page_001"
         subprocess.run(["pdftoppm", "-f", "1", "-singlefile", "-png", "-r", "130", str(pdf), str(render)], check=True)
-        png = render.with_suffix(".png")
+        png = Path(str(render) + ".png")
         if not png.is_file() or png.stat().st_size < 5000:
             raise SystemExit(f"Missing or unexpectedly small first-page render: {png}")
 
@@ -171,8 +171,12 @@ def main() -> int:
                 "pages": pages if file.suffix == ".pdf" else None,
             })
 
-    if len(list(RENDER_DIR.glob("*.png"))) != 3:
-        raise SystemExit("Expected exactly three Guide 04 first-page renders")
+    expected_renders = {
+        RENDER_DIR / f"Lifelong_Opportunity_Guide_04_Project_Coordinator_{locale}_v2.0_page_001.png"
+        for locale in EDITIONS
+    }
+    if not all(path.is_file() and path.stat().st_size >= 5000 for path in expected_renders):
+        raise SystemExit("Expected three valid Guide 04 first-page renders")
 
     manifest = OUT / "GUIDE_04_PUBLICATION_QA_MANIFEST.json"
     manifest.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
