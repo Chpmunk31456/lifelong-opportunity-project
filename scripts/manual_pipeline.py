@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Configuration-driven deterministic pipeline for Lifelong Opportunity Guides.
 
-This controller deliberately does not perform or certify subjective research,
+The controller deliberately does not perform or certify subjective research,
 editorial review, translation quality, legal review, accessibility certification,
 or independent human review. It verifies explicit evidence and automates only
 repeatable deterministic checks and publication mechanics.
@@ -14,6 +14,8 @@ import json
 import re
 import shutil
 import subprocess
+import tempfile
+import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,9 +28,12 @@ def die(message: str) -> None:
     raise SystemExit(message)
 
 
-def run(cmd: list[str], cwd: Path | None = None) -> subprocess.CompletedProcess:
+def run(cmd: list[str], cwd: Path | None = None, capture: bool = False) -> subprocess.CompletedProcess:
     print("+", " ".join(cmd))
-    return subprocess.run(cmd, cwd=cwd or ROOT, check=True, text=True, capture_output=False)
+    return subprocess.run(
+        cmd, cwd=cwd or ROOT, check=True, text=True,
+        capture_output=capture,
+    )
 
 
 def load_config(guide: str) -> dict:
@@ -179,13 +184,61 @@ def publication_names(cfg: dict) -> dict[str, tuple[str, str]]:
     }
 
 
+def publication_source_text(cfg: dict, lang: str, src: Path) -> str:
+    """Create publication text without mutating the frozen/localized master."""
+    text = read_utf8(src)
+    replacements = cfg.get("publication_replacements", {}).get(lang, [])
+    for item in replacements:
+        old = item.get("old", "")
+        new = item.get("new", "")
+        if not old:
+            die(f"Empty publication replacement for {lang}")
+        count = text.count(old)
+        expected_count = int(item.get("count", 1))
+        if count != expected_count:
+            die(
+                f"Publication replacement mismatch for {lang}: expected {expected_count} occurrences "
+                f"of {old!r}, found {count}"
+            )
+        text = text.replace(old, new, expected_count)
+    return text
+
+
+def validate_docx(path: Path) -> dict:
+    try:
+        with zipfile.ZipFile(path) as zf:
+            names = set(zf.namelist())
+            required = {"[Content_Types].xml", "word/document.xml"}
+            missing = sorted(required - names)
+            if missing:
+                die(f"DOCX missing required OOXML parts {missing}: {path.name}")
+            unsafe = [
+                n for n in names
+                if n.lower().endswith(("vbaproject.bin", ".exe", ".js", ".vbs", ".ps1"))
+            ]
+            if unsafe:
+                die(f"Unsafe executable/macro parts in DOCX {path.name}: {unsafe}")
+            relationships = [n for n in names if n.endswith(".rels")]
+            return {"zip_entries": len(names), "relationship_parts": len(relationships), "unsafe_parts": 0}
+    except zipfile.BadZipFile:
+        die(f"Invalid DOCX ZIP package: {path.name}")
+
+
+def pdf_page_count(path: Path) -> int:
+    proc = run(["pdfinfo", str(path)], capture=True)
+    match = re.search(r"^Pages:\s+(\d+)", proc.stdout, flags=re.MULTILINE)
+    if not match:
+        die(f"Could not determine PDF page count: {path.name}")
+    return int(match.group(1))
+
+
 def build(cfg: dict) -> None:
     parity_result = parity(cfg)
     status = load_status(cfg)
     for stage in ("spanish_localization", "portuguese_localization", "technical_qa"):
         require_stage(status, stage)
 
-    for exe in ("pandoc", "libreoffice", "pdftotext", "pdftoppm"):
+    for exe in ("pandoc", "libreoffice", "pdftotext", "pdftoppm", "pdfinfo"):
         if not shutil.which(exe):
             die(f"Required publication executable not installed: {exe}")
 
@@ -198,41 +251,66 @@ def build(cfg: dict) -> None:
 
     outputs: list[Path] = []
     manifest = {
-        "guide": cfg["guide"], "occupation": cfg["occupation"], "status": "PASS",
-        "parity": parity_result, "languages": {}
+        "guide": cfg["guide"],
+        "occupation": cfg["occupation"],
+        "status": "PASS",
+        "parity": parity_result,
+        "publication_source_transform": bool(cfg.get("publication_replacements")),
+        "languages": {},
     }
 
-    for lang, src in source_paths(cfg).items():
-        docx_name, pdf_name = publication_names(cfg)[lang]
-        docx = out / docx_name
-        pdf = out / pdf_name
-        run(["pandoc", str(src), "-o", str(docx), "--standalone"])
-        run(["libreoffice", "--headless", "--convert-to", "pdf", "--outdir", str(out), str(docx)])
-        produced = out / (docx.stem + ".pdf")
-        if produced != pdf:
-            if not produced.exists():
-                die(f"LibreOffice did not create expected PDF for {lang}")
-            produced.replace(pdf)
-        require_path(docx, f"{lang} DOCX")
-        require_path(pdf, f"{lang} PDF")
-        text_path = out / f".{lang}.txt"
-        with text_path.open("w", encoding="utf-8") as fh:
-            subprocess.run(["pdftotext", str(pdf), "-"], check=True, text=True, stdout=fh)
-        extracted = read_utf8(text_path)
-        text_path.unlink(missing_ok=True)
-        if len(extracted.strip()) < 1000:
-            die(f"{lang} PDF text extraction unexpectedly short")
-        render_dir = render_root / lang
-        render_dir.mkdir(parents=True, exist_ok=True)
-        run(["pdftoppm", "-png", "-r", "120", str(pdf), str(render_dir / "page")])
-        pages = sorted(render_dir.glob("page-*.png"))
-        if not pages:
-            die(f"No rendered PDF pages for {lang}")
-        manifest["languages"][lang] = {
-            "source": str(src.relative_to(ROOT)), "docx": docx.name, "pdf": pdf.name,
-            "rendered_pages": len(pages)
-        }
-        outputs.extend([docx, pdf])
+    with tempfile.TemporaryDirectory(prefix=f"guide-{cfg['guide']}-publication-") as td:
+        temp_root = Path(td)
+        for lang, src in source_paths(cfg).items():
+            docx_name, pdf_name = publication_names(cfg)[lang]
+            docx = out / docx_name
+            pdf = out / pdf_name
+
+            publication_text = publication_source_text(cfg, lang, src)
+            temp_src = temp_root / f"{lang}.md"
+            temp_src.write_text(publication_text, encoding="utf-8")
+
+            run(["pandoc", str(temp_src), "-o", str(docx), "--standalone"])
+            run(["libreoffice", "--headless", "--convert-to", "pdf", "--outdir", str(out), str(docx)])
+            produced = out / (docx.stem + ".pdf")
+            if produced != pdf:
+                if not produced.exists():
+                    die(f"LibreOffice did not create expected PDF for {lang}")
+                produced.replace(pdf)
+
+            require_path(docx, f"{lang} DOCX")
+            require_path(pdf, f"{lang} PDF")
+            docx_qa = validate_docx(docx)
+
+            proc = run(["pdftotext", str(pdf), "-"], capture=True)
+            extracted = proc.stdout
+            if len(extracted.strip()) < 1000:
+                die(f"{lang} PDF text extraction unexpectedly short")
+            if "not yet a publication candidate" in extracted.lower():
+                die(f"{lang} PDF contains stale working-master publication status")
+            if "todavía no es una candidata de publicación" in extracted.lower():
+                die(f"{lang} PDF contains stale es-419 publication status")
+            if "ainda não é uma candidata de publicação" in extracted.lower():
+                die(f"{lang} PDF contains stale pt-BR publication status")
+
+            pages_expected = pdf_page_count(pdf)
+            render_dir = render_root / lang
+            render_dir.mkdir(parents=True, exist_ok=True)
+            run(["pdftoppm", "-png", "-r", "120", str(pdf), str(render_dir / "page")])
+            pages = sorted(render_dir.glob("page-*.png"))
+            if len(pages) != pages_expected:
+                die(f"Rendered-page count mismatch for {lang}: pdfinfo={pages_expected}, rendered={len(pages)}")
+
+            manifest["languages"][lang] = {
+                "source": str(src.relative_to(ROOT)),
+                "docx": docx.name,
+                "pdf": pdf.name,
+                "pdf_pages": pages_expected,
+                "rendered_pages": len(pages),
+                "pdf_text_chars": len(extracted),
+                "docx_qa": docx_qa,
+            }
+            outputs.extend([docx, pdf])
 
     checksums = []
     for path in sorted(outputs, key=lambda p: p.name):
@@ -282,12 +360,18 @@ def release_audit(cfg: dict) -> None:
         die("Visual-review evidence does not contain PASS")
     for lang in ("en", "es-419", "pt-BR"):
         docx_name, pdf_name = publication_names(cfg)[lang]
-        require_path(out / docx_name, f"{lang} DOCX")
-        require_path(out / pdf_name, f"{lang} PDF")
+        docx = out / docx_name
+        pdf = out / pdf_name
+        require_path(docx, f"{lang} DOCX")
+        require_path(pdf, f"{lang} PDF")
+        validate_docx(docx)
         render_dir = out / "rendered-pages" / lang
         require_path(render_dir, f"{lang} rendered-page directory")
-        if not list(render_dir.glob("page-*.png")):
+        rendered = list(render_dir.glob("page-*.png"))
+        if not rendered:
             die(f"No rendered pages found for {lang}")
+        if len(rendered) != pdf_page_count(pdf):
+            die(f"Release audit rendered-page count mismatch for {lang}")
     print(f"PASS release audit Guide {cfg['guide']}")
 
 
