@@ -1,6 +1,6 @@
 {
   "guide": "11",
   "stage": "parity",
-  "requested": "2026-08-08T16:15-05:00",
-  "purpose": "Run generalized trilingual parity after English freeze and initial localizations."
+  "requested": "2026-08-08T16:18-05:00",
+  "purpose": "Rerun generalized trilingual parity after Portuguese source correction."
 }
