@@ -108,7 +108,7 @@ Não deve:
 
 - criar cotações, propostas, recebimentos, faturas, fornecedores, aprovações, registros de competição ou confirmações de entrega falsos;
 - fracionar compras para evitar limites de aprovação ou competição;
-- retrodat ar pedidos, propostas, aprovações, contratos, recebimentos ou registros de fornecedores;
+- retrodatar pedidos, propostas, aprovações, contratos, recebimentos ou registros de fornecedores;
 - aceitar presentes, favores, pagamentos ou benefícios não declarados que violem política ou lei;
 - direcionar trabalho a parte relacionada sem divulgação e revisão exigidas;
 - alterar dados bancários do fornecedor ou instruções de pagamento sem a verificação necessária;
