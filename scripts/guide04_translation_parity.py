@@ -52,7 +52,7 @@ def require(text: str, needle: str, label: str) -> None:
 def main() -> int:
     docs = {name: read(path) for name, path in FILES.items()}
     clean = {name: plain(text) for name, text in docs.items()}
-    expected_sections = list(range(1, 22))
+    expected_sections = list(range(1, 23))
 
     for language, text in docs.items():
         sections = numbered_headings(text)
@@ -121,7 +121,7 @@ def main() -> int:
             require(clean[language], phrase, f"{language} claims-control anchor")
 
     print("Guide 04 English↔es-419↔pt-BR automated parity checks: PASS")
-    print("Numbered sections per language: 21")
+    print("Numbered sections per language: 22")
     print(f"Shared external URLs: {len(url_sets['English'])}")
     print(f"High-impact numeric/date controls per language: {len(controls)}")
     return 0
