@@ -7,43 +7,43 @@
     {
       "locale": "English",
       "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_English_v1.1.docx",
-      "bytes": 23713,
-      "sha256": "6eb8d3414e41fb54f37d3aebc16d702b62d8d598e54f56449bb47ae1963525bd",
+      "bytes": 23712,
+      "sha256": "7e4e3b853c3907909e009a00f8a3dfc266704391d523414f586b2156428f9aed",
       "pages": null
     },
     {
       "locale": "English",
       "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_English_v1.1.pdf",
       "bytes": 200594,
-      "sha256": "04666132442c3faf034e2c4f0798478d66c9971f9a8d931f17533e448845f5d1",
+      "sha256": "656936261c70ea332d30f629ad87738be527057a825c0a103e3ece7426cfcad1",
       "pages": 14
     },
     {
       "locale": "es-419",
       "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.docx",
-      "bytes": 20784,
-      "sha256": "640e6db885b76bda92833c8fc6103d3c89e42495357829d3962b5bd4ba757f7f",
+      "bytes": 20783,
+      "sha256": "2c9ad4a28ad86f173803777878961f69026e91381dfe057b0940e4e54b15c82f",
       "pages": null
     },
     {
       "locale": "es-419",
       "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.pdf",
       "bytes": 158498,
-      "sha256": "b2d585c263ab0b3581bec7cda4a75236516f00d51128809b384267880c6c4ed1",
+      "sha256": "36eb5f12134fa7c337b2a7c03459286674cb6bda527c86fff56f3c84a656b468",
       "pages": 12
     },
     {
       "locale": "pt-BR",
       "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.docx",
-      "bytes": 22201,
-      "sha256": "37aa1c60283a459ae0b51061f19789a1f322ab746dce58dfb73718e1d59c5089",
+      "bytes": 22200,
+      "sha256": "c3fefde29538eb37683df13210a35eecccd32b6d60b6bb1813e5eacbf1b704c5",
       "pages": null
     },
     {
       "locale": "pt-BR",
       "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.pdf",
       "bytes": 195490,
-      "sha256": "65ca8a040e153db8182ca30390837bb8f7475a0002ba421a9d426d2ae4bd24ed",
+      "sha256": "912f5891d4e4daabb05616421f7dcdddb51e2acfe6e460f46aceb60edd5254c1",
       "pages": 14
     }
   ]
