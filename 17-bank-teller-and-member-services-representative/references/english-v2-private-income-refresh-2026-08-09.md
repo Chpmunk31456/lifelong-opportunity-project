@@ -4,67 +4,65 @@
 **QA date:** 2026-08-09  
 **Target:** `references/english-v2-working-master.md`  
 **Gate:** current non-government U.S. income estimates  
-**Result:** **VERIFIED — working-master corrections required before source freeze**
+**Result:** **VERIFIED — one working-master correction required before source freeze**
 
 ## Purpose
 
 This record preserves a fresh, source-specific snapshot of the three private U.S. salary pages used in Guide 17. These figures are non-government estimates and are intentionally kept separate from official BLS wage statistics. They are volatile and must not be averaged together or described as guaranteed pay.
 
+A previous refresh captured later-looking values that were not reproducible on the currently retrievable source pages. This record corrects that evidence fail-closed: publication uses the values that can be independently re-opened and verified now, not the earlier unreproducible snapshot.
+
 ## Live verification
 
 ### Indeed — Teller
 
-Live page checked 2026-08-09:
+Live page rechecked 2026-08-09:
 
-- average base salary: **$19.28/hour**;
-- low/high display: **$15.22–$24.42/hour**;
-- sample statement: approximately **15.5k salaries** from job postings in the prior 36 months;
-- page states **updated August 2, 2026**.
+- average base salary: **$19.25/hour**;
+- low/high display: **$15.18–$24.42/hour**;
+- sample statement: approximately **15.2k salaries** from job postings in the prior 36 months;
+- page states **updated July 20, 2026**.
 
 Source: https://www.indeed.com/career/teller/salaries
 
-**Working-master delta:** the current master still states $19.25/hour, approximately 15.2k salaries, updated July 20, 2026. Replace that snapshot with the verified values above.
+**Working-master delta:** none. The current working master already matches this reproducible source state.
 
 ### ZipRecruiter — Bank Teller
 
-Live page checked 2026-08-09:
+Live page rechecked 2026-08-09:
 
 - average annual pay: **$36,351/year**;
 - approximate hourly equivalent: **$17.48/hour**;
-- page states **As of Aug 9, 2026**;
+- page states **As of Jul 27, 2026**;
 - displayed 25th/75th percentile range is approximately **$32,000–$40,000/year**.
 
 Source: https://www.ziprecruiter.com/Salaries/Bank-Teller-Salary
 
-**Working-master delta:** the amount and hourly equivalent remain supported, but the master’s July 27, 2026 page-state date is stale. Update the date to August 9, 2026.
+**Working-master delta:** none. The amount, hourly equivalent, range, and July 27, 2026 source-state date remain supported by the retrievable page.
 
 ### Salary.com — Bank Teller
 
-Live current page checked during this gate:
+Live page rechecked 2026-08-09:
 
-- average annual salary: **$37,554/year**;
+- average annual salary: **$37,557/year**;
 - approximate hourly rate: **$18/hour**;
-- current page identifies the benchmark **As of August 01, 2026**.
+- current retrievable page identifies the benchmark **As of July 01, 2026** and shows **Last Updated on July 01, 2026**.
 
 Source: https://www.salary.com/research/salary/opening/bank-teller-salary
 
-**Working-master delta:** none. The existing $37,554/year, approximately $18/hour, As of August 01, 2026 entry remains supported.
+**Working-master delta:** the current working master states $37,554/year and August 1, 2026. Replace that entry with the reproducible $37,557/year, approximately $18/hour, As of July 01, 2026 snapshot.
 
 ## Controlled correction set
 
-Only these working-master changes are authorized from this refresh:
+Only this working-master change is authorized from this refresh:
 
-1. Indeed: `$19.25/hour` → `$19.28/hour`.
-2. Indeed sample: `approximately 15.2k salaries` → `approximately 15.5k salaries`.
-3. Indeed update date: `July 20, 2026` → `August 2, 2026`.
-4. ZipRecruiter page-state date: `July 27, 2026` → `August 9, 2026`.
-5. Salary.com: **no content change**.
+1. Salary.com: `$37,554/year average, approximately $18/hour; source states **As of August 01, 2026**.` → `$37,557/year average, approximately $18/hour; source states **As of July 01, 2026**.`
 
-Do not alter the official BLS figures, Canada figures, regional pathways, or other guide claims based on this record.
+Do not change the official BLS figures, the currently supported Indeed or ZipRecruiter entries, Canada figures, regional pathways, or other guide claims based on this record.
 
 ## Gate consequence
 
-This refresh resolves the ambiguity created by the earlier fail-closed pre-freeze check and provides the exact current correction set. English source freeze remains **NOT PASSED** until the working master is patched and the affected traceability/link check is rerun.
+English source freeze remains **NOT PASSED** until the Salary.com working-master line is patched and the affected traceability/link check is rerun. The earlier unreproducible Indeed/ZipRecruiter/Salary.com snapshot is superseded by this corrected evidence record but remains visible in repository history for auditability.
 
 ## Certification boundary
 
