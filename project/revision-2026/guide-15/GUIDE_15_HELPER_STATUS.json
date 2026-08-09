@@ -8,8 +8,8 @@
     "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-15/qa/GUIDE_15_ENGLISH_EDITORIAL_QA_03.md"]},
     "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-15/qa/GUIDE_15_CLAIM_TRACEABILITY_QA_04.md"]},
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-15/qa/GUIDE_15_ENGLISH_SOURCE_FREEZE_05.md"]},
-    "spanish_localization": {"status": "PENDING", "evidence": []},
-    "portuguese_localization": {"status": "PENDING", "evidence": []},
+    "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-15/qa/GUIDE_15_SPANISH_LOCALIZATION_QA_06.md", "project/revision-2026/guide-15/source/GUIDE_15_SPANISH_LATAM_WORKING_MASTER_v2.md"]},
+    "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-15/qa/GUIDE_15_PORTUGUESE_LOCALIZATION_QA_07.md", "project/revision-2026/guide-15/source/GUIDE_15_PORTUGUESE_BR_WORKING_MASTER_v2.md"]},
     "technical_qa": {"status": "PENDING", "evidence": []},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
