@@ -9,9 +9,9 @@
     "english_editorial": {"status": "PASS", "evidence": ["17-bank-teller-and-member-services-representative/references/english-v2-editorial-accessibility-qa.md"]},
     "evidence_traceability": {"status": "PASS", "evidence": ["17-bank-teller-and-member-services-representative/references/english-v2-traceability-qa-recheck.md"]},
     "english_source_freeze": {"status": "PASS", "evidence": ["17-bank-teller-and-member-services-representative/references/english-v2-source-freeze-2026-08-09.md", "project/revision-2026/guide-17/qa/GUIDE_17_STATUS_RECONCILIATION_02.md"]},
-    "spanish_localization": {"status": "PENDING", "evidence": []},
-    "portuguese_localization": {"status": "PENDING", "evidence": []},
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-17/source/GUIDE_17_SPANISH_LATAM_WORKING_MASTER_v2.md", "project/revision-2026/guide-17/qa/GUIDE_17_TRILINGUAL_LOCALIZATION_PARITY_QA_08.md"]},
+    "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-17/source/GUIDE_17_PORTUGUESE_BR_WORKING_MASTER_v2.md", "project/revision-2026/guide-17/qa/GUIDE_17_TRILINGUAL_LOCALIZATION_PARITY_QA_08.md"]},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-17/qa/GUIDE_17_TRILINGUAL_LOCALIZATION_PARITY_QA_08.md"]},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
