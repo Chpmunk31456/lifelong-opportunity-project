@@ -1,0 +1,76 @@
+{
+  "guide": "16",
+  "occupation": "Loan Processing Specialist and Loan Clerk",
+  "branch": "revision/guide-00-100-2026",
+  "source": {
+    "en": "project/revision-2026/guide-16/source/GUIDE_16_ENGLISH_WORKING_MASTER_v2.md",
+    "es-419": "project/revision-2026/guide-16/source/GUIDE_16_SPANISH_LATAM_WORKING_MASTER_v2.md",
+    "pt-BR": "project/revision-2026/guide-16/source/GUIDE_16_PORTUGUESE_BR_WORKING_MASTER_v2.md"
+  },
+  "status_manifest": "project/revision-2026/guide-16/GUIDE_16_HELPER_STATUS.json",
+  "publication_dir": "project/revision-2026/guide-16/publication-candidate",
+  "visual_review_evidence": "project/revision-2026/guide-16/qa/GUIDE_16_FULL_PAGE_VISUAL_REVIEW.md",
+  "expected_sections": {"first": 1, "last": 19},
+  "output_stem": "Lifelong_Opportunity_Guide_16_Loan_Processing_Specialist_and_Loan_Clerk",
+  "critical_patterns": [
+    "43-4131",
+    "177[.,\\s]600",
+    "173[.,\\s]500",
+    "-4[.,\\s]100",
+    "-2[.,]3\\s?%",
+    "13[.,\\s]300",
+    "48[.,\\s]950",
+    "44[.,\\s]308",
+    "21[.,]30",
+    "37[.,\\s]500",
+    "50[.,\\s]000",
+    "58[.,\\s]000",
+    "C\\$\\s?18[.,]46",
+    "C\\$\\s?25[.,]33",
+    "C\\$\\s?36[.,]62",
+    "88[.,]4\\s?%",
+    "14201",
+    "2[.,\\s]208",
+    "(?:US\\$|\\$)\\s?5[.,\\s]250",
+    "2023[–-]2024",
+    "2025",
+    "2026"
+  ],
+  "required_urls": [
+    "https://www.onetonline.org/link/details/43-4131.00",
+    "https://www.bls.gov/emp/tables/occupational-projections-and-characteristics.htm",
+    "https://www.bls.gov/emp/tables/occupational-separations-and-openings.htm",
+    "https://www.bls.gov/emp/tables/factors-affecting-occupational-utilization.htm",
+    "https://www.ziprecruiter.com/Salaries/Loan-Processor-Salary",
+    "https://www.jobbank.gc.ca/marketreport/summary-occupation/1687/ca",
+    "https://www.jobbank.gc.ca/marketreport/wages-occupation/1687/BC",
+    "https://www.jobbank.gc.ca/marketreport/requirements/1687/ca",
+    "https://betowa.sena.edu.co/oferta/contabilizacion-de-operaciones-comerciales-y-financieras?level=2&modality=P&offertype=company&programId=144294",
+    "https://www.consumerfinance.gov/rules-policy/regulations/1008/23/",
+    "https://www.consumerfinance.gov/rules-policy/regulations/1008/103/",
+    "https://www.consumerfinance.gov/rules-policy/regulations/1008/c/",
+    "https://studentaid.gov/",
+    "https://www.dol.gov/general/topic/training/adulttraining",
+    "https://www.apprenticeship.gov/career-seekers",
+    "https://www.irs.gov/newsroom/irs-updates-frequently-asked-questions-about-section-127-educational-assistance-programs",
+    "https://www.ed.gov/accreditation",
+    "https://www.eeoc.gov/disability-discrimination"
+  ],
+  "publication_replacements": {
+    "en": [
+      {"old": "**Controlled 2026 English working master**", "new": "**Controlled 2026 English publication candidate**", "count": 1},
+      {"old": "Version 2.0 working master • August 2026", "new": "Version 2.0 • August 2026", "count": 1},
+      {"old": "> **Controlled status:** This is the English working master for the 2026 revision. It is not yet a publication candidate. It must pass editorial, terminology, claim-to-source traceability, link, accessibility-oriented readability, encoding, translation-parity, DOCX, PDF, metadata, rendering, and publication QA before release.", "new": "> **Controlled status:** This is the controlled English publication candidate for the 2026 revision. It has passed the documented editorial, terminology, claim-to-source traceability, localization-parity, document, rendering, and publication QA gates recorded for this candidate. Release remains subject to the final controlled release audit.", "count": 1}
+    ],
+    "es-419": [
+      {"old": "**Versión de trabajo controlada 2026 en español latinoamericano**", "new": "**Candidata de publicación controlada 2026 en español latinoamericano**", "count": 1},
+      {"old": "Versión de trabajo 2.0 • agosto de 2026", "new": "Versión 2.0 • agosto de 2026", "count": 1},
+      {"old": "> **Estado controlado:** Esta es la versión de trabajo en español latinoamericano (`es-419`) localizada a partir de la fuente inglesa v2 congelada. Todavía no es una candidata de publicación. Debe pasar QA de localización, terminología, paridad estructural, enlaces, accesibilidad orientada a la legibilidad, codificación, DOCX, PDF, metadatos, renderizado y publicación antes de su liberación.", "new": "> **Estado controlado:** Esta es la candidata de publicación controlada en español latinoamericano (`es-419`) para la revisión de 2026, localizada a partir de la fuente inglesa v2 congelada. Ha superado las verificaciones documentadas de localización, terminología, paridad, documentos, renderizado y publicación. La liberación sigue sujeta a la auditoría final controlada.", "count": 1}
+    ],
+    "pt-BR": [
+      {"old": "**Versão de trabalho controlada 2026 em português do Brasil**", "new": "**Candidata de publicação controlada 2026 em português do Brasil**", "count": 1},
+      {"old": "Versão de trabalho 2.0 • agosto de 2026", "new": "Versão 2.0 • agosto de 2026", "count": 1},
+      {"old": "> **Status controlado:** Esta é a versão de trabalho em português do Brasil (`pt-BR`) localizada a partir da fonte inglesa v2 congelada. Ainda não é uma candidata de publicação. Deve passar por QA de localização, terminologia, paridade estrutural, links, legibilidade orientada à acessibilidade, codificação, DOCX, PDF, metadados, renderização e publicação antes da liberação.", "new": "> **Status controlado:** Esta é a candidata de publicação controlada em português do Brasil (`pt-BR`) para a revisão de 2026, localizada a partir da fonte inglesa v2 congelada. Passou pelas verificações documentadas de localização, terminologia, paridade, documentos, renderização e publicação. A liberação continua sujeita à auditoria final controlada.", "count": 1}
+    ]
+  }
+}
