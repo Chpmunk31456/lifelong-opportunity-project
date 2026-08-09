@@ -9,7 +9,7 @@
     "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-16/qa/GUIDE_16_CLAIM_TRACEABILITY_QA_04.md"]},
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-16/qa/GUIDE_16_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-16/qa/GUIDE_16_SPANISH_LOCALIZATION_QA_06.md", "project/revision-2026/guide-16/source/GUIDE_16_SPANISH_LATAM_WORKING_MASTER_v2.md"]},
-    "portuguese_localization": {"status": "PENDING", "evidence": []},
+    "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-16/qa/GUIDE_16_PORTUGUESE_LOCALIZATION_QA_07.md", "project/revision-2026/guide-16/source/GUIDE_16_PORTUGUESE_BR_WORKING_MASTER_v2.md"]},
     "technical_qa": {"status": "PENDING", "evidence": []},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
