@@ -41,9 +41,9 @@ MASTER.write_text(text, encoding="utf-8", newline="\n")
 
 RECHECK.write_text(
     "# Guide 17 — private-income correction recheck\n\n"
-    "**QA date:** 2026-08-09  \n"
-    "**Target:** `references/english-v2-working-master.md`  \n"
-    "**Gate:** affected private-income traceability and source-state recheck  \n"
+    "**QA date:** 2026-08-09\n"
+    "**Target:** `references/english-v2-working-master.md`\n"
+    "**Gate:** affected private-income traceability and source-state recheck\n"
     "**Result:** **PASS**\n\n"
     "## Verified working-master state\n\n"
     "- Indeed remains labeled as a non-government estimate at **$19.25/hour**, based on approximately **15.2k salaries**, with the source page stating **updated July 20, 2026**.\n"
