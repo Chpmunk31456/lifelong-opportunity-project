@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 15
+# Lifelong Opportunity Guide 15
 
 ## Insurance Claims and Policy Processing Specialist — English Edition
 
