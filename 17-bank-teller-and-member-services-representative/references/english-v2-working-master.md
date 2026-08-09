@@ -378,7 +378,7 @@ The following figures were reviewed as private market estimates. Their methods d
 
 - **Indeed:** $19.25/hour average base salary; page updated July 20, 2026 and based on approximately 15.2k salaries from job postings over the prior 36 months.
 - **ZipRecruiter:** $36,351/year average, approximately $17.48/hour; page state reviewed July 27, 2026, with a reported central range around $32,000-$40,000.
-- **Salary.com:** $37,554/year average, approximately $18/hour; source states **As of August 01, 2026**.
+- **Salary.com:** $37,557/year average, approximately $18/hour; source states **As of July 01, 2026**.
 
 Private salary pages change frequently. Re-check them before publication or before using them for an individual negotiation.
 
