@@ -1,0 +1,54 @@
+{
+  "guide": "15",
+  "occupation": "Insurance Claims and Policy Processing Specialist",
+  "status": "PASS",
+  "parity": {
+    "guide": "15",
+    "sections": 19,
+    "urls": 14,
+    "critical_patterns": 19,
+    "status": "PASS"
+  },
+  "publication_source_transform": true,
+  "languages": {
+    "en": {
+      "source": "project/revision-2026/guide-15/source/GUIDE_15_ENGLISH_WORKING_MASTER_v2.md",
+      "docx": "Lifelong_Opportunity_Guide_15_Insurance_Claims_and_Policy_Processing_Specialist_English_v2.0.docx",
+      "pdf": "Lifelong_Opportunity_Guide_15_Insurance_Claims_and_Policy_Processing_Specialist_English_v2.0.pdf",
+      "pdf_pages": 14,
+      "rendered_pages": 14,
+      "pdf_text_chars": 25272,
+      "docx_qa": {
+        "zip_entries": 16,
+        "relationship_parts": 3,
+        "unsafe_parts": 0
+      }
+    },
+    "es-419": {
+      "source": "project/revision-2026/guide-15/source/GUIDE_15_SPANISH_LATAM_WORKING_MASTER_v2.md",
+      "docx": "Lifelong_Opportunity_Guide_15_Insurance_Claims_and_Policy_Processing_Specialist_es-419_v2.0.docx",
+      "pdf": "Lifelong_Opportunity_Guide_15_Insurance_Claims_and_Policy_Processing_Specialist_es-419_v2.0.pdf",
+      "pdf_pages": 14,
+      "rendered_pages": 14,
+      "pdf_text_chars": 25890,
+      "docx_qa": {
+        "zip_entries": 16,
+        "relationship_parts": 3,
+        "unsafe_parts": 0
+      }
+    },
+    "pt-BR": {
+      "source": "project/revision-2026/guide-15/source/GUIDE_15_PORTUGUESE_BR_WORKING_MASTER_v2.md",
+      "docx": "Lifelong_Opportunity_Guide_15_Insurance_Claims_and_Policy_Processing_Specialist_pt-BR_v2.0.docx",
+      "pdf": "Lifelong_Opportunity_Guide_15_Insurance_Claims_and_Policy_Processing_Specialist_pt-BR_v2.0.pdf",
+      "pdf_pages": 14,
+      "rendered_pages": 14,
+      "pdf_text_chars": 25409,
+      "docx_qa": {
+        "zip_entries": 16,
+        "relationship_parts": 3,
+        "unsafe_parts": 0
+      }
+    }
+  }
+}
