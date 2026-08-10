@@ -8,7 +8,7 @@
     "research": {"status": "PASS", "evidence": ["project/revision-2026/guide-25/qa/GUIDE_25_CURRENT_SOURCE_EVIDENCE_02.md"]},
     "english_editorial": {"status": "PASS", "evidence": ["25-general-maintenance-and-repair-worker-and-building-maintenance-technician/english/Guide_25_General_Maintenance_and_Repair_Worker_and_Building_Maintenance_Technician_English_v2.0.md", "project/revision-2026/guide-25/qa/GUIDE_25_ENGLISH_EDITORIAL_QA_03.md"]},
     "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-25/qa/GUIDE_25_EVIDENCE_TRACEABILITY_QA_04.md"]},
-    "english_source_freeze": {"status": "PENDING", "evidence": []},
+    "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-25/qa/GUIDE_25_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PENDING", "evidence": []},
     "portuguese_localization": {"status": "PENDING", "evidence": []},
     "technical_qa": {"status": "PENDING", "evidence": []},
