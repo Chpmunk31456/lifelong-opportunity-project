@@ -1,0 +1,236 @@
+name: Guide 21 controlled publication build
+
+on:
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - '.github/workflows/guide21-publication-build.yml'
+      - 'project/revision-2026/guide-21/source/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide21-controlled-publication-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out revision branch
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Install document tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice poppler-utils
+
+      - name: Prepare controlled sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-21/publication-candidate'
+          rm -rf "$OUT"
+          mkdir -p "$OUT" "$OUT/rendered"
+          cp 'project/revision-2026/guide-21/source/GUIDE_21_TITLE_EXAMINER_PROPERTY_RECORDS_SPECIALIST_ENGLISH_v2_WORKING_MASTER.md' "$OUT/GUIDE_21_ENGLISH_v2.md"
+          cp 'project/revision-2026/guide-21/source/GUIDE_21_EXAMINADOR_TITULOS_REGISTROS_PROPIEDAD_ES419_v2_WORKING_MASTER.md' "$OUT/GUIDE_21_SPANISH_LATAM_v2.md"
+          cp 'project/revision-2026/guide-21/source/GUIDE_21_EXAMINADOR_TITULOS_REGISTROS_PROPRIEDADE_PTBR_v2_WORKING_MASTER.md' "$OUT/GUIDE_21_PORTUGUESE_BR_v2.md"
+
+      - name: Trilingual structural and source controls
+        shell: python
+        run: |
+          from pathlib import Path
+          import re, sys
+          out=Path('project/revision-2026/guide-21/publication-candidate')
+          files={
+            'en': out/'GUIDE_21_ENGLISH_v2.md',
+            'es-419': out/'GUIDE_21_SPANISH_LATAM_v2.md',
+            'pt-BR': out/'GUIDE_21_PORTUGUESE_BR_v2.md',
+          }
+          required_urls=[
+            'https://www.onetonline.org/link/summary/23-2093.00',
+            'https://www.bls.gov/oes/2023/may/oes232093.htm',
+            'https://content.naic.org/insurance-topics/producer-licensing',
+            'https://www.ftc.gov/legal-library/browse/rules/safeguards-rule',
+            'https://www.jobbank.gc.ca/marketreport/wages-occupation/16033/ca',
+            'https://www.supernotariado.gov.co/atencion-servicios-ciudadania/tramites-y-servicios/',
+            'https://betowa.sena.edu.co/oferta/organizacion-de-archivos-de-gestion',
+            'https://www.careeronestop.org/LocalHelp/EmploymentAndTraining/find-WIOA-training-programs.aspx',
+            'https://www.apprenticeship.gov/',
+            'https://www.indeed.com/career/title-examiner/salaries',
+            'https://www.ziprecruiter.com/Salaries/Title-Examiner-Salary',
+          ]
+          numeric_patterns={
+            '23-2093.00': r'23-2093\.00',
+            '28.20': r'(?<!\d)28\.20(?!\d)',
+            '58,650': r'(?<!\d)58,650(?!\d)',
+            '38,170': r'(?<!\d)38,170(?!\d)',
+            '90,830': r'(?<!\d)90,830(?!\d)',
+            '57,400': r'(?<!\d)57,400(?!\d)',
+            '1%-2%': r'1\s*%\s*[–-]\s*2\s*%',
+            '5,400': r'(?<!\d)5,400(?!\d)',
+            '60,541': r'(?<!\d)60,541(?!\d)',
+            '184': r'(?<!\d)184(?!\d)',
+            '51,098': r'(?<!\d)51,098(?!\d)',
+            '24.57': r'(?<!\d)24\.57(?!\d)',
+            '38,000-59,500': r'38,000\s*[–-]\s*(?:US\$)?59,500',
+            'NOC 42200': r'\bNOC\s+42200\b',
+            '21.63': r'(?<!\d)21\.63(?!\d)',
+            '33.05': r'(?<!\d)33\.05(?!\d)',
+            '52.19': r'(?<!\d)52\.19(?!\d)',
+            'Ley 1579 de 2012': r'Ley\s+1579\s+de\s+2012',
+            '48-hour': r'(?<!\d)48(?:-hour|\s+horas|\s+horas|\s+hour|\s+horas)(?!\d)',
+          }
+          marker_patterns={
+            'CC BY-NC-SA 4.0': r'CC BY-NC-SA 4\.0',
+            'SNR/VUR': r'SNR/VUR',
+            'SENA': r'\bSENA\b',
+            'WIOA': r'\bWIOA\b',
+            'Apprenticeship.gov': r'Apprenticeship\.gov',
+            'AI': r'\b(?:AI|IA)\b',
+          }
+          problems=[]
+          heading_counts={}
+          for lang,path in files.items():
+            text=path.read_text(encoding='utf-8')
+            headings=re.findall(r'^##\s+.+$', text, re.M)
+            heading_counts[lang]=len(headings)
+            if len(headings) < 15:
+              problems.append(f'{lang}: too few level-2 headings ({len(headings)})')
+            for url in required_urls:
+              if url not in text:
+                problems.append(f'{lang}: missing URL {url}')
+            for label,pattern in numeric_patterns.items():
+              if not re.search(pattern, text):
+                problems.append(f'{lang}: missing controlled value {label}')
+            for label,pattern in marker_patterns.items():
+              if not re.search(pattern, text, re.I):
+                problems.append(f'{lang}: missing marker {label}')
+            if '\ufffd' in text:
+              problems.append(f'{lang}: Unicode replacement character present')
+            lowered=text.lower()
+            for bad in ('todo:', 'lorem ipsum', '[insert', 'translation pending', 'traducción pendiente', 'tradução pendente'):
+              if bad in lowered:
+                problems.append(f'{lang}: placeholder marker {bad}')
+          if len(set(heading_counts.values())) != 1:
+            problems.append(f'level-2 heading count mismatch: {heading_counts}')
+          if problems:
+            print('\n'.join(problems))
+            sys.exit(1)
+          print(f'Guide 21 trilingual structural/source controls PASS: {heading_counts}')
+
+      - name: Generate DOCX and PDF editions
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-21/publication-candidate'
+          for STEM in GUIDE_21_ENGLISH_v2 GUIDE_21_SPANISH_LATAM_v2 GUIDE_21_PORTUGUESE_BR_v2; do
+            pandoc "$OUT/$STEM.md" -f gfm -t docx --standalone -o "$OUT/$STEM.docx"
+            mkdir -p "$OUT/lo-$STEM"
+            libreoffice --headless --convert-to pdf --outdir "$OUT/lo-$STEM" "$OUT/$STEM.docx"
+            mv "$OUT/lo-$STEM/$STEM.pdf" "$OUT/$STEM.pdf"
+            rmdir "$OUT/lo-$STEM"
+          done
+
+      - name: Validate DOCX and searchable PDFs
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-21/publication-candidate'
+          test "$(find "$OUT" -maxdepth 1 -name '*.docx' | wc -l)" -eq 3
+          test "$(find "$OUT" -maxdepth 1 -name '*.pdf' | wc -l)" -eq 3
+          for DOCX in "$OUT"/*.docx; do
+            unzip -t "$DOCX" >/dev/null
+            unzip -l "$DOCX" | grep -q 'word/document.xml'
+          done
+          for PDF in "$OUT"/*.pdf; do
+            pdfinfo "$PDF" >/dev/null
+            TEXT="$(pdftotext "$PDF" - | tr -d '[:space:]')"
+            test ${#TEXT} -gt 5000
+          done
+
+      - name: Render all PDF pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-21/publication-candidate'
+          for PDF in "$OUT"/*.pdf; do
+            STEM="$(basename "$PDF" .pdf)"
+            mkdir -p "$OUT/rendered/$STEM"
+            pdftoppm -png -r 90 "$PDF" "$OUT/rendered/$STEM/page" >/dev/null 2>&1
+          done
+
+      - name: Generate manifest and checksums
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib, json, subprocess
+          out=Path('project/revision-2026/guide-21/publication-candidate')
+          records=[]
+          for lang,stem in [
+            ('en','GUIDE_21_ENGLISH_v2'),
+            ('es-419','GUIDE_21_SPANISH_LATAM_v2'),
+            ('pt-BR','GUIDE_21_PORTUGUESE_BR_v2'),
+          ]:
+            docx=out/f'{stem}.docx'; pdf=out/f'{stem}.pdf'
+            info=subprocess.check_output(['pdfinfo',str(pdf)], text=True)
+            pages=None
+            for line in info.splitlines():
+              if line.startswith('Pages:'):
+                pages=int(line.split(':',1)[1].strip())
+            txt=subprocess.check_output(['pdftotext',str(pdf),'-'], text=True, errors='replace')
+            if '\ufffd' in txt:
+              raise SystemExit(f'{pdf}: Unicode replacement character in extracted PDF text')
+            records.append({
+              'language':lang,
+              'docx':docx.name,
+              'pdf':pdf.name,
+              'docx_bytes':docx.stat().st_size,
+              'pdf_bytes':pdf.stat().st_size,
+              'pdf_pages':pages,
+              'pdf_extractable_characters':len(txt.strip()),
+              'status':'PASS'
+            })
+          manifest={
+            'guide':'21',
+            'occupation':'Title Examiner and Property Records Specialist',
+            'build_date':'2026-08-10',
+            'status':'PASS',
+            'controls':['trilingual heading-count parity','controlled numerical values','required jurisdiction/source markers','required source URLs','UTF-8 replacement-character check','DOCX ZIP integrity','PDF readability','searchable PDF text','SHA-256 checksums','all-page raster rendering'],
+            'editions':records,
+            'assurance_boundary':'Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, title opinion, insurance authority, accreditation, or employment guarantee.'
+          }
+          (out/'GUIDE_21_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          targets=sorted([p for p in out.iterdir() if p.is_file() and p.suffix in {'.docx','.pdf'}])
+          (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets)+'\n',encoding='utf-8')
+
+      - name: Upload rendered pages
+        uses: actions/upload-artifact@v4
+        with:
+          name: guide21-rendered-pages
+          path: project/revision-2026/guide-21/publication-candidate/rendered
+          retention-days: 14
+
+      - name: Remove render images from commit scope
+        run: rm -rf project/revision-2026/guide-21/publication-candidate/rendered
+
+      - name: Commit controlled publication candidates
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-21/publication-candidate
+          if git diff --cached --quiet; then
+            echo 'No publication changes to commit.'
+          else
+            git commit -m 'Build and validate Guide 21 publication candidates'
+            git pull --rebase origin revision/guide-00-100-2026
+            git push origin HEAD:revision/guide-00-100-2026
+          fi
