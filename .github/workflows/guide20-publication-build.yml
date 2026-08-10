@@ -1,0 +1,212 @@
+name: Guide 20 controlled publication build
+
+on:
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - 'project/revision-2026/guide-20/source/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out revision branch
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Install document tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice poppler-utils
+
+      - name: Prepare controlled sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-20/publication-candidate'
+          rm -rf "$OUT"
+          mkdir -p "$OUT" "$OUT/rendered"
+          cp 'project/revision-2026/guide-20/source/GUIDE_20_ENGLISH_WORKING_MASTER_v2.md' "$OUT/GUIDE_20_ENGLISH_v2.md"
+          cp 'project/revision-2026/guide-20/source/GUIDE_20_SPANISH_LATAM_WORKING_MASTER_v2.md' "$OUT/GUIDE_20_SPANISH_LATAM_v2.md"
+          cp 'project/revision-2026/guide-20/source/GUIDE_20_PORTUGUESE_BR_WORKING_MASTER_v2.md' "$OUT/GUIDE_20_PORTUGUESE_BR_v2.md"
+
+      - name: Structural and source controls
+        shell: python
+        run: |
+          from pathlib import Path
+          import re, sys
+          out=Path('project/revision-2026/guide-20/publication-candidate')
+          files={
+            'en': out/'GUIDE_20_ENGLISH_v2.md',
+            'es-419': out/'GUIDE_20_SPANISH_LATAM_v2.md',
+            'pt-BR': out/'GUIDE_20_PORTUGUESE_BR_v2.md',
+          }
+          required_numbers=list(range(1,20))
+          required_urls=[
+            'https://www.onetonline.org/link/details/43-4031.00',
+            'https://www.uscourts.gov/careers/who-works-judiciary/court-administration-and-services-careers',
+            'https://www.uscourts.gov/administration-policies/judiciary-policies/ethics-policies/code-conduct-judicial-employees',
+            'https://www.uscourts.gov/court-records/file-a-case-cm-ecf/faqs-case-management-electronic-case-files-cm-ecf',
+            'https://www.jobbank.gc.ca/marketreport/summary-occupation/2312/ca',
+            'https://www.funcionpublica.gov.co/gestor-normativo/manual-estructura-del-estado/rama-judicial',
+            'https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=85519',
+          ]
+          numeric_patterns={
+            '43-4031.00': r'43-4031\.00',
+            '23.41': r'(?<!\d)(?:23\.41|23,41)(?!\d)',
+            '48,700': r'(?<!\d)(?:48,700|48\.700)(?!\d)',
+            '180,400': r'(?<!\d)(?:180,400|180\.400)(?!\d)',
+            '3%': r'(?<!\d)3\s*%',
+            '4%': r'(?<!\d)4\s*%',
+            '18,500': r'(?<!\d)(?:18,500|18\.500)(?!\d)',
+            '98%': r'(?<!\d)98\s*%',
+            '50%': r'(?<!\d)50\s*%',
+            '18%': r'(?<!\d)18\s*%',
+            '13%': r'(?<!\d)13\s*%',
+            '29.81': r'(?<!\d)(?:29\.81|29,81)(?!\d)',
+            '5,250': r'(?<!\d)(?:5,250|5\.250)(?!\d)',
+          }
+          marker_patterns={
+            'NOC 14103': r'\bNOC\s+14103\b',
+            'Auxiliar Judicial': r'Auxiliar Judicial',
+            'CM/ECF': r'CM/ECF',
+            'CC BY-NC-SA 4.0': r'CC BY-NC-SA 4\.0',
+          }
+          problems=[]
+          for lang,path in files.items():
+            text=path.read_text(encoding='utf-8')
+            nums=[int(m.group(1)) for m in re.finditer(r'^##\s+(\d+)\.', text, re.M)]
+            if nums != required_numbers:
+              problems.append(f'{lang}: section sequence {nums}')
+            for url in required_urls:
+              if url not in text:
+                problems.append(f'{lang}: missing URL {url}')
+            for label,pattern in numeric_patterns.items():
+              if not re.search(pattern, text):
+                problems.append(f'{lang}: missing controlled value {label}')
+            for label,pattern in marker_patterns.items():
+              if not re.search(pattern, text):
+                problems.append(f'{lang}: missing marker {label}')
+            if '\ufffd' in text:
+              problems.append(f'{lang}: Unicode replacement character present')
+            lowered=text.lower()
+            for bad in ('todo:', 'lorem ipsum', '[insert', 'translation pending'):
+              if bad in lowered:
+                problems.append(f'{lang}: placeholder marker {bad}')
+          if problems:
+            print('\n'.join(problems))
+            sys.exit(1)
+          print('Guide 20 trilingual structural/source controls PASS')
+
+      - name: Generate DOCX and PDF editions
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-20/publication-candidate'
+          for STEM in GUIDE_20_ENGLISH_v2 GUIDE_20_SPANISH_LATAM_v2 GUIDE_20_PORTUGUESE_BR_v2; do
+            pandoc "$OUT/$STEM.md" -f gfm -t docx --standalone -o "$OUT/$STEM.docx"
+            mkdir -p "$OUT/lo-$STEM"
+            libreoffice --headless --convert-to pdf --outdir "$OUT/lo-$STEM" "$OUT/$STEM.docx"
+            mv "$OUT/lo-$STEM/$STEM.pdf" "$OUT/$STEM.pdf"
+            rmdir "$OUT/lo-$STEM"
+          done
+
+      - name: Validate DOCX and searchable PDFs
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-20/publication-candidate'
+          for DOCX in "$OUT"/*.docx; do
+            unzip -t "$DOCX" >/dev/null
+            unzip -l "$DOCX" | grep -q 'word/document.xml'
+          done
+          for PDF in "$OUT"/*.pdf; do
+            pdfinfo "$PDF" >/dev/null
+            TEXT="$(pdftotext "$PDF" - | tr -d '[:space:]')"
+            test ${#TEXT} -gt 5000
+          done
+
+      - name: Render all PDF pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-20/publication-candidate'
+          for PDF in "$OUT"/*.pdf; do
+            STEM="$(basename "$PDF" .pdf)"
+            mkdir -p "$OUT/rendered/$STEM"
+            pdftoppm -png -r 90 "$PDF" "$OUT/rendered/$STEM/page" >/dev/null 2>&1
+          done
+
+      - name: Generate manifest and checksums
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib, json, subprocess
+          out=Path('project/revision-2026/guide-20/publication-candidate')
+          records=[]
+          for lang,stem in [
+            ('en','GUIDE_20_ENGLISH_v2'),
+            ('es-419','GUIDE_20_SPANISH_LATAM_v2'),
+            ('pt-BR','GUIDE_20_PORTUGUESE_BR_v2'),
+          ]:
+            docx=out/f'{stem}.docx'; pdf=out/f'{stem}.pdf'
+            info=subprocess.check_output(['pdfinfo',str(pdf)], text=True)
+            pages=None
+            for line in info.splitlines():
+              if line.startswith('Pages:'):
+                pages=int(line.split(':',1)[1].strip())
+            txt=subprocess.check_output(['pdftotext',str(pdf),'-'], text=True, errors='replace')
+            records.append({
+              'language':lang,
+              'docx':docx.name,
+              'pdf':pdf.name,
+              'docx_bytes':docx.stat().st_size,
+              'pdf_bytes':pdf.stat().st_size,
+              'pdf_pages':pages,
+              'pdf_extractable_characters':len(txt.strip()),
+              'status':'PASS'
+            })
+          manifest={
+            'guide':'20',
+            'occupation':'Court Clerk and Judicial Services Assistant',
+            'build_date':'2026-08-09',
+            'status':'PASS',
+            'controls':['19-section trilingual structure','controlled numerical values','required jurisdiction/source markers','required source URLs','DOCX ZIP integrity','PDF readability','searchable PDF text','SHA-256 checksums','all-page raster rendering'],
+            'editions':records,
+            'assurance_boundary':'Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, court approval, civil-service determination, accreditation, or employment guarantee.'
+          }
+          (out/'GUIDE_20_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          targets=sorted([p for p in out.iterdir() if p.is_file() and p.suffix in {'.docx','.pdf'}])
+          (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets)+'\n',encoding='utf-8')
+
+      - name: Upload rendered pages
+        uses: actions/upload-artifact@v4
+        with:
+          name: guide20-rendered-pages
+          path: project/revision-2026/guide-20/publication-candidate/rendered
+          retention-days: 14
+
+      - name: Remove render images from commit scope
+        run: rm -rf project/revision-2026/guide-20/publication-candidate/rendered
+
+      - name: Commit controlled publication candidates
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-20/publication-candidate
+          if git diff --cached --quiet; then
+            echo 'No publication changes to commit.'
+          else
+            git commit -m 'Build and validate Guide 20 publication candidates'
+            git pull --rebase origin revision/guide-00-100-2026
+            git push origin HEAD:revision/guide-00-100-2026
+          fi
