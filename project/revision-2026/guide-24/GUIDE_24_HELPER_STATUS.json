@@ -9,9 +9,9 @@
     "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_ENGLISH_EDITORIAL_QA_03.md"]},
     "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_EVIDENCE_TRACEABILITY_QA_04.md"]},
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_ENGLISH_SOURCE_FREEZE_05.md"]},
-    "spanish_localization": {"status": "PENDING", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_TECHNICAL_QA_DEFECT_08A.md"]},
-    "portuguese_localization": {"status": "PENDING", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_TECHNICAL_QA_DEFECT_08A.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_TECHNICAL_QA_DEFECT_08A.md"]},
+    "spanish_localization": {"status": "PASS", "evidence": ["24-facilities-coordinator-and-building-operations-assistant/spanish/QC.md", "project/revision-2026/guide-24/qa/GUIDE_24_TECHNICAL_QA_GATE_08.md"]},
+    "portuguese_localization": {"status": "PASS", "evidence": ["24-facilities-coordinator-and-building-operations-assistant/portuguese/QC.md", "project/revision-2026/guide-24/qa/GUIDE_24_TECHNICAL_QA_GATE_08.md"]},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_TECHNICAL_QA_GATE_08.md", "project/revision-2026/guide-24/publication-candidate/GUIDE_24_PUBLICATION_QA_MANIFEST.json"]},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
