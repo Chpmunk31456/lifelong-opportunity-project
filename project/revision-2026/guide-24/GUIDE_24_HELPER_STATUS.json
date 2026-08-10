@@ -5,7 +5,7 @@
   "updated": "2026-08-10",
   "stages": {
     "baseline_inventory": {"status": "PASS", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_BASELINE_INVENTORY_01.md"]},
-    "research": {"status": "PENDING", "evidence": []},
+    "research": {"status": "PASS", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_CURRENT_SOURCE_EVIDENCE_02.md"]},
     "english_editorial": {"status": "PENDING", "evidence": []},
     "evidence_traceability": {"status": "PENDING", "evidence": []},
     "english_source_freeze": {"status": "PENDING", "evidence": []},
