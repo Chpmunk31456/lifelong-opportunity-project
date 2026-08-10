@@ -71,7 +71,7 @@ jobs:
           required_markers=[
             r'\bWIOA\b', r'\bSENA\b', r'Apprenticeship\.gov',
             r'\bNOC\s+73201\b', r'1910\.147', r'\b(?:AI|IA)\b',
-            r'Version\s+2\.0|Versi[oó]n\s+2\.0|Vers[aã]o\s+2\.0'
+            r'Version:\*{0,2}\s*2\.0|Versi[oó]n:\*{0,2}\s*2\.0|Vers[aã]o:\*{0,2}\s*2\.0'
           ]
           problems=[]; counts={}; url_counts={}
           for lang,path in files.items():
