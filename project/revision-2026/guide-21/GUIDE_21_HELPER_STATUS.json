@@ -9,7 +9,7 @@
     "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-21/source/GUIDE_21_TITLE_EXAMINER_PROPERTY_RECORDS_SPECIALIST_ENGLISH_v2_WORKING_MASTER.md", "project/revision-2026/guide-21/qa/GUIDE_21_ENGLISH_EDITORIAL_QA_03.md"]},
     "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-21/qa/GUIDE_21_CLAIM_EVIDENCE_TRACEABILITY_04.md"]},
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-21/qa/GUIDE_21_ENGLISH_SOURCE_FREEZE_05.md"]},
-    "spanish_localization": {"status": "PENDING", "evidence": []},
+    "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-21/source/GUIDE_21_EXAMINADOR_TITULOS_REGISTROS_PROPIEDAD_ES419_v2_WORKING_MASTER.md", "project/revision-2026/guide-21/qa/GUIDE_21_ES419_LOCALIZATION_QA_07.md"]},
     "portuguese_localization": {"status": "PENDING", "evidence": []},
     "technical_qa": {"status": "PENDING", "evidence": []},
     "publication": {"status": "PENDING", "evidence": []},
