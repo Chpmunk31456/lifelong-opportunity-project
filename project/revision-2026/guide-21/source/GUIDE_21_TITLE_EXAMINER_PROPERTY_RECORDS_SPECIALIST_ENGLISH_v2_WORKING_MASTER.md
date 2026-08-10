@@ -1,9 +1,9 @@
 # Guide 21 — Title Examiner and Property Records Specialist
 
 **Edition:** English  
-**Version:** 2.0 working master  
+**Version:** 2.0 frozen localization source  
 **Controlled revision date:** 2026-08-10  
-**Status:** English editorial candidate; not yet localization source  
+**Status:** English source frozen after editorial and traceability PASS  
 **License:** CC BY-NC-SA 4.0
 
 ## What this career is
