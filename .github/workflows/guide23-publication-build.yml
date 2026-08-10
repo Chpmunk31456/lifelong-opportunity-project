@@ -59,10 +59,10 @@ jobs:
             'https://www.indeed.com/career/property-manager/salaries',
             'https://www.ziprecruiter.com/Salaries/Property-Manager-Salary',
             'https://www.hud.gov/helping-americans/fair-housing-act-overview',
-            'https://www.careeronestop.org/Credentials/Toolkit/find-local-training-help.aspx',
+            'https://www.careeronestop.org/LocalHelp/EmploymentAndTraining/find-WIOA-training-programs.aspx',
             'https://www.apprenticeship.gov/',
-            'https://www.jobbank.gc.ca/marketreport/wages-occupation/12494/ca',
-            'https://www.jobbank.gc.ca/marketreport/requirements/12494/ca',
+            'https://www.jobbank.gc.ca/marketreport/wages-occupation/17717/ca',
+            'https://www.jobbank.gc.ca/marketreport/requirements/17717/ca',
           ]
           required_markers=[
             r'CC BY-NC-SA 4\.0', r'\bWIOA\b', r'\bSENA\b',
