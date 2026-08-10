@@ -2,9 +2,9 @@ name: Guide 00 publication build and QA
 
 on:
   workflow_dispatch:
-  pull_request:
+  push:
     branches:
-      - main
+      - revision/guide-00-100-2026
     paths:
       - .github/workflows/guide00-publication-build.yml
       - 00-foundation-guide/source/**
