@@ -11,9 +11,9 @@
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-23/qa/GUIDE_23_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-23/qa/GUIDE_23_ES419_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-23/qa/GUIDE_23_PTBR_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
-    "publication": {"status": "PENDING", "evidence": []},
-    "release_audit": {"status": "PENDING", "evidence": []}
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-23/qa/GUIDE_23_TECHNICAL_QA_GATE_08.md"]},
+    "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-23/qa/GUIDE_23_PUBLICATION_GATE_09.md"]},
+    "release_audit": {"status": "PASS", "evidence": ["project/revision-2026/guide-23/qa/GUIDE_23_RELEASE_AUDIT_GATE_10.md"]}
   },
   "blockers": []
 }
