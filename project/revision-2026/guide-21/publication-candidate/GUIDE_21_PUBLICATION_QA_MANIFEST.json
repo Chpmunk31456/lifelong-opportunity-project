@@ -1,0 +1,51 @@
+{
+  "guide": "21",
+  "occupation": "Title Examiner and Property Records Specialist",
+  "build_date": "2026-08-10",
+  "status": "PASS",
+  "controls": [
+    "trilingual heading-count parity",
+    "controlled numerical values",
+    "required jurisdiction/source markers",
+    "required source URLs",
+    "UTF-8 replacement-character check",
+    "DOCX ZIP integrity",
+    "PDF readability",
+    "searchable PDF text",
+    "SHA-256 checksums",
+    "all-page raster rendering"
+  ],
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_21_ENGLISH_v2.docx",
+      "pdf": "GUIDE_21_ENGLISH_v2.pdf",
+      "docx_bytes": 20801,
+      "pdf_bytes": 178068,
+      "pdf_pages": 9,
+      "pdf_extractable_characters": 19688,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_21_SPANISH_LATAM_v2.docx",
+      "pdf": "GUIDE_21_SPANISH_LATAM_v2.pdf",
+      "docx_bytes": 21784,
+      "pdf_bytes": 181679,
+      "pdf_pages": 10,
+      "pdf_extractable_characters": 22722,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_21_PORTUGUESE_BR_v2.docx",
+      "pdf": "GUIDE_21_PORTUGUESE_BR_v2.pdf",
+      "docx_bytes": 21618,
+      "pdf_bytes": 181547,
+      "pdf_pages": 10,
+      "pdf_extractable_characters": 22038,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, title opinion, insurance authority, accreditation, or employment guarantee."
+}
