@@ -49,7 +49,7 @@ Start with free or employer-provided material before paying for a credential. Le
 - spreadsheets, email, calendars, and simple reporting;
 - inventory and purchasing fundamentals;
 - basic building-system vocabulary: electrical, plumbing, HVAC, fire/life safety, elevators, access control, lighting, water, waste, and building-management systems; and
-- the difference between observing/coordinating work and performing regulated technical work.
+- the difference between observing or coordinating work and performing regulated technical work.
 
 ### Step 2 — Build entry-level evidence
 
@@ -67,7 +67,7 @@ Do not publish actual floor plans, security procedures, access-control details, 
 
 ### Step 3 — Get adjacent experience
 
-Relevant starting points can include workplace services, front-desk operations, property support, cleaning supervision, warehouse/site coordination, hotel engineering support, school or campus operations, construction support, maintenance dispatch, security operations, vendor coordination, or general administrative roles that interact with facilities teams.
+Relevant starting points can include workplace services, front-desk operations, property support, cleaning supervision, warehouse or site coordination, hotel engineering support, school or campus operations, construction support, maintenance dispatch, security operations, vendor coordination, or general administrative roles that interact with facilities teams.
 
 Experience does not have to begin with the exact title “facilities coordinator.” What matters is truthful evidence that you can coordinate work, document issues, communicate with different people, follow safety rules, and close tasks reliably.
 
@@ -77,13 +77,13 @@ Technical study can help, especially in HVAC, refrigeration, electricity, plumbi
 
 ## 4. United States pathway
 
-The U.S. Bureau of Labor Statistics places **facilities managers** at a more senior level than many coordinator or assistant roles. BLS reported a median annual wage of **$104,690 in May 2024** for facilities managers and notes that manager roles typically require a bachelor’s degree plus related experience. Treat that figure as a management benchmark, not an entry-level coordinator salary.
+The U.S. Bureau of Labor Statistics places **facilities managers** at a more senior level than many coordinator or assistant roles. The newer May 2025 Occupational Employment and Wage Statistics table reported about **156,180 facilities managers**, a **mean hourly wage of $56.20**, a **mean annual wage of $116,890**, and a **median hourly wage of $51.28**. These are manager-level occupation statistics, not an entry-level coordinator salary. The BLS Occupational Outlook Handbook separately reports a **May 2024 median annual wage of $104,690** for facilities managers and says manager roles typically require a bachelor’s degree plus related experience.
 
-For coordinator-level market research, a current non-government source may be more title-specific. **Salary.com reported an average U.S. Facilities Coordinator salary of $73,794 per year as of July 1, 2026, with a reported 25th–75th percentile range of $65,970–$79,203.** This is a private market estimate, not a government statistic or promise of pay. PayScale’s 2026 page reports a lower average base rate of **$23.54 per hour** and an observed total-pay range of roughly **$38,000–$73,000** in its dataset. The difference between sources is exactly why applicants should compare multiple sources and local job postings rather than depend on one number.
+For coordinator-level market research, use a title-specific private estimate only as supplementary evidence. **Indeed reported an average U.S. Facility Coordinator base salary of $24.72 per hour on a page updated July 19, 2026, with a displayed low of $16.88 and high of $36.19 per hour, based on about 2.6 thousand salaries from job postings over the prior 36 months.** This is a non-government estimate, not an official statistic or promise of pay. Compare it with current local vacancies, employer benefits, work schedules, and responsibility level before making a decision.
 
-For training and funding, contact an **American Job Center** and ask whether you qualify for Workforce Innovation and Opportunity Act services, an Individual Training Account, supportive services, or other locally funded training. Eligibility, approved providers, and available funds vary by state and local workforce area.
+For training and funding, contact an **American Job Center** and ask whether you qualify for Workforce Innovation and Opportunity Act services, an Individual Training Account, supportive services, or other locally funded training. Eligibility, approved providers, and available funds vary by state and local workforce area. Verify that a specific program is eligible before enrolling or paying.
 
-Registered Apprenticeship can also provide an earn-while-you-learn route into building-related skilled trades. Apprenticeship.gov documents large construction apprenticeship pathways and examples of facilities organizations that sponsor skilled-trades apprenticeships. An apprenticeship is not guaranteed for the coordinator title, but a trade apprenticeship can become strong preparation for later building-operations work.
+Registered Apprenticeship can provide an earn-while-you-learn route into building-related skilled trades. Apprenticeship.gov identifies large construction and skilled-trade pathways. A trade apprenticeship can become strong preparation for later building-operations work, but a dedicated facilities-coordinator apprenticeship is not guaranteed to exist in every location, and an apprenticeship does not authorize work outside the apprentice’s occupation or applicable licensing rules.
 
 Other possible U.S. funding routes include employer tuition assistance, union or employer training funds, community-college grants, state workforce grants, veterans’ education benefits when eligible, and scholarships offered by schools or professional associations. Verify terms in writing before enrolling.
 
@@ -93,23 +93,25 @@ Canada’s Job Bank currently maps the search title **facilities coordinator** t
 
 Job Bank reports national NOC 70012 wages of **C$25.96 low, C$45.20 median, and C$70.67 high per hour**, updated November 19, 2025 from Statistics Canada reference data. Use these as official NOC-level labour-market information, not as guaranteed coordinator pay.
 
+For a more hands-on comparison, Job Bank’s **Building Operator - Maintenance, NOC 73201** profile reports national wages of approximately **C$16.55 low, C$25.00 median, and C$38.46 high per hour**, also updated November 19, 2025. Facilities coordinator, building operator, maintenance worker, and facilities manager are not interchangeable titles and may map to different NOCs and responsibility levels.
+
 Job Bank says facility-operation managers typically need related postsecondary education or an equivalent combination of technical training and experience, and several years of supervisory experience are usually expected. Its current national profile does not identify NOC 70012 as a regulated occupation. However, specific technical tasks—such as electrical, gas, refrigeration, fire-protection, or other trade work—may be regulated by a province or territory even when the management occupation is not.
 
-Useful Canadian pathways can include public colleges, provincial/territorial apprenticeship systems, employer training, newcomer employment services, and provincial workforce programs. Check the requirements for the province or territory where you intend to work.
+Useful Canadian pathways can include public colleges, provincial or territorial apprenticeship systems, employer training, newcomer employment services, and provincial workforce programs. Check the requirements for the province or territory where you intend to work.
 
 ## 6. Colombia pathway
 
 Colombia has realistic entry points through **mantenimiento locativo**, **mantenimiento general de edificios**, **infraestructura**, workplace services, property operations, and related support roles.
 
-Recent 2026 vacancies published through Colombia’s **Servicio Público de Empleo** illustrate the range. One Bogotá maintenance-support vacancy accepted secondary education plus experience and combined reporting, vendor/material support, tools, painting, masonry, plumbing, and electrical-adjacent tasks. Another technical infrastructure-maintenance vacancy required technical education and more experience. A separate Bogotá/Funza support vacancy accepted applicants from basic secondary education and, for that specific opening, did not require prior experience.
-
-These are examples of the market, not promises that the same vacancies or conditions are available today. Search the live Servicio Público de Empleo network for current openings.
+Current and recent postings through SENA’s Agencia Pública de Empleo and Colombia’s public employment network show demand for building-maintenance support involving preventive and corrective maintenance, infrastructure upkeep, work orders, safe tool use, and escalation. Vacancy examples are labour-market evidence only; they are not a universal legal scope of practice or authorization to perform regulated electrical, plumbing, work-at-height, welding, gas, fire-protection, or other technical work without the required training or authority.
 
 ### SENA and free-first training
 
-SENA should be one of the first places to check before paying a private school. Use the current **Betowa** catalogue to search for training related to maintenance, construction, electricity, refrigeration, occupational safety, digital tools, administration, logistics, or customer service. Course names, availability, modality, schedules, prerequisites, and seats change, so verify the live catalogue rather than relying on an old course name.
+SENA should be one of the first places to check before paying a private school. Use the current **Betowa** catalogue to search for training related to maintenance, construction, occupational safety, energy, electrical basics, HVAC or refrigeration, inventory, customer service, digital records, or related areas. Course names, availability, modality, schedules, prerequisites, and seats change, so verify the live catalogue rather than relying on an old course name.
 
-Also use the Servicio Público de Empleo and local cajas de compensación for employment services and training referrals when eligible.
+Eligible learners should also check current SENA **apoyos de sostenimiento** and construction-sector support rules. SENA Circular 282 de 2024 includes programs such as Construcción en Edificaciones and Construcción de Infraestructura Vial in the catalog associated with construction-industry learner support. Eligibility and availability depend on current rules, program, cohort, and funding.
+
+Also use the Servicio Público de Empleo, SENA Agencia Pública de Empleo, and local cajas de compensación for employment services and training referrals when eligible.
 
 ### Safety and regulated-work boundary in Colombia
 
@@ -170,9 +172,9 @@ AI can help when employer policy permits. Lower-risk uses include:
 - translating a non-confidential training note for review; and
 - brainstorming preventive-maintenance questions to ask a qualified technician.
 
-Do **not** rely on AI as the authority for electrical safety, lockout/tagout, chemical handling, work at height, confined spaces, fire/life safety, emergency response, building-code interpretation, engineering decisions, or other high-risk technical work. Follow approved procedures and qualified people.
+Do **not** rely on AI as the authority for electrical safety, lockout/tagout, chemical handling, work at height, confined spaces, fire/life safety, emergency response, building-code interpretation, engineering decisions, accessibility compliance, hazardous-material decisions, contractor licensing, or other high-risk technical work. Follow approved procedures and qualified people.
 
-Do not put employee, visitor, tenant, customer, badge, CCTV, security, floor-plan, network, alarm, medical, or other sensitive information into a public AI service unless your employer has explicitly authorized that use and the required safeguards are in place.
+Do not put employee, visitor, tenant, customer, badge, CCTV, security, floor-plan, network, alarm, medical, incident, or other sensitive information into a public AI service unless your employer has explicitly authorized that use and the required privacy, confidentiality, cybersecurity, retention, and contractual safeguards are in place.
 
 ## 12. A 12-week starter plan
 
@@ -190,7 +192,7 @@ Do not put employee, visitor, tenant, customer, badge, CCTV, security, floor-pla
 
 ## 13. Advancement options
 
-With experience and appropriate training, possible progression can include facilities coordinator, senior coordinator, maintenance planner, workplace services lead, building operations supervisor, facilities manager, property operations manager, energy coordinator, building-automation support, project coordinator, vendor manager, safety coordinator, or a licensed/skilled trade.
+With experience and appropriate training, possible progression can include facilities coordinator, senior coordinator, maintenance planner, workplace services lead, building operations supervisor, facilities manager, property operations manager, energy coordinator, building-automation support, project coordinator, vendor manager, safety coordinator, or a licensed or skilled trade.
 
 Advancement is not automatic. Management roles usually require broader responsibility for budgets, contracts, people, compliance, capital projects, and risk. Technical trades may require formal apprenticeship, examination, licensing, or other jurisdiction-specific authorization.
 
@@ -204,26 +206,30 @@ Consider delaying a training purchase or job change when:
 - tuition reimbursement includes repayment terms you cannot accept;
 - the role’s physical or schedule requirements are unclear and accommodations have not been discussed;
 - you would need to disclose sensitive building information to complete a course or portfolio; or
-- local licensing, apprenticeship, immigration/work authorization, or safety requirements have not been verified.
+- local licensing, apprenticeship, immigration or work-authorization, or safety requirements have not been verified.
 
 ## 15. Source notes
 
 Research for this controlled revision was refreshed August 10, 2026. Core sources:
 
+- U.S. Bureau of Labor Statistics, May 2025 Occupational Employment and Wage Statistics: https://www.bls.gov/news.release/ocwage.t01.htm
 - U.S. Bureau of Labor Statistics, Administrative Services and Facilities Managers: https://www.bls.gov/ooh/management/administrative-services-managers.htm
 - O*NET OnLine, Facilities Managers 11-3013.00: https://www.onetonline.org/link/summary/11-3013.00
+- Indeed, Facility Coordinator salaries, page updated July 19, 2026: https://www.indeed.com/career/facility-coordinator/salaries
 - Apprenticeship.gov, Construction: https://www.apprenticeship.gov/apprenticeship-industries/construction
-- CareerOneStop, American Job Centers: https://www.careeronestop.org/LocalHelp/AmericanJobCenters/american-job-centers.aspx
+- CareerOneStop, WIOA training and American Job Centers: https://www.careeronestop.org/LocalHelp/EmploymentAndTraining/find-WIOA-training-programs.aspx
 - U.S. Access Board, ADA standards and guidance: https://www.access-board.gov/ada/
-- Salary.com, Facilities Coordinator Salary, July 1, 2026: https://www.salary.com/research/salary/listing/facilities-coordinator-salary
-- PayScale, Facility Coordinator: https://www.payscale.com/research/US/Job=Facility_Coordinator/Hourly_Rate
 - Government of Canada Job Bank, Facilities Coordinator / NOC 70012: https://www.jobbank.gc.ca/marketreport/summary-occupation/297406/ca
-- Government of Canada Job Bank, wages: https://www.jobbank.gc.ca/marketreport/wages-occupation/297406/ca
-- Government of Canada Job Bank, requirements: https://www.jobbank.gc.ca/marketreport/requirements/297406/ca
-- Colombia Servicio Público de Empleo: https://www.serviciodeempleo.gov.co/
+- Government of Canada Job Bank, NOC 70012 wages: https://www.jobbank.gc.ca/marketreport/wages-occupation/297406/ca
+- Government of Canada Job Bank, NOC 70012 requirements: https://www.jobbank.gc.ca/marketreport/requirements/297406/ca
+- Government of Canada Job Bank, Building Operator - Maintenance / NOC 73201 wages: https://www.jobbank.gc.ca/marketreport/wages-occupation/14403/ca
 - SENA Betowa: https://betowa.sena.edu.co/
+- SENA Agencia Pública de Empleo: https://ape.sena.edu.co/
+- Colombia Servicio Público de Empleo: https://www.serviciodeempleo.gov.co/
+- SENA Circular 282 de 2024: https://normograma.sena.edu.co/compilacion/docs/circular_sena_0282_2024.htm
+- SENA Resolución 2773 de 2024: https://normograma.sena.edu.co/compilacion/docs/resolucion_sena_2773_2024.htm
 
-A detailed evidence register is maintained in `references/GUIDE_24_CURRENT_SOURCE_EVIDENCE.md`.
+A detailed evidence register is maintained in `project/revision-2026/guide-24/qa/GUIDE_24_CURRENT_SOURCE_EVIDENCE_02.md`.
 
 ## 16. Author, review status, and license
 
