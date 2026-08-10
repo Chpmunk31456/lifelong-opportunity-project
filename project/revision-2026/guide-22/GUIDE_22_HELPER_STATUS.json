@@ -11,9 +11,9 @@
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-22/qa/GUIDE_22_ENGLISH_SOURCE_FREEZE_GATE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-22/source/GUIDE_22_AGENTE_VENTAS_INMOBILIARIAS_CONSULTOR_ARRENDAMIENTOS_ES419_v2_WORKING_MASTER.md", "project/revision-2026/guide-22/qa/GUIDE_22_TRILINGUAL_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-22/source/GUIDE_22_AGENTE_VENDAS_IMOBILIARIAS_CONSULTOR_LOCACAO_PTBR_v2_WORKING_MASTER.md", "project/revision-2026/guide-22/qa/GUIDE_22_TRILINGUAL_LOCALIZATION_QA_06.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
-    "publication": {"status": "PENDING", "evidence": []},
-    "release_audit": {"status": "PENDING", "evidence": []}
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-22/qa/GUIDE_22_TECHNICAL_QA_GATE_07.md", "project/revision-2026/guide-22/publication-candidate/GUIDE_22_PUBLICATION_QA_MANIFEST.json"]},
+    "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-22/qa/GUIDE_22_PUBLICATION_GATE_08.md", "project/revision-2026/guide-22/publication-candidate/SHA256SUMS.txt"]},
+    "release_audit": {"status": "PASS", "evidence": ["project/revision-2026/guide-22/qa/GUIDE_22_RELEASE_AUDIT_GATE_09.md"]}
   },
   "blockers": []
 }
