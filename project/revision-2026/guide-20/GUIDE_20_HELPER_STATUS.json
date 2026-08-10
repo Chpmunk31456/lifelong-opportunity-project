@@ -6,14 +6,14 @@
   "stages": {
     "baseline_inventory": {"status": "PASS", "evidence": ["project/revision-2026/guide-20/qa/GUIDE_20_BASELINE_INVENTORY_01.md"]},
     "research": {"status": "PASS", "evidence": ["project/revision-2026/guide-20/qa/GUIDE_20_CURRENT_SOURCE_EVIDENCE_02.md"]},
-    "english_editorial": {"status": "PENDING", "evidence": []},
-    "evidence_traceability": {"status": "PENDING", "evidence": []},
-    "english_source_freeze": {"status": "PENDING", "evidence": []},
-    "spanish_localization": {"status": "PENDING", "evidence": []},
-    "portuguese_localization": {"status": "PENDING", "evidence": []},
-    "technical_qa": {"status": "PENDING", "evidence": []},
-    "publication": {"status": "PENDING", "evidence": []},
-    "release_audit": {"status": "PENDING", "evidence": []}
+    "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-20/source/GUIDE_20_ENGLISH_WORKING_MASTER_v2.md", "project/revision-2026/guide-20/qa/GUIDE_20_ENGLISH_EDITORIAL_QA_03.md"]},
+    "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-20/qa/GUIDE_20_CLAIM_TRACEABILITY_04.md"]},
+    "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-20/qa/GUIDE_20_ENGLISH_SOURCE_FREEZE_05.md"]},
+    "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-20/source/GUIDE_20_SPANISH_LATAM_WORKING_MASTER_v2.md", "project/revision-2026/guide-20/qa/GUIDE_20_TRILINGUAL_LOCALIZATION_PARITY_QA_06.md"]},
+    "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-20/source/GUIDE_20_PORTUGUESE_BR_WORKING_MASTER_v2.md", "project/revision-2026/guide-20/qa/GUIDE_20_TRILINGUAL_LOCALIZATION_PARITY_QA_06.md"]},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-20/qa/GUIDE_20_TRILINGUAL_LOCALIZATION_PARITY_QA_06.md", ".github/workflows/guide20-publication-build.yml"]},
+    "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-20/qa/GUIDE_20_PUBLICATION_QA_07.md", "project/revision-2026/guide-20/publication-candidate/GUIDE_20_PUBLICATION_QA_MANIFEST.json", "project/revision-2026/guide-20/publication-candidate/SHA256SUMS.txt"]},
+    "release_audit": {"status": "PASS", "evidence": ["project/revision-2026/guide-20/qa/GUIDE_20_RELEASE_AUDIT_08.md"]}
   },
   "blockers": []
 }
