@@ -29,12 +29,22 @@ Blob reviewed at freeze gate: `304df63419016f41bbc73aee10b28aac78a4b388`.
 
 Localization must preserve the 15-section structure, caution language, official-vs-private income distinction, regulated-work boundaries, URLs, and Version 2.0 status. Any later English change that alters meaning must reopen localization QA.
 
-## Remaining gates
+## es-419 localization gate — PASS
 
-- es-419 localization and terminology QA
-- pt-BR localization and terminology QA
-- trilingual structural/link/encoding QA
-- DOCX generation and integrity QA
-- PDF generation, searchable-text, and visual rendering QA
-- metadata/checksum/publication validation
-- controlled release audit
+Controlled localized source:
+
+`spanish/Guia_24_Coordinacion_de_Facilities_y_Asistencia_de_Operaciones_de_Edificios_es-419_v2.0.md`
+
+QA confirms 15-section parity, preservation of warnings and jurisdictional boundaries, faithful wage figures and dates, neutral Latin American terminology, source URL retention, and no unsupported certification/accreditation claims.
+
+## pt-BR localization gate — PASS
+
+Controlled localized source:
+
+`portuguese/Guia_24_Coordenacao_de_Facilities_e_Assistencia_de_Operacoes_Prediais_pt-BR_v2.0.md`
+
+QA confirms 15-section parity, preservation of warnings and jurisdictional boundaries, faithful wage figures and dates, natural Brazilian Portuguese terminology, source URL retention, and no unsupported certification/accreditation claims.
+
+## Current gate
+
+Trilingual technical/publication QA remains open. The next controlled work is structural/link/encoding automation, DOCX/PDF generation and integrity checks, searchable-text and rendering QA, metadata/checksum publication validation, then release audit. Guide 24 is not yet release-complete.
