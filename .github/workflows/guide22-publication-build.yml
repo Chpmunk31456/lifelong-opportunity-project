@@ -67,16 +67,16 @@ jobs:
             'https://betowa.sena.edu.co/oferta/fortalecimiento-en-mercadeo-y-ventas?modality=P&programId=122734',
           ]
           controlled_patterns={
-            '56,320': r'(?<!\d)56,320(?!\d)',
-            '72,280': r'(?<!\d)72,280(?!\d)',
+            '56,320': r'(?<!\d)56[,.]320(?!\d)',
+            '72,280': r'(?<!\d)72[,.]280(?!\d)',
             '3 percent': r'(?<!\d)3\s*%(?!\d)',
-            '46,300': r'(?<!\d)46,300(?!\d)',
-            '100,988': r'(?<!\d)100,988(?!\d)',
-            '19.71': r'(?<!\d)19\.71(?!\d)',
+            '46,300': r'(?<!\d)46[,.]300(?!\d)',
+            '100,988': r'(?<!\d)100[,.]988(?!\d)',
+            '19.71': r'(?<!\d)19[,.]71(?!\d)',
             'NOC 63101': r'\bNOC\s+63101\b',
-            '32,867': r'(?<!\d)32,867(?!\d)',
-            '58,400': r'(?<!\d)58,400(?!\d)',
-            '178,000': r'(?<!\d)178,000(?!\d)',
+            '32,867': r'(?<!\d)32[,.]867(?!\d)',
+            '58,400': r'(?<!\d)58[,.]400(?!\d)',
+            '178,000': r'(?<!\d)178[,.]000(?!\d)',
             'Ley 820 de 2003': r'Ley\s+820\s+de\s+2003',
             '15,000': r'(?<!\d)15[,.]000(?!\d)',
             '48 hours': r'(?<!\d)48(?:-hour|\s+hours|\s+horas)(?!\d)',
@@ -196,7 +196,7 @@ jobs:
             'occupation':'Real Estate Sales Agent and Leasing Consultant',
             'build_date':'2026-08-10',
             'status':'PASS',
-            'controls':['trilingual heading-count parity','controlled numerical values','required jurisdiction/source markers','required source URLs','UTF-8 replacement-character check','DOCX ZIP integrity','PDF readability','searchable PDF text','SHA-256 checksums','all-page raster rendering'],
+            'controls':['trilingual heading-count parity','controlled numerical values with locale-aware separators','required jurisdiction/source markers','required source URLs','UTF-8 replacement-character check','DOCX ZIP integrity','PDF readability','searchable PDF text','SHA-256 checksums','all-page raster rendering'],
             'editions':records,
             'assurance_boundary':'Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, brokerage or licensing advice, accreditation, or employment or earnings guarantee.'
           }
