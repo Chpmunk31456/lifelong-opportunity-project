@@ -50,21 +50,23 @@ Puede ser útil estudiar HVAC, refrigeración, electricidad, plomería, construc
 
 ## 4. Ruta en Estados Unidos
 
-La Oficina de Estadísticas Laborales de Estados Unidos (BLS) ubica a los **facilities managers** en un nivel más sénior que muchos puestos de coordinador o asistente. BLS informó un salario mediano anual de **US$104.690 en mayo de 2024** para facilities managers y señala que los puestos de gerente normalmente requieren licenciatura y experiencia relacionada. Use esta cifra como referencia de nivel gerencial, no como salario inicial de coordinador.
+La Oficina de Estadísticas Laborales de Estados Unidos (BLS) ubica a los **facilities managers** en un nivel más sénior que muchos puestos de coordinador o asistente. La tabla más reciente de Occupational Employment and Wage Statistics, de mayo de 2025, reportó aproximadamente **156.180 facilities managers**, un **salario promedio de US$56,20 por hora**, un **promedio anual de US$116.890** y una **mediana de US$51,28 por hora**. Son cifras de una ocupación gerencial, no un salario inicial de coordinador. El Occupational Outlook Handbook de BLS informa por separado una **mediana anual de US$104.690 en mayo de 2024** para facilities managers y señala que los cargos gerenciales suelen requerir licenciatura y experiencia relacionada.
 
-Para investigar el mercado de coordinadores, las fuentes privadas pueden ser más específicas por título. Salary.com informó un promedio de **US$73.794 al año al 1 de julio de 2026**, con un rango de percentiles 25–75 de **US$65.970–US$79.203**. Es una estimación privada, no una estadística gubernamental ni una promesa salarial. PayScale muestra para 2026 una tasa base promedio inferior, de **US$23,54 por hora**, y un rango observado de remuneración total de aproximadamente **US$38.000–US$73.000**. La diferencia entre fuentes demuestra por qué conviene comparar varias fuentes y vacantes locales actuales.
+Para investigar el nivel de coordinador, use una estimación privada específica por título solo como evidencia complementaria. **Indeed informó un salario base promedio de US$24,72 por hora para Facility Coordinator en Estados Unidos, en una página actualizada el 19 de julio de 2026, con un valor bajo mostrado de US$16,88 y uno alto de US$36,19 por hora, basado en cerca de 2.600 salarios de publicaciones de empleo de los 36 meses anteriores.** Es una estimación no gubernamental, no una estadística oficial ni una promesa de ingresos. Compárela con vacantes locales, beneficios, horarios y nivel real de responsabilidad.
 
-Para capacitación y financiamiento, contacte un **American Job Center** y pregunte si puede acceder a servicios de Workforce Innovation and Opportunity Act (WIOA), una Individual Training Account, servicios de apoyo u otros fondos locales. La elegibilidad y los proveedores aprobados varían por estado y área de fuerza laboral.
+Para capacitación y financiamiento, contacte un **American Job Center** y pregunte si califica para servicios de Workforce Innovation and Opportunity Act (WIOA), una Individual Training Account, servicios de apoyo u otros fondos locales. La elegibilidad, los proveedores aprobados y los fondos disponibles varían según el estado y el área laboral. Verifique que un programa específico sea elegible antes de inscribirse o pagar.
 
-Los programas de **Registered Apprenticeship** también pueden ofrecer una ruta de aprender mientras se gana un salario en oficios vinculados con edificios y construcción. No existe garantía de aprendizaje para el título exacto de coordinador, pero un aprendizaje en un oficio puede ser una preparación valiosa para operaciones de edificios.
+Registered Apprenticeship puede ofrecer una ruta de aprender mientras se recibe salario en oficios vinculados con edificios. Apprenticeship.gov identifica amplias rutas en construcción y oficios calificados. Un apprenticeship de oficio puede ser una preparación sólida para operaciones de edificios, pero no se garantiza que exista un apprenticeship específico para facilities coordinator en cada localidad ni que autorice trabajo fuera del oficio o de las reglas de licencia aplicables.
 
-Otras opciones pueden incluir asistencia educativa del empleador, fondos sindicales o empresariales, becas de community colleges, subvenciones estatales, beneficios educativos para veteranos cuando correspondan y becas de instituciones o asociaciones. Verifique por escrito los términos antes de inscribirse.
+Otras rutas posibles incluyen asistencia educativa del empleador, fondos sindicales o empresariales, subvenciones de community colleges, apoyos estatales, beneficios educativos para veteranos cuando correspondan y becas de instituciones o asociaciones. Verifique los términos por escrito antes de inscribirse.
 
 ## 5. Ruta en Canadá
 
 Job Bank de Canadá actualmente relaciona el título de búsqueda **facilities coordinator** con **Facility operation and maintenance managers, NOC 70012**. Esa clasificación es de orientación gerencial, por lo que una persona principiante no debe asumir que los requisitos o salarios de NOC 70012 corresponden a todas las vacantes de coordinador o asistente.
 
-Job Bank reporta para Canadá salarios de **C$25,96 por hora en el nivel bajo, C$45,20 de mediana y C$70,67 en el nivel alto**, actualizados el 19 de noviembre de 2025 con datos de referencia de Statistics Canada. Son datos oficiales de mercado laboral a nivel NOC, no salarios garantizados para un coordinador.
+Job Bank reporta para NOC 70012 salarios nacionales de **C$25,96 por hora en el nivel bajo, C$45,20 de mediana y C$70,67 en el nivel alto**, actualizados el 19 de noviembre de 2025 con datos de referencia de Statistics Canada. Son datos oficiales a nivel NOC, no salarios garantizados para un coordinador.
+
+Como comparación más práctica, el perfil de Job Bank para **Building Operator - Maintenance, NOC 73201**, reporta salarios nacionales aproximados de **C$16,55 por hora en el nivel bajo, C$25,00 de mediana y C$38,46 en el nivel alto**, también actualizados el 19 de noviembre de 2025. Facilities coordinator, building operator, trabajador de mantenimiento y facilities manager no son títulos intercambiables y pueden corresponder a distintos NOC y niveles de responsabilidad.
 
 Job Bank indica que los gerentes de operaciones de instalaciones suelen requerir estudios postsecundarios relacionados o una combinación equivalente de capacitación técnica y experiencia, y normalmente varios años de experiencia de supervisión. El perfil nacional actual no identifica NOC 70012 como una ocupación regulada. Sin embargo, tareas técnicas específicas —por ejemplo electricidad, gas, refrigeración, protección contra incendios u otros oficios— pueden estar reguladas por una provincia o territorio.
 
@@ -72,15 +74,17 @@ Las rutas canadienses pueden incluir colleges públicos, sistemas provinciales o
 
 ## 6. Ruta en Colombia
 
-En Colombia existen rutas realistas a través de **mantenimiento locativo**, **mantenimiento general de edificios**, **infraestructura**, servicios generales, workplace services, operaciones de inmuebles y funciones de apoyo relacionadas.
+En Colombia existen rutas realistas a través de **mantenimiento locativo**, **mantenimiento general de edificios**, **infraestructura**, servicios del lugar de trabajo, operaciones de inmuebles y funciones de apoyo relacionadas.
 
-Vacantes publicadas en 2026 por el **Servicio Público de Empleo** muestran que el mercado puede ir desde cargos de apoyo con educación secundaria y experiencia, hasta puestos técnicos con formación técnica y más experiencia. Algunas vacantes combinan reportes, apoyo a proveedores y materiales, herramientas, pintura, mampostería, plomería y tareas adyacentes a electricidad. Otras aceptan perfiles de menor experiencia. Estos ejemplos ilustran el mercado; no significan que las mismas vacantes o condiciones sigan disponibles. Consulte siempre la red del Servicio Público de Empleo para oportunidades vigentes.
+Vacantes actuales y recientes de la Agencia Pública de Empleo de SENA y de la red pública de empleo muestran demanda de apoyo en mantenimiento de edificios, incluidas tareas de mantenimiento preventivo y correctivo, conservación de infraestructura, órdenes de trabajo, uso seguro de herramientas y escalamiento. Estos ejemplos son evidencia del mercado laboral, no un alcance legal universal ni autorización para ejecutar trabajos regulados de electricidad, plomería, alturas, soldadura, gas, protección contra incendios u otras tareas técnicas sin la formación o autoridad requerida.
 
 ### SENA y capacitación gratuita primero
 
-SENA debe ser una de las primeras opciones antes de pagar a una institución privada. Use el catálogo vigente de **Betowa** para buscar formación relacionada con mantenimiento, construcción, electricidad, refrigeración, seguridad y salud en el trabajo, herramientas digitales, administración, logística o servicio al cliente. Los nombres de cursos, cupos, horarios, modalidad y requisitos cambian; verifique el catálogo en vivo.
+SENA debe ser una de las primeras opciones antes de pagar a una institución privada. Use el catálogo vigente de **Betowa** para buscar formación relacionada con mantenimiento, construcción, seguridad y salud en el trabajo, energía, electricidad básica, HVAC o refrigeración, inventario, servicio al cliente, registros digitales y áreas relacionadas. Los nombres de cursos, disponibilidad, modalidad, horarios, requisitos y cupos cambian; verifique el catálogo en vivo.
 
-También utilice el Servicio Público de Empleo y las cajas de compensación para servicios de empleo y referencias a capacitación cuando sea elegible.
+Las personas elegibles también deben revisar los **apoyos de sostenimiento** de SENA y las reglas vigentes del sector construcción. La Circular 282 de 2024 de SENA incluye programas como Construcción en Edificaciones y Construcción de Infraestructura Vial dentro del catálogo asociado al apoyo para aprendices de la industria de la construcción. La elegibilidad y disponibilidad dependen de las reglas vigentes, el programa, la cohorte y los recursos disponibles.
+
+Use también el Servicio Público de Empleo, la Agencia Pública de Empleo de SENA y las cajas de compensación para servicios de empleo y referencias a capacitación cuando sea elegible.
 
 ### Límite de seguridad y trabajo regulado en Colombia
 
@@ -154,17 +158,29 @@ Considere aplazar una compra de capacitación o un cambio de empleo cuando el em
 
 La investigación de esta revisión controlada se actualizó el 10 de agosto de 2026. Fuentes principales:
 
+- U.S. Bureau of Labor Statistics, May 2025 Occupational Employment and Wage Statistics: https://www.bls.gov/news.release/ocwage.t01.htm
 - U.S. Bureau of Labor Statistics, Administrative Services and Facilities Managers: https://www.bls.gov/ooh/management/administrative-services-managers.htm
 - O*NET OnLine, Facilities Managers 11-3013.00: https://www.onetonline.org/link/summary/11-3013.00
+- Indeed, Facility Coordinator salaries, página actualizada el 19 de julio de 2026: https://www.indeed.com/career/facility-coordinator/salaries
 - Apprenticeship.gov, Construction: https://www.apprenticeship.gov/apprenticeship-industries/construction
-- CareerOneStop, American Job Centers: https://www.careeronestop.org/LocalHelp/AmericanJobCenters/american-job-centers.aspx
+- CareerOneStop, WIOA training and American Job Centers: https://www.careeronestop.org/LocalHelp/EmploymentAndTraining/find-WIOA-training-programs.aspx
 - U.S. Access Board, ADA: https://www.access-board.gov/ada/
-- Salary.com, Facilities Coordinator Salary, 1 de julio de 2026: https://www.salary.com/research/salary/listing/facilities-coordinator-salary
-- PayScale, Facility Coordinator: https://www.payscale.com/research/US/Job=Facility_Coordinator/Hourly_Rate
 - Government of Canada Job Bank, Facilities Coordinator / NOC 70012: https://www.jobbank.gc.ca/marketreport/summary-occupation/297406/ca
-- Government of Canada Job Bank, salarios: https://www.jobbank.gc.ca/marketreport/wages-occupation/297406/ca
-- Government of Canada Job Bank, requisitos: https://www.jobbank.gc.ca/marketreport/requirements/297406/ca
-- Servicio Público de Empleo de Colombia: https://www.serviciodeempleo.gov.co/
+- Government of Canada Job Bank, salarios NOC 70012: https://www.jobbank.gc.ca/marketreport/wages-occupation/297406/ca
+- Government of Canada Job Bank, requisitos NOC 70012: https://www.jobbank.gc.ca/marketreport/requirements/297406/ca
+- Government of Canada Job Bank, Building Operator - Maintenance / NOC 73201: https://www.jobbank.gc.ca/marketreport/wages-occupation/14403/ca
 - SENA Betowa: https://betowa.sena.edu.co/
+- SENA Agencia Pública de Empleo: https://ape.sena.edu.co/
+- Servicio Público de Empleo de Colombia: https://www.serviciodeempleo.gov.co/
+- SENA Circular 282 de 2024: https://normograma.sena.edu.co/compilacion/docs/circular_sena_0282_2024.htm
+- SENA Resolución 2773 de 2024: https://normograma.sena.edu.co/compilacion/docs/resolucion_sena_2773_2024.htm
 
-**Licencia del proyecto:** CC BY-NC-SA 4.0.
+El registro detallado de evidencia se mantiene en `project/revision-2026/guide-24/qa/GUIDE_24_CURRENT_SOURCE_EVIDENCE_02.md`.
+
+## 16. Autoría, estado de revisión y licencia
+
+Creado y dirigido por **Alberto “Al” Leiva**. ChatGPT apoyó la investigación, organización, edición y preparación documental bajo la dirección del autor. El autor conserva la responsabilidad por las decisiones editoriales y de publicación.
+
+Esta edición controlada ha pasado por una reconstrucción editorial asistida por IA y basada en fuentes. **No** ha sido certificada, acreditada ni declarada revisada por humanos por una autoridad externa. La traducción, generación de documentos, enlaces, metadatos y QA de publicación son etapas controladas separadas y no se consideran implícitas por esta edición localizada.
+
+Salvo que un archivo indique lo contrario, este material se ofrece bajo licencia **CC BY-NC-SA 4.0**.

@@ -50,21 +50,23 @@ Estudos em HVAC, refrigeração, elétrica, hidráulica, construção, gestão d
 
 ## 4. Caminho nos Estados Unidos
 
-O U.S. Bureau of Labor Statistics (BLS) posiciona **facilities managers** em nível mais sênior do que muitos cargos de coordenador ou assistente. O BLS informou salário anual mediano de **US$ 104.690 em maio de 2024** para facilities managers e observa que cargos de gestão normalmente exigem bacharelado e experiência relacionada. Trate esse valor como referência de gestão, e não como salário inicial de coordenador.
+O U.S. Bureau of Labor Statistics (BLS) posiciona **facilities managers** em nível mais sênior do que muitos cargos de coordenador ou assistente. A tabela mais recente do Occupational Employment and Wage Statistics, de maio de 2025, registrou aproximadamente **156.180 facilities managers**, **média de US$ 56,20 por hora**, **média anual de US$ 116.890** e **mediana de US$ 51,28 por hora**. Esses são dados de uma ocupação gerencial, não um salário inicial de coordenador. O Occupational Outlook Handbook do BLS informa separadamente uma **mediana anual de US$ 104.690 em maio de 2024** para facilities managers e observa que cargos gerenciais normalmente exigem bacharelado e experiência relacionada.
 
-Para pesquisa de mercado em nível de coordenação, fontes privadas podem ser mais específicas por título. A Salary.com informou média de **US$ 73.794 por ano em 1º de julho de 2026**, com faixa entre os percentis 25 e 75 de **US$ 65.970 a US$ 79.203**. Trata-se de uma estimativa privada, não de estatística governamental nem promessa salarial. A PayScale apresenta para 2026 uma média-base menor, de **US$ 23,54 por hora**, e faixa observada de remuneração total de aproximadamente **US$ 38.000 a US$ 73.000**. A diferença entre fontes é um motivo para comparar várias referências e vagas locais atuais.
+Para pesquisa de mercado no nível de coordenação, use uma estimativa privada específica por título apenas como evidência complementar. **A Indeed informou salário-base médio de US$ 24,72 por hora para Facility Coordinator nos Estados Unidos em uma página atualizada em 19 de julho de 2026, com valor baixo exibido de US$ 16,88 e alto de US$ 36,19 por hora, com base em cerca de 2,6 mil salários de anúncios de emprego dos 36 meses anteriores.** Essa é uma estimativa não governamental, não uma estatística oficial nem promessa de renda. Compare-a com vagas locais atuais, benefícios, horários e o nível real de responsabilidade.
 
-Para treinamento e financiamento, procure um **American Job Center** e pergunte sobre elegibilidade para serviços do Workforce Innovation and Opportunity Act (WIOA), Individual Training Account, serviços de apoio ou outros fundos locais. Elegibilidade, provedores aprovados e disponibilidade variam por estado e área de força de trabalho.
+Para treinamento e financiamento, procure um **American Job Center** e pergunte sobre elegibilidade para serviços do Workforce Innovation and Opportunity Act (WIOA), Individual Training Account, serviços de apoio ou outros fundos locais. Elegibilidade, provedores aprovados e recursos disponíveis variam por estado e área de força de trabalho. Confirme que um programa específico é elegível antes de se matricular ou pagar.
 
-Programas de **Registered Apprenticeship** também podem oferecer uma rota de aprender enquanto se recebe salário em ofícios ligados à construção e aos edifícios. Não há garantia de apprenticeship para o título exato de coordenador, mas um programa em um ofício pode ser uma preparação forte para futuras funções de operações prediais.
+Registered Apprenticeship pode oferecer uma rota de aprender enquanto se recebe salário em ofícios ligados aos edifícios. Apprenticeship.gov identifica amplas rotas em construção e ofícios qualificados. Um apprenticeship de ofício pode ser uma preparação sólida para futuras funções de operações prediais, mas não há garantia de um apprenticeship específico para facilities coordinator em cada localidade, nem autorização automática para trabalho fora da ocupação ou das regras de licenciamento aplicáveis.
 
-Outras opções podem incluir apoio educacional do empregador, fundos sindicais ou empresariais, bolsas de community colleges, subsídios estaduais, benefícios educacionais para veteranos quando aplicáveis e bolsas oferecidas por instituições ou associações. Confirme os termos por escrito antes de se matricular.
+Outras opções podem incluir apoio educacional do empregador, fundos sindicais ou empresariais, bolsas e subsídios de community colleges, programas estaduais, benefícios educacionais para veteranos quando aplicáveis e bolsas oferecidas por instituições ou associações. Confirme os termos por escrito antes de se matricular.
 
 ## 5. Caminho no Canadá
 
 O Job Bank do Canadá atualmente relaciona o título de busca **facilities coordinator** a **Facility operation and maintenance managers, NOC 70012**. Essa classificação é orientada à gestão; portanto, iniciantes não devem presumir que os requisitos ou salários de NOC 70012 correspondem a todas as vagas de coordenador ou assistente.
 
-O Job Bank informa, no nível nacional, **C$ 25,96 por hora no valor baixo, C$ 45,20 na mediana e C$ 70,67 no valor alto**, atualizados em 19 de novembro de 2025 com dados de referência da Statistics Canada. Use esses valores como informação oficial do mercado de trabalho no nível NOC, não como remuneração garantida para um coordenador.
+O Job Bank informa, no nível nacional para NOC 70012, **C$ 25,96 por hora no valor baixo, C$ 45,20 na mediana e C$ 70,67 no valor alto**, atualizados em 19 de novembro de 2025 com dados de referência da Statistics Canada. Use esses valores como informação oficial de mercado no nível NOC, não como remuneração garantida para um coordenador.
+
+Como comparação mais prática, o perfil do Job Bank para **Building Operator - Maintenance, NOC 73201**, informa salários nacionais aproximados de **C$ 16,55 por hora no valor baixo, C$ 25,00 na mediana e C$ 38,46 no valor alto**, também atualizados em 19 de novembro de 2025. Facilities coordinator, building operator, trabalhador de manutenção e facilities manager não são títulos intercambiáveis e podem corresponder a diferentes NOCs e níveis de responsabilidade.
 
 O Job Bank informa que gestores de operações de instalações geralmente precisam de formação pós-secundária relacionada ou combinação equivalente de formação técnica e experiência, e normalmente são exigidos vários anos de experiência de supervisão. O perfil nacional atual não identifica NOC 70012 como ocupação regulamentada. Entretanto, tarefas técnicas específicas — como elétrica, gás, refrigeração, proteção contra incêndio ou outros ofícios — podem ser regulamentadas por uma província ou território.
 
@@ -72,15 +74,17 @@ Caminhos canadenses podem incluir colleges públicos, sistemas provinciais ou te
 
 ## 6. Caminho na Colômbia
 
-Na Colômbia existem portas de entrada realistas por meio de **mantenimiento locativo**, **mantenimiento general de edificios**, **infraestructura**, servicios generales, workplace services, operações imobiliárias e funções de apoio relacionadas.
+Na Colômbia existem portas de entrada realistas por meio de **mantenimiento locativo**, **mantenimiento general de edificios**, **infraestructura**, workplace services, operações imobiliárias e funções de apoio relacionadas.
 
-Vagas publicadas em 2026 pelo **Servicio Público de Empleo** mostram que o mercado pode variar entre funções de apoio que aceitam ensino médio e experiência e cargos técnicos que exigem formação técnica e mais experiência. Algumas vagas combinam relatórios, apoio a fornecedores e materiais, ferramentas, pintura, alvenaria, hidráulica e tarefas próximas da elétrica. Outras aceitam perfis com menor experiência. Esses exemplos ilustram o mercado e não significam que as mesmas vagas ou condições permaneçam disponíveis. Consulte a rede ativa do Servicio Público de Empleo para oportunidades atuais.
+Vagas atuais e recentes da Agencia Pública de Empleo do SENA e da rede pública de emprego mostram demanda por apoio à manutenção predial envolvendo manutenção preventiva e corretiva, conservação de infraestrutura, ordens de serviço, uso seguro de ferramentas e escalonamento. Esses exemplos são evidência do mercado de trabalho, não um escopo jurídico universal nem autorização para executar trabalhos regulamentados de elétrica, hidráulica, trabalho em altura, soldagem, gás, proteção contra incêndio ou outras tarefas técnicas sem a formação ou autoridade exigida.
 
 ### SENA e treinamento gratuito primeiro
 
-O SENA deve ser uma das primeiras opções antes de pagar uma escola privada. Use o catálogo atual **Betowa** para buscar formação em manutenção, construção, elétrica, refrigeração, segurança e saúde no trabalho, ferramentas digitais, administração, logística ou atendimento ao cliente. Nomes de cursos, vagas, horários, modalidade e pré-requisitos mudam; confirme no catálogo ativo.
+O SENA deve ser uma das primeiras opções antes de pagar uma escola privada. Use o catálogo atual **Betowa** para buscar formação em manutenção, construção, segurança e saúde no trabalho, energia, elétrica básica, HVAC ou refrigeração, inventário, atendimento ao cliente, registros digitais e áreas relacionadas. Nomes de cursos, disponibilidade, modalidade, horários, pré-requisitos e vagas mudam; confirme no catálogo ativo.
 
-Use também o Servicio Público de Empleo e as cajas de compensación para serviços de emprego e encaminhamento a treinamento quando houver elegibilidade.
+Pessoas elegíveis também devem verificar os **apoyos de sostenimiento** do SENA e as regras atuais do setor da construção. A Circular 282 de 2024 do SENA inclui programas como Construcción en Edificaciones e Construcción de Infraestructura Vial no catálogo associado ao apoio a aprendizes da indústria da construção. Elegibilidade e disponibilidade dependem das regras atuais, do programa, da turma e dos recursos disponíveis.
+
+Use também o Servicio Público de Empleo, a Agencia Pública de Empleo do SENA e as cajas de compensación para serviços de emprego e encaminhamento a treinamento quando houver elegibilidade.
 
 ### Limites de segurança e trabalho regulamentado na Colômbia
 
@@ -150,21 +154,33 @@ A progressão não é automática. Cargos de gestão normalmente exigem responsa
 
 Considere adiar a compra de treinamento ou a mudança de emprego quando o empregador espera trabalho técnico regulamentado, mas não consegue explicar a qualificação ou supervisão necessária; a escola não fornece por escrito custo total, regras de reembolso ou reconhecimento da credencial; o programa promete emprego ou salário garantido; o reembolso de mensalidade tem condições que você não consegue aceitar; requisitos físicos ou de horário estão pouco claros; seria necessário divulgar informação sensível de um edifício; ou requisitos locais de licença, apprenticeship, autorização de trabalho ou segurança ainda não foram confirmados.
 
-## 15. Notas de fontes
+## 15. Notas das fontes
 
-A pesquisa desta revisão controlada foi atualizada em 10 de agosto de 2026. Principais fontes:
+A pesquisa desta revisão controlada foi atualizada em 10 de agosto de 2026. Fontes principais:
 
+- U.S. Bureau of Labor Statistics, May 2025 Occupational Employment and Wage Statistics: https://www.bls.gov/news.release/ocwage.t01.htm
 - U.S. Bureau of Labor Statistics, Administrative Services and Facilities Managers: https://www.bls.gov/ooh/management/administrative-services-managers.htm
 - O*NET OnLine, Facilities Managers 11-3013.00: https://www.onetonline.org/link/summary/11-3013.00
+- Indeed, Facility Coordinator salaries, página atualizada em 19 de julho de 2026: https://www.indeed.com/career/facility-coordinator/salaries
 - Apprenticeship.gov, Construction: https://www.apprenticeship.gov/apprenticeship-industries/construction
-- CareerOneStop, American Job Centers: https://www.careeronestop.org/LocalHelp/AmericanJobCenters/american-job-centers.aspx
+- CareerOneStop, WIOA training and American Job Centers: https://www.careeronestop.org/LocalHelp/EmploymentAndTraining/find-WIOA-training-programs.aspx
 - U.S. Access Board, ADA: https://www.access-board.gov/ada/
-- Salary.com, Facilities Coordinator Salary, 1º de julho de 2026: https://www.salary.com/research/salary/listing/facilities-coordinator-salary
-- PayScale, Facility Coordinator: https://www.payscale.com/research/US/Job=Facility_Coordinator/Hourly_Rate
 - Government of Canada Job Bank, Facilities Coordinator / NOC 70012: https://www.jobbank.gc.ca/marketreport/summary-occupation/297406/ca
-- Government of Canada Job Bank, salários: https://www.jobbank.gc.ca/marketreport/wages-occupation/297406/ca
-- Government of Canada Job Bank, requisitos: https://www.jobbank.gc.ca/marketreport/requirements/297406/ca
-- Servicio Público de Empleo da Colômbia: https://www.serviciodeempleo.gov.co/
+- Government of Canada Job Bank, salários NOC 70012: https://www.jobbank.gc.ca/marketreport/wages-occupation/297406/ca
+- Government of Canada Job Bank, requisitos NOC 70012: https://www.jobbank.gc.ca/marketreport/requirements/297406/ca
+- Government of Canada Job Bank, Building Operator - Maintenance / NOC 73201: https://www.jobbank.gc.ca/marketreport/wages-occupation/14403/ca
 - SENA Betowa: https://betowa.sena.edu.co/
+- SENA Agencia Pública de Empleo: https://ape.sena.edu.co/
+- Servicio Público de Empleo da Colômbia: https://www.serviciodeempleo.gov.co/
+- SENA Circular 282 de 2024: https://normograma.sena.edu.co/compilacion/docs/circular_sena_0282_2024.htm
+- SENA Resolución 2773 de 2024: https://normograma.sena.edu.co/compilacion/docs/resolucion_sena_2773_2024.htm
 
-**Licença do projeto:** CC BY-NC-SA 4.0.
+O registro detalhado de evidências é mantido em `project/revision-2026/guide-24/qa/GUIDE_24_CURRENT_SOURCE_EVIDENCE_02.md`.
+
+## 16. Autoria, status de revisão e licença
+
+Criado e dirigido por **Alberto “Al” Leiva**. O ChatGPT apoiou pesquisa, organização, edição e preparação de documentos sob a direção do autor. O autor continua responsável pelas decisões editoriais e de publicação.
+
+Esta edição controlada passou por reconstrução editorial assistida por IA e baseada em fontes. Ela **não** foi independentemente certificada, acreditada nem declarada revisada por humanos por uma autoridade externa. Tradução, geração de documentos, links, metadados e QA de publicação são etapas controladas separadas e não estão implícitas nesta edição localizada.
+
+Salvo indicação em contrário, este material está licenciado sob **CC BY-NC-SA 4.0**.
