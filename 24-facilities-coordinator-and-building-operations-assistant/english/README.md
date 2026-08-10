@@ -1,10 +1,17 @@
-﻿# Lifelong Opportunity Guide 24
+# Lifelong Opportunity Guide 24
 
 ## Facilities Coordinator and Building Operations Assistant — English Edition
 
 A free, accessible career and education guide created and directed by **Alberto “Al” Leiva**.
 
-## Downloads
+## Controlled revision source
+
+- [English Version 2.0 controlled Markdown source](Guide_24_Facilities_Coordinator_and_Building_Operations_Assistant_English_v2.0.md)
+- [Current-source evidence register](../references/GUIDE_24_CURRENT_SOURCE_EVIDENCE.md)
+
+The Version 2.0 Markdown source is the current controlled English source on branch `revision/guide-00-100-2026`. DOCX/PDF Version 2.0 publication artifacts have **not yet passed the publication gate** and are therefore not represented here as completed outputs.
+
+## Legacy Version 1.0 downloads
 
 - [Editable DOCX](docx/Lifelong_Opportunity_Facilities_Coordinator_and_Building_Operations_Assistant_Guide_English_v1.0.docx)
 - [Searchable PDF](pdf/Lifelong_Opportunity_Facilities_Coordinator_and_Building_Operations_Assistant_Guide_English_v1.0.pdf)
@@ -14,10 +21,12 @@ A free, accessible career and education guide created and directed by **Alberto 
 - **Guide:** 24
 - **Career:** Facilities Coordinator and Building Operations Assistant
 - **Language:** English
-- **Version:** 1.0
-- **Publication month:** July 2026
-- **Availability:** DOCX and PDF present
-- **Review status:** Technically reviewed publication edition; exact source equivalence and human linguistic review should not be assumed unless separately documented
+- **Current controlled source:** Version 2.0, August 2026
+- **Legacy publication artifacts:** Version 1.0, July 2026
+- **Version 2.0 research gate:** PASS
+- **Version 2.0 English reconstruction:** COMPLETE; editorial/evidence traceability review is the current gate
+- **Translation, DOCX/PDF, metadata, and publication gates:** NOT YET PASSED
+- **Human/external certification:** none claimed
 
 ## Scope
 
