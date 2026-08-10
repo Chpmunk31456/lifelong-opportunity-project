@@ -1,0 +1,51 @@
+{
+  "guide": "22",
+  "occupation": "Real Estate Sales Agent and Leasing Consultant",
+  "build_date": "2026-08-10",
+  "status": "PASS",
+  "controls": [
+    "trilingual heading-count parity",
+    "controlled numerical values with locale-aware separators",
+    "required jurisdiction/source markers",
+    "required source URLs",
+    "UTF-8 replacement-character check",
+    "DOCX ZIP integrity",
+    "PDF readability",
+    "searchable PDF text",
+    "SHA-256 checksums",
+    "all-page raster rendering"
+  ],
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_22_ENGLISH_v2.docx",
+      "pdf": "GUIDE_22_ENGLISH_v2.pdf",
+      "docx_bytes": 21840,
+      "pdf_bytes": 152102,
+      "pdf_pages": 10,
+      "pdf_extractable_characters": 23674,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_22_SPANISH_LATAM_v2.docx",
+      "pdf": "GUIDE_22_SPANISH_LATAM_v2.pdf",
+      "docx_bytes": 18819,
+      "pdf_bytes": 101428,
+      "pdf_pages": 7,
+      "pdf_extractable_characters": 17404,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_22_PORTUGUESE_BR_v2.docx",
+      "pdf": "GUIDE_22_PORTUGUESE_BR_v2.pdf",
+      "docx_bytes": 18752,
+      "pdf_bytes": 102042,
+      "pdf_pages": 7,
+      "pdf_extractable_characters": 16530,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, brokerage or licensing advice, accreditation, or employment or earnings guarantee."
+}
