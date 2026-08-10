@@ -13,7 +13,7 @@
     "portuguese_localization": {"status": "PASS", "evidence": ["24-facilities-coordinator-and-building-operations-assistant/portuguese/QC.md", "project/revision-2026/guide-24/qa/GUIDE_24_TECHNICAL_QA_GATE_08.md"]},
     "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_TECHNICAL_QA_GATE_08.md", "project/revision-2026/guide-24/publication-candidate/GUIDE_24_PUBLICATION_QA_MANIFEST.json"]},
     "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_PUBLICATION_GATE_09.md", "project/revision-2026/guide-24/publication-candidate/GUIDE_24_PUBLICATION_QA_MANIFEST.json", "project/revision-2026/guide-24/publication-candidate/SHA256SUMS.txt"]},
-    "release_audit": {"status": "PENDING", "evidence": []}
+    "release_audit": {"status": "PASS", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_RELEASE_AUDIT_GATE_10.md"]}
   },
   "blockers": []
 }
