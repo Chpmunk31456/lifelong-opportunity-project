@@ -1,0 +1,53 @@
+{
+  "guide": "32",
+  "occupation": "Welder and Fabrication Technician",
+  "build_date": "2026-08-11",
+  "status": "PASS",
+  "controls": [
+    "exact trilingual section parity 1-22",
+    "source URL-set parity",
+    "source-domain presence",
+    "locale-aware controlled numerical values",
+    "technical marker parity",
+    "UTF-8/BOM controls",
+    "placeholder scan",
+    "DOCX ZIP integrity",
+    "searchable PDF text",
+    "all-page raster rendering",
+    "metadata manifest",
+    "SHA-256 checksums"
+  ],
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_32_ENGLISH_v2.docx",
+      "pdf": "GUIDE_32_ENGLISH_v2.pdf",
+      "docx_bytes": 26171,
+      "pdf_bytes": 244417,
+      "pdf_pages": 14,
+      "pdf_extractable_characters": 31059,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_32_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_32_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 25678,
+      "pdf_bytes": 191137,
+      "pdf_pages": 13,
+      "pdf_extractable_characters": 31389,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_32_PORTUGUESE_v2.docx",
+      "pdf": "GUIDE_32_PORTUGUESE_v2.pdf",
+      "docx_bytes": 27236,
+      "pdf_bytes": 242969,
+      "pdf_pages": 15,
+      "pdf_extractable_characters": 34353,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, welding-code approval, trade licensing approval, accreditation, or employment or earnings guarantee."
+}
