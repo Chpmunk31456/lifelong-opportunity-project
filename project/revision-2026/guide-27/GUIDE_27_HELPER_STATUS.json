@@ -12,7 +12,7 @@
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-27/qa/GUIDE_27_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-27/qa/GUIDE_27_PORTUGUESE_LOCALIZATION_QA_07.md"]},
     "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-27/qa/GUIDE_27_TECHNICAL_QA_GATE_08.md"]},
-    "publication": {"status": "PENDING", "evidence": []},
+    "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-27/qa/GUIDE_27_PUBLICATION_GATE_09.md"]},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
   "blockers": []
