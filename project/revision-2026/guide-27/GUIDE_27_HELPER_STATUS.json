@@ -2,11 +2,11 @@
   "guide": "27",
   "occupation": "Diesel Service Technician and Mechanic",
   "branch": "revision/guide-00-100-2026",
-  "updated": "2026-08-10",
+  "updated": "2026-08-11",
   "stages": {
     "baseline_inventory": {"status": "PASS", "evidence": ["project/revision-2026/guide-27/qa/GUIDE_27_BASELINE_INVENTORY_01.md"]},
     "research": {"status": "PASS", "evidence": ["project/revision-2026/guide-27/qa/GUIDE_27_CURRENT_SOURCE_EVIDENCE_02.md"]},
-    "english_editorial": {"status": "PENDING", "evidence": []},
+    "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-27/qa/GUIDE_27_ENGLISH_EDITORIAL_QA_03.md"]},
     "evidence_traceability": {"status": "PENDING", "evidence": []},
     "english_source_freeze": {"status": "PENDING", "evidence": []},
     "spanish_localization": {"status": "PENDING", "evidence": []},
