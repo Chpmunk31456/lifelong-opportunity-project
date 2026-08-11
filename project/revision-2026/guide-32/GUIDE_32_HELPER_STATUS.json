@@ -7,7 +7,7 @@
     "baseline_inventory": {"status": "PASS", "evidence": ["project/revision-2026/guide-32/qa/GUIDE_32_BASELINE_INVENTORY_01.md"]},
     "research": {"status": "PASS", "evidence": ["project/revision-2026/guide-32/research/GUIDE_32_CURRENT_SOURCE_EVIDENCE_02.md"]},
     "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-32/qa/GUIDE_32_ENGLISH_EDITORIAL_QA_03.md"]},
-    "evidence_traceability": {"status": "PENDING", "evidence": []},
+    "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-32/qa/GUIDE_32_EVIDENCE_TRACEABILITY_QA_04.md"]},
     "english_source_freeze": {"status": "PENDING", "evidence": []},
     "spanish_localization": {"status": "PENDING", "evidence": []},
     "portuguese_localization": {"status": "PENDING", "evidence": []},
