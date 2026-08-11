@@ -11,9 +11,9 @@
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-30/qa/GUIDE_30_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-30/publication-candidate/GUIDE_30_SPANISH_es-419_v2.md", "project/revision-2026/guide-30/qa/GUIDE_30_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-30/publication-candidate/GUIDE_30_PORTUGUESE_pt-BR_v2.md", "project/revision-2026/guide-30/qa/GUIDE_30_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
-    "publication": {"status": "PENDING", "evidence": []},
-    "release_audit": {"status": "PENDING", "evidence": []}
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-30/qa/GUIDE_30_TECHNICAL_QA_GATE_08.md", "project/revision-2026/guide-30/publication-candidate/GUIDE_30_PUBLICATION_QA_MANIFEST.json"]},
+    "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-30/qa/GUIDE_30_PUBLICATION_GATE_09.md", "project/revision-2026/guide-30/publication-candidate/GUIDE_30_PUBLICATION_QA_MANIFEST.json", "project/revision-2026/guide-30/publication-candidate/SHA256SUMS.txt"]},
+    "release_audit": {"status": "PASS", "evidence": ["project/revision-2026/guide-30/qa/GUIDE_30_RELEASE_AUDIT_GATE_10.md"]}
   },
   "blockers": []
 }
