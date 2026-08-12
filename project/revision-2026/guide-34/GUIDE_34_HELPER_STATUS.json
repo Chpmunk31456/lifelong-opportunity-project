@@ -6,7 +6,7 @@
   "stages": {
     "baseline_inventory": {"status": "PASS", "evidence": ["project/revision-2026/guide-34/qa/GUIDE_34_BASELINE_INVENTORY_01.md"]},
     "research": {"status": "PASS", "evidence": ["project/revision-2026/guide-34/research/GUIDE_34_CURRENT_SOURCE_EVIDENCE_02.md"]},
-    "english_editorial": {"status": "PENDING", "evidence": []},
+    "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-34/publication-candidate/GUIDE_34_ENGLISH_v2.md", "project/revision-2026/guide-34/qa/GUIDE_34_ENGLISH_EDITORIAL_QA_03.md"]},
     "evidence_traceability": {"status": "PENDING", "evidence": []},
     "english_source_freeze": {"status": "PENDING", "evidence": []},
     "spanish_localization": {"status": "PENDING", "evidence": []},
