@@ -1,0 +1,53 @@
+{
+  "guide": "36",
+  "occupation": "Warehouse and Inventory Control Specialist",
+  "build_date": "2026-08-12",
+  "status": "PASS",
+  "controls": [
+    "trilingual top-level section-count parity",
+    "source URL-set parity",
+    "source-domain presence",
+    "locale-aware controlled numerical values",
+    "occupation-specific terminology markers",
+    "UTF-8/BOM controls",
+    "placeholder scan",
+    "DOCX ZIP integrity",
+    "searchable PDF text",
+    "all-page raster rendering",
+    "metadata manifest",
+    "SHA-256 checksums"
+  ],
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_36_ENGLISH_v2.docx",
+      "pdf": "GUIDE_36_ENGLISH_v2.pdf",
+      "docx_bytes": 22701,
+      "pdf_bytes": 232641,
+      "pdf_pages": 12,
+      "pdf_extractable_characters": 23438,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_36_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_36_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 23201,
+      "pdf_bytes": 223393,
+      "pdf_pages": 12,
+      "pdf_extractable_characters": 26188,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_36_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_36_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 23205,
+      "pdf_bytes": 225440,
+      "pdf_pages": 12,
+      "pdf_extractable_characters": 25507,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, certification-body approval, accreditation, or employment or earnings guarantee."
+}
