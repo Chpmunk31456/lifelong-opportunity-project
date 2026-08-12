@@ -12,7 +12,7 @@
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-33/publication-candidate/GUIDE_33_SPANISH_es-419_v2.md", "project/revision-2026/guide-33/qa/GUIDE_33_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-33/publication-candidate/GUIDE_33_PORTUGUESE_v2.md", "project/revision-2026/guide-33/qa/GUIDE_33_PORTUGUESE_LOCALIZATION_QA_07.md"]},
     "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-33/qa/GUIDE_33_TECHNICAL_QA_GATE_08.md", "project/revision-2026/guide-33/publication-candidate/GUIDE_33_PUBLICATION_QA_MANIFEST.json"]},
-    "publication": {"status": "PENDING", "evidence": []},
+    "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-33/qa/GUIDE_33_PUBLICATION_GATE_09.md", "project/revision-2026/guide-33/publication-candidate/SHA256SUMS.txt"]},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
   "blockers": []
