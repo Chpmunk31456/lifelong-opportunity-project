@@ -54,6 +54,11 @@ jobs:
             'es-419':[r'\b56[.,]150\b',r'\b38[.,]100\b',r'\b78[.,]760\b',r'\b34[.,]200\b',r'\b28[.,]06\b',r'\b20[.,]44\b',r'\b38[.,]53\b',r'\b72100\b',r'\b7[.,]200\b',r'\b21[.,]00\b',r'\b30[.,]00\b',r'\b41[.,]50\b',r'\b4[.,]000\b'],
             'pt-BR':[r'\b56[.]150\b',r'\b38[.]100\b',r'\b78[.]760\b',r'\b34[.]200\b',r'\b28[,]06\b',r'\b20[,]44\b',r'\b38[,]53\b',r'\b72100\b',r'\b7[.]200\b',r'\b21[,]00\b',r'\b30[,]00\b',r'\b41[,]50\b',r'\b4[.]000\b'],
           }
+          technical_markers={
+            'en':('cnc','cad/cam','nims','red seal','sena','lockout/tagout'),
+            'es-419':('cnc','cad/cam','nims','red seal','sena','bloqueo/etiquetado'),
+            'pt-BR':('cnc','cad/cam','nims','red seal','sena','bloqueio/etiquetagem'),
+          }
           problems=[]; url_sets={}
           for lang,path in files.items():
             if not path.exists():
@@ -71,7 +76,7 @@ jobs:
               if frag not in low: problems.append(f'{lang}: missing source-domain marker {frag}')
             for pat in controls[lang]:
               if not re.search(pat,text,re.I): problems.append(f'{lang}: missing controlled numeric marker {pat}')
-            for marker in ('cnc','cad/cam','nims','red seal','sena','lockout/tagout'):
+            for marker in technical_markers[lang]:
               if marker not in low: problems.append(f'{lang}: missing technical marker {marker}')
             for bad in ('todo:','lorem ipsum','[insert','translation pending','traducción pendiente','tradução pendente'):
               if bad in low: problems.append(f'{lang}: placeholder marker {bad}')
