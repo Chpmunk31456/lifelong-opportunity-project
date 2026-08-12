@@ -205,7 +205,7 @@ Fontes oficiais/públicas:
 - Canada Student Grants and Loans: https://www.canada.ca/en/services/benefits/education/student-aid/grants-loans.html
 - SENA Betowa — Planeación de la Producción: https://betowa.sena.edu.co/oferta/planeacion-de-la-produccion?modality=V&offertype=open&programId=175616
 - Colombia Ministerio del Trabajo — Sistema Nacional de Cualificaciones: https://cualificaciones.mintrabajo.gov.co/
-- Colombia Ministerio del Trabalho — OCUPACOL: https://ocupacol.mintrabajo.gov.co/
+- Colombia Ministerio del Trabajo — OCUPACOL: https://ocupacol.mintrabajo.gov.co/
 - OIT/Cinterfor: https://www.oitcinterfor.org/
 
 Fontes salariais suplementares não governamentais:
