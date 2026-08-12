@@ -1,0 +1,53 @@
+{
+  "guide": "34",
+  "occupation": "Quality Control Inspector and Manufacturing Technician",
+  "build_date": "2026-08-12",
+  "status": "PASS",
+  "controls": [
+    "exact trilingual section parity 1-22",
+    "source URL-set parity",
+    "source-domain presence",
+    "locale-aware controlled numerical values",
+    "technical marker parity",
+    "UTF-8/BOM controls",
+    "placeholder scan",
+    "DOCX ZIP integrity",
+    "searchable PDF text",
+    "all-page raster rendering",
+    "metadata manifest",
+    "SHA-256 checksums"
+  ],
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_34_ENGLISH_v2.docx",
+      "pdf": "GUIDE_34_ENGLISH_v2.pdf",
+      "docx_bytes": 27215,
+      "pdf_bytes": 253022,
+      "pdf_pages": 16,
+      "pdf_extractable_characters": 33468,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_34_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_34_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 28225,
+      "pdf_bytes": 257486,
+      "pdf_pages": 16,
+      "pdf_extractable_characters": 36757,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_34_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_34_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 28566,
+      "pdf_bytes": 259502,
+      "pdf_pages": 16,
+      "pdf_extractable_characters": 37165,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, certification-body approval, accreditation, or employment or earnings guarantee."
+}
