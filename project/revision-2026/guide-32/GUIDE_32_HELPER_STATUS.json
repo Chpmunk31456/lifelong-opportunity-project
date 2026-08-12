@@ -13,7 +13,7 @@
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-32/publication-candidate/GUIDE_32_PORTUGUESE_v2.md", "project/revision-2026/guide-32/qa/GUIDE_32_PORTUGUESE_LOCALIZATION_QA_07.md"]},
     "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-32/qa/GUIDE_32_TECHNICAL_QA_GATE_08.md", "project/revision-2026/guide-32/publication-candidate/GUIDE_32_PUBLICATION_QA_MANIFEST.json"]},
     "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-32/qa/GUIDE_32_PUBLICATION_GATE_09.md", "project/revision-2026/guide-32/publication-candidate/SHA256SUMS.txt"]},
-    "release_audit": {"status": "PENDING", "evidence": []}
+    "release_audit": {"status": "PASS", "evidence": ["project/revision-2026/guide-32/qa/GUIDE_32_RELEASE_AUDIT_GATE_10.md"]}
   },
   "blockers": []
 }
