@@ -46,7 +46,7 @@ jobs:
           }
           required_url_fragments=[
             'bls.gov', 'osha.gov', 'apprenticeship.gov', 'careeronestop.org',
-            'asq.org', 'jobbank.gc.ca', 'canada.ca', 'sena.edu.co',
+            'asq.org', 'jobbank.gc.ca', 'sena.edu.co',
             'senai', 'indeed.com', 'salary.com'
           ]
           controls={
