@@ -1,0 +1,54 @@
+{
+  "guide": "38",
+  "occupation": "Dispatcher and Transportation Coordinator",
+  "build_date": "2026-08-13",
+  "status": "PASS",
+  "controls": [
+    "trilingual top-level section-count parity",
+    "source URL-set parity",
+    "source-domain presence",
+    "locale-aware controlled numerical values",
+    "occupation-specific terminology markers",
+    "UTF-8/BOM controls",
+    "placeholder scan",
+    "unsupported-positive-assurance scan",
+    "DOCX ZIP integrity",
+    "searchable PDF text",
+    "all-page raster rendering",
+    "metadata manifest",
+    "SHA-256 checksums"
+  ],
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_38_ENGLISH_v2.docx",
+      "pdf": "GUIDE_38_ENGLISH_v2.pdf",
+      "docx_bytes": 17125,
+      "pdf_bytes": 119525,
+      "pdf_pages": 6,
+      "pdf_extractable_characters": 12478,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_38_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_38_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 17460,
+      "pdf_bytes": 114704,
+      "pdf_pages": 6,
+      "pdf_extractable_characters": 14196,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_38_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_38_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 17414,
+      "pdf_bytes": 103393,
+      "pdf_pages": 6,
+      "pdf_extractable_characters": 13958,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, certification-body approval, accreditation, or employment or earnings guarantee."
+}
