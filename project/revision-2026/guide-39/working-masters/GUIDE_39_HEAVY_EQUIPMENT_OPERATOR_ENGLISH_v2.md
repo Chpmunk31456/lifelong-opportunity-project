@@ -327,7 +327,7 @@ Official/public sources:
 - SENA Betowa — Operación de maquinaria pesada para excavación: https://betowa.sena.edu.co/oferta/operacion-de-maquinaria-pesada-para-excavacion?modality=P&offertype=company&programId=157615
 - Colombia Ministerio del Trabajo — Sistema Nacional de Cualificaciones: https://cualificaciones.mintrabajo.gov.co/
 - OIT/Cinterfor: https://www.oitcinterfor.org/
-- OIT/Cinterfor training institutions: https://www.oitcinterfor.org/statsfp/instituciones
+- OIT/Cinterfor training institutions: https://www.oitcinterfor.org/red-institucional
 
 Supplementary non-government salary sources:
 

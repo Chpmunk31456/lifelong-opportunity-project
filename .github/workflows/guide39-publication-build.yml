@@ -1,0 +1,214 @@
+name: Guide 39 controlled publication build
+
+on:
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - '.github/workflows/guide39-publication-build.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide39-controlled-publication-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out revision branch
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Install document and rendering tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice poppler-utils python3-pil
+
+      - name: Freeze trilingual publication candidates
+        shell: bash
+        run: |
+          set -euo pipefail
+          SRC='project/revision-2026/guide-39/working-masters'
+          OUT='project/revision-2026/guide-39/publication-candidate'
+          mkdir -p "$OUT"
+          cp "$SRC/GUIDE_39_HEAVY_EQUIPMENT_OPERATOR_ENGLISH_v2.md" "$OUT/GUIDE_39_ENGLISH_v2.md"
+          cp "$SRC/GUIDE_39_HEAVY_EQUIPMENT_OPERATOR_ES419_v2.md" "$OUT/GUIDE_39_SPANISH_es-419_v2.md"
+          cp "$SRC/GUIDE_39_HEAVY_EQUIPMENT_OPERATOR_PTBR_v2.md" "$OUT/GUIDE_39_PORTUGUESE_pt-BR_v2.md"
+
+      - name: Rerun trilingual content controls
+        shell: python
+        run: |
+          from pathlib import Path
+          import re, sys, unicodedata
+          out=Path('project/revision-2026/guide-39/publication-candidate')
+          files={'en':out/'GUIDE_39_ENGLISH_v2.md','es-419':out/'GUIDE_39_SPANISH_es-419_v2.md','pt-BR':out/'GUIDE_39_PORTUGUESE_pt-BR_v2.md'}
+          texts={k:p.read_text(encoding='utf-8') for k,p in files.items()}
+          def fold(s): return ''.join(c for c in unicodedata.normalize('NFKD',s.lower()) if not unicodedata.combining(c))
+          problems=[]; urls={}; counts={}
+          values=[r'47-2073\.00',r'73400',r'2[,.]208',r'28[.,]78',r'59[,.]850',r'20[.,]28',r'42[,.]190',r'48[.,]60',r'101[,.]090',r'489[,.]300',r'3\s*%\s*[\u2013\u2014-]\s*4\s*%',r'41[,.]900',r'24[.,]76',r'82[,.]368',r'70[,.]908',r'94[,.]649',r'45[,.]277',r'24[.,]00',r'32[.,]50',r'45[.,]00']
+          required={
+            'en':['# guide 39','version 2.0','heavy equipment operator','crane','forklift','surface-mining','mechanics','official occupational data','non-government estimates','safety comes before speed','using ai responsibly','cybersecurity and privacy basics','does **not** claim independent human certification'],
+            'es-419':['# guia 39','version 2.0','maquinaria pesada','grua','montacargas','mineria de superficie','mecanicos','datos ocupacionales oficiales','estimaciones actuales no gubernamentales','la seguridad esta antes que la velocidad','uso responsable de ia','conceptos basicos de ciberseguridad y privacidad','**no** afirma contar con certificacion humana independiente'],
+            'pt-BR':['# guia 39','versao 2.0','maquinas pesadas','guindaste','empilhadeira','mineracao de superficie','mecanicos','dados ocupacionais oficiais','estimativas atuais nao governamentais','seguranca vem antes da velocidade','uso responsavel de ia','nocoes basicas de ciberseguranca e privacidade','**nao** afirma certificacao humana independente']}
+          for lang,text in texts.items():
+            low=fold(text); counts[lang]=len(re.findall(r'^##\s+.+$',text,re.M)); urls[lang]=set(re.findall(r'https://[^\s)<>`]+',text))
+            if counts[lang] != 19: problems.append(f'{lang}: expected 19 level-two sections, found {counts[lang]}')
+            if text.startswith('\ufeff') or '\ufffd' in text: problems.append(f'{lang}: UTF-8 defect')
+            for bad in ('todo:','lorem ipsum','[insert','translation pending','traduccion pendiente','traducao pendente'):
+              if bad in low: problems.append(f'{lang}: placeholder {bad}')
+            for value in values:
+              if not re.search(value,text,re.I): problems.append(f'{lang}: missing controlled value {value}')
+            for marker in required[lang]:
+              if fold(marker) not in low: problems.append(f'{lang}: missing scope/boundary/metadata marker {marker}')
+          if len(set(counts.values())) != 1: problems.append(f'structural mismatch {counts}')
+          for lang in ('es-419','pt-BR'):
+            if urls[lang] != urls['en']: problems.append(f'{lang}: source URL set differs from English')
+          old='https://www.oitcinterfor.org/statsfp/instituciones'; new='https://www.oitcinterfor.org/red-institucional'
+          for lang,text in texts.items():
+            if old in text or new not in urls[lang]: problems.append(f'{lang}: shared OIT URL correction invalid')
+          if problems:
+            print('\n'.join(problems)); sys.exit(1)
+          print(f'Guide 39 trilingual content controls PASS: sections={counts}; URL counts={{k:len(v) for k,v in urls.items()}}')
+
+      - name: Validate live source-link behavior
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import re, subprocess, sys
+          text=Path('project/revision-2026/guide-39/publication-candidate/GUIDE_39_ENGLISH_v2.md').read_text(encoding='utf-8')
+          problems=[]
+          for url in sorted(set(re.findall(r'https://[^\s)<>`]+',text))):
+            cp=subprocess.run(['curl','-L','--max-time','35','-sS','-o','/dev/null','-w','%{http_code}',url],capture_output=True,text=True)
+            code=int(cp.stdout[-3:]) if cp.stdout and cp.stdout[-3:].isdigit() else 0
+            state='PASS' if 200 <= code < 400 else ('ACCESS_CONTROLLED' if code in (401,403,429) else 'FAIL')
+            print(code,state,url)
+            if state == 'FAIL': problems.append(f'{url}: HTTP {code}')
+          if problems:
+            print('\n'.join(problems)); sys.exit(1)
+          PY
+
+      - name: Generate DOCX and PDF editions
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-39/publication-candidate'
+          for STEM in GUIDE_39_ENGLISH_v2 GUIDE_39_SPANISH_es-419_v2 GUIDE_39_PORTUGUESE_pt-BR_v2; do
+            pandoc "$OUT/$STEM.md" -f gfm -t docx --standalone -o "$OUT/$STEM.docx"
+            mkdir -p "$OUT/lo-$STEM"
+            libreoffice --headless --convert-to pdf --outdir "$OUT/lo-$STEM" "$OUT/$STEM.docx"
+            mv "$OUT/lo-$STEM/$STEM.pdf" "$OUT/$STEM.pdf"
+            rmdir "$OUT/lo-$STEM"
+          done
+
+      - name: Validate DOCX and searchable PDF integrity
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-39/publication-candidate'
+          test "$(find "$OUT" -maxdepth 1 -name '*.docx' | wc -l)" -eq 3
+          test "$(find "$OUT" -maxdepth 1 -name '*.pdf' | wc -l)" -eq 3
+          for DOCX in "$OUT"/*.docx; do
+            unzip -t "$DOCX" >/dev/null
+            unzip -l "$DOCX" | grep -q 'word/document.xml'
+          done
+          for PDF in "$OUT"/*.pdf; do
+            pdfinfo "$PDF" >/dev/null
+            TEXT="$(pdftotext "$PDF" - | tr -d '[:space:]')"
+            test ${#TEXT} -gt 5000
+          done
+
+      - name: Render and analyze every PDF page
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-39/publication-candidate'
+          rm -rf "$OUT/rendered"
+          for PDF in "$OUT"/*.pdf; do
+            STEM="$(basename "$PDF" .pdf)"
+            mkdir -p "$OUT/rendered/$STEM"
+            pdftoppm -png -r 110 "$PDF" "$OUT/rendered/$STEM/page" >/dev/null 2>&1
+          done
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageChops
+          import json, sys
+          root=Path('project/revision-2026/guide-39/publication-candidate/rendered')
+          problems=[]; pages=[]
+          for path in sorted(root.rglob('*.png')):
+            try:
+              with Image.open(path) as im:
+                im.verify()
+              with Image.open(path) as im:
+                gray=im.convert('L')
+                diff=ImageChops.difference(gray,Image.new('L',gray.size,255))
+                bbox=diff.point(lambda p: 255 if p > 12 else 0).getbbox()
+                if bbox is None:
+                  problems.append(f'{path}: blank page'); continue
+                left,top,right,bottom=bbox; w,h=gray.size
+                margins={'left':left,'top':top,'right':w-right,'bottom':h-bottom}
+                if min(margins.values()) < 4:
+                  problems.append(f'{path}: possible clipping at page edge {margins}')
+                pages.append({'file':str(path.relative_to(root)),'width':w,'height':h,'content_bbox':bbox,'edge_margins':margins,'status':'PASS'})
+            except Exception as exc:
+              problems.append(f'{path}: malformed/corrupted render: {exc}')
+          if not pages: problems.append('no rendered pages found')
+          (root/'RENDER_QA.json').write_text(json.dumps({'status':'FAIL' if problems else 'PASS','pages':pages,'problems':problems},indent=2)+'\n',encoding='utf-8')
+          if problems:
+            print('\n'.join(problems)); sys.exit(1)
+          print(f'All-page blank/clipping/malformed render checks PASS: {len(pages)} pages')
+          PY
+
+      - name: Generate publication metadata and checksums
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib, json, subprocess
+          out=Path('project/revision-2026/guide-39/publication-candidate')
+          render=json.loads((out/'rendered/RENDER_QA.json').read_text(encoding='utf-8'))
+          records=[]
+          for lang,stem in [('en','GUIDE_39_ENGLISH_v2'),('es-419','GUIDE_39_SPANISH_es-419_v2'),('pt-BR','GUIDE_39_PORTUGUESE_pt-BR_v2')]:
+            docx=out/f'{stem}.docx'; pdf=out/f'{stem}.pdf'
+            info=subprocess.check_output(['pdfinfo',str(pdf)],text=True)
+            pages=next(int(x.split(':',1)[1].strip()) for x in info.splitlines() if x.startswith('Pages:'))
+            txt=subprocess.check_output(['pdftotext',str(pdf),'-'],text=True,errors='replace')
+            if '\ufffd' in txt: raise SystemExit(f'{pdf}: Unicode replacement character in extracted PDF text')
+            rendered=sum(1 for p in render['pages'] if p['file'].startswith(stem+'/'))
+            if rendered != pages: raise SystemExit(f'{stem}: rendered-page count {rendered} != PDF page count {pages}')
+            records.append({'language':lang,'docx':docx.name,'pdf':pdf.name,'docx_bytes':docx.stat().st_size,'pdf_bytes':pdf.stat().st_size,'pdf_pages':pages,'rendered_pages':rendered,'pdf_extractable_characters':len(txt.strip()),'blank_clipped_malformed_check':'PASS','status':'PASS'})
+          manifest={'guide':'39','occupation':'Heavy Equipment Operator','build_date':'2026-08-13','status':'PASS','controls':['complete trilingual technical QA rerun','exact source URL-set parity','live-link behavior','DOCX ZIP integrity','searchable PDF text','all-page raster rendering','blank-page detection','edge-clipping heuristic','malformed/corrupted render detection','metadata manifest','SHA-256 checksums'],'editions':records,'assurance_boundary':'Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, certification-body approval, accreditation, or employment or earnings guarantee.'}
+          (out/'GUIDE_39_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          targets=sorted(p for p in out.iterdir() if p.is_file() and p.suffix in {'.docx','.pdf'})
+          (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets)+'\n',encoding='utf-8')
+
+      - name: Upload rendered-page QA evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: guide39-rendered-pages
+          path: project/revision-2026/guide-39/publication-candidate/rendered
+          retention-days: 14
+
+      - name: Remove render images from commit scope
+        run: rm -rf project/revision-2026/guide-39/publication-candidate/rendered
+
+      - name: Commit controlled publication candidates
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-39/publication-candidate
+          if git diff --cached --quiet; then
+            echo 'No publication changes to commit.'
+          else
+            git commit -m 'Build and validate Guide 39 publication candidates'
+            git pull --rebase origin revision/guide-00-100-2026
+            git push origin HEAD:revision/guide-00-100-2026
+          fi
