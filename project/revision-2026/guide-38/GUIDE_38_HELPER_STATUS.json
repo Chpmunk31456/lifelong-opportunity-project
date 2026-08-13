@@ -11,9 +11,9 @@
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-38/qa/GUIDE_38_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-38/working-masters/GUIDE_38_DISPATCHER_AND_TRANSPORTATION_COORDINATOR_ES419_v2.md", "project/revision-2026/guide-38/qa/GUIDE_38_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-38/working-masters/GUIDE_38_DISPATCHER_AND_TRANSPORTATION_COORDINATOR_PTBR_v2.md", "project/revision-2026/guide-38/qa/GUIDE_38_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
-    "publication": {"status": "PENDING", "evidence": []},
-    "release_audit": {"status": "PENDING", "evidence": []}
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-38/qa/GUIDE_38_TECHNICAL_QA_08.md"]},
+    "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-38/qa/GUIDE_38_PUBLICATION_GATE_09.md", "project/revision-2026/guide-38/publication-candidate/GUIDE_38_PUBLICATION_QA_MANIFEST.json", "project/revision-2026/guide-38/publication-candidate/SHA256SUMS.txt"]},
+    "release_audit": {"status": "PASS", "evidence": ["project/revision-2026/guide-38/qa/GUIDE_38_RELEASE_AUDIT_10.md"]}
   },
   "blockers": []
 }
