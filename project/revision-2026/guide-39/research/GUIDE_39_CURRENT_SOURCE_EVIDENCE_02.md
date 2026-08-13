@@ -88,9 +88,9 @@ SENA currently lists **Operación de maquinaria pesada para excavación**, a pre
 The controlled guide should use SENA as a public/free-first training locator and tell readers to verify the current Betowa offer, cohort, location and admissions status before making plans.
 
 Source:
-- https://betowa.sena.edu.co/oferta/operacion-de-maquinaria-pesada-para-excacion?modality=P&offertype=company&programId=157615
+- https://betowa.sena.edu.co/oferta/operacion-de-maquinaria-pesada-para-excavacion?modality=P&offertype=company&programId=157615
 
-**Link-control note:** the verified live SENA result uses the path `operacion-de-maquinaria-pesada-para-excavacion`; publication QA must verify the final URL before freeze because program URLs and cohorts can change.
+**Link-control note:** program URLs and cohorts can change, so publication QA must verify the current Betowa path again before source freeze/publication.
 
 Colombia's **Sistema Nacional de Cualificaciones** provides public pathways for training and recognition of prior learning. It should be presented as a locator/recognition framework, not as evidence that every heavy-equipment occupation has one mandatory national credential.
 
