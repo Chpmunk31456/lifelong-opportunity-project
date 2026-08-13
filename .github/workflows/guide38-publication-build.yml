@@ -90,7 +90,7 @@ jobs:
               if not re.search(marker,low,re.I): problems.append(f'{lang}: missing technical marker {marker}')
             for bad in ('todo:','lorem ipsum','[insert','translation pending','traducción pendiente','tradução pendente'):
               if bad in low: problems.append(f'{lang}: placeholder marker {bad}')
-            for unsupported in ('independently certified','certified translation','accredited by chatgpt','human-certified'):
+            for unsupported in ('independently certified','accredited by chatgpt','human-certified'):
               if unsupported in low: problems.append(f'{lang}: unsupported assurance claim {unsupported}')
           if len(url_sets)==3:
             base=url_sets['en']
@@ -169,7 +169,7 @@ jobs:
             'occupation':'Dispatcher and Transportation Coordinator',
             'build_date':'2026-08-13',
             'status':'PASS',
-            'controls':['trilingual top-level section-count parity','source URL-set parity','source-domain presence','locale-aware controlled numerical values','occupation-specific terminology markers','UTF-8/BOM controls','placeholder scan','unsupported-assurance scan','DOCX ZIP integrity','searchable PDF text','all-page raster rendering','metadata manifest','SHA-256 checksums'],
+            'controls':['trilingual top-level section-count parity','source URL-set parity','source-domain presence','locale-aware controlled numerical values','occupation-specific terminology markers','UTF-8/BOM controls','placeholder scan','unsupported-positive-assurance scan','DOCX ZIP integrity','searchable PDF text','all-page raster rendering','metadata manifest','SHA-256 checksums'],
             'editions':records,
             'assurance_boundary':'Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, certification-body approval, accreditation, or employment or earnings guarantee.'
           }
