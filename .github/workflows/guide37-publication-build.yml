@@ -65,8 +65,8 @@ jobs:
           }
           technical_markers={
             'en':(r'shipping',r'receiving',r'bill(?:s)? of lading',r'\berp\b',r'\bwms\b',r'\bedi\b',r'barcode'),
-            'es-419':(r'env[ií]os?',r'recepci[oó]n',r'conocimientos? de embarque',r'\berp\b',r'\bwms\b',r'\bedi\b',r'c[oó]digo de barras'),
-            'pt-BR':(r'expedi[cç][aã]o',r'recebimento',r'conhecimentos? de embarque',r'\berp\b',r'\bwms\b',r'\bedi\b',r'c[oó]digo de barras'),
+            'es-419':(r'env[ií]os?',r'recepci[oó]n',r'conocimientos? de embarque',r'\berp\b',r'\bwms\b',r'\bedi\b',r'c[oó]digos? de barras'),
+            'pt-BR':(r'expedi[cç][aã]o',r'recebimento',r'conhecimentos? de embarque',r'\berp\b',r'\bwms\b',r'\bedi\b',r'c[oó]digos? de barras'),
           }
           problems=[]; url_sets={}; section_counts={}
           for lang,path in files.items():
