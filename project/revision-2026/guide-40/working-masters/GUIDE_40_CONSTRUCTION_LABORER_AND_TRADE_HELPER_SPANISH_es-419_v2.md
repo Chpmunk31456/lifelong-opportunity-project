@@ -258,40 +258,42 @@ Las fuentes oficiales deben revisarse nuevamente antes de tomar decisiones de se
 
 - BLS — Construction Laborers and Helpers: https://www.bls.gov/ooh/construction-and-extraction/construction-laborers-and-helpers.htm
 - O*NET — Construction Laborers 47-2061.00: https://www.onetonline.org/link/summary/47-2061.00
-- O*NET — National wages, Construction Laborers: https://www.onetonline.org/link/localwages/47-2061.00
-- OSHA — Construction standards: https://www.osha.gov/laws-regs/regulations/standardnumber/1926/
+- O*NET — salarios nacionales, Construction Laborers: https://www.onetonline.org/link/localwages/47-2061.00
+- OSHA — normas de construcción: https://www.osha.gov/laws-regs/regulations/standardnumber/1926/
 - OSHA — Outreach Training Program: https://www.osha.gov/training/outreach/
-- OSHA — Construction Outreach: https://www.osha.gov/training/outreach/construction
 - Apprenticeship.gov — Construction: https://www.apprenticeship.gov/apprenticeship-industries/construction
-- Apprenticeship.gov — Career Seekers: https://www.apprenticeship.gov/career-seekers
 - Apprenticeship.gov — Apprenticeship Finder: https://www.apprenticeship.gov/apprenticeship-job-finder
 - CareerOneStop — American Job Centers: https://www.careeronestop.org/LocalHelp/AmericanJobCenters/american-job-centers.aspx
-- CareerOneStop — WIOA Eligible Training Program Finder: https://www.careeronestop.org/LocalHelp/EmploymentAndTraining/find-WIOA-training-programs.aspx
+- CareerOneStop — buscador de programas elegibles para WIOA: https://www.careeronestop.org/LocalHelp/EmploymentAndTraining/find-WIOA-training-programs.aspx
 
 ### Canadá
 
-- Statistics Canada — NOC 7511 family: https://www23.statcan.gc.ca/imdb/p3VD.pl?CLV=1&CPV=7511&CST=01052021&CVD=1322706&D=1&Function=getVD&MLV=5&TVD=1322554
+- Statistics Canada — contexto NOC 75110: https://www23.statcan.gc.ca/imdb/p3VD.pl?CLV=1&CPV=7511&CST=01052021&CVD=1322706&D=1&Function=getVD&MLV=5&TVD=1322554
 - Job Bank — requisitos NOC 75110: https://www.jobbank.gc.ca/marketreport/requirements/8447/ca
 - Job Bank — salarios NOC 75110: https://www.jobbank.gc.ca/wagereport/occupation/8449
-- Job Bank — perspectivas NOC 75110: https://www.jobbank.gc.ca/outlookreport/occupation/8449
 - Red Seal — Construction Craft Worker: https://red-seal.ca/eng/trades/const-craft-work.shtml
-- Gobierno de Canadá — apoyos para oficios y aprendizaje: https://www.canada.ca/en/services/jobs/training/support-skilled-trades-apprentices/funding-opportunities.html
+- Canadá — financiación para oficios y aprendizaje: https://www.canada.ca/en/services/jobs/training/support-skilled-trades-apprentices/funding-opportunities.html
 
 ### Colombia y América Latina
 
-- SENA — oferta de formación 2026: https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8975
+- SENA — información sobre oferta gratuita 2026: https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8975
 - SENA Betowa — Mampostería: https://betowa.sena.edu.co/oferta/mamposteria?modality=P&offertype=company&programId=219657
 - SENA — Trabajo seguro en alturas: https://www.sena.edu.co/es-co/formacion/Paginas/trabajo-seguro-en-alturas.aspx
-- SENA Agencia Pública de Empleo: https://ape.sena.edu.co/Paginas/Inicio.aspx
-- SENA APE — preguntas frecuentes: https://ape.sena.edu.co/Paginas/PreguntasFrecuentesUsuarios.aspx
+- SENA — Agencia Pública de Empleo: https://ape.sena.edu.co/Paginas/Inicio.aspx
 - OIT/Cinterfor — Red institucional: https://www.oitcinterfor.org/red-institucional
 
-### Fuente privada complementaria de salario
+### Fuente privada complementaria de remuneración
 
-- Salary.com — Construction Laborer/Helper salary: https://www.salary.com/research/salary/opening/construction-laborer-helper-salary
+- Salary.com — Construction Laborer/Helper: https://www.salary.com/research/salary/opening/construction-laborer-helper-salary
 
-## Nota de fuente y revisión
+## Aviso importante
 
-Esta edición es una localización es-419 del maestro inglés controlado y congelado de la Guía 40. Conserva los límites de ocupación, seguridad, financiación e ingresos del original y las fuentes controladas verificadas el 13 de agosto de 2026. Los salarios, reglas, programas, requisitos y vacantes pueden cambiar; vuelve a comprobar las fuentes oficiales y las vacantes actuales antes de actuar.
+Esta guía ofrece información general educativa y de planificación profesional. No garantiza empleo, ingresos, admisión, financiación, ingreso a un aprendizaje, licenciamiento, certificación, ascenso ni ningún otro resultado. Los requisitos cambian según la jurisdicción, el empleador, el proyecto, la tarea y el tiempo.
 
-Esta revisión controlada se produjo con asistencia de IA y revisión auditable de fuentes. **No afirma certificación humana independiente, acreditación profesional, traducción certificada, revisión legal, asesoría financiera ni resultados de empleo garantizados.**
+Esta guía no sustituye la capacitación de seguridad en el trabajo, la supervisión calificada, la asesoría legal, la orientación médica o financiera, la orientación sobre licencias ni las instrucciones de un empleador o autoridad reguladora.
+
+No se afirma certificación humana independiente de traducción, certificación de accesibilidad, revisión profesional de acreditación, revisión legal ni aprobación de un organismo certificador salvo que exista documentación separada.
+
+## Autor y asistencia de IA
+
+Creado y dirigido por **Alberto “Al” Leiva**. ChatGPT apoyó la investigación, organización, edición, apoyo de traducción y preparación documental bajo la dirección del autor. El autor conserva la responsabilidad por las decisiones editoriales y de publicación.

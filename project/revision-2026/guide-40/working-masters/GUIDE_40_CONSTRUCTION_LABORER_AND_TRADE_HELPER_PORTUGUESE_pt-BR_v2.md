@@ -252,38 +252,48 @@ Uma boa decisão de treinamento deve se conectar a uma rota real de emprego, nã
 
 ## Fontes e notas de verificação
 
-Reconfirme fontes oficiais antes de tomar decisões de segurança, treinamento, licenciamento, financiamento, mudança ou emprego. Programas, salários, regras e janelas de matrícula mudam.
+Reconfirme as fontes oficiais antes de tomar decisões sobre segurança, treinamento, licenciamento, financiamento, mudança ou emprego. Programas, salários, regras e períodos de matrícula mudam.
 
 ### Estados Unidos
 
 - BLS — Construction Laborers and Helpers: https://www.bls.gov/ooh/construction-and-extraction/construction-laborers-and-helpers.htm
 - O*NET — Construction Laborers 47-2061.00: https://www.onetonline.org/link/summary/47-2061.00
-- O*NET — National wages, Construction Laborers: https://www.onetonline.org/link/localwages/47-2061.00
-- OSHA — Construction standards: https://www.osha.gov/laws-regs/regulations/standardnumber/1926/
+- O*NET — salários nacionais, Construction Laborers: https://www.onetonline.org/link/localwages/47-2061.00
+- OSHA — normas de construção: https://www.osha.gov/laws-regs/regulations/standardnumber/1926/
 - OSHA — Outreach Training Program: https://www.osha.gov/training/outreach/
 - Apprenticeship.gov — Construction: https://www.apprenticeship.gov/apprenticeship-industries/construction
 - Apprenticeship.gov — Apprenticeship Finder: https://www.apprenticeship.gov/apprenticeship-job-finder
 - CareerOneStop — American Job Centers: https://www.careeronestop.org/LocalHelp/AmericanJobCenters/american-job-centers.aspx
-- CareerOneStop — WIOA Eligible Training Program Finder: https://www.careeronestop.org/LocalHelp/EmploymentAndTraining/find-WIOA-training-programs.aspx
+- CareerOneStop — WIOA-Eligible Training Program Finder: https://www.careeronestop.org/LocalHelp/EmploymentAndTraining/find-WIOA-training-programs.aspx
 
 ### Canadá
 
-- Job Bank — NOC 75110 Construction trades helpers and labourers: https://www.jobbank.gc.ca/marketreport/summary-occupation/8449/ca
-- Red Seal — Construction Craft Worker: https://www.red-seal.ca/eng/trades/construction-craft-worker.shtml
-- Canada — Skilled trades and apprenticeship supports: https://www.canada.ca/en/services/jobs/training/support-skilled-trades-apprentices.html
-- Canada Apprentice Loan: https://www.canada.ca/en/services/jobs/training/support-skilled-trades-apprentices/loan.html
+- Statistics Canada — contexto NOC 75110: https://www23.statcan.gc.ca/imdb/p3VD.pl?CLV=1&CPV=7511&CST=01052021&CVD=1322706&D=1&Function=getVD&MLV=5&TVD=1322554
+- Job Bank — requisitos NOC 75110: https://www.jobbank.gc.ca/marketreport/requirements/8447/ca
+- Job Bank — salários NOC 75110: https://www.jobbank.gc.ca/wagereport/occupation/8449
+- Red Seal — Construction Craft Worker: https://red-seal.ca/eng/trades/const-craft-work.shtml
+- Canadá — financiamento para ofícios e aprendizagem: https://www.canada.ca/en/services/jobs/training/support-skilled-trades-apprentices/funding-opportunities.html
 
 ### Colômbia e América Latina
 
-- SENA Betowa: https://betowa.sena.edu.co/
-- SENA — Agencia Pública de Empleo: https://ape.sena.edu.co/
-- SENA — Trabajo Seguro en Alturas: https://www.sena.edu.co/es-co/formacion/Paginas/trabajo-seguro-en-alturas.aspx
-- OIT/Cinterfor — Red institucional: https://www.oitcinterfor.org/red_instituciones
+- SENA — informações sobre oferta gratuita de 2026: https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8975
+- SENA Betowa — Mampostería: https://betowa.sena.edu.co/oferta/mamposteria?modality=P&offertype=company&programId=219657
+- SENA — Trabajo seguro en alturas: https://www.sena.edu.co/es-co/formacion/Paginas/trabajo-seguro-en-alturas.aspx
+- SENA — Agencia Pública de Empleo: https://ape.sena.edu.co/Paginas/Inicio.aspx
+- OIT/Cinterfor — Red institucional: https://www.oitcinterfor.org/red-institucional
 
-### Fonte privada complementar de renda
+### Fonte privada complementar de remuneração
 
-- Salary.com — Construction Laborer/Helper salary: https://www.salary.com/research/salary/benchmark/construction-laborer-helper-salary
+- Salary.com — Construction Laborer/Helper: https://www.salary.com/research/salary/opening/construction-laborer-helper-salary
 
-## Nota de revisão
+## Aviso importante
 
-Esta edição pt-BR foi localizada a partir do mestre inglês controlado da revisão de 13 de agosto de 2026. Números, classificações, limites de segurança, referências institucionais e distinção entre dados oficiais e estimativas privadas foram preservados. O texto usa português brasileiro natural e não afirma certificação humana independente, tradução certificada, acreditação profissional, aconselhamento jurídico ou garantia de emprego.
+Este guia fornece informações gerais educacionais e de planejamento de carreira. Não garante emprego, renda, admissão, financiamento, vaga de aprendizagem, licenciamento, certificação, promoção nem qualquer outro resultado. Os requisitos variam conforme jurisdição, empregador, projeto, tarefa e momento.
+
+Este guia não substitui treinamento de segurança no trabalho, supervisão qualificada, orientação jurídica, orientação médica ou financeira, orientação sobre licenciamento nem instruções de um empregador ou autoridade reguladora.
+
+Não se declara certificação humana independente de tradução, certificação de acessibilidade, revisão profissional de acreditação, revisão jurídica nem aprovação por organismo certificador, salvo quando houver documentação separada.
+
+## Autor e assistência de IA
+
+Criado e dirigido por **Alberto “Al” Leiva**. O ChatGPT apoiou pesquisa, organização, edição, suporte à tradução e preparação documental sob a direção do autor. O autor permanece responsável pelas decisões editoriais e de publicação.
