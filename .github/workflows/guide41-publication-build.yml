@@ -140,7 +140,7 @@ jobs:
           set -euo pipefail
           OUT='project/revision-2026/guide-41/publication-candidate'
           for STEM in GUIDE_41_ENGLISH_v2 GUIDE_41_SPANISH_es-419_v2 GUIDE_41_PORTUGUESE_pt-BR_v2; do
-            pandoc "$OUT/$STEM.md" -f gfm -t docx --standalone -o "$OUT/$STEM.docx"
+            pandoc "$OUT/$STEM.md" -f gfm-tex_math_dollars -t docx --standalone -o "$OUT/$STEM.docx"
             mkdir -p "$OUT/lo-$STEM"
             libreoffice --headless --convert-to pdf --outdir "$OUT/lo-$STEM" "$OUT/$STEM.docx"
             mv "$OUT/lo-$STEM/$STEM.pdf" "$OUT/$STEM.pdf"
