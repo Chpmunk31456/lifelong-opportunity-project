@@ -1,0 +1,39 @@
+{
+  "guide": "41",
+  "occupation": "Carpenter and Cabinetmaking Technician",
+  "build_date": "2026-08-14",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_41_ENGLISH_v2.docx",
+      "pdf": "GUIDE_41_ENGLISH_v2.pdf",
+      "docx_bytes": 20641,
+      "pdf_bytes": 140022,
+      "pdf_pages": 9,
+      "rendered_pages": 9,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_41_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_41_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 21309,
+      "pdf_bytes": 142866,
+      "pdf_pages": 10,
+      "rendered_pages": 10,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_41_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_41_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 21559,
+      "pdf_bytes": 145418,
+      "pdf_pages": 10,
+      "rendered_pages": 10,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, certification-body approval, accreditation, or employment or earnings guarantee."
+}
