@@ -1,0 +1,47 @@
+name: Guide 41 render overflow repair
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide41-render-repair.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out revision branch
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+      - name: Apply bounded render repair
+        run: python scripts/guide41_render_repair.py
+      - name: Validate scope and commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --check
+          CHANGED="$(git diff --name-only)"
+          printf '%s\n' "$CHANGED"
+          for f in $CHANGED; do
+            case "$f" in
+              project/revision-2026/guide-41/working-masters/GUIDE_41_CARPENTER_AND_CABINETMAKING_TECHNICIAN_ENGLISH_v2.md|\
+              project/revision-2026/guide-41/working-masters/GUIDE_41_CARPENTER_AND_CABINETMAKING_TECHNICIAN_ES419_v2.md|\
+              project/revision-2026/guide-41/working-masters/GUIDE_41_CARPENTER_AND_CABINETMAKING_TECHNICIAN_PTBR_v2.md) ;;
+              *) echo "Unexpected repair-scope file: $f"; exit 1 ;;
+            esac
+          done
+          test -n "$CHANGED"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-41/working-masters/GUIDE_41_CARPENTER_AND_CABINETMAKING_TECHNICIAN_ENGLISH_v2.md \
+                  project/revision-2026/guide-41/working-masters/GUIDE_41_CARPENTER_AND_CABINETMAKING_TECHNICIAN_ES419_v2.md \
+                  project/revision-2026/guide-41/working-masters/GUIDE_41_CARPENTER_AND_CABINETMAKING_TECHNICIAN_PTBR_v2.md
+          git commit -m 'qa(guide-41): prevent source-link render overflow'
+          git pull --rebase origin revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026
