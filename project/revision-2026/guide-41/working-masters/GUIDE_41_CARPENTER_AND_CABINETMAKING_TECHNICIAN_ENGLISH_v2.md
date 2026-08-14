@@ -274,22 +274,22 @@ Pause or delay enrollment when:
 
 Official/public sources:
 
-- U.S. Department of Labor O*NET OnLine — Carpenters: https://www.onetonline.org/link/summary/47-2031.00
-- Apprenticeship.gov: https://www.apprenticeship.gov/
-- CareerOneStop — WIOA training resources: https://www.careeronestop.org/LocalHelp/EmploymentAndTraining/find-WIOA-training-programs.aspx
-- Government of Canada Job Bank — Carpenters wages: https://www.jobbank.gc.ca/wagereport/occupation/6388
-- Government of Canada Job Bank — Carpenter requirements (NOC 72310): https://www.jobbank.gc.ca/marketreport/requirements/6408/ca
-- Government of Canada — Supports for skilled trades and apprenticeship: https://www.canada.ca/en/services/jobs/training/support-skilled-trades-apprentices.html
-- Government of Canada — Apprenticeship Grants status: https://www.canada.ca/en/services/jobs/training/support-skilled-trades-apprentices/grants.html
-- Government of Canada — Funding opportunities for skilled trades and apprenticeship: https://www.canada.ca/en/services/jobs/training/support-skilled-trades-apprentices/funding-opportunities.html
-- Government of Canada — Apprenticeship Service: https://www.canada.ca/en/employment-social-development/programs/apprentice-service-program.html
-- SENA Betowa — Básico de carpintería y ebanistería: https://betowa.sena.edu.co/oferta/basico-de-carpinteria-y-ebanisteria?offertype=company&programId=12174
-- OIT/Cinterfor: https://www.oitcinterfor.org/
+- U.S. Department of Labor O*NET OnLine — Carpenters: [source](https://www.onetonline.org/link/summary/47-2031.00)
+- Apprenticeship.gov: [source](https://www.apprenticeship.gov/)
+- CareerOneStop — WIOA training resources: [source](https://www.careeronestop.org/LocalHelp/EmploymentAndTraining/find-WIOA-training-programs.aspx)
+- Government of Canada Job Bank — Carpenters wages: [source](https://www.jobbank.gc.ca/wagereport/occupation/6388)
+- Government of Canada Job Bank — Carpenter requirements (NOC 72310): [source](https://www.jobbank.gc.ca/marketreport/requirements/6408/ca)
+- Government of Canada — Supports for skilled trades and apprenticeship: [source](https://www.canada.ca/en/services/jobs/training/support-skilled-trades-apprentices.html)
+- Government of Canada — Apprenticeship Grants status: [source](https://www.canada.ca/en/services/jobs/training/support-skilled-trades-apprentices/grants.html)
+- Government of Canada — Funding opportunities for skilled trades and apprenticeship: [source](https://www.canada.ca/en/services/jobs/training/support-skilled-trades-apprentices/funding-opportunities.html)
+- Government of Canada — Apprenticeship Service: [source](https://www.canada.ca/en/employment-social-development/programs/apprentice-service-program.html)
+- SENA Betowa — Básico de carpintería y ebanistería: [source](https://betowa.sena.edu.co/oferta/basico-de-carpinteria-y-ebanisteria?offertype=company&programId=12174)
+- OIT/Cinterfor: [source](https://www.oitcinterfor.org/)
 
 Supplementary non-government salary sources:
 
-- Salary.com — Cabinetmaker and Bench Carpenter: https://www.salary.com/research/salary/benchmark/cabinetmaker-and-bench-carpenter-salary
-- Salary.com — Cabinet Maker: https://www.salary.com/research/salary/listing/cabinet-maker-salary
+- Salary.com — Cabinetmaker and Bench Carpenter: [source](https://www.salary.com/research/salary/benchmark/cabinetmaker-and-bench-carpenter-salary)
+- Salary.com — Cabinet Maker: [source](https://www.salary.com/research/salary/listing/cabinet-maker-salary)
 
 ## Source and review note
 
