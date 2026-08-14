@@ -203,6 +203,7 @@ jobs:
           (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets)+'\n',encoding='utf-8')
 
       - name: Upload rendered-page QA evidence
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: guide41-rendered-pages
