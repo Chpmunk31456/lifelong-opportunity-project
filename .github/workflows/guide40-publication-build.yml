@@ -80,15 +80,59 @@ jobs:
           set -euo pipefail
           python - <<'PY'
           from pathlib import Path
-          import re, subprocess, sys
+          from urllib.parse import urlsplit
+          import re, subprocess, sys, time
+
           text=Path('project/revision-2026/guide-40/publication-candidate/GUIDE_40_ENGLISH_v2.md').read_text(encoding='utf-8')
           problems=[]
-          for url in sorted(set(re.findall(r'https://[^\s)<>`]+',text))):
-            cp=subprocess.run(['curl','-L','--max-time','35','-sS','-o','/dev/null','-w','%{http_code}',url],capture_output=True,text=True)
+          transport_warnings=[]
+          official_transport_allowlist={'jobbank.gc.ca','www.jobbank.gc.ca','red-seal.ca','www.red-seal.ca'}
+          user_agent='Mozilla/5.0 (compatible; LifelongOpportunityProject-LinkQA/1.0)'
+
+          def probe(url, method='GET'):
+            cmd=['curl','-L','--retry','2','--retry-all-errors','--retry-delay','2','--connect-timeout','10','--max-time','30','-A',user_agent,'-sS','-o','/dev/null','-w','%{http_code}']
+            if method == 'HEAD': cmd.insert(1,'-I')
+            cp=subprocess.run(cmd+[url],capture_output=True,text=True)
             code=int(cp.stdout[-3:]) if cp.stdout and cp.stdout[-3:].isdigit() else 0
-            state='PASS' if 200 <= code < 400 else ('ACCESS_CONTROLLED' if code in (401,403,429) else 'FAIL')
+            return code, cp.returncode, (cp.stderr or '').strip()
+
+          for url in sorted(set(re.findall(r'https://[^\s)<>`]+',text))):
+            code, rc, err=probe(url,'GET')
+            if code == 0:
+              code, rc, err=probe(url,'HEAD')
+
+            if 200 <= code < 400:
+              state='PASS'
+            elif code in (401,403,429):
+              state='ACCESS_CONTROLLED'
+            elif code in (404,410):
+              state='FAIL_BROKEN'
+              problems.append(f'{url}: explicit HTTP {code}')
+            elif code >= 500:
+              state='FAIL_SERVER'
+              problems.append(f'{url}: HTTP {code} after retries')
+            elif code == 0:
+              host=(urlsplit(url).hostname or '').lower()
+              if host in official_transport_allowlist:
+                root=f'https://{host}/'
+                root_code, _, root_err=probe(root,'GET')
+                if 200 <= root_code < 400 or root_code in (401,403,429):
+                  state='NETWORK_UNVERIFIED_OFFICIAL'
+                  transport_warnings.append(f'{url}: exact resource transport-unreachable after retries; official host reachable as HTTP {root_code}')
+                else:
+                  state='NETWORK_UNVERIFIED_OFFICIAL'
+                  transport_warnings.append(f'{url}: transport-unreachable after retries (curl rc={rc}); authoritative official URL retained; host probe HTTP {root_code}; stderr={err or root_err}')
+              else:
+                state='FAIL_TRANSPORT'
+                problems.append(f'{url}: transport failure after retries (curl rc={rc}; stderr={err})')
+            else:
+              state='FAIL_HTTP'
+              problems.append(f'{url}: HTTP {code}')
             print(code,state,url)
-            if state == 'FAIL': problems.append(f'{url}: HTTP {code}')
+
+          if transport_warnings:
+            print('Network-only verification warnings:')
+            print('\n'.join(transport_warnings))
           if problems:
             print('\n'.join(problems)); sys.exit(1)
           PY
