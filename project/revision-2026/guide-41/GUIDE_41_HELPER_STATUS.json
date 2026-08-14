@@ -2,10 +2,10 @@
   "guide": "41",
   "occupation": "Carpenter and Cabinetmaking Technician",
   "branch": "revision/guide-00-100-2026",
-  "updated": "2026-08-13",
+  "updated": "2026-08-14",
   "stages": {
     "baseline_inventory": {"status": "PASS", "evidence": ["project/revision-2026/guide-41/qa/GUIDE_41_BASELINE_INVENTORY_01.md"]},
-    "research": {"status": "PENDING", "evidence": []},
+    "research": {"status": "PASS", "evidence": ["project/revision-2026/guide-41/research/GUIDE_41_CURRENT_SOURCE_EVIDENCE_02.md"]},
     "english_editorial": {"status": "PENDING", "evidence": []},
     "evidence_traceability": {"status": "PENDING", "evidence": []},
     "english_source_freeze": {"status": "PENDING", "evidence": []},
