@@ -5,7 +5,6 @@ ROOT = Path(__file__).resolve().parents[1]
 ES = ROOT / 'project/revision-2026/guide-41/working-masters/GUIDE_41_CARPENTER_AND_CABINETMAKING_TECHNICIAN_ES419_v2.md'
 PT = ROOT / 'project/revision-2026/guide-41/working-masters/GUIDE_41_CARPENTER_AND_CABINETMAKING_TECHNICIAN_PTBR_v2.md'
 EN = ROOT / 'project/revision-2026/guide-41/working-masters/GUIDE_41_CARPENTER_AND_CABINETMAKING_TECHNICIAN_ENGLISH_v2.md'
-WF = ROOT / '.github/workflows/guide41-publication-build.yml'
 
 URL_RE = re.compile(r'https://[^\s)<>`]+')
 
@@ -67,20 +66,7 @@ def replace_block(path: Path, start_heading: str, end_heading: str, new_block: s
 replace_block(ES, '## Fuentes actuales', '## Nota sobre fuentes y revisión', ES_BLOCK)
 replace_block(PT, '## Fontes atuais', '## Nota de fonte e revisão', PT_BLOCK)
 
-wf = WF.read_text(encoding='utf-8')
-old_fold = "          def fold(s): return ''.join(c for c in unicodedata.normalize('NFKD',s.lower()) if not unicodedata.combining(c))"
-new_fold = "          def fold(s):\n            s=re.sub(r'[*_`~]+','',s.lower())\n            return ''.join(c for c in unicodedata.normalize('NFKD',s) if not unicodedata.combining(c))"
-if old_fold not in wf:
-    raise SystemExit('Guide 41 workflow: expected Markdown-brittle fold() line not found')
-wf = wf.replace(old_fold, new_fold, 1)
-old_60 = "r'47-2031\\.00',r'72310',r'60\\s*(?:hour|hora)'"
-new_60 = "r'47-2031\\.00',r'72310',r'60[-\\s]*(?:hour|hora)'"
-if old_60 not in wf:
-    raise SystemExit('Guide 41 workflow: expected 60-hour regex not found')
-wf = wf.replace(old_60, new_60, 1)
-WF.write_text(wf, encoding='utf-8')
-
-# Fail closed: localized source URL sets must now exactly equal frozen English.
+# Fail closed: localized source URL sets must exactly equal the frozen English source set.
 en_urls = set(URL_RE.findall(EN.read_text(encoding='utf-8')))
 for locale, path in [('es-419', ES), ('pt-BR', PT)]:
     localized = set(URL_RE.findall(path.read_text(encoding='utf-8')))
@@ -89,10 +75,4 @@ for locale, path in [('es-419', ES), ('pt-BR', PT)]:
             f'{locale}: URL parity repair failed; missing={sorted(en_urls-localized)}; extra={sorted(localized-en_urls)}'
         )
 
-wf_check = WF.read_text(encoding='utf-8')
-if "s=re.sub(r'[*_`~]+','',s.lower())" not in wf_check:
-    raise SystemExit('Markdown normalization repair not present')
-if "r'60[-\\s]*(?:hour|hora)'" not in wf_check:
-    raise SystemExit('60-hour regex repair not present')
-
-print(f'Guide 41 corrective repair PASS: exact source URL parity ({len(en_urls)} URLs) and validator fixes applied.')
+print(f'Guide 41 localization parity repair PASS: exact frozen-English source URL parity ({len(en_urls)} URLs).')
