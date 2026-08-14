@@ -48,7 +48,9 @@ jobs:
           out=Path('project/revision-2026/guide-41/publication-candidate')
           files={'en':out/'GUIDE_41_ENGLISH_v2.md','es-419':out/'GUIDE_41_SPANISH_es-419_v2.md','pt-BR':out/'GUIDE_41_PORTUGUESE_pt-BR_v2.md'}
           texts={k:p.read_text(encoding='utf-8') for k,p in files.items()}
-          def fold(s): return ''.join(c for c in unicodedata.normalize('NFKD',s.lower()) if not unicodedata.combining(c))
+          def fold(s):
+            s=re.sub(r'[*_`~]+','',s.lower())
+            return ''.join(c for c in unicodedata.normalize('NFKD',s) if not unicodedata.combining(c))
           problems=[]; urls={}; sections={}
           required={
             'en':['# guide 41','carpentry','cabinetmaking','registered apprenticeship','red seal','colombia','using ai responsibly','cybersecurity and privacy basics','does not claim independent human certification'],
@@ -68,7 +70,7 @@ jobs:
             if urls[lang] != urls['en']:
               problems.append(f'{lang}: source URL set differs from English; missing={sorted(urls["en"]-urls[lang])}; extra={sorted(urls[lang]-urls["en"])}')
           controls=[
-            r'47-2031\.00',r'72310',r'60\s*(?:hour|hora)',r'4[.,]?000',
+            r'47-2031\.00',r'72310',r'60[-\s]*(?:hour|hora)',r'4[.,]?000',
             r'29[.,]12',r'60[.,]?580',r'959[.,]?000',r'5\s*%.*6\s*%',r'74[.,]?100',
             r'41[.,]?709',r'20\s*(?:per|por)',r'34[.,]?226',r'51[.,]?809',
             r'60[.,]?290',r'29\s*(?:per|por)',r'54[.,]?219',r'66[.,]?817',
