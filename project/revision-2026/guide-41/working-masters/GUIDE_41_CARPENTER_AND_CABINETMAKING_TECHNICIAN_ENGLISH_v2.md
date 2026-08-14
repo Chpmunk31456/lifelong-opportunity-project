@@ -168,8 +168,8 @@ These are national statistics for carpenters. They are not promised starting wag
 
 Private salary sites report different figures for adjacent cabinetmaking titles:
 
-- Salary.com reported an average of approximately **$41,709 per year / $20 per hour** for *Cabinetmaker and Bench Carpenter* as of July 1, 2026, with a stated 25th–75th percentile range of approximately **$34,226–$51,809**.
-- Salary.com separately reported an average of approximately **$60,290 per year / $29 per hour** for *Cabinet Maker* as of July 1, 2026, with a stated 25th–75th percentile range of approximately **$54,219–$66,817**.
+- Salary.com reported an average of approximately **$41,709 per year / $20 per hour** for Cabinetmaker and Bench Carpenter as of July 1, 2026, with a stated 25th–75th percentile range of approximately **$34,226–$51,809**.
+- Salary.com separately reported an average of approximately **$60,290 per year / $29 per hour** for Cabinet Maker as of July 1, 2026, with a stated 25th–75th percentile range of approximately **$54,219–$66,817**.
 
 These are **non-government market estimates for adjacent titles**. Methodologies and job definitions differ, so they should not be blended with the official BLS/O*NET carpenter median.
 

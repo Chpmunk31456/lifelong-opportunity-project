@@ -168,8 +168,8 @@ Estas son estadísticas nacionales para carpinteros. No son salarios iniciales g
 
 Sitios privados de salarios reportan cifras diferentes para títulos relacionados:
 
-- Salary.com reportó un promedio aproximado de **USD $41,709 al año / $20 por hora** para *Cabinetmaker and Bench Carpenter* al 1 de julio de 2026, con rango percentil 25–75 declarado de aproximadamente **USD $34,226–$51,809**.
-- Salary.com reportó por separado un promedio aproximado de **USD $60,290 al año / $29 por hora** para *Cabinet Maker* al 1 de julio de 2026, con rango percentil 25–75 declarado de aproximadamente **USD $54,219–$66,817**.
+- Salary.com reportó un promedio aproximado de **USD $41,709 al año / $20 por hora** para Cabinetmaker and Bench Carpenter al 1 de julio de 2026, con rango percentil 25–75 declarado de aproximadamente **USD $34,226–$51,809**.
+- Salary.com reportó por separado un promedio aproximado de **USD $60,290 al año / $29 por hora** para Cabinet Maker al 1 de julio de 2026, con rango percentil 25–75 declarado de aproximadamente **USD $54,219–$66,817**.
 
 Estas son **estimaciones de mercado no gubernamentales para títulos relacionados**. Las metodologías y definiciones de puesto difieren, por lo que no deben combinarse con la mediana oficial de BLS/O*NET.
 
