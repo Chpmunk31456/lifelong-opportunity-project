@@ -74,7 +74,7 @@ jobs:
             r'1926\.62',r'1910\.107',r'1910\.134',
             r'48[.,]?660',r'23[.,]40',r'342[.,]?200',r'28[.,]?100',
             r'23[.,]20',r'48[.,]?250',r'165[.,]?500',r'15[.,]?800',
-            r'40[.,]99',r'24[.,]61',r'36[.,]00',r'15[–-]20',r'12\s*(?:week|semana)']
+            r'40[.,]99',r'24[.,]61',r'36[.,]00',r'15[–-]20',r'12[-\s]*(?:week|weeks|semana|semanas)']
           for lang,text in texts.items():
             for pat in controls:
               if not re.search(pat,text,re.I|re.S): problems.append(f'{lang}: missing controlled value {pat}')
