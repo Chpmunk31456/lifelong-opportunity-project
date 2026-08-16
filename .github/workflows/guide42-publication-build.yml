@@ -5,6 +5,9 @@ on:
     branches: [revision/guide-00-100-2026]
     paths:
       - '.github/workflows/guide42-publication-build.yml'
+      - 'project/revision-2026/guide-42/working-masters/GUIDE_42_PAINTER_AND_COATING_WORKER_ENGLISH_v2.md'
+      - 'project/revision-2026/guide-42/working-masters/GUIDE_42_PAINTER_AND_COATING_WORKER_ES419_v2.md'
+      - 'project/revision-2026/guide-42/working-masters/GUIDE_42_PAINTER_AND_COATING_WORKER_PTBR_v2.md'
   workflow_dispatch:
 
 permissions:
