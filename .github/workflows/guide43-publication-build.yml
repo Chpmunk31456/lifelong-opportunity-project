@@ -73,11 +73,12 @@ jobs:
             if urls[lang] != urls['en']:
               problems.append(f'{lang}: source URL set differs from English; missing={sorted(urls["en"]-urls[lang])}; extra={sorted(urls[lang]-urls["en"])}')
           controls=[
-            r'47-2231',r'73200',r'72200',r'1926\.501',r'6\s+(?:feet|pies|pes)\s*\(1\.8\s*m\)',
-            r'2[,.]200\s+(?:hours|horas)',r'96\s+(?:hours|horas)',
+            r'47-2231',r'73200',r'72200',r'1926\.501',
+            r'6\s+(?:feet|pies|pes)\s*\(1[\.,]8\s*m\)',
+            r'2[,.]200[-\s]+(?:hour|hours|hora|horas)',r'96[-\s]+(?:hour|hours|hora|horas)',
             r'51[,.]860',r'24\.93',r'39[,.]070',r'80[,.]150',r'28[,.]600',r'40[,.]600',
             r'42%.*12[,.]000',r'4[,.]100',r'26\.12',r'16\.37',r'41\.68',r'2[,.]900',r'36\s+(?:months|meses)',r'7[,.]500',
-            r'18\.65',r'26\.00',r'40\.00',r'12\s+(?:week|weeks|semana|semanas)']
+            r'18\.65',r'26\.00',r'40\.00',r'12[-\s]+(?:week|weeks|semana|semanas)']
           for lang,text in texts.items():
             for pat in controls:
               if not re.search(pat,text,re.I|re.S): problems.append(f'{lang}: missing controlled value {pat}')
