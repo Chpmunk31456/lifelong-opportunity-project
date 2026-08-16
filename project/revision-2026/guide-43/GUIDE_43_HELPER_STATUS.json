@@ -9,7 +9,7 @@
     "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-43/qa/GUIDE_43_ENGLISH_EDITORIAL_QA_03.md"]},
     "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-43/qa/GUIDE_43_EVIDENCE_TRACEABILITY_QA_04.md"]},
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-43/qa/GUIDE_43_ENGLISH_SOURCE_FREEZE_05.md"]},
-    "spanish_localization": {"status": "PENDING", "evidence": []},
+    "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-43/qa/GUIDE_43_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PENDING", "evidence": []},
     "technical_qa": {"status": "PENDING", "evidence": []},
     "publication": {"status": "PENDING", "evidence": []},
@@ -17,4 +17,3 @@
   },
   "blockers": []
 }
-
