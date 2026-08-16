@@ -355,7 +355,7 @@ Official/public sources:
 - Colombia Ministry of Labour OCUPACOL — Pintores y empapeladores: https://ocupacol.mintrabajo.gov.co/Profile/OccupationalProfile/71310
 - SENA — training framework including Pintura arquitectónica y acabados especiales: https://normograma.sena.edu.co/compilacion/docs/circular_sena_0021_2025.htm
 - SENA — architectural-painting training example: https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=7988
-- OIT/Cinterfor — vocational-training institution data: https://www.oitcinterfor.org/statsfp/instituciones
+- OIT/Cinterfor — institutional vocational-training network: https://www.oitcinterfor.org/red-institucional
 - OIT/Cinterfor — Central America, Panama, Dominican Republic and Haiti vocational-training network: https://www.oitcinterfor.org/recursos/redIFP
 - Chile SENCE — construction training including painting and varnishing: https://sence.gob.cl/node/5146
 
