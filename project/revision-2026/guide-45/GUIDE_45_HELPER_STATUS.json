@@ -11,8 +11,11 @@
       ]
     },
     "research": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-45/research/GUIDE_45_CURRENT_SOURCE_EVIDENCE_02.md",
+        "project/revision-2026/guide-45/qa/GUIDE_45_RESEARCH_QA_02.md"
+      ]
     },
     "english_editorial": {
       "status": "PENDING",
