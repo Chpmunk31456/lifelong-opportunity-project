@@ -189,7 +189,7 @@ jobs:
             if rendered != pages: raise SystemExit(f'{stem}: render/page mismatch')
             records.append({'language':lang,'docx':docx.name,'pdf':pdf.name,'docx_bytes':docx.stat().st_size,'pdf_bytes':pdf.stat().st_size,'pdf_pages':pages,'rendered_pages':rendered,'status':'PASS'})
           manifest={'guide':'44','occupation':'Wind Turbine Service Technician','build_date':'2026-08-17','status':'PASS','editions':records,'assurance_boundary':'Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, electrical or engineering approval, licensing determination, accreditation, or employment or earnings guarantee.'}
-          (out/'GUIDE_43_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          (out/'GUIDE_44_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
           targets=sorted(p for p in out.iterdir() if p.is_file() and p.suffix in {'.docx','.pdf'})
           (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets)+'\n',encoding='utf-8')
 
