@@ -2,7 +2,7 @@
   "guide": "43",
   "occupation": "Solar Photovoltaic Installer",
   "branch": "revision/guide-00-100-2026",
-  "updated": "2026-08-16",
+  "updated": "2026-08-17",
   "stages": {
     "baseline_inventory": {"status": "PASS", "evidence": ["project/revision-2026/guide-43/qa/GUIDE_43_BASELINE_INVENTORY_01.md"]},
     "research": {"status": "PASS", "evidence": ["project/revision-2026/guide-43/research/GUIDE_43_CURRENT_SOURCE_EVIDENCE_02.md"]},
@@ -11,9 +11,9 @@
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-43/qa/GUIDE_43_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-43/qa/GUIDE_43_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-43/qa/GUIDE_43_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
-    "publication": {"status": "PENDING", "evidence": []},
-    "release_audit": {"status": "PENDING", "evidence": []}
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-43/qa/GUIDE_43_TECHNICAL_QA_08.md", "project/revision-2026/guide-43/publication-candidate/GUIDE_43_PUBLICATION_QA_MANIFEST.json"]},
+    "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-43/qa/GUIDE_43_PUBLICATION_GATE_09.md", "project/revision-2026/guide-43/publication-candidate/GUIDE_43_PUBLICATION_QA_MANIFEST.json", "project/revision-2026/guide-43/publication-candidate/SHA256SUMS.txt"]},
+    "release_audit": {"status": "PASS", "evidence": ["project/revision-2026/guide-43/qa/GUIDE_43_RELEASE_AUDIT_10.md"]}
   },
   "blockers": []
 }
