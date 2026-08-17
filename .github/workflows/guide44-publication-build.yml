@@ -56,9 +56,9 @@ jobs:
             return ''.join(c for c in unicodedata.normalize('NFKD',s) if not unicodedata.combining(c))
           problems=[]; urls={}; sections={}
           required={
-            'en':['# guide 43','solar photovoltaic installer','safety comes before production','electrical and energized-pv boundaries','red seal','colombia','using ai responsibly','cybersecurity and privacy basics','does not claim independent human certification'],
-            'es-419':['# guia 43','instalador de sistemas solares fotovoltaicos','la seguridad esta antes que la produccion','limites electricos y de fv energizado','red seal','colombia','uso responsable de la ia','ciberseguridad y privacidad','no afirma contar con certificacion humana independiente'],
-            'pt-BR':['# guia 43','instalador de sistemas solares fotovoltaicos','seguranca vem antes da producao','limites eletricos e de fv energizado','red seal','colombia','uso responsavel de ia','ciberseguranca e privacidade','nao afirma possuir certificacao humana independente']}
+            'en':['# guide 44','wind turbine service technician','safety comes before production','fall protection and rescue boundaries','electrical, mechanical, and hydraulic energy-control boundaries','red seal','colombia','using ai responsibly','cybersecurity and privacy','independent human'],
+            'es-419':['# guia 44','tecnico de servicio de turbinas eolicas','seguridad','proteccion contra caidas','energia electrica','red seal','colombia','uso responsable de la ia','ciberseguridad y privacidad','revision humana independiente'],
+            'pt-BR':['# guia 44','tecnico de manutencao de turbinas eolicas','seguranca','protecao contra quedas','energia eletrica','red seal','colombia','uso responsavel de ia','ciberseguranca e privacidade','revisao humana independente']}
           for lang,text in texts.items():
             low=fold(text)
             sections[lang]=len(re.findall(r'^##\s+.+$',text,re.M))
