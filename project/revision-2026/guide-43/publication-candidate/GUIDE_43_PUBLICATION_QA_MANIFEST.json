@@ -1,0 +1,39 @@
+{
+  "guide": "43",
+  "occupation": "Solar Photovoltaic Installer",
+  "build_date": "2026-08-16",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_43_ENGLISH_v2.docx",
+      "pdf": "GUIDE_43_ENGLISH_v2.pdf",
+      "docx_bytes": 23394,
+      "pdf_bytes": 158017,
+      "pdf_pages": 11,
+      "rendered_pages": 11,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_43_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_43_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 24525,
+      "pdf_bytes": 162110,
+      "pdf_pages": 12,
+      "rendered_pages": 12,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_43_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_43_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 24460,
+      "pdf_bytes": 163679,
+      "pdf_pages": 12,
+      "rendered_pages": 12,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, electrical or engineering approval, licensing determination, accreditation, or employment or earnings guarantee."
+}
