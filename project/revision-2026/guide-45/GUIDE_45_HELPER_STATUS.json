@@ -1,0 +1,51 @@
+{
+  "guide": "45",
+  "occupation": "Water and Wastewater Treatment Plant Operator",
+  "branch": "revision/guide-00-100-2026",
+  "updated": "2026-08-17",
+  "stages": {
+    "baseline_inventory": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-45/qa/GUIDE_45_BASELINE_INVENTORY_01.md"
+      ]
+    },
+    "research": {
+      "status": "PENDING",
+      "evidence": []
+    },
+    "english_editorial": {
+      "status": "PENDING",
+      "evidence": []
+    },
+    "evidence_traceability": {
+      "status": "PENDING",
+      "evidence": []
+    },
+    "english_source_freeze": {
+      "status": "PENDING",
+      "evidence": []
+    },
+    "spanish_localization": {
+      "status": "PENDING",
+      "evidence": []
+    },
+    "portuguese_localization": {
+      "status": "PENDING",
+      "evidence": []
+    },
+    "technical_qa": {
+      "status": "PENDING",
+      "evidence": []
+    },
+    "publication": {
+      "status": "PENDING",
+      "evidence": []
+    },
+    "release_audit": {
+      "status": "PENDING",
+      "evidence": []
+    }
+  },
+  "blockers": []
+}
