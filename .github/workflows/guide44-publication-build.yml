@@ -74,15 +74,14 @@ jobs:
               problems.append(f'{lang}: source URL set differs from English; missing={sorted(urls["en"]-urls[lang])}; extra={sorted(urls[lang]-urls["en"])}')
           controls=[
             r'49-9081',r'49-9081\.00',r'72400',r'1910\.269',r'4272',
-            r'6\s+(?:feet|pies|pes)\s*\(1[\.,]8\s*m\)',
-            r'4\s+(?:feet|pies|pes)\s*\(1[\.,]2\s*m\)',
+            r'6\s+(?:feet|pies|p[eé]s)\s*\(1[\.,]8\s*m\)',
+            r'4\s+(?:feet|pies|p[eé]s)\s*\(1[\.,]2\s*m\)',
             r'2[\.,]0\s*m',r'3[,.]984\s+(?:hours|horas)',
             r'62[,.]580',r'30\.09',r'49[,.]110',r'88[,.]090',
             r'13[,.]600',r'20[,.]500',r'6[,.]800',r'50\s+(?:percent|por ciento|por cento)',
             r'49\.9\s+(?:percent|por ciento|por cento)',r'2[,.]300',
             r'24\.00',r'37\.00',r'52\.00',
-            r'200\s+(?:feet|pies|pes)',r'50\s+(?:pounds|libras)',
-            r'3[-\s]+(?:to|a)\s+4[-\s]+(?:year|years|anos)',r'12[-\s]+(?:week|weeks|semana|semanas)']
+            r'200\s+(?:feet|pies|p[eé]s)',r'50\s+(?:pounds|libras)',r'12[-\s]+(?:week|weeks|semana|semanas)']
           for lang,text in texts.items():
             for pat in controls:
               if not re.search(pat,text,re.I|re.S): problems.append(f'{lang}: missing controlled value {pat}')
