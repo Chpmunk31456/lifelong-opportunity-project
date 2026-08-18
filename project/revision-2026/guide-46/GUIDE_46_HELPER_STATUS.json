@@ -52,18 +52,27 @@
       ]
     },
     "technical_qa": {
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": [
-        "project/revision-2026/guide-46/qa/GUIDE_46_TECHNICAL_QA_PRECHECK_08.md"
+        "project/revision-2026/guide-46/qa/GUIDE_46_TECHNICAL_QA_PRECHECK_08.md",
+        "project/revision-2026/guide-46/qa/GUIDE_46_AUTOMATED_SOURCE_DIAGNOSTIC.json",
+        "project/revision-2026/guide-46/qa/GUIDE_46_LINK_DIAGNOSTIC.json",
+        "project/revision-2026/guide-46/qa/GUIDE_46_TECHNICAL_QA_08.md"
       ]
     },
     "publication": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-46/qa/GUIDE_46_CONTROLLED_PUBLICATION_QA_09.md",
+        "project/revision-2026/guide-46/publication-candidate/GUIDE_46_PUBLICATION_QA_MANIFEST.json",
+        "project/revision-2026/guide-46/publication-candidate/SHA256SUMS.txt"
+      ]
     },
     "release_audit": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-46/qa/GUIDE_46_RELEASE_AUDIT_10.md"
+      ]
     }
   },
   "blockers": []
