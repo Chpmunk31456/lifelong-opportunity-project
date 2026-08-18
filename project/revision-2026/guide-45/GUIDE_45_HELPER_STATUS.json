@@ -44,8 +44,11 @@
       ]
     },
     "portuguese_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-45/working-masters/GUIDE_45_WATER_WASTEWATER_TREATMENT_PLANT_OPERATOR_PTBR_v2.md",
+        "project/revision-2026/guide-45/qa/GUIDE_45_PORTUGUESE_LOCALIZATION_QA_07.md"
+      ]
     },
     "technical_qa": {
       "status": "PENDING",
