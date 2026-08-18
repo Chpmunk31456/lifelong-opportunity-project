@@ -1,5 +1,6 @@
 name: Guide 47 publication dispatch
 
+# Controlled re-dispatch marker: 2026-08-18T23:57Z
 on:
   push:
     branches: [revision/guide-00-100-2026]
