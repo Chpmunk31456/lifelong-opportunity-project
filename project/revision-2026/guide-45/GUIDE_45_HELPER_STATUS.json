@@ -2,7 +2,7 @@
   "guide": "45",
   "occupation": "Water and Wastewater Treatment Plant Operator",
   "branch": "revision/guide-00-100-2026",
-  "updated": "2026-08-17",
+  "updated": "2026-08-18",
   "stages": {
     "baseline_inventory": {
       "status": "PASS",
@@ -51,18 +51,25 @@
       ]
     },
     "technical_qa": {
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": [
-        "project/revision-2026/guide-45/qa/GUIDE_45_TECHNICAL_QA_PRECHECK_08.md"
+        "project/revision-2026/guide-45/qa/GUIDE_45_TECHNICAL_QA_PRECHECK_08.md",
+        "project/revision-2026/guide-45/qa/GUIDE_45_TECHNICAL_QA_08.md"
       ]
     },
     "publication": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-45/qa/GUIDE_45_CONTROLLED_PUBLICATION_QA_09.md",
+        "project/revision-2026/guide-45/publication-candidate/GUIDE_45_PUBLICATION_QA_MANIFEST.json",
+        "project/revision-2026/guide-45/publication-candidate/SHA256SUMS.txt"
+      ]
     },
     "release_audit": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-45/qa/GUIDE_45_RELEASE_AUDIT_10.md"
+      ]
     }
   },
   "blockers": []
