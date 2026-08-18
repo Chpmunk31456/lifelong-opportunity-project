@@ -1,0 +1,85 @@
+name: Guide 46 one-time link diagnostic
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide46-link-diagnostic.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Probe controlled English source links
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json, re, subprocess
+
+          path = Path('project/revision-2026/guide-46/working-masters/GUIDE_46_ENVIRONMENTAL_FIELD_TECHNICIAN_ENGLISH_v2.md')
+          text = path.read_text(encoding='utf-8')
+          user_agent = 'Mozilla/5.0 (compatible; LifelongOpportunityProject-LinkQA/1.0)'
+          rows = []
+
+          def probe(url, method='GET'):
+              command = [
+                  'curl', '-L', '--retry', '2', '--retry-all-errors', '--retry-delay', '2',
+                  '--connect-timeout', '10', '--max-time', '30', '-A', user_agent,
+                  '-sS', '-o', '/dev/null', '-w', '%{http_code}'
+              ]
+              if method == 'HEAD':
+                  command.insert(1, '-I')
+              completed = subprocess.run(command + [url], capture_output=True, text=True)
+              code = int(completed.stdout[-3:]) if completed.stdout and completed.stdout[-3:].isdigit() else 0
+              return code, completed.returncode, (completed.stderr or '').strip()
+
+          for url in sorted(set(re.findall(r'https://[^\s)<>`]+', text))):
+              code, rc, error = probe(url, 'GET')
+              if code == 0:
+                  code, rc, error = probe(url, 'HEAD')
+              if 200 <= code < 400:
+                  state = 'PASS'
+              elif code in (404, 410):
+                  state = 'BROKEN'
+              elif code in (401, 403, 429):
+                  state = 'ACCESS_CONTROLLED_UNVERIFIED'
+              elif code == 0:
+                  state = 'TRANSPORT_UNVERIFIED'
+              elif code >= 500:
+                  state = 'SERVER_UNVERIFIED'
+              else:
+                  state = 'HTTP_UNVERIFIED'
+              rows.append({'url': url, 'http_code': code, 'state': state, 'curl_rc': rc, 'stderr': error})
+
+          broken = [row for row in rows if row['state'] == 'BROKEN']
+          report = {
+              'guide': 46,
+              'status': 'FAIL' if broken else 'PASS_WITH_POSSIBLE_UNVERIFIED' if any(row['state'] != 'PASS' for row in rows) else 'PASS',
+              'total_urls': len(rows),
+              'broken_count': len(broken),
+              'rows': rows,
+          }
+          out = Path('project/revision-2026/guide-46/qa/GUIDE_46_LINK_DIAGNOSTIC.json')
+          out.write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          print(json.dumps({'status': report['status'], 'broken_count': report['broken_count']}, indent=2))
+          PY
+
+      - name: Commit link diagnostic report
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-46/qa/GUIDE_46_LINK_DIAGNOSTIC.json
+          git commit -m 'Guide 46: record link diagnostic'
+          git pull --rebase origin revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026
