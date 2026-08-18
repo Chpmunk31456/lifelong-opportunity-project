@@ -1,0 +1,107 @@
+name: Guide 46 one-time document diagnostic
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide46-document-diagnostic.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Install document and rendering tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice poppler-utils python3-pil
+
+      - name: Build and inspect temporary documents
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json, subprocess, shutil, tempfile
+          from PIL import Image, ImageChops
+
+          repo = Path.cwd()
+          masters = repo / 'project/revision-2026/guide-46/working-masters'
+          report_path = repo / 'project/revision-2026/guide-46/qa/GUIDE_46_DOCUMENT_DIAGNOSTIC.json'
+          sources = [
+              ('en', masters / 'GUIDE_46_ENVIRONMENTAL_FIELD_TECHNICIAN_ENGLISH_v2.md'),
+              ('es-419', masters / 'GUIDE_46_ENVIRONMENTAL_FIELD_TECHNICIAN_ES419_v2.md'),
+              ('pt-BR', masters / 'GUIDE_46_ENVIRONMENTAL_FIELD_TECHNICIAN_PTBR_v2.md'),
+          ]
+          report = {'guide': 46, 'status': 'PASS', 'editions': [], 'problems': []}
+
+          with tempfile.TemporaryDirectory() as td:
+              tmp = Path(td)
+              for lang, source in sources:
+                  stem = {'en':'GUIDE_46_ENGLISH_v2','es-419':'GUIDE_46_SPANISH_es-419_v2','pt-BR':'GUIDE_46_PORTUGUESE_pt-BR_v2'}[lang]
+                  docx = tmp / f'{stem}.docx'
+                  pdf = tmp / f'{stem}.pdf'
+                  row = {'language': lang, 'source': source.name, 'status': 'PASS'}
+                  try:
+                      subprocess.run(['pandoc', str(source), '-f', 'gfm-tex_math_dollars', '-t', 'docx', '--standalone', '-o', str(docx)], check=True)
+                      subprocess.run(['unzip', '-t', str(docx)], check=True, stdout=subprocess.DEVNULL)
+                      lo = tmp / f'lo-{stem}'
+                      lo.mkdir()
+                      subprocess.run(['libreoffice', '--headless', '--convert-to', 'pdf', '--outdir', str(lo), str(docx)], check=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+                      generated = lo / f'{stem}.pdf'
+                      shutil.move(str(generated), str(pdf))
+                      info = subprocess.check_output(['pdfinfo', str(pdf)], text=True)
+                      pages = next(int(line.split(':',1)[1]) for line in info.splitlines() if line.startswith('Pages:'))
+                      text = subprocess.check_output(['pdftotext', str(pdf), '-'], text=True, errors='replace')
+                      if '\ufffd' in text:
+                          raise RuntimeError('Unicode replacement character in PDF text')
+                      if len(''.join(text.split())) <= 5000:
+                          raise RuntimeError('PDF searchable text unexpectedly short')
+                      render_dir = tmp / f'render-{stem}'
+                      render_dir.mkdir()
+                      subprocess.run(['pdftoppm','-png','-r','110',str(pdf),str(render_dir/'page')], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                      renders = sorted(render_dir.glob('*.png'))
+                      if len(renders) != pages:
+                          raise RuntimeError(f'render/PDF page mismatch {len(renders)} != {pages}')
+                      for image_path in renders:
+                          with Image.open(image_path) as image:
+                              image.verify()
+                          with Image.open(image_path) as image:
+                              gray = image.convert('L')
+                              difference = ImageChops.difference(gray, Image.new('L', gray.size, 255))
+                              bbox = difference.point(lambda p: 255 if p > 12 else 0).getbbox()
+                              if bbox is None:
+                                  raise RuntimeError(f'blank page {image_path.name}')
+                              left, top, right, bottom = bbox
+                              width, height = gray.size
+                              margins = {'left':left,'top':top,'right':width-right,'bottom':height-bottom}
+                              if min(margins.values()) < 4:
+                                  raise RuntimeError(f'possible clipping {image_path.name}: {margins}')
+                      row.update({'docx_bytes': docx.stat().st_size, 'pdf_bytes': pdf.stat().st_size, 'pdf_pages': pages, 'rendered_pages': len(renders)})
+                  except Exception as exc:
+                      row['status'] = 'FAIL'
+                      row['error'] = str(exc)
+                      report['status'] = 'FAIL'
+                      report['problems'].append(f'{lang}: {exc}')
+                  report['editions'].append(row)
+
+          report_path.write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          print(json.dumps({'status': report['status'], 'problems': report['problems']}, indent=2))
+          PY
+
+      - name: Commit document diagnostic report
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-46/qa/GUIDE_46_DOCUMENT_DIAGNOSTIC.json
+          git commit -m 'Guide 46: record document diagnostic'
+          git pull --rebase origin revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026
