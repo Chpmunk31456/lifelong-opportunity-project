@@ -1,0 +1,139 @@
+name: Guide 46 one-time source diagnostic
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide46-source-diagnostic.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Diagnose controlled trilingual source
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json, re, unicodedata
+
+          root = Path('project/revision-2026/guide-46')
+          masters = root / 'working-masters'
+          files = {
+              'en': masters / 'GUIDE_46_ENVIRONMENTAL_FIELD_TECHNICIAN_ENGLISH_v2.md',
+              'es-419': masters / 'GUIDE_46_ENVIRONMENTAL_FIELD_TECHNICIAN_ES419_v2.md',
+              'pt-BR': masters / 'GUIDE_46_ENVIRONMENTAL_FIELD_TECHNICIAN_PTBR_v2.md',
+          }
+          texts = {lang: path.read_text(encoding='utf-8') for lang, path in files.items()}
+
+          def fold(value):
+              value = re.sub(r'[*_`~]+', '', value.lower())
+              return ''.join(c for c in unicodedata.normalize('NFKD', value) if not unicodedata.combining(c))
+
+          required = {
+              'en': [
+                  '# guide 46', 'environmental field technician', 'safety comes before production',
+                  'hazardous waste and unknown contamination boundaries',
+                  'ppe, respirators, and chemical hazards', 'field sampling and chain of custody',
+                  'data quality, calibration, records, and compliance boundaries',
+                  'responsible use of ai', 'independent human review'
+              ],
+              'es-419': [
+                  '# guia 46', 'tecnico de campo ambiental', 'la seguridad esta antes que la produccion',
+                  'limites sobre residuos peligrosos y contaminacion desconocida',
+                  'epp, respiradores y peligros quimicos', 'muestreo de campo y cadena de custodia',
+                  'calidad de datos, calibracion, registros y limites de cumplimiento',
+                  'uso responsable de ia', 'revision humana independiente'
+              ],
+              'pt-BR': [
+                  '# guia 46', 'tecnico de campo ambiental', 'seguranca vem antes da producao',
+                  'limites de residuos perigosos e contaminacao desconhecida',
+                  'epi, respiradores e perigos quimicos', 'amostragem de campo e cadeia de custodia',
+                  'qualidade dos dados, calibracao, registros e limites de conformidade',
+                  'uso responsavel de ia', 'revisao humana independente'
+              ],
+          }
+
+          controls = [
+              r'19-4042', r'19-4042\.00', r'22300', r'49[,.]490', r'23[,.]79',
+              r'36[,.]130', r'85[,.]630', r'40[,.]400', r'42[,.]100',
+              r'\+\s*1[,.]600', r'\+\s*4\s+(?:percent|por ciento|por cento)',
+              r'5[,.]600', r'22[,.]00', r'33[,.]89', r'51[,.]10',
+              r'2[,.]112\s+(?:hours?|horas?)'
+          ]
+
+          report = {'guide': 46, 'status': 'PASS', 'languages': {}, 'cross_language': {}}
+          english_urls = None
+          for lang, text in texts.items():
+              normalized = fold(text)
+              urls = set(re.findall(r'https://[^\s)<>`]+', text))
+              missing_markers = [m for m in required[lang] if fold(m) not in normalized]
+              missing_controls = [p for p in controls if not re.search(p, text, flags=re.I | re.S)]
+              count_2208 = len(re.findall(r'2[,.]208\s+(?:hours?|horas?)', text, flags=re.I))
+              defects = []
+              if text.startswith('\ufeff'): defects.append('BOM')
+              if '\ufffd' in text: defects.append('replacement-character')
+              for token in ('todo:', 'lorem ipsum', '[insert', 'translation pending', 'traduccion pendiente', 'traducao pendente', 't_cnico'):
+                  if token in normalized: defects.append(token)
+              if lang == 'es-419':
+                  if 'sewer' in normalized: defects.append('untranslated sewer')
+                  if 'pozo, alcantarilla, boveda, tanque, alcantarilla' in normalized: defects.append('duplicate alcantarilla sequence')
+              report['languages'][lang] = {
+                  'h2_count': len(re.findall(r'^##\s+.+$', text, flags=re.M)),
+                  'url_count': len(urls),
+                  'missing_markers': missing_markers,
+                  'missing_controls': missing_controls,
+                  'count_2208_hour_references': count_2208,
+                  'defects': defects,
+                  'urls': sorted(urls),
+              }
+              if english_urls is None:
+                  english_urls = urls
+              else:
+                  report['languages'][lang]['missing_vs_english_urls'] = sorted(english_urls - urls)
+                  report['languages'][lang]['extra_vs_english_urls'] = sorted(urls - english_urls)
+
+          h2 = {lang: data['h2_count'] for lang, data in report['languages'].items()}
+          report['cross_language']['h2_counts'] = h2
+          report['cross_language']['expected_h2'] = 24
+          report['cross_language']['expected_urls'] = 26
+
+          failures = []
+          for lang, data in report['languages'].items():
+              if data['h2_count'] != 24: failures.append(f'{lang}: h2={data["h2_count"]}')
+              if data['url_count'] != 26: failures.append(f'{lang}: urls={data["url_count"]}')
+              if data['missing_markers']: failures.append(f'{lang}: missing markers')
+              if data['missing_controls']: failures.append(f'{lang}: missing numeric controls')
+              if data['count_2208_hour_references'] < 2: failures.append(f'{lang}: fewer than two 2,208-hour references')
+              if data['defects']: failures.append(f'{lang}: defects={data["defects"]}')
+              if data.get('missing_vs_english_urls') or data.get('extra_vs_english_urls'):
+                  failures.append(f'{lang}: URL set mismatch')
+          if failures:
+              report['status'] = 'FAIL'
+              report['failures'] = failures
+          else:
+              report['failures'] = []
+
+          out = root / 'qa' / 'GUIDE_46_AUTOMATED_SOURCE_DIAGNOSTIC.json'
+          out.write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          print(json.dumps({'status': report['status'], 'failures': report['failures']}, indent=2))
+          PY
+
+      - name: Commit diagnostic report
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-46/qa/GUIDE_46_AUTOMATED_SOURCE_DIAGNOSTIC.json
+          git commit -m 'Guide 46: record automated source diagnostic'
+          git pull --rebase origin revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026
