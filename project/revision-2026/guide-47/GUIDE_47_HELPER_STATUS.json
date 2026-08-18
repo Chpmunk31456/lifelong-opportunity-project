@@ -17,8 +17,11 @@
       ]
     },
     "english_editorial": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-47/working-masters/GUIDE_47_PHARMACY_TECHNICIAN_ENGLISH_v2.md",
+        "project/revision-2026/guide-47/qa/GUIDE_47_ENGLISH_EDITORIAL_QA_03.md"
+      ]
     },
     "evidence_traceability": {
       "status": "PENDING",
