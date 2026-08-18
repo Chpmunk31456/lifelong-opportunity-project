@@ -52,7 +52,9 @@
     },
     "technical_qa": {
       "status": "PENDING",
-      "evidence": []
+      "evidence": [
+        "project/revision-2026/guide-45/qa/GUIDE_45_TECHNICAL_QA_PRECHECK_08.md"
+      ]
     },
     "publication": {
       "status": "PENDING",
