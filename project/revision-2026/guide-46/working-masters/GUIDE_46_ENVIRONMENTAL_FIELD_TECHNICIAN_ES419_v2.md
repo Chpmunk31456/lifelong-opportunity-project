@@ -65,7 +65,7 @@ Detén el trabajo y escala cuando:
 - presentes síntomas o un monitor o alarma indique una condición potencialmente insegura;
 - el EPP requerido falte, esté dañado, parezca incompatible o no haya sido seleccionado claramente mediante la evaluación de peligros del empleador;
 - parezca necesario un respirador pero no estés cubierto por el programa de protección respiratoria requerido o la atmósfera sea incierta;
-- un pozo, alcantarilla, bóveda, tanque, alcantarilla, recipiente, zanja, excavación, espacio de acceso reducido u otra ubicación pueda presentar riesgo de espacio confinado, sepultamiento, colapso o atmósfera peligrosa;
+- un foso, pozo de inspección, bóveda, tanque, alcantarillado, recipiente, zanja, excavación, espacio de acceso reducido u otra ubicación pueda presentar riesgo de espacio confinado, sepultamiento, colapso o atmósfera peligrosa;
 - el tránsito, equipos móviles, terreno inestable, agua abierta, riesgo de caída, clima severo, rayos, calor, frío, fauna, seguridad física o condiciones de acceso no estén controlados;
 - sean inciertos la identidad, estado, calibración o verificación, condición de contaminación o estado operativo seguro de un equipo;
 - una etiqueta, sello, nevera, formulario de custodia, hora, ubicación, medición, fotografía o registro de campo no coincida con el registro del proyecto;
