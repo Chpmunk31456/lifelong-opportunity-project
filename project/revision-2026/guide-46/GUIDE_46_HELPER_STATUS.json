@@ -37,16 +37,25 @@
       ]
     },
     "spanish_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-46/working-masters/GUIDE_46_ENVIRONMENTAL_FIELD_TECHNICIAN_ES419_v2.md",
+        "project/revision-2026/guide-46/qa/GUIDE_46_SPANISH_LOCALIZATION_QA_06.md",
+        "project/revision-2026/guide-46/qa/GUIDE_46_SPANISH_LOCALIZATION_CORRECTIVE_QA_06B.md"
+      ]
     },
     "portuguese_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-46/working-masters/GUIDE_46_ENVIRONMENTAL_FIELD_TECHNICIAN_PTBR_v2.md",
+        "project/revision-2026/guide-46/qa/GUIDE_46_PORTUGUESE_LOCALIZATION_QA_07.md"
+      ]
     },
     "technical_qa": {
       "status": "PENDING",
-      "evidence": []
+      "evidence": [
+        "project/revision-2026/guide-46/qa/GUIDE_46_TECHNICAL_QA_PRECHECK_08.md"
+      ]
     },
     "publication": {
       "status": "PENDING",
