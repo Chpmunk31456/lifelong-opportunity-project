@@ -33,7 +33,6 @@ jobs:
           sudo apt-get install -y pandoc libreoffice poppler-utils python3-pil
 
       - name: Freeze trilingual publication candidates
-        shell: bash
         run: |
           set -euo pipefail
           SRC='project/revision-2026/guide-45/working-masters'
@@ -44,163 +43,188 @@ jobs:
           cp "$SRC/GUIDE_45_WATER_WASTEWATER_TREATMENT_PLANT_OPERATOR_PTBR_v2.md" "$OUT/GUIDE_45_PORTUGUESE_pt-BR_v2.md"
 
       - name: Run trilingual structural source numeric and terminology controls
-        shell: python
         run: |
+          set -euo pipefail
+          python - <<'PY'
           from pathlib import Path
           import re, sys, unicodedata
 
           out = Path('project/revision-2026/guide-45/publication-candidate')
           files = {
-              'en': out/'GUIDE_45_ENGLISH_v2.md',
-              'es-419': out/'GUIDE_45_SPANISH_es-419_v2.md',
-              'pt-BR': out/'GUIDE_45_PORTUGUESE_pt-BR_v2.md',
+              'en': out / 'GUIDE_45_ENGLISH_v2.md',
+              'es-419': out / 'GUIDE_45_SPANISH_es-419_v2.md',
+              'pt-BR': out / 'GUIDE_45_PORTUGUESE_pt-BR_v2.md',
           }
-          texts = {k: p.read_text(encoding='utf-8') for k, p in files.items()}
+          texts = {lang: path.read_text(encoding='utf-8') for lang, path in files.items()}
 
-          def fold(s):
-              s = re.sub(r'[*_`~]+', '', s.lower())
-              return ''.join(c for c in unicodedata.normalize('NFKD', s) if not unicodedata.combining(c))
+          def fold(value):
+              value = re.sub(r'[*_`~]+', '', value.lower())
+              return ''.join(
+                  c for c in unicodedata.normalize('NFKD', value)
+                  if not unicodedata.combining(c)
+              )
 
-          problems = []
-          urls = {}
-          sections = {}
           required = {
               'en': [
-                  '# guide 45', 'water and wastewater treatment plant operator',
-                  'safety comes before production', 'confined spaces',
-                  'hazardous-energy boundaries', 'scada', 'colombia',
-                  'using ai responsibly', 'cybersecurity', 'independent human'
+                  '# guide 45',
+                  'water and wastewater treatment plant operator',
+                  'safety comes before production',
+                  'confined spaces',
+                  'hazardous-energy boundaries',
+                  'scada',
+                  'colombia',
+                  'responsible use of ai',
+                  'cybersecurity',
+                  'independent human review',
               ],
               'es-419': [
-                  '# guia 45', 'agua', 'aguas residuales', 'seguridad',
-                  'espacios confinados', 'energia peligrosa', 'scada', 'colombia',
-                  'ia', 'ciberseguridad', 'revision humana independiente'
+                  '# guia 45',
+                  'operador de planta de tratamiento de agua y aguas residuales',
+                  'la seguridad esta antes que la produccion',
+                  'espacios confinados',
+                  'energia peligrosa',
+                  'scada',
+                  'colombia',
+                  'uso responsable de ia',
+                  'ciberseguridad',
+                  'revision humana independiente',
               ],
               'pt-BR': [
-                  '# guia 45', 'agua', 'esgoto', 'seguranca',
-                  'espacos confinados', 'energia perigosa', 'scada', 'colombia',
-                  'ia', 'ciberseguranca', 'revisao humana independente'
+                  '# guia 45',
+                  'operador de estacao de tratamento de agua e esgoto',
+                  'seguranca vem antes da producao',
+                  'espacos confinados',
+                  'energia perigosa',
+                  'scada',
+                  'colombia',
+                  'uso responsavel de ia',
+                  'ciberseguranca',
+                  'revisao humana independente',
               ],
           }
 
+          problems = []
+          sections = {}
+          urls = {}
           for lang, text in texts.items():
-              low = fold(text)
-              sections[lang] = len(re.findall(r'^##\s+.+$', text, re.M))
+              normalized = fold(text)
+              sections[lang] = len(re.findall(r'^##\s+.+$', text, flags=re.M))
               urls[lang] = set(re.findall(r'https://[^\s)<>`]+', text))
               if text.startswith('\ufeff') or '\ufffd' in text:
                   problems.append(f'{lang}: UTF-8 defect')
-              for bad in ('todo:', 'lorem ipsum', '[insert', 'translation pending', 'traduccion pendiente', 'traducao pendente'):
-                  if bad in low:
-                      problems.append(f'{lang}: placeholder {bad}')
+              for placeholder in (
+                  'todo:', 'lorem ipsum', '[insert', 'translation pending',
+                  'traduccion pendiente', 'traducao pendente'
+              ):
+                  if placeholder in normalized:
+                      problems.append(f'{lang}: placeholder {placeholder}')
               for marker in required[lang]:
-                  if fold(marker) not in low:
+                  if fold(marker) not in normalized:
                       problems.append(f'{lang}: missing marker {marker}')
 
-          if any(v != 24 for v in sections.values()):
+          if any(count != 24 for count in sections.values()):
               problems.append(f'expected 24 H2 sections in each edition; observed={sections}')
           if len(set(sections.values())) != 1:
-              problems.append(f'structural mismatch {sections}')
+              problems.append(f'H2 structural mismatch: {sections}')
           if len(urls['en']) != 21:
-              problems.append(f'expected 21 direct source URLs in English; observed={len(urls["en"])}')
+              problems.append(f'expected 21 English direct source URLs; observed={len(urls["en"])}')
           for lang in ('es-419', 'pt-BR'):
               if urls[lang] != urls['en']:
                   problems.append(
-                      f'{lang}: source URL set differs from English; '
-                      f'missing={sorted(urls["en"]-urls[lang])}; extra={sorted(urls[lang]-urls["en"])}'
+                      f'{lang}: source URL set differs; '
+                      f'missing={sorted(urls["en"] - urls[lang])}; '
+                      f'extra={sorted(urls[lang] - urls["en"])}'
                   )
 
           controls = [
-              r'51-8031', r'51-8031\.00', r'92101',
-              r'58[,.]260', r'28[,.]01', r'37[,.]870', r'86[,.]160',
-              r'132[,.]400', r'123[,.]800', r'-\s*8[,.]700',
-              r'-\s*7\s+(?:percent|por ciento|por cento)', r'10[,.]700',
-              r'25[,.]00', r'36[,.]06', r'48[,.]00',
-              r'12\s+(?:months|month|meses|mes)',
-              r'2[,.]208\s+(?:hours|hour|horas|hora)',
-              r'48\s+(?:hours|hour|horas|hora)',
+              r'51-8031',
+              r'51-8031\.00',
+              r'92101',
+              r'58[,.]260',
+              r'28[,.]01',
+              r'37[,.]870',
+              r'86[,.]160',
+              r'132[,.]400',
+              r'123[,.]800',
+              r'-\s*8[,.]700',
+              r'-\s*7\s+(?:percent|por ciento|por cento)',
+              r'10[,.]700',
+              r'25[,.]00',
+              r'36[,.]06',
+              r'48[,.]00',
+              r'12\s+(?:months?|mes(?:es)?)',
+              r'2[,.]208\s+(?:hours?|horas?)',
+              r'48\s+(?:hours?|horas?)',
           ]
           for lang, text in texts.items():
-              for pat in controls:
-                  if not re.search(pat, text, re.I | re.S):
-                      problems.append(f'{lang}: missing controlled value {pat}')
+              for pattern in controls:
+                  if not re.search(pattern, text, flags=re.I | re.S):
+                      problems.append(f'{lang}: missing controlled value {pattern}')
 
           if problems:
               print('\n'.join(problems))
               sys.exit(1)
-          print(f'Guide 45 trilingual controls PASS: sections={sections}; urls={len(urls["en"])}')
+          print(f'Guide 45 trilingual controls PASS: H2={sections}; URLs={len(urls["en"])}')
+          PY
 
       - name: Validate live source-link behavior
-        shell: bash
         run: |
           set -euo pipefail
           python - <<'PY'
           from pathlib import Path
-          from urllib.parse import urlsplit
           import re, subprocess, sys
 
-          text = Path('project/revision-2026/guide-45/publication-candidate/GUIDE_45_ENGLISH_v2.md').read_text(encoding='utf-8')
-          problems = []
-          transport_warnings = []
-          official_transport_allowlist = {
-              'jobbank.gc.ca', 'www.jobbank.gc.ca', 'canada.ca', 'www.canada.ca',
-              'sena.edu.co', 'www.sena.edu.co', 'betowa.sena.edu.co'
-          }
+          text = Path(
+              'project/revision-2026/guide-45/publication-candidate/GUIDE_45_ENGLISH_v2.md'
+          ).read_text(encoding='utf-8')
           user_agent = 'Mozilla/5.0 (compatible; LifelongOpportunityProject-LinkQA/1.0)'
+          broken = []
+          warnings = []
 
           def probe(url, method='GET'):
-              cmd = [
+              command = [
                   'curl', '-L', '--retry', '2', '--retry-all-errors', '--retry-delay', '2',
                   '--connect-timeout', '10', '--max-time', '30', '-A', user_agent,
                   '-sS', '-o', '/dev/null', '-w', '%{http_code}'
               ]
               if method == 'HEAD':
-                  cmd.insert(1, '-I')
-              cp = subprocess.run(cmd + [url], capture_output=True, text=True)
-              code = int(cp.stdout[-3:]) if cp.stdout and cp.stdout[-3:].isdigit() else 0
-              return code, cp.returncode, (cp.stderr or '').strip()
+                  command.insert(1, '-I')
+              completed = subprocess.run(command + [url], capture_output=True, text=True)
+              code = int(completed.stdout[-3:]) if completed.stdout and completed.stdout[-3:].isdigit() else 0
+              return code, completed.returncode, (completed.stderr or '').strip()
 
           for url in sorted(set(re.findall(r'https://[^\s)<>`]+', text))):
-              code, rc, err = probe(url, 'GET')
+              code, rc, error = probe(url, 'GET')
               if code == 0:
-                  code, rc, err = probe(url, 'HEAD')
+                  code, rc, error = probe(url, 'HEAD')
               if 200 <= code < 400:
                   state = 'PASS'
-              elif code in (401, 403, 429):
-                  state = 'ACCESS_CONTROLLED'
               elif code in (404, 410):
                   state = 'FAIL_BROKEN'
-                  problems.append(f'{url}: explicit HTTP {code}')
-              elif code >= 500:
-                  state = 'FAIL_SERVER'
-                  problems.append(f'{url}: HTTP {code} after retries')
+                  broken.append(f'{url}: explicit HTTP {code}')
+              elif code in (401, 403, 429):
+                  state = 'ACCESS_CONTROLLED_UNVERIFIED'
+                  warnings.append(f'{url}: HTTP {code}; access-controlled, not content-verified')
               elif code == 0:
-                  host = (urlsplit(url).hostname or '').lower()
-                  if host in official_transport_allowlist:
-                      root = f'https://{host}/'
-                      root_code, _, root_err = probe(root, 'GET')
-                      state = 'NETWORK_UNVERIFIED_OFFICIAL'
-                      transport_warnings.append(
-                          f'{url}: exact resource transport-unreachable after retries; '
-                          f'official host probe HTTP {root_code}; stderr={err or root_err}'
-                      )
-                  else:
-                      state = 'FAIL_TRANSPORT'
-                      problems.append(f'{url}: transport failure after retries (curl rc={rc}; stderr={err})')
+                  state = 'TRANSPORT_UNVERIFIED'
+                  warnings.append(f'{url}: transport limitation after retries; curl rc={rc}; {error}')
+              elif code >= 500:
+                  state = 'SERVER_UNVERIFIED'
+                  warnings.append(f'{url}: HTTP {code} after retries; not content-verified')
               else:
-                  state = 'FAIL_HTTP'
-                  problems.append(f'{url}: HTTP {code}')
+                  state = 'HTTP_UNVERIFIED'
+                  warnings.append(f'{url}: HTTP {code}; not content-verified')
               print(code, state, url)
 
-          if transport_warnings:
-              print('Network-only verification warnings:')
-              print('\n'.join(transport_warnings))
-          if problems:
-              print('\n'.join(problems))
+          if warnings:
+              print('Source verification limitations:')
+              print('\n'.join(warnings))
+          if broken:
+              print('\n'.join(broken))
               sys.exit(1)
           PY
 
       - name: Generate DOCX and PDF editions
-        shell: bash
         run: |
           set -euo pipefail
           OUT='project/revision-2026/guide-45/publication-candidate'
@@ -213,7 +237,6 @@ jobs:
           done
 
       - name: Validate DOCX and searchable PDF integrity
-        shell: bash
         run: |
           set -euo pipefail
           OUT='project/revision-2026/guide-45/publication-candidate'
@@ -230,7 +253,6 @@ jobs:
           done
 
       - name: Render and inspect every PDF page
-        shell: bash
         run: |
           set -euo pipefail
           OUT='project/revision-2026/guide-45/publication-candidate'
@@ -250,26 +272,36 @@ jobs:
           pages = []
           for path in sorted(root.rglob('*.png')):
               try:
-                  with Image.open(path) as im:
-                      im.verify()
-                  with Image.open(path) as im:
-                      gray = im.convert('L')
-                      diff = ImageChops.difference(gray, Image.new('L', gray.size, 255))
-                      bbox = diff.point(lambda p: 255 if p > 12 else 0).getbbox()
+                  with Image.open(path) as image:
+                      image.verify()
+                  with Image.open(path) as image:
+                      gray = image.convert('L')
+                      difference = ImageChops.difference(gray, Image.new('L', gray.size, 255))
+                      bbox = difference.point(lambda p: 255 if p > 12 else 0).getbbox()
                       if bbox is None:
                           problems.append(f'{path}: blank page')
                           continue
                       left, top, right, bottom = bbox
-                      w, h = gray.size
-                      margins = {'left': left, 'top': top, 'right': w-right, 'bottom': h-bottom}
+                      width, height = gray.size
+                      margins = {
+                          'left': left,
+                          'top': top,
+                          'right': width - right,
+                          'bottom': height - bottom,
+                      }
                       if min(margins.values()) < 4:
                           problems.append(f'{path}: possible clipping {margins}')
-                      pages.append({'file': str(path.relative_to(root)), 'status': 'PASS', 'edge_margins': margins})
+                      pages.append({
+                          'file': str(path.relative_to(root)),
+                          'status': 'PASS',
+                          'edge_margins': margins,
+                      })
               except Exception as exc:
                   problems.append(f'{path}: malformed render: {exc}')
-          (root/'RENDER_QA.json').write_text(
-              json.dumps({'status': 'FAIL' if problems else 'PASS', 'pages': pages, 'problems': problems}, indent=2) + '\n',
-              encoding='utf-8'
+
+          result = {'status': 'FAIL' if problems else 'PASS', 'pages': pages, 'problems': problems}
+          (root / 'RENDER_QA.json').write_text(
+              json.dumps(result, indent=2) + '\n', encoding='utf-8'
           )
           if problems:
               print('\n'.join(problems))
@@ -278,38 +310,48 @@ jobs:
           PY
 
       - name: Generate publication metadata and checksums
-        shell: python
         run: |
+          set -euo pipefail
+          python - <<'PY'
           from pathlib import Path
           import hashlib, json, subprocess
 
           out = Path('project/revision-2026/guide-45/publication-candidate')
-          render = json.loads((out/'rendered/RENDER_QA.json').read_text())
+          render = json.loads((out / 'rendered/RENDER_QA.json').read_text(encoding='utf-8'))
           records = []
-          for lang, stem in [
+          for language, stem in [
               ('en', 'GUIDE_45_ENGLISH_v2'),
               ('es-419', 'GUIDE_45_SPANISH_es-419_v2'),
-              ('pt-BR', 'GUIDE_45_PORTUGUESE_pt-BR_v2')
+              ('pt-BR', 'GUIDE_45_PORTUGUESE_pt-BR_v2'),
           ]:
-              docx = out/f'{stem}.docx'
-              pdf = out/f'{stem}.pdf'
+              docx = out / f'{stem}.docx'
+              pdf = out / f'{stem}.pdf'
               info = subprocess.check_output(['pdfinfo', str(pdf)], text=True)
-              pages = next(int(x.split(':', 1)[1]) for x in info.splitlines() if x.startswith('Pages:'))
-              txt = subprocess.check_output(['pdftotext', str(pdf), '-'], text=True, errors='replace')
-              if '\ufffd' in txt:
+              pages = next(
+                  int(line.split(':', 1)[1])
+                  for line in info.splitlines()
+                  if line.startswith('Pages:')
+              )
+              text = subprocess.check_output(
+                  ['pdftotext', str(pdf), '-'], text=True, errors='replace'
+              )
+              if '\ufffd' in text:
                   raise SystemExit(f'{pdf}: Unicode replacement character')
-              rendered = sum(1 for p in render['pages'] if p['file'].startswith(stem + '/'))
+              rendered = sum(
+                  1 for page in render['pages']
+                  if page['file'].startswith(stem + '/')
+              )
               if rendered != pages:
-                  raise SystemExit(f'{stem}: render/page mismatch')
+                  raise SystemExit(f'{stem}: PDF/render page mismatch {pages} != {rendered}')
               records.append({
-                  'language': lang,
+                  'language': language,
                   'docx': docx.name,
                   'pdf': pdf.name,
                   'docx_bytes': docx.stat().st_size,
                   'pdf_bytes': pdf.stat().st_size,
                   'pdf_pages': pages,
                   'rendered_pages': rendered,
-                  'status': 'PASS'
+                  'status': 'PASS',
               })
 
           manifest = {
@@ -319,20 +361,29 @@ jobs:
               'status': 'PASS',
               'editions': records,
               'assurance_boundary': (
-                  'Internal automated publication QA; not independent human review, professional translation certification, '
-                  'accessibility certification, legal or environmental review, laboratory or engineering approval, '
-                  'electrical authorization, industrial-hygiene or medical review, confined-space or rescue qualification, '
-                  'operator licensing determination, accreditation, or employment or earnings guarantee.'
-              )
+                  'Internal automated publication QA; not independent human review, '
+                  'professional translation certification, accessibility certification, '
+                  'legal or environmental review, laboratory or engineering approval, '
+                  'electrical authorization, industrial-hygiene or medical review, '
+                  'confined-space or rescue qualification, operator licensing determination, '
+                  'accreditation, or employment or earnings guarantee.'
+              ),
           }
-          (out/'GUIDE_45_PUBLICATION_QA_MANIFEST.json').write_text(
+          (out / 'GUIDE_45_PUBLICATION_QA_MANIFEST.json').write_text(
               json.dumps(manifest, indent=2, ensure_ascii=False) + '\n', encoding='utf-8'
           )
-          targets = sorted(p for p in out.iterdir() if p.is_file() and p.suffix in {'.docx', '.pdf'})
-          (out/'SHA256SUMS.txt').write_text(
-              '\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets) + '\n',
-              encoding='utf-8'
+          targets = sorted(
+              path for path in out.iterdir()
+              if path.is_file() and path.suffix in {'.docx', '.pdf'}
           )
+          (out / 'SHA256SUMS.txt').write_text(
+              '\n'.join(
+                  f'{hashlib.sha256(path.read_bytes()).hexdigest()}  {path.name}'
+                  for path in targets
+              ) + '\n',
+              encoding='utf-8',
+          )
+          PY
 
       - name: Upload rendered-page QA evidence
         if: always()
@@ -346,7 +397,6 @@ jobs:
         run: rm -rf project/revision-2026/guide-45/publication-candidate/rendered
 
       - name: Commit controlled publication candidates
-        shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
