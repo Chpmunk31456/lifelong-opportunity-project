@@ -1,8 +1,9 @@
 {
   "guide": 46,
-  "status": "PASS_WITH_POSSIBLE_UNVERIFIED",
+  "status": "PASS_WITH_UNVERIFIED",
   "total_urls": 26,
   "broken_count": 0,
+  "unverified_count": 3,
   "rows": [
     {
       "url": "https://betowa.sena.edu.co/",
@@ -93,7 +94,7 @@
       "http_code": 200,
       "state": "PASS",
       "curl_rc": 0,
-      "stderr": "curl: (28) SSL connection timeout"
+      "stderr": ""
     },
     {
       "url": "https://www.jobbank.gc.ca/marketreport/summary-occupation/17971/ca",
@@ -107,7 +108,7 @@
       "http_code": 200,
       "state": "PASS",
       "curl_rc": 0,
-      "stderr": ""
+      "stderr": "curl: (28) Operation timed out after 12002 milliseconds with 0 bytes received"
     },
     {
       "url": "https://www.oitcinterfor.org/",
@@ -184,7 +185,7 @@
       "http_code": 0,
       "state": "TRANSPORT_UNVERIFIED",
       "curl_rc": 28,
-      "stderr": "curl: (28) Failed to connect to www.suin-juriscol.gov.co port 443 after 10002 ms: Timeout was reached\ncurl: (28) Failed to connect to www.suin-juriscol.gov.co port 443 after 10002 ms: Timeout was reached\ncurl: (28) Failed to connect to www.suin-juriscol.gov.co port 443 after 10002 ms: Timeout was reached"
+      "stderr": "curl: (28) Failed to connect to www.suin-juriscol.gov.co port 443 after 6002 ms: Timeout was reached\ncurl: (28) Failed to connect to www.suin-juriscol.gov.co port 443 after 6002 ms: Timeout was reached"
     }
   ]
 }
