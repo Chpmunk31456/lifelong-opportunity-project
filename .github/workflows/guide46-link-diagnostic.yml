@@ -19,22 +19,23 @@ jobs:
           ref: revision/guide-00-100-2026
           fetch-depth: 0
 
-      - name: Probe controlled English source links
+      - name: Probe controlled English source links in parallel
         run: |
           set -euo pipefail
           python - <<'PY'
           from pathlib import Path
+          from concurrent.futures import ThreadPoolExecutor
           import json, re, subprocess
 
           path = Path('project/revision-2026/guide-46/working-masters/GUIDE_46_ENVIRONMENTAL_FIELD_TECHNICIAN_ENGLISH_v2.md')
           text = path.read_text(encoding='utf-8')
+          urls = sorted(set(re.findall(r'https://[^\s)<>`]+', text)))
           user_agent = 'Mozilla/5.0 (compatible; LifelongOpportunityProject-LinkQA/1.0)'
-          rows = []
 
-          def probe(url, method='GET'):
+          def probe_once(url, method='GET'):
               command = [
-                  'curl', '-L', '--retry', '2', '--retry-all-errors', '--retry-delay', '2',
-                  '--connect-timeout', '10', '--max-time', '30', '-A', user_agent,
+                  'curl', '-L', '--retry', '1', '--retry-all-errors', '--retry-delay', '1',
+                  '--connect-timeout', '6', '--max-time', '12', '-A', user_agent,
                   '-sS', '-o', '/dev/null', '-w', '%{http_code}'
               ]
               if method == 'HEAD':
@@ -43,10 +44,10 @@ jobs:
               code = int(completed.stdout[-3:]) if completed.stdout and completed.stdout[-3:].isdigit() else 0
               return code, completed.returncode, (completed.stderr or '').strip()
 
-          for url in sorted(set(re.findall(r'https://[^\s)<>`]+', text))):
-              code, rc, error = probe(url, 'GET')
+          def classify(url):
+              code, rc, error = probe_once(url, 'GET')
               if code == 0:
-                  code, rc, error = probe(url, 'HEAD')
+                  code, rc, error = probe_once(url, 'HEAD')
               if 200 <= code < 400:
                   state = 'PASS'
               elif code in (404, 410):
@@ -59,19 +60,24 @@ jobs:
                   state = 'SERVER_UNVERIFIED'
               else:
                   state = 'HTTP_UNVERIFIED'
-              rows.append({'url': url, 'http_code': code, 'state': state, 'curl_rc': rc, 'stderr': error})
+              return {'url': url, 'http_code': code, 'state': state, 'curl_rc': rc, 'stderr': error}
+
+          with ThreadPoolExecutor(max_workers=8) as pool:
+              rows = sorted(pool.map(classify, urls), key=lambda row: row['url'])
 
           broken = [row for row in rows if row['state'] == 'BROKEN']
+          unverified = [row for row in rows if row['state'] not in ('PASS', 'BROKEN')]
           report = {
               'guide': 46,
-              'status': 'FAIL' if broken else 'PASS_WITH_POSSIBLE_UNVERIFIED' if any(row['state'] != 'PASS' for row in rows) else 'PASS',
+              'status': 'FAIL' if broken else 'PASS_WITH_UNVERIFIED' if unverified else 'PASS',
               'total_urls': len(rows),
               'broken_count': len(broken),
+              'unverified_count': len(unverified),
               'rows': rows,
           }
           out = Path('project/revision-2026/guide-46/qa/GUIDE_46_LINK_DIAGNOSTIC.json')
           out.write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
-          print(json.dumps({'status': report['status'], 'broken_count': report['broken_count']}, indent=2))
+          print(json.dumps({'status': report['status'], 'broken_count': len(broken), 'unverified_count': len(unverified)}, indent=2))
           PY
 
       - name: Commit link diagnostic report
@@ -80,6 +86,10 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add project/revision-2026/guide-46/qa/GUIDE_46_LINK_DIAGNOSTIC.json
-          git commit -m 'Guide 46: record link diagnostic'
-          git pull --rebase origin revision/guide-00-100-2026
-          git push origin HEAD:revision/guide-00-100-2026
+          if git diff --cached --quiet; then
+            echo 'No diagnostic changes to commit.'
+          else
+            git commit -m 'Guide 46: record link diagnostic'
+            git pull --rebase origin revision/guide-00-100-2026
+            git push origin HEAD:revision/guide-00-100-2026
+          fi
