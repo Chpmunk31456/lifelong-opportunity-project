@@ -4,16 +4,71 @@
   "branch": "revision/guide-00-100-2026",
   "updated": "2026-08-19",
   "stages": {
-    "baseline_inventory": {"status": "PASS", "evidence": ["project/revision-2026/guide-50/qa/GUIDE_50_BASELINE_INVENTORY_01.md"]},
-    "research": {"status": "PASS", "evidence": ["project/revision-2026/guide-50/research/GUIDE_50_CURRENT_SOURCE_EVIDENCE_02.md"]},
-    "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-50/working-masters/GUIDE_50_PHLEBOTOMY_TECHNICIAN_ENGLISH_v2.md", "project/revision-2026/guide-50/qa/GUIDE_50_ENGLISH_EDITORIAL_QA_03.md"]},
-    "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-50/qa/GUIDE_50_EVIDENCE_TRACEABILITY_QA_04.md"]},
-    "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-50/qa/GUIDE_50_ENGLISH_SOURCE_FREEZE_05.md"]},
-    "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-50/working-masters/GUIDE_50_PHLEBOTOMY_TECHNICIAN_ES419_v2.md", "project/revision-2026/guide-50/qa/GUIDE_50_SPANISH_LOCALIZATION_QA_06.md"]},
-    "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-50/working-masters/GUIDE_50_PHLEBOTOMY_TECHNICIAN_PTBR_v2.md", "project/revision-2026/guide-50/qa/GUIDE_50_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
-    "publication": {"status": "PENDING", "evidence": []},
-    "release_audit": {"status": "PENDING", "evidence": []}
+    "baseline_inventory": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-50/qa/GUIDE_50_BASELINE_INVENTORY_01.md"
+      ]
+    },
+    "research": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-50/research/GUIDE_50_CURRENT_SOURCE_EVIDENCE_02.md"
+      ]
+    },
+    "english_editorial": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-50/working-masters/GUIDE_50_PHLEBOTOMY_TECHNICIAN_ENGLISH_v2.md",
+        "project/revision-2026/guide-50/qa/GUIDE_50_ENGLISH_EDITORIAL_QA_03.md"
+      ]
+    },
+    "evidence_traceability": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-50/qa/GUIDE_50_EVIDENCE_TRACEABILITY_QA_04.md"
+      ]
+    },
+    "english_source_freeze": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-50/qa/GUIDE_50_ENGLISH_SOURCE_FREEZE_05.md"
+      ]
+    },
+    "spanish_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-50/working-masters/GUIDE_50_PHLEBOTOMY_TECHNICIAN_ES419_v2.md",
+        "project/revision-2026/guide-50/qa/GUIDE_50_SPANISH_LOCALIZATION_QA_06.md"
+      ]
+    },
+    "portuguese_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-50/working-masters/GUIDE_50_PHLEBOTOMY_TECHNICIAN_PTBR_v2.md",
+        "project/revision-2026/guide-50/qa/GUIDE_50_PORTUGUESE_LOCALIZATION_QA_07.md"
+      ]
+    },
+    "technical_qa": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-50/qa/GUIDE_50_TECHNICAL_QA_08.md"
+      ]
+    },
+    "publication": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-50/qa/GUIDE_50_PUBLICATION_GATE_09.md",
+        "project/revision-2026/guide-50/publication-candidate/GUIDE_50_PUBLICATION_QA_MANIFEST.json",
+        "project/revision-2026/guide-50/publication-candidate/SHA256SUMS.txt"
+      ]
+    },
+    "release_audit": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-50/qa/GUIDE_50_RELEASE_AUDIT_10.md"
+      ]
+    }
   },
   "blockers": []
 }
