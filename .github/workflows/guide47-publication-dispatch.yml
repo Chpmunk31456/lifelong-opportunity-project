@@ -1,6 +1,6 @@
 name: Guide 47 publication dispatch
 
-# Controlled re-dispatch marker: 2026-08-18T23:57Z
+# Controlled re-dispatch marker: 2026-08-19T00:55Z
 on:
   push:
     branches: [revision/guide-00-100-2026]
@@ -36,7 +36,7 @@ jobs:
             | python -c 'import json,sys; d=json.load(sys.stdin); print(d["workflow_runs"][0]["id"])')"
           echo "TARGET_RUN_ID=$RUN_ID"
           FINAL=""
-          for i in $(seq 1 60); do
+          for i in $(seq 1 180); do
             JSON="$(curl --fail -sS -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "$API/actions/runs/$RUN_ID")"
             STATUS="$(printf '%s' "$JSON" | python -c 'import json,sys; print(json.load(sys.stdin)["status"])')"
             CONCLUSION="$(printf '%s' "$JSON" | python -c 'import json,sys; print(json.load(sys.stdin).get("conclusion") or "")')"
