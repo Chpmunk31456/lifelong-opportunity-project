@@ -36,8 +36,11 @@
       ]
     },
     "spanish_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-52/working-masters/GUIDE_52_SURGICAL_TECHNOLOGIST_ES419_v2.md",
+        "project/revision-2026/guide-52/qa/GUIDE_52_SPANISH_LOCALIZATION_QA_06.md"
+      ]
     },
     "portuguese_localization": {
       "status": "PENDING",
