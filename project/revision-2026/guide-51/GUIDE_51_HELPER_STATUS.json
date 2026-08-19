@@ -43,8 +43,11 @@
       ]
     },
     "portuguese_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-51/working-masters/GUIDE_51_STERILE_PROCESSING_TECHNICIAN_PTBR_v2.md",
+        "project/revision-2026/guide-51/qa/GUIDE_51_PORTUGUESE_LOCALIZATION_QA_07.md"
+      ]
     },
     "technical_qa": {
       "status": "PENDING",
