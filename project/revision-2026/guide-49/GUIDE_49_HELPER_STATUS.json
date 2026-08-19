@@ -13,7 +13,7 @@
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-49/working-masters/GUIDE_49_DENTAL_ASSISTANT_PTBR_v2.md", "project/revision-2026/guide-49/qa/GUIDE_49_PORTUGUESE_LOCALIZATION_QA_07.md"]},
     "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-49/qa/GUIDE_49_TECHNICAL_QA_08.md"]},
     "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-49/qa/GUIDE_49_PUBLICATION_GATE_09.md"]},
-    "release_audit": {"status": "PENDING", "evidence": []}
+    "release_audit": {"status": "PASS", "evidence": ["project/revision-2026/guide-49/qa/GUIDE_49_RELEASE_AUDIT_10.md"]}
   },
   "blockers": []
 }
