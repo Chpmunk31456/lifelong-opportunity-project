@@ -1,0 +1,68 @@
+name: Guide 50 publication status probe
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide50-publication-status-probe.yml'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out authoritative revision branch
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Record Guide 50 publication workflow state
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p project/revision-2026/guide-50/qa
+          python - <<'PY'
+          import json, os, subprocess
+          from pathlib import Path
+
+          def runs(workflow):
+              raw=subprocess.check_output([
+                  'gh','run','list','--workflow',workflow,
+                  '--branch','revision/guide-00-100-2026','--limit','5',
+                  '--json','databaseId,createdAt,updatedAt,status,conclusion,headSha,event,displayTitle,url'
+              ], text=True)
+              return json.loads(raw)
+
+          data={
+              'guide':'50',
+              'occupation':'Phlebotomy Technician',
+              'branch':'revision/guide-00-100-2026',
+              'publication_dispatch_runs':runs('guide50-publication-dispatch.yml'),
+              'publication_build_runs':runs('guide50-publication-build.yml')
+          }
+          out=Path('project/revision-2026/guide-50/qa/GUIDE_50_PUBLICATION_WORKFLOW_STATUS.json')
+          out.write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          print(json.dumps(data,indent=2))
+          PY
+
+      - name: Commit workflow status evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-50/qa/GUIDE_50_PUBLICATION_WORKFLOW_STATUS.json
+          if git diff --cached --quiet; then
+            echo 'No status-evidence change.'
+          else
+            git commit -m 'Record Guide 50 publication workflow status'
+            git pull --rebase origin revision/guide-00-100-2026
+            git push origin HEAD:revision/guide-00-100-2026
+          fi
