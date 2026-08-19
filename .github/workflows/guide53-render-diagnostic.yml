@@ -1,0 +1,116 @@
+name: Guide 53 render edge diagnostic
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide53-render-diagnostic.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out revision branch
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Install diagnostic toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice-writer poppler-utils python3-pil
+
+      - name: Rebuild English and Portuguese publication PDFs
+        shell: bash
+        run: |
+          set -euo pipefail
+          SRC='project/revision-2026/guide-53/working-masters'
+          OUT='/tmp/guide53-diagnostic'
+          rm -rf "$OUT"
+          mkdir -p "$OUT"
+          cp "$SRC/GUIDE_53_PHYSICAL_THERAPIST_ASSISTANT_ENGLISH_v2.md" "$OUT/GUIDE_53_ENGLISH_v2.md"
+          cp "$SRC/GUIDE_53_PHYSICAL_THERAPIST_ASSISTANT_PORTUGUESE_pt-BR_v1.md" "$OUT/GUIDE_53_PORTUGUESE_pt-BR_v1.md"
+          cat > /tmp/bounded_urls.lua <<'LUA'
+          function Link(el)
+            local text = pandoc.utils.stringify(el.content)
+            if text == el.target and string.len(text) > 45 then
+              return pandoc.Link({pandoc.Str('Source link')}, el.target, el.title)
+            end
+            return el
+          end
+          LUA
+          for STEM in GUIDE_53_ENGLISH_v2 GUIDE_53_PORTUGUESE_pt-BR_v1; do
+            pandoc "$OUT/$STEM.md" -f gfm -t docx --standalone --lua-filter=/tmp/bounded_urls.lua -o "$OUT/$STEM.docx"
+            libreoffice --headless --convert-to pdf --outdir "$OUT" "$OUT/$STEM.docx"
+          done
+
+      - name: Report right-edge text boxes
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='/tmp/guide53-diagnostic'
+          python - <<'PY'
+          import subprocess, xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          cases=[
+            ('GUIDE_53_ENGLISH_v2.pdf',5),
+            ('GUIDE_53_PORTUGUESE_pt-BR_v1.pdf',6),
+          ]
+          out=Path('/tmp/guide53-diagnostic')
+          for pdf_name,page in cases:
+            pdf=out/pdf_name
+            xml=out/f'{pdf.stem}-page-{page}.xml'
+            subprocess.run(['pdftotext','-f',str(page),'-l',str(page),'-bbox-layout',str(pdf),str(xml)],check=True)
+            root=ET.parse(xml).getroot()
+            page_el=next((e for e in root.iter() if e.tag.endswith('page')),None)
+            width=float(page_el.attrib.get('width','0')) if page_el is not None else 0.0
+            words=[]
+            for e in root.iter():
+              if not e.tag.endswith('word'): continue
+              x1=float(e.attrib.get('xMax','0'))
+              x0=float(e.attrib.get('xMin','0'))
+              y0=float(e.attrib.get('yMin','0'))
+              y1=float(e.attrib.get('yMax','0'))
+              text=''.join(e.itertext()).strip()
+              words.append((width-x1,x0,x1,y0,y1,text))
+            words.sort(key=lambda x:x[0])
+            print(f'\n=== {pdf_name} page {page}; PDF width={width:.2f} pt ===')
+            for distance,x0,x1,y0,y1,text in words[:30]:
+              print(f'right_distance={distance:.2f} xMin={x0:.2f} xMax={x1:.2f} y={y0:.2f}-{y1:.2f} text={text!r}')
+          PY
+
+      - name: Render failing pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='/tmp/guide53-diagnostic'
+          mkdir -p "$OUT/rendered"
+          pdftoppm -f 5 -singlefile -png -r 110 "$OUT/GUIDE_53_ENGLISH_v2.pdf" "$OUT/rendered/english-page-05"
+          pdftoppm -f 6 -singlefile -png -r 110 "$OUT/GUIDE_53_PORTUGUESE_pt-BR_v1.pdf" "$OUT/rendered/portuguese-page-06"
+          python - <<'PY'
+          from PIL import Image, ImageChops
+          from pathlib import Path
+          for p in sorted(Path('/tmp/guide53-diagnostic/rendered').glob('*.png')):
+            with Image.open(p) as im:
+              gray=im.convert('L')
+              diff=ImageChops.difference(gray,Image.new('L',gray.size,255))
+              bbox=diff.point(lambda px:255 if px>12 else 0).getbbox()
+              print(p.name, 'size=', im.size, 'bbox=', bbox,
+                    'margins=', None if bbox is None else {'left':bbox[0],'top':bbox[1],'right':im.size[0]-bbox[2],'bottom':im.size[1]-bbox[3]})
+          PY
+
+      - name: Upload diagnostic render evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: guide53-render-edge-diagnostic
+          path: |
+            /tmp/guide53-diagnostic/rendered
+            /tmp/guide53-diagnostic/*-page-*.xml
+          retention-days: 14
