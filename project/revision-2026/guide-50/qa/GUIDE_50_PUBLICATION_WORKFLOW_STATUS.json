@@ -1,0 +1,53 @@
+{
+  "guide": "50",
+  "occupation": "Phlebotomy Technician",
+  "branch": "revision/guide-00-100-2026",
+  "publication_dispatch_runs": [
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-08-19T16:57:31Z",
+      "databaseId": 32278870914,
+      "displayTitle": "Add Guide 50 publication dispatch and fail-closed gate closure",
+      "event": "push",
+      "headSha": "3b4afb134f4a70257ed717452811a023a6ce5d59",
+      "status": "completed",
+      "updatedAt": "2026-08-19T16:57:50Z",
+      "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32278870914"
+    }
+  ],
+  "publication_build_runs": [
+    {
+      "conclusion": "",
+      "createdAt": "2026-08-19T16:57:47Z",
+      "databaseId": 32278896247,
+      "displayTitle": "Guide 50 controlled publication build",
+      "event": "workflow_dispatch",
+      "headSha": "3b4afb134f4a70257ed717452811a023a6ce5d59",
+      "status": "pending",
+      "updatedAt": "2026-08-19T16:57:49Z",
+      "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32278896247"
+    },
+    {
+      "conclusion": "",
+      "createdAt": "2026-08-19T15:57:07Z",
+      "databaseId": 32273086091,
+      "displayTitle": "qa(guide-50): retrigger controlled publication build",
+      "event": "push",
+      "headSha": "b3651654c0b680376a23a9b64f56cd8bd322c2bd",
+      "status": "in_progress",
+      "updatedAt": "2026-08-19T15:57:12Z",
+      "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32273086091"
+    },
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-08-19T15:06:17Z",
+      "databaseId": 32268028339,
+      "displayTitle": "add controlled Guide 50 publication workflow",
+      "event": "push",
+      "headSha": "13882cd16fb5a2dda0c533b89a146c6fcf1b7314",
+      "status": "completed",
+      "updatedAt": "2026-08-19T15:53:35Z",
+      "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32268028339"
+    }
+  ]
+}
