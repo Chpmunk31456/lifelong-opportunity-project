@@ -18,13 +18,24 @@
   "publication_build_runs": [
     {
       "conclusion": "",
+      "createdAt": "2026-08-19T18:38:29Z",
+      "databaseId": 32288478736,
+      "displayTitle": "Recover stalled Guide 50 publication build",
+      "event": "push",
+      "headSha": "3b89ad41ae03c7aad24655b146bb642ccf52710c",
+      "status": "in_progress",
+      "updatedAt": "2026-08-19T18:38:54Z",
+      "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32288478736"
+    },
+    {
+      "conclusion": "cancelled",
       "createdAt": "2026-08-19T18:01:13Z",
       "databaseId": 32284965637,
       "displayTitle": "Re-trigger Guide 50 controlled publication build",
       "event": "push",
       "headSha": "c90ba1e1036c2701e0a1d49a6888d1b27ee0eca3",
-      "status": "pending",
-      "updatedAt": "2026-08-19T18:01:14Z",
+      "status": "completed",
+      "updatedAt": "2026-08-19T18:38:30Z",
       "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32284965637"
     },
     {
@@ -39,14 +50,14 @@
       "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32278896247"
     },
     {
-      "conclusion": "",
+      "conclusion": "cancelled",
       "createdAt": "2026-08-19T15:57:07Z",
       "databaseId": 32273086091,
       "displayTitle": "qa(guide-50): retrigger controlled publication build",
       "event": "push",
       "headSha": "b3651654c0b680376a23a9b64f56cd8bd322c2bd",
-      "status": "in_progress",
-      "updatedAt": "2026-08-19T15:57:12Z",
+      "status": "completed",
+      "updatedAt": "2026-08-19T18:38:51Z",
       "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32273086091"
     },
     {
