@@ -1,0 +1,39 @@
+{
+  "guide": "50",
+  "occupation": "Phlebotomy Technician",
+  "build_date": "2026-08-19",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_50_ENGLISH_v2.docx",
+      "pdf": "GUIDE_50_ENGLISH_v2.pdf",
+      "docx_bytes": 21788,
+      "pdf_bytes": 183412,
+      "pdf_pages": 12,
+      "rendered_pages": 12,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_50_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_50_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 22486,
+      "pdf_bytes": 186788,
+      "pdf_pages": 13,
+      "rendered_pages": 13,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_50_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_50_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 22568,
+      "pdf_bytes": 187818,
+      "pdf_pages": 13,
+      "rendered_pages": 13,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA; not independent human review, professional or clinical certification, certified translation, accessibility certification, medical or legal advice, accreditation, clinical-practice authorization, or employment or earnings guarantee."
+}
