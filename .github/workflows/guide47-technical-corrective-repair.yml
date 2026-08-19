@@ -1,0 +1,122 @@
+name: Guide 47 technical corrective repair
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide47-technical-corrective-repair.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out revision branch
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Apply bounded Guide 47 normalization
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import re, sys
+
+          root=Path('project/revision-2026/guide-47/working-masters')
+          paths={
+            'en': root/'GUIDE_47_PHARMACY_TECHNICIAN_ENGLISH_v2.md',
+            'es-419': root/'GUIDE_47_PHARMACY_TECHNICIAN_ES419_v2.md',
+            'pt-BR': root/'GUIDE_47_PHARMACY_TECHNICIAN_PTBR_v2.md',
+          }
+          replacements={
+            'en': [
+              ('## Using AI responsibly in pharmacy work','## Responsible use of AI in pharmacy work'),
+              ('projected growth of **6 percent from 2024 to 2034**','projected growth of **6% from 2024 to 2034**'),
+            ],
+            'es-419': [
+              ('crecimiento proyectado de **6 por ciento entre 2024 y 2034**','crecimiento proyectado de **6% entre 2024 y 2034**'),
+            ],
+            'pt-BR': [
+              ('crescimento projetado de **6 por cento de 2024 a 2034**','crescimento projetado de **6% de 2024 a 2034**'),
+            ],
+          }
+          for lang,path in paths.items():
+            text=path.read_text(encoding='utf-8')
+            for old,new in replacements[lang]:
+              count=text.count(old)
+              if count != 1:
+                raise SystemExit(f'{lang}: expected exactly one bounded occurrence of {old!r}; found {count}')
+              text=text.replace(old,new,1)
+            path.write_text(text,encoding='utf-8')
+
+          en=paths['en'].read_text(encoding='utf-8').lower()
+          if 'responsible use of ai' not in en:
+            raise SystemExit('English AI responsibility marker not normalized')
+          for lang,path in paths.items():
+            text=path.read_text(encoding='utf-8')
+            if not re.search(r'6\s*%',text):
+              raise SystemExit(f'{lang}: controlled 6% value missing after normalization')
+          print('Guide 47 bounded normalization PASS')
+          PY
+
+      - name: Write corrective QA evidence
+        run: |
+          set -euo pipefail
+          cat > project/revision-2026/guide-47/qa/GUIDE_47_TECHNICAL_QA_CORRECTIVE_DIAGNOSIS_08B.md <<'EOF'
+          # Guide 47 — Technical QA corrective diagnosis 08B
+
+          **Guide:** 47 — Pharmacy Technician  
+          **Branch:** `revision/guide-00-100-2026`  
+          **Controlled publication run:** `32207052254`  
+          **Gate status after diagnosis:** **PENDING — replacement full publication run required**
+
+          ## Exact failed controls
+
+          The controlled publication run reached the trilingual structural/source/numeric/terminology step and stopped before link, DOCX, PDF, rendering, metadata, checksum, or publication commit stages.
+
+          The run reported:
+
+          - English missing marker `responsible use of ai`;
+          - English missing controlled value `6%`;
+          - Spanish (`es-419`) missing controlled value `6%`; and
+          - Brazilian Portuguese (`pt-BR`) missing controlled value `6%`.
+
+          ## Diagnosis
+
+          These were representation mismatches, not unsupported factual claims. The English master used the semantically equivalent heading `Using AI responsibly in pharmacy work`. The official O*NET/BLS outlook value was already consistently represented as six percent in all three editions, but written as `6 percent`, `6 por ciento`, and `6 por cento` rather than the validator's required percent-symbol representation.
+
+          The bounded repair changes only the English AI heading wording and the typography of the already-supported six-percent outlook value. It does not change the occupation, wage figures, outlook magnitude, legal/supervision boundaries, sources, URLs, or assurance language.
+
+          ## Decision
+
+          **Corrective diagnosis: PASS. Technical QA remains PENDING.**
+
+          A complete replacement controlled publication run must pass structural/source/numeric/terminology, live-link, DOCX, searchable-PDF, all-page rendering, metadata, and checksum controls before Technical QA may advance.
+          EOF
+
+      - name: Validate repair scope and commit
+        run: |
+          set -euo pipefail
+          git diff --check
+          CHANGED="$(git diff --name-only)"
+          printf '%s\n' "$CHANGED"
+          for f in $CHANGED; do
+            case "$f" in
+              project/revision-2026/guide-47/working-masters/GUIDE_47_PHARMACY_TECHNICIAN_ENGLISH_v2.md|\
+              project/revision-2026/guide-47/working-masters/GUIDE_47_PHARMACY_TECHNICIAN_ES419_v2.md|\
+              project/revision-2026/guide-47/working-masters/GUIDE_47_PHARMACY_TECHNICIAN_PTBR_v2.md|\
+              project/revision-2026/guide-47/qa/GUIDE_47_TECHNICAL_QA_CORRECTIVE_DIAGNOSIS_08B.md) ;;
+              *) echo "Unexpected repair-scope file: $f"; exit 1 ;;
+            esac
+          done
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-47/working-masters project/revision-2026/guide-47/qa/GUIDE_47_TECHNICAL_QA_CORRECTIVE_DIAGNOSIS_08B.md
+          git commit -m 'Repair Guide 47 technical QA representation controls'
+          git pull --rebase origin revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026
