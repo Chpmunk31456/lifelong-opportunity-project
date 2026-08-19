@@ -1,0 +1,31 @@
+name: Guide 48 publication recovery dispatch
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide48-publication-recovery.yml'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: guide48-controlled-publication-build
+  cancel-in-progress: true
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Re-dispatch controlled Guide 48 publication build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh api \
+            --method POST \
+            repos/${{ github.repository }}/actions/workflows/guide48-publication-build.yml/dispatches \
+            -f ref=revision/guide-00-100-2026
+          echo 'Guide 48 controlled publication build re-dispatched from a fresh runner.'
