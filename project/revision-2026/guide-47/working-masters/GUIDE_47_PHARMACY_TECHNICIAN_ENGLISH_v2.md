@@ -98,7 +98,7 @@ Use only employer-approved devices, applications, accounts, storage, communicati
 
 Do not paste prescription details, patient profiles, medication histories, insurance information, identifiers, controlled-substance records, compounding records, or internal pharmacy screenshots into a public AI service unless the employer has explicitly approved the system and the data use is authorized and protected.
 
-## Using AI responsibly in pharmacy work
+## Responsible use of AI in pharmacy work
 
 AI tools can be useful for non-sensitive learning, such as explaining general terminology, creating practice interview questions, generating study flashcards from public material, or helping draft a neutral training checklist.
 
@@ -240,7 +240,7 @@ O*NET reports current **2025 BLS wage data** for Pharmacy Technicians:
 - **Median hourly wage: USD $22.00**
 - **Median annual wage: USD $45,750**
 
-O*NET reports approximately **490,400 workers in 2024**, projected growth of **6 percent from 2024 to 2034**, and about **49,000 annual openings** over the projection period.
+O*NET reports approximately **490,400 workers in 2024**, projected growth of **6% from 2024 to 2034**, and about **49,000 annual openings** over the projection period.
 
 These are national occupational statistics, not a promised starting wage. Pay varies by state, setting, shift, experience, certification, union status, and employer.
 

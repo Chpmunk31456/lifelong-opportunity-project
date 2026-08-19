@@ -240,7 +240,7 @@ O*NET reporta datos salariales actuales de **BLS 2025** para Pharmacy Technician
 - **Salario mediano por hora: USD $22.00**
 - **Salario mediano anual: USD $45.750**
 
-O*NET reporta aproximadamente **490.400 trabajadores en 2024**, crecimiento proyectado de **6 por ciento entre 2024 y 2034** y cerca de **49.000 vacantes anuales** durante el periodo de proyección.
+O*NET reporta aproximadamente **490.400 trabajadores en 2024**, crecimiento proyectado de **6% entre 2024 y 2034** y cerca de **49.000 vacantes anuales** durante el periodo de proyección.
 
 Estas son estadísticas ocupacionales nacionales, no un salario inicial prometido. El pago varía por estado, entorno, turno, experiencia, certificación, afiliación sindical y empleador.
 
