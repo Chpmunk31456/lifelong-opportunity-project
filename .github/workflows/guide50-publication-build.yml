@@ -196,4 +196,4 @@ jobs:
           git add project/revision-2026/guide-50/publication-candidate
           if git diff --cached --quiet; then echo 'No publication changes to commit.'; else git commit -m 'Build and validate Guide 50 publication candidates'; git pull --rebase origin revision/guide-00-100-2026; git push origin HEAD:revision/guide-00-100-2026; fi
 
-# Controlled re-trigger marker: 2026-08-19 10:55 America/Bogota
+# Controlled re-trigger marker: 2026-08-19 12:59 America/Bogota
