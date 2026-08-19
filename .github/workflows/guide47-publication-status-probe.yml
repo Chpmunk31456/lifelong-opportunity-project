@@ -27,7 +27,6 @@ jobs:
           REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
-          API="https://api.github.com/repos/$REPO"
           python - <<'PY'
           import json, os, pathlib, urllib.request
 
@@ -68,6 +67,7 @@ jobs:
           result={
               'guide':'47',
               'purpose':'observe controlled publication workflows only; does not advance QA gates',
+              'corrective_repair': latest('guide47-technical-corrective-repair.yml'),
               'dispatch': latest('guide47-publication-dispatch.yml'),
               'publication_build': latest('guide47-publication-build.yml'),
           }
