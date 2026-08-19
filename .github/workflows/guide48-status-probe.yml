@@ -30,3 +30,5 @@ jobs:
           git commit -m 'qa(guide-48): record publication workflow status' || exit 0
           git pull --rebase origin revision/guide-00-100-2026
           git push origin HEAD:revision/guide-00-100-2026
+
+# refreshed after clinical-safety validator repair
