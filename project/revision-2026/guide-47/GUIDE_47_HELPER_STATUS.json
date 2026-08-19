@@ -11,7 +11,7 @@
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-47/qa/GUIDE_47_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-47/working-masters/GUIDE_47_PHARMACY_TECHNICIAN_ES419_v2.md", "project/revision-2026/guide-47/qa/GUIDE_47_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-47/working-masters/GUIDE_47_PHARMACY_TECHNICIAN_PTBR_v2.md", "project/revision-2026/guide-47/qa/GUIDE_47_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-47/qa/GUIDE_47_TECHNICAL_QA_08.md", "project/revision-2026/guide-47/publication-candidate/GUIDE_47_PUBLICATION_QA_MANIFEST.json", "project/revision-2026/guide-47/publication-candidate/SHA256SUMS.txt"]},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
