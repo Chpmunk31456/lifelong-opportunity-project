@@ -11,7 +11,7 @@
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-49/qa/GUIDE_49_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-49/working-masters/GUIDE_49_DENTAL_ASSISTANT_ES419_v2.md", "project/revision-2026/guide-49/qa/GUIDE_49_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-49/working-masters/GUIDE_49_DENTAL_ASSISTANT_PTBR_v2.md", "project/revision-2026/guide-49/qa/GUIDE_49_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-49/qa/GUIDE_49_TECHNICAL_QA_08.md"]},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
