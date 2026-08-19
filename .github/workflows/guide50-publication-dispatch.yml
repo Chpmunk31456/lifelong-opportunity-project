@@ -131,9 +131,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python scripts/manual_helper_gate.py --guide 50 --stage technical_qa
-          python scripts/manual_helper_gate.py --guide 50 --stage publication
-          python scripts/manual_helper_gate.py --guide 50 --stage release_audit
+          python scripts/manual_helper_gate.py --guide 50 --target technical_qa
+          python scripts/manual_helper_gate.py --guide 50 --target publication
+          python scripts/manual_helper_gate.py --guide 50 --target release_audit
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add project/revision-2026/guide-50/qa/GUIDE_50_TECHNICAL_QA_08.md \
@@ -144,4 +144,4 @@ jobs:
           git pull --rebase origin revision/guide-00-100-2026
           git push origin HEAD:revision/guide-00-100-2026
 
-# Controlled gate-closure trigger: 2026-08-19 14:04 America/Bogota
+# Controlled gate-closure trigger: 2026-08-19 14:08 America/Bogota
