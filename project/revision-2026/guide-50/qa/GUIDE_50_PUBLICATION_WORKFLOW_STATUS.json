@@ -5,6 +5,17 @@
   "publication_dispatch_runs": [
     {
       "conclusion": "failure",
+      "createdAt": "2026-08-19T19:04:42Z",
+      "databaseId": 32290998123,
+      "displayTitle": "Close Guide 50 from successful publication run",
+      "event": "push",
+      "headSha": "5a67e5f83bc6252d6d489b86d3b8c330cd80e8bc",
+      "status": "completed",
+      "updatedAt": "2026-08-19T19:04:55Z",
+      "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32290998123"
+    },
+    {
+      "conclusion": "failure",
       "createdAt": "2026-08-19T16:57:31Z",
       "databaseId": 32278870914,
       "displayTitle": "Add Guide 50 publication dispatch and fail-closed gate closure",
@@ -17,14 +28,14 @@
   ],
   "publication_build_runs": [
     {
-      "conclusion": "",
+      "conclusion": "success",
       "createdAt": "2026-08-19T18:47:46Z",
       "databaseId": 32289368727,
       "displayTitle": "Accept hyphenated Guide 50 duration control",
       "event": "push",
       "headSha": "3751a3d64054cd4da77c971f59725c557fbcfa84",
-      "status": "in_progress",
-      "updatedAt": "2026-08-19T18:47:50Z",
+      "status": "completed",
+      "updatedAt": "2026-08-19T19:03:41Z",
       "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32289368727"
     },
     {
