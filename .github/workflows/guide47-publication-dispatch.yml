@@ -1,6 +1,6 @@
 name: Guide 47 publication dispatch
 
-# Controlled re-dispatch marker: 2026-08-19T00:55Z
+# Controlled re-dispatch marker: 2026-08-19T01:59Z
 on:
   push:
     branches: [revision/guide-00-100-2026]
@@ -15,6 +15,12 @@ jobs:
   dispatch-and-observe:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out revision branch
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
       - name: Dispatch controlled publication workflow and record result
         env:
           GH_TOKEN: ${{ github.token }}
