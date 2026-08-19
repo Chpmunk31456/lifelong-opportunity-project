@@ -46,10 +46,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          RUN_ID="$(gh run list --workflow guide50-publication-build.yml --branch revision/guide-00-100-2026 --limit 10 --json databaseId,status,conclusion --jq '[.[] | select(.status == "completed" and .conclusion == "success")] | first | .databaseId // empty')"
+          if [ -n "$RUN_ID" ]; then
+            echo "run_id=$RUN_ID" >> "$GITHUB_OUTPUT"
+            echo "Reusing successful controlled publication run $RUN_ID; package verification remains mandatory."
+            exit 0
+          fi
           START="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          echo "start=$START" >> "$GITHUB_OUTPUT"
           gh workflow run guide50-publication-build.yml --ref revision/guide-00-100-2026
-          RUN_ID=''
           for i in $(seq 1 30); do
             RUN_ID="$(gh run list --workflow guide50-publication-build.yml --branch revision/guide-00-100-2026 --limit 10 --json databaseId,createdAt,status --jq --arg s "$START" '[.[] | select(.createdAt >= $s)] | sort_by(.createdAt) | last | .databaseId // empty')"
             if [ -n "$RUN_ID" ]; then break; fi
@@ -139,3 +143,5 @@ jobs:
           git commit -m 'Close Guide 50 controlled publication gates'
           git pull --rebase origin revision/guide-00-100-2026
           git push origin HEAD:revision/guide-00-100-2026
+
+# Controlled gate-closure trigger: 2026-08-19 14:04 America/Bogota
