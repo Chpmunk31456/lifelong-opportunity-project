@@ -13,7 +13,7 @@
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-47/working-masters/GUIDE_47_PHARMACY_TECHNICIAN_PTBR_v2.md", "project/revision-2026/guide-47/qa/GUIDE_47_PORTUGUESE_LOCALIZATION_QA_07.md"]},
     "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-47/qa/GUIDE_47_TECHNICAL_QA_08.md", "project/revision-2026/guide-47/publication-candidate/GUIDE_47_PUBLICATION_QA_MANIFEST.json", "project/revision-2026/guide-47/publication-candidate/SHA256SUMS.txt"]},
     "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-47/qa/GUIDE_47_PUBLICATION_GATE_09.md", "project/revision-2026/guide-47/publication-candidate/GUIDE_47_PUBLICATION_QA_MANIFEST.json", "project/revision-2026/guide-47/publication-candidate/SHA256SUMS.txt"]},
-    "release_audit": {"status": "PENDING", "evidence": []}
+    "release_audit": {"status": "PASS", "evidence": ["project/revision-2026/guide-47/qa/GUIDE_47_RELEASE_AUDIT_10.md"]}
   },
   "blockers": []
 }
