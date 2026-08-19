@@ -10,7 +10,7 @@
     "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-53/qa/GUIDE_53_EVIDENCE_TRACEABILITY_QA_04.md"]},
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-53/qa/GUIDE_53_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-53/working-masters/GUIDE_53_PHYSICAL_THERAPIST_ASSISTANT_SPANISH_es-419_v1.md", "project/revision-2026/guide-53/qa/GUIDE_53_SPANISH_LOCALIZATION_QA_06.md"]},
-    "portuguese_localization": {"status": "PENDING", "evidence": []},
+    "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-53/working-masters/GUIDE_53_PHYSICAL_THERAPIST_ASSISTANT_PORTUGUESE_pt-BR_v1.md", "project/revision-2026/guide-53/qa/GUIDE_53_PORTUGUESE_LOCALIZATION_QA_07.md"]},
     "technical_qa": {"status": "PENDING", "evidence": []},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
