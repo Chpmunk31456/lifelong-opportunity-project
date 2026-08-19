@@ -72,7 +72,7 @@ jobs:
           if len(urls['en']) < 18: problems.append(f'expected at least 18 English source URLs; observed {len(urls["en"])}')
           for lang in ('es-419','pt-BR'):
             if urls[lang] != urls['en']: problems.append(f'{lang}: source URL set differs; missing={sorted(urls["en"]-urls[lang])}; extra={sorted(urls[lang]-urls["en"])}')
-          controls=[r'31-9097\.00',r'33101',r'48\s*(?:hour|hora)',r'29\s*CFR\s*1910\.1030',r'21[.,]75',r'45[.,]?230',r'17[.,]20',r'35[.,]?780',r'28[.,]26',r'58[.,]?780',r'139[.,]?700',r'5\s*%\s*[-–]\s*6\s*%',r'18[.,]?400',r'43[.,]?660',r'41[.,]?314',r'38[.,]?353',r'44[.,]?694',r'19[.,]18',r'27[.,]00',r'36[.,]11']
+          controls=[r'31-9097\.00',r'33101',r'48\s*[-–]?\s*(?:hour|hora)',r'29\s*CFR\s*1910\.1030',r'21[.,]75',r'45[.,]?230',r'17[.,]20',r'35[.,]?780',r'28[.,]26',r'58[.,]?780',r'139[.,]?700',r'5\s*%\s*[-–]\s*6\s*%',r'18[.,]?400',r'43[.,]?660',r'41[.,]?314',r'38[.,]?353',r'44[.,]?694',r'19[.,]18',r'27[.,]00',r'36[.,]11']
           for lang,text in texts.items():
             for pat in controls:
               if not re.search(pat,text,re.I|re.S): problems.append(f'{lang}: missing controlled value {pat}')
@@ -197,4 +197,4 @@ jobs:
           git add project/revision-2026/guide-50/publication-candidate
           if git diff --cached --quiet; then echo 'No publication changes to commit.'; else git commit -m 'Build and validate Guide 50 publication candidates'; git pull --rebase origin revision/guide-00-100-2026; git push origin HEAD:revision/guide-00-100-2026; fi
 
-# Controlled re-trigger marker: 2026-08-19 13:47 America/Bogota
+# Controlled re-trigger marker: 2026-08-19 13:50 America/Bogota
