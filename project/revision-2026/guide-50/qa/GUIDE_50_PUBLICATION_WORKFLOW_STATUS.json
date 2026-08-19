@@ -18,13 +18,24 @@
   "publication_build_runs": [
     {
       "conclusion": "",
+      "createdAt": "2026-08-19T18:01:13Z",
+      "databaseId": 32284965637,
+      "displayTitle": "Re-trigger Guide 50 controlled publication build",
+      "event": "push",
+      "headSha": "c90ba1e1036c2701e0a1d49a6888d1b27ee0eca3",
+      "status": "pending",
+      "updatedAt": "2026-08-19T18:01:14Z",
+      "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32284965637"
+    },
+    {
+      "conclusion": "cancelled",
       "createdAt": "2026-08-19T16:57:47Z",
       "databaseId": 32278896247,
       "displayTitle": "Guide 50 controlled publication build",
       "event": "workflow_dispatch",
       "headSha": "3b4afb134f4a70257ed717452811a023a6ce5d59",
-      "status": "pending",
-      "updatedAt": "2026-08-19T16:57:49Z",
+      "status": "completed",
+      "updatedAt": "2026-08-19T18:01:14Z",
       "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32278896247"
     },
     {
