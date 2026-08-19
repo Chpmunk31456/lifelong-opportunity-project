@@ -65,3 +65,5 @@ jobs:
           git commit -m 'qa(guide-49): record publication workflow result'
           git pull --rebase origin revision/guide-00-100-2026
           git push origin HEAD:revision/guide-00-100-2026
+
+# refreshed after context-safe clinical-scope validator repair
