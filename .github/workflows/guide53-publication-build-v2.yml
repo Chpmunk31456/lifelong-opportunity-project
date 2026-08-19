@@ -72,15 +72,14 @@ jobs:
             print('\n'.join(problems)); sys.exit(1)
           print(f'Trilingual publication inputs PASS; shared source URLs={len(urls[0])}')
 
-      - name: Create line-safe URL display filter
+      - name: Create bounded URL display filter
         shell: bash
         run: |
           cat > /tmp/line_safe_urls.lua <<'LUA'
           function Link(el)
             local text = pandoc.utils.stringify(el.content)
             if text == el.target and string.len(text) > 45 then
-              local safe = text:gsub('([/%?&=_%-])', '%1​')
-              return pandoc.Link({pandoc.Str(safe)}, el.target, el.title)
+              return pandoc.Link({pandoc.Str('Source link')}, el.target, el.title)
             end
             return el
           end
@@ -173,7 +172,7 @@ jobs:
           targets=sorted(p for p in out.iterdir() if p.is_file() and p.suffix in {'.docx','.pdf'})
           (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets)+'\n',encoding='utf-8')
           qa=root/'qa'; qa.mkdir(exist_ok=True)
-          (qa/'GUIDE_53_PUBLICATION_QA_09.md').write_text('# Guide 53 — Publication QA 09\n\n**Stage:** Publication — **PASS**\n\nControlled DOCX and PDF editions were generated for English, neutral Latin American Spanish (`es-419`), and Brazilian Portuguese (`pt-BR`). All DOCX packages passed ZIP integrity checks. All PDFs passed `pdfinfo`, searchable-text validation, page rendering, nonblank-page inspection, and render/page-count reconciliation. Bare URL display text was rendered with line-safe break opportunities while preserving original hyperlink destinations and the frozen Markdown source. Publication metadata and SHA-256 checksums were generated in the publication-candidate directory.\n\nNo independent human certification, certified translation, clinical/legal review, accessibility certification, accreditation, licensure approval, employment guarantee, or earnings guarantee is claimed.\n',encoding='utf-8')
+          (qa/'GUIDE_53_PUBLICATION_QA_09.md').write_text('# Guide 53 — Publication QA 09\n\n**Stage:** Publication — **PASS**\n\nControlled DOCX and PDF editions were generated for English, neutral Latin American Spanish (`es-419`), and Brazilian Portuguese (`pt-BR`). All DOCX packages passed ZIP integrity checks. All PDFs passed `pdfinfo`, searchable-text validation, page rendering, nonblank-page inspection, and render/page-count reconciliation. Long bare URL display text was replaced in generated DOCX/PDF output with bounded readable link labels while preserving exact original hyperlink destinations and the frozen Markdown source. Publication metadata and SHA-256 checksums were generated in the publication-candidate directory.\n\nNo independent human certification, certified translation, clinical/legal review, accessibility certification, accreditation, licensure approval, employment guarantee, or earnings guarantee is claimed.\n',encoding='utf-8')
           (qa/'GUIDE_53_RELEASE_AUDIT_10.md').write_text('# Guide 53 — Release Audit 10\n\n**Stage:** Release Audit — **PASS**\n\nRelease audit verified predecessor gates, three-language artifact presence, DOCX/PDF integrity, searchable PDF text, all-page rendering evidence, publication metadata, and SHA-256 checksum coverage. Guide 53 is closed for the controlled revision sequence and may advance to Guide 54.\n\nThis is an internal controlled release audit, not independent human certification or accreditation.\n',encoding='utf-8')
           status_path=root/'GUIDE_53_HELPER_STATUS.json'; status=json.loads(status_path.read_text(encoding='utf-8'))
           assert status['stages']['technical_qa']['status']=='PASS'
