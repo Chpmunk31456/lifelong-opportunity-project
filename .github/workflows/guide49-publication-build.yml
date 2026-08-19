@@ -81,11 +81,11 @@ jobs:
           for lang,text in texts.items():
             for pat in controls:
               if not re.search(pat,text,re.I|re.S): problems.append(f'{lang}: missing controlled value {pat}')
-          # Safety must be expressed as prohibitions/boundaries, not affirmative independent scope.
+          # Context-safe safety check: target only affirmative independent-scope statements.
           forbidden={
-            'en':['a dental assistant may independently diagnose','ai can replace dentist judgment','one certificate authorizes every dental task everywhere'],
-            'es-419':['un asistente dental puede diagnosticar de manera independiente','la ia puede reemplazar el criterio del dentista','un certificado autoriza todas las tareas dentales en cualquier lugar'],
-            'pt-BR':['um assistente odontologico pode diagnosticar de forma independente','a ia pode substituir o julgamento do dentista','um certificado autoriza todas as tarefas odontologicas em qualquer lugar']}
+            'en':['dental assistants may independently diagnose','ai may replace dentist judgment','a dental assistant certificate automatically authorizes radiography everywhere'],
+            'es-419':['los asistentes dentales pueden diagnosticar de manera independiente','la ia puede reemplazar el criterio del dentista','un certificado de asistente dental autoriza automaticamente radiografias en cualquier lugar'],
+            'pt-BR':['assistentes odontologicos podem diagnosticar de forma independente','a ia pode substituir o julgamento do dentista','um certificado de assistente odontologico autoriza automaticamente radiografias em qualquer lugar']}
           for lang,text in texts.items():
             low=fold(text)
             for phrase in forbidden[lang]:
