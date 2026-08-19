@@ -27,14 +27,7 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             "$API/actions/workflows/guide48-publication-build.yml/runs?branch=revision%2Fguide-00-100-2026&per_page=20")"
-          printf '%s' "$JSON" | python - <<'PY' > /tmp/active-runs.txt
-          import json, sys
-          data = json.load(sys.stdin)
-          active = {'queued', 'in_progress', 'pending', 'waiting', 'requested'}
-          for run in data.get('workflow_runs', []):
-              if run.get('status') in active:
-                  print(run['id'])
-          PY
+          printf '%s' "$JSON" | python -c "import json,sys; d=json.load(sys.stdin); active={'queued','in_progress','pending','waiting','requested'}; [print(r['id']) for r in d.get('workflow_runs',[]) if r.get('status') in active]" > /tmp/active-runs.txt
           if [ -s /tmp/active-runs.txt ]; then
             while read -r RUN_ID; do
               echo "Cancelling stale Guide 48 publication run $RUN_ID"
