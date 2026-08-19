@@ -195,3 +195,5 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add project/revision-2026/guide-48/publication-candidate
           if git diff --cached --quiet; then echo 'No publication changes to commit.'; else git commit -m 'Build and validate Guide 48 publication candidates'; git pull --rebase origin revision/guide-00-100-2026; git push origin HEAD:revision/guide-00-100-2026; fi
+
+# retriggered after live-state reconciliation on 2026-08-19
