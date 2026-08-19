@@ -1,0 +1,219 @@
+name: Guide 53 controlled publication and release v3
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide53-publication-build-v3.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide53-controlled-publication-v3
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out revision branch
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Install publication toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice-writer poppler-utils python3-pil
+
+      - name: Verify controlled gate and freeze inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('project/revision-2026/guide-53/GUIDE_53_HELPER_STATUS.json')
+          d=json.loads(p.read_text(encoding='utf-8'))
+          assert d['stages']['technical_qa']['status']=='PASS'
+          assert d['stages']['publication']['status']=='PENDING'
+          assert d['stages']['release_audit']['status']=='PENDING'
+          PY
+          SRC='project/revision-2026/guide-53/working-masters'
+          OUT='project/revision-2026/guide-53/publication-candidate'
+          rm -rf "$OUT" && mkdir -p "$OUT"
+          cp "$SRC/GUIDE_53_PHYSICAL_THERAPIST_ASSISTANT_ENGLISH_v2.md" "$OUT/GUIDE_53_ENGLISH_v2.md"
+          cp "$SRC/GUIDE_53_PHYSICAL_THERAPIST_ASSISTANT_SPANISH_es-419_v1.md" "$OUT/GUIDE_53_SPANISH_es-419_v1.md"
+          cp "$SRC/GUIDE_53_PHYSICAL_THERAPIST_ASSISTANT_PORTUGUESE_pt-BR_v1.md" "$OUT/GUIDE_53_PORTUGUESE_pt-BR_v1.md"
+
+      - name: Validate trilingual frozen inputs
+        shell: python
+        run: |
+          from pathlib import Path
+          import re,sys
+          out=Path('project/revision-2026/guide-53/publication-candidate')
+          files=[out/'GUIDE_53_ENGLISH_v2.md',out/'GUIDE_53_SPANISH_es-419_v1.md',out/'GUIDE_53_PORTUGUESE_pt-BR_v1.md']
+          texts=[p.read_text(encoding='utf-8') for p in files]
+          problems=[]
+          for p,t in zip(files,texts):
+            if t.startswith('\ufeff') or '\ufffd' in t: problems.append(f'{p.name}: encoding defect')
+            if len(t)<15000: problems.append(f'{p.name}: unexpectedly short')
+            if len(re.findall(r'^##\s+.+$',t,re.M))<12: problems.append(f'{p.name}: insufficient structure')
+          urls=[set(re.findall(r'https://[^\s)<>`]+',t)) for t in texts]
+          if not (urls[0]==urls[1]==urls[2]): problems.append(f'URL parity mismatch {[len(x) for x in urls]}')
+          if problems: print('\n'.join(problems)); sys.exit(1)
+          print(f'Frozen trilingual inputs PASS; shared URLs={len(urls[0])}')
+
+      - name: Create URL-safe publication filter
+        shell: bash
+        run: |
+          cat > /tmp/url_safe.lua <<'LUA'
+          local function is_long_url(s)
+            return string.match(s, '^https?://') and string.len(s) > 45
+          end
+
+          function Link(el)
+            local text = pandoc.utils.stringify(el.content)
+            if is_long_url(text) then
+              return pandoc.Link({pandoc.Str('Source link')}, el.target, el.title)
+            end
+            return el
+          end
+
+          function Str(el)
+            local text = el.text
+            if is_long_url(text) then
+              local target = text
+              local trailing = ''
+              local last = string.sub(target, -1)
+              if last == '.' or last == ',' or last == ';' or last == ':' then
+                trailing = last
+                target = string.sub(target, 1, -2)
+              end
+              local link = pandoc.Link({pandoc.Str('Source link')}, target)
+              if trailing ~= '' then
+                return {link, pandoc.Str(trailing)}
+              end
+              return link
+            end
+            return el
+          end
+          LUA
+
+      - name: Generate controlled DOCX and PDF editions
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-53/publication-candidate'
+          for STEM in GUIDE_53_ENGLISH_v2 GUIDE_53_SPANISH_es-419_v1 GUIDE_53_PORTUGUESE_pt-BR_v1; do
+            pandoc "$OUT/$STEM.md" -f gfm -t docx --standalone --lua-filter=/tmp/url_safe.lua -o "$OUT/$STEM.docx"
+            mkdir -p "$OUT/lo-$STEM"
+            libreoffice --headless --convert-to pdf --outdir "$OUT/lo-$STEM" "$OUT/$STEM.docx"
+            mv "$OUT/lo-$STEM/$STEM.pdf" "$OUT/$STEM.pdf"
+            rmdir "$OUT/lo-$STEM"
+          done
+
+      - name: Validate DOCX and searchable PDF integrity
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-53/publication-candidate'
+          test "$(find "$OUT" -maxdepth 1 -name '*.docx' | wc -l)" -eq 3
+          test "$(find "$OUT" -maxdepth 1 -name '*.pdf' | wc -l)" -eq 3
+          for DOCX in "$OUT"/*.docx; do unzip -t "$DOCX" >/dev/null; unzip -l "$DOCX" | grep -q 'word/document.xml'; done
+          for PDF in "$OUT"/*.pdf; do
+            pdfinfo "$PDF" >/dev/null
+            TEXT="$(pdftotext "$PDF" - | tr -d '[:space:]')"
+            test ${#TEXT} -gt 5000
+          done
+
+      - name: Render and inspect every PDF page
+        id: renderqa
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-53/publication-candidate'
+          rm -rf "$OUT/rendered"
+          for PDF in "$OUT"/*.pdf; do
+            STEM="$(basename "$PDF" .pdf)"
+            mkdir -p "$OUT/rendered/$STEM"
+            pdftoppm -png -r 110 "$PDF" "$OUT/rendered/$STEM/page" >/dev/null 2>&1
+          done
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image,ImageChops
+          import json,sys
+          root=Path('project/revision-2026/guide-53/publication-candidate/rendered')
+          problems=[]; pages=[]
+          for path in sorted(root.rglob('*.png')):
+            with Image.open(path) as im:
+              gray=im.convert('L')
+              diff=ImageChops.difference(gray,Image.new('L',gray.size,255))
+              bbox=diff.point(lambda p:255 if p>12 else 0).getbbox()
+              if bbox is None:
+                problems.append(f'{path}: blank page'); continue
+              l,t,r,b=bbox; w,h=gray.size
+              margins={'left':l,'top':t,'right':w-r,'bottom':h-b}
+              status='FAIL' if min(margins.values())<2 else 'PASS'
+              if status=='FAIL': problems.append(f'{path}: possible clipping {margins}')
+              pages.append({'file':str(path.relative_to(root)),'status':status,'edge_margins':margins})
+          (root/'RENDER_QA.json').write_text(json.dumps({'status':'FAIL' if problems else 'PASS','pages':pages,'problems':problems},indent=2)+'\n',encoding='utf-8')
+          if problems:
+            print('\n'.join(problems)); sys.exit(1)
+          print(f'All-page rendering QA PASS: {len(pages)} pages')
+          PY
+
+      - name: Upload page-render evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: guide53-rendered-pages-v3
+          path: project/revision-2026/guide-53/publication-candidate/rendered
+          retention-days: 14
+
+      - name: Generate publication evidence and close controlled gates
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib,json,subprocess
+          root=Path('project/revision-2026/guide-53'); out=root/'publication-candidate'
+          render=json.loads((out/'rendered/RENDER_QA.json').read_text(encoding='utf-8'))
+          assert render['status']=='PASS'
+          editions=[]
+          for lang,stem in [('en','GUIDE_53_ENGLISH_v2'),('es-419','GUIDE_53_SPANISH_es-419_v1'),('pt-BR','GUIDE_53_PORTUGUESE_pt-BR_v1')]:
+            docx=out/f'{stem}.docx'; pdf=out/f'{stem}.pdf'
+            info=subprocess.check_output(['pdfinfo',str(pdf)],text=True)
+            page_count=next(int(x.split(':',1)[1]) for x in info.splitlines() if x.startswith('Pages:'))
+            rendered=sum(1 for p in render['pages'] if p['file'].startswith(stem+'/'))
+            if rendered!=page_count: raise SystemExit(f'{stem}: render/page mismatch {rendered}!={page_count}')
+            editions.append({'language':lang,'docx':docx.name,'pdf':pdf.name,'docx_bytes':docx.stat().st_size,'pdf_bytes':pdf.stat().st_size,'pdf_pages':page_count,'rendered_pages':rendered,'status':'PASS'})
+          manifest={'guide':'53','occupation':'Physical Therapist Assistant','build_date':'2026-08-19','status':'PASS','editions':editions,'assurance_boundary':'Internal automated publication QA and controlled source review; not independent human certification, professional translation certification, clinical review, legal review, accessibility certification, accreditation, licensure approval, or employment/earnings guarantee.'}
+          (out/'GUIDE_53_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          targets=sorted(p for p in out.iterdir() if p.is_file() and p.suffix in {'.docx','.pdf'})
+          (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets)+'\n',encoding='utf-8')
+          qa=root/'qa'; qa.mkdir(exist_ok=True)
+          (qa/'GUIDE_53_PUBLICATION_QA_09.md').write_text('# Guide 53 — Publication QA 09\n\n**Stage:** Publication — **PASS**\n\nControlled English, neutral Latin American Spanish (`es-419`), and Brazilian Portuguese (`pt-BR`) DOCX/PDF editions passed package integrity, searchable-text validation, source parity, all-page rendering, edge-clipping checks, page-count reconciliation, metadata, and checksum generation. Long URL-shaped display tokens in generated documents use bounded readable hyperlink labels while frozen Markdown source URLs remain unchanged.\n\nNo independent human certification, certified translation, clinical/legal review, accessibility certification, accreditation, licensure approval, employment guarantee, or earnings guarantee is claimed.\n',encoding='utf-8')
+          (qa/'GUIDE_53_RELEASE_AUDIT_10.md').write_text('# Guide 53 — Release Audit 10\n\n**Stage:** Release Audit — **PASS**\n\nRelease audit verified predecessor gates, trilingual artifacts, DOCX/PDF integrity, searchable PDF text, all-page render evidence, publication metadata, and SHA-256 checksum coverage. Guide 53 is closed for the controlled revision sequence and may advance to Guide 54.\n\nThis is an internal controlled release audit, not independent human certification or accreditation.\n',encoding='utf-8')
+          sp=root/'GUIDE_53_HELPER_STATUS.json'; status=json.loads(sp.read_text(encoding='utf-8'))
+          assert status['stages']['technical_qa']['status']=='PASS'
+          status['stages']['publication']={'status':'PASS','evidence':['project/revision-2026/guide-53/qa/GUIDE_53_PUBLICATION_QA_09.md','project/revision-2026/guide-53/publication-candidate/GUIDE_53_PUBLICATION_QA_MANIFEST.json','project/revision-2026/guide-53/publication-candidate/SHA256SUMS.txt']}
+          status['stages']['release_audit']={'status':'PASS','evidence':['project/revision-2026/guide-53/qa/GUIDE_53_RELEASE_AUDIT_10.md']}
+          sp.write_text(json.dumps(status,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+
+      - name: Remove render images from commit scope
+        run: rm -rf project/revision-2026/guide-53/publication-candidate/rendered
+
+      - name: Commit controlled Guide 53 publication and closure
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- project/revision-2026/guide-53
+          git diff --cached --check
+          git commit -m 'Guide 53: publish validated trilingual package and close release audit'
+          git pull --rebase origin revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026
