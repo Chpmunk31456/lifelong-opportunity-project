@@ -17,16 +17,23 @@
       ]
     },
     "english_editorial": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-52/working-masters/GUIDE_52_SURGICAL_TECHNOLOGIST_ENGLISH_v2.md",
+        "project/revision-2026/guide-52/qa/GUIDE_52_ENGLISH_EDITORIAL_QA_03.md"
+      ]
     },
     "evidence_traceability": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-52/qa/GUIDE_52_EVIDENCE_TRACEABILITY_QA_04.md"
+      ]
     },
     "english_source_freeze": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-52/qa/GUIDE_52_ENGLISH_SOURCE_FREEZE_05.md"
+      ]
     },
     "spanish_localization": {
       "status": "PENDING",
