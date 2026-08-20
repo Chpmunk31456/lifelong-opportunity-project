@@ -1,0 +1,44 @@
+name: Guide 54 PR publication observer
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/guide54-publication-pr-observer.yml
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  observe:
+    if: github.event.pull_request.head.ref == 'revision/guide-00-100-2026'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Observe latest Guide 54 publication run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          sleep 5
+          RUN_ID="$(gh api 'repos/${{ github.repository }}/actions/workflows/guide54-publication-build.yml/runs?branch=revision%2Fguide-00-100-2026&per_page=5' --jq '.workflow_runs[0].id')"
+          test -n "$RUN_ID"
+          echo "Latest Guide 54 publication run: $RUN_ID"
+          for i in $(seq 1 120); do
+            STATUS="$(gh api "repos/${{ github.repository }}/actions/runs/$RUN_ID" --jq '.status')"
+            CONCLUSION="$(gh api "repos/${{ github.repository }}/actions/runs/$RUN_ID" --jq '.conclusion // "null"')"
+            HEAD_SHA="$(gh api "repos/${{ github.repository }}/actions/runs/$RUN_ID" --jq '.head_sha')"
+            echo "run=$RUN_ID status=$STATUS conclusion=$CONCLUSION head=$HEAD_SHA"
+            if [ "$STATUS" = completed ]; then
+              if [ "$CONCLUSION" != success ]; then
+                echo '--- failing logs ---'
+                gh run view "$RUN_ID" --repo "${{ github.repository }}" --log-failed || true
+                exit 1
+              fi
+              exit 0
+            fi
+            sleep 10
+          done
+          echo 'Publication run did not complete within observer window.'
+          exit 1
