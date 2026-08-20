@@ -11,7 +11,7 @@
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-62/qa/GUIDE_62_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-62/working-masters/GUIDE_62_TEACHER_ASSISTANT_AND_INSTRUCTIONAL_AIDE_ES419_v2.md", "project/revision-2026/guide-62/qa/GUIDE_62_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-62/working-masters/GUIDE_62_TEACHER_ASSISTANT_AND_INSTRUCTIONAL_AIDE_PTBR_v2.md", "project/revision-2026/guide-62/qa/GUIDE_62_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-62/qa/GUIDE_62_TRILINGUAL_TECHNICAL_QA_08.md"]},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
