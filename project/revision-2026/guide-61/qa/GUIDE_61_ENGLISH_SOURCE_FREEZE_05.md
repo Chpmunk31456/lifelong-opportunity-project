@@ -10,7 +10,7 @@ Path:
 `project/revision-2026/guide-61/working-masters/GUIDE_61_PRESCHOOL_ASSISTANT_AND_CHILDCARE_WORKER_ENGLISH_v2.md`
 
 Frozen blob SHA:
-`5e16758d600d893468d3a8e09a9005f13333a606`
+`19c5e6af3add11329071d63efb2e8390fb9cd422`
 
 ## Preconditions
 
