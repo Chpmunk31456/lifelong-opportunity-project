@@ -1,0 +1,40 @@
+{
+  "guide": "53",
+  "occupation": "Physical Therapist Assistant",
+  "build_date": "2026-08-19",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_53_ENGLISH_v2.docx",
+      "pdf": "GUIDE_53_ENGLISH_v2.pdf",
+      "docx_bytes": 23291,
+      "pdf_bytes": 203012,
+      "pdf_pages": 13,
+      "rendered_pages": 13,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_53_SPANISH_es-419_v1.docx",
+      "pdf": "GUIDE_53_SPANISH_es-419_v1.pdf",
+      "docx_bytes": 24568,
+      "pdf_bytes": 209174,
+      "pdf_pages": 14,
+      "rendered_pages": 14,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_53_PORTUGUESE_pt-BR_v1.docx",
+      "pdf": "GUIDE_53_PORTUGUESE_pt-BR_v1.pdf",
+      "docx_bytes": 24572,
+      "pdf_bytes": 210109,
+      "pdf_pages": 14,
+      "rendered_pages": 14,
+      "status": "PASS"
+    }
+  ],
+  "parser_control": "Pandoc reader gfm-tex_math_dollars used so currency dollar signs are not interpreted as TeX inline math.",
+  "assurance_boundary": "Internal automated publication QA and controlled source review; not independent human certification, professional translation certification, clinical review, legal review, accessibility certification, accreditation, licensure approval, or employment/earnings guarantee."
+}
