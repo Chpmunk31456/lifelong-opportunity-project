@@ -39,20 +39,23 @@
       "status": "PASS",
       "evidence": [
         "project/revision-2026/guide-60/working-masters/GUIDE_60_CASE_MANAGEMENT_ASSISTANT_AND_RESOURCE_NAVIGATOR_ES419_v2.md",
-        "project/revision-2026/guide-60/qa/GUIDE_60_SPANISH_LOCALIZATION_QA_06.md"
+        "project/revision-2026/guide-60/qa/GUIDE_60_SPANISH_LOCALIZATION_QA_06.md",
+        "project/revision-2026/guide-60/qa/GUIDE_60_LOCALIZATION_LINK_PARITY_CORRECTIVE_QA_08B.md"
       ]
     },
     "portuguese_localization": {
       "status": "PASS",
       "evidence": [
         "project/revision-2026/guide-60/working-masters/GUIDE_60_CASE_MANAGEMENT_ASSISTANT_AND_RESOURCE_NAVIGATOR_PTBR_v2.md",
-        "project/revision-2026/guide-60/qa/GUIDE_60_PORTUGUESE_LOCALIZATION_QA_07.md"
+        "project/revision-2026/guide-60/qa/GUIDE_60_PORTUGUESE_LOCALIZATION_QA_07.md",
+        "project/revision-2026/guide-60/qa/GUIDE_60_LOCALIZATION_LINK_PARITY_CORRECTIVE_QA_08B.md"
       ]
     },
     "technical_qa": {
       "status": "PASS",
       "evidence": [
-        "project/revision-2026/guide-60/qa/GUIDE_60_TRILINGUAL_TECHNICAL_QA_08.md"
+        "project/revision-2026/guide-60/qa/GUIDE_60_TRILINGUAL_TECHNICAL_QA_08.md",
+        "project/revision-2026/guide-60/qa/GUIDE_60_LOCALIZATION_LINK_PARITY_CORRECTIVE_QA_08B.md"
       ]
     },
     "publication": {
