@@ -1,0 +1,39 @@
+{
+  "guide": "65",
+  "occupation": "Recreation Worker and Activities Coordinator",
+  "build_date": "2026-08-20",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_65_ENGLISH_v2.docx",
+      "pdf": "GUIDE_65_ENGLISH_v2.pdf",
+      "docx_bytes": 24772,
+      "pdf_bytes": 239203,
+      "pdf_pages": 16,
+      "rendered_pages": 16,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_65_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_65_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 25944,
+      "pdf_bytes": 244092,
+      "pdf_pages": 17,
+      "rendered_pages": 17,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_65_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_65_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 24356,
+      "pdf_bytes": 161060,
+      "pdf_pages": 15,
+      "rendered_pages": 15,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA and controlled source review; not independent human certification, professional translation certification, legal review, accessibility certification, accreditation, or employment/earnings guarantee."
+}
