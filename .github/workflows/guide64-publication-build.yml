@@ -5,6 +5,11 @@ on:
     branches: [revision/guide-00-100-2026]
     paths:
       - '.github/workflows/guide64-publication-build.yml'
+      - 'project/revision-2026/guide-64/qa/GUIDE_64_TRILINGUAL_TECHNICAL_QA_08.md'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/guide64-publication-build.yml'
       - 'project/revision-2026/guide-64/GUIDE_64_HELPER_STATUS.json'
       - 'project/revision-2026/guide-64/qa/GUIDE_64_TRILINGUAL_TECHNICAL_QA_08.md'
   workflow_dispatch:
