@@ -11,7 +11,7 @@
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-54/qa/GUIDE_54_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-54/working-masters/GUIDE_54_OCCUPATIONAL_THERAPY_ASSISTANT_SPANISH_es-419_v1.md", "project/revision-2026/guide-54/qa/GUIDE_54_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-54/working-masters/GUIDE_54_OCCUPATIONAL_THERAPY_ASSISTANT_PORTUGUESE_pt-BR_v1.md", "project/revision-2026/guide-54/qa/GUIDE_54_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-54/qa/GUIDE_54_TECHNICAL_QA_08.md"]},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
