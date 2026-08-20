@@ -1,9 +1,9 @@
 {
   "guide": "54",
   "workflow": "guide54-publication-build.yml",
-  "run_id": 32318359783,
+  "run_id": 32320614342,
   "status": "completed",
-  "conclusion": "failure",
-  "head_sha": "30a3b1169a65a927bca504733c5c9a0438df8268",
-  "observed_at": "2026-08-20T01:17:40.048693+00:00"
+  "conclusion": "success",
+  "head_sha": "88b27271fab8d14aae522c7abcfb119ef0dc9628",
+  "observed_at": "2026-08-20T01:40:21.997127+00:00"
 }
