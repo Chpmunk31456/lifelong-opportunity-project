@@ -65,3 +65,5 @@ jobs:
           git commit -m 'qa(guide-54): record publication workflow result'
           git pull --rebase origin revision/guide-00-100-2026
           git push origin HEAD:revision/guide-00-100-2026
+
+# retriggered after explicit PR dispatcher launch
