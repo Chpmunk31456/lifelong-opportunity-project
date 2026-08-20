@@ -11,7 +11,7 @@
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-58/qa/GUIDE_58_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-58/working-masters/GUIDE_58_VETERINARY_ASSISTANT_AND_ANIMAL_CARETAKER_ES419_v2.md", "project/revision-2026/guide-58/qa/GUIDE_58_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-58/working-masters/GUIDE_58_VETERINARY_ASSISTANT_AND_ANIMAL_CARETAKER_PTBR_v2.md", "project/revision-2026/guide-58/qa/GUIDE_58_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-58/qa/GUIDE_58_TRILINGUAL_TECHNICAL_QA_08.md", "project/revision-2026/guide-58/qa/GUIDE_58_TECHNICAL_QA_DIAGNOSTIC.json"]},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
