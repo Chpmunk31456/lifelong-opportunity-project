@@ -36,8 +36,11 @@
       ]
     },
     "spanish_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-65/working-masters/GUIDE_65_RECREATION_WORKER_AND_ACTIVITIES_COORDINATOR_ES419_v2.md",
+        "project/revision-2026/guide-65/qa/GUIDE_65_SPANISH_LOCALIZATION_QA_06.md"
+      ]
     },
     "portuguese_localization": {
       "status": "PENDING",
