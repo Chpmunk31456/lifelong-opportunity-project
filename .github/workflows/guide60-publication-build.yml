@@ -31,19 +31,61 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y pandoc libreoffice-writer poppler-utils python3-pil
 
-      - name: Verify controlled gate and freeze inputs
+      - name: Verify controlled gate, correct localized link parity, and freeze inputs
         shell: bash
         run: |
           set -euo pipefail
           python - <<'PY'
           import json
           from pathlib import Path
-          p=Path('project/revision-2026/guide-60/GUIDE_60_HELPER_STATUS.json')
+          root=Path('project/revision-2026/guide-60')
+          p=root/'GUIDE_60_HELPER_STATUS.json'
           d=json.loads(p.read_text(encoding='utf-8'))
           assert d['stages']['technical_qa']['status']=='PASS'
           assert d['stages']['publication']['status']=='PENDING'
           assert d['stages']['release_audit']['status']=='PENDING'
           assert not d.get('blockers')
+
+          files=[
+            root/'working-masters/GUIDE_60_CASE_MANAGEMENT_ASSISTANT_AND_RESOURCE_NAVIGATOR_ES419_v2.md',
+            root/'working-masters/GUIDE_60_CASE_MANAGEMENT_ASSISTANT_AND_RESOURCE_NAVIGATOR_PTBR_v2.md',
+          ]
+          replacements={
+            'https://www.jobbank.gc.ca/marketreport/requirements/5096/ca':'https://www.jobbank.gc.ca/marketreport/requirements/5112/ca',
+            'https://www.jobbank.gc.ca/wagereport/occupation/5113':'https://www.jobbank.gc.ca/wagereport/occupation/5121',
+            'https://betowa.sena.edu.co/oferta/desarrollo-de-habilidades-para-el-bienestar-familiar-y-comunitario?location=57011001&programId=144936':'https://betowa.sena.edu.co/oferta/desarrollo-de-habilidades-para-el-bienestar-familiar-y-comunitario?location=57011001&modality=V&offertype=open&programId=144936',
+          }
+          changed=False
+          for fp in files:
+            text=fp.read_text(encoding='utf-8')
+            for old,new in replacements.items():
+              if old in text:
+                text=text.replace(old,new,1); changed=True
+              elif new not in text:
+                raise SystemExit(f'{fp.name}: neither expected nor corrected URL found: {old}')
+            fp.write_text(text,encoding='utf-8')
+
+          qa=root/'qa/GUIDE_60_LOCALIZATION_LINK_PARITY_CORRECTIVE_QA_08B.md'
+          qa.write_text('''# Guide 60 — Localization Link Parity Corrective QA 08B
+
+**Stage:** Corrective localization / Technical QA — **PASS**
+
+The controlled Spanish (`es-419`) and Brazilian Portuguese (`pt-BR`) masters were corrected to restore exact URL parity with the frozen English source. No occupational facts, controlled wage values, scope boundaries, safety language, jurisdiction mappings, or substantive localization content were changed.
+
+Corrected parity items:
+
+- Canada Job Bank NOC 42201 requirements URL restored to `/marketreport/requirements/5112/ca`;
+- Canada Job Bank NOC 42201 wages URL restored to `/wagereport/occupation/5121`;
+- SENA Betowa URL restored with the frozen English query parameters `modality=V&offertype=open` and `programId=144936`.
+
+Publication revalidates the complete trilingual URL set before closure.
+''',encoding='utf-8')
+          evidence='project/revision-2026/guide-60/qa/GUIDE_60_LOCALIZATION_LINK_PARITY_CORRECTIVE_QA_08B.md'
+          for stage in ['spanish_localization','portuguese_localization','technical_qa']:
+            if evidence not in d['stages'][stage]['evidence']:
+              d['stages'][stage]['evidence'].append(evidence)
+          p.write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          print(f'Corrective localization link parity prepared; source changes={changed}')
           PY
           SRC='project/revision-2026/guide-60/working-masters'
           OUT='project/revision-2026/guide-60/publication-candidate'
