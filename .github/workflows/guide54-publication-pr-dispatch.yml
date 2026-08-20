@@ -1,0 +1,27 @@
+name: Guide 54 PR publication dispatcher
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/guide54-publication-pr-dispatch.yml
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  dispatch:
+    if: github.event.pull_request.head.ref == 'revision/guide-00-100-2026'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch Guide 54 controlled publication workflow
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh workflow run guide54-publication-build.yml \
+            --repo Chpmunk31456/lifelong-opportunity-project \
+            --ref revision/guide-00-100-2026
+          echo 'Guide 54 controlled publication workflow dispatched from PR synchronization.'
