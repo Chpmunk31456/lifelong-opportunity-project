@@ -36,8 +36,11 @@
       ]
     },
     "spanish_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-54/working-masters/GUIDE_54_OCCUPATIONAL_THERAPY_ASSISTANT_SPANISH_es-419_v1.md",
+        "project/revision-2026/guide-54/qa/GUIDE_54_SPANISH_LOCALIZATION_QA_06.md"
+      ]
     },
     "portuguese_localization": {
       "status": "PENDING",
