@@ -67,8 +67,14 @@ jobs:
             if len(re.findall(r'^##\s+.+$',t,re.M))<20: problems.append(f'{p.name}: insufficient structure')
           urls=[set(re.findall(r'https://[^\s)<>`]+',t)) for t in texts]
           if not (urls[0]==urls[1]==urls[2]): problems.append(f'URL parity mismatch {[len(x) for x in urls]}')
-          required=['68,340','49,200','58,700','19%','62,501','56,882','68,464','32109','17.62','26.85','36.71','949']
+          common=['68,340','19%','62,501','56,882','68,464','32109','17.62','26.85','36.71','949']
+          locale_values={
+            'GUIDE_54_ENGLISH_v2.md':['49,200','58,700'],
+            'GUIDE_54_SPANISH_es-419_v1.md':['49,200','58,700'],
+            'GUIDE_54_PORTUGUESE_pt-BR_v1.md':['49.200','58.700'],
+          }
           for p,t in zip(files,texts):
+            required=common+locale_values[p.name]
             missing=[x for x in required if x not in t]
             if missing: problems.append(f'{p.name}: missing controlled values {missing}')
           if problems:
