@@ -66,4 +66,4 @@ jobs:
           git pull --rebase origin revision/guide-00-100-2026
           git push origin HEAD:revision/guide-00-100-2026
 
-# retriggered after explicit PR dispatcher launch
+# retriggered for locale-validator corrected publication run 88b27271
