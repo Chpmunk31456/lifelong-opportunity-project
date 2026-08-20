@@ -1,0 +1,40 @@
+{
+  "guide": "60",
+  "occupation": "Case Management Assistant and Resource Navigator",
+  "build_date": "2026-08-20",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_60_ENGLISH_v2.docx",
+      "pdf": "GUIDE_60_ENGLISH_v2.pdf",
+      "docx_bytes": 23994,
+      "pdf_bytes": 228894,
+      "pdf_pages": 15,
+      "rendered_pages": 15,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_60_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_60_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 24496,
+      "pdf_bytes": 228506,
+      "pdf_pages": 16,
+      "rendered_pages": 16,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_60_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_60_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 24541,
+      "pdf_bytes": 230184,
+      "pdf_pages": 16,
+      "rendered_pages": 16,
+      "status": "PASS"
+    }
+  ],
+  "parser_control": "Pandoc reader gfm-tex_math_dollars used so currency dollar signs are not interpreted as TeX inline math.",
+  "assurance_boundary": "Internal automated publication QA and controlled source review; not independent human certification, professional translation certification, legal review, clinical review, accessibility certification, accreditation, licensure approval, financial advice, or employment/earnings guarantee."
+}
