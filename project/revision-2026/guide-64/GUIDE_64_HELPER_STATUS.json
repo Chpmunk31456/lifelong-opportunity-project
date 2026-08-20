@@ -11,7 +11,7 @@
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-64/qa/GUIDE_64_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-64/working-masters/GUIDE_64_COMMUNITY_SERVICE_PROGRAM_COORDINATOR_ES419_v2.md", "project/revision-2026/guide-64/qa/GUIDE_64_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-64/working-masters/GUIDE_64_COMMUNITY_SERVICE_PROGRAM_COORDINATOR_PTBR_v2.md", "project/revision-2026/guide-64/qa/GUIDE_64_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-64/qa/GUIDE_64_TRILINGUAL_TECHNICAL_QA_08.md"]},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
