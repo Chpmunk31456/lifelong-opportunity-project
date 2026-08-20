@@ -225,7 +225,14 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- project/revision-2026/guide-53
-          git diff --cached --check
+          # Frozen publication Markdown intentionally contains two-space Markdown hard breaks.
+          # Validate generated text evidence for whitespace errors without rejecting those source-preserving breaks.
+          git diff --cached --check -- \
+            project/revision-2026/guide-53/GUIDE_53_HELPER_STATUS.json \
+            project/revision-2026/guide-53/qa/GUIDE_53_PUBLICATION_QA_09.md \
+            project/revision-2026/guide-53/qa/GUIDE_53_RELEASE_AUDIT_10.md \
+            project/revision-2026/guide-53/publication-candidate/GUIDE_53_PUBLICATION_QA_MANIFEST.json \
+            project/revision-2026/guide-53/publication-candidate/SHA256SUMS.txt
           git commit -m 'Guide 53: publish validated trilingual package and close release audit'
           git pull --rebase origin revision/guide-00-100-2026
           git push origin HEAD:revision/guide-00-100-2026
