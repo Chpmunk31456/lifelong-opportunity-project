@@ -1,0 +1,39 @@
+{
+  "guide": "63",
+  "occupation": "Library Assistant and Library Technician",
+  "build_date": "2026-08-20",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_63_ENGLISH_v2.docx",
+      "pdf": "GUIDE_63_ENGLISH_v2.pdf",
+      "docx_bytes": 20825,
+      "pdf_bytes": 180973,
+      "pdf_pages": 12,
+      "rendered_pages": 12,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_63_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_63_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 21672,
+      "pdf_bytes": 183972,
+      "pdf_pages": 13,
+      "rendered_pages": 13,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_63_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_63_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 21662,
+      "pdf_bytes": 184697,
+      "pdf_pages": 13,
+      "rendered_pages": 13,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA and controlled source review; not independent human certification, professional translation certification, legal or copyright review, library-system approval, accessibility certification, accreditation, or employment/earnings guarantee."
+}
