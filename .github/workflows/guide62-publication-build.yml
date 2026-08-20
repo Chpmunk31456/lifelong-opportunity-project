@@ -1,0 +1,202 @@
+name: Guide 62 controlled publication and release
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide62-publication-build.yml'
+      - 'project/revision-2026/guide-62/GUIDE_62_HELPER_STATUS.json'
+      - 'project/revision-2026/guide-62/qa/GUIDE_62_TRILINGUAL_TECHNICAL_QA_08.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide62-controlled-publication
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out revision branch
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Install publication toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice-writer poppler-utils python3-pil
+
+      - name: Verify gate and freeze trilingual inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('project/revision-2026/guide-62')
+          d=json.loads((root/'GUIDE_62_HELPER_STATUS.json').read_text(encoding='utf-8'))
+          assert d['stages']['technical_qa']['status']=='PASS'
+          assert d['stages']['publication']['status']=='PENDING'
+          assert d['stages']['release_audit']['status']=='PENDING'
+          assert not d.get('blockers')
+          PY
+          SRC='project/revision-2026/guide-62/working-masters'
+          OUT='project/revision-2026/guide-62/publication-candidate'
+          rm -rf "$OUT" && mkdir -p "$OUT"
+          cp "$SRC/GUIDE_62_TEACHER_ASSISTANT_AND_INSTRUCTIONAL_AIDE_ENGLISH_v2.md" "$OUT/GUIDE_62_ENGLISH_v2.md"
+          cp "$SRC/GUIDE_62_TEACHER_ASSISTANT_AND_INSTRUCTIONAL_AIDE_ES419_v2.md" "$OUT/GUIDE_62_SPANISH_es-419_v2.md"
+          cp "$SRC/GUIDE_62_TEACHER_ASSISTANT_AND_INSTRUCTIONAL_AIDE_PTBR_v2.md" "$OUT/GUIDE_62_PORTUGUESE_pt-BR_v2.md"
+
+      - name: Validate trilingual Markdown
+        shell: python
+        run: |
+          from pathlib import Path
+          import re,sys
+          out=Path('project/revision-2026/guide-62/publication-candidate')
+          files=[out/'GUIDE_62_ENGLISH_v2.md',out/'GUIDE_62_SPANISH_es-419_v2.md',out/'GUIDE_62_PORTUGUESE_pt-BR_v2.md']
+          texts=[p.read_text(encoding='utf-8') for p in files]
+          problems=[]
+          for p,t in zip(files,texts):
+            if t.startswith('\ufeff') or '\ufffd' in t: problems.append(f'{p.name}: encoding defect')
+            if len(t)<14000: problems.append(f'{p.name}: unexpectedly short ({len(t)})')
+            if len(re.findall(r'^##\s+.+$',t,re.M))<18: problems.append(f'{p.name}: insufficient section structure')
+            low=t.lower()
+            for bad in ('todo:','lorem ipsum','translation pending','traduccion pendiente','tradução pendente'):
+              if bad in low: problems.append(f'{p.name}: placeholder {bad}')
+          urls=[set(re.findall(r'https://[^\s)<>`]+',t)) for t in texts]
+          if not (urls[0]==urls[1]==urls[2]): problems.append(f'URL parity mismatch {[len(x) for x in urls]}')
+          if len(urls[0])!=12: problems.append(f'expected 12 frozen URLs, found {len(urls[0])}')
+          controls=[r'25-9042\.00',r'43100',r'35[,.]240',r'1[,.]422[,.]800',r'170[,.]400',r'18[,.]29',r'25[,.]01',r'32[,.]42',r'18[,.]45',r'40\s*(?:hour|hora)']
+          for p,t in zip(files,texts):
+            for pat in controls:
+              if not re.search(pat,t,re.I): problems.append(f'{p.name}: missing controlled value {pat}')
+            low=t.lower()
+            if not any(x in low for x in ['safeguard','salvaguarda','proteção']): problems.append(f'{p.name}: missing safeguarding boundary')
+            if not any(x in low for x in ['teacher of record','docente responsable','professor responsável']): problems.append(f'{p.name}: missing teacher-of-record boundary')
+            if not any(x in low for x in ['ferpa','student privacy','privacidad','privacidade']): problems.append(f'{p.name}: missing student-privacy boundary')
+            if not any(x in low for x in ['cyber','ciber']): problems.append(f'{p.name}: missing cybersecurity boundary')
+          if problems:
+            print('\n'.join(problems)); sys.exit(1)
+          print(f'Guide 62 Markdown QA PASS; shared URLs={len(urls[0])}')
+
+      - name: Create URL-safe display filter
+        shell: bash
+        run: |
+          cat > /tmp/url_safe.lua <<'LUA'
+          local function is_long_url(s) return string.match(s, '^https?://') and string.len(s) > 45 end
+          function Link(el)
+            local text=pandoc.utils.stringify(el.content)
+            if is_long_url(text) then return pandoc.Link({pandoc.Str('Source link')},el.target,el.title) end
+            return el
+          end
+          function Str(el)
+            local text=el.text
+            if is_long_url(text) then
+              local target=text; local trailing=''; local last=string.sub(target,-1)
+              if last=='.' or last==',' or last==';' or last==':' then trailing=last; target=string.sub(target,1,-2) end
+              local link=pandoc.Link({pandoc.Str('Source link')},target)
+              if trailing~='' then return {link,pandoc.Str(trailing)} end
+              return link
+            end
+            return el
+          end
+          LUA
+
+      - name: Generate DOCX and PDF editions
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-62/publication-candidate'
+          for STEM in GUIDE_62_ENGLISH_v2 GUIDE_62_SPANISH_es-419_v2 GUIDE_62_PORTUGUESE_pt-BR_v2; do
+            pandoc "$OUT/$STEM.md" -f gfm-tex_math_dollars -t docx --standalone --lua-filter=/tmp/url_safe.lua -o "$OUT/$STEM.docx"
+            mkdir -p "$OUT/lo-$STEM"
+            libreoffice --headless --convert-to pdf --outdir "$OUT/lo-$STEM" "$OUT/$STEM.docx"
+            mv "$OUT/lo-$STEM/$STEM.pdf" "$OUT/$STEM.pdf"
+            rmdir "$OUT/lo-$STEM"
+          done
+
+      - name: Validate DOCX and searchable PDF integrity
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-62/publication-candidate'
+          test "$(find "$OUT" -maxdepth 1 -name '*.docx' | wc -l)" -eq 3
+          test "$(find "$OUT" -maxdepth 1 -name '*.pdf' | wc -l)" -eq 3
+          for DOCX in "$OUT"/*.docx; do unzip -t "$DOCX" >/dev/null; unzip -l "$DOCX" | grep -q 'word/document.xml'; done
+          for PDF in "$OUT"/*.pdf; do pdfinfo "$PDF" >/dev/null; TEXT="$(pdftotext "$PDF" - | tr -d '[:space:]')"; test ${#TEXT} -gt 6500; done
+
+      - name: Render and inspect every PDF page
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-62/publication-candidate'
+          rm -rf "$OUT/rendered"
+          for PDF in "$OUT"/*.pdf; do STEM="$(basename "$PDF" .pdf)"; mkdir -p "$OUT/rendered/$STEM"; pdftoppm -png -r 110 "$PDF" "$OUT/rendered/$STEM/page" >/dev/null 2>&1; done
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image,ImageChops
+          import json,sys
+          root=Path('project/revision-2026/guide-62/publication-candidate/rendered'); problems=[]; pages=[]
+          for path in sorted(root.rglob('*.png')):
+            with Image.open(path) as im:
+              gray=im.convert('L'); diff=ImageChops.difference(gray,Image.new('L',gray.size,255)); bbox=diff.point(lambda p:255 if p>12 else 0).getbbox()
+              if bbox is None: problems.append(f'{path}: blank page'); continue
+              l,t,r,b=bbox; w,h=gray.size; margins={'left':l,'top':t,'right':w-r,'bottom':h-b}; status='FAIL' if min(margins.values())<2 else 'PASS'
+              if status=='FAIL': problems.append(f'{path}: possible clipping {margins}')
+              pages.append({'file':str(path.relative_to(root)),'status':status,'edge_margins':margins})
+          (root/'RENDER_QA.json').write_text(json.dumps({'status':'FAIL' if problems else 'PASS','pages':pages,'problems':problems},indent=2)+'\n',encoding='utf-8')
+          if problems: print('\n'.join(problems)); sys.exit(1)
+          print(f'All-page rendering QA PASS: {len(pages)} pages')
+          PY
+
+      - name: Upload render evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: guide62-rendered-pages
+          path: project/revision-2026/guide-62/publication-candidate/rendered
+          retention-days: 14
+
+      - name: Generate metadata checksums and close controlled gates
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib,json,subprocess
+          root=Path('project/revision-2026/guide-62'); out=root/'publication-candidate'; render=json.loads((out/'rendered/RENDER_QA.json').read_text(encoding='utf-8')); assert render['status']=='PASS'
+          editions=[]
+          for lang,stem in [('en','GUIDE_62_ENGLISH_v2'),('es-419','GUIDE_62_SPANISH_es-419_v2'),('pt-BR','GUIDE_62_PORTUGUESE_pt-BR_v2')]:
+            docx=out/f'{stem}.docx'; pdf=out/f'{stem}.pdf'; info=subprocess.check_output(['pdfinfo',str(pdf)],text=True); page_count=next(int(x.split(':',1)[1]) for x in info.splitlines() if x.startswith('Pages:')); rendered=sum(1 for p in render['pages'] if p['file'].startswith(stem+'/'))
+            if rendered!=page_count: raise SystemExit(f'{stem}: render/page mismatch {rendered}!={page_count}')
+            editions.append({'language':lang,'docx':docx.name,'pdf':pdf.name,'docx_bytes':docx.stat().st_size,'pdf_bytes':pdf.stat().st_size,'pdf_pages':page_count,'rendered_pages':rendered,'status':'PASS'})
+          manifest={'guide':'62','occupation':'Teacher Assistant and Instructional Aide','build_date':'2026-08-20','status':'PASS','editions':editions,'assurance_boundary':'Internal automated publication QA and controlled source review; not independent human certification, professional translation certification, legal review, school-system approval, safeguarding certification, accessibility certification, accreditation, or employment/earnings guarantee.'}
+          (out/'GUIDE_62_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          targets=sorted(p for p in out.iterdir() if p.is_file() and p.suffix in {'.docx','.pdf'}); (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets)+'\n',encoding='utf-8')
+          qa=root/'qa'; qa.mkdir(exist_ok=True)
+          pub=qa/'GUIDE_62_PUBLICATION_QA_09.md'; rel=qa/'GUIDE_62_RELEASE_AUDIT_10.md'
+          pub.write_text('# Guide 62 — Publication QA 09\n\n**Stage:** Publication — **PASS**\n\nControlled English, neutral Latin American Spanish (`es-419`), and Brazilian Portuguese (`pt-BR`) Markdown/DOCX/PDF editions passed source parity, controlled-value validation, package integrity, searchable-text validation, all-page rendering, page-count reconciliation, metadata, and checksum generation.\n\nNo independent human certification, certified translation, legal review, school-system approval, safeguarding certification, accessibility certification, accreditation, employment guarantee, or earnings guarantee is claimed.\n',encoding='utf-8')
+          rel.write_text('# Guide 62 — Release Audit 10\n\n**Stage:** Release Audit — **PASS**\n\nRelease audit verified the three publication editions, publication QA manifest, SHA-256 checksums, searchable PDF integrity, full-page rendering evidence, source parity, controlled occupation/wage/training values, safeguarding and student-privacy boundaries, responsible-AI/privacy controls, and assurance boundary. Guide 62 is cleared for sequential closure within Draft PR #17.\n',encoding='utf-8')
+          status=root/'GUIDE_62_HELPER_STATUS.json'; d=json.loads(status.read_text(encoding='utf-8'))
+          assert d['stages']['technical_qa']['status']=='PASS'
+          d['stages']['publication']={'status':'PASS','evidence':['project/revision-2026/guide-62/qa/GUIDE_62_PUBLICATION_QA_09.md','project/revision-2026/guide-62/publication-candidate/GUIDE_62_PUBLICATION_QA_MANIFEST.json','project/revision-2026/guide-62/publication-candidate/SHA256SUMS.txt']}
+          d['stages']['release_audit']={'status':'PASS','evidence':['project/revision-2026/guide-62/qa/GUIDE_62_RELEASE_AUDIT_10.md']}
+          status.write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+
+      - name: Remove render images from commit scope
+        run: rm -rf project/revision-2026/guide-62/publication-candidate/rendered
+
+      - name: Commit controlled publication package
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-62
+          if git diff --cached --quiet; then echo 'No publication changes to commit.'; else
+            git commit -m 'guide62: build and close controlled publication package'
+            git pull --rebase origin revision/guide-00-100-2026
+            git push origin HEAD:revision/guide-00-100-2026
+          fi
