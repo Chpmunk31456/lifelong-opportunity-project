@@ -1,0 +1,2 @@
+# Generated publication Markdown preserves intentional two-space hard breaks.
+project/revision-2026/guide-64/publication-candidate/*.md -whitespace
