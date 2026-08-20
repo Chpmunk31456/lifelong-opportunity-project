@@ -1,0 +1,41 @@
+{
+  "guide": "56",
+  "occupation": "Nursing Assistant and Patient Care Technician",
+  "build_date": "2026-08-19",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_56_ENGLISH_v2.docx",
+      "pdf": "GUIDE_56_ENGLISH_v2.pdf",
+      "docx_bytes": 21455,
+      "pdf_bytes": 179647,
+      "pdf_pages": 11,
+      "rendered_pages": 11,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_56_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_56_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 22158,
+      "pdf_bytes": 181957,
+      "pdf_pages": 12,
+      "rendered_pages": 12,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_56_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_56_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 22394,
+      "pdf_bytes": 183699,
+      "pdf_pages": 13,
+      "rendered_pages": 13,
+      "status": "PASS"
+    }
+  ],
+  "parser_control": "Pandoc reader gfm-tex_math_dollars used so currency dollar signs are not interpreted as TeX inline math.",
+  "locale_control": "Numeric parity validates the controlled representation actually frozen in each language; source-reported wage punctuation is preserved while localized prose such as 2.640 horas remains locale-correct.",
+  "assurance_boundary": "Internal automated publication QA and controlled source review; not independent human certification, professional translation certification, clinical review, legal review, accessibility certification, accreditation, licensure approval, or employment/earnings guarantee."
+}
