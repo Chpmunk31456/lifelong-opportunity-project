@@ -16,11 +16,11 @@ jobs:
     if: github.event.pull_request.head.ref == 'revision/guide-00-100-2026'
     runs-on: ubuntu-latest
     steps:
-      - name: Dispatch Guide 53 deterministic controlled publication workflow v6
+      - name: Dispatch Guide 53 parser-corrected controlled publication workflow v7
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh workflow run guide53-publication-build-v6.yml \
+          gh workflow run guide53-publication-build-v7.yml \
             --repo Chpmunk31456/lifelong-opportunity-project \
             --ref revision/guide-00-100-2026
-          echo 'Guide 53 deterministic v6 controlled publication workflow dispatched from PR synchronization.'
+          echo 'Guide 53 parser-corrected v7 controlled publication workflow dispatched from PR synchronization.'
