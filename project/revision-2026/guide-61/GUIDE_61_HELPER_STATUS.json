@@ -11,7 +11,7 @@
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-61/qa/GUIDE_61_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-61/working-masters/GUIDE_61_PRESCHOOL_ASSISTANT_AND_CHILDCARE_WORKER_ES419_v2.md", "project/revision-2026/guide-61/qa/GUIDE_61_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-61/working-masters/GUIDE_61_PRESCHOOL_ASSISTANT_AND_CHILDCARE_WORKER_PTBR_v2.md", "project/revision-2026/guide-61/qa/GUIDE_61_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-61/qa/GUIDE_61_TRILINGUAL_TECHNICAL_QA_08.md"]},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
