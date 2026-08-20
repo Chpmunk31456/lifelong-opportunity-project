@@ -1,6 +1,10 @@
 name: Guide 60 one-shot localization link parity fix
 
 on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide60-link-parity-fix-once.yml'
   pull_request:
     branches: [main]
     paths:
@@ -11,7 +15,7 @@ permissions:
 
 jobs:
   fix:
-    if: github.event.pull_request.head.ref == 'revision/guide-00-100-2026'
+    if: github.event_name == 'push' || github.event.pull_request.head.ref == 'revision/guide-00-100-2026'
     runs-on: ubuntu-latest
     steps:
       - name: Check out revision branch
