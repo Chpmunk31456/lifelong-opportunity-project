@@ -22,4 +22,4 @@ jobs:
           gh workflow run guide56-publication-build.yml \
             --repo '${{ github.repository }}' \
             --ref revision/guide-00-100-2026
-          echo 'Guide 56 controlled publication dispatched.'
+          echo 'Guide 56 controlled publication dispatched after numeric-validator correction.'
