@@ -411,11 +411,11 @@ Fontes oficiais/públicas:
 - CareerOneStop — Find Training: https://www.careeronestop.org/FindTraining/find-training.aspx
 - Apprenticeship.gov: https://www.apprenticeship.gov/
 - Government of Canada Job Bank — NOC 42201 national summary: https://www.jobbank.gc.ca/marketreport/summary-occupation/5112/ca
-- Government of Canada Job Bank — NOC 42201 requirements: https://www.jobbank.gc.ca/marketreport/requirements/5096/ca
-- Government of Canada Job Bank — NOC 42201 wages: https://www.jobbank.gc.ca/wagereport/occupation/5113
+- Government of Canada Job Bank — NOC 42201 requirements: https://www.jobbank.gc.ca/marketreport/requirements/5112/ca
+- Government of Canada Job Bank — NOC 42201 wages: https://www.jobbank.gc.ca/wagereport/occupation/5121
 - SENA Observatorio — CNO 4211 Asistentes en servicios social y comunitario: https://observatorio.sena.edu.co/Comportamiento/CnoDetalleFunciones?tags=4211
 - SENA APE — Gestor comunitario: https://ape.sena.edu.co/spe-web/spe/demanda/solicitud-sintesis/4111884
-- SENA Betowa — Desarrollo de habilidades para el bienestar familiar y comunitario: https://betowa.sena.edu.co/oferta/desarrollo-de-habilidades-para-el-bienestar-familiar-y-comunitario?location=57011001&programId=144936
+- SENA Betowa — Desarrollo de habilidades para el bienestar familiar y comunitario: https://betowa.sena.edu.co/oferta/desarrollo-de-habilidades-para-el-bienestar-familiar-y-comunitario?location=57011001&modality=V&offertype=open&programId=144936
 - OIT/Cinterfor: https://www.oitcinterfor.org/
 
 Fonte suplementar não governamental de remuneração:
