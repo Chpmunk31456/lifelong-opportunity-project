@@ -10,8 +10,8 @@
     "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-55/qa/GUIDE_55_EVIDENCE_TRACEABILITY_QA_04.md"]},
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-55/qa/GUIDE_55_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-55/working-masters/GUIDE_55_HOME_HEALTH_AND_PERSONAL_CARE_AIDE_SPANISH_es-419_v1.md", "project/revision-2026/guide-55/qa/GUIDE_55_SPANISH_LOCALIZATION_QA_06.md"]},
-    "portuguese_localization": {"status": "PENDING", "evidence": []},
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-55/working-masters/GUIDE_55_HOME_HEALTH_AND_PERSONAL_CARE_AIDE_PORTUGUESE_pt-BR_v1.md", "project/revision-2026/guide-55/qa/GUIDE_55_PORTUGUESE_LOCALIZATION_QA_07.md"]},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-55/qa/GUIDE_55_TECHNICAL_QA_08.md"]},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
