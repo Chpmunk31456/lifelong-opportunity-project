@@ -71,10 +71,9 @@ jobs:
           for p,t in zip(files,texts):
             missing=[x for x in required if x not in t]
             if missing: problems.append(f'{p.name}: missing controlled values {missing}')
-          required_terms=['remanufactur','ciber','cyber','tecnovigil']
           for p,t in zip(files,texts):
             low=t.lower()
-            if not any(x in low for x in ['remanufactur']): problems.append(f'{p.name}: missing servicing/remanufacturing boundary')
+            if 'remanufactur' not in low: problems.append(f'{p.name}: missing servicing/remanufacturing boundary')
             if not any(x in low for x in ['cyber','ciber']): problems.append(f'{p.name}: missing cybersecurity section')
             if 'tecnovigil' not in low: problems.append(f'{p.name}: missing technovigilance control')
           if problems:
@@ -235,6 +234,13 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- project/revision-2026/guide-57
-          git diff --cached --check
+          # Frozen publication Markdown intentionally preserves two-space hard line breaks
+          # from the validated working masters. Run whitespace checks only on generated
+          # QA/status text where trailing whitespace would be a defect.
+          git diff --cached --check -- \
+            project/revision-2026/guide-57/GUIDE_57_HELPER_STATUS.json \
+            project/revision-2026/guide-57/qa \
+            project/revision-2026/guide-57/publication-candidate/GUIDE_57_PUBLICATION_QA_MANIFEST.json \
+            project/revision-2026/guide-57/publication-candidate/SHA256SUMS.txt
           git commit -m 'Guide 57: controlled publication and release PASS'
           git push origin HEAD:revision/guide-00-100-2026
