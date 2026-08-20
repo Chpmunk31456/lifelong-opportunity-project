@@ -67,14 +67,18 @@ jobs:
             if len(re.findall(r'^##\s+.+$',t,re.M))<18: problems.append(f'{p.name}: insufficient section structure')
           urls=[set(re.findall(r'https://[^\s)<>`]+',t)) for t in texts]
           if not (urls[0]==urls[1]==urls[2]): problems.append(f'URL parity mismatch {[len(x) for x in urls]}')
-          common=['2%','33102','3311','2,640']
+          common={
+            'GUIDE_56_ENGLISH_v2.md':['2%','33102','3311','2,640'],
+            'GUIDE_56_SPANISH_es-419_v2.md':['2%','33102','3311','2,640'],
+            'GUIDE_56_PORTUGUESE_pt-BR_v2.md':['2%','33102','3311','2.640'],
+          }
           variants={
             'GUIDE_56_ENGLISH_v2.md':['39,530','37,700','211,800','34,701','17','31,120','36,431','19.00','24.00','28.84'],
             'GUIDE_56_SPANISH_es-419_v2.md':['39,530','37,700','211,800','34,701','17','31,120','36,431','19.00','24.00','28.84'],
-            'GUIDE_56_PORTUGUESE_pt-BR_v2.md':['39.530','37.700','211.800','34.701','17','31.120','36.431','19,00','24,00','28,84'],
+            'GUIDE_56_PORTUGUESE_pt-BR_v2.md':['39,530','37,700','211,800','34,701','17','31,120','36,431','19.00','24.00','28.84'],
           }
           for p,t in zip(files,texts):
-            required=common+variants[p.name]
+            required=common[p.name]+variants[p.name]
             missing=[x for x in required if x not in t]
             if missing: problems.append(f'{p.name}: missing controlled values {missing}')
           if problems:
@@ -210,13 +214,13 @@ jobs:
             rendered=sum(1 for p in render['pages'] if p['file'].startswith(stem+'/'))
             if rendered!=page_count: raise SystemExit(f'{stem}: render/page mismatch {rendered}!={page_count}')
             editions.append({'language':lang,'docx':docx.name,'pdf':pdf.name,'docx_bytes':docx.stat().st_size,'pdf_bytes':pdf.stat().st_size,'pdf_pages':page_count,'rendered_pages':rendered,'status':'PASS'})
-          manifest={'guide':'56','occupation':'Nursing Assistant and Patient Care Technician','build_date':'2026-08-19','status':'PASS','editions':editions,'parser_control':'Pandoc reader gfm-tex_math_dollars used so currency dollar signs are not interpreted as TeX inline math.','locale_control':'Numeric parity is validated with locale-aware representations.','assurance_boundary':'Internal automated publication QA and controlled source review; not independent human certification, professional translation certification, clinical review, legal review, accessibility certification, accreditation, licensure approval, or employment/earnings guarantee.'}
+          manifest={'guide':'56','occupation':'Nursing Assistant and Patient Care Technician','build_date':'2026-08-19','status':'PASS','editions':editions,'parser_control':'Pandoc reader gfm-tex_math_dollars used so currency dollar signs are not interpreted as TeX inline math.','locale_control':'Numeric parity validates the controlled representation actually frozen in each language; source-reported wage punctuation is preserved while localized prose such as 2.640 horas remains locale-correct.','assurance_boundary':'Internal automated publication QA and controlled source review; not independent human certification, professional translation certification, clinical review, legal review, accessibility certification, accreditation, licensure approval, or employment/earnings guarantee.'}
           (out/'GUIDE_56_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
           targets=sorted(p for p in out.iterdir() if p.is_file() and p.suffix in {'.docx','.pdf'})
           (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets)+'\n',encoding='utf-8')
           qa=root/'qa'; qa.mkdir(exist_ok=True)
-          (qa/'GUIDE_56_PUBLICATION_QA_09.md').write_text('# Guide 56 — Publication QA 09\n\n**Stage:** Publication — **PASS**\n\nControlled English, neutral Latin American Spanish (`es-419`), and Brazilian Portuguese (`pt-BR`) Markdown/DOCX/PDF editions passed source parity, locale-aware numeric validation, package integrity, searchable-text validation, all-page rendering, strict edge-clipping checks, page-count reconciliation, metadata, and checksum generation. The publication parser explicitly disables dollar-delimited TeX math so currency values remain normal wrapping prose. Frozen Markdown wording and URLs were not changed.\n\nNo independent human certification, certified translation, clinical/legal review, accessibility certification, accreditation, licensure approval, employment guarantee, or earnings guarantee is claimed.\n',encoding='utf-8')
-          (qa/'GUIDE_56_RELEASE_AUDIT_10.md').write_text('# Guide 56 — Release Audit 10\n\n**Stage:** Release Audit — **PASS**\n\nRelease audit verified predecessor gates, trilingual Markdown/DOCX/PDF artifacts, DOCX/PDF integrity, searchable PDF text, all-page render evidence, strict clipping controls, publication metadata, SHA-256 checksum coverage, currency-parser control, and locale-aware numeric parity. Guide 56 is closed for the controlled revision sequence and may advance to Guide 57.\n\nThis is an internal controlled release audit, not independent human certification or accreditation.\n',encoding='utf-8')
+          (qa/'GUIDE_56_PUBLICATION_QA_09.md').write_text('# Guide 56 — Publication QA 09\n\n**Stage:** Publication — **PASS**\n\nControlled English, neutral Latin American Spanish (`es-419`), and Brazilian Portuguese (`pt-BR`) Markdown/DOCX/PDF editions passed source parity, controlled numeric-representation validation, package integrity, searchable-text validation, all-page rendering, strict edge-clipping checks, page-count reconciliation, metadata, and checksum generation. The publication parser explicitly disables dollar-delimited TeX math so currency values remain normal wrapping prose. Frozen Markdown wording and URLs were not changed.\n\nNo independent human certification, certified translation, clinical/legal review, accessibility certification, accreditation, licensure approval, employment guarantee, or earnings guarantee is claimed.\n',encoding='utf-8')
+          (qa/'GUIDE_56_RELEASE_AUDIT_10.md').write_text('# Guide 56 — Release Audit 10\n\n**Stage:** Release Audit — **PASS**\n\nRelease audit verified predecessor gates, trilingual Markdown/DOCX/PDF artifacts, DOCX/PDF integrity, searchable PDF text, all-page render evidence, strict clipping controls, publication metadata, SHA-256 checksum coverage, currency-parser control, and controlled numeric-representation parity. Guide 56 is closed for the controlled revision sequence and may advance to Guide 57.\n\nThis is an internal controlled release audit, not independent human certification or accreditation.\n',encoding='utf-8')
           sp=root/'GUIDE_56_HELPER_STATUS.json'; status=json.loads(sp.read_text(encoding='utf-8'))
           assert status['stages']['technical_qa']['status']=='PASS'
           assert status['stages']['publication']['status']=='PENDING'
