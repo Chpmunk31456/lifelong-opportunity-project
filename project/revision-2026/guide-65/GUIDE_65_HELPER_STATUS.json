@@ -17,8 +17,11 @@
       ]
     },
     "english_editorial": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-65/working-masters/GUIDE_65_RECREATION_WORKER_AND_ACTIVITIES_COORDINATOR_ENGLISH_v2.md",
+        "project/revision-2026/guide-65/qa/GUIDE_65_ENGLISH_EDITORIAL_QA_03.md"
+      ]
     },
     "evidence_traceability": {
       "status": "PENDING",
