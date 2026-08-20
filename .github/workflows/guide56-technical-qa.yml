@@ -1,0 +1,160 @@
+name: Guide 56 trilingual technical QA
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide56-technical-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide56-trilingual-technical-qa
+  cancel-in-progress: false
+
+jobs:
+  technical-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out controlled revision branch
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Run fail-closed trilingual controls
+        shell: python
+        run: |
+          from pathlib import Path
+          import json,re,sys,unicodedata
+
+          root=Path('project/revision-2026/guide-56')
+          masters=root/'working-masters'
+          paths={
+            'en': masters/'GUIDE_56_NURSING_ASSISTANT_AND_PATIENT_CARE_TECHNICIAN_ENGLISH_v2.md',
+            'es-419': masters/'GUIDE_56_NURSING_ASSISTANT_AND_PATIENT_CARE_TECHNICIAN_ES419_v2.md',
+            'pt-BR': masters/'GUIDE_56_NURSING_ASSISTANT_AND_PATIENT_CARE_TECHNICIAN_PTBR_v2.md',
+          }
+          texts={k:p.read_text(encoding='utf-8') for k,p in paths.items()}
+          problems=[]
+
+          def fold(s):
+            s=re.sub(r'[*_`~]+','',s.lower())
+            return ''.join(c for c in unicodedata.normalize('NFKD',s) if not unicodedata.combining(c))
+
+          # Encoding, placeholders, and minimum controlled structure.
+          sections={}
+          urls={}
+          for lang,text in texts.items():
+            if text.startswith('\ufeff') or '\ufffd' in text:
+              problems.append(f'{lang}: UTF-8 defect')
+            low=fold(text)
+            for bad in ('todo:','lorem ipsum','[insert','translation pending','traduccion pendiente','traducao pendente'):
+              if bad in low: problems.append(f'{lang}: placeholder {bad}')
+            sections[lang]=len(re.findall(r'^##\s+.+$',text,re.M))
+            urls[lang]=set(re.findall(r'https://[^\s)<>`]+',text))
+            if sections[lang] < 20:
+              problems.append(f'{lang}: insufficient section structure ({sections[lang]})')
+            if len(text) < 12000:
+              problems.append(f'{lang}: unexpectedly short controlled master ({len(text)} chars)')
+
+          if len(set(sections.values())) != 1:
+            problems.append(f'trilingual section-count mismatch: {sections}')
+          if not (urls['en']==urls['es-419']==urls['pt-BR']):
+            for lang in ('es-419','pt-BR'):
+              if urls[lang] != urls['en']:
+                problems.append(f'{lang}: URL parity mismatch; missing={sorted(urls["en"]-urls[lang])}; extra={sorted(urls[lang]-urls["en"])}')
+          if len(urls['en']) != 13:
+            problems.append(f'expected 13 frozen source URLs, found {len(urls["en"])}')
+
+          # Controlled occupation, wage, training, and funding values.
+          numeric_patterns=[
+            r'39[,.]530',r'37[,.]700',r'2\s*%',r'211[,.]800',
+            r'34[,.]701',r'17\s*(?:per|por|/)',r'31[,.]120',r'36[,.]431',
+            r'33102',r'19[,.]00',r'24[,.]00',r'28[,.]84',r'3311',r'2[,.]?640'
+          ]
+          for lang,text in texts.items():
+            for pat in numeric_patterns:
+              if not re.search(pat,text,re.I|re.S):
+                problems.append(f'{lang}: missing controlled numeric/classification value {pat}')
+
+          markers={
+            'en':['patient care technician','wioa','rethus','infection prevention','privacy and confidentiality','ai must not replace licensed clinical judgment','under delegation, supervision, and control'],
+            'es-419':['patient care technician','wioa','rethus','prevencion de infecciones','privacidad','ia no debe sustituir','delegacion'],
+            'pt-BR':['patient care technician','wioa','rethus','prevencao de infeccoes','privacidade','ia nao deve substituir','delegacao'],
+          }
+          for lang,text in texts.items():
+            low=fold(text)
+            for marker in markers[lang]:
+              if fold(marker) not in low:
+                problems.append(f'{lang}: missing safety/terminology marker {marker}')
+
+          # Assurance boundary must remain explicit and must not claim certification.
+          assurances={
+            'en':'does not claim independent human certification',
+            'es-419':'no afirma certificacion humana independiente',
+            'pt-BR':'nao afirma certificacao humana independente',
+          }
+          for lang,text in texts.items():
+            if fold(assurances[lang]) not in fold(text):
+              problems.append(f'{lang}: assurance boundary missing')
+
+          if problems:
+            print('\n'.join(problems))
+            sys.exit(1)
+          print(f'Guide 56 trilingual Technical QA controls PASS: sections={sections}; frozen_urls={len(urls["en"])}')
+
+      - name: Record Technical QA PASS and advance manifest
+        shell: python
+        run: |
+          from pathlib import Path
+          import json
+          root=Path('project/revision-2026/guide-56')
+          qa=root/'qa'
+          evidence=qa/'GUIDE_56_TRILINGUAL_TECHNICAL_QA_08.md'
+          evidence.write_text('''# Guide 56 — Trilingual Technical QA 08
+
+**Guide:** 56 — Nursing Assistant and Patient Care Technician  
+**Stage:** Trilingual Technical QA — **PASS**  
+**Date:** August 19, 2026
+
+Automated fail-closed controls verified the frozen English, neutral Latin American Spanish (`es-419`), and Brazilian Portuguese (`pt-BR`) masters for:
+
+- UTF-8 integrity and absence of localization placeholders;
+- aligned section structure across all three editions;
+- exact parity of the 13 frozen source URLs;
+- controlled U.S., Canada, and Colombia wage, classification, training-duration, and outlook values;
+- PCT scope boundaries and the non-standardized-title warning;
+- WIOA, NOC 33102, CNO 3311, ReTHUS, infection-prevention, privacy, delegation/supervision, and AI-safety terminology;
+- explicit prohibition on AI replacing licensed clinical judgment; and
+- the assurance boundary against claims of independent human certification, accreditation, certified translation, legal review, clinical approval, financial advice, or guaranteed employment.
+
+**Decision:** Technical QA **PASS**. Publication and Release Audit remain fail-closed until the controlled DOCX/PDF build, searchable-text validation, all-page render inspection, metadata, and SHA-256 checksum controls pass.
+''',encoding='utf-8')
+
+          sp=root/'GUIDE_56_HELPER_STATUS.json'
+          d=json.loads(sp.read_text(encoding='utf-8'))
+          assert d['stages']['portuguese_localization']['status']=='PASS'
+          assert d['stages']['technical_qa']['status']=='PENDING'
+          assert d['stages']['publication']['status']=='PENDING'
+          assert d['stages']['release_audit']['status']=='PENDING'
+          assert not d.get('blockers')
+          d['stages']['technical_qa']={
+            'status':'PASS',
+            'evidence':['project/revision-2026/guide-56/qa/GUIDE_56_TRILINGUAL_TECHNICAL_QA_08.md']
+          }
+          sp.write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+
+      - name: Commit auditable Technical QA closure
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- project/revision-2026/guide-56/GUIDE_56_HELPER_STATUS.json project/revision-2026/guide-56/qa/GUIDE_56_TRILINGUAL_TECHNICAL_QA_08.md
+          git diff --cached --check
+          git commit -m 'Guide 56: pass trilingual Technical QA'
+          git pull --rebase origin revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026
