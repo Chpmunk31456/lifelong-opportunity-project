@@ -4,6 +4,7 @@
   "branch": "revision/guide-00-100-2026",
   "updated": "2026-08-20",
   "publication_workflow": ".github/workflows/guide64-publication-build.yml",
+  "publication_retry": 2,
   "stages": {
     "baseline_inventory": {"status": "PASS", "evidence": ["project/revision-2026/guide-64/qa/GUIDE_64_BASELINE_INVENTORY_01.md"]},
     "research": {"status": "PASS", "evidence": ["project/revision-2026/guide-64/research/GUIDE_64_CURRENT_SOURCE_EVIDENCE_02.md"]},
