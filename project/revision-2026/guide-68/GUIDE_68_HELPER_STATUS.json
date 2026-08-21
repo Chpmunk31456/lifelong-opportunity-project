@@ -43,8 +43,11 @@
       ]
     },
     "portuguese_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-68/working-masters/GUIDE_68_BAKER_AND_PASTRY_PRODUCTION_WORKER_PTBR_v2.md",
+        "project/revision-2026/guide-68/qa/GUIDE_68_PORTUGUESE_LOCALIZATION_QA_07.md"
+      ]
     },
     "technical_qa": {
       "status": "PENDING",
