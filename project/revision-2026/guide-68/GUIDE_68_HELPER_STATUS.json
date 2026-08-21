@@ -17,8 +17,11 @@
       ]
     },
     "english_editorial": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-68/working-masters/GUIDE_68_BAKER_AND_PASTRY_PRODUCTION_WORKER_ENGLISH_v2.md",
+        "project/revision-2026/guide-68/qa/GUIDE_68_ENGLISH_EDITORIAL_QA_03.md"
+      ]
     },
     "evidence_traceability": {
       "status": "PENDING",
