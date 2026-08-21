@@ -35,7 +35,13 @@
         "project/revision-2026/guide-72/qa/GUIDE_72_ENGLISH_SOURCE_FREEZE_05.md"
       ]
     },
-    "spanish_localization": {"status": "PENDING", "evidence": []},
+    "spanish_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-72/working-masters/GUIDE_72_SUPERVISOR_DE_COMERCIO_MINORISTA_Y_COORDINADOR_DE_MERCHANDISING_ES419_v2.md",
+        "project/revision-2026/guide-72/qa/GUIDE_72_SPANISH_LOCALIZATION_QA_06.md"
+      ]
+    },
     "portuguese_localization": {"status": "PENDING", "evidence": []},
     "technical_qa": {"status": "PENDING", "evidence": []},
     "publication": {"status": "PENDING", "evidence": []},
