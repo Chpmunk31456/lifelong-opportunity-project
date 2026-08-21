@@ -1,0 +1,39 @@
+{
+  "guide": "71",
+  "occupation": "Event Coordinator and Meeting Assistant",
+  "build_date": "2026-08-21",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_71_ENGLISH_v2.docx",
+      "pdf": "GUIDE_71_ENGLISH_v2.pdf",
+      "docx_bytes": 33894,
+      "pdf_bytes": 498589,
+      "pdf_pages": 30,
+      "rendered_pages": 30,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_71_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_71_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 35775,
+      "pdf_bytes": 522095,
+      "pdf_pages": 31,
+      "rendered_pages": 31,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_71_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_71_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 35682,
+      "pdf_bytes": 520916,
+      "pdf_pages": 31,
+      "rendered_pages": 31,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA, controlled render inspection, and controlled source review; not independent human certification, professional translation certification, professional event certification, legal review, accessibility certification, event-safety certification, accreditation, licensing approval, funding approval, apprenticeship placement, vendor acceptance, employment guarantee, or earnings guarantee."
+}
