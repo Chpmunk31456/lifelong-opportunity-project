@@ -35,7 +35,13 @@
         "project/revision-2026/guide-70/qa/GUIDE_70_ENGLISH_SOURCE_FREEZE_05.md"
       ]
     },
-    "spanish_localization": {"status": "PENDING", "evidence": []},
+    "spanish_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-70/working-masters/GUIDE_70_AGENTE_DE_VIAJES_Y_COORDINADOR_DE_VIAJES_ES419_v2.md",
+        "project/revision-2026/guide-70/qa/GUIDE_70_SPANISH_LOCALIZATION_QA_06.md"
+      ]
+    },
     "portuguese_localization": {"status": "PENDING", "evidence": []},
     "technical_qa": {"status": "PENDING", "evidence": []},
     "publication": {"status": "PENDING", "evidence": []},
