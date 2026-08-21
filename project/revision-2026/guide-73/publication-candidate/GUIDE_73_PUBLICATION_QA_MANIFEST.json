@@ -1,0 +1,39 @@
+{
+  "guide": "73",
+  "occupation": "Sales Support and Account Coordinator",
+  "build_date": "2026-08-21",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_73_ENGLISH_v2.docx",
+      "pdf": "GUIDE_73_ENGLISH_v2.pdf",
+      "docx_bytes": 21615,
+      "pdf_bytes": 194893,
+      "pdf_pages": 12,
+      "rendered_pages": 12,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_73_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_73_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 22407,
+      "pdf_bytes": 205373,
+      "pdf_pages": 13,
+      "rendered_pages": 13,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_73_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_73_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 22367,
+      "pdf_bytes": 204539,
+      "pdf_pages": 13,
+      "rendered_pages": 13,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA and controlled source review; not independent human certification, professional translation certification, legal/tax/financial/cybersecurity review, accessibility certification, accreditation, funding approval, employment guarantee, or earnings guarantee."
+}
