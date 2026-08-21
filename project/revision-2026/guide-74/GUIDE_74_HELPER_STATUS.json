@@ -6,15 +6,11 @@
   "stages": {
     "baseline_inventory": {
       "status": "PASS",
-      "evidence": [
-        "project/revision-2026/guide-74/qa/GUIDE_74_BASELINE_INVENTORY_01.md"
-      ]
+      "evidence": ["project/revision-2026/guide-74/qa/GUIDE_74_BASELINE_INVENTORY_01.md"]
     },
     "research": {
       "status": "PASS",
-      "evidence": [
-        "project/revision-2026/guide-74/research/GUIDE_74_CURRENT_SOURCE_EVIDENCE_02.md"
-      ]
+      "evidence": ["project/revision-2026/guide-74/research/GUIDE_74_CURRENT_SOURCE_EVIDENCE_02.md"]
     },
     "english_editorial": {
       "status": "PASS",
@@ -25,15 +21,11 @@
     },
     "evidence_traceability": {
       "status": "PASS",
-      "evidence": [
-        "project/revision-2026/guide-74/qa/GUIDE_74_EVIDENCE_TRACEABILITY_QA_04.md"
-      ]
+      "evidence": ["project/revision-2026/guide-74/qa/GUIDE_74_EVIDENCE_TRACEABILITY_QA_04.md"]
     },
     "english_source_freeze": {
       "status": "PASS",
-      "evidence": [
-        "project/revision-2026/guide-74/qa/GUIDE_74_ENGLISH_SOURCE_FREEZE_05.md"
-      ]
+      "evidence": ["project/revision-2026/guide-74/qa/GUIDE_74_ENGLISH_SOURCE_FREEZE_05.md"]
     },
     "spanish_localization": {
       "status": "PASS",
@@ -43,21 +35,15 @@
       ]
     },
     "portuguese_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-74/working-masters/GUIDE_74_ECOMMERCE_SPECIALIST_AND_MARKETPLACE_COORDINATOR_PTBR_v2.md",
+        "project/revision-2026/guide-74/qa/GUIDE_74_PORTUGUESE_LOCALIZATION_QA_07.md"
+      ]
     },
-    "technical_qa": {
-      "status": "PENDING",
-      "evidence": []
-    },
-    "publication": {
-      "status": "PENDING",
-      "evidence": []
-    },
-    "release_audit": {
-      "status": "PENDING",
-      "evidence": []
-    }
+    "technical_qa": {"status": "PENDING", "evidence": []},
+    "publication": {"status": "PENDING", "evidence": []},
+    "release_audit": {"status": "PENDING", "evidence": []}
   },
   "blockers": []
 }
