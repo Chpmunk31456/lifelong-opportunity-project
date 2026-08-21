@@ -23,7 +23,12 @@
         "project/revision-2026/guide-73/qa/GUIDE_73_ENGLISH_EDITORIAL_QA_04.md"
       ]
     },
-    "evidence_traceability": {"status": "PENDING", "evidence": []},
+    "evidence_traceability": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-73/qa/GUIDE_73_EVIDENCE_TRACEABILITY_QA_05.md"
+      ]
+    },
     "english_source_freeze": {"status": "PENDING", "evidence": []},
     "spanish_localization": {"status": "PENDING", "evidence": []},
     "portuguese_localization": {"status": "PENDING", "evidence": []},
