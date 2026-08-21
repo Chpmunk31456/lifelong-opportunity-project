@@ -24,8 +24,10 @@
       ]
     },
     "evidence_traceability": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-68/qa/GUIDE_68_EVIDENCE_TRACEABILITY_QA_04.md"
+      ]
     },
     "english_source_freeze": {
       "status": "PENDING",
