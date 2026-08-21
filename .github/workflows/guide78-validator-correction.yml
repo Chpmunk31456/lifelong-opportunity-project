@@ -6,6 +6,11 @@ on:
     paths:
       - '.github/workflows/guide78-validator-correction.yml'
       - 'project/revision-2026/guide-78/qa/GUIDE_78_TRILINGUAL_TECHNICAL_QA_08.md'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/guide78-validator-correction.yml'
+      - 'project/revision-2026/guide-78/qa/GUIDE_78_TRILINGUAL_TECHNICAL_QA_08.md'
   workflow_dispatch:
 
 permissions:
