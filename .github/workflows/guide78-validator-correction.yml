@@ -1,53 +1,20 @@
-name: Guide 78 publication validator correction
+name: Guide 78 validator correction audit
 
 on:
-  push:
-    branches: [revision/guide-00-100-2026]
-    paths:
-      - '.github/workflows/guide78-validator-correction.yml'
-      - 'project/revision-2026/guide-78/qa/GUIDE_78_TRILINGUAL_TECHNICAL_QA_08.md'
-  pull_request:
-    branches: [main]
-    paths:
-      - '.github/workflows/guide78-validator-correction.yml'
-      - 'project/revision-2026/guide-78/qa/GUIDE_78_TRILINGUAL_TECHNICAL_QA_08.md'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  correct:
+  audit:
     runs-on: ubuntu-latest
     steps:
       - name: Check out controlled revision branch
         uses: actions/checkout@v5
         with:
           ref: revision/guide-00-100-2026
-          fetch-depth: 0
-
-      - name: Accept singular/plural and hyphenated duration forms
-        shell: python
+      - name: Record retired correction path
         run: |
-          from pathlib import Path
-          path=Path('.github/workflows/guide78-publication-build.yml')
-          text=path.read_text(encoding='utf-8')
-          old="r'4\\.5:1',r'3:1',r'200\\s*%',r'40\\s+(?:hours|horas)',r'80\\s*(?:-?hour|horas)'"
-          new="r'4\\.5:1',r'3:1',r'200\\s*%',r'40[-\\s]+(?:hours?|horas)',r'80[-\\s]*(?:hours?|horas)'"
-          if old in text:
-            text=text.replace(old,new,1)
-            path.write_text(text,encoding='utf-8')
-          elif new not in text:
-            raise SystemExit('expected Guide 78 duration validator expression not found')
-
-      - name: Commit validator correction
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- .github/workflows/guide78-publication-build.yml
-          git diff --cached --quiet && exit 0
-          git commit -m 'fix(guide-78): accept valid duration grammar in publication QA'
-          git pull --rebase origin revision/guide-00-100-2026
-          git push origin HEAD:revision/guide-00-100-2026
+          echo 'The workflow-mutating correction path is retired.'
+          echo 'Guide 78 duration wording is normalized in the controlled English master; publication remains fail-closed.'
