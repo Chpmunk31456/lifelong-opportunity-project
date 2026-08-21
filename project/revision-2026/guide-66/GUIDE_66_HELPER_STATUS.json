@@ -36,8 +36,11 @@
       ]
     },
     "spanish_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-66/working-masters/GUIDE_66_FOOD_SERVICE_MANAGER_TRAINEE_AND_RESTAURANT_SUPERVISOR_ES419_v2.md",
+        "project/revision-2026/guide-66/qa/GUIDE_66_SPANISH_LOCALIZATION_QA_06.md"
+      ]
     },
     "portuguese_localization": {
       "status": "PENDING",
