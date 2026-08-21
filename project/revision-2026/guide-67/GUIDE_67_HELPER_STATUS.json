@@ -36,8 +36,11 @@
       ]
     },
     "spanish_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-67/working-masters/GUIDE_67_COOK_AND_CULINARY_SPECIALIST_ES419_v2.md",
+        "project/revision-2026/guide-67/qa/GUIDE_67_SPANISH_LOCALIZATION_QA_06.md"
+      ]
     },
     "portuguese_localization": {
       "status": "PENDING",
