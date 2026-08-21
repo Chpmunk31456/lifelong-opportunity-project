@@ -17,8 +17,11 @@
       ]
     },
     "english_editorial": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-74/working-masters/GUIDE_74_ECOMMERCE_SPECIALIST_AND_MARKETPLACE_COORDINATOR_ENGLISH_v2.md",
+        "project/revision-2026/guide-74/qa/GUIDE_74_ENGLISH_EDITORIAL_QA_03.md"
+      ]
     },
     "evidence_traceability": {
       "status": "PENDING",
