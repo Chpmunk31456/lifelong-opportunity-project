@@ -42,7 +42,13 @@
         "project/revision-2026/guide-72/qa/GUIDE_72_SPANISH_LOCALIZATION_QA_06.md"
       ]
     },
-    "portuguese_localization": {"status": "PENDING", "evidence": []},
+    "portuguese_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-72/working-masters/GUIDE_72_SUPERVISOR_DE_VAREJO_E_COORDENADOR_DE_MERCHANDISING_PTBR_v2.md",
+        "project/revision-2026/guide-72/qa/GUIDE_72_PORTUGUESE_LOCALIZATION_QA_07.md"
+      ]
+    },
     "technical_qa": {"status": "PENDING", "evidence": []},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
