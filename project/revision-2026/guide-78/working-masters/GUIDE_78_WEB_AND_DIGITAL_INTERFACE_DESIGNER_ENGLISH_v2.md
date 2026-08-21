@@ -468,7 +468,7 @@ Listed job names include UX designer, UI designer, interaction designer, web des
 
 ### SENA
 
-SENA Betowa currently lists **Diseño web con Adobe Dreamweaver**, a **40-hour** complementary virtual program. It includes website/page configuration, CSS, multimedia integration and publication. The presence of this program is useful evidence of a current SENA web-design learning option, but **Dreamweaver is not treated in this guide as a required modern industry tool**. Learners should compare the current course content with the skills in real job postings before relying on it as their main preparation.
+SENA Betowa currently lists **Diseño web con Adobe Dreamweaver**, a complementary virtual program totaling **40 hours**. It includes website/page configuration, CSS, multimedia integration and publication. The presence of this program is useful evidence of a current SENA web-design learning option, but **Dreamweaver is not treated in this guide as a required modern industry tool**. Learners should compare the current course content with the skills in real job postings before relying on it as their main preparation.
 
 Betowa also surfaces **Diseño de sitios web** as an **80-hour** complementary course in current listings. Availability, municipality, modality, cohort and seats change.
 
