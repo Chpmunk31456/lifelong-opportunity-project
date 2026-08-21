@@ -1,0 +1,40 @@
+{
+  "guide": "77",
+  "occupation": "Graphic Designer and Production Artist",
+  "build_date": "2026-08-21",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_77_ENGLISH_v2.docx",
+      "pdf": "GUIDE_77_ENGLISH_v2.pdf",
+      "docx_bytes": 21282,
+      "pdf_bytes": 219824,
+      "pdf_pages": 12,
+      "rendered_pages": 12,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_77_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_77_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 22193,
+      "pdf_bytes": 223154,
+      "pdf_pages": 13,
+      "rendered_pages": 13,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_77_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_77_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 22229,
+      "pdf_bytes": 224161,
+      "pdf_pages": 13,
+      "rendered_pages": 13,
+      "status": "PASS"
+    }
+  ],
+  "controlled_source_urls": 13,
+  "assurance_boundary": "Internal automated publication QA, controlled live-link checks, all-page render inspection, and controlled source review; not independent human certification, professional translation certification, legal/copyright review, accessibility certification, cybersecurity certification, accreditation, funding approval, employment guarantee, freelance-work guarantee, client-acquisition guarantee, or earnings guarantee."
+}
