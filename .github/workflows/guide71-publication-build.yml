@@ -7,6 +7,11 @@ on:
     paths:
       - '.github/workflows/guide71-publication-build.yml'
       - 'project/revision-2026/guide-71/qa/GUIDE_71_TRILINGUAL_TECHNICAL_QA_08.md'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/guide71-publication-build.yml'
+      - 'project/revision-2026/guide-71/qa/GUIDE_71_TRILINGUAL_TECHNICAL_QA_08.md'
   workflow_dispatch:
 
 permissions:
