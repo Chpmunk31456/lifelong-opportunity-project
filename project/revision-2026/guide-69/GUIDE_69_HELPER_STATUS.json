@@ -36,8 +36,11 @@
       ]
     },
     "spanish_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-69/working-masters/GUIDE_69_RECEPCION_DE_HOTEL_Y_SERVICIOS_AL_HUESPED_ES419_v2.md",
+        "project/revision-2026/guide-69/qa/GUIDE_69_SPANISH_LOCALIZATION_QA_06.md"
+      ]
     },
     "portuguese_localization": {
       "status": "PENDING",
