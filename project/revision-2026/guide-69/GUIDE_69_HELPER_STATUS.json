@@ -43,8 +43,11 @@
       ]
     },
     "portuguese_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-69/working-masters/GUIDE_69_RECEPCAO_DE_HOTEL_E_SERVICOS_AO_HOSPEDE_PTBR_v2.md",
+        "project/revision-2026/guide-69/qa/GUIDE_69_PORTUGUESE_LOCALIZATION_QA_07.md"
+      ]
     },
     "technical_qa": {
       "status": "PENDING",
