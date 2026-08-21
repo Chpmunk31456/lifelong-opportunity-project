@@ -50,8 +50,10 @@
       ]
     },
     "technical_qa": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-69/qa/GUIDE_69_TRILINGUAL_TECHNICAL_QA_08.md"
+      ]
     },
     "publication": {
       "status": "PENDING",
