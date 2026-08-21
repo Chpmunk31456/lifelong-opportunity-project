@@ -1,0 +1,82 @@
+name: Guide 78 controlled outlook correction
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide78-content-correction.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  correct:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out controlled revision branch
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Patch frozen outlook values into all three masters
+        shell: python
+        run: |
+          from pathlib import Path
+
+          root=Path('project/revision-2026/guide-78')
+          masters=root/'working-masters'
+          patches=[
+            (
+              masters/'GUIDE_78_WEB_AND_DIGITAL_INTERFACE_DESIGNER_ENGLISH_v2.md',
+              '## Earnings research',
+              '''## United States employment outlook\n\nO*NET's current occupation data report **128,900** people employed in 2024, projected growth of **7% or higher** for 2024–2034 (classified as much faster than average), and **9,100** projected openings over 2024–2034. These are occupation-level projections, not a guarantee that any individual learner will obtain a job.\n\n'''
+            ),
+            (
+              masters/'GUIDE_78_DISENADOR_DE_INTERFACES_WEB_Y_DIGITALES_ES419_v2.md',
+              '## Investigación de ingresos',
+              '''## Perspectiva de empleo — Estados Unidos\n\nLos datos ocupacionales actuales de O*NET informan **128,900** personas empleadas en 2024, crecimiento proyectado de **7% o más** para 2024–2034 (clasificado como mucho más rápido que el promedio) y **9,100** vacantes proyectadas durante 2024–2034. Son proyecciones de la ocupación y no garantizan que una persona obtendrá empleo.\n\n'''
+            ),
+            (
+              masters/'GUIDE_78_DESIGNER_DE_WEB_E_INTERFACES_DIGITAIS_PTBR_v2.md',
+              '## Pesquisa de renda',
+              '''## Perspectiva de emprego — Estados Unidos\n\nOs dados ocupacionais atuais da O*NET informam **128,900** pessoas empregadas em 2024, crescimento projetado de **7% ou mais** para 2024–2034 (classificado como muito mais rápido que a média) e **9,100** vagas projetadas ao longo de 2024–2034. São projeções da ocupação e não garantem emprego para nenhum indivíduo.\n\n'''
+            )
+          ]
+          for path, marker, block in patches:
+            text=path.read_text(encoding='utf-8')
+            assert marker in text, f'missing insertion marker in {path}'
+            assert '128,900' not in text, f'outlook already present in {path}'
+            text=text.replace(marker, block+marker, 1)
+            path.write_text(text, encoding='utf-8')
+
+          qa=root/'qa/GUIDE_78_TRILINGUAL_TECHNICAL_QA_08.md'
+          q=qa.read_text(encoding='utf-8')
+          note='''\n## Corrective verification — publication preflight\n\nA fail-closed publication preflight detected that the frozen U.S. outlook values (`128,900`, `7% or higher`, `9,100`) were present in the research/source-freeze controls but had been omitted from the three reader-facing masters. The omission was corrected identically across English, `es-419`, and `pt-BR`. No source value, occupational mapping, wage, accessibility rule, role boundary, or assurance boundary was changed. The corrected masters were rechecked for trilingual parity before publication was retriggered.\n'''
+          if '## Corrective verification — publication preflight' not in q:
+            qa.write_text(q.rstrip()+note+'\n', encoding='utf-8')
+
+      - name: Verify correction before commit
+        shell: python
+        run: |
+          from pathlib import Path
+          root=Path('project/revision-2026/guide-78/working-masters')
+          files=list(root.glob('GUIDE_78_*_v2.md'))
+          assert len(files)==3
+          for p in files:
+            t=p.read_text(encoding='utf-8')
+            for v in ('128,900','7%','9,100'):
+              assert v in t, f'{p.name}: missing {v}'
+          print('Guide 78 corrective trilingual outlook verification PASS')
+
+      - name: Commit corrected controlled masters
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- project/revision-2026/guide-78/working-masters project/revision-2026/guide-78/qa/GUIDE_78_TRILINGUAL_TECHNICAL_QA_08.md
+          git diff --cached --quiet && exit 0
+          git commit -m 'fix(guide-78): restore frozen outlook values across trilingual masters'
+          git push origin HEAD:revision/guide-00-100-2026
