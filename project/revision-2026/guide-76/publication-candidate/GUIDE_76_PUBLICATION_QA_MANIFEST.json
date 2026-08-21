@@ -1,0 +1,40 @@
+{
+  "guide": "76",
+  "occupation": "Public Relations Assistant and Communications Coordinator",
+  "build_date": "2026-08-21",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_76_ENGLISH_v2.docx",
+      "pdf": "GUIDE_76_ENGLISH_v2.pdf",
+      "docx_bytes": 28251,
+      "pdf_bytes": 365163,
+      "pdf_pages": 21,
+      "rendered_pages": 21,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_76_SPANISH_es-419_v1.docx",
+      "pdf": "GUIDE_76_SPANISH_es-419_v1.pdf",
+      "docx_bytes": 29210,
+      "pdf_bytes": 369832,
+      "pdf_pages": 22,
+      "rendered_pages": 22,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_76_PORTUGUESE_pt-BR_v1.docx",
+      "pdf": "GUIDE_76_PORTUGUESE_pt-BR_v1.pdf",
+      "docx_bytes": 29213,
+      "pdf_bytes": 370087,
+      "pdf_pages": 22,
+      "rendered_pages": 22,
+      "status": "PASS"
+    }
+  ],
+  "controlled_source_urls": 18,
+  "assurance_boundary": "Internal automated publication QA, live-link checks, all-page render inspection, and controlled source review; not independent human certification, professional translation certification, legal/privacy/cybersecurity review, accessibility certification, accreditation, funding approval, employment guarantee, promotion guarantee, or earnings guarantee."
+}
