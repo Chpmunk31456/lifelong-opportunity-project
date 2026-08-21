@@ -36,8 +36,11 @@
       ]
     },
     "spanish_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-74/working-masters/GUIDE_74_ECOMMERCE_SPECIALIST_AND_MARKETPLACE_COORDINATOR_ES419_v2.md",
+        "project/revision-2026/guide-74/qa/GUIDE_74_SPANISH_LOCALIZATION_QA_06.md"
+      ]
     },
     "portuguese_localization": {
       "status": "PENDING",
