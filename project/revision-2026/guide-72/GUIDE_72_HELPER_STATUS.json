@@ -16,7 +16,13 @@
         "project/revision-2026/guide-72/research/GUIDE_72_CURRENT_SOURCE_EVIDENCE_02.md"
       ]
     },
-    "english_editorial": {"status": "PENDING", "evidence": []},
+    "english_editorial": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-72/working-masters/GUIDE_72_RETAIL_SUPERVISOR_AND_MERCHANDISING_COORDINATOR_ENGLISH_v2.md",
+        "project/revision-2026/guide-72/qa/GUIDE_72_ENGLISH_EDITORIAL_QA_03.md"
+      ]
+    },
     "evidence_traceability": {"status": "PENDING", "evidence": []},
     "english_source_freeze": {"status": "PENDING", "evidence": []},
     "spanish_localization": {"status": "PENDING", "evidence": []},
