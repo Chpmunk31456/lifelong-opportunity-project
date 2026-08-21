@@ -17,8 +17,11 @@
       ]
     },
     "english_editorial": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-69/working-masters/GUIDE_69_HOTEL_FRONT_DESK_AND_GUEST_SERVICES_ENGLISH_v2.md",
+        "project/revision-2026/guide-69/qa/GUIDE_69_ENGLISH_EDITORIAL_QA_03.md"
+      ]
     },
     "evidence_traceability": {
       "status": "PENDING",
