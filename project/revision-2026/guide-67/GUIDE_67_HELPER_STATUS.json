@@ -17,8 +17,11 @@
       ]
     },
     "english_editorial": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-67/working-masters/GUIDE_67_COOK_AND_CULINARY_SPECIALIST_ENGLISH_v2.md",
+        "project/revision-2026/guide-67/qa/GUIDE_67_ENGLISH_EDITORIAL_QA_03.md"
+      ]
     },
     "evidence_traceability": {
       "status": "PENDING",
