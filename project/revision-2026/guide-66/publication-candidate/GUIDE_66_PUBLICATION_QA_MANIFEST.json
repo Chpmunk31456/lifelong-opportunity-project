@@ -1,0 +1,39 @@
+{
+  "guide": "66",
+  "occupation": "Food Service Manager Trainee and Restaurant Supervisor",
+  "build_date": "2026-08-20",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_66_ENGLISH_v2.docx",
+      "pdf": "GUIDE_66_ENGLISH_v2.pdf",
+      "docx_bytes": 22594,
+      "pdf_bytes": 220958,
+      "pdf_pages": 13,
+      "rendered_pages": 13,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_66_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_66_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 23789,
+      "pdf_bytes": 226289,
+      "pdf_pages": 14,
+      "rendered_pages": 14,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_66_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_66_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 23590,
+      "pdf_bytes": 226903,
+      "pdf_pages": 14,
+      "rendered_pages": 14,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA and controlled source review; not independent human certification, professional translation certification, professional food-safety certification, legal review, accessibility certification, accreditation, or employment/earnings guarantee."
+}
