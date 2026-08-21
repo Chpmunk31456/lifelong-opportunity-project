@@ -16,7 +16,13 @@
         "project/revision-2026/guide-77/research/GUIDE_77_CURRENT_SOURCE_EVIDENCE_02.md"
       ]
     },
-    "english_editorial": {"status": "PENDING", "evidence": []},
+    "english_editorial": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-77/working-masters/GUIDE_77_GRAPHIC_DESIGNER_AND_PRODUCTION_ARTIST_ENGLISH_v2.md",
+        "project/revision-2026/guide-77/qa/GUIDE_77_ENGLISH_EDITORIAL_QA_03.md"
+      ]
+    },
     "evidence_traceability": {"status": "PENDING", "evidence": []},
     "english_source_freeze": {"status": "PENDING", "evidence": []},
     "spanish_localization": {"status": "PENDING", "evidence": []},
