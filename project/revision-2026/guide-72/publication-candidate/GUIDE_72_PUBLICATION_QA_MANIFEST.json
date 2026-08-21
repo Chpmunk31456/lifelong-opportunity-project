@@ -1,0 +1,39 @@
+{
+  "guide": "72",
+  "occupation": "Retail Supervisor and Merchandising Coordinator",
+  "build_date": "2026-08-21",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_72_ENGLISH_v2.docx",
+      "pdf": "GUIDE_72_ENGLISH_v2.pdf",
+      "docx_bytes": 33293,
+      "pdf_bytes": 469752,
+      "pdf_pages": 28,
+      "rendered_pages": 28,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_72_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_72_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 33023,
+      "pdf_bytes": 464796,
+      "pdf_pages": 27,
+      "rendered_pages": 27,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_72_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_72_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 30540,
+      "pdf_bytes": 443352,
+      "pdf_pages": 25,
+      "rendered_pages": 25,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA, controlled render inspection, and controlled source review; not independent human certification, professional translation certification, legal review, HR certification, accessibility certification, safety certification, cybersecurity certification, loss-prevention certification, accreditation, licensing approval, funding approval, apprenticeship placement, employment guarantee, promotion guarantee, or earnings guarantee."
+}

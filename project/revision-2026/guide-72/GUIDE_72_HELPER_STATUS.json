@@ -55,8 +55,20 @@
         "project/revision-2026/guide-72/qa/GUIDE_72_TRILINGUAL_TECHNICAL_QA_08.md"
       ]
     },
-    "publication": {"status": "PENDING", "evidence": []},
-    "release_audit": {"status": "PENDING", "evidence": []}
+    "publication": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-72/qa/GUIDE_72_PUBLICATION_QA_09.md",
+        "project/revision-2026/guide-72/publication-candidate/GUIDE_72_PUBLICATION_QA_MANIFEST.json",
+        "project/revision-2026/guide-72/publication-candidate/SHA256SUMS.txt"
+      ]
+    },
+    "release_audit": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-72/qa/GUIDE_72_RELEASE_AUDIT_10.md"
+      ]
+    }
   },
   "blockers": []
 }
