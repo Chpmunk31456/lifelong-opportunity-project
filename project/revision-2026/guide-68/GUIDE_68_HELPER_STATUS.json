@@ -56,12 +56,18 @@
       ]
     },
     "publication": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-68/qa/GUIDE_68_PUBLICATION_QA_09.md",
+        "project/revision-2026/guide-68/publication-candidate/GUIDE_68_PUBLICATION_QA_MANIFEST.json",
+        "project/revision-2026/guide-68/publication-candidate/SHA256SUMS.txt"
+      ]
     },
     "release_audit": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-68/qa/GUIDE_68_RELEASE_AUDIT_10.md"
+      ]
     }
   },
   "blockers": []
