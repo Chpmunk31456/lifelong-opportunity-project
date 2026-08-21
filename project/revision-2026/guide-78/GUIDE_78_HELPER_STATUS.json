@@ -11,7 +11,7 @@
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-78/qa/GUIDE_78_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-78/working-masters/GUIDE_78_DISENADOR_DE_INTERFACES_WEB_Y_DIGITALES_ES419_v2.md", "project/revision-2026/guide-78/qa/GUIDE_78_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-78/working-masters/GUIDE_78_DESIGNER_DE_WEB_E_INTERFACES_DIGITAIS_PTBR_v2.md", "project/revision-2026/guide-78/qa/GUIDE_78_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-78/qa/GUIDE_78_TRILINGUAL_TECHNICAL_QA_08.md"]},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
