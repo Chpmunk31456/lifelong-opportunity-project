@@ -1,0 +1,40 @@
+{
+  "guide": "74",
+  "occupation": "Ecommerce Specialist and Marketplace Coordinator",
+  "build_date": "2026-08-21",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_74_ENGLISH_v2.docx",
+      "pdf": "GUIDE_74_ENGLISH_v2.pdf",
+      "docx_bytes": 25664,
+      "pdf_bytes": 351301,
+      "pdf_pages": 19,
+      "rendered_pages": 19,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_74_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_74_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 26515,
+      "pdf_bytes": 362067,
+      "pdf_pages": 20,
+      "rendered_pages": 20,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_74_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_74_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 26525,
+      "pdf_bytes": 362475,
+      "pdf_pages": 20,
+      "rendered_pages": 20,
+      "status": "PASS"
+    }
+  ],
+  "controlled_source_urls": 18,
+  "assurance_boundary": "Internal automated publication QA, live-link checks, all-page render inspection, and controlled source review; not independent human certification, professional translation certification, legal/tax/financial/cybersecurity review, accessibility certification, accreditation, regulatory approval, marketplace approval, seller-status approval, funding approval, employment guarantee, promotion guarantee, or earnings guarantee."
+}
