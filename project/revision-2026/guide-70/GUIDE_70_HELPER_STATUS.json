@@ -42,8 +42,19 @@
         "project/revision-2026/guide-70/qa/GUIDE_70_SPANISH_LOCALIZATION_QA_06.md"
       ]
     },
-    "portuguese_localization": {"status": "PENDING", "evidence": []},
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "portuguese_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-70/working-masters/GUIDE_70_AGENTE_DE_VIAGENS_E_COORDENADOR_DE_VIAGENS_PTBR_v2.md",
+        "project/revision-2026/guide-70/qa/GUIDE_70_PORTUGUESE_LOCALIZATION_QA_07.md"
+      ]
+    },
+    "technical_qa": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-70/qa/GUIDE_70_TRILINGUAL_TECHNICAL_QA_08.md"
+      ]
+    },
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
