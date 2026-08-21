@@ -36,8 +36,11 @@
       ]
     },
     "spanish_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-68/working-masters/GUIDE_68_BAKER_AND_PASTRY_PRODUCTION_WORKER_ES419_v2.md",
+        "project/revision-2026/guide-68/qa/GUIDE_68_SPANISH_LOCALIZATION_QA_06.md"
+      ]
     },
     "portuguese_localization": {
       "status": "PENDING",
