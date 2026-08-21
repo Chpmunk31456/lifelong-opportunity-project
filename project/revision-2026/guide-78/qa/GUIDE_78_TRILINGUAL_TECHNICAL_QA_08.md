@@ -99,3 +99,7 @@ All editions preserve ethical portfolio rules, no fabricated participants/metric
 **Blockers:** none.
 
 Publication remains fail-closed until generated DOCX/PDF editions pass source parity, live-link review, package integrity, searchable-text validation, all-page rendering, page-count reconciliation, metadata and checksum controls.
+## Corrective verification — publication preflight
+
+A fail-closed publication preflight detected that the frozen U.S. outlook values (`128,900`, `7% or higher`, `9,100`) were present in the research/source-freeze controls but had been omitted from the three reader-facing masters. The omission was corrected identically across English, `es-419`, and `pt-BR`. No source value, occupational mapping, wage, accessibility rule, role boundary, or assurance boundary was changed. The corrected masters were rechecked for trilingual parity before publication was retriggered.
+

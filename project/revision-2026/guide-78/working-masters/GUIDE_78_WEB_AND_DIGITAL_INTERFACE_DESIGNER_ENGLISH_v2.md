@@ -480,6 +480,10 @@ OIT/Cinterfor maintains country- and institution-level information for vocationa
 
 A regional directory does not guarantee that a particular UI/UX or web-design course, scholarship or subsidy is currently available.
 
+## United States employment outlook
+
+O*NET's current occupation data report **128,900** people employed in 2024, projected growth of **7% or higher** for 2024–2034 (classified as much faster than average), and **9,100** projected openings over 2024–2034. These are occupation-level projections, not a guarantee that any individual learner will obtain a job.
+
 ## Earnings research
 
 ### United States — official occupation benchmark

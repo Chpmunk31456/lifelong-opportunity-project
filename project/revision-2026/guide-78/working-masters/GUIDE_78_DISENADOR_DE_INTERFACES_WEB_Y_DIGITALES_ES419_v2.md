@@ -480,6 +480,10 @@ OIT/Cinterfor mantiene información por país e institución sobre organizacione
 
 Un directorio regional no garantiza que exista actualmente un curso, beca o subsidio de UI/UX o diseño web en cada país.
 
+## Perspectiva de empleo — Estados Unidos
+
+Los datos ocupacionales actuales de O*NET informan **128,900** personas empleadas en 2024, crecimiento proyectado de **7% o más** para 2024–2034 (clasificado como mucho más rápido que el promedio) y **9,100** vacantes proyectadas durante 2024–2034. Son proyecciones de la ocupación y no garantizan que una persona obtendrá empleo.
+
 ## Investigación de ingresos
 
 ### Estados Unidos — referencia ocupacional oficial
