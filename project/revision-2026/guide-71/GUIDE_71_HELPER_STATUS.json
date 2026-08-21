@@ -35,7 +35,13 @@
         "project/revision-2026/guide-71/qa/GUIDE_71_ENGLISH_SOURCE_FREEZE_05.md"
       ]
     },
-    "spanish_localization": {"status": "PENDING", "evidence": []},
+    "spanish_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-71/working-masters/GUIDE_71_COORDINADOR_DE_EVENTOS_Y_ASISTENTE_DE_REUNIONES_ES419_v2.md",
+        "project/revision-2026/guide-71/qa/GUIDE_71_SPANISH_LOCALIZATION_QA_06.md"
+      ]
+    },
     "portuguese_localization": {"status": "PENDING", "evidence": []},
     "technical_qa": {"status": "PENDING", "evidence": []},
     "publication": {"status": "PENDING", "evidence": []},
