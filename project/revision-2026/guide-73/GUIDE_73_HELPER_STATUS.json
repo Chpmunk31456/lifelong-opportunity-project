@@ -42,7 +42,13 @@
         "project/revision-2026/guide-73/qa/GUIDE_73_SPANISH_LOCALIZATION_QA_07.md"
       ]
     },
-    "portuguese_localization": {"status": "PENDING", "evidence": []},
+    "portuguese_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-73/working-masters/GUIDE_73_SALES_SUPPORT_AND_ACCOUNT_COORDINATOR_PTBR_v2.md",
+        "project/revision-2026/guide-73/qa/GUIDE_73_PORTUGUESE_LOCALIZATION_QA_08.md"
+      ]
+    },
     "technical_qa": {"status": "PENDING", "evidence": []},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
