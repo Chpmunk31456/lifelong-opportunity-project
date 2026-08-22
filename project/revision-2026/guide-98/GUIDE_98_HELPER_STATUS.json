@@ -11,7 +11,7 @@
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-98/qa/GUIDE_98_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-98/working-masters/GUIDE_98_TECNICO_AGROPECUARIO_ES419_v2.md", "project/revision-2026/guide-98/qa/GUIDE_98_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-98/working-masters/GUIDE_98_TECNICO_AGROPECUARIO_PTBR_v2.md", "project/revision-2026/guide-98/qa/GUIDE_98_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-98/qa/GUIDE_98_TRILINGUAL_TECHNICAL_QA_08.md"]},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
