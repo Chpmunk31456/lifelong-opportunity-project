@@ -10,7 +10,7 @@
     "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-80/qa/GUIDE_80_EVIDENCE_TRACEABILITY_QA_04.md"]},
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-80/qa/GUIDE_80_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-80/working-masters/GUIDE_80_ESPECIALISTA_EN_INGRESO_DE_DATOS_Y_REGISTROS_ES419_v2.md", "project/revision-2026/guide-80/qa/GUIDE_80_SPANISH_LOCALIZATION_QA_06.md"]},
-    "portuguese_localization": {"status": "PENDING", "evidence": []},
+    "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-80/working-masters/GUIDE_80_ESPECIALISTA_EM_ENTRADA_DE_DADOS_E_REGISTROS_PTBR_v2.md", "project/revision-2026/guide-80/qa/GUIDE_80_PORTUGUESE_LOCALIZATION_QA_07.md"]},
     "technical_qa": {"status": "PENDING", "evidence": []},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
