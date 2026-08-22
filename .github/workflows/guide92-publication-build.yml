@@ -1,5 +1,5 @@
 # Controlled Guide 92 publication and release workflow
-# 2026-08-22 controlled retrigger after strengthened publication diagnostic PASS; no QA checks weakened.
+# v3: split package commit from live status closure to avoid stale-manifest rebase conflicts.
 name: Guide 92 controlled publication and release
 
 on:
@@ -7,7 +7,6 @@ on:
     branches: [revision/guide-00-100-2026]
     paths:
       - '.github/workflows/guide92-publication-build.yml'
-      - 'project/revision-2026/guide-92/GUIDE_92_HELPER_STATUS.json'
       - 'project/revision-2026/guide-92/qa/GUIDE_92_TRILINGUAL_TECHNICAL_QA_08.md'
   workflow_dispatch:
 
@@ -16,13 +15,13 @@ permissions:
 
 concurrency:
   group: guide92-controlled-publication
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out controlled revision branch
+      - name: Check out latest controlled branch
         uses: actions/checkout@v5
         with:
           ref: revision/guide-00-100-2026
@@ -60,8 +59,7 @@ jobs:
         run: |
           from pathlib import Path
           import re,sys
-          root=Path('project/revision-2026/guide-92')
-          out=root/'publication-candidate'
+          root=Path('project/revision-2026/guide-92'); out=root/'publication-candidate'
           files=[out/'GUIDE_92_ENGLISH_v2.md',out/'GUIDE_92_SPANISH_es-419_v2.md',out/'GUIDE_92_PORTUGUESE_pt-BR_v2.md']
           texts=[p.read_text(encoding='utf-8') for p in files]
           problems=[]
@@ -72,32 +70,24 @@ jobs:
             low=t.lower()
             for bad in ('todo:','lorem ipsum','translation pending','traduccion pendiente','tradução pendente'):
               if bad in low: problems.append(f'{p.name}: placeholder {bad}')
-
-          reader_urls=[set(re.findall(r'https://[^\s)<>`]+',t)) for t in texts]
-          if not (reader_urls[0]==reader_urls[1]==reader_urls[2]): problems.append(f'reader URL parity mismatch {[len(x) for x in reader_urls]}')
-          if len(reader_urls[0])!=23: problems.append(f'expected 23 shared reader URLs, found {len(reader_urls[0])}')
-
+          urls=[set(re.findall(r'https://[^\s)<>`]+',t)) for t in texts]
+          if not (urls[0]==urls[1]==urls[2]): problems.append(f'reader URL parity mismatch {[len(x) for x in urls]}')
+          if len(urls[0])!=23: problems.append(f'expected 23 shared reader URLs, found {len(urls[0])}')
           research=(root/'research/GUIDE_92_CURRENT_SOURCE_EVIDENCE_02.md').read_text(encoding='utf-8')
-          evidence_urls=set(re.findall(r'https://[^\s)<>`]+',research))
-          if len(evidence_urls)!=23: problems.append(f'expected 23 evidence URLs, found {len(evidence_urls)}')
-
+          evidence=set(re.findall(r'https://[^\s)<>`]+',research))
+          if len(evidence)!=23: problems.append(f'expected 23 evidence URLs, found {len(evidence)}')
           controls=[
             r'15-1299\.02',r'22214',r'31123',
             r'55[,.]940',r'26[,.]89',r'79[,.]370',r'38[,.]16',r'116[,.]580',r'56[,.]05',r'157[,.]500',r'75[,.]72',r'188[,.]470',r'90[,.]61',
-            r'472[,.]000',r'510[,.]500',r'8\s*%',r'31[,.]300',
-            r'25[,.]88',r'17[,.]60',r'38[,.]06',r'749',r'36\s+(?:months|meses)',
-            r'C\$23[,.]08',r'C\$38[,.]10',r'C\$53[,.]85',
-            r'80\s+(?:hours|horas)',r'48\s+(?:hours|horas)',
+            r'472[,.]000',r'510[,.]500',r'8\s*%',r'31[,.]300',r'25[,.]88',r'17[,.]60',r'38[,.]06',r'749',r'36\s+(?:months|meses)',
+            r'C\$23[,.]08',r'C\$38[,.]10',r'C\$53[,.]85',r'80\s+(?:hours|horas)',r'48\s+(?:hours|horas)',
             r'75\s*%',r'67\s*%',r'34\s*%',r'22\s*%',r'21\s*%',r'14\s*%',r'13\s*%',r'10\s*%',r'7\s*%',r'6\s*%',r'5\s*%'
           ]
           semantics={
             'statistical crosswalk':['computer occupations, all other'],
-            'GIS':['gis','sig'],
-            'CRS':['crs'],
-            'datum':['datum'],
+            'GIS':['gis','sig'],'CRS':['crs'],'datum':['datum'],
             'projection':['projection','proyección','projeção'],
-            'lineage':['lineage','linaje','linhagem'],
-            'metadata':['metadata'],
+            'lineage':['lineage','linaje','linhagem'],'metadata':['metadata'],
             'topology':['topology','topología','topologia'],
             'georeferencing':['georeferencing','georreferenciación','georreferenciamento'],
             'spatial analysis':['spatial analysis','análisis espacial','análise espacial'],
@@ -195,7 +185,7 @@ jobs:
           print(f'All-page rendering QA PASS: {len(pages)} pages')
           PY
 
-      - name: Generate metadata checksums and close gates
+      - name: Generate publication metadata and QA records
         shell: python
         run: |
           from pathlib import Path
@@ -207,31 +197,45 @@ jobs:
             docx=out/f'{stem}.docx'; pdf=out/f'{stem}.pdf'; info=subprocess.check_output(['pdfinfo',str(pdf)],text=True)
             pc=next(int(x.split(':',1)[1]) for x in info.splitlines() if x.startswith('Pages:'))
             rendered=sum(1 for p in render['pages'] if p['file'].startswith(stem+'/'))
-            if pc!=rendered: raise SystemExit(f'{stem}: render/page mismatch {rendered}!={pc}')
+            assert pc==rendered
             editions.append({'language':lang,'docx':docx.name,'pdf':pdf.name,'docx_bytes':docx.stat().st_size,'pdf_bytes':pdf.stat().st_size,'pdf_pages':pc,'rendered_pages':rendered,'status':'PASS'})
-          research=(root/'research/GUIDE_92_CURRENT_SOURCE_EVIDENCE_02.md').read_text(encoding='utf-8')
-          evidence_count=len(set(re.findall(r'https://[^\s)<>`]+',research))); assert evidence_count==23
-          english=(out/'GUIDE_92_ENGLISH_v2.md').read_text(encoding='utf-8')
-          reader_count=len(set(re.findall(r'https://[^\s)<>`]+',english))); assert reader_count==23
           manifest={'guide':'92','occupation':'Geographic Information Systems Technician','build_date':'2026-08-22','status':'PASS','editions':editions,'controlled_evidence_urls':23,'reader_verification_urls':23,'official_statistics_boundary':'O*NET 15-1299.02 wage and employment values are collected from Computer Occupations, All Other; all editions preserve this disclosure and separately label title-specific Indeed GIS Technician context.','assurance_boundary':'Internal automated publication QA, controlled link checks, all-page render inspection, and controlled source review; not independent human certification, certified translation, legal/surveying/cadastral/privacy/cybersecurity/geospatial-accuracy/regulatory/accessibility certification, training-provider accreditation, funding approval, employment guarantee, or earnings guarantee.'}
           (out/'GUIDE_92_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
           targets=sorted(p for p in out.iterdir() if p.is_file() and p.suffix in {'.docx','.pdf'})
           (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets)+'\n',encoding='utf-8')
-          (qa/'GUIDE_92_PUBLICATION_QA_09.md').write_text('# Guide 92 — Publication QA 09\n\n**Stage:** Publication — **PASS**\n\nEnglish, es-419 and pt-BR Markdown/DOCX/PDF editions passed occupation/numeric/semantic parity, mandatory Computer Occupations, All Other crosswalk disclosure, 23-link reader parity, 23-source evidence-link checks, DOCX integrity, searchable-PDF validation, all-page rendering, page reconciliation, metadata and SHA-256 checksum generation.\n\nNo independent human certification, certified translation, legal/surveying/cadastral/privacy/security/geospatial-accuracy/regulatory/accessibility certification, training-provider accreditation, funding approval, employment guarantee, or earnings guarantee is claimed.\n',encoding='utf-8')
-          (qa/'GUIDE_92_RELEASE_AUDIT_10.md').write_text('# Guide 92 — Release Audit 10\n\n**Stage:** Release Audit — **PASS**\n\nRelease audit verified predecessor Technical QA, trilingual package generation, controlled source/value parity, mandatory statistical-crosswalk disclosure, link gate, DOCX integrity, searchable PDF output, all-page visual rendering, metadata, checksums, and fail-closed publication/release evidence.\n\nThis is internal controlled QA and does not represent independent human certification or accreditation.\n',encoding='utf-8')
-          status=json.loads((root/'GUIDE_92_HELPER_STATUS.json').read_text(encoding='utf-8'))
-          status['updated']='2026-08-22'
-          status['stages']['publication']={'status':'PASS','evidence':['project/revision-2026/guide-92/qa/GUIDE_92_PUBLICATION_QA_09.md','project/revision-2026/guide-92/publication-candidate/GUIDE_92_PUBLICATION_QA_MANIFEST.json','project/revision-2026/guide-92/publication-candidate/SHA256SUMS.txt']}
-          status['stages']['release_audit']={'status':'PASS','evidence':['project/revision-2026/guide-92/qa/GUIDE_92_RELEASE_AUDIT_10.md']}
-          status['blockers']=[]
-          (root/'GUIDE_92_HELPER_STATUS.json').write_text(json.dumps(status,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          (qa/'GUIDE_92_PUBLICATION_QA_09.md').write_text('# Guide 92 — Publication QA 09\n\n**Stage:** Publication — **PASS**\n\nEnglish, es-419 and pt-BR Markdown/DOCX/PDF editions passed occupation/numeric/semantic parity, mandatory Computer Occupations, All Other crosswalk disclosure, 23-link reader parity, 23-source evidence-link checks, DOCX integrity, searchable-PDF validation, all-page rendering, page reconciliation, metadata and SHA-256 checksum generation.\n\nNo independent human certification, certified translation, legal/surveying/cadastral/privacy/security/geospatial-accuracy/regulatory/accessibility certification, funding approval, employment guarantee or earnings guarantee is claimed.\n',encoding='utf-8')
+          (qa/'GUIDE_92_RELEASE_AUDIT_10.md').write_text('# Guide 92 — Release Audit 10\n\n**Stage:** Release Audit — **PASS**\n\nRelease audit confirms all predecessor gates, trilingual publication artifacts, 23-source/23-reader-link traceability, required U.S. statistics crosswalk disclosure, checksums and all-page rendering. No blockers remain.\n',encoding='utf-8')
 
-      - name: Commit controlled publication package
+      - name: Commit verified publication package without status file
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add project/revision-2026/guide-92/publication-candidate project/revision-2026/guide-92/qa/GUIDE_92_PUBLICATION_QA_09.md project/revision-2026/guide-92/qa/GUIDE_92_RELEASE_AUDIT_10.md project/revision-2026/guide-92/GUIDE_92_HELPER_STATUS.json
+          git add project/revision-2026/guide-92/publication-candidate \
+                  project/revision-2026/guide-92/qa/GUIDE_92_PUBLICATION_QA_09.md \
+                  project/revision-2026/guide-92/qa/GUIDE_92_RELEASE_AUDIT_10.md
           git commit -m 'build(guide-92): publish controlled trilingual package'
+          git pull --rebase origin revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026
+
+      - name: Refresh live branch and close status gates separately
+        run: |
+          set -euo pipefail
+          git pull --rebase origin revision/guide-00-100-2026
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('project/revision-2026/guide-92/GUIDE_92_HELPER_STATUS.json')
+          d=json.loads(p.read_text(encoding='utf-8'))
+          assert d['stages']['technical_qa']['status']=='PASS'
+          assert not d.get('blockers')
+          d['stages']['publication']={'status':'PASS','evidence':['project/revision-2026/guide-92/qa/GUIDE_92_PUBLICATION_QA_09.md','project/revision-2026/guide-92/publication-candidate/GUIDE_92_PUBLICATION_QA_MANIFEST.json','project/revision-2026/guide-92/publication-candidate/SHA256SUMS.txt']}
+          d['stages']['release_audit']={'status':'PASS','evidence':['project/revision-2026/guide-92/qa/GUIDE_92_RELEASE_AUDIT_10.md']}
+          d['blockers']=[]
+          d.pop('workflow_retry_note',None)
+          p.write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          PY
+          git add project/revision-2026/guide-92/GUIDE_92_HELPER_STATUS.json
+          git commit -m 'qa(guide-92): close publication and release gates' || true
           git pull --rebase origin revision/guide-00-100-2026
           git push origin HEAD:revision/guide-00-100-2026
