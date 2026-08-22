@@ -1,5 +1,5 @@
 # Controlled Guide 93 publication and release workflow
-# v1.1: PR-merge activation, fail-closed build, compact render QA, conflict-safe closure.
+# v1.2: fail-closed build with committed failure-stage diagnostics.
 name: Guide 93 controlled publication and release
 
 on:
@@ -22,17 +22,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out controlled branch
+        id: checkout
         uses: actions/checkout@v5
         with:
           ref: revision/guide-00-100-2026
           fetch-depth: 0
 
       - name: Install publication toolchain
+        id: toolchain
         run: |
           sudo apt-get update
           sudo apt-get install -y pandoc libreoffice-writer poppler-utils python3-pil curl
 
       - name: Preflight frozen trilingual sources
+        id: preflight
         shell: python
         run: |
           import json,re,shutil,sys
@@ -90,6 +93,7 @@ jobs:
           print('Guide 93 preflight PASS: 3 editions; 19 shared URLs')
 
       - name: Check controlled reader links
+        id: links
         run: |
           set -euo pipefail
           test "$(wc -l < /tmp/guide93_urls.txt)" -eq 19
@@ -106,6 +110,7 @@ jobs:
           test "$fail" -eq 0
 
       - name: Create URL-safe display filter
+        id: urlfilter
         run: |
           cat > /tmp/url_safe.lua <<'LUA'
           local function long_url(s) return string.match(s,'^https?://') and string.len(s)>45 end
@@ -121,6 +126,7 @@ jobs:
           LUA
 
       - name: Generate DOCX and searchable PDFs
+        id: documents
         run: |
           set -euo pipefail
           OUT='project/revision-2026/guide-93/publication-candidate'
@@ -135,6 +141,7 @@ jobs:
           for PDF in "$OUT"/*.pdf; do test -s "$PDF"; pdfinfo "$PDF" >/dev/null; test "$(pdftotext "$PDF" - | tr -d '[:space:]' | wc -c)" -gt 9000; done
 
       - name: Render and validate every PDF page
+        id: render
         shell: python
         run: |
           import json,subprocess,sys
@@ -158,6 +165,7 @@ jobs:
           print(f'Guide 93 all-page render PASS: {len(pages)} pages')
 
       - name: Write publication evidence
+        id: evidence
         shell: python
         run: |
           import hashlib,json,shutil,subprocess
@@ -182,6 +190,7 @@ jobs:
           shutil.rmtree(rend)
 
       - name: Commit verified package
+        id: packagecommit
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
@@ -192,6 +201,7 @@ jobs:
           git push origin HEAD:revision/guide-00-100-2026
 
       - name: Close publication and release status
+        id: closegates
         run: |
           set -euo pipefail
           git pull --rebase origin revision/guide-00-100-2026
@@ -208,3 +218,48 @@ jobs:
           git commit -m 'qa(guide-93): close publication and release gates'
           git pull --rebase origin revision/guide-00-100-2026
           git push origin HEAD:revision/guide-00-100-2026
+
+      - name: Commit publication failure diagnostic
+        if: failure()
+        env:
+          TOOLCHAIN: ${{ steps.toolchain.outcome }}
+          PREFLIGHT: ${{ steps.preflight.outcome }}
+          LINKS: ${{ steps.links.outcome }}
+          URLFILTER: ${{ steps.urlfilter.outcome }}
+          DOCUMENTS: ${{ steps.documents.outcome }}
+          RENDER: ${{ steps.render.outcome }}
+          EVIDENCE: ${{ steps.evidence.outcome }}
+          PACKAGECOMMIT: ${{ steps.packagecommit.outcome }}
+          CLOSEGATES: ${{ steps.closegates.outcome }}
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          FILE='project/revision-2026/guide-93/qa/GUIDE_93_PUBLICATION_WORKFLOW_DIAGNOSTIC.md'
+          mkdir -p "$(dirname "$FILE")"
+          cat > "$FILE" <<EOF
+          # Guide 93 — Publication Workflow Diagnostic
+
+          **Result:** publication workflow failed closed  
+          **Run ID:** ${GITHUB_RUN_ID}  
+          **Run attempt:** ${GITHUB_RUN_ATTEMPT}  
+          **Source SHA:** ${GITHUB_SHA}
+
+          ## Step outcomes
+          - Toolchain: ${TOOLCHAIN:-not-run}
+          - Preflight: ${PREFLIGHT:-not-run}
+          - Reader links: ${LINKS:-not-run}
+          - URL filter: ${URLFILTER:-not-run}
+          - DOCX/PDF generation: ${DOCUMENTS:-not-run}
+          - Render QA: ${RENDER:-not-run}
+          - Publication evidence: ${EVIDENCE:-not-run}
+          - Package commit/push: ${PACKAGECOMMIT:-not-run}
+          - Gate closure: ${CLOSEGATES:-not-run}
+
+          No publication or release gate is advanced by this diagnostic. Fix the failed stage and re-run the controlled workflow.
+          EOF
+          git reset
+          git add "$FILE"
+          git commit -m 'qa(guide-93): record publication workflow failure' || exit 0
+          git pull --rebase origin revision/guide-00-100-2026 || true
+          git push origin HEAD:revision/guide-00-100-2026 || true
