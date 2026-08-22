@@ -1,5 +1,5 @@
 name: Repository metadata audit
-# Guide 95 recovery carrier trigger v3 — after Guide 60 YAML repair; no controlled guide content changes.
+# Guide 96 visible publication carrier; Guide 95 recovery remains inert after closure.
 
 on:
   pull_request:
@@ -15,6 +15,7 @@ on:
     paths:
       - ".github/workflows/repository-metadata-audit.yml"
       - "scripts/guide95_publication_recovery.py"
+      - "scripts/guide96_publication_recovery.py"
   workflow_dispatch:
 
 permissions:
@@ -90,21 +91,12 @@ jobs:
           git add project/revision-2026/guide-95/publication-candidate \
                   project/revision-2026/guide-95/qa/GUIDE_95_PUBLICATION_QA_09.md \
                   project/revision-2026/guide-95/qa/GUIDE_95_RELEASE_AUDIT_10.md
-          git diff --cached --check
+          git diff --cached --check --ignore-space-at-eol
           if git diff --cached --quiet; then
             echo 'Guide 95 package already current.'
           else
             git commit -m 'build(guide-95): publish controlled trilingual package'
-            for attempt in 1 2 3 4 5; do
-              git fetch origin revision/guide-00-100-2026
-              git rebase origin/revision/guide-00-100-2026
-              if git push origin HEAD:revision/guide-00-100-2026; then
-                echo 'Guide 95 package committed.'
-                break
-              fi
-              if [[ "$attempt" == '5' ]]; then exit 1; fi
-              sleep 2
-            done
+            git push origin HEAD:revision/guide-00-100-2026
           fi
 
       - name: Close Guide 95 helper status after package commit
@@ -115,17 +107,108 @@ jobs:
           git pull --rebase origin revision/guide-00-100-2026
           python scripts/guide95_publication_recovery.py close-status
           git add project/revision-2026/guide-95/GUIDE_95_HELPER_STATUS.json
-          git diff --cached --check
+          git diff --cached --check --ignore-space-at-eol
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'status(guide-95): close publication and release audit'
+          git push origin HEAD:revision/guide-00-100-2026
+
+  guide96-publication-recovery:
+    if: >-
+      (github.event_name == 'push' && github.ref == 'refs/heads/revision/guide-00-100-2026') ||
+      (github.event_name == 'pull_request' &&
+       github.base_ref == 'revision/guide-00-100-2026' &&
+       github.head_ref == 'trigger/guide96-pr-carrier' &&
+       github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - name: Check out controlled revision branch
+        uses: actions/checkout@v4
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Determine whether Guide 96 still needs publication
+        id: gate96
+        shell: python
+        run: |
+          import json, os
+          from pathlib import Path
+          p=Path('project/revision-2026/guide-96/GUIDE_96_HELPER_STATUS.json')
+          d=json.loads(p.read_text(encoding='utf-8'))
+          needed = d['stages']['publication']['status'] != 'PASS' or d['stages']['release_audit']['status'] != 'PASS'
+          with open(os.environ['GITHUB_OUTPUT'],'a',encoding='utf-8') as f:
+              f.write(f"needed={'true' if needed else 'false'}\n")
+          print(f"Guide 96 publication needed: {needed}")
+
+      - name: Install Guide 96 publication toolchain
+        if: steps.gate96.outputs.needed == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice-writer poppler-utils python3-pil curl
+
+      - name: Build and validate Guide 96 package
+        if: steps.gate96.outputs.needed == 'true'
+        run: python scripts/guide96_publication_recovery.py build
+
+      - name: Upload Guide 96 render diagnostics on failure
+        if: failure() && steps.gate96.outputs.needed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: guide96-render-diagnostics
+          path: |
+            project/revision-2026/guide-96/publication-candidate/rendered/**
+            project/revision-2026/guide-96/publication-candidate/*.pdf
+          if-no-files-found: warn
+
+      - name: Commit verified Guide 96 package
+        if: steps.gate96.outputs.needed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-96/publication-candidate \
+                  project/revision-2026/guide-96/qa/GUIDE_96_PUBLICATION_QA_09.md \
+                  project/revision-2026/guide-96/qa/GUIDE_96_RELEASE_AUDIT_10.md
+          git diff --cached --check --ignore-space-at-eol
           if git diff --cached --quiet; then
-            echo 'Guide 95 status already closed.'
+            echo 'Guide 96 package already current.'
+          else
+            git commit -m 'build(guide-96): publish controlled trilingual package'
+            for attempt in 1 2 3 4 5; do
+              git fetch origin revision/guide-00-100-2026
+              git rebase origin/revision/guide-00-100-2026
+              if git push origin HEAD:revision/guide-00-100-2026; then
+                echo 'Guide 96 package committed.'
+                break
+              fi
+              if [[ "$attempt" == '5' ]]; then exit 1; fi
+              sleep 2
+            done
+          fi
+
+      - name: Close Guide 96 helper status after package commit
+        if: steps.gate96.outputs.needed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git pull --rebase origin revision/guide-00-100-2026
+          python scripts/guide96_publication_recovery.py close-status
+          git add project/revision-2026/guide-96/GUIDE_96_HELPER_STATUS.json
+          git diff --cached --check --ignore-space-at-eol
+          if git diff --cached --quiet; then
+            echo 'Guide 96 status already closed.'
             exit 0
           fi
-          git commit -m 'status(guide-95): close publication and release audit'
+          git commit -m 'status(guide-96): close publication and release audit'
           for attempt in 1 2 3 4 5; do
             git fetch origin revision/guide-00-100-2026
             git rebase origin/revision/guide-00-100-2026
             if git push origin HEAD:revision/guide-00-100-2026; then
-              echo 'Guide 95 status closure committed.'
+              echo 'Guide 96 status closure committed.'
               exit 0
             fi
             if [[ "$attempt" == '5' ]]; then exit 1; fi
@@ -134,5 +217,5 @@ jobs:
 
       - name: Safety note
         run: |
-          echo 'Guide 95 recovery is fail-closed and does not merge PR #17.'
-          echo 'The recovery job runs only from the controlled revision branch and only when its carrier files change.'
+          echo 'Guide 96 publication is fail-closed and does not merge PR #17.'
+          echo 'The same-repository PR allowance is restricted to trigger/guide96-pr-carrier.'
