@@ -58,7 +58,7 @@ The Portuguese edition preserves the controlled values and labels:
 The localization retains approved-system requirements, least privilege, MFA, protected-data handling, prohibition on personal storage/email for protected extracts, no bypass of controls, accessible chart/report guidance, prohibition on sending protected data to unapproved AI tools, and accountable human validation of consequential analysis.
 
 ### Source and link parity — PASS
-The Portuguese master includes the same controlled set of **27 verification URLs** as the research pack, covering O*NET, CareerOneStop, Indeed, Canada Job Bank/Canada.ca, OCUPACOL, SENA Betowa, OIT/Cinterfor, CISA, NIST, Section 508 and WCAG 2.2.
+The **research evidence pack** retains the complete controlled set of **27 evidence URLs** used for claim traceability. The English, Spanish and Brazilian Portuguese reader-facing masters intentionally use the same curated **11 verification links** for usability; the pt-BR appendix was aligned to the frozen English/Spanish presentation. The shorter reader list does not replace or weaken the 27-source research evidence record.
 
 ### Claims and certification controls — PASS
 The pt-BR master does not promise employment, income, funding, admission, apprenticeship placement, certification or promotion. It does not claim independent human certification, professional accreditation, legal review, statistical certification, accessibility certification or certified translation.
