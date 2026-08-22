@@ -1,5 +1,5 @@
 # Controlled Guide 93 publication and release workflow
-# v1.2: fail-closed build with committed failure-stage diagnostics.
+# v1.3: fail-closed build, corrected duration validation, committed failure diagnostics.
 name: Guide 93 controlled publication and release
 
 on:
@@ -69,7 +69,7 @@ jobs:
           urls=[set(re.findall(r'https://[^\s)<>`]+',t)) for t in texts]
           if not (urls[0]==urls[1]==urls[2]): problems.append('reader URL parity mismatch')
           if len(urls[0])!=19: problems.append(f'expected 19 reader URLs, got {len(urls[0])}')
-          controls=(r'17-3031\.00',r'22213',r'31122',r'51[,.]940',r'24[,.]97',r'59[,.]400',r'62[,.]100',r'5\s*%',r'7[,.]600',r'23\s*%',r'20\s*%',r'13\s*%',r'C\$22[,.]00',r'C\$29[,.]75',r'C\$46[,.]00',r'350[,.]000',r'2[,.]910[,.]053',r'3[,.]984',r'2[,.]304',r'2028',r'3\s+(?:years|años|anos)',r'3123-05',r'3123-10',r'3123-20')
+          controls=(r'17-3031\.00',r'22213',r'31122',r'51[,.]940',r'24[,.]97',r'59[,.]400',r'62[,.]100',r'5\s*%',r'7[,.]600',r'23\s*%',r'20\s*%',r'13\s*%',r'C\$22[,.]00',r'C\$29[,.]75',r'C\$46[,.]00',r'350[,.]000',r'2[,.]910[,.]053',r'3[,.]984',r'2[,.]304',r'2028',r'3(?:\s+|-)(?:year|years|años|anos)',r'3123-05',r'3123-10',r'3123-20')
           semantics={
             'total station':('total station','estación total','estação total'),
             'GNSS':('gnss',),
@@ -195,6 +195,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm -f project/revision-2026/guide-93/qa/GUIDE_93_PUBLICATION_WORKFLOW_DIAGNOSTIC.md || true
           git add project/revision-2026/guide-93/publication-candidate project/revision-2026/guide-93/qa/GUIDE_93_PUBLICATION_QA_09.md project/revision-2026/guide-93/qa/GUIDE_93_RELEASE_AUDIT_10.md
           git commit -m 'build(guide-93): publish controlled trilingual package'
           git pull --rebase origin revision/guide-00-100-2026
