@@ -1,5 +1,5 @@
 # Controlled Guide 92 publication and release workflow
-# v3: split package commit from live status closure to avoid stale-manifest rebase conflicts.
+# v4: conflict-safe package/status commits and no rendered PNG intermediates in Git.
 name: Guide 92 controlled publication and release
 
 on:
@@ -185,11 +185,11 @@ jobs:
           print(f'All-page rendering QA PASS: {len(pages)} pages')
           PY
 
-      - name: Generate publication metadata and QA records
+      - name: Generate publication metadata and preserve compact render QA
         shell: python
         run: |
           from pathlib import Path
-          import hashlib,json,subprocess,re
+          import hashlib,json,subprocess,shutil
           root=Path('project/revision-2026/guide-92'); out=root/'publication-candidate'; qa=root/'qa'
           render=json.loads((out/'rendered/RENDER_QA.json').read_text(encoding='utf-8')); assert render['status']=='PASS'
           editions=[]
@@ -201,19 +201,26 @@ jobs:
             editions.append({'language':lang,'docx':docx.name,'pdf':pdf.name,'docx_bytes':docx.stat().st_size,'pdf_bytes':pdf.stat().st_size,'pdf_pages':pc,'rendered_pages':rendered,'status':'PASS'})
           manifest={'guide':'92','occupation':'Geographic Information Systems Technician','build_date':'2026-08-22','status':'PASS','editions':editions,'controlled_evidence_urls':23,'reader_verification_urls':23,'official_statistics_boundary':'O*NET 15-1299.02 wage and employment values are collected from Computer Occupations, All Other; all editions preserve this disclosure and separately label title-specific Indeed GIS Technician context.','assurance_boundary':'Internal automated publication QA, controlled link checks, all-page render inspection, and controlled source review; not independent human certification, certified translation, legal/surveying/cadastral/privacy/cybersecurity/geospatial-accuracy/regulatory/accessibility certification, training-provider accreditation, funding approval, employment guarantee, or earnings guarantee.'}
           (out/'GUIDE_92_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          (out/'RENDER_QA.json').write_text(json.dumps(render,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
           targets=sorted(p for p in out.iterdir() if p.is_file() and p.suffix in {'.docx','.pdf'})
           (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets)+'\n',encoding='utf-8')
           (qa/'GUIDE_92_PUBLICATION_QA_09.md').write_text('# Guide 92 — Publication QA 09\n\n**Stage:** Publication — **PASS**\n\nEnglish, es-419 and pt-BR Markdown/DOCX/PDF editions passed occupation/numeric/semantic parity, mandatory Computer Occupations, All Other crosswalk disclosure, 23-link reader parity, 23-source evidence-link checks, DOCX integrity, searchable-PDF validation, all-page rendering, page reconciliation, metadata and SHA-256 checksum generation.\n\nNo independent human certification, certified translation, legal/surveying/cadastral/privacy/security/geospatial-accuracy/regulatory/accessibility certification, funding approval, employment guarantee or earnings guarantee is claimed.\n',encoding='utf-8')
           (qa/'GUIDE_92_RELEASE_AUDIT_10.md').write_text('# Guide 92 — Release Audit 10\n\n**Stage:** Release Audit — **PASS**\n\nRelease audit confirms all predecessor gates, trilingual publication artifacts, 23-source/23-reader-link traceability, required U.S. statistics crosswalk disclosure, checksums and all-page rendering. No blockers remain.\n',encoding='utf-8')
+          shutil.rmtree(out/'rendered')
 
       - name: Commit verified publication package without status file
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add project/revision-2026/guide-92/publication-candidate \
-                  project/revision-2026/guide-92/qa/GUIDE_92_PUBLICATION_QA_09.md \
-                  project/revision-2026/guide-92/qa/GUIDE_92_RELEASE_AUDIT_10.md
+          OUT='project/revision-2026/guide-92/publication-candidate'
+          git add \
+            "$OUT/GUIDE_92_ENGLISH_v2.md" "$OUT/GUIDE_92_SPANISH_es-419_v2.md" "$OUT/GUIDE_92_PORTUGUESE_pt-BR_v2.md" \
+            "$OUT/GUIDE_92_ENGLISH_v2.docx" "$OUT/GUIDE_92_SPANISH_es-419_v2.docx" "$OUT/GUIDE_92_PORTUGUESE_pt-BR_v2.docx" \
+            "$OUT/GUIDE_92_ENGLISH_v2.pdf" "$OUT/GUIDE_92_SPANISH_es-419_v2.pdf" "$OUT/GUIDE_92_PORTUGUESE_pt-BR_v2.pdf" \
+            "$OUT/GUIDE_92_PUBLICATION_QA_MANIFEST.json" "$OUT/RENDER_QA.json" "$OUT/SHA256SUMS.txt" \
+            project/revision-2026/guide-92/qa/GUIDE_92_PUBLICATION_QA_09.md \
+            project/revision-2026/guide-92/qa/GUIDE_92_RELEASE_AUDIT_10.md
           git commit -m 'build(guide-92): publish controlled trilingual package'
           git pull --rebase origin revision/guide-00-100-2026
           git push origin HEAD:revision/guide-00-100-2026
@@ -229,7 +236,7 @@ jobs:
           d=json.loads(p.read_text(encoding='utf-8'))
           assert d['stages']['technical_qa']['status']=='PASS'
           assert not d.get('blockers')
-          d['stages']['publication']={'status':'PASS','evidence':['project/revision-2026/guide-92/qa/GUIDE_92_PUBLICATION_QA_09.md','project/revision-2026/guide-92/publication-candidate/GUIDE_92_PUBLICATION_QA_MANIFEST.json','project/revision-2026/guide-92/publication-candidate/SHA256SUMS.txt']}
+          d['stages']['publication']={'status':'PASS','evidence':['project/revision-2026/guide-92/qa/GUIDE_92_PUBLICATION_QA_09.md','project/revision-2026/guide-92/publication-candidate/GUIDE_92_PUBLICATION_QA_MANIFEST.json','project/revision-2026/guide-92/publication-candidate/SHA256SUMS.txt','project/revision-2026/guide-92/publication-candidate/RENDER_QA.json']}
           d['stages']['release_audit']={'status':'PASS','evidence':['project/revision-2026/guide-92/qa/GUIDE_92_RELEASE_AUDIT_10.md']}
           d['blockers']=[]
           d.pop('workflow_retry_note',None)
