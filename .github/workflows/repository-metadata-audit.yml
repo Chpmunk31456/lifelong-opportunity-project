@@ -1,5 +1,5 @@
 name: Repository metadata audit
-# Guide 95 recovery carrier v4 — one exact same-repository PR may execute visible recovery diagnostics.
+# Guide 95 recovery carrier v5 — corrected 48-hour validator runner.
 
 on:
   pull_request:
@@ -15,6 +15,7 @@ on:
     paths:
       - ".github/workflows/repository-metadata-audit.yml"
       - "scripts/guide95_publication_recovery.py"
+      - "scripts/guide95_publication_recovery_runner.py"
   workflow_dispatch:
 
 permissions:
@@ -83,7 +84,7 @@ jobs:
 
       - name: Build and validate Guide 95 package
         if: steps.gate.outputs.needed == 'true'
-        run: python scripts/guide95_publication_recovery.py build
+        run: python scripts/guide95_publication_recovery_runner.py build
 
       - name: Commit verified Guide 95 package
         if: steps.gate.outputs.needed == 'true'
@@ -118,7 +119,7 @@ jobs:
         run: |
           set -euo pipefail
           git pull --rebase origin revision/guide-00-100-2026
-          python scripts/guide95_publication_recovery.py close-status
+          python scripts/guide95_publication_recovery_runner.py close-status
           git add project/revision-2026/guide-95/GUIDE_95_HELPER_STATUS.json
           git diff --cached --check
           if git diff --cached --quiet; then
