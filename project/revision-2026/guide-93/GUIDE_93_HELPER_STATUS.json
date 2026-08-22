@@ -17,8 +17,11 @@
       ]
     },
     "english_editorial": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-93/working-masters/GUIDE_93_SURVEYING_AND_MAPPING_TECHNICIAN_ENGLISH_v2.md",
+        "project/revision-2026/guide-93/qa/GUIDE_93_ENGLISH_EDITORIAL_QA_03.md"
+      ]
     },
     "evidence_traceability": {
       "status": "PENDING",
