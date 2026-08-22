@@ -72,10 +72,11 @@ The BLS OOH context remains separately dated/labeled:
 - OIT/Cinterfor, SENAI Técnico em Eletrônica (1,200 hours), and SENATI are presented as regional training locators/pathways with current-verification caveats.
 
 ### Non-government market estimates — PASS
-Clearly labeled and separated from official statistics:
+Clearly labeled and separated from official statistics in the reader-facing master:
 - U.S. Indeed Electrical Technician: approximately $30.67/hour, updated 2026-08-10, about 9,000 observations.
 - U.S. Indeed Electronics Technician: approximately $27.58/hour, updated 2026-08-09, about 8,400 observations.
-- Colombia Indeed Técnico/a electrónico/a: approximately COP 1,711,841/month, updated 2026-07-31, 187 observations.
+
+The Colombia Indeed Técnico/a electrónico/a figure (approximately COP 1,711,841/month, updated 2026-07-31, 187 observations) remains in the research evidence pack and reader-verification links but was intentionally not promoted into the reader-facing wage narrative because it is a narrower, non-government title estimate with limited cross-role comparability.
 
 ### Professional-scope boundaries — PASS
 The master repeatedly distinguishes technician work from:
