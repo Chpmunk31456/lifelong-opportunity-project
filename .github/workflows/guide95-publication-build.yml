@@ -1,5 +1,5 @@
 # Controlled Guide 95 publication and release workflow
-# v1.1: server-activated fail-closed trilingual build and release closure.
+# v1.2: retrigger controlled publication from the current live branch head; QA logic unchanged.
 name: Guide 95 controlled publication and release
 
 on:
