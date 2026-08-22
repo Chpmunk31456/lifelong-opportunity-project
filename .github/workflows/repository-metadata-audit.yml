@@ -1,5 +1,5 @@
 name: Repository metadata audit
-# Guide 95 recovery carrier trigger v2 — no controlled guide content changes.
+# Guide 95 recovery carrier trigger v3 — after Guide 60 YAML repair; no controlled guide content changes.
 
 on:
   pull_request:
