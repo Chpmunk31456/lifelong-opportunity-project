@@ -4,16 +4,71 @@
   "branch": "revision/guide-00-100-2026",
   "updated": "2026-08-21",
   "stages": {
-    "baseline_inventory": {"status": "PASS", "evidence": ["project/revision-2026/guide-81/qa/GUIDE_81_BASELINE_INVENTORY_01.md"]},
-    "research": {"status": "PASS", "evidence": ["project/revision-2026/guide-81/research/GUIDE_81_CURRENT_SOURCE_EVIDENCE_02.md"]},
-    "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-81/working-masters/GUIDE_81_HEALTH_INFORMATION_TECHNOLOGIST_AND_MEDICAL_REGISTRAR_ENGLISH_v2.md", "project/revision-2026/guide-81/qa/GUIDE_81_ENGLISH_EDITORIAL_QA_03.md"]},
-    "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-81/qa/GUIDE_81_EVIDENCE_TRACEABILITY_QA_04.md"]},
-    "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-81/qa/GUIDE_81_ENGLISH_SOURCE_FREEZE_05.md"]},
-    "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-81/working-masters/GUIDE_81_TECNOLOGO_EN_INFORMACION_DE_SALUD_Y_REGISTRADOR_MEDICO_ES419_v2.md", "project/revision-2026/guide-81/qa/GUIDE_81_SPANISH_LOCALIZATION_QA_06.md"]},
-    "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-81/working-masters/GUIDE_81_TECNOLOGO_EM_INFORMACAO_DE_SAUDE_E_REGISTRADOR_MEDICO_PTBR_v2.md", "project/revision-2026/guide-81/qa/GUIDE_81_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-81/qa/GUIDE_81_TRILINGUAL_TECHNICAL_QA_08.md"]},
-    "publication": {"status": "PENDING", "evidence": []},
-    "release_audit": {"status": "PENDING", "evidence": []}
+    "baseline_inventory": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-81/qa/GUIDE_81_BASELINE_INVENTORY_01.md"
+      ]
+    },
+    "research": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-81/research/GUIDE_81_CURRENT_SOURCE_EVIDENCE_02.md"
+      ]
+    },
+    "english_editorial": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-81/working-masters/GUIDE_81_HEALTH_INFORMATION_TECHNOLOGIST_AND_MEDICAL_REGISTRAR_ENGLISH_v2.md",
+        "project/revision-2026/guide-81/qa/GUIDE_81_ENGLISH_EDITORIAL_QA_03.md"
+      ]
+    },
+    "evidence_traceability": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-81/qa/GUIDE_81_EVIDENCE_TRACEABILITY_QA_04.md"
+      ]
+    },
+    "english_source_freeze": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-81/qa/GUIDE_81_ENGLISH_SOURCE_FREEZE_05.md"
+      ]
+    },
+    "spanish_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-81/working-masters/GUIDE_81_TECNOLOGO_EN_INFORMACION_DE_SALUD_Y_REGISTRADOR_MEDICO_ES419_v2.md",
+        "project/revision-2026/guide-81/qa/GUIDE_81_SPANISH_LOCALIZATION_QA_06.md"
+      ]
+    },
+    "portuguese_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-81/working-masters/GUIDE_81_TECNOLOGO_EM_INFORMACAO_DE_SAUDE_E_REGISTRADOR_MEDICO_PTBR_v2.md",
+        "project/revision-2026/guide-81/qa/GUIDE_81_PORTUGUESE_LOCALIZATION_QA_07.md"
+      ]
+    },
+    "technical_qa": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-81/qa/GUIDE_81_TRILINGUAL_TECHNICAL_QA_08.md"
+      ]
+    },
+    "publication": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-81/qa/GUIDE_81_PUBLICATION_QA_09.md",
+        "project/revision-2026/guide-81/publication-candidate/GUIDE_81_PUBLICATION_QA_MANIFEST.json",
+        "project/revision-2026/guide-81/publication-candidate/SHA256SUMS.txt"
+      ]
+    },
+    "release_audit": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-81/qa/GUIDE_81_RELEASE_AUDIT_10.md"
+      ]
+    }
   },
   "blockers": []
 }
