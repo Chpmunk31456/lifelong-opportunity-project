@@ -20,10 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -32,7 +32,7 @@ jobs:
 
       - name: Upload audit report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: repository-metadata-audit
           path: QA_METADATA_AUDIT.md
@@ -50,7 +50,7 @@ jobs:
       contents: write
     steps:
       - name: Check out controlled revision branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: revision/guide-00-100-2026
           fetch-depth: 0
@@ -80,7 +80,7 @@ jobs:
 
       - name: Upload Guide 96 render diagnostics on failure
         if: failure() && steps.gate96.outputs.needed == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: guide96-render-diagnostics
           path: |
@@ -103,7 +103,7 @@ jobs:
           # line breaks in the metadata block. Allow only that known whitespace
           # class; fail on every other git diff --check finding.
           python - <<'PY'
-          import subprocess, sys
+          import subprocess
           p = subprocess.run(['git','diff','--cached','--check'], text=True, capture_output=True)
           lines = (p.stdout + p.stderr).splitlines()
           bad = []
