@@ -1,0 +1,41 @@
+{
+  "guide": "94",
+  "occupation": "Civil Engineering Technician",
+  "build_date": "2026-08-22",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_94_ENGLISH_v2.docx",
+      "pdf": "GUIDE_94_ENGLISH_v2.pdf",
+      "docx_bytes": 27198,
+      "pdf_bytes": 329238,
+      "pdf_pages": 20,
+      "rendered_pages": 20,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_94_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_94_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 28160,
+      "pdf_bytes": 338662,
+      "pdf_pages": 20,
+      "rendered_pages": 20,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_94_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_94_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 28001,
+      "pdf_bytes": 338672,
+      "pdf_pages": 20,
+      "rendered_pages": 20,
+      "status": "PASS"
+    }
+  ],
+  "reader_verification_urls": 26,
+  "english_source_blob": "8a80959e786f8c582525bfbd06e81e8c7e4c4abc",
+  "assurance_boundary": "Internal controlled publication QA; not independent certification, certified translation, legal/engineering/surveying/geotechnical/construction/occupational-safety/cybersecurity/privacy/accessibility certification, funding approval, employment guarantee, or earnings guarantee."
+}
