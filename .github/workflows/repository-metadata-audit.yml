@@ -1,4 +1,5 @@
 name: Repository metadata audit
+# Guide 95 recovery carrier trigger v2 — no controlled guide content changes.
 
 on:
   pull_request:
