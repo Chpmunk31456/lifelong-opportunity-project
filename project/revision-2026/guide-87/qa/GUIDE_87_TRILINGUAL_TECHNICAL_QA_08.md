@@ -4,7 +4,8 @@
 **Controlled branch:** `revision/guide-00-100-2026`  
 **Frozen English source:** blob `446a05a75eaed4739a007d9327faba8234210d19`  
 **Locales:** English, neutral Latin American Spanish (`es-419`), Brazilian Portuguese (`pt-BR`)  
-**Review date:** 2026-08-22
+**Review date:** 2026-08-22  
+**Publication trigger synchronization:** controlled push issued after workflow installation; no QA result changed.
 
 ## Occupation and jurisdiction parity — PASS
 All three masters preserve:
