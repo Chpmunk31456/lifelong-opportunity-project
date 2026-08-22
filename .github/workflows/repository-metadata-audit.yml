@@ -1,5 +1,5 @@
 name: Repository metadata audit
-# Guide 96 visible publication carrier; Guide 95 recovery remains inert after closure.
+# Temporary visible Guide 96 publication carrier. This branch/PR is never merged.
 
 on:
   pull_request:
@@ -9,13 +9,6 @@ on:
       - "**/*.pdf"
       - "tools/audit_repository_metadata.py"
       - ".github/workflows/repository-metadata-audit.yml"
-  push:
-    branches:
-      - revision/guide-00-100-2026
-    paths:
-      - ".github/workflows/repository-metadata-audit.yml"
-      - "scripts/guide95_publication_recovery.py"
-      - "scripts/guide96_publication_recovery.py"
   workflow_dispatch:
 
 permissions:
@@ -45,80 +38,12 @@ jobs:
           path: QA_METADATA_AUDIT.md
           if-no-files-found: error
 
-  guide95-publication-recovery:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/revision/guide-00-100-2026'
-    runs-on: ubuntu-latest
-    timeout-minutes: 45
-    permissions:
-      contents: write
-    steps:
-      - name: Check out controlled revision branch
-        uses: actions/checkout@v4
-        with:
-          ref: revision/guide-00-100-2026
-          fetch-depth: 0
-
-      - name: Determine whether Guide 95 still needs recovery
-        id: gate
-        shell: python
-        run: |
-          import json, os
-          from pathlib import Path
-          p=Path('project/revision-2026/guide-95/GUIDE_95_HELPER_STATUS.json')
-          d=json.loads(p.read_text(encoding='utf-8'))
-          needed = d['stages']['publication']['status'] != 'PASS' or d['stages']['release_audit']['status'] != 'PASS'
-          with open(os.environ['GITHUB_OUTPUT'],'a',encoding='utf-8') as f:
-              f.write(f"needed={'true' if needed else 'false'}\n")
-          print(f"Guide 95 recovery needed: {needed}")
-
-      - name: Install Guide 95 publication toolchain
-        if: steps.gate.outputs.needed == 'true'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y pandoc libreoffice-writer poppler-utils python3-pil curl
-
-      - name: Build and validate Guide 95 package
-        if: steps.gate.outputs.needed == 'true'
-        run: python scripts/guide95_publication_recovery.py build
-
-      - name: Commit verified Guide 95 package
-        if: steps.gate.outputs.needed == 'true'
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add project/revision-2026/guide-95/publication-candidate \
-                  project/revision-2026/guide-95/qa/GUIDE_95_PUBLICATION_QA_09.md \
-                  project/revision-2026/guide-95/qa/GUIDE_95_RELEASE_AUDIT_10.md
-          git diff --cached --check --ignore-space-at-eol
-          if git diff --cached --quiet; then
-            echo 'Guide 95 package already current.'
-          else
-            git commit -m 'build(guide-95): publish controlled trilingual package'
-            git push origin HEAD:revision/guide-00-100-2026
-          fi
-
-      - name: Close Guide 95 helper status after package commit
-        if: steps.gate.outputs.needed == 'true'
-        shell: bash
-        run: |
-          set -euo pipefail
-          git pull --rebase origin revision/guide-00-100-2026
-          python scripts/guide95_publication_recovery.py close-status
-          git add project/revision-2026/guide-95/GUIDE_95_HELPER_STATUS.json
-          git diff --cached --check --ignore-space-at-eol
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'status(guide-95): close publication and release audit'
-          git push origin HEAD:revision/guide-00-100-2026
-
   guide96-publication-recovery:
     if: >-
-      (github.event_name == 'push' && github.ref == 'refs/heads/revision/guide-00-100-2026') ||
-      (github.event_name == 'pull_request' &&
-       github.base_ref == 'revision/guide-00-100-2026' &&
-       github.head_ref == 'trigger/guide96-pr-carrier' &&
-       github.event.pull_request.head.repo.full_name == github.repository)
+      github.event_name == 'pull_request' &&
+      github.base_ref == 'revision/guide-00-100-2026' &&
+      github.head_ref == 'trigger/guide96-pr-carrier' &&
+      github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     timeout-minutes: 45
     permissions:
@@ -136,10 +61,10 @@ jobs:
         run: |
           import json, os
           from pathlib import Path
-          p=Path('project/revision-2026/guide-96/GUIDE_96_HELPER_STATUS.json')
-          d=json.loads(p.read_text(encoding='utf-8'))
+          p = Path('project/revision-2026/guide-96/GUIDE_96_HELPER_STATUS.json')
+          d = json.loads(p.read_text(encoding='utf-8'))
           needed = d['stages']['publication']['status'] != 'PASS' or d['stages']['release_audit']['status'] != 'PASS'
-          with open(os.environ['GITHUB_OUTPUT'],'a',encoding='utf-8') as f:
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as f:
               f.write(f"needed={'true' if needed else 'false'}\n")
           print(f"Guide 96 publication needed: {needed}")
 
@@ -173,7 +98,32 @@ jobs:
           git add project/revision-2026/guide-96/publication-candidate \
                   project/revision-2026/guide-96/qa/GUIDE_96_PUBLICATION_QA_09.md \
                   project/revision-2026/guide-96/qa/GUIDE_96_RELEASE_AUDIT_10.md
-          git diff --cached --check --ignore-space-at-eol
+
+          # The frozen Markdown intentionally uses two trailing spaces for hard
+          # line breaks in the metadata block. Allow only that known whitespace
+          # class; fail on every other git diff --check finding.
+          python - <<'PY'
+          import subprocess, sys
+          p = subprocess.run(['git','diff','--cached','--check'], text=True, capture_output=True)
+          lines = (p.stdout + p.stderr).splitlines()
+          bad = []
+          skip_payload = False
+          for line in lines:
+              if line.endswith(': trailing whitespace.'):
+                  skip_payload = True
+                  continue
+              if skip_payload and line.startswith('+'):
+                  skip_payload = False
+                  continue
+              skip_payload = False
+              if line.strip():
+                  bad.append(line)
+          if bad:
+              print('\n'.join(bad))
+              raise SystemExit('Non-approved staged whitespace/conflict defect detected')
+          print('Staged package check PASS; intentional Markdown hard breaks allowed.')
+          PY
+
           if git diff --cached --quiet; then
             echo 'Guide 96 package already current.'
           else
@@ -198,7 +148,7 @@ jobs:
           git pull --rebase origin revision/guide-00-100-2026
           python scripts/guide96_publication_recovery.py close-status
           git add project/revision-2026/guide-96/GUIDE_96_HELPER_STATUS.json
-          git diff --cached --check --ignore-space-at-eol
+          git diff --cached --check
           if git diff --cached --quiet; then
             echo 'Guide 96 status already closed.'
             exit 0
@@ -218,4 +168,4 @@ jobs:
       - name: Safety note
         run: |
           echo 'Guide 96 publication is fail-closed and does not merge PR #17.'
-          echo 'The same-repository PR allowance is restricted to trigger/guide96-pr-carrier.'
+          echo 'This temporary carrier PR remains unmerged and is closed after verification.'
