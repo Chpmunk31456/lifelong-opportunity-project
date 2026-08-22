@@ -11,7 +11,7 @@
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-90/qa/GUIDE_90_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-90/working-masters/GUIDE_90_COORDINADOR_DE_PROYECTOS_DE_TECNOLOGIA_DE_LA_INFORMACION_ES419_v2.md", "project/revision-2026/guide-90/qa/GUIDE_90_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-90/working-masters/GUIDE_90_COORDENADOR_DE_PROJETOS_DE_TECNOLOGIA_DA_INFORMACAO_PTBR_v2.md", "project/revision-2026/guide-90/qa/GUIDE_90_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-90/qa/GUIDE_90_TRILINGUAL_TECHNICAL_QA_08.md"]},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
