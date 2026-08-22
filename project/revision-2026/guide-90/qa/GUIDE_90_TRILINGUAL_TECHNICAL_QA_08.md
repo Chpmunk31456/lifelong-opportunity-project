@@ -109,4 +109,5 @@ No edition guarantees employment, income, funding, admission, apprenticeship pla
 Guide 90 is cleared for controlled Publication QA and Release Audit.
 
 **Publication trigger synchronization:** 2026-08-22.  
-**Diagnostic trigger synchronization:** 2026-08-22.
+**Diagnostic trigger synchronization:** 2026-08-22.  
+**Publication v2 trigger synchronization:** 2026-08-22.
