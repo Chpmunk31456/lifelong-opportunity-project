@@ -1,0 +1,42 @@
+{
+  "guide": "96",
+  "occupation": "Electrical and Electronic Engineering Technician",
+  "build_date": "2026-08-22",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_96_ENGLISH_v2.docx",
+      "pdf": "GUIDE_96_ENGLISH_v2.pdf",
+      "docx_bytes": 28127,
+      "pdf_bytes": 403885,
+      "pdf_pages": 23,
+      "rendered_pages": 23,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_96_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_96_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 25515,
+      "pdf_bytes": 305024,
+      "pdf_pages": 18,
+      "rendered_pages": 18,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_96_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_96_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 25622,
+      "pdf_bytes": 304912,
+      "pdf_pages": 18,
+      "rendered_pages": 18,
+      "status": "PASS"
+    }
+  ],
+  "reader_verification_urls": 23,
+  "english_source_blob": "8a29c6130e2e38327e2faaadc12d2b3fdc28281e",
+  "qa_correction": "project/revision-2026/guide-96/qa/GUIDE_96_QA_CONTROL_CORRECTION_08A.md",
+  "assurance_boundary": "Internal controlled publication QA only; no independent certification, certified translation, professional licensure review, safety certification, funding approval, employment guarantee, or earnings guarantee."
+}
