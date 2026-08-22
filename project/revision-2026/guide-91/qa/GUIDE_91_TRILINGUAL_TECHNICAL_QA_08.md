@@ -94,3 +94,5 @@ All editions restrict portfolios to personal/sandbox/training/open-source/author
 **Blockers:** none.
 
 Guide 91 is cleared for controlled Publication QA and Release Audit.
+
+**Publication trigger synchronization:** 2026-08-22.
