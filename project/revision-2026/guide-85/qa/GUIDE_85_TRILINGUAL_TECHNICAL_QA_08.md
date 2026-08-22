@@ -54,20 +54,23 @@ The controlled values are preserved across English, es-419 and pt-BR:
 - Visualización de datos usando Power BI — **48 hours/horas**
 - Analítica de datos para procesos logísticos — **48 hours/horas**
 
-## Source parity — PASS
-All three editions retain the controlled verification destinations for the 27-source set defined in `GUIDE_85_CURRENT_SOURCE_EVIDENCE_02.md`, covering:
-- O*NET Statisticians profile/detail/wage/trend/hot-tech/demand sources;
-- CareerOneStop WIOA and training locators;
-- Indeed U.S. Data Analyst market context;
-- Canada Job Bank occupation/requirements/wages and Canada training gateway;
-- Colombia OCUPACOL profiles 25210, 25110 and 21200;
-- all three SENA Betowa pathways;
-- OIT/Cinterfor;
-- CISA Secure Our World;
-- NIST Cybersecurity, Privacy and AI RMF sources;
-- Section 508 and WCAG 2.2.
+## Source and link parity — PASS
+The controlled research evidence pack retains **27 evidence URLs** for claim traceability across O*NET, CareerOneStop, Indeed, Canada Job Bank/Canada.ca, OCUPACOL, SENA, OIT/Cinterfor, CISA, NIST, Section 508 and WCAG 2.2.
 
-No fabricated source or AI-generated authority is introduced.
+The three **reader-facing masters intentionally share the same curated 11 verification URLs** for usability:
+- O*NET Statisticians detail;
+- O*NET Business Intelligence Analysts detail;
+- CareerOneStop WIOA locator;
+- Apprenticeship.gov;
+- NIST AI RMF;
+- Canada Job Bank landing point for NOC 21223 verification;
+- Canada training gateway;
+- OCUPACOL;
+- SENA Betowa;
+- OIT/Cinterfor;
+- Indeed U.S. Data Analyst salary context.
+
+The shorter reader list does not replace the 27-source evidence pack. No fabricated source or AI-generated authority is introduced.
 
 ## Analytical-method parity — PASS
 All editions preserve the core professional workflow:
