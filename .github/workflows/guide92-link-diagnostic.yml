@@ -1,0 +1,51 @@
+name: Guide 92 link diagnostic
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide92-link-diagnostic.yml'
+      - 'project/revision-2026/guide-92/qa/GUIDE_92_TRILINGUAL_TECHNICAL_QA_08.md'
+
+permissions:
+  contents: write
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+      - name: Record controlled link statuses
+        shell: python
+        run: |
+          import re,json,urllib.request,urllib.error
+          from pathlib import Path
+          root=Path('project/revision-2026/guide-92')
+          t=(root/'research/GUIDE_92_CURRENT_SOURCE_EVIDENCE_02.md').read_text(encoding='utf-8')
+          urls=sorted(set(re.findall(r'https://[^\s)<>`]+',t)))
+          result=[]
+          for u in urls:
+            req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0 Guide92-Link-Diagnostic'})
+            try:
+              with urllib.request.urlopen(req,timeout=35) as r: code=r.getcode()
+            except urllib.error.HTTPError as e: code=e.code
+            except Exception as e:
+              code=0
+              result.append({'url':u,'code':code,'error':type(e).__name__})
+              continue
+            result.append({'url':u,'code':code})
+          hard=[x for x in result if x['code'] in (404,410)]
+          report={'count':len(urls),'hard_failures':hard,'results':result}
+          (root/'qa/GUIDE_92_LINK_DIAGNOSTIC.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+      - name: Commit diagnostic only
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-92/qa/GUIDE_92_LINK_DIAGNOSTIC.json
+          git commit -m 'qa(guide-92): record controlled link diagnostic' || exit 0
+          git pull --rebase origin revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026
