@@ -106,3 +106,5 @@ Publication may proceed only if the build:
 **Blockers:** none.
 
 Guide 95 may proceed to Publication.
+
+**v2 publisher activation trigger:** 2026-08-22 — workflow already installed on target branch; this metadata-only change exists solely to emit the matching publication event.
