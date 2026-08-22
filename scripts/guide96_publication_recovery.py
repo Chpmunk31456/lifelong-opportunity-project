@@ -19,7 +19,7 @@ STEMS=[("en","GUIDE_96_ENGLISH_v2"),("es-419","GUIDE_96_SPANISH_es-419_v2"),("pt
 CONTROLS=[
  r"17-3023\.00",r"22310",r"31141",r"49[,.]510",r"61[,.]610",r"78[,.]190",r"97[,.]650",r"115[,.]700",
  r"23[,.]80",r"29[,.]62",r"37[,.]59",r"46[,.]95",r"55[,.]62",r"77[,.]180",r"8[,.]400",
- r"C\$24[,.]04",r"C\$35[,.]58",r"C\$55[,.]34",r"24\s+(?:months|meses)",r"1[,.]200",r"30[,.]67",r"27[,.]58",r"1[,.]711[,.]841"
+ r"C\$24[,.]04",r"C\$35[,.]58",r"C\$55[,.]34",r"24\s+(?:months|meses)",r"1[,.]200",r"30[,.]67",r"27[,.]58"
 ]
 
 def run(cmd,capture=False):
@@ -96,17 +96,17 @@ def build():
   if n!=rn: raise SystemExit(f'Page mismatch {stem}: {n}/{rn}')
   editions.append({'language':lang,'docx':docx.name,'pdf':pdf.name,'docx_bytes':docx.stat().st_size,'pdf_bytes':pdf.stat().st_size,'pdf_pages':n,'rendered_pages':rn,'status':'PASS'})
  (OUT/'RENDER_QA.json').write_text(json.dumps({'status':'PASS','pages':pages,'problems':[]},indent=2)+'\n',encoding='utf-8')
- manifest={'guide':'96','occupation':'Electrical and Electronic Engineering Technician','build_date':'2026-08-22','status':'PASS','editions':editions,'reader_verification_urls':23,'english_source_blob':'8a29c6130e2e38327e2faaadc12d2b3fdc28281e','assurance_boundary':'Internal controlled publication QA only; no independent certification, certified translation, professional licensure review, safety certification, funding approval, employment guarantee, or earnings guarantee.'}
+ manifest={'guide':'96','occupation':'Electrical and Electronic Engineering Technician','build_date':'2026-08-22','status':'PASS','editions':editions,'reader_verification_urls':23,'english_source_blob':'8a29c6130e2e38327e2faaadc12d2b3fdc28281e','qa_correction':'project/revision-2026/guide-96/qa/GUIDE_96_QA_CONTROL_CORRECTION_08A.md','assurance_boundary':'Internal controlled publication QA only; no independent certification, certified translation, professional licensure review, safety certification, funding approval, employment guarantee, or earnings guarantee.'}
  (OUT/'GUIDE_96_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
  bins=sorted([*OUT.glob('*.docx'),*OUT.glob('*.pdf')]); (OUT/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in bins)+'\n',encoding='utf-8')
- (QA/'GUIDE_96_PUBLICATION_QA_09.md').write_text('# Guide 96 — Publication QA 09\n\n**Stage:** Publication — **PASS**\n\nEnglish, es-419 and pt-BR Markdown/DOCX/PDF editions passed controlled-value and 23-link parity, hard 404/410 link checks, DOCX integrity, searchable-PDF validation, all-page rendering, page reconciliation, metadata and SHA-256 generation. No independent certification or outcome guarantee is claimed.\n',encoding='utf-8')
- (QA/'GUIDE_96_RELEASE_AUDIT_10.md').write_text('# Guide 96 — Release Audit 10\n\n**Stage:** Release Audit — **PASS**\n\nRelease audit confirms all predecessor gates, trilingual publication package, 23-reader-link parity, checksums, searchable PDFs, all-page render evidence, electrical/professional scope boundaries and zero blockers. Guide 97 may initialize only after helper-status closure.\n',encoding='utf-8')
+ (QA/'GUIDE_96_PUBLICATION_QA_09.md').write_text('# Guide 96 — Publication QA 09\n\n**Stage:** Publication — **PASS**\n\nEnglish, es-419 and pt-BR Markdown/DOCX/PDF editions passed controlled-value and 23-link parity, hard 404/410 link checks, DOCX integrity, searchable-PDF validation, all-page rendering, page reconciliation, metadata and SHA-256 generation. QA correction 08A is incorporated. No independent certification or outcome guarantee is claimed.\n',encoding='utf-8')
+ (QA/'GUIDE_96_RELEASE_AUDIT_10.md').write_text('# Guide 96 — Release Audit 10\n\n**Stage:** Release Audit — **PASS**\n\nRelease audit confirms all predecessor gates, QA correction 08A, trilingual publication package, 23-reader-link parity, checksums, searchable PDFs, all-page render evidence, electrical/professional scope boundaries and zero blockers. Guide 97 may initialize only after helper-status closure.\n',encoding='utf-8')
  shutil.rmtree(render_root)
  print(f'Guide 96 publication build PASS; rendered pages={len(pages)}')
 
 def close_status():
  d=status(); require_predecessors(d)
- req=[QA/'GUIDE_96_PUBLICATION_QA_09.md',QA/'GUIDE_96_RELEASE_AUDIT_10.md',OUT/'GUIDE_96_PUBLICATION_QA_MANIFEST.json',OUT/'SHA256SUMS.txt',OUT/'RENDER_QA.json']
+ req=[QA/'GUIDE_96_PUBLICATION_QA_09.md',QA/'GUIDE_96_RELEASE_AUDIT_10.md',QA/'GUIDE_96_QA_CONTROL_CORRECTION_08A.md',OUT/'GUIDE_96_PUBLICATION_QA_MANIFEST.json',OUT/'SHA256SUMS.txt',OUT/'RENDER_QA.json']
  for p in req:
   if not p.exists(): raise SystemExit(f'Missing release evidence: {p}')
  if json.loads((OUT/'GUIDE_96_PUBLICATION_QA_MANIFEST.json').read_text())['status']!='PASS' or json.loads((OUT/'RENDER_QA.json').read_text())['status']!='PASS': raise SystemExit('Release evidence not PASS')
@@ -114,7 +114,7 @@ def close_status():
   if not line: continue
   digest,name=line.split('  ',1); p=OUT/name
   if hashlib.sha256(p.read_bytes()).hexdigest()!=digest: raise SystemExit(f'Checksum failed: {name}')
- d['stages']['publication']={'status':'PASS','evidence':['project/revision-2026/guide-96/qa/GUIDE_96_PUBLICATION_QA_09.md','project/revision-2026/guide-96/publication-candidate/GUIDE_96_PUBLICATION_QA_MANIFEST.json','project/revision-2026/guide-96/publication-candidate/SHA256SUMS.txt','project/revision-2026/guide-96/publication-candidate/RENDER_QA.json']}
+ d['stages']['publication']={'status':'PASS','evidence':['project/revision-2026/guide-96/qa/GUIDE_96_PUBLICATION_QA_09.md','project/revision-2026/guide-96/qa/GUIDE_96_QA_CONTROL_CORRECTION_08A.md','project/revision-2026/guide-96/publication-candidate/GUIDE_96_PUBLICATION_QA_MANIFEST.json','project/revision-2026/guide-96/publication-candidate/SHA256SUMS.txt','project/revision-2026/guide-96/publication-candidate/RENDER_QA.json']}
  d['stages']['release_audit']={'status':'PASS','evidence':['project/revision-2026/guide-96/qa/GUIDE_96_RELEASE_AUDIT_10.md']}; d['blockers']=[]
  STATUS.write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
  print('Guide 96 status closure prepared.')
