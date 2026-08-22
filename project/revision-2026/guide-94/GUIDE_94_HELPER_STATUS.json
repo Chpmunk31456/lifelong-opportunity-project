@@ -49,7 +49,12 @@
         "project/revision-2026/guide-94/qa/GUIDE_94_PORTUGUESE_LOCALIZATION_QA_07.md"
       ]
     },
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "technical_qa": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-94/qa/GUIDE_94_TRILINGUAL_TECHNICAL_QA_08.md"
+      ]
+    },
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
