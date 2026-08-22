@@ -1,5 +1,5 @@
 name: Repository metadata audit
-# Guide 95 recovery carrier trigger v3 — after Guide 60 YAML repair; no controlled guide content changes.
+# Guide 95 recovery carrier trigger v3 — recovery remains inert after Guide 95 closure.
 
 on:
   pull_request:
@@ -26,10 +26,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -38,7 +38,7 @@ jobs:
 
       - name: Upload audit report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: repository-metadata-audit
           path: QA_METADATA_AUDIT.md
@@ -52,7 +52,7 @@ jobs:
       contents: write
     steps:
       - name: Check out controlled revision branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: revision/guide-00-100-2026
           fetch-depth: 0
