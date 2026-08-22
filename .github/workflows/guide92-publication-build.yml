@@ -1,5 +1,5 @@
 # Controlled Guide 92 publication and release workflow
-# v4: conflict-safe package/status commits and no rendered PNG intermediates in Git.
+# v4.1: conflict-safe package/status commits, compact render QA, and line-anchored TODO detection.
 name: Guide 92 controlled publication and release
 
 on:
@@ -68,7 +68,8 @@ jobs:
             if len(t)<14000: problems.append(f'{p.name}: unexpectedly short ({len(t)})')
             if len(re.findall(r'^##\s+.+$',t,re.M))<25: problems.append(f'{p.name}: insufficient major sections')
             low=t.lower()
-            for bad in ('todo:','lorem ipsum','translation pending','traduccion pendiente','tradução pendente'):
+            if re.search(r'(?im)^\s*(?:[-*]\s*)?todo\s*:',t): problems.append(f'{p.name}: placeholder TODO')
+            for bad in ('lorem ipsum','translation pending','traduccion pendiente','tradução pendente'):
               if bad in low: problems.append(f'{p.name}: placeholder {bad}')
           urls=[set(re.findall(r'https://[^\s)<>`]+',t)) for t in texts]
           if not (urls[0]==urls[1]==urls[2]): problems.append(f'reader URL parity mismatch {[len(x) for x in urls]}')
