@@ -1,0 +1,573 @@
+{
+  "status": "PASS",
+  "pages": [
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-01.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 150,
+        "right": 116,
+        "bottom": 136
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-02.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 113,
+        "right": 115,
+        "bottom": 126
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-03.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 113,
+        "right": 116,
+        "bottom": 114
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-04.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 113,
+        "right": 124,
+        "bottom": 125
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-05.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 113,
+        "right": 114,
+        "bottom": 147
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-06.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 115,
+        "bottom": 127
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-07.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 117,
+        "right": 118,
+        "bottom": 112
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-08.png",
+      "edge_margins": {
+        "left": 110,
+        "top": 113,
+        "right": 136,
+        "bottom": 131
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-09.png",
+      "edge_margins": {
+        "left": 110,
+        "top": 117,
+        "right": 113,
+        "bottom": 144
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-10.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 117,
+        "bottom": 118
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-11.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 113,
+        "right": 135,
+        "bottom": 121
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-12.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 113,
+        "right": 127,
+        "bottom": 130
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-13.png",
+      "edge_margins": {
+        "left": 108,
+        "top": 113,
+        "right": 130,
+        "bottom": 145
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-14.png",
+      "edge_margins": {
+        "left": 108,
+        "top": 113,
+        "right": 112,
+        "bottom": 118
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-15.png",
+      "edge_margins": {
+        "left": 108,
+        "top": 113,
+        "right": 111,
+        "bottom": 193
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-16.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 113,
+        "right": 128,
+        "bottom": 121
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-17.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 113,
+        "right": 113,
+        "bottom": 154
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-18.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 111,
+        "bottom": 124
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-19.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 113,
+        "right": 116,
+        "bottom": 161
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-20.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 113,
+        "right": 120,
+        "bottom": 137
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-21.png",
+      "edge_margins": {
+        "left": 111,
+        "top": 113,
+        "right": 111,
+        "bottom": 125
+      }
+    },
+    {
+      "file": "GUIDE_97_ENGLISH_v2/page-22.png",
+      "edge_margins": {
+        "left": 110,
+        "top": 113,
+        "right": 112,
+        "bottom": 500
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-01.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 150,
+        "right": 113,
+        "bottom": 116
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-02.png",
+      "edge_margins": {
+        "left": 110,
+        "top": 112,
+        "right": 113,
+        "bottom": 121
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-03.png",
+      "edge_margins": {
+        "left": 110,
+        "top": 112,
+        "right": 114,
+        "bottom": 153
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-04.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 112,
+        "bottom": 118
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-05.png",
+      "edge_margins": {
+        "left": 110,
+        "top": 113,
+        "right": 112,
+        "bottom": 116
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-06.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 123,
+        "bottom": 113
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-07.png",
+      "edge_margins": {
+        "left": 110,
+        "top": 113,
+        "right": 114,
+        "bottom": 127
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-08.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 113,
+        "bottom": 137
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-09.png",
+      "edge_margins": {
+        "left": 110,
+        "top": 113,
+        "right": 113,
+        "bottom": 134
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-10.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 113,
+        "right": 121,
+        "bottom": 132
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-11.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 116,
+        "bottom": 115
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-12.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 113,
+        "bottom": 112
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-13.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 126,
+        "bottom": 126
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-14.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 117,
+        "bottom": 125
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-15.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 111,
+        "right": 116,
+        "bottom": 133
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-16.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 115,
+        "bottom": 134
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-17.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 115,
+        "bottom": 120
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-18.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 117,
+        "bottom": 110
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-19.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 112,
+        "bottom": 144
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-20.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 144,
+        "bottom": 129
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-21.png",
+      "edge_margins": {
+        "left": 111,
+        "top": 112,
+        "right": 112,
+        "bottom": 135
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-22.png",
+      "edge_margins": {
+        "left": 111,
+        "top": 113,
+        "right": 111,
+        "bottom": 113
+      }
+    },
+    {
+      "file": "GUIDE_97_PORTUGUESE_pt-BR_v2/page-23.png",
+      "edge_margins": {
+        "left": 110,
+        "top": 113,
+        "right": 114,
+        "bottom": 570
+      }
+    },
+    {
+      "file": "GUIDE_97_SPANISH_es-419_v2/page-01.png",
+      "edge_margins": {
+        "left": 108,
+        "top": 149,
+        "right": 111,
+        "bottom": 137
+      }
+    },
+    {
+      "file": "GUIDE_97_SPANISH_es-419_v2/page-02.png",
+      "edge_margins": {
+        "left": 110,
+        "top": 112,
+        "right": 114,
+        "bottom": 136
+      }
+    },
+    {
+      "file": "GUIDE_97_SPANISH_es-419_v2/page-03.png",
+      "edge_margins": {
+        "left": 110,
+        "top": 113,
+        "right": 120,
+        "bottom": 130
+      }
+    },
+    {
+      "file": "GUIDE_97_SPANISH_es-419_v2/page-04.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 113,
+        "bottom": 141
+      }
+    },
+    {
+      "file": "GUIDE_97_SPANISH_es-419_v2/page-05.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 113,
+        "bottom": 121
+      }
+    },
+    {
+      "file": "GUIDE_97_SPANISH_es-419_v2/page-06.png",
+      "edge_margins": {
+        "left": 110,
+        "top": 112,
+        "right": 112,
+        "bottom": 132
+      }
+    },
+    {
+      "file": "GUIDE_97_SPANISH_es-419_v2/page-07.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 112,
+        "bottom": 126
+      }
+    },
+    {
+      "file": "GUIDE_97_SPANISH_es-419_v2/page-08.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 111,
+        "bottom": 185
+      }
+    },
+    {
+      "file": "GUIDE_97_SPANISH_es-419_v2/page-09.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 111,
+        "right": 116,
+        "bottom": 115
+      }
+    },
+    {
+      "file": "GUIDE_97_SPANISH_es-419_v2/page-10.png",
+      "edge_margins": {
+        "left": 110,
+        "top": 111,
+        "right": 117,
+        "bottom": 204
+      }
+    },
+    {
+      "file": "GUIDE_97_SPANISH_es-419_v2/page-11.png",
+      "edge_margins": {
+        "left": 108,
+        "top": 112,
+        "right": 117,
+        "bottom": 187
+      }
+    },
+    {
+      "file": "GUIDE_97_SPANISH_es-419_v2/page-12.png",
+      "edge_margins": {
+        "left": 108,
+        "top": 113,
+        "right": 113,
+        "bottom": 190
+      }
+    },
+    {
+      "file": "GUIDE_97_SPANISH_es-419_v2/page-13.png",
+      "edge_margins": {
+        "left": 108,
+        "top": 113,
+        "right": 112,
+        "bottom": 151
+      }
+    },
+    {
+      "file": "GUIDE_97_SPANISH_es-419_v2/page-14.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 120,
+        "bottom": 149
+      }
+    },
+    {
+      "file": "GUIDE_97_SPANISH_es-419_v2/page-15.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 116,
+        "bottom": 142
+      }
+    },
+    {
+      "file": "GUIDE_97_SPANISH_es-419_v2/page-16.png",
+      "edge_margins": {
+        "left": 109,
+        "top": 112,
+        "right": 114,
+        "bottom": 171
+      }
+    },
+    {
+      "file": "GUIDE_97_SPANISH_es-419_v2/page-17.png",
+      "edge_margins": {
+        "left": 111,
+        "top": 113,
+        "right": 111,
+        "bottom": 128
+      }
+    },
+    {
+      "file": "GUIDE_97_SPANISH_es-419_v2/page-18.png",
+      "edge_margins": {
+        "left": 131,
+        "top": 113,
+        "right": 119,
+        "bottom": 988
+      }
+    }
+  ],
+  "problems": []
+}
