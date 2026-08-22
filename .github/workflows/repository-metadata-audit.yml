@@ -1,5 +1,5 @@
 name: Repository metadata audit
-# Guide 95 recovery carrier v7 — capture rendered pages on failure for visual diagnosis.
+# Guide 95 recovery carrier v8 — rerun after disabling dollar-sign math parsing.
 
 on:
   pull_request:
