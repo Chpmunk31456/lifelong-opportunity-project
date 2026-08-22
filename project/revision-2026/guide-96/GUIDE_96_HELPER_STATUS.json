@@ -36,8 +36,11 @@
       ]
     },
     "spanish_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-96/working-masters/GUIDE_96_TECNICO_EN_INGENIERIA_ELECTRICA_Y_ELECTRONICA_ES419_v2.md",
+        "project/revision-2026/guide-96/qa/GUIDE_96_SPANISH_LOCALIZATION_QA_06.md"
+      ]
     },
     "portuguese_localization": {
       "status": "PENDING",
