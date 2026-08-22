@@ -11,7 +11,7 @@
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-87/qa/GUIDE_87_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-87/working-masters/GUIDE_87_ANALISTA_Y_PROBADOR_DE_ASEGURAMIENTO_DE_CALIDAD_DE_SOFTWARE_ES419_v2.md", "project/revision-2026/guide-87/qa/GUIDE_87_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-87/working-masters/GUIDE_87_ANALISTA_E_TESTADOR_DE_QUALIDADE_DE_SOFTWARE_PTBR_v2.md", "project/revision-2026/guide-87/qa/GUIDE_87_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-87/qa/GUIDE_87_TRILINGUAL_TECHNICAL_QA_08.md"]},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
