@@ -1,0 +1,109 @@
+name: Repair completed-guide PR workflow churn
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/repair-completed-guide-pr-churn.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repair-completed-guide-pr-churn
+  cancel-in-progress: false
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Remove pull-request triggers only from fully closed guide publication workflows
+        shell: python
+        run: |
+          from pathlib import Path
+          import json,re
+
+          repo=Path('.')
+          workflows=repo/'.github/workflows'
+          revised=[]
+          skipped=[]
+
+          def remove_pr_event(text):
+              lines=text.splitlines(keepends=True)
+              out=[]
+              i=0
+              removed=False
+              while i < len(lines):
+                  line=lines[i]
+                  if line.startswith('  pull_request:'):
+                      removed=True
+                      i += 1
+                      while i < len(lines):
+                          nxt=lines[i]
+                          if re.match(r'^  [A-Za-z_][A-Za-z0-9_-]*:\s*$',nxt):
+                              break
+                          i += 1
+                      continue
+                  out.append(line)
+                  i += 1
+              return ''.join(out),removed
+
+          for wf in sorted(workflows.glob('guide*-publication-build.yml')):
+              m=re.match(r'guide(\d+)-publication-build\.yml$',wf.name)
+              if not m:
+                  continue
+              n=int(m.group(1))
+              if n >= 92:
+                  continue
+              status=repo/f'project/revision-2026/guide-{n:02d}/GUIDE_{n:02d}_HELPER_STATUS.json'
+              if not status.exists():
+                  skipped.append({'workflow':wf.name,'reason':'manifest missing'})
+                  continue
+              try:
+                  d=json.loads(status.read_text(encoding='utf-8'))
+              except Exception as e:
+                  skipped.append({'workflow':wf.name,'reason':f'manifest unreadable: {e}'})
+                  continue
+              pub=d.get('stages',{}).get('publication',{}).get('status')
+              rel=d.get('stages',{}).get('release_audit',{}).get('status')
+              if not (pub=='PASS' and rel=='PASS'):
+                  skipped.append({'workflow':wf.name,'reason':f'not fully closed publication={pub} release={rel}'})
+                  continue
+              text=wf.read_text(encoding='utf-8')
+              new,removed=remove_pr_event(text)
+              if not removed:
+                  continue
+              if '  push:' not in new or '  workflow_dispatch:' not in new:
+                  raise SystemExit(f'{wf}: safety check failed after PR-trigger removal')
+              wf.write_text(new,encoding='utf-8')
+              revised.append(wf.as_posix())
+
+          report={
+              'status':'PASS',
+              'policy':'Removed pull_request triggers only from guide publication workflows whose live helper manifest already records publication PASS and release_audit PASS. Push and workflow_dispatch triggers were preserved. Guides 92+ were excluded.',
+              'revised':revised,
+              'skipped':skipped
+          }
+          out=repo/'project/revision-2026/WORKFLOW_CHURN_REPAIR_REPORT.json'
+          out.write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          print(json.dumps(report,indent=2))
+
+      - name: Commit coordination repair
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .github/workflows/guide*-publication-build.yml project/revision-2026/WORKFLOW_CHURN_REPAIR_REPORT.json
+          if git diff --cached --quiet; then
+            echo 'No eligible completed-guide PR triggers required repair.'
+            exit 0
+          fi
+          git commit -m 'fix(workflows): stop completed-guide PR reruns'
+          git pull --rebase origin revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026
