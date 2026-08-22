@@ -1,3 +1,4 @@
+# Activation touch 2026-08-22: workflow existed before this push.
 name: Disable legacy completed-guide publication auto-triggers
 
 on:
