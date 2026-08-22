@@ -1,5 +1,5 @@
 name: Repository metadata audit
-# Guide 95 recovery carrier v5 — corrected 48-hour validator runner.
+# Guide 95 recovery carrier v6 — publication URL display clipping fix active.
 
 on:
   pull_request:
