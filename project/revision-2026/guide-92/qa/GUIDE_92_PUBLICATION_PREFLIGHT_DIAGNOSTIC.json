@@ -1,0 +1,36 @@
+{
+  "status": "FAIL",
+  "files": {
+    "GUIDE_92_GEOGRAPHIC_INFORMATION_SYSTEMS_TECHNICIAN_ENGLISH_v2.md": {
+      "characters": 24810,
+      "h2": 37,
+      "urls": 23,
+      "missing_controls": [],
+      "missing_semantics": []
+    },
+    "GUIDE_92_TECNICO_EN_SISTEMAS_DE_INFORMACION_GEOGRAFICA_ES419_v2.md": {
+      "characters": 21835,
+      "h2": 37,
+      "urls": 23,
+      "missing_controls": [],
+      "missing_semantics": []
+    },
+    "GUIDE_92_TECNICO_EM_SISTEMAS_DE_INFORMACAO_GEOGRAFICA_PTBR_v2.md": {
+      "characters": 19836,
+      "h2": 37,
+      "urls": 23,
+      "missing_controls": [],
+      "missing_semantics": []
+    }
+  },
+  "reader_url_counts": [
+    23,
+    23,
+    23
+  ],
+  "reader_url_parity": true,
+  "evidence_url_count": 23,
+  "problems": [
+    "GUIDE_92_TECNICO_EN_SISTEMAS_DE_INFORMACION_GEOGRAFICA_ES419_v2.md: placeholder todo:"
+  ]
+}
