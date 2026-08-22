@@ -104,3 +104,5 @@ No edition guarantees employment, income, funding, admission, apprenticeship pla
 **Blockers:** none.
 
 Guide 89 is cleared for controlled Publication QA and Release Audit.
+
+**Publication trigger synchronization:** 2026-08-22.
