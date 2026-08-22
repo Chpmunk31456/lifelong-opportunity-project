@@ -42,7 +42,13 @@
         "project/revision-2026/guide-97/qa/GUIDE_97_SPANISH_LOCALIZATION_QA_06.md"
       ]
     },
-    "portuguese_localization": {"status": "PENDING", "evidence": []},
+    "portuguese_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-97/working-masters/GUIDE_97_MECHANICAL_ENGINEERING_TECHNICIAN_PORTUGUESE_pt-BR_v2.md",
+        "project/revision-2026/guide-97/qa/GUIDE_97_PORTUGUESE_LOCALIZATION_QA_07.md"
+      ]
+    },
     "technical_qa": {"status": "PENDING", "evidence": []},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
