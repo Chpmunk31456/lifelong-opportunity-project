@@ -21,7 +21,13 @@
       "status": "PASS",
       "evidence": ["project/revision-2026/guide-79/qa/GUIDE_79_ENGLISH_SOURCE_FREEZE_05.md"]
     },
-    "spanish_localization": {"status": "PENDING", "evidence": []},
+    "spanish_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-79/working-masters/GUIDE_79_ESPECIALISTA_EN_REDACCION_TECNICA_Y_DOCUMENTACION_ES419_v2.md",
+        "project/revision-2026/guide-79/qa/GUIDE_79_SPANISH_LOCALIZATION_QA_06.md"
+      ]
+    },
     "portuguese_localization": {"status": "PENDING", "evidence": []},
     "technical_qa": {"status": "PENDING", "evidence": []},
     "publication": {"status": "PENDING", "evidence": []},
