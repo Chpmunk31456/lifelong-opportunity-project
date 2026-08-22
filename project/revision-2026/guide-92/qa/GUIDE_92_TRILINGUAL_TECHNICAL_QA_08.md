@@ -107,4 +107,5 @@ Guide 92 is cleared for controlled Publication QA and Release Audit.
 **Publication trigger synchronization:** 2026-08-22.  
 **Diagnostic trigger synchronization:** 2026-08-22.  
 **Link diagnostic trigger synchronization:** 2026-08-22.  
-**Conflict-safe publication v3 trigger synchronization:** 2026-08-22.
+**Conflict-safe publication v3 trigger synchronization:** 2026-08-22.  
+**Post-diagnostic-cleanup release trigger:** 2026-08-22.
