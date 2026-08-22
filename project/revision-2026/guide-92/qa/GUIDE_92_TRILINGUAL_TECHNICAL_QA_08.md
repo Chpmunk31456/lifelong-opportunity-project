@@ -103,3 +103,5 @@ All editions restrict portfolio work to public/open, lawfully collected personal
 **Blockers:** none.
 
 Guide 92 is cleared for controlled Publication QA and Release Audit.
+
+**Publication trigger synchronization:** 2026-08-22.
