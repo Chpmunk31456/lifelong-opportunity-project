@@ -35,7 +35,13 @@
         "project/revision-2026/guide-97/qa/GUIDE_97_ENGLISH_SOURCE_FREEZE_05.md"
       ]
     },
-    "spanish_localization": {"status": "PENDING", "evidence": []},
+    "spanish_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-97/working-masters/GUIDE_97_MECHANICAL_ENGINEERING_TECHNICIAN_SPANISH_es-419_v2.md",
+        "project/revision-2026/guide-97/qa/GUIDE_97_SPANISH_LOCALIZATION_QA_06.md"
+      ]
+    },
     "portuguese_localization": {"status": "PENDING", "evidence": []},
     "technical_qa": {"status": "PENDING", "evidence": []},
     "publication": {"status": "PENDING", "evidence": []},
