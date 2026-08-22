@@ -1,5 +1,5 @@
 name: Repository metadata audit
-# Guide 95 recovery carrier trigger v3 — after Guide 60 YAML repair; no controlled guide content changes.
+# Guide 95 recovery carrier v4 — one exact same-repository PR may execute visible recovery diagnostics.
 
 on:
   pull_request:
@@ -45,7 +45,12 @@ jobs:
           if-no-files-found: error
 
   guide95-publication-recovery:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/revision/guide-00-100-2026'
+    if: >-
+      (github.event_name == 'push' && github.ref == 'refs/heads/revision/guide-00-100-2026') ||
+      (github.event_name == 'pull_request' &&
+       github.base_ref == 'revision/guide-00-100-2026' &&
+       github.head_ref == 'trigger/guide95-pr-carrier' &&
+       github.event.pull_request.head.repo.full_name == github.repository)
     runs-on: ubuntu-latest
     timeout-minutes: 45
     permissions:
@@ -135,4 +140,4 @@ jobs:
       - name: Safety note
         run: |
           echo 'Guide 95 recovery is fail-closed and does not merge PR #17.'
-          echo 'The recovery job runs only from the controlled revision branch and only when its carrier files change.'
+          echo 'The same-repository PR recovery allowance is restricted to trigger/guide95-pr-carrier.'
