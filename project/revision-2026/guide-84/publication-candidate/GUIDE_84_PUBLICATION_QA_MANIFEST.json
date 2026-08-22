@@ -1,0 +1,41 @@
+{
+  "guide": "84",
+  "occupation": "Business Intelligence Analyst",
+  "build_date": "2026-08-21",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_84_ENGLISH_v2.docx",
+      "pdf": "GUIDE_84_ENGLISH_v2.pdf",
+      "docx_bytes": 28121,
+      "pdf_bytes": 425422,
+      "pdf_pages": 23,
+      "rendered_pages": 23,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_84_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_84_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 27828,
+      "pdf_bytes": 425612,
+      "pdf_pages": 22,
+      "rendered_pages": 22,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_84_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_84_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 24234,
+      "pdf_bytes": 306557,
+      "pdf_pages": 16,
+      "rendered_pages": 16,
+      "status": "PASS"
+    }
+  ],
+  "controlled_source_urls": 25,
+  "official_statistics_boundary": "O*NET BI wage and employment data are collected from Data Scientists; publication preserves this crosswalk disclosure in all three languages.",
+  "assurance_boundary": "Internal automated publication QA, controlled link checks, all-page render inspection, and controlled source review; not independent human certification, certified translation, legal/accounting/privacy/cybersecurity/regulatory/accessibility certification, vendor certification, training-provider accreditation, funding approval, employment guarantee, or earnings guarantee."
+}
