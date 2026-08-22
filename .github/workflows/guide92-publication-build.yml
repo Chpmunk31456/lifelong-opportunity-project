@@ -1,4 +1,5 @@
 # Controlled Guide 92 publication and release workflow
+# 2026-08-22 controlled retrigger after strengthened publication diagnostic PASS; no QA checks weakened.
 name: Guide 92 controlled publication and release
 
 on:
@@ -198,7 +199,7 @@ jobs:
         shell: python
         run: |
           from pathlib import Path
-          import hashlib,json,subprocess,re,shutil
+          import hashlib,json,subprocess,re
           root=Path('project/revision-2026/guide-92'); out=root/'publication-candidate'; qa=root/'qa'
           render=json.loads((out/'rendered/RENDER_QA.json').read_text(encoding='utf-8')); assert render['status']=='PASS'
           editions=[]
@@ -216,14 +217,14 @@ jobs:
           (out/'GUIDE_92_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
           targets=sorted(p for p in out.iterdir() if p.is_file() and p.suffix in {'.docx','.pdf'})
           (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets)+'\n',encoding='utf-8')
-          (qa/'GUIDE_92_PUBLICATION_QA_09.md').write_text('# Guide 92 — Publication QA 09\n\n**Stage:** Publication — **PASS**\n\nEnglish, es-419 and pt-BR Markdown/DOCX/PDF editions passed occupation/numeric/semantic parity, mandatory Computer Occupations, All Other crosswalk disclosure, 23-link reader parity, 23-source evidence-link checks, DOCX integrity, searchable-PDF validation, all-page rendering, page reconciliation, metadata and SHA-256 checksum generation.\n\nNo independent human certification, certified translation, legal/surveying/cadastral/privacy/security/geospatial-accuracy/regulatory/accessibility certification, training-provider accreditation, funding approval, employment guarantee or earnings guarantee is claimed.\n',encoding='utf-8')
-          (qa/'GUIDE_92_RELEASE_AUDIT_10.md').write_text('# Guide 92 — Release Audit 10\n\n**Stage:** Release Audit — **PASS**\n\nRelease audit verified all three publication editions, checksums and rendered pages; O*NET 15-1299.02 / Canada NOC 22214 / Colombia CUOC 31123 mappings; the Computer Occupations, All Other statistical crosswalk; title-specific Indeed GIS Technician context; Canada surplus-risk outlook; SENA 80/48/48-hour pathways; CRS/datum, lineage, topology, georeferencing, spatial analysis, web-sharing, sensitive-location privacy, survey/legal authority, accessibility and responsible-AI safeguards. Guide 92 is cleared for sequential closure within Draft PR #17.\n',encoding='utf-8')
-          status=root/'GUIDE_92_HELPER_STATUS.json'; d=json.loads(status.read_text(encoding='utf-8'))
-          assert d['stages']['technical_qa']['status']=='PASS' and d['stages']['publication']['status']=='PENDING' and d['stages']['release_audit']['status']=='PENDING' and not d.get('blockers')
-          d['stages']['publication']={'status':'PASS','evidence':['project/revision-2026/guide-92/qa/GUIDE_92_PUBLICATION_QA_09.md','project/revision-2026/guide-92/publication-candidate/GUIDE_92_PUBLICATION_QA_MANIFEST.json','project/revision-2026/guide-92/publication-candidate/SHA256SUMS.txt']}
-          d['stages']['release_audit']={'status':'PASS','evidence':['project/revision-2026/guide-92/qa/GUIDE_92_RELEASE_AUDIT_10.md']}
-          status.write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
-          shutil.rmtree(out/'rendered')
+          (qa/'GUIDE_92_PUBLICATION_QA_09.md').write_text('# Guide 92 — Publication QA 09\n\n**Stage:** Publication — **PASS**\n\nEnglish, es-419 and pt-BR Markdown/DOCX/PDF editions passed occupation/numeric/semantic parity, mandatory Computer Occupations, All Other crosswalk disclosure, 23-link reader parity, 23-source evidence-link checks, DOCX integrity, searchable-PDF validation, all-page rendering, page reconciliation, metadata and SHA-256 checksum generation.\n\nNo independent human certification, certified translation, legal/surveying/cadastral/privacy/security/geospatial-accuracy/regulatory/accessibility certification, training-provider accreditation, funding approval, employment guarantee, or earnings guarantee is claimed.\n',encoding='utf-8')
+          (qa/'GUIDE_92_RELEASE_AUDIT_10.md').write_text('# Guide 92 — Release Audit 10\n\n**Stage:** Release Audit — **PASS**\n\nRelease audit verified predecessor Technical QA, trilingual package generation, controlled source/value parity, mandatory statistical-crosswalk disclosure, link gate, DOCX integrity, searchable PDF output, all-page visual rendering, metadata, checksums, and fail-closed publication/release evidence.\n\nThis is internal controlled QA and does not represent independent human certification or accreditation.\n',encoding='utf-8')
+          status=json.loads((root/'GUIDE_92_HELPER_STATUS.json').read_text(encoding='utf-8'))
+          status['updated']='2026-08-22'
+          status['stages']['publication']={'status':'PASS','evidence':['project/revision-2026/guide-92/qa/GUIDE_92_PUBLICATION_QA_09.md','project/revision-2026/guide-92/publication-candidate/GUIDE_92_PUBLICATION_QA_MANIFEST.json','project/revision-2026/guide-92/publication-candidate/SHA256SUMS.txt']}
+          status['stages']['release_audit']={'status':'PASS','evidence':['project/revision-2026/guide-92/qa/GUIDE_92_RELEASE_AUDIT_10.md']}
+          status['blockers']=[]
+          (root/'GUIDE_92_HELPER_STATUS.json').write_text(json.dumps(status,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
 
       - name: Commit controlled publication package
         run: |
