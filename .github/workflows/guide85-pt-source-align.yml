@@ -1,0 +1,70 @@
+name: Guide 85 pt-BR source-link alignment
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide85-pt-source-align.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  align:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Align Portuguese reader-facing verification links
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path('project/revision-2026/guide-85/working-masters/GUIDE_85_DATA_ANALYST_PORTUGUESE_PTBR_v2.md')
+          text=p.read_text(encoding='utf-8')
+          start=text.index('## Fontes e links de verificação')
+          end=text.index('## Aviso importante', start)
+          replacement='''## Fontes e links de verificação
+
+Verifique valores e disponibilidade de programas antes de tomar uma decisão importante.
+
+### Estados Unidos
+
+- O*NET — Statisticians: https://www.onetonline.org/link/details/15-2041.00
+- O*NET — Business Intelligence Analysts: https://www.onetonline.org/link/details/15-2051.01
+- CareerOneStop WIOA training locator: https://www.careeronestop.org/LocalHelp/EmploymentAndTraining/find-WIOA-training-programs.aspx
+- Apprenticeship.gov: https://www.apprenticeship.gov/
+- NIST AI Risk Management Framework: https://www.nist.gov/itl/ai-risk-management-framework
+
+### Canadá
+
+- Job Bank — NOC 21223 occupational information: https://www.jobbank.gc.ca/
+- Canada training gateway: https://www.canada.ca/en/services/jobs/training.html
+
+### Colômbia
+
+- OCUPACOL: https://ocupacol.mintrabajo.gov.co/
+- SENA Betowa: https://betowa.sena.edu.co/
+
+### América Latina e Caribe
+
+- OIT/Cinterfor: https://www.oitcinterfor.org/
+
+### Contexto atual de mercado não governamental
+
+- Indeed U.S. Data Analyst salary page: https://www.indeed.com/career/data-analyst/salaries
+
+'''
+          p.write_text(text[:start]+replacement+text[end:],encoding='utf-8')
+
+      - name: Commit aligned Portuguese source appendix
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-85/working-masters/GUIDE_85_DATA_ANALYST_PORTUGUESE_PTBR_v2.md
+          git commit -m 'fix(guide-85): align pt-BR verification links'
+          git pull --rebase origin revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026
