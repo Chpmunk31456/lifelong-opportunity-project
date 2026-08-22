@@ -84,8 +84,8 @@ jobs:
             r'27-3042\.00',r'51112',r'26410',
             r'57[,.]440',r'27[,.]62',r'70[,.]880',r'34[,.]08',r'90[,.]390',r'43[,.]46',r'115[,.]510',r'55[,.]53',r'145[,.]270',r'69[,.]84',
             r'56[,.]400',r'56[,.]900',r'1\s*%',r'4[,.]500',
-            r'38[,.]81',r'24[,.]15',r'62[,.]37',r'2[,.]5\s*k',r'36\s+(?:months|meses)',
-            r'27[,.]00',r'36[,.]06',r'53[,.]37',r'35\s*(?:-|a|to)\s*40',r'48\s+(?:hours|horas)',r'30[- ]day|30\s+d[ií]as'
+            r'38[,.]81',r'24[,.]15',r'62[,.]37',r'2[,.]5\s*(?:k|mil)',r'36\s+(?:months|meses)',
+            r'27[,.]00',r'36[,.]06',r'53[,.]37',r'35\s*(?:-|a|to)\s*40',r'48[-\s]+(?:hours?|horas)',r'30[- ]day|30\s+d[ií]as'
           ]
           for p,t in zip(files,texts):
             for pat in controls:
@@ -96,7 +96,7 @@ jobs:
               'privacy':['privacy','privacidad','privacidade'],
               'cybersecurity':['cybersecurity','ciberseguridad','cibersegurança'],
               'AI':['generative ai','ia generativa'],
-              'source control':['source control','control de versiones','controle de versão'],
+              'version control':['version control','control de versiones','controle de versão'],
               'portfolio':['portfolio','portafolio','portfólio'],
               'plain language':['plain language','lenguaje claro','linguagem simples'],
               'human review':['human','humana','humano']
@@ -219,23 +219,26 @@ jobs:
           (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets)+'\n',encoding='utf-8')
           qa=root/'qa'
           (qa/'GUIDE_79_PUBLICATION_QA_09.md').write_text('# Guide 79 — Publication QA 09\n\n**Stage:** Publication — **PASS**\n\nControlled English, neutral Latin American Spanish (`es-419`), and Brazilian Portuguese (`pt-BR`) Markdown/DOCX/PDF editions passed frozen-source parity, controlled occupation/outlook/wage/accessibility validation, live-link checks, package integrity, searchable-text validation, all-page rendering, page-count reconciliation, metadata, and checksum generation.\n\nNo independent human certification, certified translation, engineering/safety/legal/medical/regulatory review, records-management approval, accessibility certification, cybersecurity certification, software-release approval, professional accreditation, funding approval, employment guarantee, client-acquisition guarantee, or earnings guarantee is claimed.\n',encoding='utf-8')
-          (qa/'GUIDE_79_RELEASE_AUDIT_10.md').write_text('# Guide 79 — Release Audit 10\n\n**Stage:** Release Audit — **PASS**\n\nRelease audit verified all three publication editions, QA manifest, SHA-256 checksums, searchable PDF integrity, all-page rendering evidence, controlled U.S./Canada/Colombia evidence, WIOA/Canada/SENA/OIT-Cinterfor pathways, documentation-role authority boundaries, plain-language and WCAG-aware accessibility controls, privacy/cybersecurity safeguards, portfolio integrity, source-control discipline, and responsible generative-AI boundaries. Guide 79 is cleared for sequential closure within Draft PR #17.\n',encoding='utf-8')
+          (qa/'GUIDE_79_RELEASE_AUDIT_10.md').write_text('# Guide 79 — Release Audit 10\n\n**Stage:** Release Audit — **PASS**\n\nRelease audit verified all three publication editions, QA manifest, SHA-256 checksums, searchable PDF integrity, all-page rendering evidence, controlled U.S./Canada/Colombia evidence, WIOA/Canada/SENA/OIT-Cinterfor pathways, documentation-role authority boundaries, plain-language and WCAG-aware accessibility controls, privacy/cybersecurity safeguards, portfolio integrity, version-control discipline, and responsible generative-AI boundaries. Guide 79 is cleared for sequential closure within Draft PR #17.\n',encoding='utf-8')
           status=root/'GUIDE_79_HELPER_STATUS.json'; d=json.loads(status.read_text(encoding='utf-8'))
           assert d['stages']['technical_qa']['status']=='PASS'; assert d['stages']['publication']['status']=='PENDING'; assert d['stages']['release_audit']['status']=='PENDING'; assert not d.get('blockers')
           d['stages']['publication']={'status':'PASS','evidence':['project/revision-2026/guide-79/qa/GUIDE_79_PUBLICATION_QA_09.md','project/revision-2026/guide-79/publication-candidate/GUIDE_79_PUBLICATION_QA_MANIFEST.json','project/revision-2026/guide-79/publication-candidate/SHA256SUMS.txt']}
           d['stages']['release_audit']={'status':'PASS','evidence':['project/revision-2026/guide-79/qa/GUIDE_79_RELEASE_AUDIT_10.md']}
+          d['updated']='2026-08-21'
           status.write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
 
       - name: Remove rendered PNGs from commit scope
-        run: rm -rf project/revision-2026/guide-79/publication-candidate/rendered
+        shell: bash
+        run: |
+          rm -rf project/revision-2026/guide-79/publication-candidate/rendered
 
       - name: Commit controlled publication package
+        if: github.event_name != 'pull_request'
         shell: bash
         run: |
           set -euo pipefail
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- project/revision-2026/guide-79
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'release(guide-79): publish controlled trilingual package [skip ci]'
+          git config user.name 'guide-publication-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add project/revision-2026/guide-79/GUIDE_79_HELPER_STATUS.json project/revision-2026/guide-79/qa/GUIDE_79_PUBLICATION_QA_09.md project/revision-2026/guide-79/qa/GUIDE_79_RELEASE_AUDIT_10.md project/revision-2026/guide-79/publication-candidate
+          git commit -m 'release(guide-79): publish validated trilingual package'
           git push origin HEAD:revision/guide-00-100-2026
