@@ -11,7 +11,7 @@
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-96/qa/GUIDE_96_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-96/working-masters/GUIDE_96_TECNICO_EN_INGENIERIA_ELECTRICA_Y_ELECTRONICA_ES419_v2.md", "project/revision-2026/guide-96/qa/GUIDE_96_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-96/working-masters/GUIDE_96_TECNICO_EM_ENGENHARIA_ELETRICA_E_ELETRONICA_PTBR_v2.md", "project/revision-2026/guide-96/qa/GUIDE_96_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-96/qa/GUIDE_96_TRILINGUAL_TECHNICAL_QA_08.md"]},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
