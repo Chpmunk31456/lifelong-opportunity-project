@@ -1,0 +1,56 @@
+name: Guide 92 publication diagnostic
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide92-publication-diagnostic.yml'
+      - 'project/revision-2026/guide-92/qa/GUIDE_92_TRILINGUAL_TECHNICAL_QA_08.md'
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+      - name: Run non-destructive Markdown validator probe
+        shell: python
+        run: |
+          from pathlib import Path
+          import re,json
+          root=Path('project/revision-2026/guide-92')
+          files=[root/'working-masters/GUIDE_92_GEOGRAPHIC_INFORMATION_SYSTEMS_TECHNICIAN_ENGLISH_v2.md',root/'working-masters/GUIDE_92_TECNICO_EN_SISTEMAS_DE_INFORMACION_GEOGRAFICA_ES419_v2.md',root/'working-masters/GUIDE_92_TECNICO_EM_SISTEMAS_DE_INFORMACAO_GEOGRAFICA_PTBR_v2.md']
+          texts=[p.read_text(encoding='utf-8') for p in files]
+          report={'files':{},'problems':[]}
+          for p,t in zip(files,texts):
+            report['files'][p.name]={'characters':len(t),'h2':len(re.findall(r'^##\s+.+$',t,re.M)),'urls':len(set(re.findall(r'https://[^\s)<>`]+',t)))}
+          urls=[set(re.findall(r'https://[^\s)<>`]+',t)) for t in texts]
+          report['reader_url_counts']=[len(x) for x in urls]; report['reader_url_parity']=urls[0]==urls[1]==urls[2]
+          research=(root/'research/GUIDE_92_CURRENT_SOURCE_EVIDENCE_02.md').read_text(encoding='utf-8')
+          report['evidence_url_count']=len(set(re.findall(r'https://[^\s)<>`]+',research)))
+          controls=[r'15-1299\.02',r'22214',r'31123',r'55[,.]940',r'26[,.]89',r'79[,.]370',r'38[,.]16',r'116[,.]580',r'56[,.]05',r'157[,.]500',r'75[,.]72',r'188[,.]470',r'90[,.]61',r'472[,.]000',r'510[,.]500',r'8\s*%',r'31[,.]300',r'25[,.]88',r'17[,.]60',r'38[,.]06',r'749',r'36\s+(?:months|meses)',r'C\$23[,.]08',r'C\$38[,.]10',r'C\$53[,.]85',r'80\s+(?:hours|horas)',r'48\s+(?:hours|horas)',r'75\s*%',r'67\s*%',r'34\s*%',r'22\s*%',r'21\s*%',r'14\s*%',r'13\s*%',r'10\s*%',r'7\s*%',r'6\s*%',r'5\s*%']
+          semantics={'statistical crosswalk':['computer occupations, all other'],'GIS':['gis','sig'],'CRS':['crs'],'datum':['datum'],'projection':['projection','proyección','projeção'],'lineage':['lineage','linaje','linhagem'],'metadata':['metadata'],'topology':['topology','topología','topologia'],'georeferencing':['georeferencing','georreferenciación','georreferenciamento'],'spatial analysis':['spatial analysis','análisis espacial','análise espacial'],'privacy':['privacy','privacidad','privacidade'],'survey boundary':['survey-grade','topográfica','levantamento'],'responsible AI':['responsible ai','ia responsable','ia responsável'],'accessibility':['accessibility','accesibilidad','acessibilidade'],'synthetic':['synthetic','sintético','sintética'],'Canada surplus':['strong risk of labour surplus']}
+          for p,t in zip(files,texts):
+            for pat in controls:
+              if not re.search(pat,t,re.I): report['problems'].append(f'{p.name}: missing control {pat}')
+            low=t.lower()
+            for label,terms in semantics.items():
+              if not any(term.lower() in low for term in terms): report['problems'].append(f'{p.name}: missing semantic {label}')
+          if not report['reader_url_parity']: report['problems'].append('reader URL parity mismatch')
+          if report['reader_url_counts'] != [23,23,23]: report['problems'].append(f"reader URL counts {report['reader_url_counts']} expected [23,23,23]")
+          if report['evidence_url_count'] != 23: report['problems'].append(f"evidence URL count {report['evidence_url_count']} expected 23")
+          (root/'qa/GUIDE_92_PUBLICATION_DIAGNOSTIC.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+      - name: Commit diagnostic only
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-92/qa/GUIDE_92_PUBLICATION_DIAGNOSTIC.json
+          git commit -m 'qa(guide-92): record publication diagnostic' || exit 0
+          git pull --rebase origin revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026
