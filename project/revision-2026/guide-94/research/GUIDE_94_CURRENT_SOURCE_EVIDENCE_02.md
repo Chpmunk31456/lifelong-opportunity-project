@@ -198,7 +198,7 @@ These are locators, not funding promises. Eligibility, covered programs, cost li
 7. https://www.ziprecruiter.com/Salaries/Civil-Engineering-Technician-Salary
 8. https://www.salary.com/research/salary/listing/civil-engineering-technician-salary
 9. https://www.jobbank.gc.ca/marketreport/summary-occupation/17964/ca
-10. https://www.jobbank.gc.ca/marketreport/wages-occupation/17964/ca
+10. https://www.jobbank.gc.ca/wagereport/occupation/17997
 11. https://www.jobbank.gc.ca/marketreport/requirements/17963/ca
 12. https://www.canada.ca/en/services/benefits/education/student-aid.html
 13. https://www.canada.ca/en/services/jobs/training/support-skilled-trades-apprentices/grants.html
