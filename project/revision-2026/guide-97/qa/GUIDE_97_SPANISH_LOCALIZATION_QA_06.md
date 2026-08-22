@@ -2,9 +2,9 @@
 
 ## Controlled source
 - English frozen master: `project/revision-2026/guide-97/working-masters/GUIDE_97_MECHANICAL_ENGINEERING_TECHNICIAN_ENGLISH_v2.md`
-- Frozen English blob: `0a4dcbe75ef6fa4e351af3bc4a13726c2e7dae94`
+- Frozen English blob: `f923ec4bbe08cd81d881091f204a4aa3d0c6c7cb`
 - Spanish controlled master: `project/revision-2026/guide-97/working-masters/GUIDE_97_MECHANICAL_ENGINEERING_TECHNICIAN_SPANISH_es-419_v2.md`
-- Spanish blob: `c908e4cb7d6d61fc3f0b7e71e9eaac523db5ffa8`
+- Spanish blob: `f851c168d366ee8ab551a63c842a7df830bcba91`
 - Locale: neutral Latin American Spanish (`es-419`)
 
 ## Localization controls checked
@@ -32,3 +32,13 @@ The localization uses neutral Latin American terminology and avoids country-spec
 **PASS — Spanish Localization (`es-419`)**
 
 No blocker identified for Brazilian Portuguese localization.
+
+## Post-freeze source-link correction revalidation — 2026-08-22
+
+NIST moved the reader-verification page for *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile*. The obsolete URL ending in `-profile` returned HTTP 404 during Publication QA. The official NIST publication page was reverified on 2026-08-22 and the URL-only correction was applied in English, `es-419`, and `pt-BR` with no change to occupational claims, wage/training values, safety/professional-scope controls, cybersecurity/AI guidance, action-plan milestones, or assurance boundaries.
+
+- Revalidated English blob: `f923ec4bbe08cd81d881091f204a4aa3d0c6c7cb`
+- Revalidated Spanish blob: `f851c168d366ee8ab551a63c842a7df830bcba91`
+- Revalidated Portuguese blob: `183a888d50148d4059c041b850548bef87e2cb09`
+- Correct official NIST destination: https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence
+- Result: **PASS — affected gate revalidated after URL-only source correction.**

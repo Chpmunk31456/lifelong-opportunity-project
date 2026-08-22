@@ -194,7 +194,7 @@ def build():
         'status': 'PASS',
         'editions': editions,
         'reader_verification_urls': 26,
-        'english_source_blob': '0a4dcbe75ef6fa4e351af3bc4a13726c2e7dae94',
+        'english_source_blob': 'f923ec4bbe08cd81d881091f204a4aa3d0c6c7cb',
         'assurance_boundary': 'Internal controlled publication QA only; no independent certification, certified translation, professional licensure review, safety certification, funding approval, employment guarantee, or earnings guarantee.',
     }
     (OUT / 'GUIDE_97_PUBLICATION_QA_MANIFEST.json').write_text(

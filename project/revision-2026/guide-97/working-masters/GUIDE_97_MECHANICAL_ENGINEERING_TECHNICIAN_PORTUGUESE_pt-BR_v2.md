@@ -739,7 +739,7 @@ Antes de se candidatar, confirme que você pode dizer com honestidade:
 - OSHA Lockout/Tagout guide: https://www.osha.gov/sites/default/files/publications/OSHA3120.pdf
 - CISA Secure Our World: https://www.cisa.gov/secure-our-world
 - NIST AI Risk Management Framework: https://www.nist.gov/itl/ai-risk-management-framework
-- NIST Generative AI Profile: https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence-profile
+- NIST Generative AI Profile: https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence
 
 ### Canadá
 - Job Bank summary: https://www.jobbank.gc.ca/marketreport/summary-occupation/3236/ca

@@ -179,3 +179,13 @@ Full live-link and publication validation remains downstream under Technical QA 
 **PASS — English Editorial**
 
 No blocker identified for Evidence / Traceability QA.
+
+## Post-freeze source-link correction revalidation — 2026-08-22
+
+NIST moved the reader-verification page for *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile*. The obsolete URL ending in `-profile` returned HTTP 404 during Publication QA. The official NIST publication page was reverified on 2026-08-22 and the URL-only correction was applied in English, `es-419`, and `pt-BR` with no change to occupational claims, wage/training values, safety/professional-scope controls, cybersecurity/AI guidance, action-plan milestones, or assurance boundaries.
+
+- Revalidated English blob: `f923ec4bbe08cd81d881091f204a4aa3d0c6c7cb`
+- Revalidated Spanish blob: `f851c168d366ee8ab551a63c842a7df830bcba91`
+- Revalidated Portuguese blob: `183a888d50148d4059c041b850548bef87e2cb09`
+- Correct official NIST destination: https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence
+- Result: **PASS — affected gate revalidated after URL-only source correction.**

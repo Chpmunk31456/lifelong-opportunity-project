@@ -9,7 +9,7 @@ Mechanical Engineering Technician
 ## Controlled inputs
 - Research evidence: `project/revision-2026/guide-97/research/GUIDE_97_CURRENT_SOURCE_EVIDENCE_02.md`
 - English master: `project/revision-2026/guide-97/working-masters/GUIDE_97_MECHANICAL_ENGINEERING_TECHNICIAN_ENGLISH_v2.md`
-- English master blob reviewed: `0a4dcbe75ef6fa4e351af3bc4a13726c2e7dae94`
+- English master blob reviewed: `f923ec4bbe08cd81d881091f204a4aa3d0c6c7cb`
 
 ## Gate purpose
 Verify that consequential claims in the controlled English master are traceable to the current research pack, that official and non-government sources are not conflated, that jurisdictional comparisons are properly bounded, and that no unsupported certification, licensure, accreditation, wage, funding, safety, or AI claim is promoted into the frozen source.
@@ -166,3 +166,13 @@ No unsupported claim found for:
 **PASS — Evidence / Traceability**
 
 The English master is eligible for English Source Freeze. No blocker identified.
+
+## Post-freeze source-link correction revalidation — 2026-08-22
+
+NIST moved the reader-verification page for *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile*. The obsolete URL ending in `-profile` returned HTTP 404 during Publication QA. The official NIST publication page was reverified on 2026-08-22 and the URL-only correction was applied in English, `es-419`, and `pt-BR` with no change to occupational claims, wage/training values, safety/professional-scope controls, cybersecurity/AI guidance, action-plan milestones, or assurance boundaries.
+
+- Revalidated English blob: `f923ec4bbe08cd81d881091f204a4aa3d0c6c7cb`
+- Revalidated Spanish blob: `f851c168d366ee8ab551a63c842a7df830bcba91`
+- Revalidated Portuguese blob: `183a888d50148d4059c041b850548bef87e2cb09`
+- Correct official NIST destination: https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence
+- Result: **PASS — affected gate revalidated after URL-only source correction.**

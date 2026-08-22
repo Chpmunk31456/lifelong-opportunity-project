@@ -5,11 +5,11 @@ Mechanical Engineering Technician
 
 ## Controlled editions
 - English: `project/revision-2026/guide-97/working-masters/GUIDE_97_MECHANICAL_ENGINEERING_TECHNICIAN_ENGLISH_v2.md`
-  - blob: `0a4dcbe75ef6fa4e351af3bc4a13726c2e7dae94`
+  - blob: `f923ec4bbe08cd81d881091f204a4aa3d0c6c7cb`
 - Spanish (`es-419`): `project/revision-2026/guide-97/working-masters/GUIDE_97_MECHANICAL_ENGINEERING_TECHNICIAN_SPANISH_es-419_v2.md`
-  - blob: `c908e4cb7d6d61fc3f0b7e71e9eaac523db5ffa8`
+  - blob: `f851c168d366ee8ab551a63c842a7df830bcba91`
 - Portuguese (`pt-BR`): `project/revision-2026/guide-97/working-masters/GUIDE_97_MECHANICAL_ENGINEERING_TECHNICIAN_PORTUGUESE_pt-BR_v2.md`
-  - blob: `f6070362230523d336ffdc634b45ef95e9822b95`
+  - blob: `183a888d50148d4059c041b850548bef87e2cb09`
 
 ## Predecessor gates
 - Baseline Inventory: **PASS**
@@ -100,3 +100,13 @@ No edition claims independent human certification, certified professional transl
 **PASS — Trilingual Technical QA**
 
 The controlled trilingual content is eligible for Publication QA. Publication and Release Audit remain fail-closed until generated Markdown/DOCX/PDF packages, render QA, integrity checks, manifest and checksums are present and verified.
+
+## Post-freeze source-link correction revalidation — 2026-08-22
+
+NIST moved the reader-verification page for *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile*. The obsolete URL ending in `-profile` returned HTTP 404 during Publication QA. The official NIST publication page was reverified on 2026-08-22 and the URL-only correction was applied in English, `es-419`, and `pt-BR` with no change to occupational claims, wage/training values, safety/professional-scope controls, cybersecurity/AI guidance, action-plan milestones, or assurance boundaries.
+
+- Revalidated English blob: `f923ec4bbe08cd81d881091f204a4aa3d0c6c7cb`
+- Revalidated Spanish blob: `f851c168d366ee8ab551a63c842a7df830bcba91`
+- Revalidated Portuguese blob: `183a888d50148d4059c041b850548bef87e2cb09`
+- Correct official NIST destination: https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence
+- Result: **PASS — affected gate revalidated after URL-only source correction.**
