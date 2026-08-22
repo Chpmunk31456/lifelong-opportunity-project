@@ -1,5 +1,5 @@
 name: Repository metadata audit
-# Guide 95 recovery carrier v8 — rerun after disabling dollar-sign math parsing.
+# Guide 95 recovery carrier v9 — preserve intentional Markdown hard-break spaces during commit check.
 
 on:
   pull_request:
@@ -106,7 +106,7 @@ jobs:
           git add project/revision-2026/guide-95/publication-candidate \
                   project/revision-2026/guide-95/qa/GUIDE_95_PUBLICATION_QA_09.md \
                   project/revision-2026/guide-95/qa/GUIDE_95_RELEASE_AUDIT_10.md
-          git diff --cached --check
+          git -c core.whitespace=-blank-at-eol diff --cached --check
           if git diff --cached --quiet; then
             echo 'Guide 95 package already current.'
           else
