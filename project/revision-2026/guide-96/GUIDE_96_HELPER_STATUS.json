@@ -17,8 +17,11 @@
       ]
     },
     "english_editorial": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-96/working-masters/GUIDE_96_ELECTRICAL_AND_ELECTRONIC_ENGINEERING_TECHNICIAN_ENGLISH_v2.md",
+        "project/revision-2026/guide-96/qa/GUIDE_96_ENGLISH_EDITORIAL_QA_03.md"
+      ]
     },
     "evidence_traceability": {
       "status": "PENDING",
