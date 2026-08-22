@@ -80,7 +80,7 @@ jobs:
           evidence_urls=set(re.findall(r'https://[^\s)<>`]+',research))
           if len(evidence_urls)!=26: problems.append(f'expected 26 evidence URLs, found {len(evidence_urls)}')
 
-          controls=[r'15-1252\.00',r'21232',r'25120',r'135[,.]980',r'1[,.]693[,.]800',r'1[,.]961[,.]400',r'16\s*%',r'115[,.]200',r'C\$30[,.]00',r'C\$48[,.]08',r'C\$76[,.]92',r'3[,.]984\s+(?:hours|horas)',r'135[,.]356',r'39[,.]3\s*k',r'36\s+(?:months|meses)']
+          controls=[r'15-1252\.00',r'21232',r'25120',r'135[,.]980',r'1[,.]693[,.]800',r'1[,.]961[,.]400',r'16\s*%',r'115[,.]200',r'C\$30[,.]00',r'C\$48[,.]08',r'C\$76[,.]92',r'3[,.]984\s+(?:hours|horas)',r'135[,.]356',r'39[,.]3\s*(?:k|mil)',r'36\s+(?:months|meses)']
           semantics={
             'requirements':['requirements','requisitos'],
             'version control':['version control','control de versiones','controle de versão'],
@@ -218,7 +218,7 @@ jobs:
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
-          git config user.email '4189824+github-actions[bot]@users.noreply.github.com'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add project/revision-2026/guide-89
           if git diff --cached --quiet; then
             echo 'No controlled publication changes to commit'
