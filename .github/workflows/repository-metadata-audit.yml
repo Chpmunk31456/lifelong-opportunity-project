@@ -68,6 +68,40 @@ jobs:
               f.write(f"needed={'true' if needed else 'false'}\n")
           print(f"Guide 97 publication needed: {needed}")
 
+      - name: Apply and commit Guide 97 source-link correction
+        if: steps.gate97.outputs.needed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/guide97_source_link_correction.py
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            project/revision-2026/guide-97/working-masters \
+            project/revision-2026/guide-97/qa/GUIDE_97_ENGLISH_EDITORIAL_QA_03.md \
+            project/revision-2026/guide-97/qa/GUIDE_97_EVIDENCE_TRACEABILITY_QA_04.md \
+            project/revision-2026/guide-97/qa/GUIDE_97_ENGLISH_SOURCE_FREEZE_05.md \
+            project/revision-2026/guide-97/qa/GUIDE_97_SPANISH_LOCALIZATION_QA_06.md \
+            project/revision-2026/guide-97/qa/GUIDE_97_PORTUGUESE_LOCALIZATION_QA_07.md \
+            project/revision-2026/guide-97/qa/GUIDE_97_TRILINGUAL_TECHNICAL_QA_08.md \
+            project/revision-2026/guide-97/qa/GUIDE_97_SOURCE_LINK_CORRECTION_08A.md \
+            scripts/guide97_publication_recovery.py
+          if git diff --cached --quiet; then
+            echo 'Guide 97 source-link correction already current.'
+          else
+            git commit -m 'fix(guide-97): correct NIST GenAI source link and revalidate gates'
+            for attempt in 1 2 3 4 5; do
+              git fetch origin revision/guide-00-100-2026
+              git rebase origin/revision/guide-00-100-2026
+              if git push origin HEAD:revision/guide-00-100-2026; then
+                echo 'Guide 97 source-link correction committed.'
+                break
+              fi
+              if [[ "$attempt" == '5' ]]; then exit 1; fi
+              sleep 2
+            done
+          fi
+
       - name: Install Guide 97 publication toolchain
         if: steps.gate97.outputs.needed == 'true'
         run: |
