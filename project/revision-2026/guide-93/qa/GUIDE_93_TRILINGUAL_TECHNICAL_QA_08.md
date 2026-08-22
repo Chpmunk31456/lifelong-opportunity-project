@@ -110,4 +110,6 @@ Publication may proceed only if the build:
 
 **Publication activation retry:** 2026-08-22 — QA-only workflow re-trigger; no reviewed master, controlled value, source freeze, or gate result changed.
 
+**Publication activation retry 2:** 2026-08-22 — live-head QA trigger refreshed after publication remained pending; no reviewed master, controlled value, source freeze, or gate result changed.
+
 Guide 93 may proceed to Publication.
