@@ -11,7 +11,7 @@
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-81/qa/GUIDE_81_ENGLISH_SOURCE_FREEZE_05.md"]},
     "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-81/working-masters/GUIDE_81_TECNOLOGO_EN_INFORMACION_DE_SALUD_Y_REGISTRADOR_MEDICO_ES419_v2.md", "project/revision-2026/guide-81/qa/GUIDE_81_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-81/working-masters/GUIDE_81_TECNOLOGO_EM_INFORMACAO_DE_SAUDE_E_REGISTRADOR_MEDICO_PTBR_v2.md", "project/revision-2026/guide-81/qa/GUIDE_81_PORTUGUESE_LOCALIZATION_QA_07.md"]},
-    "technical_qa": {"status": "PENDING", "evidence": []},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-81/qa/GUIDE_81_TRILINGUAL_TECHNICAL_QA_08.md"]},
     "publication": {"status": "PENDING", "evidence": []},
     "release_audit": {"status": "PENDING", "evidence": []}
   },
