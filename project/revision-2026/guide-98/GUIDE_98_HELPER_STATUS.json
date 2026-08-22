@@ -4,19 +4,9 @@
   "branch": "revision/guide-00-100-2026",
   "updated": "2026-08-22",
   "stages": {
-    "baseline_inventory": {
-      "status": "PASS",
-      "evidence": [
-        "project/revision-2026/guide-98/qa/GUIDE_98_BASELINE_INVENTORY_01.md"
-      ]
-    },
-    "research": {
-      "status": "PASS",
-      "evidence": [
-        "project/revision-2026/guide-98/research/GUIDE_98_CURRENT_SOURCE_EVIDENCE_02.md"
-      ]
-    },
-    "english_editorial": {"status": "PENDING", "evidence": []},
+    "baseline_inventory": {"status": "PASS", "evidence": ["project/revision-2026/guide-98/qa/GUIDE_98_BASELINE_INVENTORY_01.md"]},
+    "research": {"status": "PASS", "evidence": ["project/revision-2026/guide-98/research/GUIDE_98_CURRENT_SOURCE_EVIDENCE_02.md"]},
+    "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-98/working-masters/GUIDE_98_AGRICULTURAL_TECHNICIAN_ENGLISH_v2.md", "project/revision-2026/guide-98/qa/GUIDE_98_ENGLISH_EDITORIAL_QA_03.md"]},
     "evidence_traceability": {"status": "PENDING", "evidence": []},
     "english_source_freeze": {"status": "PENDING", "evidence": []},
     "spanish_localization": {"status": "PENDING", "evidence": []},
