@@ -1,0 +1,41 @@
+{
+  "guide": "86",
+  "occupation": "Database Administrator",
+  "build_date": "2026-08-22",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_86_ENGLISH_v2.docx",
+      "pdf": "GUIDE_86_ENGLISH_v2.pdf",
+      "docx_bytes": 27626,
+      "pdf_bytes": 446897,
+      "pdf_pages": 23,
+      "rendered_pages": 23,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_86_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_86_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 28202,
+      "pdf_bytes": 450433,
+      "pdf_pages": 23,
+      "rendered_pages": 23,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_86_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_86_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 28130,
+      "pdf_bytes": 451249,
+      "pdf_pages": 23,
+      "rendered_pages": 23,
+      "status": "PASS"
+    }
+  ],
+  "controlled_evidence_urls": 26,
+  "reader_verification_urls": 21,
+  "assurance_boundary": "Internal automated publication QA, controlled link checks, all-page render inspection, and controlled source review; not independent human certification, certified translation, legal/privacy/cybersecurity/vendor/recovery/regulatory/accessibility certification, training-provider accreditation, funding approval, employment guarantee, or earnings guarantee."
+}
