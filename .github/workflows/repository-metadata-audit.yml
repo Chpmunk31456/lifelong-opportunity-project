@@ -1,5 +1,5 @@
 name: Repository metadata audit
-# Guide 95 recovery carrier v6 — publication URL display clipping fix active.
+# Guide 95 recovery carrier v7 — capture rendered pages on failure for visual diagnosis.
 
 on:
   pull_request:
@@ -85,6 +85,16 @@ jobs:
       - name: Build and validate Guide 95 package
         if: steps.gate.outputs.needed == 'true'
         run: python scripts/guide95_publication_recovery_runner.py build
+
+      - name: Upload Guide 95 render diagnostics on failure
+        if: failure() && steps.gate.outputs.needed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: guide95-render-diagnostics
+          path: |
+            project/revision-2026/guide-95/publication-candidate/rendered/**
+            project/revision-2026/guide-95/publication-candidate/*.pdf
+          if-no-files-found: warn
 
       - name: Commit verified Guide 95 package
         if: steps.gate.outputs.needed == 'true'
