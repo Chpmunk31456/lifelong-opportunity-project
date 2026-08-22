@@ -4,7 +4,8 @@
 **Controlled branch:** `revision/guide-00-100-2026`  
 **Frozen English source:** blob `a25d99dc19dcc0ed795ea9e55be20d95101ef1e2`  
 **Locales:** English, neutral Latin American Spanish (`es-419`), Brazilian Portuguese (`pt-BR`)  
-**Review date:** 2026-08-22
+**Review date:** 2026-08-22  
+**Publication trigger synchronization:** controlled push issued after workflow installation; no QA result changed.
 
 ## Occupation parity — PASS
 All three editions preserve the direct mappings:
