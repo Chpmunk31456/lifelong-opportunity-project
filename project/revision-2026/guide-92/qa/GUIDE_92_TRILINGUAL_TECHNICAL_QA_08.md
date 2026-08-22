@@ -104,4 +104,5 @@ All editions restrict portfolio work to public/open, lawfully collected personal
 
 Guide 92 is cleared for controlled Publication QA and Release Audit.
 
-**Publication trigger synchronization:** 2026-08-22.
+**Publication trigger synchronization:** 2026-08-22.  
+**Diagnostic trigger synchronization:** 2026-08-22.
