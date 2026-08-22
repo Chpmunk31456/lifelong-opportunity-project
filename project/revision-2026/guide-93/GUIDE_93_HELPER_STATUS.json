@@ -43,8 +43,11 @@
       ]
     },
     "portuguese_localization": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-93/working-masters/GUIDE_93_TECNICO_EM_AGRIMENSURA_E_MAPEAMENTO_PTBR_v2.md",
+        "project/revision-2026/guide-93/qa/GUIDE_93_PORTUGUESE_LOCALIZATION_QA_07.md"
+      ]
     },
     "technical_qa": {
       "status": "PENDING",
