@@ -1,0 +1,42 @@
+{
+  "guide": "91",
+  "occupation": "Cloud Support Specialist",
+  "build_date": "2026-08-22",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_91_ENGLISH_v2.docx",
+      "pdf": "GUIDE_91_ENGLISH_v2.pdf",
+      "docx_bytes": 23102,
+      "pdf_bytes": 263024,
+      "pdf_pages": 14,
+      "rendered_pages": 14,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_91_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_91_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 22626,
+      "pdf_bytes": 206593,
+      "pdf_pages": 12,
+      "rendered_pages": 12,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_91_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_91_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 22644,
+      "pdf_bytes": 207307,
+      "pdf_pages": 12,
+      "rendered_pages": 12,
+      "status": "PASS"
+    }
+  ],
+  "controlled_evidence_urls": 36,
+  "reader_verification_urls": 30,
+  "classification_boundary": "Cloud Support Specialist uses O*NET 15-1231.00 as the U.S. primary benchmark, Canada NOC 22220/22221 and Colombia CUOC 35130/35121 according to actual infrastructure-versus-user/application duties.",
+  "assurance_boundary": "Internal automated publication QA, controlled link checks, all-page render inspection, and controlled source review; not independent human certification, certified translation, legal/privacy/cybersecurity/cloud-architecture/recovery/vendor/regulatory/accessibility certification, training-provider accreditation, funding approval, employment guarantee, or earnings guarantee."
+}
