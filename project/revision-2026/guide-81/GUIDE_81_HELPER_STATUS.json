@@ -9,7 +9,7 @@
     "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-81/working-masters/GUIDE_81_HEALTH_INFORMATION_TECHNOLOGIST_AND_MEDICAL_REGISTRAR_ENGLISH_v2.md", "project/revision-2026/guide-81/qa/GUIDE_81_ENGLISH_EDITORIAL_QA_03.md"]},
     "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-81/qa/GUIDE_81_EVIDENCE_TRACEABILITY_QA_04.md"]},
     "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-81/qa/GUIDE_81_ENGLISH_SOURCE_FREEZE_05.md"]},
-    "spanish_localization": {"status": "PENDING", "evidence": []},
+    "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-81/working-masters/GUIDE_81_TECNOLOGO_EN_INFORMACION_DE_SALUD_Y_REGISTRADOR_MEDICO_ES419_v2.md", "project/revision-2026/guide-81/qa/GUIDE_81_SPANISH_LOCALIZATION_QA_06.md"]},
     "portuguese_localization": {"status": "PENDING", "evidence": []},
     "technical_qa": {"status": "PENDING", "evidence": []},
     "publication": {"status": "PENDING", "evidence": []},
