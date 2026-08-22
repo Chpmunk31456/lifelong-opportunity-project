@@ -106,6 +106,6 @@ Publication may proceed only if the build:
 
 **Blockers:** none.
 
-**Publication activation:** 2026-08-22 — controlled Guide 93 publication workflow registered and deliberately retriggered from this PASS gate.
+**Publication activation:** 2026-08-22 — controlled Guide 93 publication workflow registered. This QA-only note is the merge-trigger token for the production publication run.
 
 Guide 93 may proceed to Publication.
