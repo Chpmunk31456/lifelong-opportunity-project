@@ -1016,35 +1016,33 @@ Considere perguntar:
 
 ## Fontes e links de verificação
 
-Verifique valores atuais e disponibilidade de programas antes de tomar uma decisão importante. O conjunto controlado contém 27 destinos e é o mesmo entre os três idiomas.
+Verifique valores e disponibilidade de programas antes de tomar uma decisão importante.
 
-1. https://www.onetonline.org/link/details/15-2041.00
-2. https://www.onetonline.org/link/summary/15-2041.00
-3. https://www.onetonline.org/link/localwages/15-2041.00
-4. https://www.onetonline.org/link/localtrends/15-2041.00
-5. https://www.onetonline.org/link/hot_tech/15-2041.00
-6. https://www.onetonline.org/link/demand/15-2041.00
-7. https://www.careeronestop.org/LocalHelp/EmploymentAndTraining/find-WIOA-training-programs.aspx
-8. https://www.careeronestop.org/FindTraining/find-training.aspx
-9. https://www.indeed.com/career/data-analyst/salaries
-10. https://www.jobbank.gc.ca/marketreport/summary-occupation/17882/ca
-11. https://www.jobbank.gc.ca/marketreport/requirements/17882/ca
-12. https://www.jobbank.gc.ca/wagereport/occupation/17882
-13. https://www.canada.ca/en/services/jobs/training.html
-14. https://ocupacol.mintrabajo.gov.co/Profile/OccupationalProfile/25210
-15. https://ocupacol.mintrabajo.gov.co/Profile/OccupationalProfile/25110
-16. https://ocupacol.mintrabajo.gov.co/Profile/OccupationalProfile/21200
-17. https://betowa.sena.edu.co/oferta/programacion-para-analitica-de-datos?location=57054001&modality=P&programId=133094
-18. https://betowa.sena.edu.co/oferta/visualizacion-de-datos-usando-power-bi?modality=V&offertype=company&programId=160058
-19. https://betowa.sena.edu.co/oferta/analitica-de-datos-para-procesos-logisticos?modality=V&offertype=company
-20. https://www.oitcinterfor.org/statsfp/paises
-21. https://www.cisa.gov/secure-our-world
-22. https://www.nist.gov/cyberframework
-23. https://www.nist.gov/privacy-framework
-24. https://www.nist.gov/itl/ai-risk-management-framework
-25. https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence
-26. https://www.section508.gov/create/
-27. https://www.w3.org/TR/WCAG22/
+### Estados Unidos
+
+- O*NET — Statisticians: https://www.onetonline.org/link/details/15-2041.00
+- O*NET — Business Intelligence Analysts: https://www.onetonline.org/link/details/15-2051.01
+- CareerOneStop WIOA training locator: https://www.careeronestop.org/LocalHelp/EmploymentAndTraining/find-WIOA-training-programs.aspx
+- Apprenticeship.gov: https://www.apprenticeship.gov/
+- NIST AI Risk Management Framework: https://www.nist.gov/itl/ai-risk-management-framework
+
+### Canadá
+
+- Job Bank — NOC 21223 occupational information: https://www.jobbank.gc.ca/
+- Canada training gateway: https://www.canada.ca/en/services/jobs/training.html
+
+### Colômbia
+
+- OCUPACOL: https://ocupacol.mintrabajo.gov.co/
+- SENA Betowa: https://betowa.sena.edu.co/
+
+### América Latina e Caribe
+
+- OIT/Cinterfor: https://www.oitcinterfor.org/
+
+### Contexto atual de mercado não governamental
+
+- Indeed U.S. Data Analyst salary page: https://www.indeed.com/career/data-analyst/salaries
 
 ## Aviso importante
 
