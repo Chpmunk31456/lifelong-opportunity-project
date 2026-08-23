@@ -108,17 +108,64 @@ def repair() -> None:
     print(f"PASS: Guide 00 dead-link repair applied; 27 shared URLs; English blob {english_blob}")
 
 
+def _technical_report_blobs(tech: str) -> dict[str, str]:
+    labels = {"en": "English", "es-419": "es-419", "pt-BR": "pt-BR"}
+    found: dict[str, str] = {}
+    for locale, label in labels.items():
+        m = re.search(
+            rf"\*\*{re.escape(label)}:\*\*[^\n]*\n\s+- Git blob: `([0-9a-f]{{40}})`",
+            tech,
+        )
+        if not m:
+            raise SystemExit(f"fresh technical QA does not record {locale} source blob")
+        found[locale] = m.group(1)
+    return found
+
+
 def sync_status() -> None:
     if not EVIDENCE.is_file() or not FREEZE_AMENDMENT.is_file() or not TECH_QA.is_file():
         raise SystemExit("repair/freeze/technical evidence missing")
+
     tech = TECH_QA.read_text(encoding="utf-8-sig")
     if "**Trilingual Technical QA: PASS.**" not in tech:
         raise SystemExit("fresh technical QA is not PASS")
-    if REPLACEMENT not in tech:
-        raise SystemExit("fresh technical QA does not contain replacement URL")
+    if "Shared trilingual URL set: **27 unique links**" not in tech:
+        raise SystemExit("fresh technical QA does not confirm the 27-link shared set")
+
+    # Validate the actual current sources rather than requiring every repaired URL
+    # to be printed verbatim in the aggregate technical QA report.
+    source_sets: dict[str, set[str]] = {}
+    current_blobs: dict[str, str] = {}
+    for locale, path in SOURCES.items():
+        text = path.read_text(encoding="utf-8-sig")
+        current = urls(text)
+        if DEAD in current:
+            raise SystemExit(f"{locale}: confirmed-dead URL remains in current source")
+        if REPLACEMENT not in current:
+            raise SystemExit(f"{locale}: replacement URL missing from current source")
+        if len(current) != 27:
+            raise SystemExit(f"{locale}: expected 27 controlled URLs, found {len(current)}")
+        source_sets[locale] = current
+        current_blobs[locale] = blob(path)
+
+    if not (source_sets["en"] == source_sets["es-419"] == source_sets["pt-BR"]):
+        raise SystemExit("current trilingual source URL sets differ after repair")
+
+    report_blobs = _technical_report_blobs(tech)
+    for locale in SOURCES:
+        if report_blobs[locale] != current_blobs[locale]:
+            raise SystemExit(
+                f"{locale}: fresh technical QA blob {report_blobs[locale]} does not match current source blob {current_blobs[locale]}"
+            )
+
     data = json.loads(STATUS.read_text(encoding="utf-8-sig"))
     if data["stages"]["publication"]["status"] != "PENDING":
         raise SystemExit("Publication is not PENDING")
+    if data["stages"]["technical_qa"]["status"] != "PASS":
+        raise SystemExit("Technical QA is not PASS in helper")
+    if data.get("blockers"):
+        raise SystemExit(f"blockers present: {data['blockers']}")
+
     freeze_ev = data["stages"]["english_source_freeze"].setdefault("evidence", [])
     for p in (EVIDENCE.as_posix(), FREEZE_AMENDMENT.as_posix()):
         if p not in freeze_ev:
@@ -131,9 +178,9 @@ def sync_status() -> None:
         if EVIDENCE.as_posix() not in ev:
             ev.append(EVIDENCE.as_posix())
     data["updated"] = "2026-08-22"
-    data["notes"] = "Guide 00 remains 8/10. Confirmed dead-link repaired one-for-one; English freeze amended; fresh Trilingual Technical QA PASS. First active gate: Publication."
+    data["notes"] = "Guide 00 remains 8/10. Confirmed dead-link repaired one-for-one; English freeze amended; fresh Trilingual Technical QA PASS against exact current source blobs. First active gate: Publication."
     STATUS.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print("PASS: Guide 00 helper synchronized after dead-link repair")
+    print(f"PASS: Guide 00 helper synchronized after dead-link repair; blobs={current_blobs}")
 
 
 if __name__ == "__main__":
