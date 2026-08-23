@@ -1,0 +1,58 @@
+name: Workflow safety audit
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out pull request or selected ref
+        uses: actions/checkout@v4
+
+      - name: Reject stale branch references and write-capable workflows
+        shell: bash
+        run: |
+          set -euo pipefail
+          failures=0
+
+          mapfile -t targets < <(
+            find .github/workflows -maxdepth 1 -type f \
+              \( -name '*.yml' -o -name '*.yaml' \) \
+              ! -name 'workflow-safety-audit.yml' \
+              -print | sort
+          )
+
+          if (( ${#targets[@]} == 0 )); then
+            echo '::error::No peer workflow files found to audit.'
+            exit 1
+          fi
+
+          if grep -nHE 'revision/guide-00-100-2026|refs/heads/revision/' "${targets[@]}"; then
+            echo '::error::Deleted revision-branch reference found in workflow configuration.'
+            failures=1
+          fi
+
+          if grep -nHE 'contents:[[:space:]]*write' "${targets[@]}"; then
+            echo '::error::Workflow requests contents: write. Repository workflows must remain read-only.'
+            failures=1
+          fi
+
+          if grep -nHE 'git[[:space:]]+push.*(refs/heads/)?main' "${targets[@]}"; then
+            echo '::error::Direct git push to protected main found.'
+            failures=1
+          fi
+
+          if (( failures != 0 )); then
+            exit 1
+          fi
+
+          echo 'PASS: no deleted revision-branch references, contents write permission, or direct pushes to protected main were found.'
