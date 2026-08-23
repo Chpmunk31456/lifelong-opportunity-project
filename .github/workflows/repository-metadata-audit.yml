@@ -1,5 +1,5 @@
 name: Guide 00 publication requalification
-# Source-bound status sync validator v2.
+# Source-bound status sync validator v2; repository-safe generated Markdown.
 
 on:
   pull_request:
@@ -110,6 +110,42 @@ jobs:
           path: 00-foundation-guide/publication-candidate/rendered
           if-no-files-found: error
           retention-days: 7
+
+      - name: Normalize generated Markdown and refresh package metadata
+        shell: python
+        run: |
+          import hashlib
+          import json
+          import re
+          from pathlib import Path
+
+          out = Path('00-foundation-guide/publication-candidate')
+          for md in out.glob('*.md'):
+              text = md.read_text(encoding='utf-8')
+              normalized = re.sub(r' {2,}\n', '<br>\n', text)
+              md.write_text(normalized, encoding='utf-8')
+
+          manifest_path = out / 'GUIDE_00_PUBLICATION_QA_MANIFEST.json'
+          manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+          for edition in manifest.get('editions', []):
+              md = out / edition['markdown']
+              edition['markdown_bytes'] = md.stat().st_size
+          manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          def sha256(path: Path) -> str:
+              return hashlib.sha256(path.read_bytes()).hexdigest()
+
+          checksum_files = sorted([
+              *out.glob('*.md'),
+              *out.glob('*.docx'),
+              *out.glob('*.json'),
+              *out.glob('pdf/*.pdf'),
+          ])
+          (out / 'SHA256SUMS.txt').write_text(
+              '\n'.join(f'{sha256(p)}  {p.relative_to(out).as_posix()}' for p in checksum_files) + '\n',
+              encoding='utf-8',
+          )
+          print('PASS: generated Markdown hard breaks normalized and checksums refreshed')
 
       - name: Commit automated publication candidate and render evidence
         shell: bash
