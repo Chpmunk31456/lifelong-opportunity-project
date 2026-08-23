@@ -1,0 +1,41 @@
+{
+  "guide": "99",
+  "occupation": "Food Science Technician",
+  "build_date": "2026-08-22",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_99_ENGLISH_v2.docx",
+      "pdf": "GUIDE_99_ENGLISH_v2.pdf",
+      "docx_bytes": 29531,
+      "pdf_bytes": 389063,
+      "pdf_pages": 22,
+      "rendered_pages": 22,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_99_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_99_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 23880,
+      "pdf_bytes": 176192,
+      "pdf_pages": 13,
+      "rendered_pages": 13,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_99_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_99_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 23983,
+      "pdf_bytes": 177534,
+      "pdf_pages": 13,
+      "rendered_pages": 13,
+      "status": "PASS"
+    }
+  ],
+  "reader_verification_urls": 24,
+  "english_source_blob": "01532eb45deb081709a0a7d8a031edd5f7b8d3ad",
+  "assurance_boundary": "Internal controlled publication QA; not independent certification, certified translation, food-safety/regulatory/legal/engineering/occupational-safety/cybersecurity/privacy/accessibility certification, funding approval, employment guarantee, or earnings guarantee."
+}
