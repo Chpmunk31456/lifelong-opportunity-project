@@ -1,6 +1,6 @@
 # Lifelong Opportunity Guides
 
-[![DOI](https://zenodo.org/badge/1308086234.svg)](https://doi.org/10.5281/zenodo.22070989)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22070989.svg)](https://doi.org/10.5281/zenodo.22070989)
 
 Free, practical career and education guides designed to help people of all ages, abilities, backgrounds, and income levels explore realistic pathways to work and lifelong learning.
 
