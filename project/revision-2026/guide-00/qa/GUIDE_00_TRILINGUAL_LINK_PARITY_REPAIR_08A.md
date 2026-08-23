@@ -17,14 +17,14 @@ Only the missing official URLs were added, as consolidated source-link indexes i
 
 ### es-419
 
-- Missing official URLs added: **27**
-- Prior Git blob: `4ae6003f6bdb4caae8388ded3413a4d972d6d017`
+- Missing official URLs added: **0**
+- Prior Git blob: `ecb072697eb6faab41fc752fa6d8744c34e3bbfd`
 - Repaired Git blob: `ecb072697eb6faab41fc752fa6d8744c34e3bbfd`
 
 ### pt-BR
 
-- Missing official URLs added: **27**
-- Prior Git blob: `4bc32427ceff598e90401c157da2f9a5490746e8`
+- Missing official URLs added: **0**
+- Prior Git blob: `5e42545073518337d29c95c04879aec08d6465db`
 - Repaired Git blob: `5e42545073518337d29c95c04879aec08d6465db`
 
 ## Post-repair controls
