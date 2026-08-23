@@ -1,5 +1,6 @@
 name: Final Guides 00-100 release changelog refresh
 
+# Final collection closure trigger: 2026-08-23
 on:
   workflow_dispatch:
   push:
