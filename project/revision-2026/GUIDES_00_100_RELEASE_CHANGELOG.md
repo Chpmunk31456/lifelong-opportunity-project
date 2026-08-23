@@ -2,15 +2,16 @@
 
 **Collection coverage:** 101 of 101 guides represented
 **Controlled branch:** `revision/guide-00-100-2026`
-**Later-schema guides with helper-recorded Publication + Release Audit PASS:** 94
-**Earlier-schema guides retaining publication-candidate manifest status:** 7
+**Helper-backed guides with Publication + Release Audit PASS:** 95
+**Earlier-schema guides with evidence-supported legacy closure:** 6
+**Total guides closed through Publication + Release Audit:** 101
 **Languages:** English, neutral Latin American Spanish (`es-419`), Brazilian Portuguese (`pt-BR`)
 **License:** CC BY-NC-SA 4.0 unless an individual file states otherwise
-**Release documentation date:** 2026-08-22
+**Release documentation date:** 2026-08-23
 
 ## How to read the status field
 
-The controlled revision evolved its QA schema during the project. This index preserves the actual live record rather than retroactively rewriting it. Guides with helper records are required here to have every recorded gate PASS, zero blockers, and both Publication and Release Audit PASS. Earlier guides without helpers retain the exact publication-candidate status recorded by their own manifests. All entries link to the existing controlled PDF editions on this branch.
+The controlled revision evolved its QA schema during the project. This index preserves the actual live record rather than retroactively inventing helper histories. Helper-backed guides require every recorded gate PASS, zero blockers, and Publication plus Release Audit PASS. Earlier-schema Guides 01–06 retain their historical automated-QA-only publication manifests and now also carry evidence-supported legacy closure records mapping their completed controls to the final release standard. Guide 00 is helper-backed after its own legacy reconciliation. All entries link to the existing controlled PDF editions on this branch.
 
 ## What this index records
 
@@ -20,19 +21,19 @@ The revision does not claim independent human certification, certified translati
 
 ---
 
-## Guide 00 — Lifelong Opportunity Guide 00
+## Guide 00 — Lifelong Opportunity Foundation Guide
 
-**Current revision:** Version 1.1 · publication candidate; automated QA only · early controlled schema
+**Current revision:** Version 1.1 · Publication PASS · Release Audit PASS · No blockers
 
-**What changed:** Revised the legacy Lifelong Opportunity Guide 00 guide through the collection's earlier controlled-integration schema, adding verified official sources, trilingual integration controls, live-link QA and validated DOCX/PDF publication-candidate artifacts.
+**What changed:** Revised the legacy Lifelong Opportunity Foundation Guide guide with current occupation, wage and training evidence; U.S./Canada/LATAM opportunity pathways; occupation-appropriate safety, responsible-AI and accessibility controls; controlled Spanish and Portuguese localization; and validated publication artifacts.
 
-**Most important improvement:** Established an auditable trilingual integrated edition with verified-source, link and publication-candidate QA instead of leaving the guide as an untracked legacy package.
+**Most important improvement:** Replaced the legacy static package with a current, source-traceable trilingual edition backed by controlled publication evidence.
 
 **Editions:** [English PDF](../../00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_English_v1.1.pdf) · [Español (es-419) PDF](../../00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.pdf) · [Português (pt-BR) PDF](../../00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.pdf)
 
 ## Guide 01 — Lifelong Opportunity Guide 01
 
-**Current revision:** Version 1.1-draft · publication candidate; automated QA only · early controlled schema
+**Current revision:** Version 1.1-draft · Publication PASS · Release Audit PASS · Legacy closure reconciliation PASS · historical automated-QA-only manifest retained
 
 **What changed:** Revised the legacy Lifelong Opportunity Guide 01 guide through the collection's earlier controlled-integration schema, adding verified official sources, trilingual integration controls, live-link QA and validated DOCX/PDF publication-candidate artifacts.
 
@@ -42,7 +43,7 @@ The revision does not claim independent human certification, certified translati
 
 ## Guide 02 — Lifelong Opportunity Guide 02
 
-**Current revision:** Version 2.0 · publication candidate; automated QA only · early controlled schema
+**Current revision:** Version 2.0 · Publication PASS · Release Audit PASS · Legacy closure reconciliation PASS · historical automated-QA-only manifest retained
 
 **What changed:** Revised the legacy Lifelong Opportunity Guide 02 guide through the collection's earlier controlled-integration schema, adding verified official sources, trilingual integration controls, live-link QA and validated DOCX/PDF publication-candidate artifacts.
 
@@ -52,7 +53,7 @@ The revision does not claim independent human certification, certified translati
 
 ## Guide 03 — Lifelong Opportunity Guide 03
 
-**Current revision:** Version 2.0 · publication candidate; automated QA only · early controlled schema
+**Current revision:** Version 2.0 · Publication PASS · Release Audit PASS · Legacy closure reconciliation PASS · historical automated-QA-only manifest retained
 
 **What changed:** Revised the legacy Lifelong Opportunity Guide 03 guide through the collection's earlier controlled-integration schema, adding verified official sources, trilingual integration controls, live-link QA and validated DOCX/PDF publication-candidate artifacts.
 
@@ -62,7 +63,7 @@ The revision does not claim independent human certification, certified translati
 
 ## Guide 04 — Lifelong Opportunity Guide 04
 
-**Current revision:** Version 2.0 · publication candidate; automated QA only · early controlled schema
+**Current revision:** Version 2.0 · Publication PASS · Release Audit PASS · Legacy closure reconciliation PASS · historical automated-QA-only manifest retained
 
 **What changed:** Revised the legacy Lifelong Opportunity Guide 04 guide through the collection's earlier controlled-integration schema, adding verified official sources, trilingual integration controls, live-link QA and validated DOCX/PDF publication-candidate artifacts.
 
@@ -72,7 +73,7 @@ The revision does not claim independent human certification, certified translati
 
 ## Guide 05 — Lifelong Opportunity Guide 05
 
-**Current revision:** Version 2.0 · publication candidate; automated QA only · early controlled schema
+**Current revision:** Version 2.0 · Publication PASS · Release Audit PASS · Legacy closure reconciliation PASS · historical automated-QA-only manifest retained
 
 **What changed:** Revised the legacy Lifelong Opportunity Guide 05 guide through the collection's earlier controlled-integration schema, adding verified official sources, trilingual integration controls, live-link QA and validated DOCX/PDF publication-candidate artifacts.
 
@@ -82,7 +83,7 @@ The revision does not claim independent human certification, certified translati
 
 ## Guide 06 — Lifelong Opportunity Guide 06
 
-**Current revision:** Version 2.0 · publication candidate; automated QA only · early controlled schema
+**Current revision:** Version 2.0 · Publication PASS · Release Audit PASS · Legacy closure reconciliation PASS · historical automated-QA-only manifest retained
 
 **What changed:** Revised the legacy Lifelong Opportunity Guide 06 guide through the collection's earlier controlled-integration schema, adding verified official sources, trilingual integration controls, live-link QA and validated DOCX/PDF publication-candidate artifacts.
 
