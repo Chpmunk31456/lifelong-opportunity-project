@@ -1,13 +1,13 @@
-name: Repository metadata audit
+name: Guide 00 publication requalification v2
 
 on:
   pull_request:
     paths:
-      - "**/*.md"
-      - "**/*.docx"
-      - "**/*.pdf"
-      - "tools/audit_repository_metadata.py"
       - ".github/workflows/repository-metadata-audit.yml"
+      - "scripts/guide00_publication_recovery.py"
+      - "scripts/guide00_publication_recovery_dynamic.py"
+      - "00-foundation-guide/**"
+      - "project/revision-2026/guide-00/**"
   workflow_dispatch:
 
 permissions:
@@ -26,13 +26,117 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run metadata audit
+      - name: Run repository metadata audit
         run: python tools/audit_repository_metadata.py
 
       - name: Upload audit report
         if: always()
         uses: actions/upload-artifact@v6
         with:
-          name: repository-metadata-audit
+          name: guide00-publication-v2-metadata-audit
           path: QA_METADATA_AUDIT.md
           if-no-files-found: error
+
+  guide00-publication-build:
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.base_ref == 'revision/guide-00-100-2026' &&
+      github.head_ref == 'trigger/guide00-publication-requal-v2' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - name: Check out authoritative controlled branch
+        uses: actions/checkout@v6
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Reconfirm Guide 00 trilingual technical QA
+        run: python scripts/guide00_legacy_technical_qa.py validate
+
+      - name: Install publication toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice-writer poppler-utils python3-pil curl unzip
+
+      - name: Build fresh Guide 00 publication candidate
+        run: python scripts/guide00_publication_recovery_dynamic.py build
+
+      - name: Upload all-page render review artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: guide00-publication-renders-v2
+          path: 00-foundation-guide/publication-candidate/rendered
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Normalize generated Markdown and refresh package metadata
+        shell: python
+        run: |
+          import hashlib
+          import json
+          import re
+          from pathlib import Path
+
+          out = Path('00-foundation-guide/publication-candidate')
+          for md in out.glob('*.md'):
+              text = md.read_text(encoding='utf-8')
+              # Preserve explicit Markdown hard breaks without repository-forbidden trailing spaces.
+              normalized = re.sub(r' {2,}\n', '<br>\n', text)
+              md.write_text(normalized, encoding='utf-8')
+
+          manifest_path = out / 'GUIDE_00_PUBLICATION_QA_MANIFEST.json'
+          manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+          for edition in manifest.get('editions', []):
+              md = out / edition['markdown']
+              edition['markdown_bytes'] = md.stat().st_size
+          manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          def sha256(path: Path) -> str:
+              return hashlib.sha256(path.read_bytes()).hexdigest()
+
+          checksum_files = sorted([
+              *out.glob('*.md'),
+              *out.glob('*.docx'),
+              *out.glob('*.json'),
+              *out.glob('pdf/*.pdf'),
+          ])
+          (out / 'SHA256SUMS.txt').write_text(
+              '\n'.join(f'{sha256(p)}  {p.relative_to(out).as_posix()}' for p in checksum_files) + '\n',
+              encoding='utf-8',
+          )
+          print('PASS: generated Markdown normalized and package checksums refreshed')
+
+      - name: Commit automated publication candidate and render evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A 00-foundation-guide/publication-candidate \
+                     project/revision-2026/guide-00/qa/GUIDE_00_PUBLICATION_AUTOMATED_QA_09A.md
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'Guide 00 automated publication candidate already current.'
+            exit 0
+          fi
+          git commit -m 'build(guide-00): requalify controlled publication candidate'
+          for attempt in 1 2 3 4 5; do
+            git fetch origin revision/guide-00-100-2026
+            git rebase origin/revision/guide-00-100-2026
+            if git push origin HEAD:revision/guide-00-100-2026; then
+              echo 'Guide 00 automated publication candidate committed.'
+              exit 0
+            fi
+            if [[ "$attempt" == '5' ]]; then exit 1; fi
+            sleep 2
+          done
+
+      - name: Safety note
+        run: |
+          echo 'Guide 00 remains 8/10 after this job.'
+          echo 'Publication and Release Audit stay PENDING until direct full-page visual review is separately recorded.'
+          echo 'This carrier does not merge PR #17.'
