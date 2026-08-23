@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 11
+# Lifelong Opportunity Guide 11
 
 ## Procurement and Purchasing Coordinator — English Edition
 

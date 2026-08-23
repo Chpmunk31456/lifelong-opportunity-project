@@ -1,0 +1,42 @@
+{
+  "guide": "85",
+  "occupation": "Data Analyst",
+  "build_date": "2026-08-22",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_85_ENGLISH_v2.docx",
+      "pdf": "GUIDE_85_ENGLISH_v2.pdf",
+      "docx_bytes": 29236,
+      "pdf_bytes": 495751,
+      "pdf_pages": 26,
+      "rendered_pages": 26,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_85_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_85_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 30398,
+      "pdf_bytes": 500708,
+      "pdf_pages": 27,
+      "rendered_pages": 27,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_85_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_85_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 30534,
+      "pdf_bytes": 503050,
+      "pdf_pages": 27,
+      "rendered_pages": 27,
+      "status": "PASS"
+    }
+  ],
+  "controlled_evidence_urls": 27,
+  "reader_verification_urls": 11,
+  "occupation_boundary": "Data Analyst is a broad cross-cutting market title. O*NET 15-2041.00 Statisticians is used as the primary U.S. quantitative benchmark but is more statistically advanced and graduate-heavy than many commercial entry-level Data Analyst roles; Canada and Colombia mappings are also presented as comparisons, not universal equivalents.",
+  "assurance_boundary": "Internal automated publication QA, controlled link checks, all-page render inspection, and controlled source review; not independent human certification, certified translation, statistical/legal/privacy/cybersecurity/regulatory/accessibility certification, training-provider accreditation, funding approval, employment guarantee, or earnings guarantee."
+}

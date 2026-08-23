@@ -1,0 +1,18 @@
+{
+  "guide": "16",
+  "occupation": "Loan Processing Specialist and Loan Clerk",
+  "branch": "revision/guide-00-100-2026",
+  "updated": "2026-08-09",
+  "stages": {
+    "research": {"status": "PASS", "evidence": ["project/revision-2026/guide-16/qa/GUIDE_16_BASELINE_INVENTORY_01.md", "project/revision-2026/guide-16/qa/GUIDE_16_CURRENT_SOURCE_EVIDENCE_02.md"]},
+    "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-16/qa/GUIDE_16_ENGLISH_EDITORIAL_QA_03.md"]},
+    "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-16/qa/GUIDE_16_CLAIM_TRACEABILITY_QA_04.md"]},
+    "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-16/qa/GUIDE_16_ENGLISH_SOURCE_FREEZE_05.md"]},
+    "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-16/qa/GUIDE_16_SPANISH_LOCALIZATION_QA_06.md", "project/revision-2026/guide-16/source/GUIDE_16_SPANISH_LATAM_WORKING_MASTER_v2.md"]},
+    "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-16/qa/GUIDE_16_PORTUGUESE_LOCALIZATION_QA_07.md", "project/revision-2026/guide-16/source/GUIDE_16_PORTUGUESE_BR_WORKING_MASTER_v2.md"]},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-16/qa/GUIDE_16_TRILINGUAL_PARITY_QA.md"]},
+    "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-16/publication-candidate/GUIDE_16_PUBLICATION_QA_MANIFEST.json", "project/revision-2026/guide-16/publication-candidate/SHA256SUMS.txt"]},
+    "release_audit": {"status": "PASS", "evidence": ["project/revision-2026/guide-16/qa/GUIDE_16_RELEASE_AUDIT.md"]}
+  },
+  "blockers": []
+}

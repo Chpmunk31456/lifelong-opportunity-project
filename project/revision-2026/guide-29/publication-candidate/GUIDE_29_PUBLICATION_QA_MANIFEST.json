@@ -1,0 +1,51 @@
+{
+  "guide": "29",
+  "occupation": "HVAC Technician and Refrigeration Mechanic",
+  "build_date": "2026-08-11",
+  "status": "PASS",
+  "controls": [
+    "trilingual structural parity",
+    "required source URLs",
+    "URL parity",
+    "UTF-8/BOM controls",
+    "placeholder scan",
+    "DOCX ZIP integrity",
+    "searchable PDF text",
+    "all-page raster rendering",
+    "metadata manifest",
+    "SHA-256 checksums"
+  ],
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_29_ENGLISH_v2.docx",
+      "pdf": "GUIDE_29_ENGLISH_v2.pdf",
+      "docx_bytes": 25550,
+      "pdf_bytes": 196949,
+      "pdf_pages": 13,
+      "pdf_extractable_characters": 29831,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_29_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_29_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 26800,
+      "pdf_bytes": 224133,
+      "pdf_pages": 14,
+      "pdf_extractable_characters": 34222,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_29_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_29_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 26526,
+      "pdf_bytes": 202532,
+      "pdf_pages": 14,
+      "pdf_extractable_characters": 32650,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, environmental-regulatory approval, trade licensing approval, accreditation, or employment or earnings guarantee."
+}

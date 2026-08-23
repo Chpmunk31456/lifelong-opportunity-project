@@ -1,0 +1,41 @@
+{
+  "guide": "93",
+  "occupation": "Surveying and Mapping Technician",
+  "build_date": "2026-08-22",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_93_ENGLISH_v2.docx",
+      "pdf": "GUIDE_93_ENGLISH_v2.pdf",
+      "docx_bytes": 25052,
+      "pdf_bytes": 308451,
+      "pdf_pages": 18,
+      "rendered_pages": 18,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_93_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_93_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 25490,
+      "pdf_bytes": 318619,
+      "pdf_pages": 18,
+      "rendered_pages": 18,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_93_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_93_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 25254,
+      "pdf_bytes": 318511,
+      "pdf_pages": 18,
+      "rendered_pages": 18,
+      "status": "PASS"
+    }
+  ],
+  "reader_verification_urls": 19,
+  "english_source_blob": "effdfcd7908596a0285100e7856d898ee60abfe7",
+  "assurance_boundary": "Internal controlled publication QA; not independent certification, certified translation, legal/surveying/cadastral/engineering/aviation/privacy/cybersecurity/safety/accessibility certification, funding approval, employment guarantee, or earnings guarantee."
+}

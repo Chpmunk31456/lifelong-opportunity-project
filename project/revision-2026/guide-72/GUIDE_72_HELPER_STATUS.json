@@ -1,0 +1,74 @@
+{
+  "guide": "72",
+  "occupation": "Retail Supervisor and Merchandising Coordinator",
+  "branch": "revision/guide-00-100-2026",
+  "updated": "2026-08-21",
+  "stages": {
+    "baseline_inventory": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-72/qa/GUIDE_72_BASELINE_INVENTORY_01.md"
+      ]
+    },
+    "research": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-72/research/GUIDE_72_CURRENT_SOURCE_EVIDENCE_02.md"
+      ]
+    },
+    "english_editorial": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-72/working-masters/GUIDE_72_RETAIL_SUPERVISOR_AND_MERCHANDISING_COORDINATOR_ENGLISH_v2.md",
+        "project/revision-2026/guide-72/qa/GUIDE_72_ENGLISH_EDITORIAL_QA_03.md"
+      ]
+    },
+    "evidence_traceability": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-72/qa/GUIDE_72_EVIDENCE_TRACEABILITY_QA_04.md"
+      ]
+    },
+    "english_source_freeze": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-72/qa/GUIDE_72_ENGLISH_SOURCE_FREEZE_05.md"
+      ]
+    },
+    "spanish_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-72/working-masters/GUIDE_72_SUPERVISOR_DE_COMERCIO_MINORISTA_Y_COORDINADOR_DE_MERCHANDISING_ES419_v2.md",
+        "project/revision-2026/guide-72/qa/GUIDE_72_SPANISH_LOCALIZATION_QA_06.md"
+      ]
+    },
+    "portuguese_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-72/working-masters/GUIDE_72_SUPERVISOR_DE_VAREJO_E_COORDENADOR_DE_MERCHANDISING_PTBR_v2.md",
+        "project/revision-2026/guide-72/qa/GUIDE_72_PORTUGUESE_LOCALIZATION_QA_07.md"
+      ]
+    },
+    "technical_qa": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-72/qa/GUIDE_72_TRILINGUAL_TECHNICAL_QA_08.md"
+      ]
+    },
+    "publication": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-72/qa/GUIDE_72_PUBLICATION_QA_09.md",
+        "project/revision-2026/guide-72/publication-candidate/GUIDE_72_PUBLICATION_QA_MANIFEST.json",
+        "project/revision-2026/guide-72/publication-candidate/SHA256SUMS.txt"
+      ]
+    },
+    "release_audit": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-72/qa/GUIDE_72_RELEASE_AUDIT_10.md"
+      ]
+    }
+  },
+  "blockers": []
+}

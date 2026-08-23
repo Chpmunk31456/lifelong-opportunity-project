@@ -1,0 +1,19 @@
+{
+  "guide": "36",
+  "occupation": "Warehouse and Inventory Control Specialist",
+  "branch": "revision/guide-00-100-2026",
+  "updated": "2026-08-12",
+  "stages": {
+    "baseline_inventory": {"status": "PASS", "evidence": ["project/revision-2026/guide-36/qa/GUIDE_36_BASELINE_INVENTORY_01.md"]},
+    "research": {"status": "PASS", "evidence": ["project/revision-2026/guide-36/research/GUIDE_36_CURRENT_SOURCE_EVIDENCE_02.md"]},
+    "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-36/working-masters/GUIDE_36_WAREHOUSE_AND_INVENTORY_CONTROL_SPECIALIST_ENGLISH_v2.md", "project/revision-2026/guide-36/qa/GUIDE_36_ENGLISH_EDITORIAL_QA_03.md"]},
+    "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-36/qa/GUIDE_36_EVIDENCE_TRACEABILITY_QA_04.md"]},
+    "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-36/qa/GUIDE_36_ENGLISH_SOURCE_FREEZE_05.md"]},
+    "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-36/working-masters/GUIDE_36_ESPECIALISTA_EN_ALMACEN_E_INVENTARIOS_ES419_v2.md", "project/revision-2026/guide-36/qa/GUIDE_36_SPANISH_LOCALIZATION_QA_06.md"]},
+    "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-36/working-masters/GUIDE_36_ESPECIALISTA_EM_ARMAZEM_E_CONTROLE_DE_ESTOQUE_PTBR_v2.md", "project/revision-2026/guide-36/qa/GUIDE_36_PORTUGUESE_LOCALIZATION_QA_07.md"]},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-36/qa/GUIDE_36_TECHNICAL_QA_08.md"]},
+    "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-36/qa/GUIDE_36_PUBLICATION_GATE_09.md"]},
+    "release_audit": {"status": "PASS", "evidence": ["project/revision-2026/guide-36/qa/GUIDE_36_RELEASE_AUDIT_GATE_10.md"]}
+  },
+  "blockers": []
+}

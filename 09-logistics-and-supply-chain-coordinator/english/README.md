@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 09
+# Lifelong Opportunity Guide 09
 
 ## Logistics and Supply Chain Coordinator — English Edition
 

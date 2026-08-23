@@ -1,0 +1,189 @@
+name: Guide 33 controlled publication build
+
+on:
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - '.github/workflows/guide33-publication-build.yml'
+      - 'project/revision-2026/guide-33/publication-candidate/GUIDE_33_ENGLISH_v2.md'
+      - 'project/revision-2026/guide-33/publication-candidate/GUIDE_33_SPANISH_es-419_v2.md'
+      - 'project/revision-2026/guide-33/publication-candidate/GUIDE_33_PORTUGUESE_v2.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide33-controlled-publication-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out revision branch
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Install document tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice poppler-utils
+
+      - name: Trilingual structural, link, encoding, source, and numeric controls
+        shell: python
+        run: |
+          from pathlib import Path
+          import re, sys
+          out=Path('project/revision-2026/guide-33/publication-candidate')
+          files={
+            'en':out/'GUIDE_33_ENGLISH_v2.md',
+            'es-419':out/'GUIDE_33_SPANISH_es-419_v2.md',
+            'pt-BR':out/'GUIDE_33_PORTUGUESE_v2.md',
+          }
+          required_url_fragments=[
+            'bls.gov', 'onetonline.org', 'apprenticeship.gov', 'dol.gov', 'osha.gov',
+            'nims-skills.org', 'red-seal.ca', 'jobbank.gc.ca', 'canada.ca',
+            'sena.edu.co', 'indeed.com'
+          ]
+          controls={
+            'en':[r'\b56,150\b',r'\b38,100\b',r'\b78,760\b',r'\b34,200\b',r'\b28\.06\b',r'\b20\.44\b',r'\b38\.53\b',r'\b72100\b',r'\b7,200\b',r'\b21\.00\b',r'\b30\.00\b',r'\b41\.50\b',r'\b4,000\b'],
+            'es-419':[r'\b56[.,]150\b',r'\b38[.,]100\b',r'\b78[.,]760\b',r'\b34[.,]200\b',r'\b28[.,]06\b',r'\b20[.,]44\b',r'\b38[.,]53\b',r'\b72100\b',r'\b7[.,]200\b',r'\b21[.,]00\b',r'\b30[.,]00\b',r'\b41[.,]50\b',r'\b4[.,]000\b'],
+            'pt-BR':[r'\b56[.]150\b',r'\b38[.]100\b',r'\b78[.]760\b',r'\b34[.]200\b',r'\b28[,]06\b',r'\b20[,]44\b',r'\b38[,]53\b',r'\b72100\b',r'\b7[.]200\b',r'\b21[,]00\b',r'\b30[,]00\b',r'\b41[,]50\b',r'\b4[.]000\b'],
+          }
+          technical_markers={
+            'en':(r'cnc',r'cad/cam',r'nims',r'red seal',r'sena',r'lockout/tagout'),
+            'es-419':(r'cnc',r'cad/cam',r'nims',r'red seal',r'sena',r'bloqueo/etiquetado'),
+            'pt-BR':(r'cnc',r'cad/cam',r'nims',r'red seal',r'sena',r'bloqueio(?:/| e )etiquetagem'),
+          }
+          problems=[]; url_sets={}
+          for lang,path in files.items():
+            if not path.exists():
+              problems.append(f'{lang}: missing {path}')
+              continue
+            text=path.read_text(encoding='utf-8')
+            low=text.lower()
+            if text.startswith('\ufeff'): problems.append(f'{lang}: unexpected UTF-8 BOM')
+            if '\ufffd' in text: problems.append(f'{lang}: Unicode replacement character present')
+            sections=re.findall(r'^##\s+(\d+)\.',text,re.M)
+            if sections != [str(i) for i in range(1,23)]: problems.append(f'{lang}: numbered sections are not exactly 1..22: {sections}')
+            urls=set(re.findall(r'https://[^\s)<>]+',text))
+            url_sets[lang]=urls
+            for frag in required_url_fragments:
+              if frag not in low: problems.append(f'{lang}: missing source-domain marker {frag}')
+            for pat in controls[lang]:
+              if not re.search(pat,text,re.I): problems.append(f'{lang}: missing controlled numeric marker {pat}')
+            for marker in technical_markers[lang]:
+              if not re.search(marker,low,re.I): problems.append(f'{lang}: missing technical marker {marker}')
+            for bad in ('todo:','lorem ipsum','[insert','translation pending','traducción pendiente','tradução pendente'):
+              if bad in low: problems.append(f'{lang}: placeholder marker {bad}')
+          if len(url_sets)==3:
+            base=url_sets['en']
+            for lang in ('es-419','pt-BR'):
+              if url_sets[lang] != base:
+                problems.append(f'{lang}: source URL set differs from English; missing={sorted(base-url_sets[lang])}; extra={sorted(url_sets[lang]-base)}')
+          if problems:
+            print('\n'.join(problems)); sys.exit(1)
+          print('Guide 33 structural/link/source/numeric controls PASS')
+
+      - name: Generate DOCX and PDF editions
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-33/publication-candidate'
+          for STEM in GUIDE_33_ENGLISH_v2 GUIDE_33_SPANISH_es-419_v2 GUIDE_33_PORTUGUESE_v2; do
+            pandoc "$OUT/$STEM.md" -f gfm -t docx --standalone -o "$OUT/$STEM.docx"
+            mkdir -p "$OUT/lo-$STEM"
+            libreoffice --headless --convert-to pdf --outdir "$OUT/lo-$STEM" "$OUT/$STEM.docx"
+            mv "$OUT/lo-$STEM/$STEM.pdf" "$OUT/$STEM.pdf"
+            rmdir "$OUT/lo-$STEM"
+          done
+
+      - name: Validate DOCX and searchable PDFs
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-33/publication-candidate'
+          test "$(find "$OUT" -maxdepth 1 -name '*.docx' | wc -l)" -eq 3
+          test "$(find "$OUT" -maxdepth 1 -name '*.pdf' | wc -l)" -eq 3
+          for DOCX in "$OUT"/*.docx; do
+            unzip -t "$DOCX" >/dev/null
+            unzip -l "$DOCX" | grep -q 'word/document.xml'
+          done
+          for PDF in "$OUT"/*.pdf; do
+            pdfinfo "$PDF" >/dev/null
+            TEXT="$(pdftotext "$PDF" - | tr -d '[:space:]')"
+            test ${#TEXT} -gt 5000
+          done
+
+      - name: Render all PDF pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-33/publication-candidate'
+          rm -rf "$OUT/rendered"
+          for PDF in "$OUT"/*.pdf; do
+            STEM="$(basename "$PDF" .pdf)"
+            mkdir -p "$OUT/rendered/$STEM"
+            pdftoppm -png -r 110 "$PDF" "$OUT/rendered/$STEM/page" >/dev/null 2>&1
+          done
+          test "$(find "$OUT/rendered" -name '*.png' | wc -l)" -gt 3
+
+      - name: Generate metadata manifest and checksums
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib, json, subprocess
+          out=Path('project/revision-2026/guide-33/publication-candidate')
+          records=[]
+          for lang,stem in [
+            ('en','GUIDE_33_ENGLISH_v2'),
+            ('es-419','GUIDE_33_SPANISH_es-419_v2'),
+            ('pt-BR','GUIDE_33_PORTUGUESE_v2'),
+          ]:
+            docx=out/f'{stem}.docx'; pdf=out/f'{stem}.pdf'
+            info=subprocess.check_output(['pdfinfo',str(pdf)],text=True)
+            pages=next(int(x.split(':',1)[1].strip()) for x in info.splitlines() if x.startswith('Pages:'))
+            txt=subprocess.check_output(['pdftotext',str(pdf),'-'],text=True,errors='replace')
+            if '\ufffd' in txt: raise SystemExit(f'{pdf}: Unicode replacement character in PDF text')
+            records.append({'language':lang,'docx':docx.name,'pdf':pdf.name,'docx_bytes':docx.stat().st_size,'pdf_bytes':pdf.stat().st_size,'pdf_pages':pages,'pdf_extractable_characters':len(txt.strip()),'status':'PASS'})
+          manifest={
+            'guide':'33',
+            'occupation':'Machinist and CNC Machine Operator',
+            'build_date':'2026-08-11',
+            'status':'PASS',
+            'controls':['exact trilingual section parity 1-22','source URL-set parity','source-domain presence','locale-aware controlled numerical values','technical marker parity','UTF-8/BOM controls','placeholder scan','DOCX ZIP integrity','searchable PDF text','all-page raster rendering','metadata manifest','SHA-256 checksums'],
+            'editions':records,
+            'assurance_boundary':'Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, trade licensing approval, accreditation, or employment or earnings guarantee.'
+          }
+          (out/'GUIDE_33_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          targets=sorted(p for p in out.iterdir() if p.is_file() and p.suffix in {'.docx','.pdf'})
+          (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets)+'\n',encoding='utf-8')
+
+      - name: Upload rendered pages
+        uses: actions/upload-artifact@v4
+        with:
+          name: guide33-rendered-pages
+          path: project/revision-2026/guide-33/publication-candidate/rendered
+          retention-days: 14
+
+      - name: Remove render images from commit scope
+        run: rm -rf project/revision-2026/guide-33/publication-candidate/rendered
+
+      - name: Commit controlled publication candidates
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-33/publication-candidate
+          if git diff --cached --quiet; then
+            echo 'No publication changes to commit.'
+          else
+            git commit -m 'Build and validate Guide 33 publication candidates'
+            git pull --rebase origin revision/guide-00-100-2026
+            git push origin HEAD:revision/guide-00-100-2026
+          fi

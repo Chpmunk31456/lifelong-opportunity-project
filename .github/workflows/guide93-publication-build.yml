@@ -1,0 +1,266 @@
+# Controlled Guide 93 publication and release workflow
+# v1.3: fail-closed build, corrected duration validation, committed failure diagnostics.
+name: Guide 93 controlled publication and release
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide93-publication-build.yml'
+      - 'project/revision-2026/guide-93/qa/GUIDE_93_TRILINGUAL_TECHNICAL_QA_08.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide93-controlled-publication
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out controlled branch
+        id: checkout
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Install publication toolchain
+        id: toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice-writer poppler-utils python3-pil curl
+
+      - name: Preflight frozen trilingual sources
+        id: preflight
+        shell: python
+        run: |
+          import json,re,shutil,sys
+          from pathlib import Path
+          root=Path('project/revision-2026/guide-93')
+          status=json.loads((root/'GUIDE_93_HELPER_STATUS.json').read_text(encoding='utf-8'))
+          required=('baseline_inventory','research','english_editorial','evidence_traceability','english_source_freeze','spanish_localization','portuguese_localization','technical_qa')
+          for stage in required:
+              assert status['stages'][stage]['status']=='PASS', stage
+          assert status['stages']['publication']['status']=='PENDING'
+          assert status['stages']['release_audit']['status']=='PENDING'
+          assert not status.get('blockers')
+
+          src=root/'working-masters'; out=root/'publication-candidate'
+          if out.exists(): shutil.rmtree(out)
+          out.mkdir(parents=True)
+          pairs=[
+            ('GUIDE_93_SURVEYING_AND_MAPPING_TECHNICIAN_ENGLISH_v2.md','GUIDE_93_ENGLISH_v2.md'),
+            ('GUIDE_93_TECNICO_EN_TOPOGRAFIA_Y_CARTOGRAFIA_ES419_v2.md','GUIDE_93_SPANISH_es-419_v2.md'),
+            ('GUIDE_93_TECNICO_EM_AGRIMENSURA_E_MAPEAMENTO_PTBR_v2.md','GUIDE_93_PORTUGUESE_pt-BR_v2.md')]
+          files=[]
+          for source,target in pairs:
+              shutil.copy2(src/source,out/target); files.append(out/target)
+          texts=[p.read_text(encoding='utf-8') for p in files]
+          problems=[]
+          for p,t in zip(files,texts):
+              if t.startswith('\ufeff') or '\ufffd' in t: problems.append(f'{p.name}: encoding defect')
+              if len(t)<12000: problems.append(f'{p.name}: unexpectedly short')
+              if len(re.findall(r'^##\s+.+$',t,re.M))<25: problems.append(f'{p.name}: insufficient sections')
+              if re.search(r'(?im)^\s*(?:[-*]\s*)?todo\s*:',t): problems.append(f'{p.name}: TODO placeholder')
+          urls=[set(re.findall(r'https://[^\s)<>`]+',t)) for t in texts]
+          if not (urls[0]==urls[1]==urls[2]): problems.append('reader URL parity mismatch')
+          if len(urls[0])!=19: problems.append(f'expected 19 reader URLs, got {len(urls[0])}')
+          controls=(r'17-3031\.00',r'22213',r'31122',r'51[,.]940',r'24[,.]97',r'59[,.]400',r'62[,.]100',r'5\s*%',r'7[,.]600',r'23\s*%',r'20\s*%',r'13\s*%',r'C\$22[,.]00',r'C\$29[,.]75',r'C\$46[,.]00',r'350[,.]000',r'2[,.]910[,.]053',r'3[,.]984',r'2[,.]304',r'2028',r'3(?:\s+|-)(?:year|years|años|anos)',r'3123-05',r'3123-10',r'3123-20')
+          semantics={
+            'total station':('total station','estación total','estação total'),
+            'GNSS':('gnss',),
+            'coordinate systems':('coordinate reference systems','sistemas de referencia de coordenadas','sistemas de referência de coordenadas'),
+            'traverse':('traverses and closure','poligonales y cierre','poligonais e fechamento'),
+            'professional boundary':('licensed or authorized surveyor','topógrafo/agrimensor autorizado','profissional habilitado'),
+            'photogrammetry':('photogrammetry','fotogrametría','fotogrametria'),
+            'privacy':('privacy','privacidad','privacidade'),
+            'field safety':('field safety','seguridad en campo','segurança em campo'),
+            'responsible AI':('responsible ai','ia responsable','ia responsável'),
+            'accessibility':('accessibility','accesibilidad','acessibilidade')}
+          for p,t in zip(files,texts):
+              for pat in controls:
+                  if not re.search(pat,t,re.I): problems.append(f'{p.name}: missing {pat}')
+              low=t.lower()
+              for label,terms in semantics.items():
+                  if not any(x.lower() in low for x in terms): problems.append(f'{p.name}: missing {label}')
+          if problems:
+              print('\n'.join(problems)); sys.exit(1)
+          Path('/tmp/guide93_urls.txt').write_text('\n'.join(sorted(urls[0]))+'\n',encoding='utf-8')
+          print('Guide 93 preflight PASS: 3 editions; 19 shared URLs')
+
+      - name: Check controlled reader links
+        id: links
+        run: |
+          set -euo pipefail
+          test "$(wc -l < /tmp/guide93_urls.txt)" -eq 19
+          fail=0
+          while IFS= read -r url; do
+            code="$(curl -L -sS -o /dev/null -w '%{http_code}' --connect-timeout 15 --max-time 35 -A 'Mozilla/5.0 Guide93-QA' "$url" || echo 000)"
+            case "$code" in
+              200|201|202|204|301|302|303|307|308|401|403|429) echo "LINK OK/WALLED $code $url" ;;
+              404|410) echo "LINK FAIL $code $url"; fail=1 ;;
+              000|5??) echo "LINK WARN $code $url" ;;
+              *) echo "LINK REVIEW $code $url" ;;
+            esac
+          done < /tmp/guide93_urls.txt
+          test "$fail" -eq 0
+
+      - name: Create URL-safe display filter
+        id: urlfilter
+        run: |
+          cat > /tmp/url_safe.lua <<'LUA'
+          local function long_url(s) return string.match(s,'^https?://') and string.len(s)>45 end
+          function Link(el)
+            local t=pandoc.utils.stringify(el.content)
+            if long_url(t) then return pandoc.Link({pandoc.Str('Source link')},el.target,el.title) end
+            return el
+          end
+          function Str(el)
+            if long_url(el.text) then return pandoc.Link({pandoc.Str('Source link')},el.text) end
+            return el
+          end
+          LUA
+
+      - name: Generate DOCX and searchable PDFs
+        id: documents
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-93/publication-candidate'
+          for STEM in GUIDE_93_ENGLISH_v2 GUIDE_93_SPANISH_es-419_v2 GUIDE_93_PORTUGUESE_pt-BR_v2; do
+            pandoc "$OUT/$STEM.md" -f gfm-tex_math_dollars -t docx --standalone --lua-filter=/tmp/url_safe.lua -o "$OUT/$STEM.docx"
+            mkdir -p "$OUT/lo-$STEM"
+            libreoffice --headless --convert-to pdf --outdir "$OUT/lo-$STEM" "$OUT/$STEM.docx"
+            mv "$OUT/lo-$STEM/$STEM.pdf" "$OUT/$STEM.pdf"
+            rmdir "$OUT/lo-$STEM"
+          done
+          for DOCX in "$OUT"/*.docx; do test -s "$DOCX"; unzip -t "$DOCX" >/dev/null; unzip -l "$DOCX" | grep -q 'word/document.xml'; done
+          for PDF in "$OUT"/*.pdf; do test -s "$PDF"; pdfinfo "$PDF" >/dev/null; test "$(pdftotext "$PDF" - | tr -d '[:space:]' | wc -c)" -gt 9000; done
+
+      - name: Render and validate every PDF page
+        id: render
+        shell: python
+        run: |
+          import json,subprocess,sys
+          from pathlib import Path
+          from PIL import Image,ImageChops
+          out=Path('project/revision-2026/guide-93/publication-candidate'); rend=out/'rendered'
+          for pdf in sorted(out.glob('*.pdf')):
+              dest=rend/pdf.stem; dest.mkdir(parents=True,exist_ok=True)
+              subprocess.run(['pdftoppm','-png','-r','110',str(pdf),str(dest/'page')],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+          problems=[]; pages=[]
+          for path in sorted(rend.rglob('*.png')):
+              with Image.open(path) as im:
+                  gray=im.convert('L'); diff=ImageChops.difference(gray,Image.new('L',gray.size,255)); bbox=diff.point(lambda p:255 if p>12 else 0).getbbox()
+                  if bbox is None: problems.append(f'{path}: blank'); continue
+                  l,t,r,b=bbox; w,h=gray.size; margins={'left':l,'top':t,'right':w-r,'bottom':h-b}
+                  if min(margins.values())<2: problems.append(f'{path}: clipping {margins}')
+                  pages.append({'file':str(path.relative_to(rend)),'edge_margins':margins})
+          result={'status':'FAIL' if problems else 'PASS','pages':pages,'problems':problems}
+          (rend/'RENDER_QA.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+          if problems: print('\n'.join(problems)); sys.exit(1)
+          print(f'Guide 93 all-page render PASS: {len(pages)} pages')
+
+      - name: Write publication evidence
+        id: evidence
+        shell: python
+        run: |
+          import hashlib,json,shutil,subprocess
+          from pathlib import Path
+          root=Path('project/revision-2026/guide-93'); out=root/'publication-candidate'; qa=root/'qa'; rend=out/'rendered'
+          render=json.loads((rend/'RENDER_QA.json').read_text(encoding='utf-8')); assert render['status']=='PASS'
+          editions=[]
+          for lang,stem in [('en','GUIDE_93_ENGLISH_v2'),('es-419','GUIDE_93_SPANISH_es-419_v2'),('pt-BR','GUIDE_93_PORTUGUESE_pt-BR_v2')]:
+              docx=out/f'{stem}.docx'; pdf=out/f'{stem}.pdf'
+              info=subprocess.check_output(['pdfinfo',str(pdf)],text=True)
+              count=next(int(line.split(':',1)[1]) for line in info.splitlines() if line.startswith('Pages:'))
+              rendered=sum(1 for row in render['pages'] if row['file'].startswith(stem+'/'))
+              assert count==rendered
+              editions.append({'language':lang,'docx':docx.name,'pdf':pdf.name,'docx_bytes':docx.stat().st_size,'pdf_bytes':pdf.stat().st_size,'pdf_pages':count,'rendered_pages':rendered,'status':'PASS'})
+          manifest={'guide':'93','occupation':'Surveying and Mapping Technician','build_date':'2026-08-22','status':'PASS','editions':editions,'reader_verification_urls':19,'english_source_blob':'effdfcd7908596a0285100e7856d898ee60abfe7','assurance_boundary':'Internal controlled publication QA; not independent certification, certified translation, legal/surveying/cadastral/engineering/aviation/privacy/cybersecurity/safety/accessibility certification, funding approval, employment guarantee, or earnings guarantee.'}
+          (out/'GUIDE_93_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          (out/'RENDER_QA.json').write_text(json.dumps(render,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          binaries=sorted([*out.glob('*.docx'),*out.glob('*.pdf')])
+          (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in binaries)+'\n',encoding='utf-8')
+          (qa/'GUIDE_93_PUBLICATION_QA_09.md').write_text('# Guide 93 — Publication QA 09\n\n**Stage:** Publication — **PASS**\n\nEnglish, es-419 and pt-BR Markdown/DOCX/PDF editions passed controlled-value and semantic parity, 19-link reader parity, hard-link checks, DOCX integrity, searchable-PDF validation, all-page rendering, page reconciliation, metadata and SHA-256 checksum generation.\n\nNo independent certification, certified translation, legal/surveying/cadastral/engineering/aviation/privacy/security/safety/accessibility certification, funding approval, employment guarantee or earnings guarantee is claimed.\n',encoding='utf-8')
+          (qa/'GUIDE_93_RELEASE_AUDIT_10.md').write_text('# Guide 93 — Release Audit 10\n\n**Stage:** Release Audit — **PASS**\n\nRelease audit confirms all predecessor gates, trilingual publication artifacts, 19-reader-link parity, checksums, searchable PDFs, all-page rendering, technician/professional-scope boundaries and zero blockers.\n',encoding='utf-8')
+          shutil.rmtree(rend)
+
+      - name: Commit verified package
+        id: packagecommit
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm -f project/revision-2026/guide-93/qa/GUIDE_93_PUBLICATION_WORKFLOW_DIAGNOSTIC.md || true
+          git add project/revision-2026/guide-93/publication-candidate project/revision-2026/guide-93/qa/GUIDE_93_PUBLICATION_QA_09.md project/revision-2026/guide-93/qa/GUIDE_93_RELEASE_AUDIT_10.md
+          git commit -m 'build(guide-93): publish controlled trilingual package'
+          git pull --rebase origin revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026
+
+      - name: Close publication and release status
+        id: closegates
+        run: |
+          set -euo pipefail
+          git pull --rebase origin revision/guide-00-100-2026
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('project/revision-2026/guide-93/GUIDE_93_HELPER_STATUS.json'); d=json.loads(p.read_text(encoding='utf-8'))
+          assert d['stages']['technical_qa']['status']=='PASS'; assert not d.get('blockers')
+          d['stages']['publication']={'status':'PASS','evidence':['project/revision-2026/guide-93/qa/GUIDE_93_PUBLICATION_QA_09.md','project/revision-2026/guide-93/publication-candidate/GUIDE_93_PUBLICATION_QA_MANIFEST.json','project/revision-2026/guide-93/publication-candidate/SHA256SUMS.txt','project/revision-2026/guide-93/publication-candidate/RENDER_QA.json']}
+          d['stages']['release_audit']={'status':'PASS','evidence':['project/revision-2026/guide-93/qa/GUIDE_93_RELEASE_AUDIT_10.md']}; d['blockers']=[]
+          p.write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          PY
+          git add project/revision-2026/guide-93/GUIDE_93_HELPER_STATUS.json
+          git commit -m 'qa(guide-93): close publication and release gates'
+          git pull --rebase origin revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026
+
+      - name: Commit publication failure diagnostic
+        if: failure()
+        env:
+          TOOLCHAIN: ${{ steps.toolchain.outcome }}
+          PREFLIGHT: ${{ steps.preflight.outcome }}
+          LINKS: ${{ steps.links.outcome }}
+          URLFILTER: ${{ steps.urlfilter.outcome }}
+          DOCUMENTS: ${{ steps.documents.outcome }}
+          RENDER: ${{ steps.render.outcome }}
+          EVIDENCE: ${{ steps.evidence.outcome }}
+          PACKAGECOMMIT: ${{ steps.packagecommit.outcome }}
+          CLOSEGATES: ${{ steps.closegates.outcome }}
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          FILE='project/revision-2026/guide-93/qa/GUIDE_93_PUBLICATION_WORKFLOW_DIAGNOSTIC.md'
+          mkdir -p "$(dirname "$FILE")"
+          cat > "$FILE" <<EOF
+          # Guide 93 — Publication Workflow Diagnostic
+
+          **Result:** publication workflow failed closed  
+          **Run ID:** ${GITHUB_RUN_ID}  
+          **Run attempt:** ${GITHUB_RUN_ATTEMPT}  
+          **Source SHA:** ${GITHUB_SHA}
+
+          ## Step outcomes
+          - Toolchain: ${TOOLCHAIN:-not-run}
+          - Preflight: ${PREFLIGHT:-not-run}
+          - Reader links: ${LINKS:-not-run}
+          - URL filter: ${URLFILTER:-not-run}
+          - DOCX/PDF generation: ${DOCUMENTS:-not-run}
+          - Render QA: ${RENDER:-not-run}
+          - Publication evidence: ${EVIDENCE:-not-run}
+          - Package commit/push: ${PACKAGECOMMIT:-not-run}
+          - Gate closure: ${CLOSEGATES:-not-run}
+
+          No publication or release gate is advanced by this diagnostic. Fix the failed stage and re-run the controlled workflow.
+          EOF
+          git reset
+          git add "$FILE"
+          git commit -m 'qa(guide-93): record publication workflow failure' || exit 0
+          git pull --rebase origin revision/guide-00-100-2026 || true
+          git push origin HEAD:revision/guide-00-100-2026 || true

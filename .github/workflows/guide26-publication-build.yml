@@ -1,0 +1,183 @@
+name: Guide 26 controlled publication build
+
+on:
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - '.github/workflows/guide26-publication-build.yml'
+      - '26-automotive-service-technician-and-mechanic/english/**'
+      - '26-automotive-service-technician-and-mechanic/spanish/**'
+      - '26-automotive-service-technician-and-mechanic/portuguese/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide26-controlled-publication-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out revision branch
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Install document tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice poppler-utils
+
+      - name: Prepare controlled sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-26/publication-candidate'
+          rm -rf "$OUT"
+          mkdir -p "$OUT" "$OUT/rendered"
+          cp '26-automotive-service-technician-and-mechanic/english/Guide_26_Automotive_Service_Technician_and_Mechanic_English_v2.0.md' "$OUT/GUIDE_26_ENGLISH_v2.md"
+          cp '26-automotive-service-technician-and-mechanic/spanish/Guide_26_Tecnico_de_Servicio_Automotriz_y_Mecanico_Spanish_v2.0.md' "$OUT/GUIDE_26_SPANISH_LATAM_v2.md"
+          cp '26-automotive-service-technician-and-mechanic/portuguese/Guide_26_Tecnico_de_Servicos_Automotivos_e_Mecanico_Portuguese_v2.0.md' "$OUT/GUIDE_26_PORTUGUESE_BR_v2.md"
+
+      - name: Trilingual structural, link, encoding, and source controls
+        shell: python
+        run: |
+          from pathlib import Path
+          import re, sys
+          out=Path('project/revision-2026/guide-26/publication-candidate')
+          files={
+            'en': out/'GUIDE_26_ENGLISH_v2.md',
+            'es-419': out/'GUIDE_26_SPANISH_LATAM_v2.md',
+            'pt-BR': out/'GUIDE_26_PORTUGUESE_BR_v2.md',
+          }
+          required_urls=[
+            'https://www.bls.gov/ooh/installation-maintenance-and-repair/automotive-service-technicians-and-mechanics.htm',
+            'https://www.apprenticeship.gov/',
+            'https://www.dol.gov/agencies/eta/advisories/training-and-employment-guidance-letter-no-08-19',
+            'https://www.careeronestop.org/LocalHelp/AmericanJobCenters/american-job-centers.aspx',
+            'https://www.epa.gov/mvac/section-609-technician-training-and-certification-programs',
+            'https://ope.ed.gov/dapip/#/home',
+            'https://www.indeed.com/career/automotive-technician/salaries',
+            'https://www.jobbank.gc.ca/marketreport/wages-occupation/14799/ca',
+            'https://red-seal.ca/eng/trades/auto-serv-tech.shtml',
+            'https://betowa.sena.edu.co/oferta/gestion-del-mantenimiento-de-automotores',
+            'https://agenciapublicadeempleo.sena.edu.co/',
+          ]
+          required_markers=[
+            r'\bWIOA\b', r'\bSENA\b', r'Apprenticeship\.gov', r'\bNOC\s+72410\b',
+            r'(?:Section|Secci[oó]n|Se[cç][aã]o)\s+609', r'\b(?:AI|IA)\b',
+            r'(?:Version|Versi[oó]n|Vers[aã]o):\*{0,2}\s*2\.0'
+          ]
+          problems=[]; section_counts={}; url_counts={}
+          for lang,path in files.items():
+            text=path.read_text(encoding='utf-8')
+            if text.startswith('\ufeff'): problems.append(f'{lang}: unexpected UTF-8 BOM')
+            if '\ufffd' in text: problems.append(f'{lang}: Unicode replacement character present')
+            numbered=re.findall(r'^##\s+\d+\.', text, re.M); section_counts[lang]=len(numbered)
+            if len(numbered) != 15: problems.append(f'{lang}: expected 15 numbered sections, found {len(numbered)}')
+            urls=re.findall(r'https://[^\s)<>]+', text); url_counts[lang]=len(urls)
+            for u in required_urls:
+              if u not in text: problems.append(f'{lang}: missing required URL {u}')
+            for p in required_markers:
+              if not re.search(p,text,re.I): problems.append(f'{lang}: missing controlled marker {p}')
+            for u in urls:
+              if ' ' in u or not re.match(r'^https://[^\s]+$',u): problems.append(f'{lang}: malformed URL {u}')
+            low=text.lower()
+            for bad in ('todo:', 'lorem ipsum', '[insert', 'translation pending', 'traducción pendiente', 'tradução pendente'):
+              if bad in low: problems.append(f'{lang}: placeholder marker {bad}')
+          if len(set(section_counts.values())) != 1: problems.append(f'numbered-section mismatch: {section_counts}')
+          if len(set(url_counts.values())) != 1: problems.append(f'URL-count mismatch: {url_counts}')
+          if problems:
+            print('\n'.join(problems)); sys.exit(1)
+          print(f'Guide 26 structural/link/source controls PASS: sections={section_counts}; urls={url_counts}')
+
+      - name: Generate DOCX and PDF editions
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-26/publication-candidate'
+          for STEM in GUIDE_26_ENGLISH_v2 GUIDE_26_SPANISH_LATAM_v2 GUIDE_26_PORTUGUESE_BR_v2; do
+            pandoc "$OUT/$STEM.md" -f gfm -t docx --standalone -o "$OUT/$STEM.docx"
+            mkdir -p "$OUT/lo-$STEM"
+            libreoffice --headless --convert-to pdf --outdir "$OUT/lo-$STEM" "$OUT/$STEM.docx"
+            mv "$OUT/lo-$STEM/$STEM.pdf" "$OUT/$STEM.pdf"
+            rmdir "$OUT/lo-$STEM"
+          done
+
+      - name: Validate DOCX and searchable PDFs
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-26/publication-candidate'
+          test "$(find "$OUT" -maxdepth 1 -name '*.docx' | wc -l)" -eq 3
+          test "$(find "$OUT" -maxdepth 1 -name '*.pdf' | wc -l)" -eq 3
+          for DOCX in "$OUT"/*.docx; do
+            unzip -t "$DOCX" >/dev/null
+            unzip -l "$DOCX" | grep -q 'word/document.xml'
+          done
+          for PDF in "$OUT"/*.pdf; do
+            pdfinfo "$PDF" >/dev/null
+            TEXT="$(pdftotext "$PDF" - | tr -d '[:space:]')"
+            test ${#TEXT} -gt 5000
+          done
+
+      - name: Render all PDF pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-26/publication-candidate'
+          for PDF in "$OUT"/*.pdf; do
+            STEM="$(basename "$PDF" .pdf)"
+            mkdir -p "$OUT/rendered/$STEM"
+            pdftoppm -png -r 110 "$PDF" "$OUT/rendered/$STEM/page" >/dev/null 2>&1
+          done
+          test "$(find "$OUT/rendered" -name '*.png' | wc -l)" -gt 3
+
+      - name: Generate metadata manifest and checksums
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib, json, subprocess
+          out=Path('project/revision-2026/guide-26/publication-candidate')
+          records=[]
+          for lang,stem in [('en','GUIDE_26_ENGLISH_v2'),('es-419','GUIDE_26_SPANISH_LATAM_v2'),('pt-BR','GUIDE_26_PORTUGUESE_BR_v2')]:
+            docx=out/f'{stem}.docx'; pdf=out/f'{stem}.pdf'
+            info=subprocess.check_output(['pdfinfo',str(pdf)],text=True)
+            pages=next(int(x.split(':',1)[1].strip()) for x in info.splitlines() if x.startswith('Pages:'))
+            txt=subprocess.check_output(['pdftotext',str(pdf),'-'],text=True,errors='replace')
+            if '\ufffd' in txt: raise SystemExit(f'{pdf}: Unicode replacement character in PDF text')
+            records.append({'language':lang,'docx':docx.name,'pdf':pdf.name,'docx_bytes':docx.stat().st_size,'pdf_bytes':pdf.stat().st_size,'pdf_pages':pages,'pdf_extractable_characters':len(txt.strip()),'status':'PASS'})
+          manifest={'guide':'26','occupation':'Automotive Service Technician and Mechanic','build_date':'2026-08-10','status':'PASS','controls':['trilingual structural parity','required source URLs','URL syntax','UTF-8/BOM controls','placeholder scan','DOCX ZIP integrity','searchable PDF text','all-page raster rendering','metadata manifest','SHA-256 checksums'],'editions':records,'assurance_boundary':'Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, automotive licensing approval, accreditation, or employment or earnings guarantee.'}
+          (out/'GUIDE_26_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          targets=sorted(p for p in out.iterdir() if p.is_file() and p.suffix in {'.docx','.pdf'})
+          (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets)+'\n',encoding='utf-8')
+
+      - name: Upload rendered pages
+        uses: actions/upload-artifact@v4
+        with:
+          name: guide26-rendered-pages
+          path: project/revision-2026/guide-26/publication-candidate/rendered
+          retention-days: 14
+
+      - name: Remove render images from commit scope
+        run: rm -rf project/revision-2026/guide-26/publication-candidate/rendered
+
+      - name: Commit controlled publication candidates
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-26/publication-candidate
+          if git diff --cached --quiet; then
+            echo 'No publication changes to commit.'
+          else
+            git commit -m 'Build and validate Guide 26 publication candidates'
+            git pull --rebase origin revision/guide-00-100-2026
+            git push origin HEAD:revision/guide-00-100-2026
+          fi

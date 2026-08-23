@@ -1,0 +1,39 @@
+{
+  "guide": "49",
+  "occupation": "Dental Assistant",
+  "build_date": "2026-08-19",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_49_ENGLISH_v2.docx",
+      "pdf": "GUIDE_49_ENGLISH_v2.pdf",
+      "docx_bytes": 28066,
+      "pdf_bytes": 251796,
+      "pdf_pages": 16,
+      "rendered_pages": 16,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_49_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_49_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 29264,
+      "pdf_bytes": 257068,
+      "pdf_pages": 16,
+      "rendered_pages": 16,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_49_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_49_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 29303,
+      "pdf_bytes": 258177,
+      "pdf_pages": 17,
+      "rendered_pages": 17,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, accreditation, dental or legal review, clinical-practice authorization, certification-body approval, credential transfer, or employment or earnings guarantee."
+}

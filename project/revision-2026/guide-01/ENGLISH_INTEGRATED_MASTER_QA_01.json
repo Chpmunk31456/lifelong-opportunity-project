@@ -1,0 +1,24 @@
+{
+  "guide": "01",
+  "edition": "English",
+  "version": "1.1",
+  "status": "controlled integrated master; automated QA only",
+  "source_sha256": "e1bdab441163e151558c84aba72aa64b327e0061a38fb447794db10c4c3a3d02",
+  "master_sha256": "fe62c4189b1557554453d4f707b553bd768a342e62b531bad84d7fc00dab2202",
+  "characters": 26400,
+  "words": 3261,
+  "headings": 55,
+  "unique_urls": 13,
+  "required_checks": {
+    "version_1_1": true,
+    "bls": true,
+    "canada": true,
+    "colombia": true,
+    "latin_america": true,
+    "apprenticeship": true,
+    "commercial_label": true,
+    "scope_limit": true
+  },
+  "blocking_defects": [],
+  "independent_human_certification": false
+}

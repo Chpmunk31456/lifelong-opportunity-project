@@ -1,0 +1,40 @@
+{
+  "guide": "78",
+  "occupation": "Web and Digital Interface Designer",
+  "build_date": "2026-08-21",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_78_ENGLISH_v2.docx",
+      "pdf": "GUIDE_78_ENGLISH_v2.pdf",
+      "docx_bytes": 25743,
+      "pdf_bytes": 320222,
+      "pdf_pages": 18,
+      "rendered_pages": 18,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_78_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_78_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 26388,
+      "pdf_bytes": 330422,
+      "pdf_pages": 19,
+      "rendered_pages": 19,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_78_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_78_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 26249,
+      "pdf_bytes": 330163,
+      "pdf_pages": 18,
+      "rendered_pages": 18,
+      "status": "PASS"
+    }
+  ],
+  "controlled_source_urls": 18,
+  "assurance_boundary": "Internal automated publication QA, controlled live-link checks, all-page render inspection, and controlled source review; not independent human certification, professional translation certification, legal/privacy review, accessibility certification, cybersecurity certification, software-engineering approval, professional accreditation, funding approval, employment guarantee, freelance-work guarantee, client-acquisition guarantee, or earnings guarantee."
+}

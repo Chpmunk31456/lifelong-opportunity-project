@@ -1,0 +1,94 @@
+{
+  "guide": "52",
+  "occupation": "Surgical Technologist",
+  "publication_date": "2026-08-19",
+  "status": "PASS",
+  "design": {
+    "preset": "compact_reference_guide",
+    "cover_pattern": "editorial_cover",
+    "page_size": "US Letter",
+    "body_font": "Calibri 11 pt"
+  },
+  "validation": {
+    "visual_pages_reviewed": 35,
+    "visual_defects": 0,
+    "pdf_searchable": true,
+    "pdf_tagged": true,
+    "docx_accessibility_high": 0,
+    "docx_accessibility_medium": 0,
+    "docx_accessibility_low": 15,
+    "low_findings_note": "Raw source URLs retained as visible link text for auditability; no high- or medium-severity findings.",
+    "publication_defects_corrected_before_seal": [
+      "Disabled dollar-delimited math parsing so currency text remains ordinary prose.",
+      "Normalized bullet and numbered-list definitions for visible markers and restart-safe numbering."
+    ]
+  },
+  "artifacts": [
+    {
+      "language": "en",
+      "files": {
+        "markdown": {
+          "name": "GUIDE_52_ENGLISH_v2.md",
+          "bytes": 23181,
+          "sha256": "c99e2d7f90829ea518965121a67b9df21c64e445132205235177fd5208daef31"
+        },
+        "docx": {
+          "name": "GUIDE_52_ENGLISH_v2.docx",
+          "bytes": 35411,
+          "sha256": "c31d6d6d6d860f24e553afdd66608888299716b04b6de34a00473290f621042a"
+        },
+        "pdf": {
+          "name": "GUIDE_52_ENGLISH_v2.pdf",
+          "bytes": 214027,
+          "sha256": "ea3c7d132f5ea543676bca3fccc2a24984c4091d6ddcfc7a25beb10db202a97e",
+          "pages": 11,
+          "text_bytes": 23581
+        }
+      }
+    },
+    {
+      "language": "es-419",
+      "files": {
+        "markdown": {
+          "name": "GUIDE_52_SPANISH_es-419_v2.md",
+          "bytes": 27280,
+          "sha256": "84c5b9c55d9a6e473cbf9504c0e9337e7e1044a0ac680d7b94a93694fbf2de39"
+        },
+        "docx": {
+          "name": "GUIDE_52_SPANISH_es-419_v2.docx",
+          "bytes": 36715,
+          "sha256": "4c358dc57b37e5c22a58201f2cb926e3e9a8f3416fc708830ed2e9f65887c2e6"
+        },
+        "pdf": {
+          "name": "GUIDE_52_SPANISH_es-419_v2.pdf",
+          "bytes": 219899,
+          "sha256": "e85aa2cc7bb5590ca4962fd390f16407d7baab29280e6a570f5f57ae2b435f0e",
+          "pages": 12,
+          "text_bytes": 27759
+        }
+      }
+    },
+    {
+      "language": "pt-BR",
+      "files": {
+        "markdown": {
+          "name": "GUIDE_52_PORTUGUESE_pt-BR_v2.md",
+          "bytes": 26930,
+          "sha256": "c3d6b1e99890e47d93186d0d174686791b6b3c2009dfc8a9a899dce18487f2dc"
+        },
+        "docx": {
+          "name": "GUIDE_52_PORTUGUESE_pt-BR_v2.docx",
+          "bytes": 36662,
+          "sha256": "e421753bc2ca42f8a8cc94cdb140e2f936fa2f1efb3b133aaa0ccc56b1d243d1"
+        },
+        "pdf": {
+          "name": "GUIDE_52_PORTUGUESE_pt-BR_v2.pdf",
+          "bytes": 226251,
+          "sha256": "cd13ce8bd460a57901fe5c0aa6559b1fbc6a5aa6de66aa6009ec673fad4da808",
+          "pages": 12,
+          "text_bytes": 27383
+        }
+      }
+    }
+  ]
+}

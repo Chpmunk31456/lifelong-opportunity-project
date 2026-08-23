@@ -1,0 +1,41 @@
+{
+  "guide": "87",
+  "occupation": "Software Quality Assurance Analyst and Tester",
+  "build_date": "2026-08-22",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_87_ENGLISH_v2.docx",
+      "pdf": "GUIDE_87_ENGLISH_v2.pdf",
+      "docx_bytes": 26060,
+      "pdf_bytes": 345153,
+      "pdf_pages": 19,
+      "rendered_pages": 19,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_87_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_87_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 22433,
+      "pdf_bytes": 259484,
+      "pdf_pages": 14,
+      "rendered_pages": 14,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_87_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_87_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 22421,
+      "pdf_bytes": 260049,
+      "pdf_pages": 14,
+      "rendered_pages": 14,
+      "status": "PASS"
+    }
+  ],
+  "controlled_evidence_urls": 30,
+  "reader_verification_urls": 25,
+  "assurance_boundary": "Internal automated publication QA, controlled link checks, all-page render inspection, and controlled source review; not independent human certification, certified translation, legal/privacy/cybersecurity/security-testing/release/regulatory/accessibility certification, training-provider accreditation, funding approval, employment guarantee, or earnings guarantee."
+}

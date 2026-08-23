@@ -1,0 +1,74 @@
+{
+  "guide": "52",
+  "occupation": "Surgical Technologist",
+  "branch": "revision/guide-00-100-2026",
+  "updated": "2026-08-19",
+  "stages": {
+    "baseline_inventory": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-52/qa/GUIDE_52_BASELINE_INVENTORY_01.md"
+      ]
+    },
+    "research": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-52/research/GUIDE_52_CURRENT_SOURCE_EVIDENCE_02.md"
+      ]
+    },
+    "english_editorial": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-52/working-masters/GUIDE_52_SURGICAL_TECHNOLOGIST_ENGLISH_v2.md",
+        "project/revision-2026/guide-52/qa/GUIDE_52_ENGLISH_EDITORIAL_QA_03.md"
+      ]
+    },
+    "evidence_traceability": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-52/qa/GUIDE_52_EVIDENCE_TRACEABILITY_QA_04.md"
+      ]
+    },
+    "english_source_freeze": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-52/qa/GUIDE_52_ENGLISH_SOURCE_FREEZE_05.md"
+      ]
+    },
+    "spanish_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-52/working-masters/GUIDE_52_SURGICAL_TECHNOLOGIST_ES419_v2.md",
+        "project/revision-2026/guide-52/qa/GUIDE_52_SPANISH_LOCALIZATION_QA_06.md"
+      ]
+    },
+    "portuguese_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-52/working-masters/GUIDE_52_SURGICAL_TECHNOLOGIST_PTBR_v2.md",
+        "project/revision-2026/guide-52/qa/GUIDE_52_PORTUGUESE_LOCALIZATION_QA_07.md"
+      ]
+    },
+    "technical_qa": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-52/qa/GUIDE_52_TECHNICAL_QA_08.md"
+      ]
+    },
+    "publication": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-52/publication-candidate/GUIDE_52_PUBLICATION_QA_MANIFEST.json",
+        "project/revision-2026/guide-52/publication-candidate/SHA256SUMS.txt",
+        "project/revision-2026/guide-52/qa/GUIDE_52_PUBLICATION_GATE_09.md"
+      ]
+    },
+    "release_audit": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-52/qa/GUIDE_52_RELEASE_AUDIT_10.md"
+      ]
+    }
+  },
+  "blockers": []
+}

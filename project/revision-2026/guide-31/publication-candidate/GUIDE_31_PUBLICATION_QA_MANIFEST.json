@@ -1,0 +1,52 @@
+{
+  "guide": "31",
+  "occupation": "Plumber, Pipefitter, and Plumbing Technician",
+  "build_date": "2026-08-11",
+  "status": "PASS",
+  "controls": [
+    "trilingual structural parity",
+    "source-domain presence",
+    "URL parity",
+    "locale-aware controlled numerical values",
+    "UTF-8/BOM controls",
+    "placeholder scan",
+    "DOCX ZIP integrity",
+    "searchable PDF text",
+    "all-page raster rendering",
+    "metadata manifest",
+    "SHA-256 checksums"
+  ],
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_31_ENGLISH_v2.docx",
+      "pdf": "GUIDE_31_ENGLISH_v2.pdf",
+      "docx_bytes": 26436,
+      "pdf_bytes": 274156,
+      "pdf_pages": 15,
+      "pdf_extractable_characters": 30727,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_31_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_31_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 27827,
+      "pdf_bytes": 275080,
+      "pdf_pages": 16,
+      "pdf_extractable_characters": 35688,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_31_PORTUGUESE_BR_v2.docx",
+      "pdf": "GUIDE_31_PORTUGUESE_BR_v2.pdf",
+      "docx_bytes": 27578,
+      "pdf_bytes": 271637,
+      "pdf_pages": 16,
+      "pdf_extractable_characters": 34517,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, plumbing-code approval, trade licensing approval, accreditation, or employment or earnings guarantee."
+}

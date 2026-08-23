@@ -1,0 +1,19 @@
+{
+  "guide": "17",
+  "occupation": "Bank Teller and Member Services Representative",
+  "branch": "revision/guide-00-100-2026",
+  "updated": "2026-08-09",
+  "stages": {
+    "baseline_inventory": {"status": "PASS", "evidence": ["project/revision-2026/guide-17/qa/GUIDE_17_BASELINE_INVENTORY_01.md"]},
+    "research": {"status": "PASS", "evidence": ["17-bank-teller-and-member-services-representative/references/guide-17-v2-current-source-ledger.md"]},
+    "english_editorial": {"status": "PASS", "evidence": ["17-bank-teller-and-member-services-representative/references/english-v2-editorial-accessibility-qa.md"]},
+    "evidence_traceability": {"status": "PASS", "evidence": ["17-bank-teller-and-member-services-representative/references/english-v2-traceability-qa-recheck.md"]},
+    "english_source_freeze": {"status": "PASS", "evidence": ["17-bank-teller-and-member-services-representative/references/english-v2-source-freeze-2026-08-09.md", "project/revision-2026/guide-17/qa/GUIDE_17_STATUS_RECONCILIATION_02.md"]},
+    "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-17/source/GUIDE_17_SPANISH_LATAM_WORKING_MASTER_v2.md", "project/revision-2026/guide-17/qa/GUIDE_17_TRILINGUAL_LOCALIZATION_PARITY_QA_08.md"]},
+    "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-17/source/GUIDE_17_PORTUGUESE_BR_WORKING_MASTER_v2.md", "project/revision-2026/guide-17/qa/GUIDE_17_TRILINGUAL_LOCALIZATION_PARITY_QA_08.md"]},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-17/qa/GUIDE_17_TRILINGUAL_LOCALIZATION_PARITY_QA_08.md"]},
+    "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-17/publication-candidate/GUIDE_17_PUBLICATION_QA_MANIFEST.json", "project/revision-2026/guide-17/publication-candidate/SHA256SUMS.txt", "project/revision-2026/guide-17/qa/GUIDE_17_PUBLICATION_QA_09.md"]},
+    "release_audit": {"status": "PASS", "evidence": ["project/revision-2026/guide-17/qa/GUIDE_17_RELEASE_AUDIT_10.md"]}
+  },
+  "blockers": []
+}

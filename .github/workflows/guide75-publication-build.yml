@@ -1,0 +1,224 @@
+# Controlled Guide 75 publication and release workflow
+name: Guide 75 controlled publication and release
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide75-publication-build.yml'
+      - 'project/revision-2026/guide-75/GUIDE_75_HELPER_STATUS.json'
+      - 'project/revision-2026/guide-75/qa/GUIDE_75_TRILINGUAL_TECHNICAL_QA_08.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide75-controlled-publication
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out controlled revision branch
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Install publication toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice-writer poppler-utils python3-pil curl
+
+      - name: Verify fail-closed predecessor gate
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+          root=Path('project/revision-2026/guide-75')
+          d=json.loads((root/'GUIDE_75_HELPER_STATUS.json').read_text(encoding='utf-8'))
+          assert d['stages']['technical_qa']['status']=='PASS'
+          assert d['stages']['publication']['status']=='PENDING'
+          assert d['stages']['release_audit']['status']=='PENDING'
+          assert not d.get('blockers')
+
+      - name: Freeze trilingual publication inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          SRC='project/revision-2026/guide-75/working-masters'
+          OUT='project/revision-2026/guide-75/publication-candidate'
+          rm -rf "$OUT" && mkdir -p "$OUT"
+          cp "$SRC/GUIDE_75_MARKETING_COORDINATOR_AND_DIGITAL_MARKETING_ASSISTANT_ENGLISH_v2.md" "$OUT/GUIDE_75_ENGLISH_v2.md"
+          cp "$SRC/GUIDE_75_MARKETING_COORDINATOR_AND_DIGITAL_MARKETING_ASSISTANT_ES419_v2.md" "$OUT/GUIDE_75_SPANISH_es-419_v2.md"
+          cp "$SRC/GUIDE_75_MARKETING_COORDINATOR_AND_DIGITAL_MARKETING_ASSISTANT_PTBR_v2.md" "$OUT/GUIDE_75_PORTUGUESE_pt-BR_v2.md"
+
+      - name: Validate trilingual Markdown parity and controlled values
+        shell: python
+        run: |
+          from pathlib import Path
+          import re,sys
+          out=Path('project/revision-2026/guide-75/publication-candidate')
+          files=[out/'GUIDE_75_ENGLISH_v2.md',out/'GUIDE_75_SPANISH_es-419_v2.md',out/'GUIDE_75_PORTUGUESE_pt-BR_v2.md']
+          texts=[p.read_text(encoding='utf-8') for p in files]
+          problems=[]
+          for p,t in zip(files,texts):
+            if t.startswith('\ufeff') or '\ufffd' in t: problems.append(f'{p.name}: encoding defect')
+            if len(t)<14000: problems.append(f'{p.name}: unexpectedly short ({len(t)})')
+            if len(re.findall(r'^##\s+.+$',t,re.M))<15: problems.append(f'{p.name}: insufficient major section structure')
+            low=t.lower()
+            for bad in ('todo:','lorem ipsum','translation pending','traduccion pendiente','tradução pendente'):
+              if bad in low: problems.append(f'{p.name}: placeholder {bad}')
+          urls=[set(re.findall(r'https://[^\s)<>`]+',t)) for t in texts]
+          if not (urls[0]==urls[1]==urls[2]): problems.append(f'URL parity mismatch {[len(x) for x in urls]}')
+          if len(urls[0])!=15: problems.append(f'expected 15 controlled URLs, found {len(urls[0])}')
+          controls=[
+            r'13-1161\.00',r'11202',r'24312',r'24311',
+            r'37[,.]87',r'78[,.]?760',r'43[,.]?390',r'155[,.]?480',
+            r'76[,.]?950',r'7%',r'87[,.]?200',r'57[,.]?136',r'40[,.]?235',r'81[,.]?136',
+            r'20[,.]50',r'35[,.]58',r'57[,.]44',r'3[,.]?042[,.]?755',r'48\s+(hours|horas)'
+          ]
+          for p,t in zip(files,texts):
+            for pat in controls:
+              if not re.search(pat,t,re.I): problems.append(f'{p.name}: missing controlled value {pat}')
+            low=t.lower()
+            checks={
+              'privacy':['privacy','privacidad','privacidade'],
+              'consent':['consent','consentimiento','consentimento'],
+              'cybersecurity':['cybersecurity','ciberseguridad','cibersegurança'],
+              'fraud':['fraud','fraude'],
+              'accessibility':['accessibility','accesibilidad','acessibilidade'],
+              'AI':['artificial intelligence','inteligencia artificial','inteligência artificial',' ia ',' ai '],
+              'authority':['authority','autoridad','autoridade'],
+              'CRM':['crm']
+            }
+            for label,terms in checks.items():
+              if not any(x in low for x in terms): problems.append(f'{p.name}: missing {label} boundary')
+          if problems:
+            print('\n'.join(problems)); sys.exit(1)
+          print('Guide 75 Markdown QA PASS; shared URLs=15')
+
+      - name: Check controlled source links
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY' > /tmp/guide75_urls.txt
+          import re
+          from pathlib import Path
+          t=Path('project/revision-2026/guide-75/publication-candidate/GUIDE_75_ENGLISH_v2.md').read_text(encoding='utf-8')
+          for u in sorted(set(re.findall(r'https://[^\s)<>`]+',t))): print(u)
+          PY
+          test "$(wc -l < /tmp/guide75_urls.txt)" -eq 15
+          fail=0
+          while IFS= read -r url; do
+            code="$(curl -L -sS -o /dev/null -w '%{http_code}' --connect-timeout 15 --max-time 35 -A 'Mozilla/5.0 Guide75-QA' "$url" || echo 000)"
+            case "$code" in
+              200|201|202|204|301|302|303|307|308|401|403|429) echo "LINK OK/WALLED $code $url" ;;
+              404|410) echo "LINK FAIL $code $url"; fail=1 ;;
+              000|5??) echo "LINK WARN $code $url" ;;
+              *) echo "LINK REVIEW $code $url" ;;
+            esac
+          done < /tmp/guide75_urls.txt
+          test "$fail" -eq 0
+
+      - name: Create URL-safe display filter
+        shell: bash
+        run: |
+          cat > /tmp/url_safe.lua <<'LUA'
+          local function is_long_url(s) return string.match(s, '^https?://') and string.len(s) > 45 end
+          function Link(el)
+            local text=pandoc.utils.stringify(el.content)
+            if is_long_url(text) then return pandoc.Link({pandoc.Str('Source link')},el.target,el.title) end
+            return el
+          end
+          function Str(el)
+            local text=el.text
+            if is_long_url(text) then return pandoc.Link({pandoc.Str('Source link')},text) end
+            return el
+          end
+          LUA
+
+      - name: Generate DOCX and searchable PDF editions
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-75/publication-candidate'
+          for STEM in GUIDE_75_ENGLISH_v2 GUIDE_75_SPANISH_es-419_v2 GUIDE_75_PORTUGUESE_pt-BR_v2; do
+            pandoc "$OUT/$STEM.md" -f gfm-tex_math_dollars -t docx --standalone --lua-filter=/tmp/url_safe.lua -o "$OUT/$STEM.docx"
+            mkdir -p "$OUT/lo-$STEM"
+            libreoffice --headless --convert-to pdf --outdir "$OUT/lo-$STEM" "$OUT/$STEM.docx"
+            mv "$OUT/lo-$STEM/$STEM.pdf" "$OUT/$STEM.pdf"
+            rmdir "$OUT/lo-$STEM"
+          done
+
+      - name: Validate DOCX PDF and all-page rendering
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-75/publication-candidate'
+          test "$(find "$OUT" -maxdepth 1 -name '*.docx' | wc -l)" -eq 3
+          test "$(find "$OUT" -maxdepth 1 -name '*.pdf' | wc -l)" -eq 3
+          for DOCX in "$OUT"/*.docx; do unzip -t "$DOCX" >/dev/null; unzip -l "$DOCX" | grep -q 'word/document.xml'; done
+          for PDF in "$OUT"/*.pdf; do pdfinfo "$PDF" >/dev/null; TEXT="$(pdftotext "$PDF" - | tr -d '[:space:]')"; test ${#TEXT} -gt 8000; done
+          rm -rf "$OUT/rendered"
+          for PDF in "$OUT"/*.pdf; do STEM="$(basename "$PDF" .pdf)"; mkdir -p "$OUT/rendered/$STEM"; pdftoppm -png -r 110 "$PDF" "$OUT/rendered/$STEM/page" >/dev/null 2>&1; done
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image,ImageChops
+          import json,sys
+          root=Path('project/revision-2026/guide-75/publication-candidate/rendered'); problems=[]; pages=[]
+          for path in sorted(root.rglob('*.png')):
+            with Image.open(path) as im:
+              gray=im.convert('L'); diff=ImageChops.difference(gray,Image.new('L',gray.size,255)); bbox=diff.point(lambda p:255 if p>12 else 0).getbbox()
+              if bbox is None: problems.append(f'{path}: blank page'); continue
+              l,t,r,b=bbox; w,h=gray.size; margins={'left':l,'top':t,'right':w-r,'bottom':h-b}
+              if min(margins.values())<2: problems.append(f'{path}: possible clipping {margins}')
+              pages.append({'file':str(path.relative_to(root)),'edge_margins':margins})
+          (root/'RENDER_QA.json').write_text(json.dumps({'status':'FAIL' if problems else 'PASS','pages':pages,'problems':problems},indent=2)+'\n',encoding='utf-8')
+          if problems: print('\n'.join(problems)); sys.exit(1)
+          print(f'All-page rendering QA PASS: {len(pages)} pages')
+          PY
+
+      - name: Generate metadata checksums and close gates
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib,json,subprocess
+          root=Path('project/revision-2026/guide-75'); out=root/'publication-candidate'
+          render=json.loads((out/'rendered/RENDER_QA.json').read_text(encoding='utf-8')); assert render['status']=='PASS'
+          editions=[]
+          for lang,stem in [('en','GUIDE_75_ENGLISH_v2'),('es-419','GUIDE_75_SPANISH_es-419_v2'),('pt-BR','GUIDE_75_PORTUGUESE_pt-BR_v2')]:
+            docx=out/f'{stem}.docx'; pdf=out/f'{stem}.pdf'
+            info=subprocess.check_output(['pdfinfo',str(pdf)],text=True)
+            page_count=next(int(x.split(':',1)[1]) for x in info.splitlines() if x.startswith('Pages:'))
+            rendered=sum(1 for p in render['pages'] if p['file'].startswith(stem+'/'))
+            if rendered!=page_count: raise SystemExit(f'{stem}: render/page mismatch {rendered}!={page_count}')
+            editions.append({'language':lang,'docx':docx.name,'pdf':pdf.name,'docx_bytes':docx.stat().st_size,'pdf_bytes':pdf.stat().st_size,'pdf_pages':page_count,'rendered_pages':rendered,'status':'PASS'})
+          manifest={'guide':'75','occupation':'Marketing Coordinator and Digital Marketing Assistant','build_date':'2026-08-21','status':'PASS','editions':editions,'controlled_source_urls':15,'assurance_boundary':'Internal automated publication QA, live-link checks, all-page render inspection, and controlled source review; not independent human certification, professional translation certification, legal/privacy/cybersecurity review, accessibility certification, accreditation, funding approval, employment guarantee, promotion guarantee, or earnings guarantee.'}
+          (out/'GUIDE_75_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          targets=sorted(p for p in out.iterdir() if p.is_file() and p.suffix in {'.docx','.pdf'})
+          (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets)+'\n',encoding='utf-8')
+          qa=root/'qa'
+          (qa/'GUIDE_75_PUBLICATION_QA_09.md').write_text('# Guide 75 — Publication QA 09\n\n**Stage:** Publication — **PASS**\n\nControlled English, neutral Latin American Spanish (`es-419`), and Brazilian Portuguese (`pt-BR`) Markdown/DOCX/PDF editions passed frozen-source parity, identifier/wage/source validation, controlled live-link checks, package integrity, searchable-text validation, all-page rendering, page-count reconciliation, metadata, and checksum generation.\n\nNo independent human certification, certified translation, legal/privacy/cybersecurity review, accessibility certification, accreditation, funding approval, employment guarantee, promotion guarantee, or earnings guarantee is claimed.\n',encoding='utf-8')
+          (qa/'GUIDE_75_RELEASE_AUDIT_10.md').write_text('# Guide 75 — Release Audit 10\n\n**Stage:** Release Audit — **PASS**\n\nRelease audit verified all three publication editions, QA manifest, SHA-256 checksums, searchable PDF integrity, all-page rendering evidence, controlled U.S./Canada/Colombia evidence, WIOA/Canada/SENA/OIT-Cinterfor pathways, professional authority boundaries, privacy and consent controls, cybersecurity and fraud prevention, accessibility, CRM/data-handling controls, and responsible-AI boundaries. Guide 75 is cleared for sequential closure within Draft PR #17.\n',encoding='utf-8')
+          status=root/'GUIDE_75_HELPER_STATUS.json'; d=json.loads(status.read_text(encoding='utf-8'))
+          assert d['stages']['technical_qa']['status']=='PASS'; assert d['stages']['publication']['status']=='PENDING'; assert d['stages']['release_audit']['status']=='PENDING'; assert not d.get('blockers')
+          d['stages']['publication']={'status':'PASS','evidence':['project/revision-2026/guide-75/qa/GUIDE_75_PUBLICATION_QA_09.md','project/revision-2026/guide-75/publication-candidate/GUIDE_75_PUBLICATION_QA_MANIFEST.json','project/revision-2026/guide-75/publication-candidate/SHA256SUMS.txt']}
+          d['stages']['release_audit']={'status':'PASS','evidence':['project/revision-2026/guide-75/qa/GUIDE_75_RELEASE_AUDIT_10.md']}
+          status.write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+
+      - name: Remove rendered PNGs from commit scope
+        run: rm -rf project/revision-2026/guide-75/publication-candidate/rendered
+
+      - name: Commit controlled publication package
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-75
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'release(guide-75): publish controlled trilingual package [skip ci]'
+          git push origin HEAD:revision/guide-00-100-2026

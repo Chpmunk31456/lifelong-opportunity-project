@@ -1,0 +1,74 @@
+{
+  "guide": "78",
+  "occupation": "Web and Digital Interface Designer",
+  "branch": "revision/guide-00-100-2026",
+  "updated": "2026-08-21",
+  "stages": {
+    "baseline_inventory": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-78/qa/GUIDE_78_BASELINE_INVENTORY_01.md"
+      ]
+    },
+    "research": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-78/research/GUIDE_78_CURRENT_SOURCE_EVIDENCE_02.md"
+      ]
+    },
+    "english_editorial": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-78/working-masters/GUIDE_78_WEB_AND_DIGITAL_INTERFACE_DESIGNER_ENGLISH_v2.md",
+        "project/revision-2026/guide-78/qa/GUIDE_78_ENGLISH_EDITORIAL_QA_03.md"
+      ]
+    },
+    "evidence_traceability": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-78/qa/GUIDE_78_EVIDENCE_TRACEABILITY_QA_04.md"
+      ]
+    },
+    "english_source_freeze": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-78/qa/GUIDE_78_ENGLISH_SOURCE_FREEZE_05.md"
+      ]
+    },
+    "spanish_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-78/working-masters/GUIDE_78_DISENADOR_DE_INTERFACES_WEB_Y_DIGITALES_ES419_v2.md",
+        "project/revision-2026/guide-78/qa/GUIDE_78_SPANISH_LOCALIZATION_QA_06.md"
+      ]
+    },
+    "portuguese_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-78/working-masters/GUIDE_78_DESIGNER_DE_WEB_E_INTERFACES_DIGITAIS_PTBR_v2.md",
+        "project/revision-2026/guide-78/qa/GUIDE_78_PORTUGUESE_LOCALIZATION_QA_07.md"
+      ]
+    },
+    "technical_qa": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-78/qa/GUIDE_78_TRILINGUAL_TECHNICAL_QA_08.md"
+      ]
+    },
+    "publication": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-78/qa/GUIDE_78_PUBLICATION_QA_09.md",
+        "project/revision-2026/guide-78/publication-candidate/GUIDE_78_PUBLICATION_QA_MANIFEST.json",
+        "project/revision-2026/guide-78/publication-candidate/SHA256SUMS.txt"
+      ]
+    },
+    "release_audit": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-78/qa/GUIDE_78_RELEASE_AUDIT_10.md"
+      ]
+    }
+  },
+  "blockers": []
+}

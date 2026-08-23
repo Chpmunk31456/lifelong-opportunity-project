@@ -1,0 +1,49 @@
+{
+  "guide": "18",
+  "occupation": "Legal Administrative Assistant and Legal Office Coordinator",
+  "build_date": "2026-08-09",
+  "status": "PASS",
+  "controls": [
+    "19-section trilingual structure",
+    "locale-aware controlled numerical values",
+    "required source URLs",
+    "DOCX ZIP integrity",
+    "PDF readability",
+    "searchable PDF text",
+    "SHA-256 checksums",
+    "all-page raster rendering"
+  ],
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_18_ENGLISH_v2.docx",
+      "pdf": "GUIDE_18_ENGLISH_v2.pdf",
+      "docx_bytes": 28645,
+      "pdf_bytes": 309795,
+      "pdf_pages": 19,
+      "pdf_extractable_characters": 34865,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_18_SPANISH_LATAM_v2.docx",
+      "pdf": "GUIDE_18_SPANISH_LATAM_v2.pdf",
+      "docx_bytes": 29129,
+      "pdf_bytes": 310694,
+      "pdf_pages": 19,
+      "pdf_extractable_characters": 36092,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_18_PORTUGUESE_BR_v2.docx",
+      "pdf": "GUIDE_18_PORTUGUESE_BR_v2.pdf",
+      "docx_bytes": 28986,
+      "pdf_bytes": 312048,
+      "pdf_pages": 19,
+      "pdf_extractable_characters": 35339,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, regulator approval, accreditation, or employment guarantee."
+}

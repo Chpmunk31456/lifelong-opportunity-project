@@ -1,0 +1,54 @@
+{
+  "guide": "09",
+  "occupation": "Logistics and Supply Chain Coordinator",
+  "status": "PASS",
+  "parity": {
+    "guide": "09",
+    "sections": 19,
+    "urls": 10,
+    "critical_patterns": 19,
+    "status": "PASS"
+  },
+  "publication_source_transform": true,
+  "languages": {
+    "en": {
+      "source": "project/revision-2026/guide-09/source/GUIDE_09_ENGLISH_WORKING_MASTER_v2.md",
+      "docx": "Lifelong_Opportunity_Guide_09_Logistics_and_Supply_Chain_Coordinator_English_v2.0.docx",
+      "pdf": "Lifelong_Opportunity_Guide_09_Logistics_and_Supply_Chain_Coordinator_English_v2.0.pdf",
+      "pdf_pages": 15,
+      "rendered_pages": 15,
+      "pdf_text_chars": 28513,
+      "docx_qa": {
+        "zip_entries": 16,
+        "relationship_parts": 3,
+        "unsafe_parts": 0
+      }
+    },
+    "es-419": {
+      "source": "project/revision-2026/guide-09/source/GUIDE_09_SPANISH_LATAM_WORKING_MASTER_v2.md",
+      "docx": "Lifelong_Opportunity_Guide_09_Logistics_and_Supply_Chain_Coordinator_es-419_v2.0.docx",
+      "pdf": "Lifelong_Opportunity_Guide_09_Logistics_and_Supply_Chain_Coordinator_es-419_v2.0.pdf",
+      "pdf_pages": 17,
+      "rendered_pages": 17,
+      "pdf_text_chars": 32562,
+      "docx_qa": {
+        "zip_entries": 16,
+        "relationship_parts": 3,
+        "unsafe_parts": 0
+      }
+    },
+    "pt-BR": {
+      "source": "project/revision-2026/guide-09/source/GUIDE_09_PORTUGUESE_BR_WORKING_MASTER_v2.md",
+      "docx": "Lifelong_Opportunity_Guide_09_Logistics_and_Supply_Chain_Coordinator_pt-BR_v2.0.docx",
+      "pdf": "Lifelong_Opportunity_Guide_09_Logistics_and_Supply_Chain_Coordinator_pt-BR_v2.0.pdf",
+      "pdf_pages": 17,
+      "rendered_pages": 17,
+      "pdf_text_chars": 31986,
+      "docx_qa": {
+        "zip_entries": 16,
+        "relationship_parts": 3,
+        "unsafe_parts": 0
+      }
+    }
+  }
+}

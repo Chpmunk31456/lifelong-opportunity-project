@@ -1,0 +1,29 @@
+name: Guide 03 translation parity
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - scripts/guide03_translation_parity.py
+      - project/revision-2026/guide-03/source/GUIDE_03_ENGLISH_WORKING_MASTER_v2.md
+      - project/revision-2026/guide-03/source/GUIDE_03_SPANISH_LATAM_WORKING_MASTER_v2.md
+      - project/revision-2026/guide-03/source/GUIDE_03_PORTUGUESE_BR_WORKING_MASTER_v2.md
+      - .github/workflows/guide03-translation-parity.yml
+
+permissions:
+  contents: read
+
+jobs:
+  parity:
+    if: github.repository == 'Chpmunk31456/lifelong-opportunity-project'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out controlled revision branch
+        uses: actions/checkout@v4
+        with:
+          ref: revision/guide-00-100-2026
+      - name: Run Guide 03 trilingual parity checks
+        run: python scripts/guide03_translation_parity.py

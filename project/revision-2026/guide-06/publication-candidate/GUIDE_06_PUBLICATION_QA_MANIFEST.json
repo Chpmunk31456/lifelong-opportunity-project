@@ -1,0 +1,61 @@
+{
+  "guide": "06",
+  "occupation": "Administrative Assistant and Office Coordinator",
+  "version": "2.0",
+  "status": "publication candidate; automated QA only",
+  "independent_human_certification": false,
+  "professional_translation_certification": false,
+  "accessibility_certification": false,
+  "legal_financial_or_hr_review_certification": false,
+  "verified_shared_source_url_count": 12,
+  "files": [
+    {
+      "locale": "English",
+      "language_code": "en-US",
+      "path": "project/revision-2026/guide-06/publication-candidate/Lifelong_Opportunity_Guide_06_Administrative_Assistant_and_Office_Coordinator_English_v2.0.docx",
+      "bytes": 24438,
+      "sha256": "d3fe262fb3d27cb5fc1f4bc02a4193bb3190e63845fed4b6848a755a27e83e03",
+      "pages": null
+    },
+    {
+      "locale": "English",
+      "language_code": "en-US",
+      "path": "project/revision-2026/guide-06/publication-candidate/pdf/Lifelong_Opportunity_Guide_06_Administrative_Assistant_and_Office_Coordinator_English_v2.0.pdf",
+      "bytes": 221510,
+      "sha256": "10ea7dfd314c843e0e976faf76eb7092395b5a4e6a367c80677e8ddaf1b4319e",
+      "pages": 14
+    },
+    {
+      "locale": "es-419",
+      "language_code": "es-419",
+      "path": "project/revision-2026/guide-06/publication-candidate/Lifelong_Opportunity_Guide_06_Administrative_Assistant_and_Office_Coordinator_es-419_v2.0.docx",
+      "bytes": 25325,
+      "sha256": "74806e09052a5c4597b7b04bffda26e40c69db5efe87ec907104a8385b7ebcb5",
+      "pages": null
+    },
+    {
+      "locale": "es-419",
+      "language_code": "es-419",
+      "path": "project/revision-2026/guide-06/publication-candidate/pdf/Lifelong_Opportunity_Guide_06_Administrative_Assistant_and_Office_Coordinator_es-419_v2.0.pdf",
+      "bytes": 224554,
+      "sha256": "148a3205b65de67747f5d832174d7453b7f0ab3336416161ab83609e54ba6286",
+      "pages": 16
+    },
+    {
+      "locale": "pt-BR",
+      "language_code": "pt-BR",
+      "path": "project/revision-2026/guide-06/publication-candidate/Lifelong_Opportunity_Guide_06_Administrative_Assistant_and_Office_Coordinator_pt-BR_v2.0.docx",
+      "bytes": 25370,
+      "sha256": "a3f215acd0f9934c4a61fc024b5ab69f1854a4a0f93c6f41dd2ca643c4c44484",
+      "pages": null
+    },
+    {
+      "locale": "pt-BR",
+      "language_code": "pt-BR",
+      "path": "project/revision-2026/guide-06/publication-candidate/pdf/Lifelong_Opportunity_Guide_06_Administrative_Assistant_and_Office_Coordinator_pt-BR_v2.0.pdf",
+      "bytes": 226182,
+      "sha256": "1b6048d13bb55a0b27cb34e7b874da8f94e3c74cc2fb9b7b2b6345124286fc7b",
+      "pages": 16
+    }
+  ]
+}

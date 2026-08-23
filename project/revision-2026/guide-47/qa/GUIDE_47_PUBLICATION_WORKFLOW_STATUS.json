@@ -1,0 +1,34 @@
+{
+  "guide": "47",
+  "purpose": "observe controlled publication workflows only; does not advance QA gates",
+  "corrective_repair": {
+    "run_id": 32210887831,
+    "status": "completed",
+    "conclusion": "success",
+    "event": "push",
+    "head_sha": "8dd161f768e4048bb14afb776ea1b35d8e9d3e1f",
+    "created_at": "2026-08-19T03:05:24Z",
+    "updated_at": "2026-08-19T03:05:38Z",
+    "html_url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32210887831"
+  },
+  "dispatch": {
+    "run_id": 32207040620,
+    "status": "completed",
+    "conclusion": "failure",
+    "event": "push",
+    "head_sha": "1d0c365fb442d71dc01bb5d5aa2cb873d3ee9c34",
+    "created_at": "2026-08-19T02:01:26Z",
+    "updated_at": "2026-08-19T02:32:42Z",
+    "html_url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32207040620"
+  },
+  "publication_build": {
+    "run_id": 32207052254,
+    "status": "completed",
+    "conclusion": "failure",
+    "event": "workflow_dispatch",
+    "head_sha": "1d0c365fb442d71dc01bb5d5aa2cb873d3ee9c34",
+    "created_at": "2026-08-19T02:01:38Z",
+    "updated_at": "2026-08-19T03:02:34Z",
+    "html_url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32207052254"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "guide": "33",
+  "occupation": "Machinist and CNC Machine Operator",
+  "build_date": "2026-08-11",
+  "status": "PASS",
+  "controls": [
+    "exact trilingual section parity 1-22",
+    "source URL-set parity",
+    "source-domain presence",
+    "locale-aware controlled numerical values",
+    "technical marker parity",
+    "UTF-8/BOM controls",
+    "placeholder scan",
+    "DOCX ZIP integrity",
+    "searchable PDF text",
+    "all-page raster rendering",
+    "metadata manifest",
+    "SHA-256 checksums"
+  ],
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_33_ENGLISH_v2.docx",
+      "pdf": "GUIDE_33_ENGLISH_v2.pdf",
+      "docx_bytes": 27672,
+      "pdf_bytes": 266808,
+      "pdf_pages": 15,
+      "pdf_extractable_characters": 33684,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_33_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_33_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 29002,
+      "pdf_bytes": 256822,
+      "pdf_pages": 17,
+      "pdf_extractable_characters": 39436,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_33_PORTUGUESE_v2.docx",
+      "pdf": "GUIDE_33_PORTUGUESE_v2.pdf",
+      "docx_bytes": 28874,
+      "pdf_bytes": 255790,
+      "pdf_pages": 16,
+      "pdf_extractable_characters": 37840,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, trade licensing approval, accreditation, or employment or earnings guarantee."
+}

@@ -1,0 +1,54 @@
+{
+  "guide": "12",
+  "occupation": "Compliance Coordinator and Compliance Assistant",
+  "status": "PASS",
+  "parity": {
+    "guide": "12",
+    "sections": 19,
+    "urls": 11,
+    "critical_patterns": 14,
+    "status": "PASS"
+  },
+  "publication_source_transform": true,
+  "languages": {
+    "en": {
+      "source": "project/revision-2026/guide-12/source/GUIDE_12_ENGLISH_WORKING_MASTER_v2.md",
+      "docx": "Lifelong_Opportunity_Guide_12_Compliance_Coordinator_and_Compliance_Assistant_English_v2.0.docx",
+      "pdf": "Lifelong_Opportunity_Guide_12_Compliance_Coordinator_and_Compliance_Assistant_English_v2.0.pdf",
+      "pdf_pages": 11,
+      "rendered_pages": 11,
+      "pdf_text_chars": 19876,
+      "docx_qa": {
+        "zip_entries": 16,
+        "relationship_parts": 3,
+        "unsafe_parts": 0
+      }
+    },
+    "es-419": {
+      "source": "project/revision-2026/guide-12/source/GUIDE_12_SPANISH_LATAM_WORKING_MASTER_v2.md",
+      "docx": "Lifelong_Opportunity_Guide_12_Compliance_Coordinator_and_Compliance_Assistant_es-419_v2.0.docx",
+      "pdf": "Lifelong_Opportunity_Guide_12_Compliance_Coordinator_and_Compliance_Assistant_es-419_v2.0.pdf",
+      "pdf_pages": 12,
+      "rendered_pages": 12,
+      "pdf_text_chars": 21610,
+      "docx_qa": {
+        "zip_entries": 16,
+        "relationship_parts": 3,
+        "unsafe_parts": 0
+      }
+    },
+    "pt-BR": {
+      "source": "project/revision-2026/guide-12/source/GUIDE_12_PORTUGUESE_BR_WORKING_MASTER_v2.md",
+      "docx": "Lifelong_Opportunity_Guide_12_Compliance_Coordinator_and_Compliance_Assistant_pt-BR_v2.0.docx",
+      "pdf": "Lifelong_Opportunity_Guide_12_Compliance_Coordinator_and_Compliance_Assistant_pt-BR_v2.0.pdf",
+      "pdf_pages": 12,
+      "rendered_pages": 12,
+      "pdf_text_chars": 21229,
+      "docx_qa": {
+        "zip_entries": 16,
+        "relationship_parts": 3,
+        "unsafe_parts": 0
+      }
+    }
+  }
+}

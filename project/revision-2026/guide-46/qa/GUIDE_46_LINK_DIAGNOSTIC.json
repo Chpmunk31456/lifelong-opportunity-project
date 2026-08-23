@@ -1,0 +1,191 @@
+{
+  "guide": 46,
+  "status": "PASS_WITH_UNVERIFIED",
+  "total_urls": 26,
+  "broken_count": 0,
+  "unverified_count": 3,
+  "rows": [
+    {
+      "url": "https://betowa.sena.edu.co/",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://betowa.sena.edu.co/oferta/monitoreo-ambiental?level=2&modality=P&offertype=open&programId=109895",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://betowa.sena.edu.co/oferta/promotoria-en-manejo-ambiental?level=2&modality=P&offertype=company&programId=163494",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://betowa.sena.edu.co/oferta/saneamiento-y-salud-ambiental?level=2&modality=P&offertype=company&programId=167494",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://studentaid.gov/articles/fafsa-student-steps/",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.bls.gov/ooh/architecture-and-engineering/environmental-engineering-technicians.htm",
+      "http_code": 403,
+      "state": "ACCESS_CONTROLLED_UNVERIFIED",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.bls.gov/ooh/life-physical-and-social-science/environmental-science-and-protection-technicians.htm",
+      "http_code": 403,
+      "state": "ACCESS_CONTROLLED_UNVERIFIED",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.canada.ca/en/services/benefits/education/student-aid/grants-loans.html",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.canada.ca/en/services/benefits/education/student-aid/grants-loans/how-funding-works.html",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.epa.gov/choose-fish-and-shellfish-wisely/field-collecting-and-handling-samples",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.epa.gov/choose-fish-and-shellfish-wisely/field-sample-collection",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.epa.gov/quality/field-sampling-quality-control",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.jobbank.gc.ca/marketreport/requirements/17971/ca",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.jobbank.gc.ca/marketreport/summary-occupation/17971/ca",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.jobbank.gc.ca/marketreport/wages-occupation/17971/ca",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": "curl: (28) Operation timed out after 12002 milliseconds with 0 bytes received"
+    },
+    {
+      "url": "https://www.oitcinterfor.org/",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.oitcinterfor.org/general/competencias-laborales-empleos-verdes",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.oitcinterfor.org/red-institucional",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.onetonline.org/link/summary/19-4042.00",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.120/",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.1200",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.132",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.134",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.146",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=9485",
+      "http_code": 200,
+      "state": "PASS",
+      "curl_rc": 0,
+      "stderr": ""
+    },
+    {
+      "url": "https://www.suin-juriscol.gov.co/viewDocument.asp?ruta=Decretos%2F30019522",
+      "http_code": 0,
+      "state": "TRANSPORT_UNVERIFIED",
+      "curl_rc": 28,
+      "stderr": "curl: (28) Failed to connect to www.suin-juriscol.gov.co port 443 after 6002 ms: Timeout was reached\ncurl: (28) Failed to connect to www.suin-juriscol.gov.co port 443 after 6002 ms: Timeout was reached"
+    }
+  ]
+}

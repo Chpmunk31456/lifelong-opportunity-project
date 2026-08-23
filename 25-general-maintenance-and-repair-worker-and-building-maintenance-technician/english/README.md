@@ -14,18 +14,21 @@ A free, accessible career and education guide created and directed by **Alberto 
 - **Guide:** 25
 - **Career:** General Maintenance and Repair Worker and Building Maintenance Technician
 - **Language:** English
-- **Version:** 1.0
-- **Publication month:** July 2026
-- **Availability:** DOCX and PDF present
-- **Review status:** Technically reviewed publication edition; exact source equivalence and human linguistic review should not be assumed unless separately documented
+- **Legacy package version:** 1.0
+- **Legacy publication month:** July 2026
+- **Availability:** Legacy DOCX and PDF present
+- **Controlled revision status:** Version 2.0 revision in progress on `revision/guide-00-100-2026`; the legacy v1.0 files remain reference inputs and must not be treated as the completed controlled revision
+- **Review status:** Current-source research has passed editorial intake. English editorial, evidence traceability, source freeze, localization, technical QA, publication, and release audit remain subject to their controlled gates until separately documented as PASS.
 
-## Scope
+## Scope of the controlled revision
 
-This guide supports practical career exploration, accessible learning, ethical use of artificial intelligence, privacy and safety, realistic education pathways, portfolio development, job-search preparation, and verification through current official sources.
+The Version 2.0 revision is being rebuilt against current evidence for practical career exploration, accessible learning, safe task boundaries, realistic training and funding pathways, regional labor-market context, ethical use of artificial intelligence, privacy and safety, portfolio development, and job-search preparation.
+
+The revision distinguishes general maintenance work from electrical, plumbing, HVAC/R, boiler, pesticide, asbestos/lead, elevator, and other work that may require licensed, certified, qualified, or specially trained personnel under applicable law or employer policy.
 
 ## Important notice
 
-This material provides general educational and career-planning information. It does not guarantee employment, income, admission, funding, licensing, certification, promotion, or any other result. Requirements and opportunities vary by jurisdiction, employer, and time. Verify important decisions through current official sources and qualified professionals.
+This material provides general educational and career-planning information. It does not guarantee employment, income, admission, funding, licensing, certification, promotion, apprenticeship placement, reimbursement, or any other result. Requirements and opportunities vary by jurisdiction, employer, and time. Verify important decisions through current official sources and qualified professionals.
 
 ## Corrections and accessibility
 

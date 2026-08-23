@@ -1,0 +1,49 @@
+{
+  "guide": "17",
+  "occupation": "Bank Teller and Member Services Representative",
+  "build_date": "2026-08-09",
+  "status": "PASS",
+  "controls": [
+    "19-section trilingual structure",
+    "locale-aware controlled numerical values",
+    "required source URLs",
+    "DOCX ZIP integrity",
+    "PDF readability",
+    "searchable PDF text",
+    "SHA-256 checksums",
+    "all-page raster rendering"
+  ],
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_17_ENGLISH_v2.docx",
+      "pdf": "GUIDE_17_ENGLISH_v2.pdf",
+      "docx_bytes": 31175,
+      "pdf_bytes": 334482,
+      "pdf_pages": 20,
+      "pdf_extractable_characters": 38831,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_17_SPANISH_LATAM_v2.docx",
+      "pdf": "GUIDE_17_SPANISH_LATAM_v2.pdf",
+      "docx_bytes": 32706,
+      "pdf_bytes": 339312,
+      "pdf_pages": 21,
+      "pdf_extractable_characters": 44051,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_17_PORTUGUESE_BR_v2.docx",
+      "pdf": "GUIDE_17_PORTUGUESE_BR_v2.pdf",
+      "docx_bytes": 32502,
+      "pdf_bytes": 325520,
+      "pdf_pages": 21,
+      "pdf_extractable_characters": 43342,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, regulator approval, accreditation, or employment guarantee."
+}

@@ -1,0 +1,39 @@
+{
+  "guide": "61",
+  "occupation": "Preschool Assistant and Childcare Worker",
+  "build_date": "2026-08-20",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_61_ENGLISH_v2.docx",
+      "pdf": "GUIDE_61_ENGLISH_v2.pdf",
+      "docx_bytes": 21188,
+      "pdf_bytes": 185831,
+      "pdf_pages": 12,
+      "rendered_pages": 12,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_61_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_61_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 22003,
+      "pdf_bytes": 188197,
+      "pdf_pages": 13,
+      "rendered_pages": 13,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_61_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_61_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 21936,
+      "pdf_bytes": 188880,
+      "pdf_pages": 13,
+      "rendered_pages": 13,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA and controlled source review; not independent human certification, professional translation certification, legal review, childcare-licensing approval, safeguarding certification, accessibility certification, accreditation, or employment/earnings guarantee."
+}

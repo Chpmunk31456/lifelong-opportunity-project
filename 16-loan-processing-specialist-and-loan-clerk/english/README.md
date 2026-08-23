@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 16
+# Lifelong Opportunity Guide 16
 
 ## Loan Processing Specialist and Loan Clerk — English Edition
 

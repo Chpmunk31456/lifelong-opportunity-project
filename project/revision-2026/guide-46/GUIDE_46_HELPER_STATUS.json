@@ -1,0 +1,79 @@
+{
+  "guide": "46",
+  "occupation": "Environmental Field Technician",
+  "branch": "revision/guide-00-100-2026",
+  "updated": "2026-08-18",
+  "stages": {
+    "baseline_inventory": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-46/qa/GUIDE_46_BASELINE_INVENTORY_01.md"
+      ]
+    },
+    "research": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-46/research/GUIDE_46_CURRENT_SOURCE_EVIDENCE_02.md",
+        "project/revision-2026/guide-46/qa/GUIDE_46_RESEARCH_QA_02.md"
+      ]
+    },
+    "english_editorial": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-46/working-masters/GUIDE_46_ENVIRONMENTAL_FIELD_TECHNICIAN_ENGLISH_v2.md",
+        "project/revision-2026/guide-46/qa/GUIDE_46_ENGLISH_EDITORIAL_QA_03.md"
+      ]
+    },
+    "evidence_traceability": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-46/qa/GUIDE_46_EVIDENCE_TRACEABILITY_QA_04.md"
+      ]
+    },
+    "english_source_freeze": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-46/qa/GUIDE_46_ENGLISH_SOURCE_FREEZE_05.md"
+      ]
+    },
+    "spanish_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-46/working-masters/GUIDE_46_ENVIRONMENTAL_FIELD_TECHNICIAN_ES419_v2.md",
+        "project/revision-2026/guide-46/qa/GUIDE_46_SPANISH_LOCALIZATION_QA_06.md",
+        "project/revision-2026/guide-46/qa/GUIDE_46_SPANISH_LOCALIZATION_CORRECTIVE_QA_06B.md"
+      ]
+    },
+    "portuguese_localization": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-46/working-masters/GUIDE_46_ENVIRONMENTAL_FIELD_TECHNICIAN_PTBR_v2.md",
+        "project/revision-2026/guide-46/qa/GUIDE_46_PORTUGUESE_LOCALIZATION_QA_07.md"
+      ]
+    },
+    "technical_qa": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-46/qa/GUIDE_46_TECHNICAL_QA_PRECHECK_08.md",
+        "project/revision-2026/guide-46/qa/GUIDE_46_AUTOMATED_SOURCE_DIAGNOSTIC.json",
+        "project/revision-2026/guide-46/qa/GUIDE_46_LINK_DIAGNOSTIC.json",
+        "project/revision-2026/guide-46/qa/GUIDE_46_TECHNICAL_QA_08.md"
+      ]
+    },
+    "publication": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-46/qa/GUIDE_46_CONTROLLED_PUBLICATION_QA_09.md",
+        "project/revision-2026/guide-46/publication-candidate/GUIDE_46_PUBLICATION_QA_MANIFEST.json",
+        "project/revision-2026/guide-46/publication-candidate/SHA256SUMS.txt"
+      ]
+    },
+    "release_audit": {
+      "status": "PASS",
+      "evidence": [
+        "project/revision-2026/guide-46/qa/GUIDE_46_RELEASE_AUDIT_10.md"
+      ]
+    }
+  },
+  "blockers": []
+}

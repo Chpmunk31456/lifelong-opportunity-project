@@ -1,0 +1,42 @@
+{
+  "guide": "92",
+  "occupation": "Geographic Information Systems Technician",
+  "build_date": "2026-08-22",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_92_ENGLISH_v2.docx",
+      "pdf": "GUIDE_92_ENGLISH_v2.pdf",
+      "docx_bytes": 24231,
+      "pdf_bytes": 287806,
+      "pdf_pages": 16,
+      "rendered_pages": 16,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_92_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_92_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 23176,
+      "pdf_bytes": 247711,
+      "pdf_pages": 14,
+      "rendered_pages": 14,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_92_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_92_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 22324,
+      "pdf_bytes": 216610,
+      "pdf_pages": 12,
+      "rendered_pages": 12,
+      "status": "PASS"
+    }
+  ],
+  "controlled_evidence_urls": 23,
+  "reader_verification_urls": 23,
+  "official_statistics_boundary": "O*NET 15-1299.02 wage and employment values are collected from Computer Occupations, All Other; all editions preserve this disclosure and separately label title-specific Indeed GIS Technician context.",
+  "assurance_boundary": "Internal automated publication QA, controlled link checks, all-page render inspection, and controlled source review; not independent human certification, certified translation, legal/surveying/cadastral/privacy/cybersecurity/geospatial-accuracy/regulatory/accessibility certification, training-provider accreditation, funding approval, employment guarantee, or earnings guarantee."
+}

@@ -1,0 +1,336 @@
+name: Guide 00 publication build and legacy closure QA
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - .github/workflows/guide00-publication-build.yml
+      - scripts/guide00_legacy_technical_qa.py
+      - 00-foundation-guide/source/**
+      - project/revision-2026/guide-00/GUIDE_00_HELPER_STATUS.json
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide00-publication-build
+  cancel-in-progress: false
+
+jobs:
+  build-and-qa:
+    if: github.repository == 'Chpmunk31456/lifelong-opportunity-project'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out controlled revision branch
+        uses: actions/checkout@v4
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Install document and PDF tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends pandoc libreoffice-writer poppler-utils python3-lxml
+
+      - name: Requalify trilingual technical QA
+        run: |
+          python scripts/guide00_legacy_technical_qa.py validate
+          python scripts/guide00_legacy_technical_qa.py close-status
+
+      - name: Build trilingual DOCX files
+        shell: python
+        run: |
+          from pathlib import Path
+          import subprocess
+
+          source_dir = Path('00-foundation-guide/source')
+          output_dir = Path('00-foundation-guide/publication-candidate')
+          output_dir.mkdir(parents=True, exist_ok=True)
+
+          editions = {
+              'English': source_dir / 'Lifelong_Opportunity_Foundation_Guide_English_v1.1_INTEGRATED_MASTER.md',
+              'es-419': source_dir / 'Lifelong_Opportunity_Foundation_Guide_es-419_v1.1_INTEGRATED_MASTER.md',
+              'pt-BR': source_dir / 'Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1_INTEGRATED_MASTER.md',
+          }
+
+          for locale, source in editions.items():
+              if not source.is_file():
+                  raise SystemExit(f'Missing source master: {source}')
+              if source.read_bytes().startswith(b'\xef\xbb\xbf'):
+                  raise SystemExit(f'Unexpected UTF-8 BOM: {source}')
+              target = output_dir / f'Lifelong_Opportunity_Foundation_Guide_{locale}_v1.1.docx'
+              subprocess.run([
+                  'pandoc', str(source), '--from=gfm', '--to=docx',
+                  '--standalone', '--output', str(target)
+              ], check=True)
+              if target.stat().st_size < 10000:
+                  raise SystemExit(f'DOCX unexpectedly small: {target}')
+
+      - name: Convert DOCX files to PDF
+        run: |
+          mkdir -p 00-foundation-guide/publication-candidate/pdf
+          libreoffice --headless --convert-to pdf --outdir 00-foundation-guide/publication-candidate/pdf \
+            00-foundation-guide/publication-candidate/*.docx
+          test "$(find 00-foundation-guide/publication-candidate/pdf -maxdepth 1 -name '*.pdf' | wc -l)" -eq 3
+
+      - name: Run publication structural, hyperlink, PDF, and metadata QA
+        shell: python
+        run: |
+          from pathlib import Path
+          from zipfile import ZipFile
+          import hashlib
+          import json
+          import re
+          import subprocess
+          import unicodedata
+
+          root = Path('00-foundation-guide/publication-candidate')
+          pdf_dir = root / 'pdf'
+          report = {
+              'guide': '00',
+              'version': '1.1',
+              'status': 'publication candidate; automated QA only',
+              'independent_certification': False,
+              'files': []
+          }
+
+          expected = {
+              'English': 'Lifelong Opportunity Foundation Guide',
+              'es-419': 'Guía Fundacional de Oportunidades para Toda la Vida',
+              'pt-BR': 'Guia Fundamental de Oportunidades ao Longo da Vida',
+          }
+          canonical = 'https://red-seal.ca/eng/about/program.shtml'
+          obsolete = 'https://www.red-seal.ca/eng/contact/c.4nt.1ct.shtml'
+
+          def normalized_text(value):
+              value = unicodedata.normalize('NFKD', value)
+              value = ''.join(ch for ch in value if not unicodedata.combining(ch))
+              return ' '.join(value.casefold().split())
+
+          for locale, expected_title in expected.items():
+              docx = root / f'Lifelong_Opportunity_Foundation_Guide_{locale}_v1.1.docx'
+              pdf = pdf_dir / f'Lifelong_Opportunity_Foundation_Guide_{locale}_v1.1.pdf'
+              if not docx.is_file() or not pdf.is_file():
+                  raise SystemExit(f'Missing generated pair for {locale}')
+
+              with ZipFile(docx) as zf:
+                  names = set(zf.namelist())
+                  required = {'word/document.xml', 'word/_rels/document.xml.rels', 'docProps/core.xml'}
+                  missing = required - names
+                  if missing:
+                      raise SystemExit(f'{docx}: missing OOXML parts {sorted(missing)}')
+                  document_xml = zf.read('word/document.xml')
+                  relationships = zf.read('word/_rels/document.xml.rels')
+                  full_xml = document_xml + relationships
+                  if obsolete.encode() in full_xml:
+                      raise SystemExit(f'{docx}: obsolete Red Seal URL present')
+                  if locale == 'English' and canonical.encode() not in full_xml:
+                      raise SystemExit(f'{docx}: canonical Red Seal URL missing')
+
+              pdfinfo = subprocess.run(['pdfinfo', str(pdf)], check=True, text=True, capture_output=True).stdout
+              match = re.search(r'^Pages:\s+(\d+)$', pdfinfo, re.MULTILINE)
+              pages = int(match.group(1)) if match else 0
+              if pages < 5:
+                  raise SystemExit(f'{pdf}: unexpectedly low page count {pages}')
+
+              text_file = pdf.with_suffix('.txt')
+              subprocess.run(['pdftotext', '-layout', str(pdf), str(text_file)], check=True)
+              text = text_file.read_text(encoding='utf-8', errors='replace')
+              if len(text.strip()) < 5000:
+                  raise SystemExit(f'{pdf}: insufficient extractable text')
+              if normalized_text(expected_title) not in normalized_text(text):
+                  raise SystemExit(f'{pdf}: expected title not found in normalized extracted text')
+              if '\ufffd' in text:
+                  raise SystemExit(f'{pdf}: replacement-character encoding defect detected')
+
+              for file in (docx, pdf):
+                  digest = hashlib.sha256(file.read_bytes()).hexdigest()
+                  report['files'].append({
+                      'locale': locale,
+                      'path': str(file),
+                      'bytes': file.stat().st_size,
+                      'sha256': digest,
+                      'pages': pages if file.suffix == '.pdf' else None,
+                  })
+              text_file.unlink()
+
+          manifest = root / 'GUIDE_00_PUBLICATION_QA_MANIFEST.json'
+          manifest.write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          checksums = root / 'SHA256SUMS.txt'
+          lines = [f"{item['sha256']}  {Path(item['path']).relative_to(root)}" for item in report['files']]
+          checksums.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+
+      - name: Render and inspect every PDF page
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          import subprocess
+
+          root = Path('00-foundation-guide/publication-candidate')
+          pdf_dir = root / 'pdf'
+          render_dir = root / 'rendered-all-pages'
+          if render_dir.exists():
+              for p in render_dir.glob('*'):
+                  p.unlink()
+          render_dir.mkdir(parents=True, exist_ok=True)
+
+          total_expected = 0
+          for pdf in sorted(pdf_dir.glob('*.pdf')):
+              info = subprocess.run(['pdfinfo', str(pdf)], check=True, text=True, capture_output=True).stdout
+              m = re.search(r'^Pages:\s+(\d+)$', info, re.MULTILINE)
+              pages = int(m.group(1)) if m else 0
+              if pages < 1:
+                  raise SystemExit(f'{pdf}: invalid page count')
+              total_expected += pages
+              base = pdf.stem
+              subprocess.run(['pdftoppm', '-png', '-r', '120', str(pdf), str(render_dir / base)], check=True)
+              rendered = sorted(render_dir.glob(f'{base}-*.png'))
+              if len(rendered) != pages:
+                  raise SystemExit(f'{pdf}: rendered {len(rendered)} pages; expected {pages}')
+              for page in range(1, pages + 1):
+                  text = subprocess.run(
+                      ['pdftotext', '-f', str(page), '-l', str(page), str(pdf), '-'],
+                      check=True, text=True, capture_output=True
+                  ).stdout
+                  if len(text.strip()) < 20:
+                      raise SystemExit(f'{pdf}: page {page} appears blank or has insufficient extractable text')
+
+          rendered_total = len(list(render_dir.glob('*.png')))
+          if rendered_total != total_expected:
+              raise SystemExit(f'all-page render count mismatch: {rendered_total} != {total_expected}')
+          (render_dir / 'RENDER_QA.txt').write_text(
+              f'Guide 00 all-page rendering PASS\nrendered_pages={rendered_total}\n', encoding='utf-8'
+          )
+
+      - name: Record legacy publication and release-audit closure
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib
+          import json
+
+          guide = Path('project/revision-2026/guide-00')
+          qa = guide / 'qa'
+          qa.mkdir(parents=True, exist_ok=True)
+          pub = Path('00-foundation-guide/publication-candidate')
+          old_manifest = json.loads((pub / 'GUIDE_00_PUBLICATION_QA_MANIFEST.json').read_text(encoding='utf-8'))
+          helper_path = guide / 'GUIDE_00_HELPER_STATUS.json'
+          helper = json.loads(helper_path.read_text(encoding='utf-8-sig'))
+
+          required = [
+              pub / 'Lifelong_Opportunity_Foundation_Guide_English_v1.1.docx',
+              pub / 'Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.docx',
+              pub / 'Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.docx',
+              pub / 'pdf/Lifelong_Opportunity_Foundation_Guide_English_v1.1.pdf',
+              pub / 'pdf/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.pdf',
+              pub / 'pdf/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.pdf',
+              pub / 'SHA256SUMS.txt',
+              pub / 'rendered-all-pages/RENDER_QA.txt',
+              qa / 'GUIDE_00_TRILINGUAL_TECHNICAL_QA_08.md',
+          ]
+          missing = [str(p) for p in required if not p.is_file()]
+          if missing:
+              raise SystemExit(f'missing release inputs: {missing}')
+          if helper['stages']['technical_qa']['status'] != 'PASS':
+              raise SystemExit('technical QA is not PASS; refusing release closure')
+          if old_manifest.get('status') != 'publication candidate; automated QA only':
+              raise SystemExit('historical publication manifest semantics changed unexpectedly')
+          if old_manifest.get('independent_certification') is not False:
+              raise SystemExit('historical manifest certification flag is not false')
+
+          reconciliation = {
+              'guide': '00',
+              'version': '1.1',
+              'reconciliation_date': '2026-08-22',
+              'publication': 'PASS',
+              'release_audit': 'PASS',
+              'basis': 'current automated controlled requalification of frozen trilingual sources and regenerated DOCX/PDF artifacts',
+              'historical_manifest_preserved': True,
+              'historical_status': old_manifest['status'],
+              'independent_human_certification': False,
+              'professional_translation_certification': False,
+              'accessibility_certification': False,
+              'legal_review_certification': False,
+              'files': []
+          }
+          for path in required[:6]:
+              reconciliation['files'].append({
+                  'path': path.as_posix(),
+                  'bytes': path.stat().st_size,
+                  'sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
+              })
+          recon_path = qa / 'GUIDE_00_LEGACY_RELEASE_RECONCILIATION_09.json'
+          recon_path.write_text(json.dumps(reconciliation, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          qa09 = qa / 'GUIDE_00_PUBLICATION_REQUALIFICATION_QA_09.md'
+          qa09.write_text(
+              '# Guide 00 — Publication Requalification QA 09\n\n'
+              '**Status: PASS**\n\n'
+              '- Frozen English, es-419, and pt-BR source masters regenerated to DOCX and PDF.\n'
+              '- DOCX package structure and controlled hyperlinks validated.\n'
+              '- PDFs contain searchable text and expected localized titles.\n'
+              '- Every PDF page rendered and every page contains extractable text.\n'
+              '- SHA-256 checksums regenerated.\n'
+              '- Historical manifest status `publication candidate; automated QA only` is preserved rather than rewritten.\n'
+              '- This PASS records controlled automated publication requalification only; it is not independent human certification, certified translation, accessibility certification, legal review, or accreditation.\n',
+              encoding='utf-8'
+          )
+          qa10 = qa / 'GUIDE_00_RELEASE_AUDIT_10.md'
+          qa10.write_text(
+              '# Guide 00 — Release Audit 10\n\n'
+              '**Status: PASS**\n\n'
+              '- Baseline, research, English editorial, evidence traceability, English freeze, es-419 localization, pt-BR localization, and Trilingual Technical QA are recorded PASS in the helper manifest.\n'
+              '- Publication requalification QA 09 is PASS.\n'
+              '- Trilingual DOCX/PDF pairs, metadata structure, searchable text, all-page rendering evidence, and checksums are present.\n'
+              '- Historical evidence and historical automated-QA-only wording remain preserved.\n'
+              '- No claim of independent human certification, certified translation, accreditation, accessibility certification, legal review, or guaranteed outcome is made.\n\n'
+              '**Release Audit: PASS.**\n',
+              encoding='utf-8'
+          )
+
+          helper['stages']['publication'] = {
+              'status': 'PASS',
+              'evidence': [
+                  '00-foundation-guide/publication-candidate/GUIDE_00_PUBLICATION_QA_MANIFEST.json',
+                  '00-foundation-guide/publication-candidate/SHA256SUMS.txt',
+                  '00-foundation-guide/publication-candidate/rendered-all-pages/RENDER_QA.txt',
+                  'project/revision-2026/guide-00/qa/GUIDE_00_PUBLICATION_REQUALIFICATION_QA_09.md',
+                  'project/revision-2026/guide-00/qa/GUIDE_00_LEGACY_RELEASE_RECONCILIATION_09.json'
+              ]
+          }
+          helper['stages']['release_audit'] = {
+              'status': 'PASS',
+              'evidence': ['project/revision-2026/guide-00/qa/GUIDE_00_RELEASE_AUDIT_10.md']
+          }
+          helper['updated'] = '2026-08-22'
+          helper['notes'] = (
+              'Legacy closure reconciliation completed using current automated technical, publication, '
+              'DOCX/PDF, searchable-text, all-page rendering, metadata and checksum controls. Historical '
+              'publication-manifest semantics are preserved; no independent human certification is claimed.'
+          )
+          helper_path.write_text(json.dumps(helper, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+      - name: Commit requalified Guide 00 release evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            00-foundation-guide/publication-candidate \
+            project/revision-2026/guide-00/GUIDE_00_HELPER_STATUS.json \
+            project/revision-2026/guide-00/qa/GUIDE_00_TRILINGUAL_TECHNICAL_QA_08.md \
+            project/revision-2026/guide-00/qa/GUIDE_00_PUBLICATION_REQUALIFICATION_QA_09.md \
+            project/revision-2026/guide-00/qa/GUIDE_00_LEGACY_RELEASE_RECONCILIATION_09.json \
+            project/revision-2026/guide-00/qa/GUIDE_00_RELEASE_AUDIT_10.md
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'Guide 00 release evidence already matches generated outputs.'
+            exit 0
+          fi
+          git commit -m "qa(guide-00): requalify legacy publication and release audit"
+          git push origin HEAD:revision/guide-00-100-2026

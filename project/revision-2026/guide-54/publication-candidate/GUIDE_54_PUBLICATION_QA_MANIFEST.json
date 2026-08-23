@@ -1,0 +1,40 @@
+{
+  "guide": "54",
+  "occupation": "Occupational Therapy Assistant",
+  "build_date": "2026-08-19",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_54_ENGLISH_v2.docx",
+      "pdf": "GUIDE_54_ENGLISH_v2.pdf",
+      "docx_bytes": 26139,
+      "pdf_bytes": 271818,
+      "pdf_pages": 18,
+      "rendered_pages": 18,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_54_SPANISH_es-419_v1.docx",
+      "pdf": "GUIDE_54_SPANISH_es-419_v1.pdf",
+      "docx_bytes": 27596,
+      "pdf_bytes": 276902,
+      "pdf_pages": 19,
+      "rendered_pages": 19,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_54_PORTUGUESE_pt-BR_v1.docx",
+      "pdf": "GUIDE_54_PORTUGUESE_pt-BR_v1.pdf",
+      "docx_bytes": 27424,
+      "pdf_bytes": 277171,
+      "pdf_pages": 19,
+      "rendered_pages": 19,
+      "status": "PASS"
+    }
+  ],
+  "parser_control": "Pandoc reader gfm-tex_math_dollars used so currency dollar signs are not interpreted as TeX inline math.",
+  "assurance_boundary": "Internal automated publication QA and controlled source review; not independent human certification, professional translation certification, clinical review, legal review, accessibility certification, accreditation, licensure approval, or employment/earnings guarantee."
+}

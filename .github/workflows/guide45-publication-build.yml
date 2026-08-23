@@ -1,0 +1,411 @@
+name: Guide 45 controlled publication build
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide45-publication-build.yml'
+      - 'project/revision-2026/guide-45/working-masters/GUIDE_45_WATER_WASTEWATER_TREATMENT_PLANT_OPERATOR_ENGLISH_v2.md'
+      - 'project/revision-2026/guide-45/working-masters/GUIDE_45_WATER_WASTEWATER_TREATMENT_PLANT_OPERATOR_ES419_v2.md'
+      - 'project/revision-2026/guide-45/working-masters/GUIDE_45_WATER_WASTEWATER_TREATMENT_PLANT_OPERATOR_PTBR_v2.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide45-controlled-publication-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out revision branch
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Install document and rendering tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice poppler-utils python3-pil
+
+      - name: Freeze trilingual publication candidates
+        run: |
+          set -euo pipefail
+          SRC='project/revision-2026/guide-45/working-masters'
+          OUT='project/revision-2026/guide-45/publication-candidate'
+          mkdir -p "$OUT"
+          cp "$SRC/GUIDE_45_WATER_WASTEWATER_TREATMENT_PLANT_OPERATOR_ENGLISH_v2.md" "$OUT/GUIDE_45_ENGLISH_v2.md"
+          cp "$SRC/GUIDE_45_WATER_WASTEWATER_TREATMENT_PLANT_OPERATOR_ES419_v2.md" "$OUT/GUIDE_45_SPANISH_es-419_v2.md"
+          cp "$SRC/GUIDE_45_WATER_WASTEWATER_TREATMENT_PLANT_OPERATOR_PTBR_v2.md" "$OUT/GUIDE_45_PORTUGUESE_pt-BR_v2.md"
+
+      - name: Run trilingual structural source numeric and terminology controls
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import re, sys, unicodedata
+
+          out = Path('project/revision-2026/guide-45/publication-candidate')
+          files = {
+              'en': out / 'GUIDE_45_ENGLISH_v2.md',
+              'es-419': out / 'GUIDE_45_SPANISH_es-419_v2.md',
+              'pt-BR': out / 'GUIDE_45_PORTUGUESE_pt-BR_v2.md',
+          }
+          texts = {lang: path.read_text(encoding='utf-8') for lang, path in files.items()}
+
+          def fold(value):
+              value = re.sub(r'[*_`~]+', '', value.lower())
+              return ''.join(
+                  c for c in unicodedata.normalize('NFKD', value)
+                  if not unicodedata.combining(c)
+              )
+
+          required = {
+              'en': [
+                  '# guide 45',
+                  'water and wastewater treatment plant operator',
+                  'safety comes before production',
+                  'confined spaces',
+                  'hazardous-energy boundaries',
+                  'scada',
+                  'colombia',
+                  'responsible use of ai',
+                  'cybersecurity',
+                  'independent human review',
+              ],
+              'es-419': [
+                  '# guia 45',
+                  'operador de planta de tratamiento de agua y aguas residuales',
+                  'la seguridad esta antes que la produccion',
+                  'espacios confinados',
+                  'energia peligrosa',
+                  'scada',
+                  'colombia',
+                  'uso responsable de ia',
+                  'ciberseguridad',
+                  'revision humana independiente',
+              ],
+              'pt-BR': [
+                  '# guia 45',
+                  'operador de estacao de tratamento de agua e esgoto',
+                  'seguranca vem antes da producao',
+                  'espacos confinados',
+                  'energia perigosa',
+                  'scada',
+                  'colombia',
+                  'uso responsavel de ia',
+                  'ciberseguranca',
+                  'revisao humana independente',
+              ],
+          }
+
+          problems = []
+          sections = {}
+          urls = {}
+          for lang, text in texts.items():
+              normalized = fold(text)
+              sections[lang] = len(re.findall(r'^##\s+.+$', text, flags=re.M))
+              urls[lang] = set(re.findall(r'https://[^\s)<>`]+', text))
+              if text.startswith('\ufeff') or '\ufffd' in text:
+                  problems.append(f'{lang}: UTF-8 defect')
+              for placeholder in (
+                  'todo:', 'lorem ipsum', '[insert', 'translation pending',
+                  'traduccion pendiente', 'traducao pendente'
+              ):
+                  if placeholder in normalized:
+                      problems.append(f'{lang}: placeholder {placeholder}')
+              for marker in required[lang]:
+                  if fold(marker) not in normalized:
+                      problems.append(f'{lang}: missing marker {marker}')
+
+          if any(count != 24 for count in sections.values()):
+              problems.append(f'expected 24 H2 sections in each edition; observed={sections}')
+          if len(set(sections.values())) != 1:
+              problems.append(f'H2 structural mismatch: {sections}')
+          if len(urls['en']) != 21:
+              problems.append(f'expected 21 English direct source URLs; observed={len(urls["en"])}')
+          for lang in ('es-419', 'pt-BR'):
+              if urls[lang] != urls['en']:
+                  problems.append(
+                      f'{lang}: source URL set differs; '
+                      f'missing={sorted(urls["en"] - urls[lang])}; '
+                      f'extra={sorted(urls[lang] - urls["en"])}'
+                  )
+
+          controls = [
+              r'51-8031',
+              r'51-8031\.00',
+              r'92101',
+              r'58[,.]260',
+              r'28[,.]01',
+              r'37[,.]870',
+              r'86[,.]160',
+              r'132[,.]400',
+              r'123[,.]800',
+              r'-\s*8[,.]700',
+              r'-\s*7\s+(?:percent|por ciento|por cento)',
+              r'10[,.]700',
+              r'25[,.]00',
+              r'36[,.]06',
+              r'48[,.]00',
+              r'12\s+(?:months?|mes(?:es)?)',
+              r'2[,.]208\s+(?:hours?|horas?)',
+              r'48\s+(?:hours?|horas?)',
+          ]
+          for lang, text in texts.items():
+              for pattern in controls:
+                  if not re.search(pattern, text, flags=re.I | re.S):
+                      problems.append(f'{lang}: missing controlled value {pattern}')
+
+          if problems:
+              print('\n'.join(problems))
+              sys.exit(1)
+          print(f'Guide 45 trilingual controls PASS: H2={sections}; URLs={len(urls["en"])}')
+          PY
+
+      - name: Validate live source-link behavior
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import re, subprocess, sys
+
+          text = Path(
+              'project/revision-2026/guide-45/publication-candidate/GUIDE_45_ENGLISH_v2.md'
+          ).read_text(encoding='utf-8')
+          user_agent = 'Mozilla/5.0 (compatible; LifelongOpportunityProject-LinkQA/1.0)'
+          broken = []
+          warnings = []
+
+          def probe(url, method='GET'):
+              command = [
+                  'curl', '-L', '--retry', '2', '--retry-all-errors', '--retry-delay', '2',
+                  '--connect-timeout', '10', '--max-time', '30', '-A', user_agent,
+                  '-sS', '-o', '/dev/null', '-w', '%{http_code}'
+              ]
+              if method == 'HEAD':
+                  command.insert(1, '-I')
+              completed = subprocess.run(command + [url], capture_output=True, text=True)
+              code = int(completed.stdout[-3:]) if completed.stdout and completed.stdout[-3:].isdigit() else 0
+              return code, completed.returncode, (completed.stderr or '').strip()
+
+          for url in sorted(set(re.findall(r'https://[^\s)<>`]+', text))):
+              code, rc, error = probe(url, 'GET')
+              if code == 0:
+                  code, rc, error = probe(url, 'HEAD')
+              if 200 <= code < 400:
+                  state = 'PASS'
+              elif code in (404, 410):
+                  state = 'FAIL_BROKEN'
+                  broken.append(f'{url}: explicit HTTP {code}')
+              elif code in (401, 403, 429):
+                  state = 'ACCESS_CONTROLLED_UNVERIFIED'
+                  warnings.append(f'{url}: HTTP {code}; access-controlled, not content-verified')
+              elif code == 0:
+                  state = 'TRANSPORT_UNVERIFIED'
+                  warnings.append(f'{url}: transport limitation after retries; curl rc={rc}; {error}')
+              elif code >= 500:
+                  state = 'SERVER_UNVERIFIED'
+                  warnings.append(f'{url}: HTTP {code} after retries; not content-verified')
+              else:
+                  state = 'HTTP_UNVERIFIED'
+                  warnings.append(f'{url}: HTTP {code}; not content-verified')
+              print(code, state, url)
+
+          if warnings:
+              print('Source verification limitations:')
+              print('\n'.join(warnings))
+          if broken:
+              print('\n'.join(broken))
+              sys.exit(1)
+          PY
+
+      - name: Generate DOCX and PDF editions
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-45/publication-candidate'
+          for STEM in GUIDE_45_ENGLISH_v2 GUIDE_45_SPANISH_es-419_v2 GUIDE_45_PORTUGUESE_pt-BR_v2; do
+            pandoc "$OUT/$STEM.md" -f gfm-tex_math_dollars -t docx --standalone -o "$OUT/$STEM.docx"
+            mkdir -p "$OUT/lo-$STEM"
+            libreoffice --headless --convert-to pdf --outdir "$OUT/lo-$STEM" "$OUT/$STEM.docx"
+            mv "$OUT/lo-$STEM/$STEM.pdf" "$OUT/$STEM.pdf"
+            rmdir "$OUT/lo-$STEM"
+          done
+
+      - name: Validate DOCX and searchable PDF integrity
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-45/publication-candidate'
+          test "$(find "$OUT" -maxdepth 1 -name '*.docx' | wc -l)" -eq 3
+          test "$(find "$OUT" -maxdepth 1 -name '*.pdf' | wc -l)" -eq 3
+          for DOCX in "$OUT"/*.docx; do
+            unzip -t "$DOCX" >/dev/null
+            unzip -l "$DOCX" | grep -q 'word/document.xml'
+          done
+          for PDF in "$OUT"/*.pdf; do
+            pdfinfo "$PDF" >/dev/null
+            TEXT="$(pdftotext "$PDF" - | tr -d '[:space:]')"
+            test ${#TEXT} -gt 5000
+          done
+
+      - name: Render and inspect every PDF page
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-45/publication-candidate'
+          rm -rf "$OUT/rendered"
+          for PDF in "$OUT"/*.pdf; do
+            STEM="$(basename "$PDF" .pdf)"
+            mkdir -p "$OUT/rendered/$STEM"
+            pdftoppm -png -r 110 "$PDF" "$OUT/rendered/$STEM/page" >/dev/null 2>&1
+          done
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageChops
+          import json, sys
+
+          root = Path('project/revision-2026/guide-45/publication-candidate/rendered')
+          problems = []
+          pages = []
+          for path in sorted(root.rglob('*.png')):
+              try:
+                  with Image.open(path) as image:
+                      image.verify()
+                  with Image.open(path) as image:
+                      gray = image.convert('L')
+                      difference = ImageChops.difference(gray, Image.new('L', gray.size, 255))
+                      bbox = difference.point(lambda p: 255 if p > 12 else 0).getbbox()
+                      if bbox is None:
+                          problems.append(f'{path}: blank page')
+                          continue
+                      left, top, right, bottom = bbox
+                      width, height = gray.size
+                      margins = {
+                          'left': left,
+                          'top': top,
+                          'right': width - right,
+                          'bottom': height - bottom,
+                      }
+                      if min(margins.values()) < 4:
+                          problems.append(f'{path}: possible clipping {margins}')
+                      pages.append({
+                          'file': str(path.relative_to(root)),
+                          'status': 'PASS',
+                          'edge_margins': margins,
+                      })
+              except Exception as exc:
+                  problems.append(f'{path}: malformed render: {exc}')
+
+          result = {'status': 'FAIL' if problems else 'PASS', 'pages': pages, 'problems': problems}
+          (root / 'RENDER_QA.json').write_text(
+              json.dumps(result, indent=2) + '\n', encoding='utf-8'
+          )
+          if problems:
+              print('\n'.join(problems))
+              sys.exit(1)
+          print(f'All-page render QA PASS: {len(pages)} pages')
+          PY
+
+      - name: Generate publication metadata and checksums
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib, json, subprocess
+
+          out = Path('project/revision-2026/guide-45/publication-candidate')
+          render = json.loads((out / 'rendered/RENDER_QA.json').read_text(encoding='utf-8'))
+          records = []
+          for language, stem in [
+              ('en', 'GUIDE_45_ENGLISH_v2'),
+              ('es-419', 'GUIDE_45_SPANISH_es-419_v2'),
+              ('pt-BR', 'GUIDE_45_PORTUGUESE_pt-BR_v2'),
+          ]:
+              docx = out / f'{stem}.docx'
+              pdf = out / f'{stem}.pdf'
+              info = subprocess.check_output(['pdfinfo', str(pdf)], text=True)
+              pages = next(
+                  int(line.split(':', 1)[1])
+                  for line in info.splitlines()
+                  if line.startswith('Pages:')
+              )
+              text = subprocess.check_output(
+                  ['pdftotext', str(pdf), '-'], text=True, errors='replace'
+              )
+              if '\ufffd' in text:
+                  raise SystemExit(f'{pdf}: Unicode replacement character')
+              rendered = sum(
+                  1 for page in render['pages']
+                  if page['file'].startswith(stem + '/')
+              )
+              if rendered != pages:
+                  raise SystemExit(f'{stem}: PDF/render page mismatch {pages} != {rendered}')
+              records.append({
+                  'language': language,
+                  'docx': docx.name,
+                  'pdf': pdf.name,
+                  'docx_bytes': docx.stat().st_size,
+                  'pdf_bytes': pdf.stat().st_size,
+                  'pdf_pages': pages,
+                  'rendered_pages': rendered,
+                  'status': 'PASS',
+              })
+
+          manifest = {
+              'guide': '45',
+              'occupation': 'Water and Wastewater Treatment Plant Operator',
+              'build_date': '2026-08-18',
+              'status': 'PASS',
+              'editions': records,
+              'assurance_boundary': (
+                  'Internal automated publication QA; not independent human review, '
+                  'professional translation certification, accessibility certification, '
+                  'legal or environmental review, laboratory or engineering approval, '
+                  'electrical authorization, industrial-hygiene or medical review, '
+                  'confined-space or rescue qualification, operator licensing determination, '
+                  'accreditation, or employment or earnings guarantee.'
+              ),
+          }
+          (out / 'GUIDE_45_PUBLICATION_QA_MANIFEST.json').write_text(
+              json.dumps(manifest, indent=2, ensure_ascii=False) + '\n', encoding='utf-8'
+          )
+          targets = sorted(
+              path for path in out.iterdir()
+              if path.is_file() and path.suffix in {'.docx', '.pdf'}
+          )
+          (out / 'SHA256SUMS.txt').write_text(
+              '\n'.join(
+                  f'{hashlib.sha256(path.read_bytes()).hexdigest()}  {path.name}'
+                  for path in targets
+              ) + '\n',
+              encoding='utf-8',
+          )
+          PY
+
+      - name: Upload rendered-page QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: guide45-rendered-pages
+          path: project/revision-2026/guide-45/publication-candidate/rendered
+          retention-days: 14
+
+      - name: Remove render images from commit scope
+        run: rm -rf project/revision-2026/guide-45/publication-candidate/rendered
+
+      - name: Commit controlled publication candidates
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-45/publication-candidate
+          if git diff --cached --quiet; then
+            echo 'No publication changes to commit.'
+          else
+            git commit -m 'Build and validate Guide 45 publication candidates'
+            git pull --rebase origin revision/guide-00-100-2026
+            git push origin HEAD:revision/guide-00-100-2026
+          fi

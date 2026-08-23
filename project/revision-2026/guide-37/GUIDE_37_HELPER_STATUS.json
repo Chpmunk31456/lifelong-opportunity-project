@@ -1,0 +1,19 @@
+{
+  "guide": "37",
+  "occupation": "Shipping, Receiving, and Traffic Clerk",
+  "branch": "revision/guide-00-100-2026",
+  "updated": "2026-08-13",
+  "stages": {
+    "baseline_inventory": {"status": "PASS", "evidence": ["project/revision-2026/guide-37/qa/GUIDE_37_BASELINE_INVENTORY_01.md"]},
+    "research": {"status": "PASS", "evidence": ["project/revision-2026/guide-37/research/GUIDE_37_CURRENT_SOURCE_EVIDENCE_02.md"]},
+    "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-37/working-masters/GUIDE_37_SHIPPING_RECEIVING_AND_TRAFFIC_CLERK_ENGLISH_v2.md", "project/revision-2026/guide-37/qa/GUIDE_37_ENGLISH_EDITORIAL_QA_03.md"]},
+    "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-37/qa/GUIDE_37_EVIDENCE_TRACEABILITY_QA_04.md"]},
+    "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-37/qa/GUIDE_37_ENGLISH_SOURCE_FREEZE_05.md"]},
+    "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-37/working-masters/GUIDE_37_SHIPPING_RECEIVING_AND_TRAFFIC_CLERK_ES419_v2.md", "project/revision-2026/guide-37/qa/GUIDE_37_ES419_LOCALIZATION_QA_06.md"]},
+    "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-37/working-masters/GUIDE_37_SHIPPING_RECEIVING_AND_TRAFFIC_CLERK_PTBR_v2.md", "project/revision-2026/guide-37/qa/GUIDE_37_PTBR_LOCALIZATION_QA_07.md"]},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-37/qa/GUIDE_37_TECHNICAL_QA_08.md"]},
+    "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-37/qa/GUIDE_37_PUBLICATION_GATE_09.md"]},
+    "release_audit": {"status": "PASS", "evidence": ["project/revision-2026/guide-37/qa/GUIDE_37_RELEASE_AUDIT_GATE_10.md"]}
+  },
+  "blockers": []
+}

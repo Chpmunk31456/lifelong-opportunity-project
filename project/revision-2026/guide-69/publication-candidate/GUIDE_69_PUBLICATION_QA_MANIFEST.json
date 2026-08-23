@@ -1,0 +1,39 @@
+{
+  "guide": "69",
+  "occupation": "Hotel Front Desk and Guest Services",
+  "build_date": "2026-08-21",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_69_ENGLISH_v2.docx",
+      "pdf": "GUIDE_69_ENGLISH_v2.pdf",
+      "docx_bytes": 25730,
+      "pdf_bytes": 267933,
+      "pdf_pages": 17,
+      "rendered_pages": 17,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_69_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_69_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 26243,
+      "pdf_bytes": 268704,
+      "pdf_pages": 17,
+      "rendered_pages": 17,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_69_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_69_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 25971,
+      "pdf_bytes": 258855,
+      "pdf_pages": 17,
+      "rendered_pages": 17,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA and controlled source review; not independent human certification, professional translation certification, professional hospitality certification, legal review, accessibility certification, accreditation, licensing approval, funding approval, scholarship approval, or employment/earnings guarantee."
+}

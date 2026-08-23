@@ -1,0 +1,19 @@
+{
+  "guide": "39",
+  "occupation": "Heavy Equipment Operator",
+  "branch": "revision/guide-00-100-2026",
+  "updated": "2026-08-13",
+  "stages": {
+    "baseline_inventory": {"status": "PASS", "evidence": ["project/revision-2026/guide-39/qa/GUIDE_39_BASELINE_INVENTORY_01.md"]},
+    "research": {"status": "PASS", "evidence": ["project/revision-2026/guide-39/research/GUIDE_39_CURRENT_SOURCE_EVIDENCE_02.md"]},
+    "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-39/working-masters/GUIDE_39_HEAVY_EQUIPMENT_OPERATOR_ENGLISH_v2.md", "project/revision-2026/guide-39/qa/GUIDE_39_ENGLISH_EDITORIAL_QA_03.md"]},
+    "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-39/qa/GUIDE_39_EVIDENCE_TRACEABILITY_QA_04.md"]},
+    "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-39/qa/GUIDE_39_ENGLISH_SOURCE_FREEZE_05.md", "project/revision-2026/guide-39/qa/GUIDE_39_SHARED_SOURCE_LINK_CORRECTIVE_QA_07B.md"]},
+    "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-39/working-masters/GUIDE_39_HEAVY_EQUIPMENT_OPERATOR_ES419_v2.md", "project/revision-2026/guide-39/qa/GUIDE_39_SPANISH_LOCALIZATION_QA_06.md", "project/revision-2026/guide-39/qa/GUIDE_39_SPANISH_LOCALIZATION_CORRECTIVE_QA_06B.md", "project/revision-2026/guide-39/qa/GUIDE_39_SHARED_SOURCE_LINK_CORRECTIVE_QA_07B.md"]},
+    "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-39/working-masters/GUIDE_39_HEAVY_EQUIPMENT_OPERATOR_PTBR_v2.md", "project/revision-2026/guide-39/qa/GUIDE_39_PORTUGUESE_LOCALIZATION_QA_07.md", "project/revision-2026/guide-39/qa/GUIDE_39_SHARED_SOURCE_LINK_CORRECTIVE_QA_07B.md"]},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-39/qa/GUIDE_39_SHARED_SOURCE_LINK_CORRECTIVE_QA_07B.md", "project/revision-2026/guide-39/qa/GUIDE_39_TECHNICAL_QA_08.md"]},
+    "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-39/publication-candidate/GUIDE_39_PUBLICATION_QA_MANIFEST.json", "project/revision-2026/guide-39/publication-candidate/SHA256SUMS.txt", "project/revision-2026/guide-39/qa/GUIDE_39_PUBLICATION_GATE_09.md"]},
+    "release_audit": {"status": "PASS", "evidence": ["project/revision-2026/guide-39/qa/GUIDE_39_RELEASE_AUDIT_10.md"]}
+  },
+  "blockers": []
+}

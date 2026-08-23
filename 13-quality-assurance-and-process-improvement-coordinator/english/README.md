@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 13
+# Lifelong Opportunity Guide 13
 
 ## Quality Assurance and Process Improvement Coordinator — English Edition
 

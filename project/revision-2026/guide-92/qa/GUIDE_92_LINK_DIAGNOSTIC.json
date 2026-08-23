@@ -1,0 +1,99 @@
+{
+  "count": 23,
+  "hard_failures": [],
+  "results": [
+    {
+      "url": "https://betowa.sena.edu.co/oferta/aplicacion-de-sig-en-sistemas-forestales-y-agroecologicos?modality=V&programId=173415",
+      "code": 200
+    },
+    {
+      "url": "https://betowa.sena.edu.co/oferta/introduccion-a-los-sistemas-de-informacion-geografica?modality=P&offertype=company&programId=85021",
+      "code": 200
+    },
+    {
+      "url": "https://betowa.sena.edu.co/oferta/sistemas-de-informacion-geografica?modality=P&offertype=company&programId=164857",
+      "code": 200
+    },
+    {
+      "url": "https://ocupacol.mintrabajo.gov.co/Profile/OccupationalProfile/31123",
+      "code": 200
+    },
+    {
+      "url": "https://www.canada.ca/en/services/jobs/training.html",
+      "code": 0,
+      "error": "TimeoutError"
+    },
+    {
+      "url": "https://www.careeronestop.org/LocalHelp/EmploymentAndTraining/find-WIOA-training-programs.aspx",
+      "code": 403
+    },
+    {
+      "url": "https://www.cisa.gov/secure-our-world",
+      "code": 200
+    },
+    {
+      "url": "https://www.indeed.com/career/gis-technician/salaries",
+      "code": 403
+    },
+    {
+      "url": "https://www.jobbank.gc.ca/marketreport/outlook-occupation/3493/ca",
+      "code": 200
+    },
+    {
+      "url": "https://www.jobbank.gc.ca/marketreport/requirements/3493/AB",
+      "code": 200
+    },
+    {
+      "url": "https://www.jobbank.gc.ca/marketreport/summary-occupation/3493/ca",
+      "code": 200
+    },
+    {
+      "url": "https://www.jobbank.gc.ca/marketreport/wages-occupation/3493/ca",
+      "code": 200
+    },
+    {
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "code": 200
+    },
+    {
+      "url": "https://www.nist.gov/privacy-framework",
+      "code": 200
+    },
+    {
+      "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+      "code": 200
+    },
+    {
+      "url": "https://www.oitcinterfor.org/statsfp/paises",
+      "code": 200
+    },
+    {
+      "url": "https://www.onetonline.org/link/demand/15-1299.02",
+      "code": 200
+    },
+    {
+      "url": "https://www.onetonline.org/link/details/15-1299.02",
+      "code": 200
+    },
+    {
+      "url": "https://www.onetonline.org/link/localtrends/15-1299.02",
+      "code": 200
+    },
+    {
+      "url": "https://www.onetonline.org/link/localwages/15-1299.02",
+      "code": 200
+    },
+    {
+      "url": "https://www.onetonline.org/link/summary/15-1299.02",
+      "code": 200
+    },
+    {
+      "url": "https://www.section508.gov/create/",
+      "code": 200
+    },
+    {
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "code": 200
+    }
+  ]
+}

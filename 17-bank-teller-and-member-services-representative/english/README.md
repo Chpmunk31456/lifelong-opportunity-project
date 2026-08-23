@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 17
+# Lifelong Opportunity Guide 17
 
 ## Bank Teller and Member Services Representative — English Edition
 

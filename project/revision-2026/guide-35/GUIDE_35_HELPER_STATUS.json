@@ -1,0 +1,19 @@
+{
+  "guide": "35",
+  "occupation": "Production Planning and Expediting Clerk",
+  "branch": "revision/guide-00-100-2026",
+  "updated": "2026-08-12",
+  "stages": {
+    "baseline_inventory": {"status": "PASS", "evidence": ["project/revision-2026/guide-35/qa/GUIDE_35_BASELINE_INVENTORY_01.md"]},
+    "research": {"status": "PASS", "evidence": ["project/revision-2026/guide-35/research/GUIDE_35_CURRENT_SOURCE_EVIDENCE_02.md"]},
+    "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-35/working-masters/GUIDE_35_PRODUCTION_PLANNING_AND_EXPEDITING_CLERK_ENGLISH_v2.md", "project/revision-2026/guide-35/qa/GUIDE_35_ENGLISH_EDITORIAL_QA_03.md"]},
+    "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-35/qa/GUIDE_35_EVIDENCE_TRACEABILITY_QA_04.md"]},
+    "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-35/qa/GUIDE_35_ENGLISH_SOURCE_FREEZE_05.md"]},
+    "spanish_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-35/working-masters/GUIDE_35_AUXILIAR_DE_PLANIFICACION_Y_SEGUIMIENTO_DE_LA_PRODUCCION_ES419_v2.md", "project/revision-2026/guide-35/qa/GUIDE_35_SPANISH_LOCALIZATION_QA_06.md"]},
+    "portuguese_localization": {"status": "PASS", "evidence": ["project/revision-2026/guide-35/working-masters/GUIDE_35_AUXILIAR_DE_PLANEJAMENTO_E_ACOMPANHAMENTO_DA_PRODUCAO_PTBR_v2.md", "project/revision-2026/guide-35/qa/GUIDE_35_PORTUGUESE_LOCALIZATION_QA_07.md"]},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-35/qa/GUIDE_35_TECHNICAL_QA_08.md", "project/revision-2026/guide-35/publication-candidate/GUIDE_35_PUBLICATION_QA_MANIFEST.json", "project/revision-2026/guide-35/publication-candidate/SHA256SUMS.txt"]},
+    "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-35/qa/GUIDE_35_PUBLICATION_GATE_09.md", "project/revision-2026/guide-35/publication-candidate/SHA256SUMS.txt"]},
+    "release_audit": {"status": "PASS", "evidence": ["project/revision-2026/guide-35/qa/GUIDE_35_RELEASE_AUDIT_GATE_10.md"]}
+  },
+  "blockers": []
+}

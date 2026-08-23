@@ -1,0 +1,39 @@
+{
+  "guide": "45",
+  "occupation": "Water and Wastewater Treatment Plant Operator",
+  "build_date": "2026-08-18",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_45_ENGLISH_v2.docx",
+      "pdf": "GUIDE_45_ENGLISH_v2.pdf",
+      "docx_bytes": 25196,
+      "pdf_bytes": 193561,
+      "pdf_pages": 14,
+      "rendered_pages": 14,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_45_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_45_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 26514,
+      "pdf_bytes": 199380,
+      "pdf_pages": 15,
+      "rendered_pages": 15,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_45_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_45_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 26457,
+      "pdf_bytes": 199774,
+      "pdf_pages": 15,
+      "rendered_pages": 15,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal or environmental review, laboratory or engineering approval, electrical authorization, industrial-hygiene or medical review, confined-space or rescue qualification, operator licensing determination, accreditation, or employment or earnings guarantee."
+}

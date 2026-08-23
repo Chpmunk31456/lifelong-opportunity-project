@@ -1,0 +1,86 @@
+{
+  "guide": "50",
+  "occupation": "Phlebotomy Technician",
+  "branch": "revision/guide-00-100-2026",
+  "publication_dispatch_runs": [
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-08-19T19:04:42Z",
+      "databaseId": 32290998123,
+      "displayTitle": "Close Guide 50 from successful publication run",
+      "event": "push",
+      "headSha": "5a67e5f83bc6252d6d489b86d3b8c330cd80e8bc",
+      "status": "completed",
+      "updatedAt": "2026-08-19T19:04:55Z",
+      "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32290998123"
+    },
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-08-19T16:57:31Z",
+      "databaseId": 32278870914,
+      "displayTitle": "Add Guide 50 publication dispatch and fail-closed gate closure",
+      "event": "push",
+      "headSha": "3b4afb134f4a70257ed717452811a023a6ce5d59",
+      "status": "completed",
+      "updatedAt": "2026-08-19T16:57:50Z",
+      "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32278870914"
+    }
+  ],
+  "publication_build_runs": [
+    {
+      "conclusion": "success",
+      "createdAt": "2026-08-19T18:47:46Z",
+      "databaseId": 32289368727,
+      "displayTitle": "Accept hyphenated Guide 50 duration control",
+      "event": "push",
+      "headSha": "3751a3d64054cd4da77c971f59725c557fbcfa84",
+      "status": "completed",
+      "updatedAt": "2026-08-19T19:03:41Z",
+      "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32289368727"
+    },
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-08-19T18:45:14Z",
+      "databaseId": 32289121089,
+      "displayTitle": "Bound Guide 50 publication dependencies",
+      "event": "push",
+      "headSha": "d4325773d9eb82cbe81d165f10ad40607a508aed",
+      "status": "completed",
+      "updatedAt": "2026-08-19T18:47:19Z",
+      "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32289121089"
+    },
+    {
+      "conclusion": "cancelled",
+      "createdAt": "2026-08-19T18:38:29Z",
+      "databaseId": 32288478736,
+      "displayTitle": "Recover stalled Guide 50 publication build",
+      "event": "push",
+      "headSha": "3b89ad41ae03c7aad24655b146bb642ccf52710c",
+      "status": "completed",
+      "updatedAt": "2026-08-19T18:45:31Z",
+      "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32288478736"
+    },
+    {
+      "conclusion": "cancelled",
+      "createdAt": "2026-08-19T18:01:13Z",
+      "databaseId": 32284965637,
+      "displayTitle": "Re-trigger Guide 50 controlled publication build",
+      "event": "push",
+      "headSha": "c90ba1e1036c2701e0a1d49a6888d1b27ee0eca3",
+      "status": "completed",
+      "updatedAt": "2026-08-19T18:38:30Z",
+      "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32284965637"
+    },
+    {
+      "conclusion": "cancelled",
+      "createdAt": "2026-08-19T16:57:47Z",
+      "databaseId": 32278896247,
+      "displayTitle": "Guide 50 controlled publication build",
+      "event": "workflow_dispatch",
+      "headSha": "3b4afb134f4a70257ed717452811a023a6ce5d59",
+      "status": "completed",
+      "updatedAt": "2026-08-19T18:01:14Z",
+      "url": "https://github.com/Chpmunk31456/lifelong-opportunity-project/actions/runs/32278896247"
+    }
+  ]
+}

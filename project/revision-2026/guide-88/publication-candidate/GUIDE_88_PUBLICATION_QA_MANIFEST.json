@@ -1,0 +1,41 @@
+{
+  "guide": "88",
+  "occupation": "Web Developer",
+  "build_date": "2026-08-22",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_88_ENGLISH_v2.docx",
+      "pdf": "GUIDE_88_ENGLISH_v2.pdf",
+      "docx_bytes": 23881,
+      "pdf_bytes": 331974,
+      "pdf_pages": 17,
+      "rendered_pages": 17,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_88_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_88_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 21364,
+      "pdf_bytes": 211979,
+      "pdf_pages": 12,
+      "rendered_pages": 12,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_88_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_88_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 21479,
+      "pdf_bytes": 213400,
+      "pdf_pages": 12,
+      "rendered_pages": 12,
+      "status": "PASS"
+    }
+  ],
+  "controlled_evidence_urls": 28,
+  "reader_verification_urls": 23,
+  "assurance_boundary": "Internal automated publication QA, controlled link checks, all-page render inspection, and controlled source review; not independent human certification, certified translation, legal/privacy/cybersecurity/security-testing/cloud/vendor/regulatory/accessibility certification, training-provider accreditation, funding approval, employment guarantee, earnings guarantee, SEO ranking guarantee, or revenue/conversion guarantee."
+}

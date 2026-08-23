@@ -1,0 +1,50 @@
+{
+  "guide": "20",
+  "occupation": "Court Clerk and Judicial Services Assistant",
+  "build_date": "2026-08-09",
+  "status": "PASS",
+  "controls": [
+    "19-section trilingual structure",
+    "controlled numerical values",
+    "required jurisdiction/source markers",
+    "required source URLs",
+    "DOCX ZIP integrity",
+    "PDF readability",
+    "searchable PDF text",
+    "SHA-256 checksums",
+    "all-page raster rendering"
+  ],
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_20_ENGLISH_v2.docx",
+      "pdf": "GUIDE_20_ENGLISH_v2.pdf",
+      "docx_bytes": 28184,
+      "pdf_bytes": 364866,
+      "pdf_pages": 19,
+      "pdf_extractable_characters": 33576,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_20_SPANISH_LATAM_v2.docx",
+      "pdf": "GUIDE_20_SPANISH_LATAM_v2.pdf",
+      "docx_bytes": 27888,
+      "pdf_bytes": 360942,
+      "pdf_pages": 19,
+      "pdf_extractable_characters": 32420,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_20_PORTUGUESE_BR_v2.docx",
+      "pdf": "GUIDE_20_PORTUGUESE_BR_v2.pdf",
+      "docx_bytes": 27792,
+      "pdf_bytes": 361091,
+      "pdf_pages": 19,
+      "pdf_extractable_characters": 31729,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, court approval, civil-service determination, accreditation, or employment guarantee."
+}

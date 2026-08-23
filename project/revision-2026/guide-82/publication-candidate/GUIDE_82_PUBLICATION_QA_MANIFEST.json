@@ -1,0 +1,40 @@
+{
+  "guide": "82",
+  "occupation": "Computer Support and Help Desk Technician",
+  "build_date": "2026-08-21",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_82_ENGLISH_v2.docx",
+      "pdf": "GUIDE_82_ENGLISH_v2.pdf",
+      "docx_bytes": 29159,
+      "pdf_bytes": 371514,
+      "pdf_pages": 21,
+      "rendered_pages": 21,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_82_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_82_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 23187,
+      "pdf_bytes": 198316,
+      "pdf_pages": 13,
+      "rendered_pages": 13,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_82_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_82_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 22588,
+      "pdf_bytes": 191232,
+      "pdf_pages": 12,
+      "rendered_pages": 12,
+      "status": "PASS"
+    }
+  ],
+  "controlled_source_urls": 23,
+  "assurance_boundary": "Internal automated publication QA, controlled link checks, all-page render inspection, and controlled source review; not independent human certification, certified translation, accessibility certification, cybersecurity certification, legal/privacy review, vendor certification, training-provider accreditation, funding approval, employment guarantee, or earnings guarantee."
+}

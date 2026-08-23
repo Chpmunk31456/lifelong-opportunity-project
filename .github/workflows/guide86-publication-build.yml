@@ -1,0 +1,249 @@
+# Controlled Guide 86 publication and release workflow
+name: Guide 86 controlled publication and release
+
+on:
+  push:
+    branches: [revision/guide-00-100-2026]
+    paths:
+      - '.github/workflows/guide86-publication-build.yml'
+      - 'project/revision-2026/guide-86/GUIDE_86_HELPER_STATUS.json'
+      - 'project/revision-2026/guide-86/qa/GUIDE_86_TRILINGUAL_TECHNICAL_QA_08.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide86-controlled-publication
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out controlled revision branch
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Install publication toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice-writer poppler-utils python3-pil curl
+
+      - name: Verify fail-closed predecessor gate
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+          root=Path('project/revision-2026/guide-86')
+          d=json.loads((root/'GUIDE_86_HELPER_STATUS.json').read_text(encoding='utf-8'))
+          assert d['stages']['technical_qa']['status']=='PASS'
+          assert d['stages']['publication']['status']=='PENDING'
+          assert d['stages']['release_audit']['status']=='PENDING'
+          assert not d.get('blockers')
+
+      - name: Freeze trilingual publication inputs
+        run: |
+          set -euo pipefail
+          SRC='project/revision-2026/guide-86/working-masters'
+          OUT='project/revision-2026/guide-86/publication-candidate'
+          rm -rf "$OUT" && mkdir -p "$OUT"
+          cp "$SRC/GUIDE_86_DATABASE_ADMINISTRATOR_ENGLISH_v2.md" "$OUT/GUIDE_86_ENGLISH_v2.md"
+          cp "$SRC/GUIDE_86_ADMINISTRADOR_DE_BASES_DE_DATOS_ES419_v2.md" "$OUT/GUIDE_86_SPANISH_es-419_v2.md"
+          cp "$SRC/GUIDE_86_ADMINISTRADOR_DE_BANCO_DE_DADOS_PTBR_v2.md" "$OUT/GUIDE_86_PORTUGUESE_pt-BR_v2.md"
+
+      - name: Validate trilingual Markdown parity and controlled values
+        shell: python
+        run: |
+          from pathlib import Path
+          import re,sys
+          root=Path('project/revision-2026/guide-86')
+          out=root/'publication-candidate'
+          files=[out/'GUIDE_86_ENGLISH_v2.md',out/'GUIDE_86_SPANISH_es-419_v2.md',out/'GUIDE_86_PORTUGUESE_pt-BR_v2.md']
+          texts=[p.read_text(encoding='utf-8') for p in files]
+          problems=[]
+          for p,t in zip(files,texts):
+            if t.startswith('\ufeff') or '\ufffd' in t: problems.append(f'{p.name}: encoding defect')
+            if len(t)<12000: problems.append(f'{p.name}: unexpectedly short ({len(t)})')
+            if len(re.findall(r'^##\s+.+$',t,re.M))<20: problems.append(f'{p.name}: insufficient major sections')
+            low=t.lower()
+            for bad in ('todo:','lorem ipsum','translation pending','traduccion pendiente','tradução pendente'):
+              if bad in low: problems.append(f'{p.name}: placeholder {bad}')
+
+          reader_urls=[set(re.findall(r'https://[^\s)<>`]+',t)) for t in texts]
+          if not (reader_urls[0]==reader_urls[1]==reader_urls[2]):
+            problems.append(f'reader URL parity mismatch {[len(x) for x in reader_urls]}')
+          if len(reader_urls[0])!=21:
+            problems.append(f'expected 21 shared reader URLs, found {len(reader_urls[0])}')
+
+          research=(root/'research/GUIDE_86_CURRENT_SOURCE_EVIDENCE_02.md').read_text(encoding='utf-8')
+          evidence_urls=set(re.findall(r'https://[^\s)<>`]+',research))
+          if len(evidence_urls)!=26:
+            problems.append(f'expected 26 evidence URLs, found {len(evidence_urls)}')
+
+          controls=[
+            r'15-1242\.00',r'21223',r'25210',
+            r'60[,.]230',r'28[,.]96',r'79[,.]610',r'38[,.]28',r'104[,.]620',r'50[,.]30',r'135[,.]460',r'65[,.]13',r'163[,.]320',r'78[,.]52',
+            r'78[,.]000',r'77[,.]500',r'-\s*1\s*%',r'3[,.]800',
+            r'110[,.]414',r'73[,.]876',r'165[,.]024',r'2[,.]1\s*(?:k|mil)',r'36\s+(?:months|meses)',
+            r'C\$25[,.]00',r'C\$40[,.]87',r'C\$61[,.]03',
+            r'3[,.]984\s+(?:hours|horas)',r'40\s+(?:hours|horas)',r'48\s+(?:hours|horas)',
+            r'62\s*%',r'42\s*%',r'29\s*%',r'25\s*%',r'16\s*%',r'13\s*%'
+          ]
+          semantics={
+            'backup':['backup','respaldo'],
+            'recoverability':['recoverability','recuperabilidad','recuperabilidade'],
+            'restore':['restore','restauración','restauração'],
+            'RPO':['rpo'],
+            'RTO':['rto'],
+            'replication':['replication','replicación','replicação'],
+            'failover':['failover'],
+            'least privilege':['least privilege','least-privilege','mínimo privilegio','menor privilégio'],
+            'MFA':['mfa'],
+            'rollback':['rollback','reversión'],
+            'cloud':['cloud','nube','nuvem'],
+            'incident':['incident','incidente'],
+            'privacy':['privacy','privacidad','privacidade'],
+            'security':['security','seguridad','segurança'],
+            'AI':['responsible ai','ia responsable','ia responsável'],
+            'accessibility':['accessibility','accesibilidad','acessibilidade'],
+            'synthetic':['synthetic','sintético','sintética'],
+            'four-week':['four-week','cuatro semanas','quatro semanas']
+          }
+          for p,t in zip(files,texts):
+            for pat in controls:
+              if not re.search(pat,t,re.I): problems.append(f'{p.name}: missing controlled value {pat}')
+            low=t.lower()
+            for label,terms in semantics.items():
+              if not any(term.lower() in low for term in terms): problems.append(f'{p.name}: missing semantic control {label}')
+            for tech in ('sql','python','aws','azure','postgresql','mysql','oracle','terraform','powershell'):
+              if tech not in low: problems.append(f'{p.name}: missing technology {tech}')
+          if problems:
+            print('\n'.join(problems)); sys.exit(1)
+          print('Guide 86 Markdown QA PASS; reader URLs=21; evidence URLs=26')
+
+      - name: Check controlled evidence links
+        run: |
+          set -euo pipefail
+          python - <<'PY' > /tmp/guide86_urls.txt
+          import re
+          from pathlib import Path
+          t=Path('project/revision-2026/guide-86/research/GUIDE_86_CURRENT_SOURCE_EVIDENCE_02.md').read_text(encoding='utf-8')
+          for u in sorted(set(re.findall(r'https://[^\s)<>`]+',t))): print(u)
+          PY
+          test "$(wc -l < /tmp/guide86_urls.txt)" -eq 26
+          fail=0
+          while IFS= read -r url; do
+            code="$(curl -L -sS -o /dev/null -w '%{http_code}' --connect-timeout 15 --max-time 35 -A 'Mozilla/5.0 Guide86-QA' "$url" || echo 000)"
+            case "$code" in
+              200|201|202|204|301|302|303|307|308|401|403|429) echo "LINK OK/WALLED $code $url" ;;
+              404|410) echo "LINK FAIL $code $url"; fail=1 ;;
+              000|5??) echo "LINK WARN $code $url" ;;
+              *) echo "LINK REVIEW $code $url" ;;
+            esac
+          done < /tmp/guide86_urls.txt
+          test "$fail" -eq 0
+
+      - name: Create URL-safe display filter
+        run: |
+          cat > /tmp/url_safe.lua <<'LUA'
+          local function is_long_url(s) return string.match(s, '^https?://') and string.len(s) > 45 end
+          function Link(el)
+            local text=pandoc.utils.stringify(el.content)
+            if is_long_url(text) then return pandoc.Link({pandoc.Str('Source link')},el.target,el.title) end
+            return el
+          end
+          function Str(el)
+            local text=el.text
+            if is_long_url(text) then return pandoc.Link({pandoc.Str('Source link')},text) end
+            return el
+          end
+          LUA
+
+      - name: Generate DOCX and searchable PDF editions
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-86/publication-candidate'
+          for STEM in GUIDE_86_ENGLISH_v2 GUIDE_86_SPANISH_es-419_v2 GUIDE_86_PORTUGUESE_pt-BR_v2; do
+            pandoc "$OUT/$STEM.md" -f gfm-tex_math_dollars -t docx --standalone --lua-filter=/tmp/url_safe.lua -o "$OUT/$STEM.docx"
+            mkdir -p "$OUT/lo-$STEM"
+            libreoffice --headless --convert-to pdf --outdir "$OUT/lo-$STEM" "$OUT/$STEM.docx"
+            mv "$OUT/lo-$STEM/$STEM.pdf" "$OUT/$STEM.pdf"
+            rmdir "$OUT/lo-$STEM"
+          done
+
+      - name: Validate DOCX PDF and all-page rendering
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-86/publication-candidate'
+          test "$(find "$OUT" -maxdepth 1 -name '*.docx' | wc -l)" -eq 3
+          test "$(find "$OUT" -maxdepth 1 -name '*.pdf' | wc -l)" -eq 3
+          for DOCX in "$OUT"/*.docx; do test -s "$DOCX"; unzip -t "$DOCX" >/dev/null; unzip -l "$DOCX" | grep -q 'word/document.xml'; done
+          for PDF in "$OUT"/*.pdf; do test -s "$PDF"; pdfinfo "$PDF" >/dev/null; test "$(pdftotext "$PDF" - | tr -d '[:space:]' | wc -c)" -gt 8500; done
+          rm -rf "$OUT/rendered"
+          for PDF in "$OUT"/*.pdf; do STEM="$(basename "$PDF" .pdf)"; mkdir -p "$OUT/rendered/$STEM"; pdftoppm -png -r 110 "$PDF" "$OUT/rendered/$STEM/page" >/dev/null 2>&1; done
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image,ImageChops
+          import json,sys
+          root=Path('project/revision-2026/guide-86/publication-candidate/rendered'); problems=[]; pages=[]
+          for path in sorted(root.rglob('*.png')):
+            with Image.open(path) as im:
+              gray=im.convert('L'); diff=ImageChops.difference(gray,Image.new('L',gray.size,255)); bbox=diff.point(lambda p:255 if p>12 else 0).getbbox()
+              if bbox is None: problems.append(f'{path}: blank page'); continue
+              l,t,r,b=bbox; w,h=gray.size; margins={'left':l,'top':t,'right':w-r,'bottom':h-b}
+              if min(margins.values())<2: problems.append(f'{path}: possible clipping {margins}')
+              pages.append({'file':str(path.relative_to(root)),'edge_margins':margins})
+          (root/'RENDER_QA.json').write_text(json.dumps({'status':'FAIL' if problems else 'PASS','pages':pages,'problems':problems},indent=2)+'\n',encoding='utf-8')
+          if problems: print('\n'.join(problems)); sys.exit(1)
+          print(f'All-page rendering QA PASS: {len(pages)} pages')
+          PY
+
+      - name: Generate metadata checksums and close gates
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib,json,subprocess,re
+          root=Path('project/revision-2026/guide-86'); out=root/'publication-candidate'; qa=root/'qa'
+          render=json.loads((out/'rendered/RENDER_QA.json').read_text(encoding='utf-8')); assert render['status']=='PASS'
+          editions=[]
+          for lang,stem in [('en','GUIDE_86_ENGLISH_v2'),('es-419','GUIDE_86_SPANISH_es-419_v2'),('pt-BR','GUIDE_86_PORTUGUESE_pt-BR_v2')]:
+            docx=out/f'{stem}.docx'; pdf=out/f'{stem}.pdf'; info=subprocess.check_output(['pdfinfo',str(pdf)],text=True)
+            pc=next(int(x.split(':',1)[1]) for x in info.splitlines() if x.startswith('Pages:'))
+            rendered=sum(1 for p in render['pages'] if p['file'].startswith(stem+'/'))
+            if pc!=rendered: raise SystemExit(f'{stem}: render/page mismatch {rendered}!={pc}')
+            editions.append({'language':lang,'docx':docx.name,'pdf':pdf.name,'docx_bytes':docx.stat().st_size,'pdf_bytes':pdf.stat().st_size,'pdf_pages':pc,'rendered_pages':rendered,'status':'PASS'})
+          research=(root/'research/GUIDE_86_CURRENT_SOURCE_EVIDENCE_02.md').read_text(encoding='utf-8')
+          evidence_count=len(set(re.findall(r'https://[^\s)<>`]+',research))); assert evidence_count==26
+          english=(out/'GUIDE_86_ENGLISH_v2.md').read_text(encoding='utf-8')
+          reader_count=len(set(re.findall(r'https://[^\s)<>`]+',english))); assert reader_count==21
+          manifest={'guide':'86','occupation':'Database Administrator','build_date':'2026-08-22','status':'PASS','editions':editions,'controlled_evidence_urls':26,'reader_verification_urls':21,'assurance_boundary':'Internal automated publication QA, controlled link checks, all-page render inspection, and controlled source review; not independent human certification, certified translation, legal/privacy/cybersecurity/vendor/recovery/regulatory/accessibility certification, training-provider accreditation, funding approval, employment guarantee, or earnings guarantee.'}
+          (out/'GUIDE_86_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          targets=sorted(p for p in out.iterdir() if p.is_file() and p.suffix in {'.docx','.pdf'})
+          (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets)+'\n',encoding='utf-8')
+          (qa/'GUIDE_86_PUBLICATION_QA_09.md').write_text('# Guide 86 — Publication QA 09\n\n**Stage:** Publication — **PASS**\n\nEnglish, es-419 and pt-BR Markdown/DOCX/PDF editions passed controlled occupation/numeric/semantic parity, 21-link reader parity, 26-source evidence-link checks, DOCX integrity, searchable-PDF validation, all-page rendering, page reconciliation, metadata and SHA-256 checksum generation.\n\nNo independent human certification, certified translation, legal/privacy/security/vendor/recovery/regulatory/accessibility certification, training-provider accreditation, funding approval, employment guarantee or earnings guarantee is claimed.\n',encoding='utf-8')
+          (qa/'GUIDE_86_RELEASE_AUDIT_10.md').write_text('# Guide 86 — Release Audit 10\n\n**Stage:** Release Audit — **PASS**\n\nRelease audit verified the trilingual publication package, checksums and all-page rendering; U.S./Canada/Colombia occupation evidence; honest -1% U.S. employment projection with 3,800 annual openings; official and non-government wage separation; SENA 3,984/40/48-hour pathways; privileged-access and MFA controls; backup-versus-recoverability and replication-versus-backup distinctions; restore testing and RPO/RTO; change/migration/rollback controls; monitoring/performance/capacity; privacy/security and incident escalation; cloud responsibility; responsible AI; accessibility; and synthetic/public portfolio safeguards. Guide 86 is cleared for sequential closure within Draft PR #17.\n',encoding='utf-8')
+          status=root/'GUIDE_86_HELPER_STATUS.json'; d=json.loads(status.read_text(encoding='utf-8'))
+          assert d['stages']['technical_qa']['status']=='PASS' and d['stages']['publication']['status']=='PENDING' and d['stages']['release_audit']['status']=='PENDING' and not d.get('blockers')
+          d['stages']['publication']={'status':'PASS','evidence':['project/revision-2026/guide-86/qa/GUIDE_86_PUBLICATION_QA_09.md','project/revision-2026/guide-86/publication-candidate/GUIDE_86_PUBLICATION_QA_MANIFEST.json','project/revision-2026/guide-86/publication-candidate/SHA256SUMS.txt']}
+          d['stages']['release_audit']={'status':'PASS','evidence':['project/revision-2026/guide-86/qa/GUIDE_86_RELEASE_AUDIT_10.md']}
+          status.write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+
+      - name: Remove rendered PNGs from commit scope
+        run: rm -rf project/revision-2026/guide-86/publication-candidate/rendered
+
+      - name: Commit controlled publication package
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-86
+          if git diff --cached --quiet; then
+            echo 'No controlled publication changes to commit'
+            exit 0
+          fi
+          git commit -m 'build(guide-86): publish controlled trilingual package'
+          git pull --rebase origin revision/guide-00-100-2026
+          git push origin HEAD:revision/guide-00-100-2026

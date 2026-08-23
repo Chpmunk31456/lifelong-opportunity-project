@@ -1,0 +1,39 @@
+{
+  "guide": "47",
+  "occupation": "Pharmacy Technician",
+  "build_date": "2026-08-18",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_47_ENGLISH_v2.docx",
+      "pdf": "GUIDE_47_ENGLISH_v2.pdf",
+      "docx_bytes": 23312,
+      "pdf_bytes": 185162,
+      "pdf_pages": 12,
+      "rendered_pages": 12,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_47_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_47_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 24436,
+      "pdf_bytes": 189610,
+      "pdf_pages": 13,
+      "rendered_pages": 13,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_47_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_47_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 24413,
+      "pdf_bytes": 196588,
+      "pdf_pages": 13,
+      "rendered_pages": 13,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, medical or legal advice, certification-body approval, accreditation, pharmacy-practice authorization, or employment or earnings guarantee."
+}

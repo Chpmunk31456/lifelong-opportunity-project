@@ -1,4 +1,4 @@
-﻿# Lifelong Opportunity Guide 08
+# Lifelong Opportunity Guide 08
 
 ## Human Resources Assistant — English Edition
 

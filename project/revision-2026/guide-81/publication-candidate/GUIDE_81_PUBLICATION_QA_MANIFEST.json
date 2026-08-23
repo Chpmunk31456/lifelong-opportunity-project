@@ -1,0 +1,40 @@
+{
+  "guide": "81",
+  "occupation": "Health Information Technologist and Medical Registrar",
+  "build_date": "2026-08-21",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_81_ENGLISH_v2.docx",
+      "pdf": "GUIDE_81_ENGLISH_v2.pdf",
+      "docx_bytes": 25515,
+      "pdf_bytes": 346160,
+      "pdf_pages": 18,
+      "rendered_pages": 18,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_81_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_81_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 24584,
+      "pdf_bytes": 296156,
+      "pdf_pages": 16,
+      "rendered_pages": 16,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_81_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_81_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 23802,
+      "pdf_bytes": 275428,
+      "pdf_pages": 15,
+      "rendered_pages": 15,
+      "status": "PASS"
+    }
+  ],
+  "controlled_source_urls": 20,
+  "assurance_boundary": "Internal automated publication QA, controlled link checks, all-page render inspection, and controlled source review; not independent human certification, certified translation, clinical/coding certification, legal/privacy review, accessibility certification, cybersecurity certification, credential eligibility, funding approval, employment guarantee, or earnings guarantee."
+}

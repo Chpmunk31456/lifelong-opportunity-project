@@ -1,0 +1,19 @@
+{
+  "guide": "24",
+  "occupation": "Facilities Coordinator and Building Operations Assistant",
+  "branch": "revision/guide-00-100-2026",
+  "updated": "2026-08-10",
+  "stages": {
+    "baseline_inventory": {"status": "PASS", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_BASELINE_INVENTORY_01.md"]},
+    "research": {"status": "PASS", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_CURRENT_SOURCE_EVIDENCE_02.md"]},
+    "english_editorial": {"status": "PASS", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_ENGLISH_EDITORIAL_QA_03.md"]},
+    "evidence_traceability": {"status": "PASS", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_EVIDENCE_TRACEABILITY_QA_04.md"]},
+    "english_source_freeze": {"status": "PASS", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_ENGLISH_SOURCE_FREEZE_05.md"]},
+    "spanish_localization": {"status": "PASS", "evidence": ["24-facilities-coordinator-and-building-operations-assistant/spanish/QC.md", "project/revision-2026/guide-24/qa/GUIDE_24_TECHNICAL_QA_GATE_08.md"]},
+    "portuguese_localization": {"status": "PASS", "evidence": ["24-facilities-coordinator-and-building-operations-assistant/portuguese/QC.md", "project/revision-2026/guide-24/qa/GUIDE_24_TECHNICAL_QA_GATE_08.md"]},
+    "technical_qa": {"status": "PASS", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_TECHNICAL_QA_GATE_08.md", "project/revision-2026/guide-24/publication-candidate/GUIDE_24_PUBLICATION_QA_MANIFEST.json"]},
+    "publication": {"status": "PASS", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_PUBLICATION_GATE_09.md", "project/revision-2026/guide-24/publication-candidate/GUIDE_24_PUBLICATION_QA_MANIFEST.json", "project/revision-2026/guide-24/publication-candidate/SHA256SUMS.txt"]},
+    "release_audit": {"status": "PASS", "evidence": ["project/revision-2026/guide-24/qa/GUIDE_24_RELEASE_AUDIT_GATE_10.md"]}
+  },
+  "blockers": []
+}

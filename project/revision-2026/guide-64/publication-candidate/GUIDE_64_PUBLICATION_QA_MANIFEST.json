@@ -1,0 +1,39 @@
+{
+  "guide": "64",
+  "occupation": "Community Service Program Coordinator",
+  "build_date": "2026-08-20",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_64_ENGLISH_v2.docx",
+      "pdf": "GUIDE_64_ENGLISH_v2.pdf",
+      "docx_bytes": 22795,
+      "pdf_bytes": 207720,
+      "pdf_pages": 14,
+      "rendered_pages": 14,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_64_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_64_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 23909,
+      "pdf_bytes": 212113,
+      "pdf_pages": 15,
+      "rendered_pages": 15,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_64_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_64_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 23906,
+      "pdf_bytes": 213637,
+      "pdf_pages": 15,
+      "rendered_pages": 15,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA and controlled source review; not independent human certification, professional translation certification, legal review, accessibility certification, accreditation, grant approval, or employment/earnings guarantee."
+}

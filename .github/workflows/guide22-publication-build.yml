@@ -1,0 +1,230 @@
+name: Guide 22 controlled publication build
+
+on:
+  push:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - '.github/workflows/guide22-publication-build.yml'
+      - 'project/revision-2026/guide-22/source/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: guide22-controlled-publication-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out revision branch
+        uses: actions/checkout@v5
+        with:
+          ref: revision/guide-00-100-2026
+          fetch-depth: 0
+
+      - name: Install document tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice poppler-utils
+
+      - name: Prepare controlled sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-22/publication-candidate'
+          rm -rf "$OUT"
+          mkdir -p "$OUT" "$OUT/rendered"
+          cp 'project/revision-2026/guide-22/source/GUIDE_22_REAL_ESTATE_SALES_AGENT_LEASING_CONSULTANT_ENGLISH_v2_WORKING_MASTER.md' "$OUT/GUIDE_22_ENGLISH_v2.md"
+          cp 'project/revision-2026/guide-22/source/GUIDE_22_AGENTE_VENTAS_INMOBILIARIAS_CONSULTOR_ARRENDAMIENTOS_ES419_v2_WORKING_MASTER.md' "$OUT/GUIDE_22_SPANISH_LATAM_v2.md"
+          cp 'project/revision-2026/guide-22/source/GUIDE_22_AGENTE_VENDAS_IMOBILIARIAS_CONSULTOR_LOCACAO_PTBR_v2_WORKING_MASTER.md' "$OUT/GUIDE_22_PORTUGUESE_BR_v2.md"
+
+      - name: Trilingual structural and source controls
+        shell: python
+        run: |
+          from pathlib import Path
+          import re, sys
+          out=Path('project/revision-2026/guide-22/publication-candidate')
+          files={
+            'en': out/'GUIDE_22_ENGLISH_v2.md',
+            'es-419': out/'GUIDE_22_SPANISH_LATAM_v2.md',
+            'pt-BR': out/'GUIDE_22_PORTUGUESE_BR_v2.md',
+          }
+          required_urls=[
+            'https://www.bls.gov/ooh/sales/real-estate-brokers-and-sales-agents.htm',
+            'https://www.indeed.com/career/real-estate-agent/salaries',
+            'https://www.indeed.com/career/leasing-consultant/salaries',
+            'https://www.hud.gov/helping-americans/fair-housing-act-overview',
+            'https://www.careeronestop.org/Credentials/Toolkit/find-local-training-help.aspx',
+            'https://www.apprenticeship.gov/',
+            'https://www.jobbank.gc.ca/marketreport/wages-occupation/6181/ca',
+            'https://www.jobbank.gc.ca/marketreport/requirements/6181/ca',
+            'https://suin-juriscol.gov.co/clp/contenidos.dll/Leyes/1669010',
+            'https://betowa.sena.edu.co/oferta/servicio-al-cliente?modality=V',
+            'https://betowa.sena.edu.co/oferta/fortalecimiento-en-mercadeo-y-ventas?modality=P&programId=122734',
+          ]
+          controlled_patterns={
+            '56,320': r'(?<!\d)56[,.]320(?!\d)',
+            '72,280': r'(?<!\d)72[,.]280(?!\d)',
+            '3 percent': r'(?<!\d)3\s*%(?!\d)',
+            '46,300': r'(?<!\d)46[,.]300(?!\d)',
+            '100,988': r'(?<!\d)100[,.]988(?!\d)',
+            '19.71': r'(?<!\d)19[,.]71(?!\d)',
+            'NOC 63101': r'\bNOC\s+63101\b',
+            '32,867': r'(?<!\d)32[,.]867(?!\d)',
+            '58,400': r'(?<!\d)58[,.]400(?!\d)',
+            '178,000': r'(?<!\d)178[,.]000(?!\d)',
+            'Ley 820 de 2003': r'Ley\s+820\s+de\s+2003',
+            '15,000': r'(?<!\d)15[,.]000(?!\d)',
+            '48 hours': r'(?<!\d)48(?:-hour|\s+hours|\s+horas)(?!\d)',
+            '96 hours': r'(?<!\d)96(?:-hour|\s+hours|\s+horas)(?!\d)',
+          }
+          markers={
+            'CC BY-NC-SA 4.0': r'CC BY-NC-SA 4\.0',
+            'WIOA': r'\bWIOA\b',
+            'SENA': r'\bSENA\b',
+            'Apprenticeship.gov': r'Apprenticeship\.gov',
+            'AI': r'\b(?:AI|IA)\b',
+          }
+          problems=[]
+          heading_counts={}
+          for lang,path in files.items():
+            text=path.read_text(encoding='utf-8')
+            headings=re.findall(r'^##\s+.+$', text, re.M)
+            heading_counts[lang]=len(headings)
+            if len(headings) < 15:
+              problems.append(f'{lang}: too few level-2 headings ({len(headings)})')
+            for url in required_urls:
+              if url not in text:
+                problems.append(f'{lang}: missing URL {url}')
+            for label,pattern in controlled_patterns.items():
+              if not re.search(pattern, text):
+                problems.append(f'{lang}: missing controlled value {label}')
+            for label,pattern in markers.items():
+              if not re.search(pattern, text, re.I):
+                problems.append(f'{lang}: missing marker {label}')
+            if '\ufffd' in text:
+              problems.append(f'{lang}: Unicode replacement character present')
+            lowered=text.lower()
+            for bad in ('todo:', 'lorem ipsum', '[insert', 'translation pending', 'traducción pendiente', 'tradução pendente'):
+              if bad in lowered:
+                problems.append(f'{lang}: placeholder marker {bad}')
+          if len(set(heading_counts.values())) != 1:
+            problems.append(f'level-2 heading count mismatch: {heading_counts}')
+          if problems:
+            print('\n'.join(problems))
+            sys.exit(1)
+          print(f'Guide 22 trilingual structural/source controls PASS: {heading_counts}')
+
+      - name: Generate DOCX and PDF editions
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-22/publication-candidate'
+          for STEM in GUIDE_22_ENGLISH_v2 GUIDE_22_SPANISH_LATAM_v2 GUIDE_22_PORTUGUESE_BR_v2; do
+            pandoc "$OUT/$STEM.md" -f gfm -t docx --standalone -o "$OUT/$STEM.docx"
+            mkdir -p "$OUT/lo-$STEM"
+            libreoffice --headless --convert-to pdf --outdir "$OUT/lo-$STEM" "$OUT/$STEM.docx"
+            mv "$OUT/lo-$STEM/$STEM.pdf" "$OUT/$STEM.pdf"
+            rmdir "$OUT/lo-$STEM"
+          done
+
+      - name: Validate DOCX and searchable PDFs
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-22/publication-candidate'
+          test "$(find "$OUT" -maxdepth 1 -name '*.docx' | wc -l)" -eq 3
+          test "$(find "$OUT" -maxdepth 1 -name '*.pdf' | wc -l)" -eq 3
+          for DOCX in "$OUT"/*.docx; do
+            unzip -t "$DOCX" >/dev/null
+            unzip -l "$DOCX" | grep -q 'word/document.xml'
+          done
+          for PDF in "$OUT"/*.pdf; do
+            pdfinfo "$PDF" >/dev/null
+            TEXT="$(pdftotext "$PDF" - | tr -d '[:space:]')"
+            test ${#TEXT} -gt 5000
+          done
+
+      - name: Render all PDF pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='project/revision-2026/guide-22/publication-candidate'
+          for PDF in "$OUT"/*.pdf; do
+            STEM="$(basename "$PDF" .pdf)"
+            mkdir -p "$OUT/rendered/$STEM"
+            pdftoppm -png -r 90 "$PDF" "$OUT/rendered/$STEM/page" >/dev/null 2>&1
+          done
+
+      - name: Generate manifest and checksums
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib, json, subprocess
+          out=Path('project/revision-2026/guide-22/publication-candidate')
+          records=[]
+          for lang,stem in [
+            ('en','GUIDE_22_ENGLISH_v2'),
+            ('es-419','GUIDE_22_SPANISH_LATAM_v2'),
+            ('pt-BR','GUIDE_22_PORTUGUESE_BR_v2'),
+          ]:
+            docx=out/f'{stem}.docx'; pdf=out/f'{stem}.pdf'
+            info=subprocess.check_output(['pdfinfo',str(pdf)], text=True)
+            pages=None
+            for line in info.splitlines():
+              if line.startswith('Pages:'):
+                pages=int(line.split(':',1)[1].strip())
+            txt=subprocess.check_output(['pdftotext',str(pdf),'-'], text=True, errors='replace')
+            if '\ufffd' in txt:
+              raise SystemExit(f'{pdf}: Unicode replacement character in extracted PDF text')
+            records.append({
+              'language':lang,
+              'docx':docx.name,
+              'pdf':pdf.name,
+              'docx_bytes':docx.stat().st_size,
+              'pdf_bytes':pdf.stat().st_size,
+              'pdf_pages':pages,
+              'pdf_extractable_characters':len(txt.strip()),
+              'status':'PASS'
+            })
+          manifest={
+            'guide':'22',
+            'occupation':'Real Estate Sales Agent and Leasing Consultant',
+            'build_date':'2026-08-10',
+            'status':'PASS',
+            'controls':['trilingual heading-count parity','controlled numerical values with locale-aware separators','required jurisdiction/source markers','required source URLs','UTF-8 replacement-character check','DOCX ZIP integrity','PDF readability','searchable PDF text','SHA-256 checksums','all-page raster rendering'],
+            'editions':records,
+            'assurance_boundary':'Internal automated publication QA; not independent human review, professional translation certification, accessibility certification, legal review, brokerage or licensing advice, accreditation, or employment or earnings guarantee.'
+          }
+          (out/'GUIDE_22_PUBLICATION_QA_MANIFEST.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          targets=sorted([p for p in out.iterdir() if p.is_file() and p.suffix in {'.docx','.pdf'}])
+          (out/'SHA256SUMS.txt').write_text('\n'.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}' for p in targets)+'\n',encoding='utf-8')
+
+      - name: Upload rendered pages
+        uses: actions/upload-artifact@v4
+        with:
+          name: guide22-rendered-pages
+          path: project/revision-2026/guide-22/publication-candidate/rendered
+          retention-days: 14
+
+      - name: Remove render images from commit scope
+        run: rm -rf project/revision-2026/guide-22/publication-candidate/rendered
+
+      - name: Commit controlled publication candidates
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add project/revision-2026/guide-22/publication-candidate
+          if git diff --cached --quiet; then
+            echo 'No publication changes to commit.'
+          else
+            git commit -m 'Build and validate Guide 22 publication candidates'
+            git pull --rebase origin revision/guide-00-100-2026
+            git push origin HEAD:revision/guide-00-100-2026
+          fi

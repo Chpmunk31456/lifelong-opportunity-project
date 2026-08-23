@@ -1,0 +1,97 @@
+{
+  "guide": "08",
+  "occupation": "Human Resources Assistant",
+  "branch": "revision/guide-00-100-2026",
+  "source": {
+    "en": "project/revision-2026/guide-08/source/GUIDE_08_ENGLISH_WORKING_MASTER_v2.md",
+    "es-419": "project/revision-2026/guide-08/source/GUIDE_08_SPANISH_LATAM_WORKING_MASTER_v2.md",
+    "pt-BR": "project/revision-2026/guide-08/source/GUIDE_08_PORTUGUESE_BR_WORKING_MASTER_v2.md"
+  },
+  "status_manifest": "project/revision-2026/guide-08/GUIDE_08_HELPER_STATUS.json",
+  "publication_dir": "project/revision-2026/guide-08/publication-candidate",
+  "visual_review_evidence": "project/revision-2026/guide-08/qa/GUIDE_08_FULL_PAGE_VISUAL_REVIEW.md",
+  "expected_sections": {
+    "first": 1,
+    "last": 19
+  },
+  "output_stem": "Lifelong_Opportunity_Guide_08_Human_Resources_Assistant",
+  "publication_replacements": {
+    "en": [
+      {
+        "old": "**Controlled 2026 English working master**  ",
+        "new": "**Controlled 2026 English publication candidate**  ",
+        "count": 1
+      },
+      {
+        "old": "Version 2.0 working master • August 2026  ",
+        "new": "Version 2.0 • August 2026  ",
+        "count": 1
+      },
+      {
+        "old": "> **Controlled status:** This is the English working master for the 2026 revision. It is not yet a publication candidate. It must pass detailed editorial, terminology, source-traceability, link, accessibility-oriented readability, encoding, translation-parity, DOCX, PDF, metadata, rendering, and publication QA before release.",
+        "new": "> **Controlled status:** This is the controlled 2026 English publication candidate. It has passed the project's research, editorial, claim-traceability, source-freeze, localization, parity, technical, DOCX, PDF, metadata, rendering, and publication QA gates documented in the repository. It does not constitute independent human certification, professional translation certification, accessibility certification, accreditation, legal review, or a guarantee of outcomes.",
+        "count": 1
+      }
+    ],
+    "es-419": [
+      {
+        "old": "**Fuente controlada es-419 de la revisión 2026**  ",
+        "new": "**Candidata controlada de publicación es-419 de la revisión 2026**  ",
+        "count": 1
+      },
+      {
+        "old": "> **Estado controlado:** Esta es la localización es-419 asistida por IA de la fuente inglesa congelada de 2026. Todavía no es una candidata de publicación. Debe superar la paridad de traducción, la QA técnica, DOCX, PDF, metadatos, renderizado y la QA de publicación antes de su liberación. No constituye certificación humana independiente, certificación profesional de traducción, certificación de accesibilidad, acreditación, revisión legal ni garantía de resultados.",
+        "new": "> **Estado controlado:** Esta es la candidata controlada de publicación es-419 de 2026, localizada con asistencia de IA desde la fuente inglesa congelada. Ha superado las puertas de investigación, edición, trazabilidad de afirmaciones, congelación de fuente, localización, paridad, QA técnica, DOCX, PDF, metadatos, renderizado y QA de publicación documentadas en el repositorio. No constituye certificación humana independiente, certificación profesional de traducción, certificación de accesibilidad, acreditación, revisión legal ni garantía de resultados.",
+        "count": 1
+      }
+    ],
+    "pt-BR": [
+      {
+        "old": "**Fonte controlada pt-BR da revisão de 2026**  ",
+        "new": "**Candidata controlada de publicação pt-BR da revisão de 2026**  ",
+        "count": 1
+      },
+      {
+        "old": "> **Status controlado:** Esta é a localização pt-BR assistida por IA da fonte inglesa congelada de 2026. Ainda não é uma candidata de publicação. Deve passar por paridade de tradução, QA técnico, DOCX, PDF, metadados, renderização e QA de publicação antes da liberação. Não constitui certificação humana independente, certificação profissional de tradução, certificação de acessibilidade, acreditação, revisão jurídica nem garantia de resultados.",
+        "new": "> **Status controlado:** Esta é a candidata controlada de publicação pt-BR de 2026, localizada com assistência de IA a partir da fonte inglesa congelada. Ela passou pelas etapas documentadas de pesquisa, edição, rastreabilidade de afirmações, congelamento da fonte, localização, paridade, QA técnico, DOCX, PDF, metadados, renderização e QA de publicação. Não constitui certificação humana independente, certificação profissional de tradução, certificação de acessibilidade, acreditação, revisão jurídica nem garantia de resultados.",
+        "count": 1
+      }
+    ]
+  },
+  "critical_patterns": [
+    "43-4161",
+    "14102",
+    "90[.,\\s]220",
+    "(?:US\\$|\\$)\\s?25[.,]12",
+    "(?:US\\$|\\$)\\s?24[.,]33",
+    "(?:US\\$|\\$)\\s?52[.,\\s]250",
+    "(?:US\\$|\\$)\\s?49[.,\\s]440",
+    "95[.,\\s]200",
+    "88[.,\\s]400",
+    "7\\s?%",
+    "(?:US\\$|\\$)\\s?21[.,]76",
+    "C\\$\\s?21[.,]75",
+    "C\\$\\s?27[.,]88",
+    "C\\$\\s?38[.,]46",
+    "2[.,\\s]208",
+    "48(?:-|\\s)(?:hour|hours|horas)",
+    "(?:US\\$|\\$)\\s?5[.,\\s]250",
+    "2025",
+    "2026"
+  ],
+  "required_urls": [
+    "https://www.bls.gov/news.release/ocwage.t01.htm",
+    "https://www.bls.gov/ooh/office-and-administrative-support/information-clerks.htm",
+    "https://www.bls.gov/emp/tables/occupational-projections-and-characteristics.htm",
+    "https://www.jobbank.gc.ca/marketreport/summary-occupation/26969/ca",
+    "https://www.jobbank.gc.ca/marketreport/wages-occupation/26972/ca",
+    "https://betowa.sena.edu.co/oferta/talento-humano?programId=224441",
+    "https://betowa.sena.edu.co/oferta/herramientas-para-la-gestion-del-talento-humano?programId=148534",
+    "https://www.sena.edu.co/es-co/trabajo/Paginas/busqueEmpleo.aspx",
+    "https://www.irs.gov/newsroom/irs-updates-frequently-asked-questions-about-section-127-educational-assistance-programs",
+    "https://www.apprenticeship.gov/",
+    "https://www.ed.gov/accreditation",
+    "https://www.eeoc.gov/disability-discrimination",
+    "https://www.indeed.com/career/human-resources-assistant/salaries"
+  ]
+}

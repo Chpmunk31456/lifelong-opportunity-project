@@ -1,0 +1,47 @@
+{
+  "editions": [
+    {
+      "language": "en",
+      "source_chars": 24810,
+      "pandoc_rc": 0,
+      "docx_bytes": 24531,
+      "libreoffice_rc": 0,
+      "pdf_bytes": 299505,
+      "pdf_pages": 17,
+      "searchable_chars": 21128,
+      "render_rc": 0,
+      "rendered_pages": 17,
+      "blank_pages": [],
+      "possible_clipping": []
+    },
+    {
+      "language": "es-419",
+      "source_chars": 21835,
+      "pandoc_rc": 0,
+      "docx_bytes": 23500,
+      "libreoffice_rc": 0,
+      "pdf_bytes": 258880,
+      "pdf_pages": 14,
+      "searchable_chars": 18574,
+      "render_rc": 0,
+      "rendered_pages": 14,
+      "blank_pages": [],
+      "possible_clipping": []
+    },
+    {
+      "language": "pt-BR",
+      "source_chars": 19836,
+      "pandoc_rc": 0,
+      "docx_bytes": 22656,
+      "libreoffice_rc": 0,
+      "pdf_bytes": 227695,
+      "pdf_pages": 12,
+      "searchable_chars": 16877,
+      "render_rc": 0,
+      "rendered_pages": 12,
+      "blank_pages": [],
+      "possible_clipping": []
+    }
+  ],
+  "problems": []
+}

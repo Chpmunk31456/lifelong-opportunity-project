@@ -1,0 +1,41 @@
+{
+  "guide": "98",
+  "occupation": "Agricultural Technician",
+  "build_date": "2026-08-22",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_98_ENGLISH_v2.docx",
+      "pdf": "GUIDE_98_ENGLISH_v2.pdf",
+      "docx_bytes": 31553,
+      "pdf_bytes": 433705,
+      "pdf_pages": 25,
+      "rendered_pages": 25,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_98_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_98_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 31909,
+      "pdf_bytes": 417713,
+      "pdf_pages": 25,
+      "rendered_pages": 25,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_98_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_98_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 31180,
+      "pdf_bytes": 411175,
+      "pdf_pages": 24,
+      "rendered_pages": 24,
+      "status": "PASS"
+    }
+  ],
+  "reader_verification_urls": 27,
+  "english_source_blob": "c7c6036484084eb46bd45e3c91419a5335e1d524",
+  "assurance_boundary": "Internal controlled publication QA only; no independent certification, certified translation, pesticide certification, veterinary authority, professional licensure review, safety certification, funding approval, employment guarantee, or earnings guarantee."
+}

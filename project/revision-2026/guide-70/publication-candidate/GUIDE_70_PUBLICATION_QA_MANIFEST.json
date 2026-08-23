@@ -1,0 +1,39 @@
+{
+  "guide": "70",
+  "occupation": "Travel Agent and Travel Coordinator",
+  "build_date": "2026-08-21",
+  "status": "PASS",
+  "editions": [
+    {
+      "language": "en",
+      "docx": "GUIDE_70_ENGLISH_v2.docx",
+      "pdf": "GUIDE_70_ENGLISH_v2.pdf",
+      "docx_bytes": 24375,
+      "pdf_bytes": 244187,
+      "pdf_pages": 15,
+      "rendered_pages": 15,
+      "status": "PASS"
+    },
+    {
+      "language": "es-419",
+      "docx": "GUIDE_70_SPANISH_es-419_v2.docx",
+      "pdf": "GUIDE_70_SPANISH_es-419_v2.pdf",
+      "docx_bytes": 25549,
+      "pdf_bytes": 248513,
+      "pdf_pages": 16,
+      "rendered_pages": 16,
+      "status": "PASS"
+    },
+    {
+      "language": "pt-BR",
+      "docx": "GUIDE_70_PORTUGUESE_pt-BR_v2.docx",
+      "pdf": "GUIDE_70_PORTUGUESE_pt-BR_v2.pdf",
+      "docx_bytes": 25413,
+      "pdf_bytes": 249094,
+      "pdf_pages": 16,
+      "rendered_pages": 16,
+      "status": "PASS"
+    }
+  ],
+  "assurance_boundary": "Internal automated publication QA and controlled source review; not independent human certification, professional translation certification, professional travel certification, legal or immigration review, accessibility certification, accreditation, licensing approval, funding approval, scholarship approval, visa or border approval, supplier acceptance, employment guarantee, or earnings guarantee."
+}
