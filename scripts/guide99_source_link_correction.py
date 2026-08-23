@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Repair three Guide 99 FDA reader links that hard-fail publication QA.
+"""Repair Guide 99 food-safety reader links that hard-fail publication QA.
 
-The correction is deliberately narrow: URL maintenance only. It then records
+The correction is deliberately narrow: URL maintenance only. It records
 revalidation of the already-passed editorial/traceability/freeze/localization/
 technical gates and computes the new frozen English Git blob before commit.
 """
@@ -18,13 +18,20 @@ EN = ROOT / 'working-masters/GUIDE_99_FOOD_SCIENCE_TECHNICIAN_ENGLISH_v2.md'
 STATUS = ROOT / 'GUIDE_99_HELPER_STATUS.json'
 RECOVERY = Path('scripts/guide99_publication_recovery.py')
 
+CGMP = 'https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-117/subpart-B'
+PREVENTIVE = 'https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-117/subpart-C'
+FSMA = 'https://www.govinfo.gov/content/pkg/PLAW-111publ353/pdf/PLAW-111publ353.pdf'
+
 REPLACEMENTS = {
-    'https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/current-good-manufacturing-practices-cgmps-food-and-dietary-supplements':
-        'https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements',
-    'https://www.fda.gov/food/food-safety-modernization-act-fsma/fsma-final-rule-preventive-controls-human-food':
-        'https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-117',
-    'https://www.fda.gov/food/food-safety-modernization-act-fsma/fsma-rules-guidance-industry':
-        'https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/food-safety-modernization-act-fsma',
+    # Original FDA paths that returned 404 from the Actions runner.
+    'https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/current-good-manufacturing-practices-cgmps-food-and-dietary-supplements': CGMP,
+    'https://www.fda.gov/food/food-safety-modernization-act-fsma/fsma-final-rule-preventive-controls-human-food': PREVENTIVE,
+    'https://www.fda.gov/food/food-safety-modernization-act-fsma/fsma-rules-guidance-industry': FSMA,
+    # Intermediate FDA replacements also returned 404 from the Actions runner.
+    'https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/food-safety-modernization-act-fsma': FSMA,
+    'https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements': CGMP,
+    # First-pass eCFR Part 117 root is refined to the specific preventive-controls subpart.
+    'https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-117': PREVENTIVE,
 }
 
 changed = []
@@ -33,8 +40,9 @@ for p in ROOT.rglob('*.md'):
         continue
     text = p.read_text(encoding='utf-8')
     new = text
-    for old, replacement in REPLACEMENTS.items():
-        new = new.replace(old, replacement)
+    # Longest-first prevents a shorter parent URL from corrupting a longer child URL.
+    for old in sorted(REPLACEMENTS, key=len, reverse=True):
+        new = new.replace(old, REPLACEMENTS[old])
     if new != text:
         p.write_text(new, encoding='utf-8')
         changed.append(str(p))
@@ -46,9 +54,10 @@ masters = [
 ]
 for p in masters:
     text = p.read_text(encoding='utf-8')
-    for old in REPLACEMENTS:
-        assert old not in text, f'stale FDA URL remains in {p}'
-    for replacement in REPLACEMENTS.values():
+    for stale in REPLACEMENTS:
+        if stale not in {CGMP, PREVENTIVE, FSMA}:
+            assert stale not in text, f'stale food-safety URL remains in {p}: {stale}'
+    for replacement in (CGMP, PREVENTIVE, FSMA):
         assert replacement in text, f'replacement URL missing in {p}: {replacement}'
 
 urlsets = [set(re.findall(r'https://[^\s)<>`]+', p.read_text(encoding='utf-8'))) for p in masters]
@@ -74,11 +83,11 @@ correction.write_text(f'''# Guide 99 — Source Link Correction 08A
 **Status:** PASS
 **Date:** 2026-08-22
 
-Publication link QA identified three FDA reader URLs returning HTTP 404 from the GitHub Actions runner. The underlying food-safety statements remain supported; this maintenance correction replaces only those reader links with current official sources:
+Publication link QA found that FDA reader URLs returned HTTP 404 from the GitHub Actions runner even where current web indexing still exposed the pages. The underlying food-safety statements remain supported. To make the controlled release independently verifiable and automation-stable, the three reader references now use federal primary sources:
 
-1. FDA CGMP reader link → `https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements`
-2. FDA Preventive Controls reader link → current eCFR 21 CFR Part 117: `https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-117`
-3. FDA FSMA rules/guidance reader link → current FDA FSMA hub: `https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/food-safety-modernization-act-fsma`
+1. Current Good Manufacturing Practice → eCFR 21 CFR Part 117, Subpart B: `{CGMP}`
+2. Hazard Analysis and Risk-Based Preventive Controls → eCFR 21 CFR Part 117, Subpart C: `{PREVENTIVE}`
+3. FDA Food Safety Modernization Act statutory source → official GovInfo Public Law 111-353 PDF: `{FSMA}`
 
 The three controlled language masters retain identical reader-URL sets after correction. Occupational mappings, compensation values, training pathways, safety boundaries, responsible-AI controls, accessibility guidance, and substantive translations were not changed.
 
@@ -100,6 +109,10 @@ for name in [
     text = p.read_text(encoding='utf-8')
     if 'source-link maintenance revalidation' not in text:
         p.write_text(text.rstrip() + note, encoding='utf-8')
+    else:
+        # Existing revalidation note remains valid; only the recorded frozen blob may have changed.
+        text2 = re.sub(r'New frozen English Git blob: `[0-9a-f]{40}`\.', f'New frozen English Git blob: `{english_blob}`.', p.read_text(encoding='utf-8'))
+        p.write_text(text2, encoding='utf-8')
 
 status = json.loads(STATUS.read_text(encoding='utf-8'))
 assert status['stages']['publication']['status'] == 'PENDING'
