@@ -321,6 +321,39 @@ Una guía solo está lista para publicación después de superar revisiones fact
 
 **Última verificación del borrador maestro:** 2 de agosto de 2026.
 
+
+### Enlaces oficiales citados — índice consolidado
+
+Los siguientes enlaces oficiales se conservan para mantener paridad de fuentes con la edición inglesa controlada:
+
+- https://programasparaelbienestar.gob.mx/jovenes-construyendo-el-futuro/
+- https://red-seal.ca/eng/about/program.shtml
+- https://rsa.ed.gov/
+- https://snies.mineducacion.gov.co/portal/
+- https://studentaid.gov/
+- https://web.icetex.gov.co/portal
+- https://www.apprenticeship.gov/career-seekers
+- https://www.apprenticeship.gov/finder/listings
+- https://www.argentina.gob.ar/educacion/progresar/requisitos
+- https://www.argentina.gob.ar/servicio/inscribirme-en-progresar-trabajo
+- https://www.canada.ca/en/services/benefits/education/student-aid.html
+- https://www.canada.ca/en/services/jobs/training/support-skilled-trades-apprentices.html
+- https://www.canada.ca/en/services/jobs/training/support-skilled-trades-apprentices/ei-apprentices.html
+- https://www.canada.ca/en/services/jobs/training/support-skilled-trades-apprentices/loan.html
+- https://www.careeronestop.org/
+- https://www.chileatiende.gob.cl/fichas/20814-programa-becas-fondo-cesantia-solidario
+- https://www.fns.usda.gov/snap-et
+- https://www.gov.br/mec/pt-br/assuntos/es/prouni/prouni
+- https://www.gov.br/pt-br/servicos/inscrever-em-curso-do-caminho-digital
+- https://www.gov.br/pt-br/servicos/inscrever-se-no-sisu-sistema-de-selecao-unificada
+- https://www.gov.br/pt-br/servicos/obter-financiamento-do-fies
+- https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/aprendizagem-profissional
+- https://www.gov.br/trabalho-e-emprego/pt-br/servicos/trabalhador/qualificacao-profissional
+- https://www.jobbank.gc.ca/
+- https://www.jovenesconstruyendoelfuturo.stps.gob.mx/
+- https://www.sena.edu.co/es-co/formacion/Paginas/acceder-cursos.aspx
+- https://www.serviciodeempleo.gov.co/
+
 # Un siguiente paso honesto
 
 No necesita resolver toda su vida hoy.
