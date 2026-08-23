@@ -1,5 +1,5 @@
 name: Repository metadata audit
-# Temporary visible Guide 99 publication carrier. This branch/PR is never merged.
+# Temporary visible Guide 99 publication carrier v2. This branch/PR is never merged.
 
 on:
   pull_request:
