@@ -1,6 +1,5 @@
 name: Final Guides 00-100 release changelog refresh
 
-# Final collection closure trigger: 2026-08-23
 on:
   workflow_dispatch:
   push:
@@ -11,6 +10,11 @@ on:
       - scripts/generate_guides_00_100_release_changelog.py
       - project/revision-2026/guide-0*/GUIDE_*_LEGACY_CLOSURE_RECONCILIATION_2026-08-23.md
       - .github/workflows/final-release-changelog-refresh.yml
+  pull_request:
+    branches:
+      - revision/guide-00-100-2026
+    paths:
+      - project/revision-2026/FINAL_RELEASE_REFRESH_TRIGGER.md
 
 permissions:
   contents: write
