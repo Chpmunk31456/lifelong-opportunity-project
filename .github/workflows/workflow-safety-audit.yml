@@ -1,0 +1,46 @@
+name: Workflow safety audit
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out pull request or selected ref
+        uses: actions/checkout@v4
+
+      - name: Reject stale branch references and write-capable workflows
+        shell: bash
+        run: |
+          set -euo pipefail
+          failures=0
+
+          if grep -RInE --include='*.yml' --include='*.yaml' 'revision/guide-00-100-2026|refs/heads/revision/' .github/workflows; then
+            echo '::error::Deleted revision-branch reference found in workflow configuration.'
+            failures=1
+          fi
+
+          if grep -RInE --include='*.yml' --include='*.yaml' 'contents:[[:space:]]*write' .github/workflows; then
+            echo '::error::Workflow requests contents: write. Repository workflows must remain read-only.'
+            failures=1
+          fi
+
+          if grep -RInE --include='*.yml' --include='*.yaml' 'git[[:space:]]+push[^#]*(HEAD:)?(refs/heads/)?main([[:space:]"'"']|$)' .github/workflows; then
+            echo '::error::Direct git push to protected main found.'
+            failures=1
+          fi
+
+          if (( failures != 0 )); then
+            exit 1
+          fi
+
+          echo 'PASS: no deleted revision-branch references, contents write permission, or direct pushes to protected main were found.'
