@@ -1,4 +1,6 @@
-﻿# Lifelong Opportunity Guides
+# Lifelong Opportunity Guides
+
+[![DOI](https://zenodo.org/badge/1308086234.svg)](https://doi.org/10.5281/zenodo.22070989)
 
 Free, practical career and education guides designed to help people of all ages, abilities, backgrounds, and income levels explore realistic pathways to work and lifelong learning.
 
@@ -100,6 +102,15 @@ ChatGPT assisted with research support, organization, editing, translation suppo
 The guides provide education and general career-planning information. They are not legal, tax, medical, immigration, financial, licensing, or individualized professional advice.
 
 Requirements, wages, employment outlook, credentials, costs, benefits, regulations, and available programs vary by country, state, locality, employer, and time. Verify important decisions through current official sources and qualified professionals.
+
+## How to cite
+
+Leiva, Alberto. (2026). *Lifelong Opportunity Guides: Multilingual Career and Education Guide Library* (Version 2026.08.23-final). Zenodo. https://doi.org/10.5281/zenodo.22070990
+
+**Specific 2026 release DOI:** https://doi.org/10.5281/zenodo.22070990  
+**All-versions / concept DOI:** https://doi.org/10.5281/zenodo.22070989
+
+The specific release DOI identifies the completed 2026 controlled revision archived on Zenodo. The all-versions DOI resolves to the latest archived version of the project.
 
 ## Corrections and contributions
 
