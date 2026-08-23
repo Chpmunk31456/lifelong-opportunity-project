@@ -8,6 +8,7 @@ technical gates and computes the new frozen English Git blob before commit.
 from __future__ import annotations
 
 import json
+import re
 import subprocess
 from pathlib import Path
 
@@ -15,6 +16,7 @@ ROOT = Path('project/revision-2026/guide-99')
 QA = ROOT / 'qa'
 EN = ROOT / 'working-masters/GUIDE_99_FOOD_SCIENCE_TECHNICIAN_ENGLISH_v2.md'
 STATUS = ROOT / 'GUIDE_99_HELPER_STATUS.json'
+RECOVERY = Path('scripts/guide99_publication_recovery.py')
 
 REPLACEMENTS = {
     'https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/current-good-manufacturing-practices-cgmps-food-and-dietary-supplements':
@@ -37,7 +39,6 @@ for p in ROOT.rglob('*.md'):
         p.write_text(new, encoding='utf-8')
         changed.append(str(p))
 
-# All three controlled masters must now carry the same replacement set.
 masters = [
     ROOT / 'working-masters/GUIDE_99_FOOD_SCIENCE_TECHNICIAN_ENGLISH_v2.md',
     ROOT / 'working-masters/GUIDE_99_TECNICO_EN_CIENCIA_DE_ALIMENTOS_ES419_v2.md',
@@ -50,17 +51,28 @@ for p in masters:
     for replacement in REPLACEMENTS.values():
         assert replacement in text, f'replacement URL missing in {p}: {replacement}'
 
-# Verify exact reader-URL parity after correction.
-import re
 urlsets = [set(re.findall(r'https://[^\s)<>`]+', p.read_text(encoding='utf-8'))) for p in masters]
 assert urlsets[0] == urlsets[1] == urlsets[2], [len(x) for x in urlsets]
 
 english_blob = subprocess.check_output(['git', 'hash-object', str(EN)], text=True).strip()
 
+# Keep publication manifest provenance synchronized with the corrected frozen source.
+recovery_text = RECOVERY.read_text(encoding='utf-8')
+recovery_new, count = re.subn(
+    r'ENGLISH_BLOB\s*=\s*["\'][0-9a-f]{40}["\']',
+    f'ENGLISH_BLOB = "{english_blob}"',
+    recovery_text,
+    count=1,
+)
+assert count == 1, 'could not update ENGLISH_BLOB in publication recovery script'
+if recovery_new != recovery_text:
+    RECOVERY.write_text(recovery_new, encoding='utf-8')
+    changed.append(str(RECOVERY))
+
 correction = QA / 'GUIDE_99_SOURCE_LINK_CORRECTION_08A.md'
 correction.write_text(f'''# Guide 99 — Source Link Correction 08A
 
-**Status:** PASS  
+**Status:** PASS
 **Date:** 2026-08-22
 
 Publication link QA identified three FDA reader URLs returning HTTP 404 from the GitHub Actions runner. The underlying food-safety statements remain supported; this maintenance correction replaces only those reader links with current official sources:
