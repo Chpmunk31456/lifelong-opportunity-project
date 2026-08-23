@@ -23,14 +23,11 @@ PREVENTIVE = 'https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-
 FSMA = 'https://www.govinfo.gov/content/pkg/PLAW-111publ353/pdf/PLAW-111publ353.pdf'
 
 REPLACEMENTS = {
-    # Original FDA paths that returned 404 from the Actions runner.
     'https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/current-good-manufacturing-practices-cgmps-food-and-dietary-supplements': CGMP,
     'https://www.fda.gov/food/food-safety-modernization-act-fsma/fsma-final-rule-preventive-controls-human-food': PREVENTIVE,
     'https://www.fda.gov/food/food-safety-modernization-act-fsma/fsma-rules-guidance-industry': FSMA,
-    # Intermediate FDA replacements also returned 404 from the Actions runner.
     'https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/food-safety-modernization-act-fsma': FSMA,
     'https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements': CGMP,
-    # First-pass eCFR Part 117 root is refined to the specific preventive-controls subpart.
     'https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-117': PREVENTIVE,
 }
 
@@ -40,7 +37,6 @@ for p in ROOT.rglob('*.md'):
         continue
     text = p.read_text(encoding='utf-8')
     new = text
-    # Longest-first prevents a shorter parent URL from corrupting a longer child URL.
     for old in sorted(REPLACEMENTS, key=len, reverse=True):
         new = new.replace(old, REPLACEMENTS[old])
     if new != text:
@@ -52,16 +48,14 @@ masters = [
     ROOT / 'working-masters/GUIDE_99_TECNICO_EN_CIENCIA_DE_ALIMENTOS_ES419_v2.md',
     ROOT / 'working-masters/GUIDE_99_TECNICO_EM_CIENCIA_DE_ALIMENTOS_PTBR_v2.md',
 ]
-for p in masters:
-    text = p.read_text(encoding='utf-8')
-    for stale in REPLACEMENTS:
-        if stale not in {CGMP, PREVENTIVE, FSMA}:
-            assert stale not in text, f'stale food-safety URL remains in {p}: {stale}'
-    for replacement in (CGMP, PREVENTIVE, FSMA):
-        assert replacement in text, f'replacement URL missing in {p}: {replacement}'
-
 urlsets = [set(re.findall(r'https://[^\s)<>`]+', p.read_text(encoding='utf-8'))) for p in masters]
 assert urlsets[0] == urlsets[1] == urlsets[2], [len(x) for x in urlsets]
+for p, urls in zip(masters, urlsets):
+    for stale in REPLACEMENTS:
+        if stale not in {CGMP, PREVENTIVE, FSMA}:
+            assert stale not in urls, f'stale food-safety URL remains in {p}: {stale}'
+    for replacement in (CGMP, PREVENTIVE, FSMA):
+        assert replacement in urls, f'replacement URL missing in {p}: {replacement}'
 
 english_blob = subprocess.check_output(['git', 'hash-object', str(EN)], text=True).strip()
 
@@ -110,8 +104,7 @@ for name in [
     if 'source-link maintenance revalidation' not in text:
         p.write_text(text.rstrip() + note, encoding='utf-8')
     else:
-        # Existing revalidation note remains valid; only the recorded frozen blob may have changed.
-        text2 = re.sub(r'New frozen English Git blob: `[0-9a-f]{40}`\.', f'New frozen English Git blob: `{english_blob}`.', p.read_text(encoding='utf-8'))
+        text2 = re.sub(r'New frozen English Git blob: `[0-9a-f]{40}`\.', f'New frozen English Git blob: `{english_blob}`.', text)
         p.write_text(text2, encoding='utf-8')
 
 status = json.loads(STATUS.read_text(encoding='utf-8'))
