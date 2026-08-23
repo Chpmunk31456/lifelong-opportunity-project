@@ -5,6 +5,8 @@ on:
     paths:
       - ".github/workflows/repository-metadata-audit.yml"
       - "scripts/guide00_publication_recovery.py"
+      - "scripts/guide00_publication_recovery_dynamic.py"
+      - "scripts/guide00_dead_link_repair.py"
       - "00-foundation-guide/**"
       - "project/revision-2026/guide-00/**"
   workflow_dispatch:
@@ -53,13 +55,52 @@ jobs:
           ref: revision/guide-00-100-2026
           fetch-depth: 0
 
+      - name: Repair confirmed dead Guide 00 source link
+        run: python scripts/guide00_dead_link_repair.py repair
+
+      - name: Revalidate trilingual technical QA after source maintenance
+        run: python scripts/guide00_legacy_technical_qa.py validate
+
+      - name: Synchronize Guide 00 freeze/helper evidence
+        run: python scripts/guide00_dead_link_repair.py sync-status
+
+      - name: Commit source maintenance and refreshed technical evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add 00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_English_v1.1_INTEGRATED_MASTER.md \
+                  00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1_INTEGRATED_MASTER.md \
+                  00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1_INTEGRATED_MASTER.md \
+                  project/revision-2026/guide-00/qa/GUIDE_00_DEAD_LINK_REPAIR_08C.md \
+                  project/revision-2026/guide-00/qa/GUIDE_00_ENGLISH_SOURCE_FREEZE_AMENDMENT_08C.md \
+                  project/revision-2026/guide-00/qa/GUIDE_00_TRILINGUAL_TECHNICAL_QA_08.md \
+                  project/revision-2026/guide-00/GUIDE_00_HELPER_STATUS.json
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'Guide 00 source maintenance already current.'
+          else
+            git commit -m 'fix(guide-00): replace confirmed dead official source link'
+            for attempt in 1 2 3 4 5; do
+              git fetch origin revision/guide-00-100-2026
+              git rebase origin/revision/guide-00-100-2026
+              if git push origin HEAD:revision/guide-00-100-2026; then
+                echo 'Guide 00 source maintenance committed.'
+                break
+              fi
+              if [[ "$attempt" == '5' ]]; then exit 1; fi
+              sleep 2
+            done
+          fi
+
       - name: Install publication toolchain
         run: |
           sudo apt-get update
           sudo apt-get install -y pandoc libreoffice-writer poppler-utils python3-pil curl unzip
 
       - name: Build fresh Guide 00 publication candidate
-        run: python scripts/guide00_publication_recovery.py build
+        run: python scripts/guide00_publication_recovery_dynamic.py build
 
       - name: Upload all-page render review artifact
         uses: actions/upload-artifact@v6
