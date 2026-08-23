@@ -228,7 +228,7 @@ Treat this as workplace training with public support, not as a regular employmen
 Official starting points:
 
 - https://www.jovenesconstruyendoelfuturo.stps.gob.mx/
-- https://programasparaelbienestar.gob.mx/jovenes-construyendo-el-futuro/
+- https://www.jovenesconstruyendoelfuturo.stps.gob.mx/aprendiz
 
 ## Argentina
 

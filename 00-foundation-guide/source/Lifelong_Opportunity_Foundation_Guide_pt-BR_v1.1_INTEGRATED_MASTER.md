@@ -392,7 +392,7 @@ Um guia só está pronto para publicação depois de passar por verificação fa
 
 Os links oficiais abaixo são preservados para manter a paridade de fontes com a edição inglesa controlada:
 
-- https://programasparaelbienestar.gob.mx/jovenes-construyendo-el-futuro/
+- https://www.jovenesconstruyendoelfuturo.stps.gob.mx/aprendiz
 - https://red-seal.ca/eng/about/program.shtml
 - https://rsa.ed.gov/
 - https://snies.mineducacion.gov.co/portal/

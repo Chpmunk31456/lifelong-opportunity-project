@@ -38,7 +38,9 @@
     "english_source_freeze": {
       "status": "PASS",
       "evidence": [
-        "project/revision-2026/guide-00/qa/GUIDE_00_ENGLISH_SOURCE_FREEZE_05.md"
+        "project/revision-2026/guide-00/qa/GUIDE_00_ENGLISH_SOURCE_FREEZE_05.md",
+        "project/revision-2026/guide-00/qa/GUIDE_00_DEAD_LINK_REPAIR_08C.md",
+        "project/revision-2026/guide-00/qa/GUIDE_00_ENGLISH_SOURCE_FREEZE_AMENDMENT_08C.md"
       ]
     },
     "spanish_localization": {
@@ -46,7 +48,8 @@
       "evidence": [
         "00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1_INTEGRATED_MASTER.md",
         "project/revision-2026/guide-00/ES419_INTEGRATED_MASTER_QA_01.md",
-        "project/revision-2026/guide-00/qa/GUIDE_00_TRILINGUAL_LINK_PARITY_REPAIR_08A.md"
+        "project/revision-2026/guide-00/qa/GUIDE_00_TRILINGUAL_LINK_PARITY_REPAIR_08A.md",
+        "project/revision-2026/guide-00/qa/GUIDE_00_DEAD_LINK_REPAIR_08C.md"
       ]
     },
     "portuguese_localization": {
@@ -54,7 +57,8 @@
       "evidence": [
         "00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1_INTEGRATED_MASTER.md",
         "project/revision-2026/guide-00/PTBR_INTEGRATED_MASTER_QA_01.md",
-        "project/revision-2026/guide-00/qa/GUIDE_00_TRILINGUAL_LINK_PARITY_REPAIR_08A.md"
+        "project/revision-2026/guide-00/qa/GUIDE_00_TRILINGUAL_LINK_PARITY_REPAIR_08A.md",
+        "project/revision-2026/guide-00/qa/GUIDE_00_DEAD_LINK_REPAIR_08C.md"
       ]
     },
     "technical_qa": {
@@ -64,7 +68,8 @@
         "project/revision-2026/guide-00/TRILINGUAL_RED_SEAL_URL_CORRECTION_01.md",
         "project/revision-2026/guide-00/qa/GUIDE_00_LEGACY_CLOSURE_GATE_MAP_2026.md",
         "project/revision-2026/guide-00/qa/GUIDE_00_TRILINGUAL_LINK_PARITY_REPAIR_08A.md",
-        "project/revision-2026/guide-00/qa/GUIDE_00_TRILINGUAL_TECHNICAL_QA_08.md"
+        "project/revision-2026/guide-00/qa/GUIDE_00_TRILINGUAL_TECHNICAL_QA_08.md",
+        "project/revision-2026/guide-00/qa/GUIDE_00_DEAD_LINK_REPAIR_08C.md"
       ]
     },
     "publication": {
@@ -82,5 +87,5 @@
     }
   },
   "blockers": [],
-  "notes": "Legacy closure reconciliation. Trilingual Technical QA PASS after source-link parity repair. First active gate: Publication. Historical publication manifest remains automated-QA-only until requalified."
+  "notes": "Guide 00 remains 8/10. Confirmed dead-link repaired one-for-one; English freeze amended; fresh Trilingual Technical QA PASS against exact current source blobs. First active gate: Publication."
 }

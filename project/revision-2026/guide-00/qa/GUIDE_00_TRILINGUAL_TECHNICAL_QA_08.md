@@ -8,15 +8,15 @@
 ## Sources validated
 
 - **English:** `00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_English_v1.1_INTEGRATED_MASTER.md`
-  - Git blob: `1a2d9e709ee70e49d6fec75e45710782851f234b`
+  - Git blob: `8244a3b104b20a0ffd54825d195b471f24fa474e`
   - Numbered sections: **17 / 17**
   - Unique HTTP/HTTPS links: **27**
 - **es-419:** `00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1_INTEGRATED_MASTER.md`
-  - Git blob: `ecb072697eb6faab41fc752fa6d8744c34e3bbfd`
+  - Git blob: `2514e1c86b2e4908d58d5d9cf5527d04a64c0ab2`
   - Numbered sections: **17 / 17**
   - Unique HTTP/HTTPS links: **27**
 - **pt-BR:** `00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1_INTEGRATED_MASTER.md`
-  - Git blob: `5e42545073518337d29c95c04879aec08d6465db`
+  - Git blob: `e21b0249cdd856f01ff109d8dcab45ba589152c9`
   - Numbered sections: **17 / 17**
   - Unique HTTP/HTTPS links: **27**
 
