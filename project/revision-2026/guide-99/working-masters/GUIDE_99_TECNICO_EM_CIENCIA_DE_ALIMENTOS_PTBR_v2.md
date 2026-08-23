@@ -325,9 +325,9 @@ Pergunte sobre turno, proporção entre laboratório e chão de fábrica, EPI, q
 - BLS 2025 OEWS: https://www.bls.gov/news.release/ocwage.t01.htm
 - CareerOneStop WIOA: https://www.careeronestop.org/LocalHelp/EmploymentAndTraining/find-WIOA-training-programs.aspx
 - Apprenticeship.gov: https://www.apprenticeship.gov/
-- FDA CGMP: https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/current-good-manufacturing-practices-cgmps-food-and-dietary-supplements
-- FDA Preventive Controls: https://www.fda.gov/food/food-safety-modernization-act-fsma/fsma-final-rule-preventive-controls-human-food
-- FDA FSMA: https://www.fda.gov/food/food-safety-modernization-act-fsma/fsma-rules-guidance-industry
+- FDA CGMP: https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements
+- FDA Preventive Controls: https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-117
+- FDA FSMA: https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/food-safety-modernization-act-fsma
 - CISA Secure Our World: https://www.cisa.gov/secure-our-world
 - NIST AI RMF: https://www.nist.gov/itl/ai-risk-management-framework
 

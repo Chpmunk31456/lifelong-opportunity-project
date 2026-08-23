@@ -63,3 +63,7 @@ No unsupported claim is made of independent human review, certified translation,
 **PASS — English Editorial**
 
 No blocker identified for Evidence / Traceability QA.
+
+## 2026-08-22 source-link maintenance revalidation
+
+Revalidated after the URL-only correction documented in `GUIDE_99_SOURCE_LINK_CORRECTION_08A.md`. No substantive occupational, compensation, training, safety, responsible-AI, accessibility, or translation content changed. Gate remains **PASS**. New frozen English Git blob: `c16332f361206af0b137d6ff8eda9300a445c9b0`.

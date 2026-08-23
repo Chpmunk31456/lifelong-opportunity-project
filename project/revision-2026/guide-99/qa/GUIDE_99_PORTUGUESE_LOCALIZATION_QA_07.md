@@ -40,3 +40,7 @@ Food Science Technician / Técnico/a em Ciência de Alimentos
 **PASS — Brazilian Portuguese Localization (`pt-BR`)**
 
 No blocker identified for trilingual technical QA.
+
+## 2026-08-22 source-link maintenance revalidation
+
+Revalidated after the URL-only correction documented in `GUIDE_99_SOURCE_LINK_CORRECTION_08A.md`. No substantive occupational, compensation, training, safety, responsible-AI, accessibility, or translation content changed. Gate remains **PASS**. New frozen English Git blob: `c16332f361206af0b137d6ff8eda9300a445c9b0`.

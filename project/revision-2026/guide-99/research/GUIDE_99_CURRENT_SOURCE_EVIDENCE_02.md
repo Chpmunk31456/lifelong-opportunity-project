@@ -143,9 +143,9 @@ Controlled use:
 
 ### U.S. FDA — CGMP and preventive controls
 Sources:
-- https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/current-good-manufacturing-practices-cgmps-food-and-dietary-supplements
-- https://www.fda.gov/food/food-safety-modernization-act-fsma/fsma-final-rule-preventive-controls-human-food
-- https://www.fda.gov/food/food-safety-modernization-act-fsma/fsma-rules-guidance-industry
+- https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements
+- https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-117
+- https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/food-safety-modernization-act-fsma
 
 Controlled use:
 - FDA’s 21 CFR Part 117 framework includes current good manufacturing practices, hazard analysis, and risk-based preventive controls for covered human-food facilities.
