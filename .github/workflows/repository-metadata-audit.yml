@@ -1,20 +1,12 @@
-name: Repository metadata audit
-# Guide 95 recovery carrier trigger v3 — recovery remains inert after Guide 95 closure.
+name: Guide 00 legacy technical QA
 
 on:
   pull_request:
     paths:
-      - "**/*.md"
-      - "**/*.docx"
-      - "**/*.pdf"
-      - "tools/audit_repository_metadata.py"
       - ".github/workflows/repository-metadata-audit.yml"
-  push:
-    branches:
-      - revision/guide-00-100-2026
-    paths:
-      - ".github/workflows/repository-metadata-audit.yml"
-      - "scripts/guide95_publication_recovery.py"
+      - "scripts/guide00_legacy_technical_qa.py"
+      - "00-foundation-guide/source/**"
+      - "project/revision-2026/guide-00/**"
   workflow_dispatch:
 
 permissions:
@@ -33,21 +25,25 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run metadata audit
+      - name: Run repository metadata audit
         run: python tools/audit_repository_metadata.py
 
       - name: Upload audit report
         if: always()
         uses: actions/upload-artifact@v6
         with:
-          name: repository-metadata-audit
+          name: guide00-legacy-technical-metadata-audit
           path: QA_METADATA_AUDIT.md
           if-no-files-found: error
 
-  guide95-publication-recovery:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/revision/guide-00-100-2026'
+  guide00-technical-qa:
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.base_ref == 'revision/guide-00-100-2026' &&
+      github.head_ref == 'trigger/guide00-legacy-technical-qa' &&
+      github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 15
     permissions:
       contents: write
     steps:
@@ -57,49 +53,26 @@ jobs:
           ref: revision/guide-00-100-2026
           fetch-depth: 0
 
-      - name: Determine whether Guide 95 still needs recovery
-        id: gate
-        shell: python
-        run: |
-          import json, os
-          from pathlib import Path
-          p=Path('project/revision-2026/guide-95/GUIDE_95_HELPER_STATUS.json')
-          d=json.loads(p.read_text(encoding='utf-8'))
-          needed = d['stages']['publication']['status'] != 'PASS' or d['stages']['release_audit']['status'] != 'PASS'
-          with open(os.environ['GITHUB_OUTPUT'],'a',encoding='utf-8') as f:
-              f.write(f"needed={'true' if needed else 'false'}\n")
-          print(f"Guide 95 recovery needed: {needed}")
+      - name: Validate Guide 00 trilingual technical parity
+        run: python scripts/guide00_legacy_technical_qa.py validate
 
-      - name: Install Guide 95 publication toolchain
-        if: steps.gate.outputs.needed == 'true'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y pandoc libreoffice-writer poppler-utils python3-pil curl
-
-      - name: Build and validate Guide 95 package
-        if: steps.gate.outputs.needed == 'true'
-        run: python scripts/guide95_publication_recovery.py build
-
-      - name: Commit verified Guide 95 package
-        if: steps.gate.outputs.needed == 'true'
+      - name: Commit Guide 00 technical QA evidence
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add project/revision-2026/guide-95/publication-candidate \
-                  project/revision-2026/guide-95/qa/GUIDE_95_PUBLICATION_QA_09.md \
-                  project/revision-2026/guide-95/qa/GUIDE_95_RELEASE_AUDIT_10.md
+          git add project/revision-2026/guide-00/qa/GUIDE_00_TRILINGUAL_TECHNICAL_QA_08.md
           git diff --cached --check
           if git diff --cached --quiet; then
-            echo 'Guide 95 package already current.'
+            echo 'Guide 00 technical QA evidence already current.'
           else
-            git commit -m 'build(guide-95): publish controlled trilingual package'
+            git commit -m 'qa(guide-00): pass final trilingual technical gate'
             for attempt in 1 2 3 4 5; do
               git fetch origin revision/guide-00-100-2026
               git rebase origin/revision/guide-00-100-2026
               if git push origin HEAD:revision/guide-00-100-2026; then
-                echo 'Guide 95 package committed.'
+                echo 'Guide 00 technical QA evidence committed.'
                 break
               fi
               if [[ "$attempt" == '5' ]]; then exit 1; fi
@@ -107,25 +80,24 @@ jobs:
             done
           fi
 
-      - name: Close Guide 95 helper status after package commit
-        if: steps.gate.outputs.needed == 'true'
+      - name: Advance Guide 00 helper only after evidence commit
         shell: bash
         run: |
           set -euo pipefail
           git pull --rebase origin revision/guide-00-100-2026
-          python scripts/guide95_publication_recovery.py close-status
-          git add project/revision-2026/guide-95/GUIDE_95_HELPER_STATUS.json
+          python scripts/guide00_legacy_technical_qa.py close-status
+          git add project/revision-2026/guide-00/GUIDE_00_HELPER_STATUS.json
           git diff --cached --check
           if git diff --cached --quiet; then
-            echo 'Guide 95 status already closed.'
+            echo 'Guide 00 helper already reflects technical QA PASS.'
             exit 0
           fi
-          git commit -m 'status(guide-95): close publication and release audit'
+          git commit -m 'status(guide-00): advance to publication gate'
           for attempt in 1 2 3 4 5; do
             git fetch origin revision/guide-00-100-2026
             git rebase origin/revision/guide-00-100-2026
             if git push origin HEAD:revision/guide-00-100-2026; then
-              echo 'Guide 95 status closure committed.'
+              echo 'Guide 00 helper advanced.'
               exit 0
             fi
             if [[ "$attempt" == '5' ]]; then exit 1; fi
@@ -134,5 +106,5 @@ jobs:
 
       - name: Safety note
         run: |
-          echo 'Guide 95 recovery is fail-closed and does not merge PR #17.'
-          echo 'The recovery job runs only from the controlled revision branch and only when its carrier files change.'
+          echo 'Guide 00 Publication and Release Audit remain pending.'
+          echo 'This carrier does not merge PR #17.'
