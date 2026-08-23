@@ -1,4 +1,5 @@
 name: Guide 00 publication requalification
+# Source-bound status sync validator v2.
 
 on:
   pull_request:
