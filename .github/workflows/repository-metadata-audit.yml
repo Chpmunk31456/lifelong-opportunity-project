@@ -43,7 +43,7 @@ jobs:
       github.head_ref == 'trigger/guide00-legacy-technical-qa' &&
       github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     permissions:
       contents: write
     steps:
@@ -52,6 +52,38 @@ jobs:
         with:
           ref: revision/guide-00-100-2026
           fetch-depth: 0
+
+      - name: Repair localized Guide 00 source-link parity
+        run: python scripts/guide00_legacy_technical_qa.py repair-links
+
+      - name: Commit localized link-parity repair
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add 00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1_INTEGRATED_MASTER.md \
+                  00-foundation-guide/source/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1_INTEGRATED_MASTER.md \
+                  project/revision-2026/guide-00/qa/GUIDE_00_TRILINGUAL_LINK_PARITY_REPAIR_08A.md
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'Guide 00 localized link parity already current.'
+          else
+            git commit -m 'fix(guide-00): restore trilingual source-link parity'
+            for attempt in 1 2 3 4 5; do
+              git fetch origin revision/guide-00-100-2026
+              git rebase origin/revision/guide-00-100-2026
+              if git push origin HEAD:revision/guide-00-100-2026; then
+                echo 'Guide 00 link-parity repair committed.'
+                break
+              fi
+              if [[ "$attempt" == '5' ]]; then exit 1; fi
+              sleep 2
+            done
+          fi
+
+      - name: Refresh controlled branch after repair
+        run: git pull --rebase origin revision/guide-00-100-2026
 
       - name: Validate Guide 00 trilingual technical parity
         run: python scripts/guide00_legacy_technical_qa.py validate
