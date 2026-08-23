@@ -56,7 +56,6 @@ assert urlsets[0] == urlsets[1] == urlsets[2], [len(x) for x in urlsets]
 
 english_blob = subprocess.check_output(['git', 'hash-object', str(EN)], text=True).strip()
 
-# Keep publication manifest provenance synchronized with the corrected frozen source.
 recovery_text = RECOVERY.read_text(encoding='utf-8')
 recovery_new, count = re.subn(
     r'ENGLISH_BLOB\s*=\s*["\'][0-9a-f]{40}["\']',
@@ -100,7 +99,7 @@ for name in [
     p = QA / name
     text = p.read_text(encoding='utf-8')
     if 'source-link maintenance revalidation' not in text:
-        p.write_text(text.rstrip() + note + '\n', encoding='utf-8')
+        p.write_text(text.rstrip() + note, encoding='utf-8')
 
 status = json.loads(STATUS.read_text(encoding='utf-8'))
 assert status['stages']['publication']['status'] == 'PENDING'
