@@ -45,6 +45,21 @@ The available evidence supports the following final control conclusions:
 - **Publication:** PASS
 - **Release Audit:** PASS
 
+## Modern 10-gate mapping
+
+The earlier-schema evidence maps to the final controlled gate model as follows:
+
+- **Baseline Inventory:** PASS
+- **Current-source Research:** PASS
+- **English Editorial:** PASS
+- **Evidence / Traceability:** PASS
+- **English Source Freeze:** PASS
+- **Spanish Localization:** PASS
+- **Portuguese Localization:** PASS
+- **Trilingual Technical QA:** PASS
+- **Publication:** PASS
+- **Release Audit:** PASS
+
 No evidence supports a claim of independent human certification or accreditation, and none is made here.
 
 ## Controlled decision
