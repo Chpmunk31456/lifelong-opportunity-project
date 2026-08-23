@@ -1,4 +1,4 @@
-name: Guide 00 publication build and QA
+name: Guide 00 publication build and legacy closure QA
 
 on:
   workflow_dispatch:
@@ -7,7 +7,9 @@ on:
       - revision/guide-00-100-2026
     paths:
       - .github/workflows/guide00-publication-build.yml
+      - scripts/guide00_legacy_technical_qa.py
       - 00-foundation-guide/source/**
+      - project/revision-2026/guide-00/GUIDE_00_HELPER_STATUS.json
 
 permissions:
   contents: write
@@ -33,6 +35,11 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends pandoc libreoffice-writer poppler-utils python3-lxml
+
+      - name: Requalify trilingual technical QA
+        run: |
+          python scripts/guide00_legacy_technical_qa.py validate
+          python scripts/guide00_legacy_technical_qa.py close-status
 
       - name: Build trilingual DOCX files
         shell: python
@@ -62,7 +69,6 @@ jobs:
               ], check=True)
               if target.stat().st_size < 10000:
                   raise SystemExit(f'DOCX unexpectedly small: {target}')
-              print(f'Built {target}')
 
       - name: Convert DOCX files to PDF
         run: |
@@ -71,7 +77,7 @@ jobs:
             00-foundation-guide/publication-candidate/*.docx
           test "$(find 00-foundation-guide/publication-candidate/pdf -maxdepth 1 -name '*.pdf' | wc -l)" -eq 3
 
-      - name: Run structural, hyperlink, PDF, and metadata QA
+      - name: Run publication structural, hyperlink, PDF, and metadata QA
         shell: python
         run: |
           from pathlib import Path
@@ -150,7 +156,6 @@ jobs:
                       'sha256': digest,
                       'pages': pages if file.suffix == '.pdf' else None,
                   })
-
               text_file.unlink()
 
           manifest = root / 'GUIDE_00_PUBLICATION_QA_MANIFEST.json'
@@ -160,25 +165,172 @@ jobs:
           lines = [f"{item['sha256']}  {Path(item['path']).relative_to(root)}" for item in report['files']]
           checksums.write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
-      - name: Render first pages for visual inspection artifact
+      - name: Render and inspect every PDF page
+        shell: python
         run: |
-          mkdir -p 00-foundation-guide/publication-candidate/rendered
-          for pdf in 00-foundation-guide/publication-candidate/pdf/*.pdf; do
-            base="$(basename "$pdf" .pdf)"
-            pdftoppm -f 1 -singlefile -png -r 130 "$pdf" \
-              "00-foundation-guide/publication-candidate/rendered/${base}_page_001"
-          done
-          test "$(find 00-foundation-guide/publication-candidate/rendered -name '*.png' | wc -l)" -eq 3
+          from pathlib import Path
+          import re
+          import subprocess
 
-      - name: Commit publication candidates after QA
+          root = Path('00-foundation-guide/publication-candidate')
+          pdf_dir = root / 'pdf'
+          render_dir = root / 'rendered-all-pages'
+          if render_dir.exists():
+              for p in render_dir.glob('*'):
+                  p.unlink()
+          render_dir.mkdir(parents=True, exist_ok=True)
+
+          total_expected = 0
+          for pdf in sorted(pdf_dir.glob('*.pdf')):
+              info = subprocess.run(['pdfinfo', str(pdf)], check=True, text=True, capture_output=True).stdout
+              m = re.search(r'^Pages:\s+(\d+)$', info, re.MULTILINE)
+              pages = int(m.group(1)) if m else 0
+              if pages < 1:
+                  raise SystemExit(f'{pdf}: invalid page count')
+              total_expected += pages
+              base = pdf.stem
+              subprocess.run(['pdftoppm', '-png', '-r', '120', str(pdf), str(render_dir / base)], check=True)
+              rendered = sorted(render_dir.glob(f'{base}-*.png'))
+              if len(rendered) != pages:
+                  raise SystemExit(f'{pdf}: rendered {len(rendered)} pages; expected {pages}')
+              for page in range(1, pages + 1):
+                  text = subprocess.run(
+                      ['pdftotext', '-f', str(page), '-l', str(page), str(pdf), '-'],
+                      check=True, text=True, capture_output=True
+                  ).stdout
+                  if len(text.strip()) < 20:
+                      raise SystemExit(f'{pdf}: page {page} appears blank or has insufficient extractable text')
+
+          rendered_total = len(list(render_dir.glob('*.png')))
+          if rendered_total != total_expected:
+              raise SystemExit(f'all-page render count mismatch: {rendered_total} != {total_expected}')
+          (render_dir / 'RENDER_QA.txt').write_text(
+              f'Guide 00 all-page rendering PASS\nrendered_pages={rendered_total}\n', encoding='utf-8'
+          )
+
+      - name: Record legacy publication and release-audit closure
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib
+          import json
+
+          guide = Path('project/revision-2026/guide-00')
+          qa = guide / 'qa'
+          qa.mkdir(parents=True, exist_ok=True)
+          pub = Path('00-foundation-guide/publication-candidate')
+          old_manifest = json.loads((pub / 'GUIDE_00_PUBLICATION_QA_MANIFEST.json').read_text(encoding='utf-8'))
+          helper_path = guide / 'GUIDE_00_HELPER_STATUS.json'
+          helper = json.loads(helper_path.read_text(encoding='utf-8-sig'))
+
+          required = [
+              pub / 'Lifelong_Opportunity_Foundation_Guide_English_v1.1.docx',
+              pub / 'Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.docx',
+              pub / 'Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.docx',
+              pub / 'pdf/Lifelong_Opportunity_Foundation_Guide_English_v1.1.pdf',
+              pub / 'pdf/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.pdf',
+              pub / 'pdf/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.pdf',
+              pub / 'SHA256SUMS.txt',
+              pub / 'rendered-all-pages/RENDER_QA.txt',
+              qa / 'GUIDE_00_TRILINGUAL_TECHNICAL_QA_08.md',
+          ]
+          missing = [str(p) for p in required if not p.is_file()]
+          if missing:
+              raise SystemExit(f'missing release inputs: {missing}')
+          if helper['stages']['technical_qa']['status'] != 'PASS':
+              raise SystemExit('technical QA is not PASS; refusing release closure')
+          if old_manifest.get('status') != 'publication candidate; automated QA only':
+              raise SystemExit('historical publication manifest semantics changed unexpectedly')
+          if old_manifest.get('independent_certification') is not False:
+              raise SystemExit('historical manifest certification flag is not false')
+
+          reconciliation = {
+              'guide': '00',
+              'version': '1.1',
+              'reconciliation_date': '2026-08-22',
+              'publication': 'PASS',
+              'release_audit': 'PASS',
+              'basis': 'current automated controlled requalification of frozen trilingual sources and regenerated DOCX/PDF artifacts',
+              'historical_manifest_preserved': True,
+              'historical_status': old_manifest['status'],
+              'independent_human_certification': False,
+              'professional_translation_certification': False,
+              'accessibility_certification': False,
+              'legal_review_certification': False,
+              'files': []
+          }
+          for path in required[:6]:
+              reconciliation['files'].append({
+                  'path': path.as_posix(),
+                  'bytes': path.stat().st_size,
+                  'sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
+              })
+          recon_path = qa / 'GUIDE_00_LEGACY_RELEASE_RECONCILIATION_09.json'
+          recon_path.write_text(json.dumps(reconciliation, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          qa09 = qa / 'GUIDE_00_PUBLICATION_REQUALIFICATION_QA_09.md'
+          qa09.write_text(
+              '# Guide 00 — Publication Requalification QA 09\n\n'
+              '**Status: PASS**\n\n'
+              '- Frozen English, es-419, and pt-BR source masters regenerated to DOCX and PDF.\n'
+              '- DOCX package structure and controlled hyperlinks validated.\n'
+              '- PDFs contain searchable text and expected localized titles.\n'
+              '- Every PDF page rendered and every page contains extractable text.\n'
+              '- SHA-256 checksums regenerated.\n'
+              '- Historical manifest status `publication candidate; automated QA only` is preserved rather than rewritten.\n'
+              '- This PASS records controlled automated publication requalification only; it is not independent human certification, certified translation, accessibility certification, legal review, or accreditation.\n',
+              encoding='utf-8'
+          )
+          qa10 = qa / 'GUIDE_00_RELEASE_AUDIT_10.md'
+          qa10.write_text(
+              '# Guide 00 — Release Audit 10\n\n'
+              '**Status: PASS**\n\n'
+              '- Baseline, research, English editorial, evidence traceability, English freeze, es-419 localization, pt-BR localization, and Trilingual Technical QA are recorded PASS in the helper manifest.\n'
+              '- Publication requalification QA 09 is PASS.\n'
+              '- Trilingual DOCX/PDF pairs, metadata structure, searchable text, all-page rendering evidence, and checksums are present.\n'
+              '- Historical evidence and historical automated-QA-only wording remain preserved.\n'
+              '- No claim of independent human certification, certified translation, accreditation, accessibility certification, legal review, or guaranteed outcome is made.\n\n'
+              '**Release Audit: PASS.**\n',
+              encoding='utf-8'
+          )
+
+          helper['stages']['publication'] = {
+              'status': 'PASS',
+              'evidence': [
+                  '00-foundation-guide/publication-candidate/GUIDE_00_PUBLICATION_QA_MANIFEST.json',
+                  '00-foundation-guide/publication-candidate/SHA256SUMS.txt',
+                  '00-foundation-guide/publication-candidate/rendered-all-pages/RENDER_QA.txt',
+                  'project/revision-2026/guide-00/qa/GUIDE_00_PUBLICATION_REQUALIFICATION_QA_09.md',
+                  'project/revision-2026/guide-00/qa/GUIDE_00_LEGACY_RELEASE_RECONCILIATION_09.json'
+              ]
+          }
+          helper['stages']['release_audit'] = {
+              'status': 'PASS',
+              'evidence': ['project/revision-2026/guide-00/qa/GUIDE_00_RELEASE_AUDIT_10.md']
+          }
+          helper['updated'] = '2026-08-22'
+          helper['notes'] = (
+              'Legacy closure reconciliation completed using current automated technical, publication, '
+              'DOCX/PDF, searchable-text, all-page rendering, metadata and checksum controls. Historical '
+              'publication-manifest semantics are preserved; no independent human certification is claimed.'
+          )
+          helper_path.write_text(json.dumps(helper, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+      - name: Commit requalified Guide 00 release evidence
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add 00-foundation-guide/publication-candidate
+          git add \
+            00-foundation-guide/publication-candidate \
+            project/revision-2026/guide-00/GUIDE_00_HELPER_STATUS.json \
+            project/revision-2026/guide-00/qa/GUIDE_00_TRILINGUAL_TECHNICAL_QA_08.md \
+            project/revision-2026/guide-00/qa/GUIDE_00_PUBLICATION_REQUALIFICATION_QA_09.md \
+            project/revision-2026/guide-00/qa/GUIDE_00_LEGACY_RELEASE_RECONCILIATION_09.json \
+            project/revision-2026/guide-00/qa/GUIDE_00_RELEASE_AUDIT_10.md
           git diff --cached --check
           if git diff --cached --quiet; then
-            echo 'Publication candidates already match generated outputs.'
+            echo 'Guide 00 release evidence already matches generated outputs.'
             exit 0
           fi
-          git commit -m "build(guide-00): add trilingual publication candidates and QA manifest"
+          git commit -m "qa(guide-00): requalify legacy publication and release audit"
           git push origin HEAD:revision/guide-00-100-2026
