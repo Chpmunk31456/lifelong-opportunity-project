@@ -17,6 +17,10 @@ def closure_path(gid: str) -> Path:
     return ROOT / f"guide-{gid}" / f"GUIDE_{gid}_LEGACY_CLOSURE_RECONCILIATION_2026-08-23.md"
 
 
+def clean_whitespace(text: str) -> str:
+    return "\n".join(line.rstrip() for line in text.splitlines()).rstrip() + "\n"
+
+
 def validate_legacy_closure(gid: str) -> None:
     path = closure_path(gid)
     if not path.is_file():
@@ -122,11 +126,11 @@ def main() -> None:
     if missing_links:
         raise SystemExit("Final collection has missing PDF links:\n" + "\n".join(missing_links))
 
-    CHANGELOG.write_text(text.rstrip() + "\n", encoding="utf-8")
+    CHANGELOG.write_text(clean_whitespace(text), encoding="utf-8")
 
-    qa = f"""# Guides 00–100 — Release/Change Log QA
+    qa = """# Guides 00–100 — Release/Change Log QA
 
-**Status:** PASS  
+**Status:** PASS
 **Date:** 2026-08-23
 
 ## Validated collection controls
@@ -154,7 +158,7 @@ The validator does not fabricate helper manifests for Guides 01–06. Their hist
 
 This QA validates repository-recorded collection coverage, release status, and link existence. It does not claim independent human certification, certified translation, professional licensure review, or external accreditation.
 """
-    QA.write_text(qa, encoding="utf-8")
+    QA.write_text(clean_whitespace(qa), encoding="utf-8")
     print("PASS: 101 guides closed, 303 PDF links, 95 helper-backed, 6 legacy reconciliations")
 
 
