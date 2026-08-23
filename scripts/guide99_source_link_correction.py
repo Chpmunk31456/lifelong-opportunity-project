@@ -17,6 +17,7 @@ QA = ROOT / 'qa'
 EN = ROOT / 'working-masters/GUIDE_99_FOOD_SCIENCE_TECHNICIAN_ENGLISH_v2.md'
 STATUS = ROOT / 'GUIDE_99_HELPER_STATUS.json'
 RECOVERY = Path('scripts/guide99_publication_recovery.py')
+URL_RE = re.compile(r'https://[^\s)<>`]+')
 
 CGMP = 'https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-117/subpart-B'
 PREVENTIVE = 'https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-117/subpart-C'
@@ -36,9 +37,7 @@ for p in ROOT.rglob('*.md'):
     if 'publication-candidate' in p.parts:
         continue
     text = p.read_text(encoding='utf-8')
-    new = text
-    for old in sorted(REPLACEMENTS, key=len, reverse=True):
-        new = new.replace(old, REPLACEMENTS[old])
+    new = URL_RE.sub(lambda m: REPLACEMENTS.get(m.group(0), m.group(0)), text)
     if new != text:
         p.write_text(new, encoding='utf-8')
         changed.append(str(p))
@@ -48,7 +47,7 @@ masters = [
     ROOT / 'working-masters/GUIDE_99_TECNICO_EN_CIENCIA_DE_ALIMENTOS_ES419_v2.md',
     ROOT / 'working-masters/GUIDE_99_TECNICO_EM_CIENCIA_DE_ALIMENTOS_PTBR_v2.md',
 ]
-urlsets = [set(re.findall(r'https://[^\s)<>`]+', p.read_text(encoding='utf-8'))) for p in masters]
+urlsets = [set(URL_RE.findall(p.read_text(encoding='utf-8'))) for p in masters]
 assert urlsets[0] == urlsets[1] == urlsets[2], [len(x) for x in urlsets]
 for p, urls in zip(masters, urlsets):
     for stale in REPLACEMENTS:
