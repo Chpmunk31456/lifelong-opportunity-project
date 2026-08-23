@@ -1,0 +1,2 @@
+Guide 00 all-page rendering PASS
+rendered_pages=41

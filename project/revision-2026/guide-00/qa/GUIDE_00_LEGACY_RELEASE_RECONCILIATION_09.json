@@ -1,0 +1,46 @@
+{
+  "guide": "00",
+  "version": "1.1",
+  "reconciliation_date": "2026-08-22",
+  "publication": "PASS",
+  "release_audit": "PASS",
+  "basis": "current automated controlled requalification of frozen trilingual sources and regenerated DOCX/PDF artifacts",
+  "historical_manifest_preserved": true,
+  "historical_status": "publication candidate; automated QA only",
+  "independent_human_certification": false,
+  "professional_translation_certification": false,
+  "accessibility_certification": false,
+  "legal_review_certification": false,
+  "files": [
+    {
+      "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_English_v1.1.docx",
+      "bytes": 23646,
+      "sha256": "d6400a7bdb71171e7d7fec39b505154f10a6302509119db644a9aae97d8db53b"
+    },
+    {
+      "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.docx",
+      "bytes": 23048,
+      "sha256": "f49f751c5ff5168e3c73e9a73b782614976d7a4a0ee310bc633695da7b757a60"
+    },
+    {
+      "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.docx",
+      "bytes": 24465,
+      "sha256": "82f5b7d265d017b02e34744d16193daf335c456f9400a8462bbe81ed88b644b4"
+    },
+    {
+      "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_English_v1.1.pdf",
+      "bytes": 199269,
+      "sha256": "eb1eeb55cbf8cc0f85721c84f80c02f37b35669180640976352ce5ebd209123a"
+    },
+    {
+      "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.pdf",
+      "bytes": 199453,
+      "sha256": "3fb83b19c5dfdaea1d50315bda766f125a4f95eac5988e673de699c5a0fefb6f"
+    },
+    {
+      "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.pdf",
+      "bytes": 236667,
+      "sha256": "16270b2426f20e229cd6414ef0417a735048819b1498c7ba51a7d9d0e36e1634"
+    }
+  ]
+}

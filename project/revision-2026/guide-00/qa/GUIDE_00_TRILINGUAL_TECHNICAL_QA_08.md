@@ -29,12 +29,12 @@
 - Unicode replacement-character scan: **PASS — none found**
 - Version 1.1 marker present in all three sources: **PASS**
 - Existing structural/terminology parity record retained: `project/revision-2026/guide-00/TRILINGUAL_PARITY_QA_01.md`
-- Link parity repair evidence: `project/revision-2026/guide-00/qa/GUIDE_00_TRILINGUAL_LINK_PARITY_REPAIR_08A.md`
+- Existing correction control retained: `project/revision-2026/guide-00/TRILINGUAL_RED_SEAL_URL_CORRECTION_01.md`
 
 ## Link inventory result
 
 - Shared trilingual URL set: **27 unique links**
-- The final source-parity scan proves that translated masters do not alter or omit source URLs relative to the frozen English master.
+- The final source-parity scan proves that translated masters did not alter or omit source URLs relative to the frozen English master.
 - This gate validates source parity and the controlled Red Seal correction. It does not substitute for final DOCX/PDF hyperlink, render, metadata, checksum, or all-page visual review.
 
 ## Gate decision

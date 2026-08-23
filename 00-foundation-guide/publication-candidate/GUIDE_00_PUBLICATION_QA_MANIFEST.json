@@ -7,44 +7,44 @@
     {
       "locale": "English",
       "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_English_v1.1.docx",
-      "bytes": 23713,
-      "sha256": "5c7e50733aac86474b00793ee4dd09efdf6b2af2a278a9af52faa65e1d70acab",
+      "bytes": 23646,
+      "sha256": "d6400a7bdb71171e7d7fec39b505154f10a6302509119db644a9aae97d8db53b",
       "pages": null
     },
     {
       "locale": "English",
       "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_English_v1.1.pdf",
-      "bytes": 200594,
-      "sha256": "c7a5e1cdd5dcfdeab987b899e1f79c63d3a29230ba418bc688b14bf1fda0b3ea",
-      "pages": 14
+      "bytes": 199269,
+      "sha256": "eb1eeb55cbf8cc0f85721c84f80c02f37b35669180640976352ce5ebd209123a",
+      "pages": 13
     },
     {
       "locale": "es-419",
       "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.docx",
-      "bytes": 20784,
-      "sha256": "28ead21b154f3c21e2f59504cccc1c5349fa54c9d053e490c90ff5ba6a7561b9",
+      "bytes": 23048,
+      "sha256": "f49f751c5ff5168e3c73e9a73b782614976d7a4a0ee310bc633695da7b757a60",
       "pages": null
     },
     {
       "locale": "es-419",
       "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_es-419_v1.1.pdf",
-      "bytes": 158498,
-      "sha256": "15cffa611c0edc86de283cfefce072ddacaf7f483182e2ba73c4358a4a56d237",
-      "pages": 12
+      "bytes": 199453,
+      "sha256": "3fb83b19c5dfdaea1d50315bda766f125a4f95eac5988e673de699c5a0fefb6f",
+      "pages": 13
     },
     {
       "locale": "pt-BR",
       "path": "00-foundation-guide/publication-candidate/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.docx",
-      "bytes": 22201,
-      "sha256": "b8d2f9b71298b1373dee7cdf39b41069fecfbd0ef1023a69af182dbed1c2eb5b",
+      "bytes": 24465,
+      "sha256": "82f5b7d265d017b02e34744d16193daf335c456f9400a8462bbe81ed88b644b4",
       "pages": null
     },
     {
       "locale": "pt-BR",
       "path": "00-foundation-guide/publication-candidate/pdf/Lifelong_Opportunity_Foundation_Guide_pt-BR_v1.1.pdf",
-      "bytes": 195490,
-      "sha256": "6ec5f41b492ef9415f75232c4f906b2d39dbe270fe606ed291c7f19a7f6102d2",
-      "pages": 14
+      "bytes": 236667,
+      "sha256": "16270b2426f20e229cd6414ef0417a735048819b1498c7ba51a7d9d0e36e1634",
+      "pages": 15
     }
   ]
 }

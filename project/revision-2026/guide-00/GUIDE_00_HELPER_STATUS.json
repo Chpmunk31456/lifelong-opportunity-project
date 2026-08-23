@@ -73,19 +73,22 @@
       ]
     },
     "publication": {
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": [
         "00-foundation-guide/publication-candidate/GUIDE_00_PUBLICATION_QA_MANIFEST.json",
-        "project/revision-2026/guide-00/qa/GUIDE_00_LEGACY_CLOSURE_GATE_MAP_2026.md"
+        "00-foundation-guide/publication-candidate/SHA256SUMS.txt",
+        "00-foundation-guide/publication-candidate/rendered-all-pages/RENDER_QA.txt",
+        "project/revision-2026/guide-00/qa/GUIDE_00_PUBLICATION_REQUALIFICATION_QA_09.md",
+        "project/revision-2026/guide-00/qa/GUIDE_00_LEGACY_RELEASE_RECONCILIATION_09.json"
       ]
     },
     "release_audit": {
-      "status": "PENDING",
+      "status": "PASS",
       "evidence": [
-        "project/revision-2026/guide-00/qa/GUIDE_00_LEGACY_CLOSURE_GATE_MAP_2026.md"
+        "project/revision-2026/guide-00/qa/GUIDE_00_RELEASE_AUDIT_10.md"
       ]
     }
   },
   "blockers": [],
-  "notes": "Guide 00 remains 8/10. Confirmed dead-link repaired one-for-one; English freeze amended; fresh Trilingual Technical QA PASS against exact current source blobs. First active gate: Publication."
+  "notes": "Legacy closure reconciliation completed using current automated technical, publication, DOCX/PDF, searchable-text, all-page rendering, metadata and checksum controls. Historical publication-manifest semantics are preserved; no independent human certification is claimed."
 }
